@@ -1,17 +1,12 @@
-<!DOCTYPE html><html lang="en-us"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>190317-TIL | 수빈 개발블로그</title><meta name="description" content="Adjusted hexo clexy theme and studied leetcode problems."><meta name="generator" content="수빈 개발블로그"><meta name="author" content="Subin"><meta name="keywords" content="developer, frontend"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=0"><link rel="stylesheet" type="text/css" href="/styles/screen.css"><link rel="apple-touch-icon" sizes="57x57" href="/images/apple-touch-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/images/apple-touch-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/images/apple-touch-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/images/apple-touch-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180x180.png"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"><link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png"><link rel="icon" type="image/png" sizes="128x128" href="/images/favicon-128.png"><link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-196x196.png"><meta name="msapplication-TileColor" content="#FFFFFF"><meta name="msapplication-TileImage" content="mstile-144x144.png"><meta name="msapplication-square70x70logo" content="mstile-70x70.png"><meta name="msapplication-square150x150logo" content="mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="mstile-310x150.png"><meta name="msapplication-square310x310logo" content="mstile-310x310.png"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body itemscope itemtype="https://schema.org/WebPage"><header itemscope itemtype="https://schema.org/WPHeader"><div class="logo"></div><h1><a href="/" alt="수빈 개발블로그" title="수빈 개발블로그" itemprop="headline">수빈 개발블로그</a></h1><p itemprop="description">Post what I studied</p><nav itemscope itemtype="https://schema.org/SiteNavigationElement"><ul><li itemprop="name"><a href="/ " alt="home" title="home" itemprop="url">home</a></li><li itemprop="name"><a href="/articles" alt="articles" title="articles" itemprop="url">articles</a></li><li itemprop="name"><a href="/author" alt="author" title="author" itemprop="url">author</a></li></ul></nav><div class="space"></div></header><main itemscope itemtype="https://schema.org/Blog"><article class="full"><h1 itemprop="headline" class="post-heading">190317-TIL</h1><span class="post-meta"></span><br><br><h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><p>어제는 처음으로 토익을 보러 갔다. 피곤해서 컴퓨터를 켜지도 못했지만 앞으로 알고리즘 문제를 하나라도 풀어야겠다.</p>
-<ul>
-<li><h4 id="오전"><a href="#오전" class="headerlink" title="오전"></a>오전</h4><ul>
-<li>LeetCode Easy 문제: <a href="https://leetcode.com/problems/reverse-integer/" target="_blank" rel="noopener">7. Reverse Integer</a> 와 관련문제 <a href="https://leetcode.com/problems/reverse-bits/" target="_blank" rel="noopener">190. Reverse Bits</a>를 풀었다.</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><h4 id="오후"><a href="#오후" class="headerlink" title="오후"></a>오후</h4><ul>
-<li>Hexo blog의 이름을 바꾸고 전부터 적용하고 싶었던 Hexo Clexy 테마를 적용했다. 처음에는 어떻게 해야할 지 몰랐지만 <a href="https://github.com/mkkhedawat/clexy" target="_blank" rel="noopener">Clexy github</a> description을 보며 따라하니 어떻게 적용이 됐다.<br>내 마음대로 디자인을 바꾸려면 공부를 더 해야겠다.</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>카테고리를 나눠서 알고리즘 풀이, HTML/CSS와 javaScript 등 공부한 내용을 정리해서 올리고 싶어서 카테고리를 추가하는 방법을 찾아봤는데 잘 알 수 없었다. 강사님께 물어봐야겠다.</li>
-</ul>
-</article><br><br><span class="next-post"><a href="/2019/03/15/190315-TIL/" itemprop="url">Older Post ⇒</a></span><span class="prev-post"><a href="/2019/03/18/190318-TIL/" itemprop="url">⇐ Next Post </a></span><br><br><br></main></body></html>
+doctype html
+html(lang='en-us')
+  head
+    include _head
+    include _mixins
+  body(itemscope, itemtype='https://schema.org/WebPage')
+    header(itemscope, itemtype='https://schema.org/WPHeader')
+      include _header
+      .space
+    main(itemscope, itemtype='https://schema.org/Blog')
+      include _content
+    include _scripts

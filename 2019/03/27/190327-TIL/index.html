@@ -1,61 +1,12 @@
-<!DOCTYPE html><html lang="en-us"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>190327-TIL | 수빈 개발블로그</title><meta name="description" content="My Health Diary Project 3 Day"><meta name="generator" content="수빈 개발블로그"><meta name="author" content="Subin"><meta name="keywords" content="developer, frontend"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=0"><link rel="stylesheet" type="text/css" href="/styles/screen.css"><link rel="apple-touch-icon" sizes="57x57" href="/images/apple-touch-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/images/apple-touch-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/images/apple-touch-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/images/apple-touch-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180x180.png"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"><link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png"><link rel="icon" type="image/png" sizes="128x128" href="/images/favicon-128.png"><link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-196x196.png"><meta name="msapplication-TileColor" content="#FFFFFF"><meta name="msapplication-TileImage" content="mstile-144x144.png"><meta name="msapplication-square70x70logo" content="mstile-70x70.png"><meta name="msapplication-square150x150logo" content="mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="mstile-310x150.png"><meta name="msapplication-square310x310logo" content="mstile-310x310.png"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body itemscope itemtype="https://schema.org/WebPage"><header itemscope itemtype="https://schema.org/WPHeader"><div class="logo"></div><h1><a href="/" alt="수빈 개발블로그" title="수빈 개발블로그" itemprop="headline">수빈 개발블로그</a></h1><p itemprop="description">Post what I studied</p><nav itemscope itemtype="https://schema.org/SiteNavigationElement"><ul><li itemprop="name"><a href="/ " alt="home" title="home" itemprop="url">home</a></li><li itemprop="name"><a href="/articles" alt="articles" title="articles" itemprop="url">articles</a></li><li itemprop="name"><a href="/author" alt="author" title="author" itemprop="url">author</a></li></ul></nav><div class="space"></div></header><main itemscope itemtype="https://schema.org/Blog"><article class="full"><h1 itemprop="headline" class="post-heading">190327-TIL</h1><span class="post-meta"></span><br><br><h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul>
-<li><h4 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h4><p>프로젝트</p>
-<ol start="5">
-<li><p>clickSaveButton() -&gt; saveHealth() : 운동 영상의 상세 페이지에서 운동 기록 저장 버튼을 클릭시 해당 운동의 이름이 localStorage에 저장된다.</p>
-</li>
-<li><p>showDiary() : 운동 기록을 저장한 후 반영된 페이지로 이동한다.</p>
-</li>
-<li><p>clickMyHealthButton() -&gt; showMyHealthPop() : 나의 운동 버튼 클릭시 사용자 정의 운동을 입력하고 저장할 수 있는 페이지를 팝업으로 띄운다. </p>
-</li>
-<li><p>clickSaveButton() -&gt; showSavedPage() : 팝업 창에서 운동 이름, youtube 주소, 운동 부위와 종류를 입력하면 기록이 localStorage에 저장된다.</p>
-</li>
-</ol>
-<p>외에도 알고리즘 스터디를 했다. 나는 5개 정도 문제를 미리 풀어놔서 복습하는 개념으로, 다른 사람들의 풀이에서 많은 걸 배우고 있다.</p>
-</li>
-</ul>
-<ul>
-<li><h4 id="배운-것"><a href="#배운-것" class="headerlink" title="배운 것"></a>배운 것</h4></li>
-</ul>
-<p>! 어떤 element를 클릭하고 새로 뜬 창에서 어떤 버튼을 눌렀을 때 맨 처음 element 값 전달하고 싶을 때는 button의 attr에 data-key 같은 식으로 정보를 전달해준다.</p>
-<pre><code>    $(&#39;div.workout&#39;).click(function(){
-      //showWorkoutDetail
-
-      var key = this.id;
-      var workout = workouts[key];
-      var id = workout[&#39;YT_id&#39;];
-      $(&#39;#saveHealthButton&#39;).attr(&#39;data-key&#39;,key);
-      $(&#39;#popModal&#39;).modal(&#39;show&#39;);
-      $(&#39;#popTitle&#39;).text(workout[&#39;name&#39;]);
-      console.log(id);
-      player = new YT.Player(&#39;player&#39;, {
-        height: &#39;300&#39;,
-        width: &#39;450&#39;,
-        videoId: id,
-        events: {
-          &#39;onReady&#39;: onPlayerReady,
-          &#39;onStateChange&#39;: onPlayerStateChange
-        }
-      }); 
-    });
-
-    $(&#39;#saveHealthButton&#39;).click(function(){
-      console.log($(this).attr(&#39;data-key&#39;));
-//잘 뜸!!
-      saveWorkout();
-    });
-
-
-</code></pre><p>! 외부 API를 사용하는 것은 어렵다. 조금만 수정하려고 해도 내 마음처럼 되지 않는다. 경험을 늘려야겠다.</p>
-<p>운동 영상 썸네일 클릭시 Modal을 띄워 해당 운동 영상을 보여주려고 했는데, iframe을 사용하지 않고 new YT_player로 player를 만드는 API를 사용했더니 맨 처음 생성된 player만 뜨는 문제가 있었다. </p>
-<p>구글 검색으로 해결했다! </p>
-<blockquote>
-<p>Modal show event마다 내가 원하는 youtube 보여주기!!</p>
-</blockquote>
-<h2 id="How-to-embed-YouTube-video-in-Bootstrap-modal"><a href="#How-to-embed-YouTube-video-in-Bootstrap-modal" class="headerlink" title="How to embed YouTube video in Bootstrap modal"></a>How to embed YouTube video in Bootstrap modal</h2><h3 id="Answer-Insert-YouTube-Code-inside-Modal-Body"><a href="#Answer-Insert-YouTube-Code-inside-Modal-Body" class="headerlink" title="Answer: Insert YouTube Code inside Modal Body"></a>Answer: Insert YouTube Code inside Modal Body</h3><p><a href="https://www.tutorialrepublic.com/faq/how-to-embed-youtube-video-inside-bootstrap-modal.php" target="_blank" rel="noopener">https://www.tutorialrepublic.com/faq/how-to-embed-youtube-video-inside-bootstrap-modal.php</a></p>
-<p>! javaScript에서는 Array.length, String.length로 둘 다 뒤에 ()를 붙이지 않는다. java와 헷갈리지 말자.</p>
-<ul>
-<li><h4 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h4></li>
-</ul>
-<p>프로젝트 기획 때 Use Case와 Communication을 잘 정리하고 나니 그 때 명세한 기능을 구현하기만 돼서 편하다. 순서대로 구현을 하니 딱히 커다란 문제가 생기지 않았다.</p>
-<p>소프트웨어 공학 시간에도 그렇지만 다시 한 번 디자인이 중요하다고 느꼈다.</p>
-</article><br><br><span class="next-post"><a href="/2019/03/26/190326-TIL/" itemprop="url">Older Post ⇒</a></span><span class="prev-post"><a href="/2019/03/28/190328-TIL/" itemprop="url">⇐ Next Post </a></span><br><br><br></main></body></html>
+doctype html
+html(lang='en-us')
+  head
+    include _head
+    include _mixins
+  body(itemscope, itemtype='https://schema.org/WebPage')
+    header(itemscope, itemtype='https://schema.org/WPHeader')
+      include _header
+      .space
+    main(itemscope, itemtype='https://schema.org/Blog')
+      include _content
+    include _scripts
