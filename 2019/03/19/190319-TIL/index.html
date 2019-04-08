@@ -1,12 +1,34 @@
-doctype html
-html(lang='en-us')
-  head
-    include _head
-    include _mixins
-  body(itemscope, itemtype='https://schema.org/WebPage')
-    header(itemscope, itemtype='https://schema.org/WPHeader')
-      include _header
-      .space
-    main(itemscope, itemtype='https://schema.org/Blog')
-      include _content
-    include _scripts
+<!DOCTYPE html><html lang="en-us"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>190319-TIL | 수빈 개발블로그</title><meta name="description" content="Learned about LocalStorage"><meta name="generator" content="수빈 개발블로그"><meta name="author" content="Subin"><meta name="keywords" content="developer, frontend"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=0"><link rel="stylesheet" type="text/css" href="/styles/screen.css"><link rel="apple-touch-icon" sizes="57x57" href="/images/apple-touch-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/images/apple-touch-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/images/apple-touch-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/images/apple-touch-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180x180.png"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"><link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png"><link rel="icon" type="image/png" sizes="128x128" href="/images/favicon-128.png"><link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-196x196.png"><meta name="msapplication-TileColor" content="#FFFFFF"><meta name="msapplication-TileImage" content="mstile-144x144.png"><meta name="msapplication-square70x70logo" content="mstile-70x70.png"><meta name="msapplication-square150x150logo" content="mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="mstile-310x150.png"><meta name="msapplication-square310x310logo" content="mstile-310x310.png"></head><body itemscope itemtype="https://schema.org/WebPage"><header itemscope itemtype="https://schema.org/WPHeader"><div class="logo"></div><h1><a href="/" alt="수빈 개발블로그" title="수빈 개발블로그" itemprop="headline">수빈 개발블로그</a></h1><p itemprop="description">Post what I studied</p><nav itemscope itemtype="https://schema.org/SiteNavigationElement"><ul><li itemprop="name"><a href="/ " alt="home" title="home" itemprop="url">home</a></li><li itemprop="name"><a href="/articles" alt="articles" title="articles" itemprop="url">articles</a></li><li itemprop="name"><a href="/author" alt="author" title="author" itemprop="url">author</a></li></ul></nav><div class="space"></div></header><main itemscope itemtype="https://schema.org/Blog"><article class="full"><h1 itemprop="headline" class="post-heading">190319-TIL</h1><span class="post-meta"></span><br><br><h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul>
+<li><h4 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h4><ul>
+<li>LeetCode Easy 문제 : <a href="https://leetcode.com/problems/roman-to-integer/" target="_blank" rel="noopener">🌟 13. Roman to Integer</a></li>
+</ul>
+<p>if로 I, X, C일 때 경우를 나누어 풀었다. 시간이 짧게 걸린 알고리즘들은 let, const를 썼는데 나는 아직 var로 선언하는 방법밖에 공부하지 않아 더 공부를 해야겠다.</p>
+<ul>
+<li>webStorage 공부</li>
+</ul>
+<p>localStorage, sessionStorage의 차이와 활용방법에 대해서 배웠다.</p>
+<p>localStorage.setItem(storage_key, storage_value), localStorage.getItem(storage_key) 를 사용하여 localHost에서 사용자가 입력한 정보를 유지하는 기능을 다수 추가했다.</p>
+<ul>
+<li>To do List, Signup Page 보완</li>
+</ul>
+<p>locaStorage를 이용해 기존에 만들었던 html에 유지기능을 추가했다.</p>
+<ul>
+<li>Select, Input: radio 등 다양한 input type 학습</li>
+</ul>
+<p>단순히 text type의 input뿐만이 아니라 select.val, option.text 등을 다루는 방법을 공부했다. </p>
+</li>
+</ul>
+<ul>
+<li><h4 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h4><ul>
+<li>localStorage를 이용하는 것 뿐인데 해야할 일이 대폭 많아졌다. 꼼꼼하게 정리해놓고 해당 기능을 사용할 때마다 참고해야겠다.</li>
+</ul>
+<hr>
+<ul>
+<li><p>Upgrade ver. To do List ▶ <a href="https://github.com/Sub2n/week03/blob/master/0319_To_do_list.html" target="_blank" rel="noopener">🌟</a></p>
+</li>
+<li><p>Upgrade ver. Sign Up Page ▶ <a href="https://github.com/Sub2n/week03/blob/master/0319_SIgnup.html" target="_blank" rel="noopener">🌟</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</article><br><br><span class="next-post"><a href="/2019/03/18/190318-TIL/" itemprop="url">Older Post ⇒</a></span><span class="prev-post"><a href="/2019/03/20/190320-TIL/" itemprop="url">⇐ Next Post </a></span><br><br><br></main></body></html>
