@@ -8,7 +8,7 @@
 <figure><br>  <img src="https://user-images.githubusercontent.com/48080762/55950705-79cc7800-5c90-11e9-806e-0d8d3fa840bf.jpg" alt="디자인" width="600px"><br>  <figcaption>[Markup Design]</figcaption><br></figure>
 
 
-<pre class="line-numbers language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- news section HTML Code --></span>
+<pre class=" language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- news section HTML Code --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>news<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>news-heading<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>새소식<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>news-item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -27,7 +27,7 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>news-more icon-plus<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>더보기<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span>
 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p>: 처음으로 <code>&lt;article&gt;</code>과 <code>&lt;figure&gt;</code> tag를 써봤다. </p>
 <p><code>&lt;section&gt;</code> 내에 <code>&lt;article&gt;</code>을 nesting하는 것은 신문의 스포츠 섹션에 단일 기사를 싣는 것과 같다는 글을 읽어 이해가 쉬웠다.</p>
 <p>Semantic HTML을 접하고 처음 <code>&lt;div&gt;</code> 범벅이던 코드를 만났을 때보다 훨씬 이해가 쉽고 직관적으로 구조를 짤 수 있게 된 기분이 든다.</p>
@@ -49,7 +49,7 @@
 <h4 id="Image-Replacement"><a href="#Image-Replacement" class="headerlink" title="Image Replacement"></a>Image Replacement</h4><p>:  image가 들어갈 영역의 크기를 지정해놓고, 해당 높이나 너비만큼 padding을 주고 overflow: hidden 처리를 한 후 image를 sprite로 처리한다.</p>
 <h4 id="Image-Sprite"><a href="#Image-Sprite" class="headerlink" title="Image Sprite"></a>Image Sprite</h4><p>: server가 제공하는 image 최소화하기위해 한 image만 준비하고 background 위치 조정해서 보여주는 것</p>
 <p>: 단점으로 <code>&lt;button&gt;</code>에 focus시 outline이 안 보이는 문제가 있었는데, ARIA를 사용해 role을 주고 button의 textnode를 삭제해 해결했다.</p>
-<pre class="line-numbers language-css"><code class="language-css">    <span class="token selector"><span class="token class">.btn-event</span></span><span class="token punctuation">{</span>
+<pre class=" language-css"><code class="language-css">    <span class="token selector"><span class="token class">.btn-event</span></span><span class="token punctuation">{</span>
         <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
         <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
         <span class="token property">right</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
@@ -68,7 +68,7 @@
         <span class="token property">background-position</span><span class="token punctuation">:</span> <span class="token number">100%</span> <span class="token number">0</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h4 id="하루를-마무리-하며"><a href="#하루를-마무리-하며" class="headerlink" title="하루를 마무리 하며"></a>하루를 마무리 하며</h4><p>오늘 Semantic HTML과 tag의 효율성 등을 알아보다가 좋은 사이트를 알게 되었다. 많은 도움이 될 것으로 보여 기분이 좋다. 밑에 첨부한다.</p>
 <p>HEXO 테마를 바꾸고 싶은데 마땅히 마음에 드는 게 없어 만들어볼까 생각중이다. 이번 주말을 활용해 알아봐야겠다.</p>
 <hr>
