@@ -1,17 +1,14 @@
-<!DOCTYPE html><html lang="en-us"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>190315-TIL | 수빈 개발블로그</title><meta name="description" content="Solved leetcode problem and prorammed lottry machine."><meta name="generator" content="수빈 개발블로그"><meta name="author" content="Subin"><meta name="keywords" content="developer, frontend"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=0"><link rel="stylesheet" type="text/css" href="/styles/screen.css"><link rel="apple-touch-icon" sizes="57x57" href="/images/apple-touch-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/images/apple-touch-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/images/apple-touch-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/images/apple-touch-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180x180.png"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"><link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png"><link rel="icon" type="image/png" sizes="128x128" href="/images/favicon-128.png"><link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-196x196.png"><meta name="msapplication-TileColor" content="#FFFFFF"><meta name="msapplication-TileImage" content="mstile-144x144.png"><meta name="msapplication-square70x70logo" content="mstile-70x70.png"><meta name="msapplication-square150x150logo" content="mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="mstile-310x150.png"><meta name="msapplication-square310x310logo" content="mstile-310x310.png"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body itemscope itemtype="https://schema.org/WebPage"><header itemscope itemtype="https://schema.org/WPHeader"><div class="logo"></div><h1><a href="/" alt="수빈 개발블로그" title="수빈 개발블로그" itemprop="headline">수빈 개발블로그</a></h1><p itemprop="description">Post what I studied</p><nav itemscope itemtype="https://schema.org/SiteNavigationElement"><ul><li itemprop="name"><a href="/ " alt="home" title="home" itemprop="url">home</a></li><li itemprop="name"><a href="/articles" alt="articles" title="articles" itemprop="url">articles</a></li><li itemprop="name"><a href="/author" alt="author" title="author" itemprop="url">author</a></li></ul></nav><div class="space"></div></header><main itemscope itemtype="https://schema.org/Blog"><article class="full"><h1 itemprop="headline" class="post-heading">190315-TIL</h1><span class="post-meta"></span><br><br><h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul>
-<li><h4 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h4><ul>
-<li>LeetCode Medium 문제를 풀었다. C나 C++이 아니고 익숙하지 않은 JavaScript로 알고리즘 문제를 풀려니 메소드를 하나하나 찾아야해서 시간이 오래 걸렸다. </li>
-</ul>
-<p>🐸 <a href="https://leetcode.com/problems/add-two-numbers" target="_blank" rel="noopener">2. Add Two Numbers</a></p>
-<p>: if문을 잔뜩 사용한 내 코드와 달리 carry를 이용한 솔루션을 보고 알고리즘 공부를 꾸준히 해서 효율성을 높여야겠다는 목표가 생겼다. 적어도 하루에 하나씩은 LeetCode 문제를 풀려고 한다.</p>
-<ul>
-<li>오후엔 JavaScript를 이용해 Lotto 추첨기를 만들었다. </li>
-</ul>
-</li>
-<li><h4 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점:"></a>느낀 점:</h4><p>사용자의 입력을 받아서 화면에 적절히 출력하는 게 아직 어렵다. </p>
-<p>3명이 팀별로 진행하다보니 알고리즘을 짜는 데에도 토의를 하느라 시간이 길어졌다. 협엽과 HTML, CSS, JS를 다루는 법에 조금 더 익숙해져야겠다.</p>
-</li>
-</ul>
-<hr>
-<p>  🐸 Lottery Machine git address<br>  <a href="https://github.com/GoodSungJin/web-basic/blob/master/week02/subin_week02/0315_Lotto.html" target="_blank" rel="noopener">LOTTERY Machine</a></p>
-</article><br><br><span class="next-post"><a href="/2019/03/14/190314-TIL/" itemprop="url">Older Post ⇒</a></span><span class="prev-post"><a href="/2019/03/17/190317-TIL/" itemprop="url">⇐ Next Post </a></span><br><br><br></main></body></html>
+<%- partial('_partial/head') %>
+
+<body>
+  <header id="header" class="inner"><%- partial('_partial/header') %></header>
+  <%- partial('_partial/page-heading') %>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper" class="padding"><%- body %></div></div>
+    <aside id="sidebar" class="alignright"><%- partial('_partial/sidebar') %></aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><%- partial('_partial/footer') %></footer>
+  <%- partial('_partial/after_footer') %>
+</body>
+</html>
