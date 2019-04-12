@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sub2n.github.io/"/>
-  <updated>2019-04-12T12:39:49.007Z</updated>
+  <updated>2019-04-12T12:51:38.322Z</updated>
   <id>https://sub2n.github.io/</id>
   
   <author>
@@ -21,16 +21,15 @@
     <link href="https://sub2n.github.io/2019/04/12/190412-TIL/"/>
     <id>https://sub2n.github.io/2019/04/12/190412-TIL/</id>
     <published>2019-04-12T10:21:12.000Z</published>
-    <updated>2019-04-12T12:39:49.007Z</updated>
+    <updated>2019-04-12T12:51:38.322Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><p>####</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><h4 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h4><ul><li><p>계속 헷갈렸던 (그리고 어려웠던) CSS의 Transition(전이)과 Transform(변형)을 배웠다.</p></li><li><p>CSS Animation은 정말 재밌다!</p></li><li><p>mouseover와 mouseenter의 차이를 다시 한 번 복습했다.</p></li><li><p>HEXO 테마를 바꿨다. 이제 정말 마지막이다!</p></li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;p&gt;####&lt;/p&gt;
-
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;h4 id=&quot;오늘-한-일&quot;&gt;&lt;a hr
       
     
     </summary>
