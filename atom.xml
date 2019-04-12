@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>수빈 개발블로그</title>
+  
+  <subtitle>Sub2n Blog</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://sub2n.github.io/"/>
+  <updated>2019-04-12T10:22:18.828Z</updated>
+  <id>https://sub2n.github.io/</id>
+  
+  <author>
+    <name>Subin</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>190412-TIL</title>
+    <link href="https://sub2n.github.io/2019/04/12/190412-TIL/"/>
+    <id>https://sub2n.github.io/2019/04/12/190412-TIL/</id>
+    <published>2019-04-12T10:21:12.000Z</published>
+    <updated>2019-04-12T10:22:18.828Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>190411-TIL</title>
+    <link href="https://sub2n.github.io/2019/04/11/190411-TIL/"/>
+    <id>https://sub2n.github.io/2019/04/11/190411-TIL/</id>
+    <published>2019-04-11T09:22:17.000Z</published>
+    <updated>2019-04-11T11:05:49.410Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><h3 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h3><ul><li>Web Cafe의 새소식 영역을 <code>&lt;section&gt;</code>과 <code>&lt;article&gt;</code>을 이용해 Markup 했다.</li></ul><figure><br>  <img src="https://user-images.githubusercontent.com/48080762/55950492-06c30180-5c90-11e9-929d-0bc80b3c8f8a.jpg" alt="새소식" width="400px"><br>  <figcaption>[Web Cafe 새소식 영역]</figcaption><br></figure><figure><br>  <img src="https://user-images.githubusercontent.com/48080762/55950705-79cc7800-5c90-11e9-806e-0d8d3fa840bf.jpg" alt="디자인" width="600px"><br>  <figcaption>[Markup Design]</figcaption><br></figure><pre><code class="html">&lt;!-- news section HTML Code --&gt;&lt;section class=&quot;news&quot;&gt;    &lt;h2 class=&quot;news-heading&quot;&gt;새소식&lt;/h2&gt;    &lt;article class=&quot;news-item&quot;&gt;        &lt;a href=&quot;#&quot;&gt;            &lt;h3 class=&quot;news-item-subject&quot;&gt;W3C 사이트가 리뉴얼 되었습니다.&lt;/h3&gt;            &lt;time class=&quot;news-item-date&quot; datetime=&quot;2019-04-11T11:19:37&quot;&gt;2019.04.11&lt;/time&gt;            &lt;p class=&quot;news-item-brief&quot;&gt;                디자인 및 다양한 view 환경을 고려하여 구성되어 있으며, 기존보다 최신 정보 및 개발자를 위한 기술 가이드도 찾기 쉽도록 구성되어 있습니다.             &lt;/p&gt;            &lt;figure class=&quot;news-item-thumbnail&quot;&gt;                &lt;img src=&quot;images/news.gif&quot; alt=&quot;&quot;&gt;                &lt;figcaption&gt;W3C 리뉴얼&lt;/figcaption&gt;            &lt;/figure&gt;        &lt;/a&gt;    &lt;/article&gt;    &lt;a href=&quot;#&quot; class=&quot;news-more icon-plus&quot; target=&quot;_blank&quot;&gt;더보기&lt;/a&gt;&lt;/section&gt;</code></pre><p>: 처음으로 <code>&lt;article&gt;</code>과 <code>&lt;figure&gt;</code> tag를 써봤다. </p><p><code>&lt;section&gt;</code> 내에 <code>&lt;article&gt;</code>을 nesting하는 것은 신문의 스포츠 섹션에 단일 기사를 싣는 것과 같다는 글을 읽어 이해가 쉬웠다.</p><p>Semantic HTML을 접하고 처음 <code>&lt;div&gt;</code> 범벅이던 코드를 만났을 때보다 훨씬 이해가 쉽고 직관적으로 구조를 짤 수 있게 된 기분이 든다.</p><blockquote><p>HTML5부터 inline인 <code>&lt;a&gt;</code> 안에 block 요소등을 넣을 수 있게 됐다. 그러나 focus를 받을 때 다음과 같은 문제가 생길 수 있다.</p></blockquote>  <figure><br>    <img src="https://user-images.githubusercontent.com/48080762/55951195-9e751f80-5c91-11e9-819a-d4b266881b50.png" alt width="400px"><br>    <figcaption>‘2019.04.11’이 inline인 time tag라서 그 부분이 들어간 모습</figcaption><br>  </figure><p>  이는 <code>&lt;a&gt;</code>의 display를 block으로 바꿔주면 해결할 수 있다.</p><ul><li>Image Replacing and Sprite</li></ul><p>웹 기초 수업 때 instagram 등 Social Media의 로고로 실습을 했던 Image Sprite 기법을 다시 한 번 적용해 Web Cafe 예제를 진행했다.</p><figure><br>  <img src="https://user-images.githubusercontent.com/48080762/55952063-a03fe280-5c93-11e9-816c-d909930a2baf.png" alt="Markup Design" width="570px"><br>  <figcaption>[신규 이벤트 &amp; 관련 사이트 영역]</figcaption><br></figure><figure><br>  <img src="https://user-images.githubusercontent.com/48080762/55951683-c9ac3e80-5c92-11e9-9f97-8095d0bc2fe5.jpg" alt="Markup Design" width="600px"><br>  <figcaption>[신규 이벤트 &amp; 관련 사이트 Design]</figcaption><br></figure><h4 id="Image-Replacement"><a href="#Image-Replacement" class="headerlink" title="Image Replacement"></a>Image Replacement</h4><p>:  image가 들어갈 영역의 크기를 지정해놓고, 해당 높이나 너비만큼 padding을 주고 overflow: hidden 처리를 한 후 image를 sprite로 처리한다.</p><h4 id="Image-Sprite"><a href="#Image-Sprite" class="headerlink" title="Image Sprite"></a>Image Sprite</h4><p>: server가 제공하는 image 최소화하기위해 한 image만 준비하고 background 위치 조정해서 보여주는 것</p><p>: 단점으로 <code>&lt;button&gt;</code>에 focus시 outline이 안 보이는 문제가 있었는데, ARIA를 사용해 role을 주고 button의 textnode를 삭제해 해결했다.</p><pre><code class="css">    .btn-event{        position: absolute;        top: 0;        right: 0;        height: 18px;        padding: 2px;    }    .btn-event-prev, .btn-event-next {        width: 19px;        height: 18px;        padding: 0;        border: none;        background-image: url(images/back_forward.png);        background-position: 0 0;    }    .btn-event-next{        background-position: 100% 0;    }</code></pre><h4 id="하루를-마무리-하며"><a href="#하루를-마무리-하며" class="headerlink" title="하루를 마무리 하며"></a>하루를 마무리 하며</h4><p>오늘 Semantic HTML과 tag의 효율성 등을 알아보다가 좋은 사이트를 알게 되었다. 많은 도움이 될 것으로 보여 기분이 좋다. 밑에 첨부한다.</p><p>HEXO 테마를 바꾸고 싶은데 마땅히 마음에 드는 게 없어 만들어볼까 생각중이다. 이번 주말을 활용해 알아봐야겠다.</p><hr><p>😊 <a href="https://internetingishard.com/html-and-css/semantic-html" target="_blank" rel="noopener">INTERNETING IS HARD</a> 😊</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;h3 id=&quot;오늘-한-일&quot;&gt;&lt;a hr
+      
+    
+    </summary>
+    
+    
+      <category term="HTML, CSS" scheme="https://sub2n.github.io/tags/HTML-CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>190410-TIL</title>
+    <link href="https://sub2n.github.io/2019/04/10/190410-TIL/"/>
+    <id>https://sub2n.github.io/2019/04/10/190410-TIL/</id>
+    <published>2019-04-10T09:10:37.000Z</published>
+    <updated>2019-04-10T09:56:55.377Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><h4 id="오늘-한-일-🌷"><a href="#오늘-한-일-🌷" class="headerlink" title="오늘 한 일 🌷"></a>오늘 한 일 🌷</h4><ul><li><p>LINEpluscorp 마크업을 다시 한 html에 header CSS 를 입혔다.</p></li><li><p>언어선택창에 Tab, Click event를 적용했다.</p><p><img src="https://user-images.githubusercontent.com/48080762/55868868-4a4e3a80-5bc0-11e9-93e5-8714a20f3f49.png" alt="190410"></p><pre><code class="html">&lt;div class=&quot;language&quot;&gt;  &lt;button class=&quot;btn-language&quot;&gt;한국어&lt;/button&gt;  &lt;ul class=&quot;language-list&quot;&gt;      &lt;li class=&quot;language-item&quot; tabindex=&quot;0&quot;&gt;&lt;a href=&quot;#&quot; tabindex=&quot;-1&quot;&gt;English&lt;/a&gt;&lt;/li&gt;      &lt;li class=&quot;language-item&quot; tabindex=&quot;0&quot;&gt;&lt;a href=&quot;#&quot; tabindex=&quot;-1&quot;&gt;日本語&lt;/a&gt;&lt;/li&gt;      &lt;li class=&quot;language-item&quot; tabindex=&quot;0&quot;&gt;&lt;a href=&quot;#&quot; tabindex=&quot;-1&quot;&gt;한국어&lt;/a&gt;&lt;/li&gt;      &lt;li class=&quot;language-item&quot; tabindex=&quot;0&quot;&gt;&lt;a href=&quot;#&quot; tabindex=&quot;-1&quot;&gt;中文(繁體)&lt;/a&gt;&lt;/li&gt;      &lt;li class=&quot;language-item&quot; tabindex=&quot;0&quot;&gt;&lt;a href=&quot;#&quot; tabindex=&quot;-1&quot;&gt;中文(简体)&lt;/a&gt;&lt;/li&gt;      &lt;li class=&quot;language-item&quot; tabindex=&quot;0&quot;&gt;&lt;a href=&quot;#&quot; tabindex=&quot;-1&quot;&gt;ภาษาไทย&lt;/a&gt;&lt;/li&gt;  &lt;/ul&gt;&lt;/div&gt;</code></pre><pre><code class="java">  var buttonLang = $(&#39;.btn-language&#39;);  var listLang = $(&#39;.language-list&#39;);  // language button click event  buttonLang.on(&#39;click keyup&#39;, function(e){      if(e.keyCode === 9){          listLang.parent().addClass(&#39;language-act&#39;);      }      else{          // tab 아니고 click 됐을 떄          listLang.parent().toggleClass(&#39;language-act&#39;);      }  });  // event capturing &amp; bubbling  // div.language 외의 영역 click시 닫기  document.addEventListener(&quot;click&quot;, function(e) {      console.log(e);      if (!e.path.includes(document.querySelector(&quot;.language&quot;))) {          listLang.parent().removeClass(&#39;language-act&#39;);      }  });  // div.language 외의 영역에 tab key 눌리면 닫기  document.addEventListener(&quot;keyup&quot;, function(e){      if(e.keyCode === 9){          if (!e.path.includes(document.querySelector(&quot;.language&quot;))) {              listLang.parent().removeClass(&#39;language-act&#39;);          }      }  });</code></pre></li><li><p>Header에 mouseenter, mouseleave event를 적용했다.<br>: flex를 쓰지 않고 해보고 싶었는데 결국 flex를 적용한 채 오늘은 마무리했다.</p><p><img src="https://user-images.githubusercontent.com/48080762/55868869-4a4e3a80-5bc0-11e9-9171-7e6bb4ef9529.png" alt="190410_"></p></li></ul><pre><code class="html">    &lt;nav class=&quot;navigation&quot;&gt;      &lt;ul class=&quot;menu&quot;&gt;          &lt;li class=&quot;menu-item menu-item1 menu-act&quot;&gt;              &lt;a href=&quot;#&quot;&gt;회사소개&lt;/a&gt;              &lt;ul class=&quot;sub-menu submenu1&quot;&gt;                  &lt;li class=&quot;sub-menu-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;회사소개&lt;/a&gt;&lt;/li&gt;                  &lt;li class=&quot;sub-menu-item&quot;&gt;                      &lt;a href=&quot;#&quot;&gt;LINE&#39;s Mission&lt;/a&gt;                      &lt;ul class=&quot;mission-menu&quot;&gt;                          &lt;li class=&quot;mission-menu-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;MISSION&lt;/a&gt;&lt;/li&gt;                          &lt;li class=&quot;mission-menu-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;LINE STYLE&lt;/a&gt;&lt;/li&gt;                          &lt;li class=&quot;mission-menu-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;LINE CODE&lt;/a&gt;&lt;/li&gt;                      &lt;/ul&gt;                  &lt;/li&gt;                  &lt;li class=&quot;sub-menu-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;LINE그룹 행동 규범&lt;/a&gt;&lt;/li&gt;                  &lt;li class=&quot;sub-menu-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;                  &lt;li class=&quot;sub-menu-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;LINE 로고 사용 가이드&lt;/a&gt;&lt;/li&gt;              &lt;/ul&gt;          &lt;/li&gt;          &lt;li class=&quot;menu-item&quot;&gt;              &lt;a href=&quot;#&quot;&gt;사업&lt;/a&gt;              &lt;ul class=&quot;sub-menu submenu2&quot;&gt;                  &lt;li class=&quot;sub-menu-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;서비스&lt;/a&gt;&lt;/li&gt;                  &lt;li class=&quot;sub-menu-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;서비스사업&lt;/a&gt;&lt;/li&gt;              &lt;/ul&gt;          &lt;/li&gt;          &lt;li class=&quot;menu-item&quot;&gt;              &lt;a href=&quot;#&quot;&gt;홍보&lt;/a&gt;              &lt;ul class=&quot;sub-menu submenu3&quot;&gt;                  &lt;li class=&quot;sub-menu-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Global News&lt;/a&gt;&lt;/li&gt;                  &lt;li class=&quot;sub-menu-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;기사 및 보도자료&lt;/a&gt;&lt;/li&gt;                  &lt;li class=&quot;sub-menu-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Blog &amp; SNS&lt;/a&gt;&lt;/li&gt;              &lt;/ul&gt;          &lt;/li&gt;          &lt;li class=&quot;menu-item&quot;&gt;              &lt;a href=&quot;#&quot;&gt;채용&lt;/a&gt;              &lt;ul class=&quot;sub-menu submenu4&quot;&gt;                  &lt;li class=&quot;sub-menu-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;일과 사람&lt;/a&gt;&lt;/li&gt;                  &lt;li class=&quot;sub-menu-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;채용공고&lt;/a&gt;&lt;/li&gt;              &lt;/ul&gt;          &lt;/li&gt;          &lt;li class=&quot;sitemap&quot;&gt;              &lt;a href=&quot;#&quot;&gt;SITEMAP&lt;/a&gt;          &lt;/li&gt;      &lt;/ul&gt;    &lt;/nav&gt;</code></pre><pre><code class="java">    var menuItem = $(&#39;.menu-item&#39;);    menuItem.on(&#39;mouseenter&#39;, function(){        menuItem.removeClass(&#39;menu-act&#39;);        $(this).addClass(&#39;menu-act&#39;);    });    menuItem.on(&#39;mouseleave&#39;, function(){        $(this).removeClass(&#39;menu-act&#39;);    });</code></pre><h4 id="새로-배운-것"><a href="#새로-배운-것" class="headerlink" title="새로 배운 것"></a>새로 배운 것</h4><ul><li><p>Event Capturing과 Bubbling으로 문제를 해결했다. 원리는 꼭 정리해놔야겠다!</p></li><li><p>한 기능을 구현하면 다른 기능이 문제가 생긴다. 아직 HTML과 CSS에 대한 이해가 부족한 것 같다.</p></li></ul><hr><p><a href="https://github.com/Sub2n/homework/tree/master/line_semantic" target="_blank" rel="noopener">🌷 More semantic LINE git</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;h4 id=&quot;오늘-한-일-🌷&quot;&gt;&lt;a
+      
+    
+    </summary>
+    
+      <category term="TID" scheme="https://sub2n.github.io/categories/TID/"/>
+    
+      <category term="LeetCode" scheme="https://sub2n.github.io/categories/LeetCode/"/>
+    
+      <category term="git" scheme="https://sub2n.github.io/categories/git/"/>
+    
+      <category term="HTML/CSS" scheme="https://sub2n.github.io/categories/HTML-CSS/"/>
+    
+      <category term="BootStrap" scheme="https://sub2n.github.io/categories/HTML-CSS/BootStrap/"/>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>190409-TIL</title>
+    <link href="https://sub2n.github.io/2019/04/09/190409-TIL/"/>
+    <id>https://sub2n.github.io/2019/04/09/190409-TIL/</id>
+    <published>2019-04-09T07:56:29.000Z</published>
+    <updated>2019-04-09T08:32:37.524Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><h4 id="오늘-배운-것"><a href="#오늘-배운-것" class="headerlink" title="오늘 배운 것"></a>오늘 배운 것</h4></li></ul><ul><li><p>tab menu 마크업 했다.</p></li><li><p>float, absolute, flex를 이용해서 여러가지로 마크업할 수 있다는 것을 알았다.</p></li><li><p>jQuery로 메뉴의 mouseover, focusin 등 event를 입혔다.</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;오늘-배
+      
+    
+    </summary>
+    
+      <category term="TID" scheme="https://sub2n.github.io/categories/TID/"/>
+    
+      <category term="LeetCode" scheme="https://sub2n.github.io/categories/LeetCode/"/>
+    
+      <category term="git" scheme="https://sub2n.github.io/categories/git/"/>
+    
+      <category term="HTML/CSS" scheme="https://sub2n.github.io/categories/HTML-CSS/"/>
+    
+      <category term="BootStrap" scheme="https://sub2n.github.io/categories/HTML-CSS/BootStrap/"/>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>190408-TIL</title>
+    <link href="https://sub2n.github.io/2019/04/08/190408-TIL/"/>
+    <id>https://sub2n.github.io/2019/04/08/190408-TIL/</id>
+    <published>2019-04-08T10:29:07.000Z</published>
+    <updated>2019-04-09T01:01:43.525Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><h4 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h4></li></ul><ul><li><p>⭐️ <code>&lt;dl&gt;</code> tag에 대해서 배웠다. </p><ul><li><code>&lt;dl&gt;</code> : Defines a definition list.</li><li><code>&lt;dt&gt;</code> : Defines a term/name in a description list.</li><li><p><code>&lt;dd&gt;</code> : Is used to describe a term/name in a description list.</p><p>Ø 원래 <code>&lt;dt&gt;</code>와<code>&lt;dd&gt;</code> 를 <code>&lt;div&gt;</code>로 묶으면 안 됐었는데 허용됨 </p><p>: 다만 맞는 <code>&lt;dt&gt;</code>를 설명하는 모든 <code>&lt;dd&gt;</code> 함께 묶어야 함.</p></li></ul></li><li><p>⭐️ Web Cafe 예제 중 배너와 검색영역을 Markup, 디자인 설계 했다.</p><p>&gt; 웹 관련 용어 배너 디자인 : float 사용<br><img src="https://user-images.githubusercontent.com/48080762/55720167-27464e00-5a3b-11e9-9b27-2245edf79e0e.png" alt="웹 관련 용어 배너"></p><p>&gt; Logical order and Markup design</p><p><img src="https://user-images.githubusercontent.com/48080762/55720168-27dee480-5a3b-11e9-807a-c6fd8a9ebec9.jpg" alt="Design practice(1)"><br><img src="https://user-images.githubusercontent.com/48080762/55720170-27dee480-5a3b-11e9-8227-038a7456ffc0.jpg" alt="Design practice(2)"><br><img src="https://user-images.githubusercontent.com/48080762/55720171-27dee480-5a3b-11e9-8b36-c1ed2ebd21b5.jpg" alt="Design practice(3)"></p></li><li><p>⭐️ LINEcorp 페이지 Markup을 처음부터 다시 했다.</p><p>디자인 관점이 아닌 컨텐츠 관점으로 논리적인 Markup 순서를 정하고 html과 CSS를 작성했다.</p></li></ul><ul><li><h4 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h4></li></ul><ul><li>경험이 부족해서인지 아직 content에 맞게 semantic한 tag를 생각해내는 게 어렵다.</li></ul><hr><p>👼 <a href="https://github.com/Sub2n/homework/tree/master/line_semantic" target="_blank" rel="noopener">More Semantic LINEpluscorp</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;오늘-한
+      
+    
+    </summary>
+    
+      <category term="TID" scheme="https://sub2n.github.io/categories/TID/"/>
+    
+      <category term="LeetCode" scheme="https://sub2n.github.io/categories/LeetCode/"/>
+    
+      <category term="git" scheme="https://sub2n.github.io/categories/git/"/>
+    
+      <category term="HTML/CSS" scheme="https://sub2n.github.io/categories/HTML-CSS/"/>
+    
+      <category term="BootStrap" scheme="https://sub2n.github.io/categories/HTML-CSS/BootStrap/"/>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>190406~07-TIL</title>
+    <link href="https://sub2n.github.io/2019/04/08/190406-07-TIL/"/>
+    <id>https://sub2n.github.io/2019/04/08/190406-07-TIL/</id>
+    <published>2019-04-08T00:47:04.000Z</published>
+    <updated>2019-04-09T07:55:56.783Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><h4 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h4></li></ul><ul><li><p>음수마진에 대해서 배웠다.</p></li><li><p>CSS grid framework에 대해서 배웠다.</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;오늘-한
+      
+    
+    </summary>
+    
+      <category term="TID" scheme="https://sub2n.github.io/categories/TID/"/>
+    
+      <category term="LeetCode" scheme="https://sub2n.github.io/categories/LeetCode/"/>
+    
+      <category term="git" scheme="https://sub2n.github.io/categories/git/"/>
+    
+      <category term="HTML/CSS" scheme="https://sub2n.github.io/categories/HTML-CSS/"/>
+    
+      <category term="BootStrap" scheme="https://sub2n.github.io/categories/HTML-CSS/BootStrap/"/>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>190405-TIL</title>
+    <link href="https://sub2n.github.io/2019/04/05/190405-TIL/"/>
+    <id>https://sub2n.github.io/2019/04/05/190405-TIL/</id>
+    <published>2019-04-05T08:26:47.000Z</published>
+    <updated>2019-04-05T08:36:11.004Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><h4 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h4></li></ul><ul><li><p>로그인 메뉴를 구성하는 form tag와 input의 여러 속성에 대해서 배웠다.</p></li><li><p>fieldset에 대해 처음 알았다.</p></li><li><p>접근성을 위해 label 과 input 을 bind 해야한다는 것을 알았다.</p></li><li><p>box-shadow, section에 heading하는 법을 알았다.</p></li></ul><ul><li><h4 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h4></li></ul><ul><li><p>오늘은 실습 위주의 수업이라 재미있었다.</p></li><li><p>하루종일 너무 많은 정보를 들어서 어지러운데 다 내 걸로 만들어야겠다!</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;오늘-한
+      
+    
+    </summary>
+    
+      <category term="TID" scheme="https://sub2n.github.io/categories/TID/"/>
+    
+      <category term="LeetCode" scheme="https://sub2n.github.io/categories/LeetCode/"/>
+    
+      <category term="git" scheme="https://sub2n.github.io/categories/git/"/>
+    
+      <category term="HTML/CSS" scheme="https://sub2n.github.io/categories/HTML-CSS/"/>
+    
+      <category term="BootStrap" scheme="https://sub2n.github.io/categories/HTML-CSS/BootStrap/"/>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>190404-TIL</title>
+    <link href="https://sub2n.github.io/2019/04/04/190404-TIL/"/>
+    <id>https://sub2n.github.io/2019/04/04/190404-TIL/</id>
+    <published>2019-04-04T11:33:55.000Z</published>
+    <updated>2019-04-04T11:52:26.278Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2></li><li><h4 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h4></li></ul><ul><li><p>주요 메뉴인  <code>&lt;nav&gt;</code>요소의 main menu를 마크업하고 CSS 디자인을 했다.</p></li><li><p>웹 접근성을 고려해서 submenu를 따로 ul로 분리하지 않고 menu-item인 li 안에 넣는 게 어려웠는데, 해결을 했다.</p></li><li><p>HTML5의 flex model을 공부했다. container와 item에 따로 주던 flex 속성 값들이 이해되지 않았는데 flex-direction과 justify-content, align-item과 align-content가 어떻게 다른지 정리했다.</p></li><li><p>어제 만들었던 LINEplus 홈페이지를 조금 수정했다. 접근성을 높이기 위해서 몇 몇 요소의 위치를 바꾸고, CSS로 배치를 했다.</p></li></ul><p>▶ <code>&lt;option&gt;</code> 안에는 <code>&lt;a&gt;</code>가 올 수 없다! Interactive요소 안에는 interactive 요소가 올 수 없다. a 안에 button 등</p><p>▶ W3 문서를 확인해보니 <code>&lt;h&gt;</code>안에 <code>&lt;a&gt;</code>가 오는 게 아니고 그 반대가 맞는 것 같다.</p><ul><li>CSS Animation에 대해서 배웠다. timing-function을 이용한 animation이 흥미로웠다. 이번 주말에 나도 한 번 만들어보고 싶다.</li></ul><p>▶ 참고 링크 : <a href="https://codepen.io/simurai/pen/tukwj" target="_blank" rel="noopener">steps를 이용한 애니메이션</a></p><ul><li><h4 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h4></li></ul><ul><li><p>HTML/CSS 수업을 3일 들었는데 지난 한 달간 궁금하던 점이 많이 해결되었다.</p></li><li><p>웹 표준을 준수하고 접근성을 높이기 위해서 고려해야할 게 한두가지가 아니다. 처음 배우는 HTML을 기초부터 제대로 하는 것 같아 좋다.</p></li><li><p>시간이 빠르게 가는 것 같아 아깝다. 요즘은 하루하루가 바쁜만큼 더 많이 알고 싶다는 욕심이 생긴다.</p></li></ul><hr><p>🐸 <a href="http://sub2n.dothome.co.kr/line/" target="_blank" rel="noopener">Modified Lineplus site</a> 🐸</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;&lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;/li&gt;
+&lt;li&gt;&lt;h
+      
+    
+    </summary>
+    
+      <category term="TID" scheme="https://sub2n.github.io/categories/TID/"/>
+    
+      <category term="LeetCode" scheme="https://sub2n.github.io/categories/LeetCode/"/>
+    
+      <category term="git" scheme="https://sub2n.github.io/categories/git/"/>
+    
+      <category term="HTML/CSS" scheme="https://sub2n.github.io/categories/HTML-CSS/"/>
+    
+      <category term="BootStrap" scheme="https://sub2n.github.io/categories/HTML-CSS/BootStrap/"/>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>190403-TIL</title>
+    <link href="https://sub2n.github.io/2019/04/03/190403-TIL/"/>
+    <id>https://sub2n.github.io/2019/04/03/190403-TIL/</id>
+    <published>2019-04-03T11:39:41.000Z</published>
+    <updated>2019-04-03T11:50:47.655Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><h4 id="오늘-한-일-amp-느낀-점"><a href="#오늘-한-일-amp-느낀-점" class="headerlink" title="오늘 한 일 &amp; 느낀 점"></a>오늘 한 일 &amp; 느낀 점</h4></li></ul><p>🍀 LINEplus 홈페이지를 Markup해보는 시간을 가졌다.</p><p>  홈페이지를 선형화하고, semantic하게 요소를 정하고 class 이름을 짓는 것만 해도 머리가 아팠다.</p><p>  data를 다루는 function들은 그 관계를 정의하고 흐름을 파악하기가 쉬운데, Markup은 당장 이런 요소를 쓰면 되겠다고 생각을 해도 아직은 머릿속에 바로 그려지지가 않는다.</p><p>🍀 3월에 일주일간 진행했던 프로젝트 발표 시간을 가졌다.</p><p>  다들 열심이 만들어서 동기부여가 됐다.</p><p>🍀 오전에 flex에 대해서 공부했다.</p><p>  과제를 하느라 배운 걸 다 정리하지 못해서 내일 아침에 마저 정리할 예정이다.</p><hr><p>🐾 <a href="&#39;http://sub2n.dothome.co.kr/line/">My linepluscorp markup page</a> 🐾</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;오늘-한
+      
+    
+    </summary>
+    
+      <category term="TID" scheme="https://sub2n.github.io/categories/TID/"/>
+    
+      <category term="LeetCode" scheme="https://sub2n.github.io/categories/LeetCode/"/>
+    
+      <category term="git" scheme="https://sub2n.github.io/categories/git/"/>
+    
+      <category term="HTML/CSS" scheme="https://sub2n.github.io/categories/HTML-CSS/"/>
+    
+      <category term="BootStrap" scheme="https://sub2n.github.io/categories/HTML-CSS/BootStrap/"/>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>190402-TIL</title>
+    <link href="https://sub2n.github.io/2019/04/02/190402-TIL/"/>
+    <id>https://sub2n.github.io/2019/04/02/190402-TIL/</id>
+    <published>2019-04-02T11:20:29.000Z</published>
+    <updated>2019-04-11T10:26:16.771Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><h4 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h4></li></ul><ul><li><p>CSS의 기초 문법, 상속과 겹침 그리고 우선순위에 대해 배웠다.</p><ol><li><p>상속(Inheritance)<br>: 부모에게 적용한 style이 자식에게 적용되는 것<br>: 영역에 관한 속성이 아닌 꾸미기 속성 등이 상속된다.</p></li><li><p>겹침(Cascading)<br>: 하나의 element에 여러 style이 겹쳐질 수 있다.<br>: 우선순위가 같을 경우 가장 밑의 style이 적용된다.</p></li><li><p>우선순위<br>: 각각 selector마다 가진 우선순위가 다름</p></li></ol></li><li><p>정적블로그 특강 : jekyll을 이용해 블로그 만들기<br>: 나는 지금 hexo를 이용해서 블로깅을 하고 있는데 jekyll에 대해서도 배웠다.</p></li></ul><ul><li><h4 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h4></li></ul><ul><li><p>의미있는 태그. Semantic Markup이 중요함을 점점 더 느낀다. </p></li><li><p>Web Accessibility를 고려하면 간단한 화면 배치도 간단하지 않다. Markup은 공부할수록 깊이있는 언어같다. 객체지향언어에서 class를 의미있고 효율적으로 짜는 데에도 관심이 많았기 때문에 이 부분을 잘 살려서 코딩을 하고 싶다.</p></li><li><p>hexo를 계속 이용하기로 했다. 익숙하기도 하고, 나중에 내가 테마를 조금씩 수정하거나 만들고 싶다.</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;오늘-한
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>190401 TIL</title>
+    <link href="https://sub2n.github.io/2019/04/01/190401-TIL/"/>
+    <id>https://sub2n.github.io/2019/04/01/190401-TIL/</id>
+    <published>2019-04-01T09:55:33.000Z</published>
+    <updated>2019-04-01T10:08:06.293Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><h4 id="오늘-배운-것"><a href="#오늘-배운-것" class="headerlink" title="오늘 배운 것"></a>오늘 배운 것</h4></li></ul><p>오늘부터 4주간 HTML/CSS를 새로 배운다. 첫 수업이었는데 많은 것을 새롭게 알았다.</p><ul><li><p>웹 접근성과 웹 표준이 무엇이며 얼마나 중요한지, 개발자에 자세에 대해서 배웠다.</p></li><li><p>HTML5의 역사와 특징에 대해 다시 한 번 배웠다.</p></li><li><p>Web page 제작을 위한 단계를 배웠다.</p><ol><li>선형화(layout) 단계 : design이 아닌 논리적 구조를 linearize</li><li>Semantic Element : <code>&lt;div&gt;</code>만 사용하는 것이 아니라 <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;article&gt;</code> 등 사용</li><li>Naming : element naming and grouping</li></ol></li><li><p>편리한 Emmet Cheatsheet를 알았다. 진짜 편하다!</p></li><li><p>CSS Box Model : content-box(defualt)와 border-box의 차이점을 알았다.</p></li><li><p>flex를 이용해서 layout을 잡는 것과, 호환되지 않을 때를 대비하여 float를 이용하는 방법을 여러 case를 통해서 배웠다.</p></li><li><p>Margin collapsing, clear: both 등 float CSS trick들을 배웠다.</p></li><li><h4 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h4></li></ul><p>지난 한달 간 나에게 가장 어려운 건 javascript보다는 HTML/CSS로 layout을 잡는 것이었는데, 내 생각대로 요소들이 배치되지 않았기 때문이다. </p><p>수업에서 CSS의 여러 속성들과 기능을 배우면서 왜 그렇게 되지 않았는지 알게 되었다. flex와 float는 확실히 공부하고 넘어가야겠다.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;오늘-배
+      
+    
+    </summary>
+    
+      <category term="TID" scheme="https://sub2n.github.io/categories/TID/"/>
+    
+      <category term="LeetCode" scheme="https://sub2n.github.io/categories/LeetCode/"/>
+    
+      <category term="git" scheme="https://sub2n.github.io/categories/git/"/>
+    
+      <category term="HTML/CSS" scheme="https://sub2n.github.io/categories/HTML-CSS/"/>
+    
+      <category term="BootStrap" scheme="https://sub2n.github.io/categories/HTML-CSS/BootStrap/"/>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>190330~31 TIL</title>
+    <link href="https://sub2n.github.io/2019/04/01/190330-31-TIL/"/>
+    <id>https://sub2n.github.io/2019/04/01/190330-31-TIL/</id>
+    <published>2019-04-01T09:55:17.000Z</published>
+    <updated>2019-04-01T09:57:39.109Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><h4 id="토요일에-특강을-들었다"><a href="#토요일에-특강을-들었다" class="headerlink" title="토요일에 특강을 들었다."></a>토요일에 특강을 들었다.</h4></li></ul><p>실제로 현업에서 개발을 어떻게 하는지,</p><p>개발 방법에는 Waterfall보다 Agile를 많이 쓰는 추세라는 것을 알았다.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;토요일에
+      
+    
+    </summary>
+    
+      <category term="TID" scheme="https://sub2n.github.io/categories/TID/"/>
+    
+      <category term="LeetCode" scheme="https://sub2n.github.io/categories/LeetCode/"/>
+    
+      <category term="git" scheme="https://sub2n.github.io/categories/git/"/>
+    
+      <category term="HTML/CSS" scheme="https://sub2n.github.io/categories/HTML-CSS/"/>
+    
+      <category term="BootStrap" scheme="https://sub2n.github.io/categories/HTML-CSS/BootStrap/"/>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>190329-TIL</title>
+    <link href="https://sub2n.github.io/2019/03/29/190329-TIL/"/>
+    <id>https://sub2n.github.io/2019/03/29/190329-TIL/</id>
+    <published>2019-03-29T14:34:40.000Z</published>
+    <updated>2019-03-29T14:40:14.932Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><h4 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h4></li></ul><p>jQeury 플러그인을 통해 Diary 화면의 배경에 ripples 효과를 줬다. 50px정도 여백에 효과가 적용되지 않는 문제가 있어 body background에 효과를 주는 것으로 해결했다.</p><p>알고리즘 스터디에서 Longest Common Prefix 문제를 다시 한 번 훑어보았다.</p><p>프로젝트 페이지의 폰트와 버튼 hover event 등을 추가하고 마무리했다.</p><ul><li><h4 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h4></li></ul><p>프로젝트를 하며 겪었던 자잘한 문제들과 해결방법을 정리해두어야겠다.</p><p>첫 팀 프로젝트는 생각보다 재미있었다. 해결하지 못할 문제는 없다는 것을 다시 한 번 알았다.</p><hr><p>✨ <a href="http://sub2n.dothome.co.kr/myHealthDiary/" target="_blank" rel="noopener">My Health Diary</a> ✨</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;오늘-한
+      
+    
+    </summary>
+    
+      <category term="TID" scheme="https://sub2n.github.io/categories/TID/"/>
+    
+      <category term="LeetCode" scheme="https://sub2n.github.io/categories/LeetCode/"/>
+    
+      <category term="git" scheme="https://sub2n.github.io/categories/git/"/>
+    
+      <category term="HTML/CSS" scheme="https://sub2n.github.io/categories/HTML-CSS/"/>
+    
+      <category term="BootStrap" scheme="https://sub2n.github.io/categories/HTML-CSS/BootStrap/"/>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>190328-TIL</title>
+    <link href="https://sub2n.github.io/2019/03/28/190328-TIL/"/>
+    <id>https://sub2n.github.io/2019/03/28/190328-TIL/</id>
+    <published>2019-03-28T12:27:45.000Z</published>
+    <updated>2019-03-28T12:34:36.253Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><h4 id="오늘-배운-것"><a href="#오늘-배운-것" class="headerlink" title="오늘 배운 것"></a>오늘 배운 것</h4></li></ul><p>프로젝트의 모든 정보를 localStorage에 load하고 save하는 기능을 끝냈다. 점점 객체와 배열을 다루는 방법이 익숙해진다. 어렵던 select의 option value와 option:selected).text도 잘 알았다.</p><p>디자인을 수정하고 메인 페이지를 full video background로 설정했다.</p><p>알고리즘 스터디에서 Array.reduce와 eval method를 새로 알았다. 주말에 더 공부 해야겠다.</p><p>LeetCode 중 Medium <a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" target="_blank" rel="noopener">3. Longest Substring Without Repeating Characters</a> 문제를 풀었다. 오랜만에 새로운 알고리즘 문제를 푸니 재미있었다.</p><p>LeetCode에 console.log를 찍어 stdout을 확인할 수 있다는 것을 처음 알았다. 앞으로 자주 사용해야겠다.</p><p>프로젝트가 마무리되며 볼만해진다. 공공 데이터 포탈에서 제공하는 미세먼지 API를 사용해 메인 페이지에 마스크 사용여부를 알려주고 싶었는데 낮에 신청한 직후에는 잘 안 됐다.</p><p>그런데 밤에 해보니까 결과가 나와서 내일 다시 시도해볼 예정이다.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;오늘-배
+      
+    
+    </summary>
+    
+      <category term="TID" scheme="https://sub2n.github.io/categories/TID/"/>
+    
+      <category term="LeetCode" scheme="https://sub2n.github.io/categories/LeetCode/"/>
+    
+      <category term="git" scheme="https://sub2n.github.io/categories/git/"/>
+    
+      <category term="HTML/CSS" scheme="https://sub2n.github.io/categories/HTML-CSS/"/>
+    
+      <category term="BootStrap" scheme="https://sub2n.github.io/categories/HTML-CSS/BootStrap/"/>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>190327-TIL</title>
+    <link href="https://sub2n.github.io/2019/03/27/190327-TIL/"/>
+    <id>https://sub2n.github.io/2019/03/27/190327-TIL/</id>
+    <published>2019-03-27T10:12:11.000Z</published>
+    <updated>2019-03-27T10:21:47.922Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><h4 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h4><p>프로젝트</p><ol start="5"><li><p>clickSaveButton() -&gt; saveHealth() : 운동 영상의 상세 페이지에서 운동 기록 저장 버튼을 클릭시 해당 운동의 이름이 localStorage에 저장된다.</p></li><li><p>showDiary() : 운동 기록을 저장한 후 반영된 페이지로 이동한다.</p></li><li><p>clickMyHealthButton() -&gt; showMyHealthPop() : 나의 운동 버튼 클릭시 사용자 정의 운동을 입력하고 저장할 수 있는 페이지를 팝업으로 띄운다. </p></li><li><p>clickSaveButton() -&gt; showSavedPage() : 팝업 창에서 운동 이름, youtube 주소, 운동 부위와 종류를 입력하면 기록이 localStorage에 저장된다.</p></li></ol><p>외에도 알고리즘 스터디를 했다. 나는 5개 정도 문제를 미리 풀어놔서 복습하는 개념으로, 다른 사람들의 풀이에서 많은 걸 배우고 있다.</p></li></ul><ul><li><h4 id="배운-것"><a href="#배운-것" class="headerlink" title="배운 것"></a>배운 것</h4></li></ul><p>! 어떤 element를 클릭하고 새로 뜬 창에서 어떤 버튼을 눌렀을 때 맨 처음 element 값 전달하고 싶을 때는 button의 attr에 data-key 같은 식으로 정보를 전달해준다.</p><pre><code>    $(&#39;div.workout&#39;).click(function(){      //showWorkoutDetail      var key = this.id;      var workout = workouts[key];      var id = workout[&#39;YT_id&#39;];      $(&#39;#saveHealthButton&#39;).attr(&#39;data-key&#39;,key);      $(&#39;#popModal&#39;).modal(&#39;show&#39;);      $(&#39;#popTitle&#39;).text(workout[&#39;name&#39;]);      console.log(id);      player = new YT.Player(&#39;player&#39;, {        height: &#39;300&#39;,        width: &#39;450&#39;,        videoId: id,        events: {          &#39;onReady&#39;: onPlayerReady,          &#39;onStateChange&#39;: onPlayerStateChange        }      });     });    $(&#39;#saveHealthButton&#39;).click(function(){      console.log($(this).attr(&#39;data-key&#39;));//잘 뜸!!      saveWorkout();    });</code></pre><p>! 외부 API를 사용하는 것은 어렵다. 조금만 수정하려고 해도 내 마음처럼 되지 않는다. 경험을 늘려야겠다.</p><p>운동 영상 썸네일 클릭시 Modal을 띄워 해당 운동 영상을 보여주려고 했는데, iframe을 사용하지 않고 new YT_player로 player를 만드는 API를 사용했더니 맨 처음 생성된 player만 뜨는 문제가 있었다. </p><p>구글 검색으로 해결했다! </p><blockquote><p>Modal show event마다 내가 원하는 youtube 보여주기!!</p></blockquote><h2 id="How-to-embed-YouTube-video-in-Bootstrap-modal"><a href="#How-to-embed-YouTube-video-in-Bootstrap-modal" class="headerlink" title="How to embed YouTube video in Bootstrap modal"></a>How to embed YouTube video in Bootstrap modal</h2><h3 id="Answer-Insert-YouTube-Code-inside-Modal-Body"><a href="#Answer-Insert-YouTube-Code-inside-Modal-Body" class="headerlink" title="Answer: Insert YouTube Code inside Modal Body"></a>Answer: Insert YouTube Code inside Modal Body</h3><p><a href="https://www.tutorialrepublic.com/faq/how-to-embed-youtube-video-inside-bootstrap-modal.php" target="_blank" rel="noopener">https://www.tutorialrepublic.com/faq/how-to-embed-youtube-video-inside-bootstrap-modal.php</a></p><p>! javaScript에서는 Array.length, String.length로 둘 다 뒤에 ()를 붙이지 않는다. java와 헷갈리지 말자.</p><ul><li><h4 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h4></li></ul><p>프로젝트 기획 때 Use Case와 Communication을 잘 정리하고 나니 그 때 명세한 기능을 구현하기만 돼서 편하다. 순서대로 구현을 하니 딱히 커다란 문제가 생기지 않았다.</p><p>소프트웨어 공학 시간에도 그렇지만 다시 한 번 디자인이 중요하다고 느꼈다.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;오늘-한
+      
+    
+    </summary>
+    
+      <category term="TID" scheme="https://sub2n.github.io/categories/TID/"/>
+    
+      <category term="LeetCode" scheme="https://sub2n.github.io/categories/LeetCode/"/>
+    
+      <category term="git" scheme="https://sub2n.github.io/categories/git/"/>
+    
+      <category term="HTML/CSS" scheme="https://sub2n.github.io/categories/HTML-CSS/"/>
+    
+      <category term="BootStrap" scheme="https://sub2n.github.io/categories/HTML-CSS/BootStrap/"/>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>190326-TIL</title>
+    <link href="https://sub2n.github.io/2019/03/26/190326-TIL/"/>
+    <id>https://sub2n.github.io/2019/03/26/190326-TIL/</id>
+    <published>2019-03-26T11:47:02.000Z</published>
+    <updated>2019-03-26T11:54:16.542Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><h4 id="프로젝트-진행-중"><a href="#프로젝트-진행-중" class="headerlink" title="프로젝트 진행 중!"></a>프로젝트 진행 중!</h4></li></ul><ul><li><p>무식하면 몸이 고생한다를 뼈저리게 느끼고 있다. 백엔드가 없고 DB를 관리할 수가 없어서 리소스와 데이터를 수동으로 정리해 폴더에 넣는 작업을 했다.</p></li><li><p>Dictionary가 익숙해질수록 편하게 쓰고 있다.</p></li></ul><ul><li><h4 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h4><ol><li><p>운동 부위, 종류에 따른 youtube 동영상 주소(고유주소ID, 썸네일, 이름) 모으고 각 selector로 사용할 id 부여 (upper_weight_1 등)<br>: Load할 때마다 workouts 먼저 그려놓고 숨겨놓음</p><ol start="2"><li>selectBodyPart() -&gt; showHealthList() : Health Option select 조건에 따라 분류해놓은 운동 영상을 보이게 한다.</li></ol></li><li><p>selectHealthType() -&gt; showHealthList() : Health Option select 조건에 따라 분류해놓은 운동 영상을 보이게 한다.</p></li><li><p>clickHealth() -&gt; showHealthDetail(id) : div에 배치된 운동 영상 클릭시 해당 영상의 상세 페이지를 팝업으로 띄운다.</p></li></ol></li><li><h4 id="배운-것"><a href="#배운-것" class="headerlink" title="배운 것"></a>배운 것</h4></li></ul><p>Dictionary key값이 string일 때는 Dict[‘key’] 잊지 말기!!!!</p><blockquote><p>계속 ‘’ 를 잊어버린다.</p></blockquote><p>var today = new Date().toISOString().slice(2, 10);</p><blockquote><p>날짜를 19-03-26 형식으로 만들어준다!!!!</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;프로젝트
+      
+    
+    </summary>
+    
+      <category term="TID" scheme="https://sub2n.github.io/categories/TID/"/>
+    
+      <category term="LeetCode" scheme="https://sub2n.github.io/categories/LeetCode/"/>
+    
+      <category term="git" scheme="https://sub2n.github.io/categories/git/"/>
+    
+      <category term="HTML/CSS" scheme="https://sub2n.github.io/categories/HTML-CSS/"/>
+    
+      <category term="BootStrap" scheme="https://sub2n.github.io/categories/HTML-CSS/BootStrap/"/>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>190325-TIL</title>
+    <link href="https://sub2n.github.io/2019/03/25/190325-TIL/"/>
+    <id>https://sub2n.github.io/2019/03/25/190325-TIL/</id>
+    <published>2019-03-25T11:47:41.000Z</published>
+    <updated>2019-03-25T11:54:43.404Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><h4 id="웹-애플리케이션-프로젝트"><a href="#웹-애플리케이션-프로젝트" class="headerlink" title="웹 애플리케이션 프로젝트"></a>웹 애플리케이션 프로젝트</h4><p>오늘부터 5일간 팀원들과 함께 프로젝트를 진행한다. 간단한 프론트 기초 지식만 배운 상태에서 완벽한 애플리케이션을 만들기에는 부족함이 있지만 오늘 기획단계를 끝냈다.<br>백엔드가 없어 데이터를 localStorage에 저장하고 불러올 예정이다. 회원가입과 로그인 기능도 뺐다.</p><p>디자인을 위해 전공 소프트웨어 공학 수업시간에 배운 Use Case Diagram, step-by-step Description, Communication Diagram을 작성해 기능들을 나눴다.</p><p>우리는 식단, 운동을 제공하고 사용자가 날짜별로 건강관리를 기록할 수 있는 프로그램을 만들 예정이다.</p><p>나는 운동 부위(상체, 복근, 하체, 전신)와 운동 종류(근력, 유산소, 스트레칭)에 따른 Youtube 운동 영상을 미리 수집해 분류한 후 사용자의 Option 선택에 따라 운동 영상을 제시하는 기능을 맡았다. 사용자는 또한 운동 기록을 저장하고 관리할 수 있다.</p><p>오늘은 전체적인 프로그램 디자인과 html 레이아웃을 마쳤다. Youtube API를 잠깐 써봤는데 생각보다 어렵지 않을 것 같다.</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;웹-애플
+      
+    
+    </summary>
+    
+      <category term="TID" scheme="https://sub2n.github.io/categories/TID/"/>
+    
+      <category term="LeetCode" scheme="https://sub2n.github.io/categories/LeetCode/"/>
+    
+      <category term="git" scheme="https://sub2n.github.io/categories/git/"/>
+    
+      <category term="HTML/CSS" scheme="https://sub2n.github.io/categories/HTML-CSS/"/>
+    
+      <category term="BootStrap" scheme="https://sub2n.github.io/categories/HTML-CSS/BootStrap/"/>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>190322~24 TIL</title>
+    <link href="https://sub2n.github.io/2019/03/24/190322-24-TIL/"/>
+    <id>https://sub2n.github.io/2019/03/24/190322-24-TIL/</id>
+    <published>2019-03-24T00:49:23.000Z</published>
+    <updated>2019-03-24T01:30:59.069Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><h4 id="배운-것"><a href="#배운-것" class="headerlink" title="배운 것"></a>배운 것</h4><ul><li>LeetCode <a href="https://leetcode.com/problems/longest-common-prefix/" target="_blank" rel="noopener">14. Longest Common Prefix</a>를 풀었다.</li></ul><p>: 쉬운 문제를 이틀에 걸쳐 풀었는데, javaScript에 String method 중 유용한 indexOf()라는 method가 있다는 것을 알았다. C++에서부터 나는 문자열을 다루는 데에 익숙하지 않다.</p><ul><li>var의 scope와 javaScript의 Hoisting에 대해 배웠다.</li></ul><h5 id="var-let-const"><a href="#var-let-const" class="headerlink" title="var, let, const"></a>var, let, const</h5><p>: var는 function-scoped고, let이나 const는 block-scoped이다.</p><p>: let은 재할당이 가능, 선언한 이후에 할당할 수 있는 반면 const는 선언과 동시에 값을 할당하여야 하고 그 값을 변경시킬 수 없다. (C처럼)</p><h5 id="Hoisting"><a href="#Hoisting" class="headerlink" title="Hoisting"></a>Hoisting</h5><p>: hoisting은 끌어올린다는 뜻이다. 자바스크립트에서는 변수가 끌어올려진다. 이 때, 변수의 선언은 hoist되지만 할당부(값)는 hoist되지 않는다. 즉 함수의 선언은 hoist되지만 변수의 값으로 선언한 함수는 hoist되지 않는다.</p></li></ul><blockquote><p>그래서 for문에서 var i =0으로 선언한 후 함수 종료 후에 i를 부르면 정의되지 않았다고 뜬다. 그러나 var i가 아니라 그냥 i=0 로 선언하면 i가 hoisting되어 global variable이 된다.</p></blockquote><ul><li><h4 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h4><p>scope와 hoisting 등 javaScript를 공부하니 그동안 아무 것도 모르는 상태에서 이것저것 만들어 보면서, 이해되지 않던 오류들이 조금씩 이해되기 시작했다.</p><p>어쩌다보니 LeetCode 알고리즘을 스터디로 함께 풀게 됐다. 어려명과 함께 공부하는 건 처음이지만 배울 점이 많을 거라고 생각한다.</p><p>indexOf() 등 여러 javaScript String 관련 method를 접할 때마다 정리하고 활용할 수 있도록 해야겠다.</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;배운-것
+      
+    
+    </summary>
+    
+      <category term="TID" scheme="https://sub2n.github.io/categories/TID/"/>
+    
+      <category term="LeetCode" scheme="https://sub2n.github.io/categories/LeetCode/"/>
+    
+      <category term="git" scheme="https://sub2n.github.io/categories/git/"/>
+    
+      <category term="HTML/CSS" scheme="https://sub2n.github.io/categories/HTML-CSS/"/>
+    
+      <category term="BootStrap" scheme="https://sub2n.github.io/categories/HTML-CSS/BootStrap/"/>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>190321-TIL</title>
+    <link href="https://sub2n.github.io/2019/03/21/190321-TIL/"/>
+    <id>https://sub2n.github.io/2019/03/21/190321-TIL/</id>
+    <published>2019-03-21T14:15:49.000Z</published>
+    <updated>2019-03-21T14:43:20.866Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><h4 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h4><ul><li>Naver Maps API를 이용한 맛집 리뷰 어플리케이션</li></ul><p>: Naver가 제공하는 Naver Maps API를 이용해 웹에 지도를 띄우고, 다음 우편번호 서비스로 주소를 입력받아 해당 주소의 좌표에 마커를 찍는다.</p><p>: 마커를 클릭했을 때 리뷰가 없다면 리뷰를 등록하고, 이미 리뷰가 등록됐다면 등록된 리뷰를 infoWindow로 보여준다.</p><p>: 어려웠던 점! for문 내에서 marker객체와 infoWindow 객체를 각각 만들어 addEvent를 해주면 scope 문제로 마지막 이벤트 리스너만 살아남게 된다. 정확한 내용은 공부를 더 해야 알겠지만 우선 forEach문으로 해결했다. </p><ul><li>참고한 페이지에서는 let으로 선언(block-scoping)해도 된다고 한다.</li></ul><ul><li><p>어제 배운 git fork &amp; merge를 이용해 팀원들과 협업을 했다.</p></li><li><p>패스트캠퍼스 수료생 선배들과 티타임을 가지며 개발자가 되기 위한 과정에 대해서 들었다. 꾸준히 열심히 하고 모르는 것을 넘어가지 않는 게 중요한 것 같다.</p></li></ul></li></ul><hr><p>맛집 리뷰페이지 ▶ <a href="https://github.com/midalee/food_collabo" target="_blank" rel="noopener">🍩 Yummy 🍩</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;오늘-한
+      
+    
+    </summary>
+    
+      <category term="TID" scheme="https://sub2n.github.io/categories/TID/"/>
+    
+      <category term="LeetCode" scheme="https://sub2n.github.io/categories/LeetCode/"/>
+    
+      <category term="git" scheme="https://sub2n.github.io/categories/git/"/>
+    
+      <category term="HTML/CSS" scheme="https://sub2n.github.io/categories/HTML-CSS/"/>
+    
+      <category term="BootStrap" scheme="https://sub2n.github.io/categories/HTML-CSS/BootStrap/"/>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>190320-TIL</title>
+    <link href="https://sub2n.github.io/2019/03/20/190320-TIL/"/>
+    <id>https://sub2n.github.io/2019/03/20/190320-TIL/</id>
+    <published>2019-03-20T11:34:58.000Z</published>
+    <updated>2019-03-20T11:42:06.305Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><h4 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h4><ul><li><p>HTML, CSS, JS의 전체적인 개념을 복습했다.</p></li><li><p>git 으로 협업하기를 배웠다.</p></li><li><p>git flow를 이용해 branch를 만들고 작업, merge를 쉽게 하는 방법에 대해서도 공부했다.</p></li><li><p>Fork &amp; Merge를 이용해서 여러명과 협업하고 repo에 contribute하는 방법을 새로 알았다.</p></li></ul></li><li><h4 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h4><ul><li><p>몸이 안 좋아 알고리즘 문제 하나를 다 풀지 못했다. 하루종일 집중력 저하로 충전의 필요성을 느꼈다.</p></li><li><p>git은 여러명과 프로젝트를 진행하며 불편했던 점들을 한 번에 해소해주는 느낌이었다. 더이상 카카오톡이나 텍스트파일로 코드를 주고받고 일일히 합치지 않아도 된다는 점이 굉장히 매력적으로 다가왔다. 자주 이용해 손에 익도록 만들어야겠다.</p></li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;오늘-한
+      
+    
+    </summary>
+    
+      <category term="TID" scheme="https://sub2n.github.io/categories/TID/"/>
+    
+      <category term="LeetCode" scheme="https://sub2n.github.io/categories/LeetCode/"/>
+    
+      <category term="git" scheme="https://sub2n.github.io/categories/git/"/>
+    
+      <category term="HTML/CSS" scheme="https://sub2n.github.io/categories/HTML-CSS/"/>
+    
+      <category term="BootStrap" scheme="https://sub2n.github.io/categories/HTML-CSS/BootStrap/"/>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+</feed>
