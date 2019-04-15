@@ -96,7 +96,7 @@
 
 
 <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/prism-darcula.css" type="text/css"></head>
+</head>
 <body class="is-3-column">
     <nav class="navbar navbar-main">
     <div class="container">
@@ -196,35 +196,8 @@
 <li><h4 id="배운-것"><a href="#배운-것" class="headerlink" title="배운 것"></a>배운 것</h4></li>
 </ul>
 <p>! 어떤 element를 클릭하고 새로 뜬 창에서 어떤 버튼을 눌렀을 때 맨 처음 element 값 전달하고 싶을 때는 button의 attr에 data-key 같은 식으로 정보를 전달해준다.</p>
-<pre><code>    $(&#39;div.workout&#39;).click(function(){
-      //showWorkoutDetail
-
-      var key = this.id;
-      var workout = workouts[key];
-      var id = workout[&#39;YT_id&#39;];
-      $(&#39;#saveHealthButton&#39;).attr(&#39;data-key&#39;,key);
-      $(&#39;#popModal&#39;).modal(&#39;show&#39;);
-      $(&#39;#popTitle&#39;).text(workout[&#39;name&#39;]);
-      console.log(id);
-      player = new YT.Player(&#39;player&#39;, {
-        height: &#39;300&#39;,
-        width: &#39;450&#39;,
-        videoId: id,
-        events: {
-          &#39;onReady&#39;: onPlayerReady,
-          &#39;onStateChange&#39;: onPlayerStateChange
-        }
-      }); 
-    });
-
-    $(&#39;#saveHealthButton&#39;).click(function(){
-      console.log($(this).attr(&#39;data-key&#39;));
-//잘 뜸!!
-      saveWorkout();
-    });
-
-
-</code></pre><p>! 외부 API를 사용하는 것은 어렵다. 조금만 수정하려고 해도 내 마음처럼 되지 않는다. 경험을 늘려야겠다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">    $(<span class="hljs-string">'div.workout'</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">      <span class="hljs-comment">//showWorkoutDetail</span></span><br><span class="line"></span><br><span class="line">      <span class="hljs-keyword">var</span> key = <span class="hljs-keyword">this</span>.id;</span><br><span class="line">      <span class="hljs-keyword">var</span> workout = workouts[key];</span><br><span class="line">      <span class="hljs-keyword">var</span> id = workout[<span class="hljs-string">'YT_id'</span>];</span><br><span class="line">      $(<span class="hljs-string">'#saveHealthButton'</span>).attr(<span class="hljs-string">'data-key'</span>,key);</span><br><span class="line">      $(<span class="hljs-string">'#popModal'</span>).modal(<span class="hljs-string">'show'</span>);</span><br><span class="line">      $(<span class="hljs-string">'#popTitle'</span>).text(workout[<span class="hljs-string">'name'</span>]);</span><br><span class="line">      <span class="hljs-built_in">console</span>.log(id);</span><br><span class="line">      player = <span class="hljs-keyword">new</span> YT.Player(<span class="hljs-string">'player'</span>, &#123;</span><br><span class="line">        height: <span class="hljs-string">'300'</span>,</span><br><span class="line">        width: <span class="hljs-string">'450'</span>,</span><br><span class="line">        videoId: id,</span><br><span class="line">        events: &#123;</span><br><span class="line">          <span class="hljs-string">'onReady'</span>: onPlayerReady,</span><br><span class="line">          <span class="hljs-string">'onStateChange'</span>: onPlayerStateChange</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;); </span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    $(<span class="hljs-string">'#saveHealthButton'</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">      <span class="hljs-built_in">console</span>.log($(<span class="hljs-keyword">this</span>).attr(<span class="hljs-string">'data-key'</span>));</span><br><span class="line"><span class="hljs-comment">//잘 뜸!!</span></span><br><span class="line">      saveWorkout();</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+<p>! 외부 API를 사용하는 것은 어렵다. 조금만 수정하려고 해도 내 마음처럼 되지 않는다. 경험을 늘려야겠다.</p>
 <p>운동 영상 썸네일 클릭시 Modal을 띄워 해당 운동 영상을 보여주려고 했는데, iframe을 사용하지 않고 new YT_player로 player를 만드는 API를 사용했더니 맨 처음 생성된 player만 뜨는 문제가 있었다. </p>
 <p>구글 검색으로 해결했다! </p>
 <blockquote>
@@ -255,40 +228,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
-        <div class="buttons is-centered">
-            
-                
-<div class="notification is-danger">
-    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                
-<div class="notification is-danger">
-    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
-
-<div class="notification is-danger">
-    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                
-<div class="notification is-danger">
-    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-        </div>
-    </div>
-</div>
 
 
 
