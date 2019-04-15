@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding");
 /* ---------------------------------
  *       Override CSS Framework
  * --------------------------------- */
@@ -386,7 +387,7 @@ img.thumbnail {
 .content code,
 .content pre {
   font-size: 0.85em;
-  font-family: "Source Code Pro", monospace, "Microsoft YaHei";
+  font-family: 'Nanum Gothic Coding', monospace;
 }
 .content code {
   color: #ff3860;
