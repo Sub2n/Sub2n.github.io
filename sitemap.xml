@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sub2n.github.io/2019/04/16/190416-TIL/</loc>
+    
+    <lastmod>2019-04-16T11:11:14.534Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/04/16/LeetCode-27-Remove-Element/</loc>
+    
+    <lastmod>2019-04-16T11:04:22.598Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/04/15/LeetCode-26-Remove-Duplicates-from-Sorted-Array/</loc>
+    
+    <lastmod>2019-04-16T10:48:13.547Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sub2n.github.io/2019/03/13/190313-TIL/</loc>
     
     <lastmod>2019-04-16T08:22:42.195Z</lastmod>
@@ -166,13 +187,6 @@
     <loc>https://sub2n.github.io/2019/04/10/190410-TIL/</loc>
     
     <lastmod>2019-04-16T08:15:38.218Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sub2n.github.io/2019/04/15/LeetCode-26-Remove-Duplicates-from-Sorted-Array/</loc>
-    
-    <lastmod>2019-04-15T12:47:47.682Z</lastmod>
     
   </url>
   

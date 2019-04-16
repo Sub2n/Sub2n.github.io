@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sub2n.github.io/"/>
-  <updated>2019-04-15T12:47:47.682Z</updated>
+  <updated>2019-04-16T11:11:14.534Z</updated>
   <id>https://sub2n.github.io/</id>
   
   <author>
@@ -17,11 +17,65 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>190416-TIL</title>
+    <link href="https://sub2n.github.io/2019/04/16/190416-TIL/"/>
+    <id>https://sub2n.github.io/2019/04/16/190416-TIL/</id>
+    <published>2019-04-16T11:01:32.000Z</published>
+    <updated>2019-04-16T11:11:14.534Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h1><h2 id="Responsive-Web"><a href="#Responsive-Web" class="headerlink" title="Responsive Web"></a>Responsive Web</h2><h3 id="lt-picture-gt-element"><a href="#lt-picture-gt-element" class="headerlink" title="&lt;picture&gt; element"></a><code>&lt;picture&gt;</code> element</h3><ul><li><p>Can I Use <code>&lt;picture&gt;</code>?</p><blockquote><p><a href="https://caniuse.com/#search=picture" target="_blank" rel="noopener">CanIUse.com</a></p></blockquote></li><li><p><code>&lt;picture&gt;</code> 문법</p><ul><li><p><code>&lt;img&gt;</code>를 fallback으로 첨부해야한다.</p><figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-tag">img</span> &#123;<span class="hljs-attribute">display</span>: block; <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto;&#125;</span><br></pre></td></tr></table></figure></li></ul></li></ul><pre><code><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">picture</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(min-width: 650px)"</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">"images/kitten-stretching.png"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(min-width: 465px)"</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">"images/kitten-sitting.png"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/kitten-curled.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"a cute kitten"</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">picture</span>&gt;</span></span><br></pre></td></tr></table></figure></code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h1&gt;&lt;h2 id=&quot;Responsive-We
+      
+    
+    </summary>
+    
+      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
+    
+    
+      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode 27. Remove Element</title>
+    <link href="https://sub2n.github.io/2019/04/16/LeetCode-27-Remove-Element/"/>
+    <id>https://sub2n.github.io/2019/04/16/LeetCode-27-Remove-Element/</id>
+    <published>2019-04-16T10:46:18.000Z</published>
+    <updated>2019-04-16T11:04:22.598Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="LeetCode-27-Remove-Element"><a href="#LeetCode-27-Remove-Element" class="headerlink" title="LeetCode 27. Remove Element"></a><a href="https://leetcode.com/problems/remove-element/" target="_blank" rel="noopener">LeetCode 27. Remove Element</a></h2><blockquote><p>Given an array nums and a value val, remove all instances of that value in-place and return the new length.</p><p>Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.</p><p>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.</p></blockquote><blockquote><p>Example 1:</p><p>Given nums = [3,2,2,3], val = 3,</p><p>Your function should return length = 2, with the first two elements of nums being 2.</p><p>It doesn’t matter what you leave beyond the returned length.</p></blockquote><blockquote><p>Example 2:</p><p>Given nums = [0,1,2,2,3,0,4,2], val = 2,</p><p>Your function should return length = 5, with the first five elements of nums containing 0, 1, 3, 0, and 4.</p><p>Note that the order of those five elements can be arbitrary.</p><p>It doesn’t matter what values are set beyond the returned length.</p></blockquote><h3 id="요구조건"><a href="#요구조건" class="headerlink" title="요구조건"></a>요구조건</h3><ol><li>배열 nums에서 val의 값을 가진 element를 제거한다.</li><li><a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank" rel="noopener">in-place</a> algorithm으로 연산해야 한다.</li></ol><p>이번 문제는 <a href="https://sub2n.github.io/2019/04/15/LeetCode-26-Remove-Duplicates-from-Sorted-Array/">LeetCode 26. Remove Duplicates from Sorted Array</a>를 오해해서 풀었을 때와 거의 흡사해서 푸는 데에 시간이 오래 걸리지 않았다.</p><h3 id="해결책"><a href="#해결책" class="headerlink" title="해결책"></a>해결책</h3><ol><li>혼자 풀었을 때는 for문에서 nums.length를 검사할 때, nums.length가 splice로 인해서 줄어든 길이를 인식하지 못한다고 생각하여 if문의 마지막에 length = nums.length로 재정의를 했다.<br>스터디원들과 대화를 하며 nums를 직접 접근하고 변형하는 것이므로 그럴 필요가 없다는 것을 알았다.</li><li>배열 nums의 길이만큼 for문을 돌며 val과 같은 element를 만나면 배열에서 제거한다.<br>i번 째 loop에서 index = i 자리의 원소가 사라져, i+1번째 원소가 앞으로 당겨지므로, splice 연산 뒤에 i에서 1을 빼준다.</li></ol><h3 id="javaScript-Solution-1"><a href="#javaScript-Solution-1" class="headerlink" title="javaScript Solution 1"></a>javaScript Solution 1</h3><p><img src="https://user-images.githubusercontent.com/48080762/56204600-c219da80-6082-11e9-91ef-d4603cc75146.png" alt="image"></p><p>: Runtime 60 ms | Memory Usage 34.6 MB</p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;number&#125; val</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-keyword">var</span> removeElement = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums, val</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(val == nums[i])&#123;</span><br><span class="line">            nums.splice(i, <span class="hljs-number">1</span>);</span><br><span class="line">            i =- <span class="hljs-number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> nums.length;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h3 id="배운-점"><a href="#배운-점" class="headerlink" title="배운 점"></a>배운 점</h3><ul><li><p>array.splice method에 대해서 제대로 알게 되었다. 원소를 제거하는 것 뿐만 아니라 그 자리에 여러 element를 넣을 수도 있는 유용한 method다.</p></li><li><p>여러 명과 알고리즘에 대해 이야기하면 생각지 못한 풀이가 나오는 것이 재밌다.</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;LeetCode-27-Remove-Element&quot;&gt;&lt;a href=&quot;#LeetCode-27-Remove-Element&quot; class=&quot;headerlink&quot; title=&quot;LeetCode 27. Remove Element&quot;&gt;&lt;/a&gt;&lt;a href
+      
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="https://sub2n.github.io/categories/Algorithm/"/>
+    
+      <category term="LeetCode" scheme="https://sub2n.github.io/categories/Algorithm/LeetCode/"/>
+    
+    
+      <category term="Algorithm" scheme="https://sub2n.github.io/tags/Algorithm/"/>
+    
+      <category term="javaScript" scheme="https://sub2n.github.io/tags/javaScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>LeetCode 26. Remove Duplicates from Sorted Array</title>
     <link href="https://sub2n.github.io/2019/04/15/LeetCode-26-Remove-Duplicates-from-Sorted-Array/"/>
     <id>https://sub2n.github.io/2019/04/15/LeetCode-26-Remove-Duplicates-from-Sorted-Array/</id>
     <published>2019-04-15T12:37:47.000Z</published>
-    <updated>2019-04-15T12:47:47.682Z</updated>
+    <updated>2019-04-16T10:48:13.547Z</updated>
     
     <content type="html"><![CDATA[<h2 id="LeetCode-26-Remove-Duplicates-from-Sorted-Array"><a href="#LeetCode-26-Remove-Duplicates-from-Sorted-Array" class="headerlink" title="LeetCode 26. Remove Duplicates from Sorted Array"></a><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/" target="_blank" rel="noopener">LeetCode 26. Remove Duplicates from Sorted Array</a></h2><blockquote><p>Given a sorted array nums, remove the duplicates in-place such that each element appear only once and return the new length.</p><p>Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.</p></blockquote><blockquote><p>Example 1:<br>Given nums = [1,1,2],</p><p>Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively.</p><p>It doesn’t matter what you leave beyond the returned length.</p></blockquote><blockquote><p>Example 2:<br>Given nums = [0,0,1,1,1,2,2,3,3,4],</p><p>Your function should return length = 5, with the first five elements of nums being modified to 0, 1, 2, 3, and 4 respectively.</p><p>It doesn’t matter what values are set beyond the returned length.</p></blockquote><h3 id="요구조건"><a href="#요구조건" class="headerlink" title="요구조건"></a>요구조건</h3><ol><li>배열 nums에서 중복되지 않는 원소의 수를 return한다.</li><li>배열 nums는 중복되지 않는 수로 앞부분이 정렬되어야한다.</li></ol><p>문제는 위의 설명과 같이 nums라는 number형 array를 입력받아 중복되는 element 대신 다음 element를 그 자리에 오게 하는 것이다. 나는 처음에 중복된 element를 제거한 새로운 배열을 return해 여러 번 오류가 났었다.</p><p>이 문제의 핵심은 nums 배열이 referance로 넘어온다는 것이다. 즉, 새로운 배열을 만들지 않고 원본 nums의 값을 바꿔야한다.</p><p>솔루션을 도출하기까지 나를 헷갈리게 한 것은 한 element를 제거하고 나면 nums의 index부터 길이가 매번 변화한다는 것이다. 처음에 그 부분을 캐치하지 못해 여러 번 오류가 났다.</p><h3 id="해결책"><a href="#해결책" class="headerlink" title="해결책"></a>해결책</h3><ol><li>처음에 문제를 완벽하게 이해하지 못해서, nums 배열의 중복을 완전히 제거하는 것인줄로만 알았다. 그래서 <code>array.splice</code> method를 이용해서 중복되는 부분을 제거했다.</li><li>첫번째 Solution을 제출한 후 다른 사람들의 풀이를 보고 문제를 다시 제대로 이해했다.</li></ol><h3 id="javaScript-Solution-1"><a href="#javaScript-Solution-1" class="headerlink" title="javaScript Solution 1"></a>javaScript Solution 1</h3><p>: Runtime 92 ms | Memory Usage 37.3 MB</p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-keyword">var</span> removeDuplicates = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> prev= nums[<span class="hljs-number">0</span>];</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">1</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(nums[i] == prev)&#123;</span><br><span class="line">            prev = nums[i];</span><br><span class="line">            nums.splice(i, <span class="hljs-number">1</span>);</span><br><span class="line">            i -= <span class="hljs-number">1</span>;</span><br><span class="line">        &#125; <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">            prev = nums[i];</span><br><span class="line">            <span class="hljs-keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h3 id="javaScript-Solution-2"><a href="#javaScript-Solution-2" class="headerlink" title="javaScript Solution 2"></a>javaScript Solution 2</h3><p>: Runtime 72 ms | Memory Usage 37.3 MB</p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-keyword">var</span> removeDuplicates = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(nums.length == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">let</span> prev = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">       <span class="hljs-keyword">if</span>(nums[i] != nums[prev])&#123;</span><br><span class="line">           prev++;</span><br><span class="line">           nums[prev] = nums[i];</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> prev+<span class="hljs-number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="배운-점"><a href="#배운-점" class="headerlink" title="배운 점"></a>배운 점</h3><p>영어라고 해서 대충 Example만 보고 바로 문제를 풀려고 하는 습관을 고쳐야겠다. 문제를 제대로 해석하고, 알고리즘을 짜는 것이 훨씬 효율적인 것 같다.</p>]]></content>
     
@@ -39,7 +93,9 @@
       <category term="LeetCode" scheme="https://sub2n.github.io/categories/Algorithm/LeetCode/"/>
     
     
-      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
+      <category term="Algorithm" scheme="https://sub2n.github.io/tags/Algorithm/"/>
+    
+      <category term="javaScript" scheme="https://sub2n.github.io/tags/javaScript/"/>
     
   </entry>
   
@@ -477,58 +533,6 @@
       
         &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;h4 id=&quot;오늘-한
-      
-    
-    </summary>
-    
-      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
-    
-    
-      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>190326-TIL</title>
-    <link href="https://sub2n.github.io/2019/03/26/190326-TIL/"/>
-    <id>https://sub2n.github.io/2019/03/26/190326-TIL/</id>
-    <published>2019-03-26T11:47:02.000Z</published>
-    <updated>2019-04-16T08:19:40.455Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><h4 id="프로젝트-진행-중"><a href="#프로젝트-진행-중" class="headerlink" title="프로젝트 진행 중!"></a>프로젝트 진행 중!</h4></li></ul><ul><li><p>무식하면 몸이 고생한다를 뼈저리게 느끼고 있다. 백엔드가 없고 DB를 관리할 수가 없어서 리소스와 데이터를 수동으로 정리해 폴더에 넣는 작업을 했다.</p></li><li><p>Dictionary가 익숙해질수록 편하게 쓰고 있다.</p></li></ul><ul><li><h4 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h4><ol><li><p>운동 부위, 종류에 따른 youtube 동영상 주소(고유주소ID, 썸네일, 이름) 모으고 각 selector로 사용할 id 부여 (upper_weight_1 등)<br>: Load할 때마다 workouts 먼저 그려놓고 숨겨놓음</p><ol start="2"><li>selectBodyPart() -&gt; showHealthList() : Health Option select 조건에 따라 분류해놓은 운동 영상을 보이게 한다.</li></ol></li><li><p>selectHealthType() -&gt; showHealthList() : Health Option select 조건에 따라 분류해놓은 운동 영상을 보이게 한다.</p></li><li><p>clickHealth() -&gt; showHealthDetail(id) : div에 배치된 운동 영상 클릭시 해당 영상의 상세 페이지를 팝업으로 띄운다.</p></li></ol></li><li><h4 id="배운-것"><a href="#배운-것" class="headerlink" title="배운 것"></a>배운 것</h4></li></ul><p>Dictionary key값이 string일 때는 Dict[‘key’] 잊지 말기!!!!</p><blockquote><p>계속 ‘’ 를 잊어버린다.</p></blockquote><p>var today = new Date().toISOString().slice(2, 10);</p><blockquote><p>날짜를 19-03-26 형식으로 만들어준다!!!!</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;프로젝트
-      
-    
-    </summary>
-    
-      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
-    
-    
-      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>190325-TIL</title>
-    <link href="https://sub2n.github.io/2019/03/25/190325-TIL/"/>
-    <id>https://sub2n.github.io/2019/03/25/190325-TIL/</id>
-    <published>2019-03-25T11:47:41.000Z</published>
-    <updated>2019-04-16T08:19:48.049Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><h4 id="웹-애플리케이션-프로젝트"><a href="#웹-애플리케이션-프로젝트" class="headerlink" title="웹 애플리케이션 프로젝트"></a>웹 애플리케이션 프로젝트</h4><p>오늘부터 5일간 팀원들과 함께 프로젝트를 진행한다. 간단한 프론트 기초 지식만 배운 상태에서 완벽한 애플리케이션을 만들기에는 부족함이 있지만 오늘 기획단계를 끝냈다.<br>백엔드가 없어 데이터를 localStorage에 저장하고 불러올 예정이다. 회원가입과 로그인 기능도 뺐다.</p><p>디자인을 위해 전공 소프트웨어 공학 수업시간에 배운 Use Case Diagram, step-by-step Description, Communication Diagram을 작성해 기능들을 나눴다.</p><p>우리는 식단, 운동을 제공하고 사용자가 날짜별로 건강관리를 기록할 수 있는 프로그램을 만들 예정이다.</p><p>나는 운동 부위(상체, 복근, 하체, 전신)와 운동 종류(근력, 유산소, 스트레칭)에 따른 Youtube 운동 영상을 미리 수집해 분류한 후 사용자의 Option 선택에 따라 운동 영상을 제시하는 기능을 맡았다. 사용자는 또한 운동 기록을 저장하고 관리할 수 있다.</p><p>오늘은 전체적인 프로그램 디자인과 html 레이아웃을 마쳤다. Youtube API를 잠깐 써봤는데 생각보다 어렵지 않을 것 같다.</p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;웹-애플
       
     
     </summary>

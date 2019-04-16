@@ -164,6 +164,92 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/04/16/LeetCode-27-Remove-Element/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="LeetCode 27. Remove Element">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-16T10:46:18.000Z">2019-04-16</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/LeetCode/">LeetCode</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes read (About 544 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/16/LeetCode-27-Remove-Element/">LeetCode 27. Remove Element</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="LeetCode-27-Remove-Element"><a href="#LeetCode-27-Remove-Element" class="headerlink" title="LeetCode 27. Remove Element"></a><a href="https://leetcode.com/problems/remove-element/" target="_blank" rel="noopener">LeetCode 27. Remove Element</a></h2><blockquote>
+<p>Given an array nums and a value val, remove all instances of that value in-place and return the new length.</p>
+<p>Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.</p>
+<p>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.</p>
+</blockquote>
+<blockquote>
+<p>Example 1:</p>
+<p>Given nums = [3,2,2,3], val = 3,</p>
+<p>Your function should return length = 2, with the first two elements of nums being 2.</p>
+<p>It doesn’t matter what you leave beyond the returned length.</p>
+</blockquote>
+<blockquote>
+<p>Example 2:</p>
+<p>Given nums = [0,1,2,2,3,0,4,2], val = 2,</p>
+<p>Your function should return length = 5, with the first five elements of nums containing 0, 1, 3, 0, and 4.</p>
+<p>Note that the order of those five elements can be arbitrary.</p>
+<p>It doesn’t matter what values are set beyond the returned length.</p>
+</blockquote>
+<h3 id="요구조건"><a href="#요구조건" class="headerlink" title="요구조건"></a>요구조건</h3><ol>
+<li>배열 nums에서 val의 값을 가진 element를 제거한다.</li>
+<li><a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank" rel="noopener">in-place</a> algorithm으로 연산해야 한다.</li>
+</ol>
+<p>이번 문제는 <a href="https://sub2n.github.io/2019/04/15/LeetCode-26-Remove-Duplicates-from-Sorted-Array/">LeetCode 26. Remove Duplicates from Sorted Array</a>를 오해해서 풀었을 때와 거의 흡사해서 푸는 데에 시간이 오래 걸리지 않았다.</p>
+<h3 id="해결책"><a href="#해결책" class="headerlink" title="해결책"></a>해결책</h3><ol>
+<li>혼자 풀었을 때는 for문에서 nums.length를 검사할 때, nums.length가 splice로 인해서 줄어든 길이를 인식하지 못한다고 생각하여 if문의 마지막에 length = nums.length로 재정의를 했다.<br>스터디원들과 대화를 하며 nums를 직접 접근하고 변형하는 것이므로 그럴 필요가 없다는 것을 알았다.</li>
+<li>배열 nums의 길이만큼 for문을 돌며 val과 같은 element를 만나면 배열에서 제거한다.<br>i번 째 loop에서 index = i 자리의 원소가 사라져, i+1번째 원소가 앞으로 당겨지므로, splice 연산 뒤에 i에서 1을 빼준다.</li>
+</ol>
+<h3 id="javaScript-Solution-1"><a href="#javaScript-Solution-1" class="headerlink" title="javaScript Solution 1"></a>javaScript Solution 1</h3><p><img src="https://user-images.githubusercontent.com/48080762/56204600-c219da80-6082-11e9-91ef-d4603cc75146.png" alt="image"></p>
+<p>: Runtime 60 ms | Memory Usage 34.6 MB</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;number&#125; val</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-keyword">var</span> removeElement = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums, val</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(val == nums[i])&#123;</span><br><span class="line">            nums.splice(i, <span class="hljs-number">1</span>);</span><br><span class="line">            i =- <span class="hljs-number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> nums.length;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="배운-점"><a href="#배운-점" class="headerlink" title="배운 점"></a>배운 점</h3><ul>
+<li><p>array.splice method에 대해서 제대로 알게 되었다. 원소를 제거하는 것 뿐만 아니라 그 자리에 여러 element를 넣을 수도 있는 유용한 method다.</p>
+</li>
+<li><p>여러 명과 알고리즘에 대해 이야기하면 생각지 못한 풀이가 나오는 것이 재밌다.</p>
+</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/04/15/LeetCode-26-Remove-Duplicates-from-Sorted-Array/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="LeetCode 26. Remove Duplicates from Sorted Array">
         </a>
@@ -284,7 +370,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        31
+                        33
                     </p>
                 </div>
             </div>
@@ -304,7 +390,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        2
+                        4
                     </p>
                 </div>
             </div>
@@ -397,7 +483,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/HTML-CSS/" style="font-size: 10px;">HTML, CSS</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a>
+        <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a>
     </div>
 </div>
 
@@ -421,7 +507,7 @@
                 <span class="level-item">Algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Algorithm/LeetCode/">
@@ -429,7 +515,7 @@
                 <span class="level-item">LeetCode</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/TIL/">
@@ -437,7 +523,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">29</span>
+                <span class="level-item tag">30</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -459,6 +545,44 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/04/16/190416-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="190416-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-16T11:01:32.000Z">2019-04-16</time></div>
+                    <a href="/2019/04/16/190416-TIL/" class="has-link-black-ter is-size-6">190416-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/04/16/LeetCode-27-Remove-Element/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="LeetCode 27. Remove Element">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-16T10:46:18.000Z">2019-04-16</time></div>
+                    <a href="/2019/04/16/LeetCode-27-Remove-Element/" class="has-link-black-ter is-size-6">LeetCode 27. Remove Element</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/LeetCode/">LeetCode</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -517,44 +641,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/04/12/190412-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/yellow2.png" alt="190412-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-12T10:21:12.000Z">2019-04-12</time></div>
-                    <a href="/2019/04/12/190412-TIL/" class="has-link-black-ter is-size-6">190412-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/11/190411-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/tullip.png" alt="190411-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-11T09:22:17.000Z">2019-04-11</time></div>
-                    <a href="/2019/04/11/190411-TIL/" class="has-link-black-ter is-size-6">190411-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -573,7 +659,7 @@
                     <span class="level-item">April 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">15</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -603,6 +689,13 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Algorithm/">
+                        <span class="tag">Algorithm</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/HTML-CSS/">
                         <span class="tag">HTML, CSS</span>
                         <span class="tag is-grey">3</span>
@@ -613,6 +706,13 @@
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
                         <span class="tag is-grey">29</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/javaScript/">
+                        <span class="tag">javaScript</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -648,7 +748,7 @@
                 <span class="level-item">Algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Algorithm/LeetCode/">
@@ -656,7 +756,7 @@
                 <span class="level-item">LeetCode</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/TIL/">
@@ -664,7 +764,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">29</span>
+                <span class="level-item tag">30</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -686,6 +786,44 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/04/16/190416-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="190416-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-16T11:01:32.000Z">2019-04-16</time></div>
+                    <a href="/2019/04/16/190416-TIL/" class="has-link-black-ter is-size-6">190416-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/04/16/LeetCode-27-Remove-Element/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="LeetCode 27. Remove Element">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-16T10:46:18.000Z">2019-04-16</time></div>
+                    <a href="/2019/04/16/LeetCode-27-Remove-Element/" class="has-link-black-ter is-size-6">LeetCode 27. Remove Element</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/LeetCode/">LeetCode</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -744,44 +882,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/04/12/190412-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/yellow2.png" alt="190412-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-12T10:21:12.000Z">2019-04-12</time></div>
-                    <a href="/2019/04/12/190412-TIL/" class="has-link-black-ter is-size-6">190412-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/11/190411-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/tullip.png" alt="190411-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-11T09:22:17.000Z">2019-04-11</time></div>
-                    <a href="/2019/04/11/190411-TIL/" class="has-link-black-ter is-size-6">190411-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -800,7 +900,7 @@
                     <span class="level-item">April 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">15</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -830,6 +930,13 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Algorithm/">
+                        <span class="tag">Algorithm</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/HTML-CSS/">
                         <span class="tag">HTML, CSS</span>
                         <span class="tag is-grey">3</span>
@@ -840,6 +947,13 @@
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
                         <span class="tag is-grey">29</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/javaScript/">
+                        <span class="tag">javaScript</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
