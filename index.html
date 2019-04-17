@@ -97,7 +97,7 @@
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="is-3-column">
-    <nav class="navbar navbar-main">
+    <nav class="navbar navbar-main is-sticky">
     <div class="container">
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 0 words)
+                    a few seconds read (About 87 words)
                 </span>
                 
                 
@@ -183,7 +183,11 @@
             
         </h1>
         <div class="content">
-            
+            <h1 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h1><h2 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h2><h3 id="오전"><a href="#오전" class="headerlink" title="오전"></a>오전</h3><ul>
+<li>알고리즘 스터디에서 LeetCode 말고 다른 알고리즘 풀이 사이트를 이용하자는 의견이 나와 오늘부터 CodeWars에서 문제를 풀어보기로 했다. 6급 문제를 풀었는데 생각보다 쉬워서 LeetCode 문제를 하나 더 풀었다.</li>
+</ul>
+<h3 id="오후"><a href="#오후" class="headerlink" title="오후"></a>오후</h3><p>* </p>
+
         </div>
         
         
@@ -233,26 +237,7 @@
             
         </h1>
         <div class="content">
-            <h2 id="LeetCode-28-Implement-strStr"><a href="#LeetCode-28-Implement-strStr" class="headerlink" title="LeetCode 28. Implement strStr()"></a><a href="https://leetcode.com/problems/implement-strstr/" target="_blank" rel="noopener">LeetCode 28. Implement strStr()</a></h2><blockquote>
-<p>Implement strStr().</p>
-<p>Return the index of the first occurrence of needle in haystack, or -1 &gt; if needle is not part of haystack.</p>
-<p>Example 1:</p>
-<p>Input: haystack = “hello”, needle = “ll”<br>Output: 2<br>Example 2:</p>
-<p>Input: haystack = “aaaaa”, needle = “bba”<br>Output: -1</p>
-</blockquote>
-<h3 id="요구조건"><a href="#요구조건" class="headerlink" title="요구조건"></a>요구조건</h3><ol>
-<li>string haystack에서 needle이 처음으로 등장하는 index를 반환한다. 존재하지 않으면 -1을 반환한다.</li>
-</ol>
-<h3 id="해결책"><a href="#해결책" class="headerlink" title="해결책"></a>해결책</h3><ol>
-<li>javaScript의 indexOf() method를 이용해 해결했다.</li>
-<li>method를 쓰지 않고 C로 해결해보려고 했는데 한 1년 C를 쓰지 않았다고 기능이 기억이 나지 않아 여러 번 찾아봐야 했다. 포인터 개념도 다시 한 번 훑어봐야겠다.</li>
-</ol>
-<h3 id="javaScript-Solution-1"><a href="#javaScript-Solution-1" class="headerlink" title="javaScript Solution 1"></a>javaScript Solution 1</h3><p><img src="https://user-images.githubusercontent.com/48080762/56282327-dd9be880-6149-11e9-95f8-ba96c666a2c4.png" alt="Submit 1 : javaSript"></p>
-<p>: Runtime 56 ms    | Memory Usage 33.8 MB</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;string&#125; haystack</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;string&#125; needle</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-keyword">var</span> strStr = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">haystack, needle</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (needle === <span class="hljs-string">""</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">return</span> haystack.indexOf(needle);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p><img src="https://user-images.githubusercontent.com/48080762/56284645-10e17600-6150-11e9-85ea-a202348ec60b.png" alt="Submit 2 : C"></p>
-<p>: Runtime 1300 ms    | Memory Usage 7 MB</p>
-<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">strStr</span><span class="hljs-params">(<span class="hljs-keyword">char</span>* haystack, <span class="hljs-keyword">char</span>* needle)</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">if</span>(needle[<span class="hljs-number">0</span>] == <span class="hljs-string">'\0'</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">int</span> index = <span class="hljs-number">-1</span>;</span><br><span class="line">  <span class="hljs-keyword">int</span> hayLen = <span class="hljs-built_in">strlen</span>(haystack);</span><br><span class="line">  <span class="hljs-keyword">int</span> neeLen = <span class="hljs-built_in">strlen</span>(needle);</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i&lt; hayLen; i++)&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span>(haystack[i] == needle[<span class="hljs-number">0</span>])&#123;</span><br><span class="line">          index = i;</span><br><span class="line">          <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>; j &lt; neeLen ; j++)&#123;</span><br><span class="line">              <span class="hljs-keyword">if</span>(i+j &gt;= hayLen || haystack[i+j] != needle[j])&#123;</span><br><span class="line">                  index = <span class="hljs-number">-1</span>;</span><br><span class="line">                  <span class="hljs-keyword">break</span>;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;  </span><br><span class="line">      &#125;  </span><br><span class="line">      <span class="hljs-keyword">if</span>(index &gt; <span class="hljs-number">-1</span>) <span class="hljs-keyword">return</span> index;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h2 id="LeetCode-28-Implement-strStr"><a href="#LeetCode-28-Implement-strStr" class="headerlink" title="LeetCode 28. Implement strStr()"></a><a href="https://leetcode.com/problems/implement-strstr/" target="_blank" rel="noopener">LeetCode 28. Implement strStr()</a></h2>
         </div>
         
         
@@ -297,7 +282,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 254 words)
+                    2 minutes read (About 255 words)
                 </span>
                 
                 
@@ -311,21 +296,16 @@
         </h1>
         <div class="content">
             <p>##<a href="https://www.codewars.com/kata/multiples-of-3-or-5/train/javascript" target="_blank" rel="noopener">CodeWars 6kyu. Multiples of 3 or 5</a></p>
-<blockquote>
-<p>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.</p>
-<p>Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in.</p>
-<p>Note: If the number is a multiple of both 3 and 5, only count it once.</p>
-<p>Courtesy of ProjectEuler.net</p>
-</blockquote>
-<h3 id="요구조건"><a href="#요구조건" class="headerlink" title="요구조건"></a>요구조건</h3><p>어떤 자연수 number 미만의 3 또는 5의 배수를 찾는 문제</p>
-<h3 id="해결책"><a href="#해결책" class="headerlink" title="해결책"></a>해결책</h3><ol>
-<li>input number가 3 또는 5로 나누어 떨어지면 sum에 더하는 방식이다. 문제가 너무 간단하게 풀려서 새로운 방법으로 생각 해보기로 했다.</li>
-<li>number를 3, 5로 나누면 그 몫의 개수만큼만 for loop을 돌며 추가한다. 5로 나눈 몫이 항상 3으로 나눈 몫보다 작기 때문에 한 번 더 검사를 해주었다.</li>
-</ol>
-<h3 id="javaScript-Solution-1"><a href="#javaScript-Solution-1" class="headerlink" title="javaScript Solution 1"></a>javaScript Solution 1</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">solution</span>(<span class="hljs-params">number</span>)</span>&#123;</span><br><span class="line">  <span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; number; i++) &#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (i % <span class="hljs-number">3</span> === <span class="hljs-number">0</span> || i % <span class="hljs-number">5</span> === <span class="hljs-number">0</span>) &#123;</span><br><span class="line">      sum += i;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="javaScript-Solution-2"><a href="#javaScript-Solution-2" class="headerlink" title="javaScript Solution 2"></a>javaScript Solution 2</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">solution</span>(<span class="hljs-params">number</span>)</span>&#123;</span><br><span class="line">  <span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">var</span> threeMultiples = number/<span class="hljs-number">3</span>;</span><br><span class="line">  <span class="hljs-keyword">var</span> fiveMultiples = number/<span class="hljs-number">5</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">1</span>; i&lt; threeMultiples; i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(i%<span class="hljs-number">5</span> != <span class="hljs-number">0</span>) sum += i*<span class="hljs-number">3</span>;</span><br><span class="line">    <span class="hljs-keyword">if</span>(i &lt; fiveMultiples) sum += i*<span class="hljs-number">5</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/17/CodeWars-6kyu-Multiples-of-3-or-5/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -360,7 +340,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 525 words)
+                    4 minutes read (About 526 words)
                 </span>
                 
                 
@@ -373,69 +353,17 @@
             
         </h1>
         <div class="content">
-            <h2 id="Responsive-Web"><a href="#Responsive-Web" class="headerlink" title="Responsive Web"></a>Responsive Web</h2><h3 id="lt-picture-gt-element"><a href="#lt-picture-gt-element" class="headerlink" title="&lt;picture&gt; element"></a><code>&lt;picture&gt;</code> element</h3><ul>
-<li><p>Can I Use <code>&lt;picture&gt;</code>?</p>
-<blockquote>
-<p><a href="https://caniuse.com/#search=picture" target="_blank" rel="noopener">CanIUse.com</a></p>
-</blockquote>
-</li>
-<li><p><code>&lt;picture&gt;</code> 문법</p>
-<ul>
-<li><p><code>&lt;img&gt;</code>를 fallback으로 첨부해야한다. <code>&lt;picture&gt;</code> 는 <code>&lt;img&gt;</code> tag가 없으면 인식되지 않는다!</p>
-<figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-tag">img</span> &#123;<span class="hljs-attribute">display</span>: block; <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto;&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<pre><code><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">picture</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(min-width: 650px)"</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">"images/kitten-stretching.png"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(min-width: 465px)"</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">"images/kitten-sitting.png"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/kitten-curled.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"a cute kitten"</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">picture</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</code></pre><h3 id="Pixel-density-descriptor"><a href="#Pixel-density-descriptor" class="headerlink" title="Pixel density descriptor"></a>Pixel density descriptor</h3><ul>
-<li>1x, 1.5x, 2x 그리고 3x와 같은 픽셀 밀도 서술자(Pixel density descriptor)들을 사용하여 고해상도 디스플레이 지원을 추가합니다.</li>
-<li>새로 추가된 srcset 속성은 <code>&lt;img&gt;</code>와 <code>&lt;source&gt;</code> 엘리먼트 모두에 적용됩니다.</li>
-<li>letina부터는 2x 나오고 Android는 1.5x 등 정수가 아니고 소숫점으로 증가</li>
-</ul>
-<h3 id="Image-반응형으로-만들기"><a href="#Image-반응형으로-만들기" class="headerlink" title="Image 반응형으로 만들기"></a>Image 반응형으로 만들기</h3><ol>
-<li>wrapper를 만들고, 그 안에 <code>&lt;img&gt;</code> max-width: 100%;</li>
-<li><p>height: auto;</p>
-<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-css"> <span class="hljs-selector-class">.rwd-wrapper</span>&#123;</span></span><br><span class="line"><span class="hljs-undefined">   width: 30%;</span></span><br><span class="line"><span class="hljs-undefined">   border: 5px solid blueviolet;</span></span><br><span class="line"><span class="hljs-undefined"> &#125;</span></span><br><span class="line"><span class="hljs-css"> <span class="hljs-selector-class">.rwd-wrapper</span> <span class="hljs-selector-tag">img</span>&#123;</span></span><br><span class="line"><span class="hljs-undefined">   max-width: 100%;</span></span><br><span class="line"><span class="hljs-undefined">   height: auto;</span></span><br><span class="line"><span class="hljs-undefined"> &#125;</span></span><br><span class="line"><span class="hljs-undefined"> </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span><br><span class="line"> <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span><br><span class="line"> <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rwd-wrapper"</span>&gt;</span></span><br><span class="line">     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/image-src.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span></span><br><span class="line">   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>srcset 속성을 사용해서 Pixel density 설정<br><img src="https://user-images.githubusercontent.com/48080762/56205794-bd0a5a80-6085-11e9-818e-61f08070d206.png" alt="0416"></p>
-<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rwd-wrapper"</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/image-src.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span></span></span><br><span class="line"><span class="hljs-tag">  <span class="hljs-attr">srcset</span>=<span class="hljs-string">"images/image-1x.png 1x,</span></span></span><br><span class="line"><span class="hljs-tag"><span class="hljs-string">          images/image-2x.png 2x,</span></span></span><br><span class="line"><span class="hljs-tag"><span class="hljs-string">          images/image-3x.png 3x,</span></span></span><br><span class="line"><span class="hljs-tag"><span class="hljs-string">          images/image-4x.png 4x"</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Viewport 별로 Art Direction 설정하기</p>
-</li>
-</ol>
-<ul>
-<li><p><code>&lt;picture&gt;</code>의 <code>&lt;source media=&quot;&quot;&gt;</code>로 조건 줌</p>
-<p><img src="https://user-images.githubusercontent.com/48080762/56206390-3bb3c780-6087-11e9-80bb-76530aeaa9cb.png" alt="0416_(2)"></p>
-</li>
-</ul>
-  <figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">picture</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(max-width: 650px)"</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">"images/small.jpg"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(min-width: 651px) and (max-width: 999px)"</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">"images/media.jpg"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(min-width: 1000px)"</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">"images/large.jpg"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rwd-img"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/normal.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">picture</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="Background-image를-반응형으로-만들기"><a href="#Background-image를-반응형으로-만들기" class="headerlink" title="Background image를 반응형으로 만들기"></a>Background image를 반응형으로 만들기</h3><ol>
-<li>image 원본 size를 알아내야한다. &gt; 가로, 세로 비율을 계산해야함</li>
-<li><p>height를 0으로 하고, padding을 세로로 원본 image의 비율에 맞게 준다.</p>
-<figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-class">.rwd-bg</span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;</span><br><span class="line">  <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span> <span class="hljs-meta">!important</span>;</span><br><span class="line">  <span class="hljs-attribute">padding-top</span>: <span class="hljs-built_in">calc</span>(3280 / 4928 * 100%);</span><br><span class="line">  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">"images/light.jpg"</span>) no-repeat;</span><br><span class="line">  <span class="hljs-attribute">background-size</span>: <span class="hljs-number">100%</span> <span class="hljs-number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>width 크기를 변경할 때는 새로운 wrapper를 만들어 그 wrapper의 width를 줄인다.</p>
-</li>
-</ol>
-<figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-class">.wrapper</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">width</span>: <span class="hljs-number">50%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-selector-class">.rwd-bg</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;</span><br><span class="line">  <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span> <span class="hljs-meta">!important</span>;</span><br><span class="line">  <span class="hljs-attribute">padding-top</span>: <span class="hljs-built_in">calc</span>(3280 / 4928 * 100%);</span><br><span class="line">  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">"images/light.jpg"</span>) no-repeat;</span><br><span class="line">  <span class="hljs-attribute">background-size</span>: <span class="hljs-number">100%</span> <span class="hljs-number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-  <figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"wrapper"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rwd-bg"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>.rwd-bg는 parent인 wrapper의 width 100%만큼 차지하므로 wrapper의 크기가 줄어들면 같이 줄어든다.</li>
-</ul>
-<h3 id="Background-size-cover-contain"><a href="#Background-size-cover-contain" class="headerlink" title="Background-size: cover, contain"></a>Background-size: cover, contain</h3><p>  <a href="https://css-tricks.com/almanac/properties/b/background-size/" target="_blank" rel="noopener">CSS Trick Background-size 참고 사이트</a></p>
-<p>  <img src="https://user-images.githubusercontent.com/48080762/56206784-22f7e180-6088-11e9-8067-52e42f347f14.png" alt="image"></p>
-<ul>
-<li>cover : 이미지가 일부 잘리더라도 화면을 꽉 채우게 가장 작은 축을 기준으로 cover함</li>
-<li>contain : 가로든, 세로든 가장 긴 축을 기준으로 화면에 잘리지 않게 하는 기법</li>
-</ul>
-<h3 id="Media-query로-해상도-별-배경-image-다르게-하기"><a href="#Media-query로-해상도-별-배경-image-다르게-하기" class="headerlink" title="Media query로 해상도 별 배경 image 다르게 하기"></a>Media query로 해상도 별 배경 image 다르게 하기</h3><ul>
-<li>dpi : dot per inch - 1inch 당 들어가는 pixel 수</li>
-<li>CSS는 1inch 당 96px이니까 192dpi는 2x임</li>
-</ul>
-<figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="hljs-keyword">media</span> all and (min-resolution: <span class="hljs-number">192dpi</span>)&#123;</span><br><span class="line">  <span class="hljs-selector-class">.rwd-bg</span>&#123;</span><br><span class="line">    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">"images/unsplash.jpg"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h2 id="Responsive-Web"><a href="#Responsive-Web" class="headerlink" title="Responsive Web"></a>Responsive Web</h2>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/16/Responsive Web (2)/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -470,7 +398,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    9 minutes read (About 1365 words)
+                    9 minutes read (About 1366 words)
                 </span>
                 
                 
@@ -487,129 +415,16 @@
 <li>웹 환경의 변화 : Mobile Device의 등장</li>
 <li>초기 모바일 환경을 위해 mobile 화면을 별도 구성 &gt; 비용과 유지보수 측면에서 risk 크다.</li>
 </ul>
-<h3 id="One-Source-Multi-Use-반응형-웹의-필요성-대두"><a href="#One-Source-Multi-Use-반응형-웹의-필요성-대두" class="headerlink" title="One Source Multi Use : 반응형 웹의 필요성 대두"></a>One Source Multi Use : 반응형 웹의 필요성 대두</h3><ul>
-<li>Contents는 물처럼 어느 그릇에나 담길 수 있어야한다.</li>
-<li>Contents의 본질을 가지고 Markup 후 CSS로 디자인만 달리 할 수 있어야한다.</li>
-</ul>
-<h3 id="Flexible-vs-Adaptive"><a href="#Flexible-vs-Adaptive" class="headerlink" title="Flexible vs Adaptive"></a>Flexible vs Adaptive</h3><ul>
-<li>RWD(반응형 웹 디자인) : flexible(latout이 고무줄처럼 유연하게 늘었다 줄었다 하는 것), adaptive(viewport에 따라서 layout이 각각 고정되는 것) &gt; 둘 다Device viewport에 반응하는 design</li>
-<li>AWD(적응형 웹 디자인)</li>
-<li>Flexible : 모든 환경에서 유연하게 움직임</li>
-<li>Adaptive : Web viewport에서는 고정형, tablet이나 mobile에서는 flexible design 채택</li>
-</ul>
-<h3 id="DeskTop-First-vs-Mobile-First"><a href="#DeskTop-First-vs-Mobile-First" class="headerlink" title="DeskTop First vs Mobile First"></a>DeskTop First vs Mobile First</h3><ul>
-<li>Mobile First 권장</li>
-<li>Desktop CSS 먼저 불러온 후 Mobile로 재적용하면 mobile 환경에서 data 많이 듦 &gt; 성능문제</li>
-</ul>
-<h3 id="Flexible-Layout"><a href="#Flexible-Layout" class="headerlink" title="Flexible Layout"></a>Flexible Layout</h3><ul>
-<li>Target / Context = Result ( 900px / 960px = 0.9375 * 100% = 93.75%!)</li>
-<li>Target이 context 안에서 차지하는 영역</li>
-<li>고정적인 pixel 단위 사용 최대한 지양</li>
-<li>%, viewport, em 등 유연한 단위 사용을 지향</li>
-</ul>
-<h3 id="Media-Queries"><a href="#Media-Queries" class="headerlink" title="Media Queries"></a>Media Queries</h3><figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@<span class="hljs-keyword">charset</span> <span class="hljs-string">"utf-8"</span></span><br><span class="line">/* All Device */</span><br><span class="line">/* Mobile Device */</span><br><span class="line">@media all and (min-width: <span class="hljs-number">768px</span>)&#123;</span><br><span class="line">  <span class="hljs-comment">/* 사용자 해상도가 768px 이상일 때 실행됨 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>all : 어떤 device든 들어올 수 있다는 뜻 (printer 용 CSS 따로 정의할 수 있음)</li>
-<li>코드 중복, 복잡도 증가 &gt; CSS가 복잡해짐!</li>
-<li>Sass (CSS 전처리기) &gt; build하면 CSS code로 떨어짐<ul>
-<li>Sass</li>
-<li>Scss</li>
-</ul>
-</li>
-</ul>
-<h3 id="Responsive-Image"><a href="#Responsive-Image" class="headerlink" title="Responsive Image"></a>Responsive Image</h3><figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-tag">img</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">max-width</span>: <span class="hljs-number">100%</span>;</span><br><span class="line">  <span class="hljs-attribute">height</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>max-width: 100% &gt; 부모 크기를 기준으로 100%, 원본크기 이상은 늘어나지 않게 함</li>
-<li>height: auto &gt; 원본 사이즈 비율을 기준으로 auto (width가 반 줄어들면 얘도 반 줄어들음)</li>
-</ul>
-<p>• 용량으로 인한 성능, 속도 고려 필요</p>
-<p>• Mobile Responsive Web test site: <a href="http://troy.labs.daum.net/" target="_blank" rel="noopener">Troy - Responsive web tester</a></p>
-<p>• 현재 기기의 Pixel Ratio 알 수 있는 사이트: <a href="https://www.mydevice.io/" target="_blank" rel="noopener">myDevice.io</a></p>
-<p><img src="https://user-images.githubusercontent.com/48080762/56208226-95b68c00-608b-11e9-8756-f2d60d03cf86.png" alt="image"></p>
-<p>• 다양한 Image Format 대응</p>
-<ul>
-<li>SVG : Vector 형식 이미지</li>
-<li>WebP : 구글 제안</li>
-</ul>
-<p>• 해결</p>
-<ul>
-<li><code>&lt;img&gt;</code>의 srcset, sizes 속성</li>
-<li><code>&lt;picture&gt;</code> 해상도 따라 조절하는 신규 요소 : <code>&lt;picture&gt;</code> 모를 때를 대비한 fallback image 있어야함</li>
-</ul>
-<h3 id="반응형-이미지"><a href="#반응형-이미지" class="headerlink" title="반응형 이미지"></a>반응형 이미지</h3><figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-class">.rwd-container</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">width</span>: <span class="hljs-number">50%</span>;</span><br><span class="line">  <span class="hljs-attribute">box-sizing</span>: border-box;</span><br><span class="line">  <span class="hljs-attribute">border</span>: <span class="hljs-number">10px</span> solid <span class="hljs-number">#000</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-selector-class">.rwd-container</span> <span class="hljs-selector-tag">img</span>, <span class="hljs-selector-class">.rwd-container</span> <span class="hljs-selector-tag">video</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;</span><br><span class="line">  <span class="hljs-attribute">height</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>&lt;img&gt;</code>가 parent container의 width가 줄어들 때마다 같이 줄어든다.</li>
-<li><code>&lt;video&gt;</code>도 가능. 그러나 모두 크기 조절을 위해 wrapping해야한다.</li>
-</ul>
-<h3 id="lt-iframe-gt-을-반응형으로-만들기"><a href="#lt-iframe-gt-을-반응형으로-만들기" class="headerlink" title="&lt;iframe&gt;을 반응형으로 만들기"></a><code>&lt;iframe&gt;</code>을 반응형으로 만들기</h3><ol>
-<li><p><code>&lt;iframe&gt;</code> 삽입<br><img src="https://user-images.githubusercontent.com/48080762/56208391-fe056d80-608b-11e9-975a-2e38fda0438c.png" alt="image"></p>
- <figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rwd-iframe"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://www.youtube.com/embed/2S24-y0Ij3Y?controls=0"</span> <span class="hljs-attr">allowfullscreen</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
- <figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-class">.rwd-iframe</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">border</span>: <span class="hljs-number">10px</span> solid <span class="hljs-number">#00f</span>;</span><br><span class="line">  <span class="hljs-attribute">width</span>: <span class="hljs-number">80%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-selector-class">.rwd-iframe</span> <span class="hljs-selector-tag">iframe</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;</span><br><span class="line">  <span class="hljs-attribute">height</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ul>
-<li><code>&lt;img&gt;</code>나 <code>&lt;video&gt;</code>처럼 하면 안 먹음</li>
-<li><p><code>&lt;iframe&gt;</code>은 wrapping <code>&lt;div&gt;</code> 2개 필요함</p>
-<p><img src="https://user-images.githubusercontent.com/48080762/56209006-77519000-608d-11e9-84d0-ef20de16e460.png" alt="0416(3)"></p>
-</li>
-</ul>
-<ol start="2">
-<li><p>비율별 module화</p>
- <figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-class">.rwd-iframe</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">position</span>: relative;</span><br><span class="line">  <span class="hljs-attribute">padding-top</span>: <span class="hljs-built_in">calc</span>(9 / 16 * 100%);</span><br><span class="line">  <span class="hljs-attribute">background</span>: pink;</span><br><span class="line">  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-selector-class">.rwd-3-4</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">padding-top</span>: <span class="hljs-built_in">calc</span>(3 / 4 * 100%);</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-selector-class">.rwd-9-16</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">padding-top</span>: <span class="hljs-built_in">calc</span>(9 / 16 * 100%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
- <figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rwd-container"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rwd-iframe rwd-9-16"</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://www.youtube.com/embed/2S24-y0Ij3Y?controls=0"</span> <span class="hljs-attr">allowfullscreen</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rwd-container"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rwd-iframe rwd-3-4"</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2974.021471174445!2d127.05441626516713!3d37.54323347980236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca49534790c57%3A0xc115101cbaecb40e!2z7JWE7YGs67C466as7ISc67mE7Iqk!5e1!3m2!1sko!2skr!4v1555310320240!5m2!1sko!2skr"</span> <span class="hljs-attr">allowfullscreen</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="GRID"><a href="#GRID" class="headerlink" title="GRID"></a>GRID</h2><h3 id="Container에-display-grid-적용"><a href="#Container에-display-grid-적용" class="headerlink" title="Container에 display: grid 적용"></a>Container에 display: grid 적용</h3>  <figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-class">.container</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">display</span>: grid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Grid-template"><a href="#Grid-template" class="headerlink" title="Grid-template"></a>Grid-template</h3>  <figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-class">.container</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">display</span>: grid;</span><br><span class="line">  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">50%</span> <span class="hljs-number">50%</span>;</span><br><span class="line">  <span class="hljs-attribute">grid-template-rows</span>: <span class="hljs-number">50%</span> <span class="hljs-number">50%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  <img src="https://user-images.githubusercontent.com/48080762/56209235-fc3ca980-608d-11e9-9e6b-9425c3574448.png" alt="image"></p>
-<ul>
-<li>Grid는 FireFox에서 개발자도구로 보는 것이 가장 편하다!</li>
-</ul>
-<h3 id="Grid-fraction"><a href="#Grid-fraction" class="headerlink" title="Grid fraction"></a>Grid fraction</h3>  <figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-class">.container</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">background</span>: yellow;</span><br><span class="line">  <span class="hljs-attribute">display</span>: grid;</span><br><span class="line">  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">1</span>fr <span class="hljs-number">1</span>fr <span class="hljs-number">1</span>fr;</span><br><span class="line">  <span class="hljs-attribute">grid-template-rows</span>: <span class="hljs-number">100px</span> <span class="hljs-number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  <img src="https://user-images.githubusercontent.com/48080762/56209296-1fffef80-608e-11e9-9732-5b78ace04632.png" alt="image"></p>
-<h3 id="Grid-배치"><a href="#Grid-배치" class="headerlink" title="Grid 배치"></a>Grid 배치</h3>  <figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-class">.items4</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">background</span>: lime;</span><br><span class="line">  <span class="hljs-attribute">grid-column-start</span>: <span class="hljs-number">2</span>;</span><br><span class="line">  <span class="hljs-attribute">grid-column-end</span>: <span class="hljs-number">3</span>;</span><br><span class="line">  <span class="hljs-attribute">grid-row-start</span>: <span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-attribute">grid-row-end</span>: <span class="hljs-number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  <img src="https://user-images.githubusercontent.com/48080762/56209326-373edd00-608e-11e9-9923-8356fdcfff6c.png" alt="image"></p>
-<ul>
-<li>Start나 end 중 하나를 지정해주지 않으면 자동으로 한 칸만큼을 차지한다.</li>
-<li><p>단축표기법</p>
-<figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-class">.items4</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">background</span>: lime;</span><br><span class="line">    <span class="hljs-comment">/* start / end */</span></span><br><span class="line">  <span class="hljs-attribute">grid-column</span>: <span class="hljs-number">2</span> / <span class="hljs-number">3</span>;</span><br><span class="line">  <span class="hljs-attribute">grid-row</span>: <span class="hljs-number">1</span> / <span class="hljs-number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="여러-track-차지하기"><a href="#여러-track-차지하기" class="headerlink" title="여러 track 차지하기"></a>여러 track 차지하기</h3>  <figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-class">.items2</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">background</span>: orange;</span><br><span class="line">  <span class="hljs-attribute">grid-column</span>: <span class="hljs-number">1</span> / <span class="hljs-number">4</span>;</span><br><span class="line">  <span class="hljs-attribute">grid-row</span>: <span class="hljs-number">2</span> / <span class="hljs-number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  <img src="https://user-images.githubusercontent.com/48080762/56209366-58073280-608e-11e9-99d1-509abe78941f.png" alt="image"></p>
-<h3 id="Grid-area"><a href="#Grid-area" class="headerlink" title="Grid-area"></a>Grid-area</h3>  <figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-class">.items2</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">background</span>: orange;</span><br><span class="line">  <span class="hljs-comment">/* row-start / column-start / row-end / column-end */</span></span><br><span class="line">  <span class="hljs-attribute">grid-area</span>: <span class="hljs-number">2</span> / <span class="hljs-number">1</span> / <span class="hljs-number">3</span> / <span class="hljs-number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Grid-template-areas"><a href="#Grid-template-areas" class="headerlink" title="Grid template areas"></a>Grid template areas</h3><ul>
-<li>Grid item에 name 주고 container에서 grid-template-areas로 위치 잡기</li>
-<li><a href="https://uid.gitbook.io/css-grid/css-grid-guide/css-grid-properties-summary" target="_blank" rel="noopener">Grid 속성 요약</a></li>
-</ul>
-<figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-class">.container</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">background</span>: yellow;</span><br><span class="line">  <span class="hljs-attribute">display</span>: grid;</span><br><span class="line">  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">1</span>fr <span class="hljs-number">1</span>fr <span class="hljs-number">1</span>fr;</span><br><span class="line">  <span class="hljs-attribute">grid-template-rows</span>: <span class="hljs-number">100px</span> <span class="hljs-number">100px</span>;</span><br><span class="line">  <span class="hljs-attribute">grid-template-areas</span>: <span class="hljs-string">"item2 . item1"</span> </span><br><span class="line">          <span class="hljs-string">"item4 item4 item3"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://user-images.githubusercontent.com/48080762/56209461-93a1fc80-608e-11e9-9d71-ed756b4acf3c.png" alt="image"></p>
-<ul>
-<li>Grid IE 환경 코드로 autoprefix<br>: <a href="https://autoprefixer.github.io/" target="_blank" rel="noopener">Auto Prefixer</a> 🌟</li>
-<li><p>Grid calculator<br>: <a href="http://gridcalculator.dk/" target="_blank" rel="noopener">Grid Calculator</a> 🌟</p>
-<p><img src="https://user-images.githubusercontent.com/48080762/56209537-cb10a900-608e-11e9-892a-a5662fb10e4e.png" alt="image"><br>: column 크기 65px, gutter 20px, page width와 column width 소수점 안 나오게 조정</p>
-</li>
-</ul>
-<h3 id="Grid-column-gutter-gap-설정"><a href="#Grid-column-gutter-gap-설정" class="headerlink" title="Grid column, gutter(gap) 설정"></a>Grid column, gutter(gap) 설정</h3><figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-class">.container</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">background</span>: yellow;</span><br><span class="line">  <span class="hljs-attribute">display</span>: grid;</span><br><span class="line">  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(12, 65px);</span><br><span class="line">  <span class="hljs-attribute">grid-column-gap</span>: <span class="hljs-number">20px</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>: repeat(반복 횟수, 크기) method 사용<br><img src="https://user-images.githubusercontent.com/48080762/56209587-ea0f3b00-608e-11e9-9a34-2405d22f2135.png" alt="image"></p>
-<ul>
-<li>Grid area 잡기 : DeskTop Version</li>
-</ul>
-<figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-class">.container</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">max-width</span>: <span class="hljs-number">1000px</span>;</span><br><span class="line">  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto;</span><br><span class="line">  <span class="hljs-attribute">background</span>: silver;</span><br><span class="line">  <span class="hljs-attribute">display</span>: grid;</span><br><span class="line">  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(12, 65px);</span><br><span class="line">  <span class="hljs-comment">/* grid-template-rows: ; */</span></span><br><span class="line">  <span class="hljs-attribute">grid-column-gap</span>: <span class="hljs-number">20px</span>; </span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-selector-class">.header</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">background</span>: pink;</span><br><span class="line">  <span class="hljs-attribute">grid-area</span>: <span class="hljs-number">1</span> / <span class="hljs-number">1</span> / <span class="hljs-number">2</span> / <span class="hljs-number">13</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-selector-class">.navigation</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">background</span>: skyblue;</span><br><span class="line">  <span class="hljs-attribute">grid-area</span>: <span class="hljs-number">2</span> / <span class="hljs-number">1</span> / <span class="hljs-number">3</span> / <span class="hljs-number">13</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-selector-class">.book</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">background</span>: lime;</span><br><span class="line">  <span class="hljs-attribute">grid-area</span>: <span class="hljs-number">3</span> / <span class="hljs-number">1</span> / <span class="hljs-number">4</span> / <span class="hljs-number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-selector-class">.news</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">background</span>: orange;</span><br><span class="line">  <span class="hljs-attribute">grid-area</span>: <span class="hljs-number">3</span> / <span class="hljs-number">5</span> / <span class="hljs-number">4</span> / <span class="hljs-number">13</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-selector-class">.board</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">background</span>: blanchedalmond;</span><br><span class="line">  <span class="hljs-attribute">grid-area</span>: <span class="hljs-number">4</span> / <span class="hljs-number">1</span> / <span class="hljs-number">5</span> / <span class="hljs-number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-selector-class">.favorite</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">background</span>: gold;</span><br><span class="line">  <span class="hljs-attribute">grid-area</span>: <span class="hljs-number">4</span> / <span class="hljs-number">10</span> / <span class="hljs-number">5</span> / <span class="hljs-number">13</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-selector-class">.twitter</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">background</span>: brown;</span><br><span class="line">  <span class="hljs-attribute">grid-area</span>: <span class="hljs-number">4</span> / <span class="hljs-number">5</span> / <span class="hljs-number">5</span> / <span class="hljs-number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-selector-class">.footer</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">background</span>: teal;</span><br><span class="line">  <span class="hljs-attribute">grid-area</span>: <span class="hljs-number">5</span> / <span class="hljs-number">1</span> / <span class="hljs-number">6</span> / <span class="hljs-number">13</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://user-images.githubusercontent.com/48080762/56209649-04491900-608f-11e9-96a4-a5385f8e784c.png" alt="image"></p>
-<ul>
-<li><p>Grid area 잡기 : Mobile Device</p>
-<figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/* Mobile Device */</span></span><br><span class="line">@<span class="hljs-keyword">media</span> all and (max-width: <span class="hljs-number">999px</span>)&#123;</span><br><span class="line">  <span class="hljs-selector-class">.container</span>&#123;</span><br><span class="line">    <span class="hljs-attribute">display</span>: grid;</span><br><span class="line">    <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(4, 1fr);</span><br><span class="line">    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> <span class="hljs-number">20px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>알파, 오메가 margin 따로 없으니까 좌우 padding으로 줌</li>
-<li>Margin 빼고 나머지 부분을 4등분하려고 fr 단위 사용</li>
-</ul>
-<p><img src="https://user-images.githubusercontent.com/48080762/56209752-3c505c00-608f-11e9-98d6-a366f46b1e2c.png" alt="image"></p>
-<figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/* Mobile Device */</span></span><br><span class="line">@<span class="hljs-keyword">media</span> all and (max-width: <span class="hljs-number">999px</span>)&#123;</span><br><span class="line">  <span class="hljs-selector-class">.container</span>&#123;</span><br><span class="line">    <span class="hljs-attribute">display</span>: grid;</span><br><span class="line">    <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(4, 1fr);</span><br><span class="line">    <span class="hljs-attribute">grid-column-gap</span>: <span class="hljs-number">20px</span>;</span><br><span class="line">    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> <span class="hljs-number">20px</span>;</span><br><span class="line">    <span class="hljs-attribute">grid-template-areas</span>: <span class="hljs-string">"header header header header"</span></span><br><span class="line">    <span class="hljs-string">"nav nav nav nav"</span></span><br><span class="line">    <span class="hljs-string">"book book news news"</span></span><br><span class="line">    <span class="hljs-string">"board board favorite favorite"</span></span><br><span class="line">    <span class="hljs-string">"twitter twitter twitter twitter"</span></span><br><span class="line">    <span class="hljs-string">"footer footer footer footer"</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-selector-class">.header</span>&#123;</span><br><span class="line">    <span class="hljs-attribute">background</span>: yellow;</span><br><span class="line">    <span class="hljs-attribute">grid-area</span>: header;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-selector-class">.navigation</span>&#123;</span><br><span class="line">    <span class="hljs-attribute">background</span>: pink;</span><br><span class="line">    <span class="hljs-attribute">grid-area</span>: nav;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-selector-class">.book</span>&#123;</span><br><span class="line">    <span class="hljs-attribute">background</span>: skyblue;</span><br><span class="line">    <span class="hljs-attribute">grid-area</span>: book;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-selector-class">.news</span>&#123;</span><br><span class="line">    <span class="hljs-attribute">background</span>: lime;</span><br><span class="line">    <span class="hljs-attribute">grid-area</span>: news;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-selector-class">.board</span>&#123;</span><br><span class="line">    <span class="hljs-attribute">background</span>: purple;</span><br><span class="line">    <span class="hljs-attribute">grid-area</span>: board;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-selector-class">.favorite</span>&#123;</span><br><span class="line">    <span class="hljs-attribute">background</span>: orange;</span><br><span class="line">    <span class="hljs-attribute">grid-area</span>: favorite;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-selector-class">.twitter</span>&#123;</span><br><span class="line">    <span class="hljs-attribute">background</span>: aqua;</span><br><span class="line">    <span class="hljs-attribute">grid-area</span>: twitter;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-selector-class">.footer</span>&#123;</span><br><span class="line">    <span class="hljs-attribute">background</span>: hotpink;</span><br><span class="line">    <span class="hljs-attribute">grid-area</span>: footer;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/16/Responsive Web (1)/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
