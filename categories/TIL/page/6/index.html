@@ -2,7 +2,7 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Category: LeetCode - 수빈 개발블로그</title>
+<title>Category: TIL - 수빈 개발블로그</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -11,7 +11,7 @@
 <meta name="keywords" content="developer, frontend">
 <meta property="og:type" content="website">
 <meta property="og:title" content="수빈 개발블로그">
-<meta property="og:url" content="https://sub2n.github.io/categories/Algorithm/LeetCode/index.html">
+<meta property="og:url" content="https://sub2n.github.io/categories/TIL/page/6/index.html">
 <meta property="og:site_name" content="수빈 개발블로그">
 <meta property="og:description" content="Post what I studied">
 <meta property="og:locale" content="en">
@@ -153,9 +153,7 @@
         <ul>
             <li><a href="/categories">Categories</a></li>
             
-            <li><a href="/categories/Algorithm/">Algorithm</a></li>
-            
-            <li class="is-active"><a href="#" aria-current="page">LeetCode</a></li>
+            <li class="is-active"><a href="#" aria-current="page">TIL</a></li>
         </ul>
         </nav>
     </div>
@@ -163,27 +161,21 @@
 
     <div class="card">
     
-    <div class="card-image">
-        <a href="/2019/04/17/LeetCode-28-Implement-strStr/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="LeetCode 28. Implement strStr()">
-        </a>
-    </div>
-    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-17T08:18:54.000Z">2019-04-17</time>
+                <time class="level-item has-text-grey" datetime="2019-03-13T06:39:38.000Z">2019-03-13</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/LeetCode/">LeetCode</a>
+                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 275 words)
+                    a few seconds read (About 48 words)
                 </span>
                 
                 
@@ -192,123 +184,15 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/04/17/LeetCode-28-Implement-strStr/">LeetCode 28. Implement strStr()</a>
+                <a class="has-link-black-ter" href="/2019/03/13/Hello hexo/">Hello Hexo</a>
             
         </h1>
         <div class="content">
-            <h2 id="LeetCode-28-Implement-strStr"><a href="#LeetCode-28-Implement-strStr" class="headerlink" title="LeetCode 28. Implement strStr()"></a><a href="https://leetcode.com/problems/implement-strstr/" target="_blank" rel="noopener">LeetCode 28. Implement strStr()</a></h2><blockquote>
-<p>Implement strStr().</p>
-<p>Return the index of the first occurrence of needle in haystack, or -1 &gt; if needle is not part of haystack.</p>
-<p>Example 1:</p>
-<p>Input: haystack = “hello”, needle = “ll”<br>Output: 2<br>Example 2:</p>
-<p>Input: haystack = “aaaaa”, needle = “bba”<br>Output: -1</p>
-</blockquote>
-<h3 id="요구조건"><a href="#요구조건" class="headerlink" title="요구조건"></a>요구조건</h3><ol>
-<li>string haystack에서 needle이 처음으로 등장하는 index를 반환한다. 존재하지 않으면 -1을 반환한다.</li>
-</ol>
-<h3 id="해결책"><a href="#해결책" class="headerlink" title="해결책"></a>해결책</h3><ol>
-<li>javaScript의 indexOf() method를 이용해 해결했다.</li>
-<li>method를 쓰지 않고 C로 해결해보려고 했는데 한 1년 C를 쓰지 않았다고 기능이 기억이 나지 않아 여러 번 찾아봐야 했다. 포인터 개념도 다시 한 번 훑어봐야겠다.</li>
-</ol>
-<h3 id="javaScript-Solution-1"><a href="#javaScript-Solution-1" class="headerlink" title="javaScript Solution 1"></a>javaScript Solution 1</h3><p><img src="https://user-images.githubusercontent.com/48080762/56282327-dd9be880-6149-11e9-95f8-ba96c666a2c4.png" alt="Submit 1 : javaSript"></p>
-<p>: Runtime 56 ms    | Memory Usage 33.8 MB</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;string&#125; haystack</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;string&#125; needle</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-keyword">var</span> strStr = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">haystack, needle</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (needle === <span class="hljs-string">""</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">return</span> haystack.indexOf(needle);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p><img src="https://user-images.githubusercontent.com/48080762/56284645-10e17600-6150-11e9-85ea-a202348ec60b.png" alt="Submit 2 : C"></p>
-<p>: Runtime 1300 ms    | Memory Usage 7 MB</p>
-<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">strStr</span><span class="hljs-params">(<span class="hljs-keyword">char</span>* haystack, <span class="hljs-keyword">char</span>* needle)</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">if</span>(needle[<span class="hljs-number">0</span>] == <span class="hljs-string">'\0'</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">int</span> index = <span class="hljs-number">-1</span>;</span><br><span class="line">  <span class="hljs-keyword">int</span> hayLen = <span class="hljs-built_in">strlen</span>(haystack);</span><br><span class="line">  <span class="hljs-keyword">int</span> neeLen = <span class="hljs-built_in">strlen</span>(needle);</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i&lt; hayLen; i++)&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span>(haystack[i] == needle[<span class="hljs-number">0</span>])&#123;</span><br><span class="line">          index = i;</span><br><span class="line">          <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>; j &lt; neeLen ; j++)&#123;</span><br><span class="line">              <span class="hljs-keyword">if</span>(i+j &gt;= hayLen || haystack[i+j] != needle[j])&#123;</span><br><span class="line">                  index = <span class="hljs-number">-1</span>;</span><br><span class="line">                  <span class="hljs-keyword">break</span>;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;  </span><br><span class="line">      &#125;  </span><br><span class="line">      <span class="hljs-keyword">if</span>(index &gt; <span class="hljs-number">-1</span>) <span class="hljs-keyword">return</span> index;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/17/LeetCode-28-Implement-strStr/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/16/LeetCode-27-Remove-Element/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="LeetCode 27. Remove Element">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-16T10:46:18.000Z">2019-04-16</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/LeetCode/">LeetCode</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 544 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/16/LeetCode-27-Remove-Element/">LeetCode 27. Remove Element</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="LeetCode-27-Remove-Element"><a href="#LeetCode-27-Remove-Element" class="headerlink" title="LeetCode 27. Remove Element"></a><a href="https://leetcode.com/problems/remove-element/" target="_blank" rel="noopener">LeetCode 27. Remove Element</a></h2><blockquote>
-<p>Given an array nums and a value val, remove all instances of that value in-place and return the new length.</p>
-<p>Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.</p>
-<p>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.</p>
-</blockquote>
-<blockquote>
-<p>Example 1:</p>
-<p>Given nums = [3,2,2,3], val = 3,</p>
-<p>Your function should return length = 2, with the first two elements of nums being 2.</p>
-<p>It doesn’t matter what you leave beyond the returned length.</p>
-</blockquote>
-<blockquote>
-<p>Example 2:</p>
-<p>Given nums = [0,1,2,2,3,0,4,2], val = 2,</p>
-<p>Your function should return length = 5, with the first five elements of nums containing 0, 1, 3, 0, and 4.</p>
-<p>Note that the order of those five elements can be arbitrary.</p>
-<p>It doesn’t matter what values are set beyond the returned length.</p>
-</blockquote>
-<h3 id="요구조건"><a href="#요구조건" class="headerlink" title="요구조건"></a>요구조건</h3><ol>
-<li>배열 nums에서 val의 값을 가진 element를 제거한다.</li>
-<li><a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank" rel="noopener">in-place</a> algorithm으로 연산해야 한다.</li>
-</ol>
-<p>이번 문제는 <a href="https://sub2n.github.io/2019/04/15/LeetCode-26-Remove-Duplicates-from-Sorted-Array/">LeetCode 26. Remove Duplicates from Sorted Array</a>를 오해해서 풀었을 때와 거의 흡사해서 푸는 데에 시간이 오래 걸리지 않았다.</p>
-<h3 id="해결책"><a href="#해결책" class="headerlink" title="해결책"></a>해결책</h3><ol>
-<li>혼자 풀었을 때는 for문에서 nums.length를 검사할 때, nums.length가 splice로 인해서 줄어든 길이를 인식하지 못한다고 생각하여 if문의 마지막에 length = nums.length로 재정의를 했다.<br>스터디원들과 대화를 하며 nums를 직접 접근하고 변형하는 것이므로 그럴 필요가 없다는 것을 알았다.</li>
-<li>배열 nums의 길이만큼 for문을 돌며 val과 같은 element를 만나면 배열에서 제거한다.<br>i번 째 loop에서 index = i 자리의 원소가 사라져, i+1번째 원소가 앞으로 당겨지므로, splice 연산 뒤에 i에서 1을 빼준다.</li>
-</ol>
-<h3 id="javaScript-Solution-1"><a href="#javaScript-Solution-1" class="headerlink" title="javaScript Solution 1"></a>javaScript Solution 1</h3><p><img src="https://user-images.githubusercontent.com/48080762/56204600-c219da80-6082-11e9-91ef-d4603cc75146.png" alt="image"></p>
-<p>: Runtime 60 ms | Memory Usage 34.6 MB</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;number&#125; val</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-keyword">var</span> removeElement = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums, val</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(val == nums[i])&#123;</span><br><span class="line">            nums.splice(i, <span class="hljs-number">1</span>);</span><br><span class="line">            i =- <span class="hljs-number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> nums.length;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="배운-점"><a href="#배운-점" class="headerlink" title="배운 점"></a>배운 점</h3><ul>
-<li><p>array.splice method에 대해서 제대로 알게 되었다. 원소를 제거하는 것 뿐만 아니라 그 자리에 여러 element를 넣을 수도 있는 유용한 method다.</p>
-</li>
-<li><p>여러 명과 알고리즘에 대해 이야기하면 생각지 못한 풀이가 나오는 것이 재밌다.</p>
-</li>
-</ul>
+            <h2 id="Start-Hexo"><a href="#Start-Hexo" class="headerlink" title="Start Hexo"></a>Start Hexo</h2><p>❤</p>
+<p>안녕하세요. Sub2n 입니다. 오늘은 hexo를 이용해 블로그를 생성하는 방법에 대해 알아보겠습니다.</p>
+<p>🐸</p>
+<p>개구리</p>
+<p>🐸</p>
 
         </div>
         
@@ -324,86 +208,29 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/15/LeetCode-26-Remove-Duplicates-from-Sorted-Array/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="LeetCode 26. Remove Duplicates from Sorted Array">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-15T12:37:47.000Z">2019-04-15</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/LeetCode/">LeetCode</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 593 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/15/LeetCode-26-Remove-Duplicates-from-Sorted-Array/">LeetCode 26. Remove Duplicates from Sorted Array</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="LeetCode-26-Remove-Duplicates-from-Sorted-Array"><a href="#LeetCode-26-Remove-Duplicates-from-Sorted-Array" class="headerlink" title="LeetCode 26. Remove Duplicates from Sorted Array"></a><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/" target="_blank" rel="noopener">LeetCode 26. Remove Duplicates from Sorted Array</a></h2><blockquote>
-<p>Given a sorted array nums, remove the duplicates in-place such that each element appear only once and return the new length.</p>
-<p>Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.</p>
-</blockquote>
-<blockquote>
-<p>Example 1:<br>Given nums = [1,1,2],</p>
-<p>Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively.</p>
-<p>It doesn’t matter what you leave beyond the returned length.</p>
-</blockquote>
-<blockquote>
-<p>Example 2:<br>Given nums = [0,0,1,1,1,2,2,3,3,4],</p>
-<p>Your function should return length = 5, with the first five elements of nums being modified to 0, 1, 2, 3, and 4 respectively.</p>
-<p>It doesn’t matter what values are set beyond the returned length.</p>
-</blockquote>
-<h3 id="요구조건"><a href="#요구조건" class="headerlink" title="요구조건"></a>요구조건</h3><ol>
-<li>배열 nums에서 중복되지 않는 원소의 수를 return한다.</li>
-<li>배열 nums는 중복되지 않는 수로 앞부분이 정렬되어야한다.</li>
-</ol>
-<p>문제는 위의 설명과 같이 nums라는 number형 array를 입력받아 중복되는 element 대신 다음 element를 그 자리에 오게 하는 것이다. 나는 처음에 중복된 element를 제거한 새로운 배열을 return해 여러 번 오류가 났었다.</p>
-<p>이 문제의 핵심은 nums 배열이 referance로 넘어온다는 것이다. 즉, 새로운 배열을 만들지 않고 원본 nums의 값을 바꿔야한다.</p>
-<p>솔루션을 도출하기까지 나를 헷갈리게 한 것은 한 element를 제거하고 나면 nums의 index부터 길이가 매번 변화한다는 것이다. 처음에 그 부분을 캐치하지 못해 여러 번 오류가 났다.</p>
-<h3 id="해결책"><a href="#해결책" class="headerlink" title="해결책"></a>해결책</h3><ol>
-<li>처음에 문제를 완벽하게 이해하지 못해서, nums 배열의 중복을 완전히 제거하는 것인줄로만 알았다. 그래서 <code>array.splice</code> method를 이용해서 중복되는 부분을 제거했다.</li>
-<li>첫번째 Solution을 제출한 후 다른 사람들의 풀이를 보고 문제를 다시 제대로 이해했다.</li>
-</ol>
-<h3 id="javaScript-Solution-1"><a href="#javaScript-Solution-1" class="headerlink" title="javaScript Solution 1"></a>javaScript Solution 1</h3><p>: Runtime 92 ms | Memory Usage 37.3 MB</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-keyword">var</span> removeDuplicates = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> prev= nums[<span class="hljs-number">0</span>];</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">1</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(nums[i] == prev)&#123;</span><br><span class="line">            prev = nums[i];</span><br><span class="line">            nums.splice(i, <span class="hljs-number">1</span>);</span><br><span class="line">            i -= <span class="hljs-number">1</span>;</span><br><span class="line">        &#125; <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">            prev = nums[i];</span><br><span class="line">            <span class="hljs-keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="javaScript-Solution-2"><a href="#javaScript-Solution-2" class="headerlink" title="javaScript Solution 2"></a>javaScript Solution 2</h3><p>: Runtime 72 ms | Memory Usage 37.3 MB</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-keyword">var</span> removeDuplicates = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(nums.length == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">let</span> prev = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">       <span class="hljs-keyword">if</span>(nums[i] != nums[prev])&#123;</span><br><span class="line">           prev++;</span><br><span class="line">           nums[prev] = nums[i];</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> prev+<span class="hljs-number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="배운-점"><a href="#배운-점" class="headerlink" title="배운 점"></a>배운 점</h3><p>영어라고 해서 대충 Example만 보고 바로 문제를 풀려고 하는 습관을 고쳐야겠다. 문제를 제대로 해석하고, 알고리즘을 짜는 것이 훨씬 효율적인 것 같다.</p>
 
+    
+<div class="card card-transparent">
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+        <div class="pagination-previous">
+            <a class="is-flex-grow has-text-black-ter" href="/categories/TIL/page/5/">Previous</a>
         </div>
-        
-        
-        
-    </div>
+        <div class="pagination-next is-invisible is-hidden-mobile">
+            <a class="is-flex-grow has-text-black-ter" href="/categories/TIL/page/7/">Next</a>
+        </div>
+        <ul class="pagination-list is-hidden-mobile">
+            
+            <li><a class="pagination-link has-text-black-ter" href="/categories/TIL/">1</a></li>
+            
+            <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/categories/TIL/page/5/">5</a></li>
+            
+            <li><a class="pagination-link is-current" href="/categories/TIL/page/6/">6</a></li>
+            
+        </ul>
+    </nav>
 </div>
-
-
-
-
-
-
-
-
 </div>
                 
 

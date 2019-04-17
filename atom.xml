@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sub2n.github.io/"/>
-  <updated>2019-04-16T12:01:24.462Z</updated>
+  <updated>2019-04-17T10:45:57.474Z</updated>
   <id>https://sub2n.github.io/</id>
   
   <author>
@@ -15,6 +15,94 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>190417-TIL</title>
+    <link href="https://sub2n.github.io/2019/04/17/190417-TIL/"/>
+    <id>https://sub2n.github.io/2019/04/17/190417-TIL/</id>
+    <published>2019-04-17T10:45:23.000Z</published>
+    <updated>2019-04-17T10:45:57.474Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
+    
+    
+      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode 28. Implement strStr()</title>
+    <link href="https://sub2n.github.io/2019/04/17/LeetCode-28-Implement-strStr/"/>
+    <id>https://sub2n.github.io/2019/04/17/LeetCode-28-Implement-strStr/</id>
+    <published>2019-04-17T08:18:54.000Z</published>
+    <updated>2019-04-17T11:37:18.874Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="LeetCode-28-Implement-strStr"><a href="#LeetCode-28-Implement-strStr" class="headerlink" title="LeetCode 28. Implement strStr()"></a><a href="https://leetcode.com/problems/implement-strstr/" target="_blank" rel="noopener">LeetCode 28. Implement strStr()</a></h2><blockquote><p>Implement strStr().</p><p>Return the index of the first occurrence of needle in haystack, or -1 &gt; if needle is not part of haystack.</p><p>Example 1:</p><p>Input: haystack = “hello”, needle = “ll”<br>Output: 2<br>Example 2:</p><p>Input: haystack = “aaaaa”, needle = “bba”<br>Output: -1</p></blockquote><h3 id="요구조건"><a href="#요구조건" class="headerlink" title="요구조건"></a>요구조건</h3><ol><li>string haystack에서 needle이 처음으로 등장하는 index를 반환한다. 존재하지 않으면 -1을 반환한다.</li></ol><h3 id="해결책"><a href="#해결책" class="headerlink" title="해결책"></a>해결책</h3><ol><li>javaScript의 indexOf() method를 이용해 해결했다.</li><li>method를 쓰지 않고 C로 해결해보려고 했는데 한 1년 C를 쓰지 않았다고 기능이 기억이 나지 않아 여러 번 찾아봐야 했다. 포인터 개념도 다시 한 번 훑어봐야겠다.</li></ol><h3 id="javaScript-Solution-1"><a href="#javaScript-Solution-1" class="headerlink" title="javaScript Solution 1"></a>javaScript Solution 1</h3><p><img src="https://user-images.githubusercontent.com/48080762/56282327-dd9be880-6149-11e9-95f8-ba96c666a2c4.png" alt="Submit 1 : javaSript"></p><p>: Runtime 56 ms    | Memory Usage 33.8 MB</p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;string&#125; haystack</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;string&#125; needle</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-keyword">var</span> strStr = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">haystack, needle</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (needle === <span class="hljs-string">""</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">return</span> haystack.indexOf(needle);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p><img src="https://user-images.githubusercontent.com/48080762/56284645-10e17600-6150-11e9-85ea-a202348ec60b.png" alt="Submit 2 : C"></p><p>: Runtime 1300 ms    | Memory Usage 7 MB</p><figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">strStr</span><span class="hljs-params">(<span class="hljs-keyword">char</span>* haystack, <span class="hljs-keyword">char</span>* needle)</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">if</span>(needle[<span class="hljs-number">0</span>] == <span class="hljs-string">'\0'</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">int</span> index = <span class="hljs-number">-1</span>;</span><br><span class="line">  <span class="hljs-keyword">int</span> hayLen = <span class="hljs-built_in">strlen</span>(haystack);</span><br><span class="line">  <span class="hljs-keyword">int</span> neeLen = <span class="hljs-built_in">strlen</span>(needle);</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i&lt; hayLen; i++)&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span>(haystack[i] == needle[<span class="hljs-number">0</span>])&#123;</span><br><span class="line">          index = i;</span><br><span class="line">          <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>; j &lt; neeLen ; j++)&#123;</span><br><span class="line">              <span class="hljs-keyword">if</span>(i+j &gt;= hayLen || haystack[i+j] != needle[j])&#123;</span><br><span class="line">                  index = <span class="hljs-number">-1</span>;</span><br><span class="line">                  <span class="hljs-keyword">break</span>;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;  </span><br><span class="line">      &#125;  </span><br><span class="line">      <span class="hljs-keyword">if</span>(index &gt; <span class="hljs-number">-1</span>) <span class="hljs-keyword">return</span> index;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;LeetCode-28-Implement-strStr&quot;&gt;&lt;a href=&quot;#LeetCode-28-Implement-strStr&quot; class=&quot;headerlink&quot; title=&quot;LeetCode 28. Implement strStr()&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.com/problems/implement-strstr/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;LeetCode 28. Implement strStr()&lt;/a&gt;&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;Implement strStr().&lt;/p&gt;
+&lt;p&gt;Return the index of the first occurrence of needle in haystack, or -1 &amp;gt; if needle is not part of haystack.&lt;/p&gt;
+&lt;p&gt;Example 1:&lt;/p&gt;
+&lt;p&gt;Input: haystack = “hello”, needle = “ll”&lt;br&gt;Output: 2&lt;br&gt;Example 2:&lt;/p&gt;
+&lt;p&gt;Input: haystack = “aaaaa”, needle = “bba”&lt;br&gt;Output: -1&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;요구조건&quot;&gt;&lt;a href=&quot;#요구조건&quot; class=&quot;headerlink&quot; title=&quot;요구조건&quot;&gt;&lt;/a&gt;요구조건&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;string haystack에서 needle이 처음으로 등장하는 index를 반환한다. 존재하지 않으면 -1을 반환한다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;해결책&quot;&gt;&lt;a href=&quot;#해결책&quot; class=&quot;headerlink&quot; title=&quot;해결책&quot;&gt;&lt;/a&gt;해결책&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;javaScript의 indexOf() method를 이용해 해결했다.&lt;/li&gt;
+&lt;li&gt;method를 쓰지 않고 C로 해결해보려고 했는데 한 1년 C를 쓰지 않았다고 기능이 기억이 나지 않아 여러 번 찾아봐야 했다. 포인터 개념도 다시 한 번 훑어봐야겠다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;javaScript-Solution-1&quot;&gt;&lt;a href=&quot;#javaScript-Solution-1&quot; class=&quot;headerlink&quot; title=&quot;javaScript Solution 1&quot;&gt;&lt;/a&gt;javaScript Solution 1&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/48080762/56282327-dd9be880-6149-11e9-95f8-ba96c666a2c4.png&quot; alt=&quot;Submit 1 : javaSript&quot;&gt;&lt;/p&gt;
+&lt;p&gt;: Runtime 56 ms    | Memory Usage 33.8 MB&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript hljs&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;hljs-comment&quot;&gt;/**&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;hljs-comment&quot;&gt; * @param &amp;#123;string&amp;#125; haystack&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;hljs-comment&quot;&gt; * @param &amp;#123;string&amp;#125; needle&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;hljs-comment&quot;&gt; * @return &amp;#123;number&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;hljs-comment&quot;&gt; */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; strStr = &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;haystack, needle&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; (needle === &lt;span class=&quot;hljs-string&quot;&gt;&quot;&quot;&lt;/span&gt;) &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; haystack.indexOf(needle);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/48080762/56284645-10e17600-6150-11e9-85ea-a202348ec60b.png&quot; alt=&quot;Submit 2 : C&quot;&gt;&lt;/p&gt;
+&lt;p&gt;: Runtime 1300 ms    | Memory Usage 7 MB&lt;/p&gt;
+&lt;figure class=&quot;highlight c hljs&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;strStr&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;(&lt;span class=&quot;hljs-keyword&quot;&gt;char&lt;/span&gt;* haystack, &lt;span class=&quot;hljs-keyword&quot;&gt;char&lt;/span&gt;* needle)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt;(needle[&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;] == &lt;span class=&quot;hljs-string&quot;&gt;&#39;\0&#39;&lt;/span&gt;) &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; index = &lt;span class=&quot;hljs-number&quot;&gt;-1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; hayLen = &lt;span class=&quot;hljs-built_in&quot;&gt;strlen&lt;/span&gt;(haystack);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; neeLen = &lt;span class=&quot;hljs-built_in&quot;&gt;strlen&lt;/span&gt;(needle);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; i=&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;; i&amp;lt; hayLen; i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt;(haystack[i] == needle[&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;])&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          index = i;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          &lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; j=&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;; j &amp;lt; neeLen ; j++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;              &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt;(i+j &amp;gt;= hayLen || haystack[i+j] != needle[j])&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                  index = &lt;span class=&quot;hljs-number&quot;&gt;-1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                  &lt;span class=&quot;hljs-keyword&quot;&gt;break&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;              &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          &amp;#125;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &amp;#125;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt;(index &amp;gt; &lt;span class=&quot;hljs-number&quot;&gt;-1&lt;/span&gt;) &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; index;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;-1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="https://sub2n.github.io/categories/Algorithm/"/>
+    
+      <category term="LeetCode" scheme="https://sub2n.github.io/categories/Algorithm/LeetCode/"/>
+    
+    
+      <category term="Algorithm" scheme="https://sub2n.github.io/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CodeWars 6kyu. Multiples of 3 or 5</title>
+    <link href="https://sub2n.github.io/2019/04/17/CodeWars-6kyu-Multiples-of-3-or-5/"/>
+    <id>https://sub2n.github.io/2019/04/17/CodeWars-6kyu-Multiples-of-3-or-5/</id>
+    <published>2019-04-17T08:17:13.000Z</published>
+    <updated>2019-04-17T10:44:43.076Z</updated>
+    
+    <content type="html"><![CDATA[<p>##<a href="https://www.codewars.com/kata/multiples-of-3-or-5/train/javascript" target="_blank" rel="noopener">CodeWars 6kyu. Multiples of 3 or 5</a></p><blockquote><p>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.</p><p>Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in.</p><p>Note: If the number is a multiple of both 3 and 5, only count it once.</p><p>Courtesy of ProjectEuler.net</p></blockquote><h3 id="요구조건"><a href="#요구조건" class="headerlink" title="요구조건"></a>요구조건</h3><p>어떤 자연수 number 미만의 3 또는 5의 배수를 찾는 문제</p><h3 id="해결책"><a href="#해결책" class="headerlink" title="해결책"></a>해결책</h3><ol><li>input number가 3 또는 5로 나누어 떨어지면 sum에 더하는 방식이다. 문제가 너무 간단하게 풀려서 새로운 방법으로 생각 해보기로 했다.</li><li>number를 3, 5로 나누면 그 몫의 개수만큼만 for loop을 돌며 추가한다. 5로 나눈 몫이 항상 3으로 나눈 몫보다 작기 때문에 한 번 더 검사를 해주었다.</li></ol><h3 id="javaScript-Solution-1"><a href="#javaScript-Solution-1" class="headerlink" title="javaScript Solution 1"></a>javaScript Solution 1</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">solution</span>(<span class="hljs-params">number</span>)</span>&#123;</span><br><span class="line">  <span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; number; i++) &#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (i % <span class="hljs-number">3</span> === <span class="hljs-number">0</span> || i % <span class="hljs-number">5</span> === <span class="hljs-number">0</span>) &#123;</span><br><span class="line">      sum += i;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="javaScript-Solution-2"><a href="#javaScript-Solution-2" class="headerlink" title="javaScript Solution 2"></a>javaScript Solution 2</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">solution</span>(<span class="hljs-params">number</span>)</span>&#123;</span><br><span class="line">  <span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">var</span> threeMultiples = number/<span class="hljs-number">3</span>;</span><br><span class="line">  <span class="hljs-keyword">var</span> fiveMultiples = number/<span class="hljs-number">5</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">1</span>; i&lt; threeMultiples; i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(i%<span class="hljs-number">5</span> != <span class="hljs-number">0</span>) sum += i*<span class="hljs-number">3</span>;</span><br><span class="line">    <span class="hljs-keyword">if</span>(i &lt; fiveMultiples) sum += i*<span class="hljs-number">5</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;##&lt;a href=&quot;https://www.codewars.com/kata/multiples-of-3-or-5/train/javascript&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CodeWars 6kyu. Multiples of
+      
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="https://sub2n.github.io/categories/Algorithm/"/>
+    
+      <category term="CodeWars" scheme="https://sub2n.github.io/categories/Algorithm/CodeWars/"/>
+    
+    
+      <category term="Algorithm" scheme="https://sub2n.github.io/tags/Algorithm/"/>
+    
+  </entry>
   
   <entry>
     <title>Responsive Web (2)</title>
@@ -461,84 +549,6 @@
       <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
     
       <category term="HTML, CSS" scheme="https://sub2n.github.io/tags/HTML-CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>190401 TIL</title>
-    <link href="https://sub2n.github.io/2019/04/01/190401-TIL/"/>
-    <id>https://sub2n.github.io/2019/04/01/190401-TIL/</id>
-    <published>2019-04-01T09:55:33.000Z</published>
-    <updated>2019-04-16T08:17:40.985Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><h4 id="오늘-배운-것"><a href="#오늘-배운-것" class="headerlink" title="오늘 배운 것"></a>오늘 배운 것</h4></li></ul><p>오늘부터 4주간 HTML/CSS를 새로 배운다. 첫 수업이었는데 많은 것을 새롭게 알았다.</p><ul><li><p>웹 접근성과 웹 표준이 무엇이며 얼마나 중요한지, 개발자에 자세에 대해서 배웠다.</p></li><li><p>HTML5의 역사와 특징에 대해 다시 한 번 배웠다.</p></li><li><p>Web page 제작을 위한 단계를 배웠다.</p><ol><li>선형화(layout) 단계 : design이 아닌 논리적 구조를 linearize</li><li>Semantic Element : <code>&lt;div&gt;</code>만 사용하는 것이 아니라 <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;article&gt;</code> 등 사용</li><li>Naming : element naming and grouping</li></ol></li><li><p>편리한 Emmet Cheatsheet를 알았다. 진짜 편하다!</p></li><li><p>CSS Box Model : content-box(defualt)와 border-box의 차이점을 알았다.</p></li><li><p>flex를 이용해서 layout을 잡는 것과, 호환되지 않을 때를 대비하여 float를 이용하는 방법을 여러 case를 통해서 배웠다.</p></li><li><p>Margin collapsing, clear: both 등 float CSS trick들을 배웠다.</p></li><li><h4 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h4></li></ul><p>지난 한달 간 나에게 가장 어려운 건 javascript보다는 HTML/CSS로 layout을 잡는 것이었는데, 내 생각대로 요소들이 배치되지 않았기 때문이다. </p><p>수업에서 CSS의 여러 속성들과 기능을 배우면서 왜 그렇게 되지 않았는지 알게 되었다. flex와 float는 확실히 공부하고 넘어가야겠다.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;오늘-배
-      
-    
-    </summary>
-    
-      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
-    
-    
-      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>190330~31 TIL</title>
-    <link href="https://sub2n.github.io/2019/04/01/190330-31-TIL/"/>
-    <id>https://sub2n.github.io/2019/04/01/190330-31-TIL/</id>
-    <published>2019-04-01T09:55:17.000Z</published>
-    <updated>2019-04-16T08:17:49.158Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><h4 id="토요일에-특강을-들었다"><a href="#토요일에-특강을-들었다" class="headerlink" title="토요일에 특강을 들었다."></a>토요일에 특강을 들었다.</h4></li></ul><p>실제로 현업에서 개발을 어떻게 하는지,</p><p>개발 방법에는 Waterfall보다 Agile를 많이 쓰는 추세라는 것을 알았다.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;토요일에
-      
-    
-    </summary>
-    
-      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
-    
-    
-      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>190329-TIL</title>
-    <link href="https://sub2n.github.io/2019/03/29/190329-TIL/"/>
-    <id>https://sub2n.github.io/2019/03/29/190329-TIL/</id>
-    <published>2019-03-29T14:34:40.000Z</published>
-    <updated>2019-04-16T08:18:50.081Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><h4 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h4></li></ul><p>jQeury 플러그인을 통해 Diary 화면의 배경에 ripples 효과를 줬다. 50px정도 여백에 효과가 적용되지 않는 문제가 있어 body background에 효과를 주는 것으로 해결했다.</p><p>알고리즘 스터디에서 Longest Common Prefix 문제를 다시 한 번 훑어보았다.</p><p>프로젝트 페이지의 폰트와 버튼 hover event 등을 추가하고 마무리했다.</p><ul><li><h4 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h4></li></ul><p>프로젝트를 하며 겪었던 자잘한 문제들과 해결방법을 정리해두어야겠다.</p><p>첫 팀 프로젝트는 생각보다 재미있었다. 해결하지 못할 문제는 없다는 것을 다시 한 번 알았다.</p><hr><p>✨ <a href="http://sub2n.dothome.co.kr/myHealthDiary/" target="_blank" rel="noopener">My Health Diary</a> ✨</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;오늘-한
-      
-    
-    </summary>
-    
-      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
-    
-    
-      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
     
   </entry>
   
