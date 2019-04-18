@@ -180,7 +180,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 544 words)
+                    4 minutes read (About 548 words)
                 </span>
                 
                 
@@ -193,45 +193,17 @@
             
         </h1>
         <div class="content">
-            <h2 id="LeetCode-27-Remove-Element"><a href="#LeetCode-27-Remove-Element" class="headerlink" title="LeetCode 27. Remove Element"></a><a href="https://leetcode.com/problems/remove-element/" target="_blank" rel="noopener">LeetCode 27. Remove Element</a></h2><blockquote>
-<p>Given an array nums and a value val, remove all instances of that value in-place and return the new length.</p>
-<p>Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.</p>
-<p>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.</p>
-</blockquote>
-<blockquote>
-<p>Example 1:</p>
-<p>Given nums = [3,2,2,3], val = 3,</p>
-<p>Your function should return length = 2, with the first two elements of nums being 2.</p>
-<p>It doesn’t matter what you leave beyond the returned length.</p>
-</blockquote>
-<blockquote>
-<p>Example 2:</p>
-<p>Given nums = [0,1,2,2,3,0,4,2], val = 2,</p>
-<p>Your function should return length = 5, with the first five elements of nums containing 0, 1, 3, 0, and 4.</p>
-<p>Note that the order of those five elements can be arbitrary.</p>
-<p>It doesn’t matter what values are set beyond the returned length.</p>
-</blockquote>
-<h3 id="요구조건"><a href="#요구조건" class="headerlink" title="요구조건"></a>요구조건</h3><ol>
-<li>배열 nums에서 val의 값을 가진 element를 제거한다.</li>
-<li><a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank" rel="noopener">in-place</a> algorithm으로 연산해야 한다.</li>
-</ol>
-<p>이번 문제는 <a href="https://sub2n.github.io/2019/04/15/LeetCode-26-Remove-Duplicates-from-Sorted-Array/">LeetCode 26. Remove Duplicates from Sorted Array</a>를 오해해서 풀었을 때와 거의 흡사해서 푸는 데에 시간이 오래 걸리지 않았다.</p>
-<h3 id="해결책"><a href="#해결책" class="headerlink" title="해결책"></a>해결책</h3><ol>
-<li>혼자 풀었을 때는 for문에서 nums.length를 검사할 때, nums.length가 splice로 인해서 줄어든 길이를 인식하지 못한다고 생각하여 if문의 마지막에 length = nums.length로 재정의를 했다.<br>스터디원들과 대화를 하며 nums를 직접 접근하고 변형하는 것이므로 그럴 필요가 없다는 것을 알았다.</li>
-<li>배열 nums의 길이만큼 for문을 돌며 val과 같은 element를 만나면 배열에서 제거한다.<br>i번 째 loop에서 index = i 자리의 원소가 사라져, i+1번째 원소가 앞으로 당겨지므로, splice 연산 뒤에 i에서 1을 빼준다.</li>
-</ol>
-<h3 id="javaScript-Solution-1"><a href="#javaScript-Solution-1" class="headerlink" title="javaScript Solution 1"></a>javaScript Solution 1</h3><p><img src="https://user-images.githubusercontent.com/48080762/56204600-c219da80-6082-11e9-91ef-d4603cc75146.png" alt="image"></p>
-<p>: Runtime 60 ms | Memory Usage 34.6 MB</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;number&#125; val</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-keyword">var</span> removeElement = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums, val</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(val == nums[i])&#123;</span><br><span class="line">            nums.splice(i, <span class="hljs-number">1</span>);</span><br><span class="line">            i =- <span class="hljs-number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> nums.length;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="배운-점"><a href="#배운-점" class="headerlink" title="배운 점"></a>배운 점</h3><ul>
-<li><p>array.splice method에 대해서 제대로 알게 되었다. 원소를 제거하는 것 뿐만 아니라 그 자리에 여러 element를 넣을 수도 있는 유용한 method다.</p>
-</li>
-<li><p>여러 명과 알고리즘에 대해 이야기하면 생각지 못한 풀이가 나오는 것이 재밌다.</p>
-</li>
-</ul>
-
+            <h2 id="LeetCode-27-Remove-Element"><a href="#LeetCode-27-Remove-Element" class="headerlink" title="LeetCode 27. Remove Element"></a><a href="https://leetcode.com/problems/remove-element/" target="_blank" rel="noopener">LeetCode 27. Remove Element</a></h2>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/16/LeetCode-27-Remove-Element/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -266,7 +238,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 593 words)
+                    4 minutes read (About 594 words)
                 </span>
                 
                 
@@ -279,39 +251,17 @@
             
         </h1>
         <div class="content">
-            <h2 id="LeetCode-26-Remove-Duplicates-from-Sorted-Array"><a href="#LeetCode-26-Remove-Duplicates-from-Sorted-Array" class="headerlink" title="LeetCode 26. Remove Duplicates from Sorted Array"></a><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/" target="_blank" rel="noopener">LeetCode 26. Remove Duplicates from Sorted Array</a></h2><blockquote>
-<p>Given a sorted array nums, remove the duplicates in-place such that each element appear only once and return the new length.</p>
-<p>Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.</p>
-</blockquote>
-<blockquote>
-<p>Example 1:<br>Given nums = [1,1,2],</p>
-<p>Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively.</p>
-<p>It doesn’t matter what you leave beyond the returned length.</p>
-</blockquote>
-<blockquote>
-<p>Example 2:<br>Given nums = [0,0,1,1,1,2,2,3,3,4],</p>
-<p>Your function should return length = 5, with the first five elements of nums being modified to 0, 1, 2, 3, and 4 respectively.</p>
-<p>It doesn’t matter what values are set beyond the returned length.</p>
-</blockquote>
-<h3 id="요구조건"><a href="#요구조건" class="headerlink" title="요구조건"></a>요구조건</h3><ol>
-<li>배열 nums에서 중복되지 않는 원소의 수를 return한다.</li>
-<li>배열 nums는 중복되지 않는 수로 앞부분이 정렬되어야한다.</li>
-</ol>
-<p>문제는 위의 설명과 같이 nums라는 number형 array를 입력받아 중복되는 element 대신 다음 element를 그 자리에 오게 하는 것이다. 나는 처음에 중복된 element를 제거한 새로운 배열을 return해 여러 번 오류가 났었다.</p>
-<p>이 문제의 핵심은 nums 배열이 referance로 넘어온다는 것이다. 즉, 새로운 배열을 만들지 않고 원본 nums의 값을 바꿔야한다.</p>
-<p>솔루션을 도출하기까지 나를 헷갈리게 한 것은 한 element를 제거하고 나면 nums의 index부터 길이가 매번 변화한다는 것이다. 처음에 그 부분을 캐치하지 못해 여러 번 오류가 났다.</p>
-<h3 id="해결책"><a href="#해결책" class="headerlink" title="해결책"></a>해결책</h3><ol>
-<li>처음에 문제를 완벽하게 이해하지 못해서, nums 배열의 중복을 완전히 제거하는 것인줄로만 알았다. 그래서 <code>array.splice</code> method를 이용해서 중복되는 부분을 제거했다.</li>
-<li>첫번째 Solution을 제출한 후 다른 사람들의 풀이를 보고 문제를 다시 제대로 이해했다.</li>
-</ol>
-<h3 id="javaScript-Solution-1"><a href="#javaScript-Solution-1" class="headerlink" title="javaScript Solution 1"></a>javaScript Solution 1</h3><p>: Runtime 92 ms | Memory Usage 37.3 MB</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-keyword">var</span> removeDuplicates = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> prev= nums[<span class="hljs-number">0</span>];</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">1</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(nums[i] == prev)&#123;</span><br><span class="line">            prev = nums[i];</span><br><span class="line">            nums.splice(i, <span class="hljs-number">1</span>);</span><br><span class="line">            i -= <span class="hljs-number">1</span>;</span><br><span class="line">        &#125; <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">            prev = nums[i];</span><br><span class="line">            <span class="hljs-keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="javaScript-Solution-2"><a href="#javaScript-Solution-2" class="headerlink" title="javaScript Solution 2"></a>javaScript Solution 2</h3><p>: Runtime 72 ms | Memory Usage 37.3 MB</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-keyword">var</span> removeDuplicates = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(nums.length == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">let</span> prev = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">       <span class="hljs-keyword">if</span>(nums[i] != nums[prev])&#123;</span><br><span class="line">           prev++;</span><br><span class="line">           nums[prev] = nums[i];</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> prev+<span class="hljs-number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="배운-점"><a href="#배운-점" class="headerlink" title="배운 점"></a>배운 점</h3><p>영어라고 해서 대충 Example만 보고 바로 문제를 풀려고 하는 습관을 고쳐야겠다. 문제를 제대로 해석하고, 알고리즘을 짜는 것이 훨씬 효율적인 것 같다.</p>
-
+            <h2 id="LeetCode-26-Remove-Duplicates-from-Sorted-Array"><a href="#LeetCode-26-Remove-Duplicates-from-Sorted-Array" class="headerlink" title="LeetCode 26. Remove Duplicates from Sorted Array"></a><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/" target="_blank" rel="noopener">LeetCode 26. Remove Duplicates from Sorted Array</a></h2>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/15/LeetCode-26-Remove-Duplicates-from-Sorted-Array/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -367,7 +317,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        38
+                        41
                     </p>
                 </div>
             </div>
@@ -377,7 +327,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        6
+                        8
                     </p>
                 </div>
             </div>
@@ -480,7 +430,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Algorithm/" style="font-size: 13.33px;">Algorithm</a> <a href="/tags/HTML-CSS/" style="font-size: 16.67px;">HTML, CSS</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a>
+        <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/HTML-CSS/" style="font-size: 13.33px;">HTML, CSS</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a>
     </div>
 </div>
 
@@ -504,7 +454,7 @@
                 <span class="level-item">Algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">7</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Algorithm/CodeWars/">
@@ -512,7 +462,7 @@
                 <span class="level-item">CodeWars</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Algorithm/LeetCode/">
@@ -520,7 +470,7 @@
                 <span class="level-item">LeetCode</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">3</span>
+                <span class="level-item tag">5</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/HTML-CSS/">
@@ -528,15 +478,31 @@
                 <span class="level-item">HTML/CSS</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li><li>
+        <a class="level is-marginless" href="/categories/JavaScript/">
+            <span class="level-start">
+                <span class="level-item">JavaScript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/JavaScript/jQuery/">
+            <span class="level-start">
+                <span class="level-item">jQuery</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/TIL/">
             <span class="level-start">
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">31</span>
+                <span class="level-item tag">32</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -544,7 +510,7 @@
                 <span class="level-item">git</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li>
             </ul>
@@ -558,6 +524,63 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/04/18/190418-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="190418-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-18T11:47:31.000Z">2019-04-18</time></div>
+                    <a href="/2019/04/18/190418-TIL/" class="has-link-black-ter is-size-6">190418-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/LeetCode/">LeetCode</a> / <a class="has-link-grey -link" href="/categories/HTML-CSS/">HTML/CSS</a> / <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a> / <a class="has-link-grey -link" href="/categories/JavaScript/jQuery/">jQuery</a> / <a class="has-link-grey -link" href="/categories/TIL/">TIL</a> / <a class="has-link-grey -link" href="/categories/git/">git</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/04/18/LeetCode-35-Search-Insert-Position/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="LeetCode 35. Search Insert Position">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-18T11:18:45.000Z">2019-04-18</time></div>
+                    <a href="/2019/04/18/LeetCode-35-Search-Insert-Position/" class="has-link-black-ter is-size-6">LeetCode 35. Search Insert Position</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/LeetCode/">LeetCode</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/04/18/CodeWars-6kyu-Dubstep/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="CodeWars 6kyu. Dubstep">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-18T11:17:20.000Z">2019-04-18</time></div>
+                    <a href="/2019/04/18/CodeWars-6kyu-Dubstep/" class="has-link-black-ter is-size-6">CodeWars 6kyu. Dubstep</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/CodeWars/">CodeWars</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -597,63 +620,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/04/17/CodeWars-6kyu-Multiples-of-3-or-5/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="CodeWars 6kyu. Multiples of 3 or 5">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-17T08:17:13.000Z">2019-04-17</time></div>
-                    <a href="/2019/04/17/CodeWars-6kyu-Multiples-of-3-or-5/" class="has-link-black-ter is-size-6">CodeWars 6kyu. Multiples of 3 or 5</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/CodeWars/">CodeWars</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/16/Responsive Web (2)/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/html.png" alt="Responsive Web (2)">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-16T11:56:41.000Z">2019-04-16</time></div>
-                    <a href="/2019/04/16/Responsive Web (2)/" class="has-link-black-ter is-size-6">Responsive Web (2)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/HTML-CSS/">HTML/CSS</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/16/Responsive Web (1)/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/html.png" alt="Responsive Web (1)">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-16T11:48:48.000Z">2019-04-16</time></div>
-                    <a href="/2019/04/16/Responsive Web (1)/" class="has-link-black-ter is-size-6">Responsive Web (1)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/HTML-CSS/">HTML/CSS</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -672,7 +638,7 @@
                     <span class="level-item">April 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">22</span>
+                    <span class="level-item tag">25</span>
                 </span>
             </a>
         </li>
@@ -704,7 +670,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Algorithm/">
                         <span class="tag">Algorithm</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
@@ -718,7 +684,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">30</span>
+                        <span class="tag is-grey">31</span>
                     </a>
                 </div>
                 
@@ -761,7 +727,7 @@
                 <span class="level-item">Algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">7</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Algorithm/CodeWars/">
@@ -769,7 +735,7 @@
                 <span class="level-item">CodeWars</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Algorithm/LeetCode/">
@@ -777,7 +743,7 @@
                 <span class="level-item">LeetCode</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">3</span>
+                <span class="level-item tag">5</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/HTML-CSS/">
@@ -785,15 +751,31 @@
                 <span class="level-item">HTML/CSS</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li><li>
+        <a class="level is-marginless" href="/categories/JavaScript/">
+            <span class="level-start">
+                <span class="level-item">JavaScript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/JavaScript/jQuery/">
+            <span class="level-start">
+                <span class="level-item">jQuery</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/TIL/">
             <span class="level-start">
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">31</span>
+                <span class="level-item tag">32</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -801,7 +783,7 @@
                 <span class="level-item">git</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li>
             </ul>
@@ -815,6 +797,63 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/04/18/190418-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="190418-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-18T11:47:31.000Z">2019-04-18</time></div>
+                    <a href="/2019/04/18/190418-TIL/" class="has-link-black-ter is-size-6">190418-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/LeetCode/">LeetCode</a> / <a class="has-link-grey -link" href="/categories/HTML-CSS/">HTML/CSS</a> / <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a> / <a class="has-link-grey -link" href="/categories/JavaScript/jQuery/">jQuery</a> / <a class="has-link-grey -link" href="/categories/TIL/">TIL</a> / <a class="has-link-grey -link" href="/categories/git/">git</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/04/18/LeetCode-35-Search-Insert-Position/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="LeetCode 35. Search Insert Position">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-18T11:18:45.000Z">2019-04-18</time></div>
+                    <a href="/2019/04/18/LeetCode-35-Search-Insert-Position/" class="has-link-black-ter is-size-6">LeetCode 35. Search Insert Position</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/LeetCode/">LeetCode</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/04/18/CodeWars-6kyu-Dubstep/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="CodeWars 6kyu. Dubstep">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-18T11:17:20.000Z">2019-04-18</time></div>
+                    <a href="/2019/04/18/CodeWars-6kyu-Dubstep/" class="has-link-black-ter is-size-6">CodeWars 6kyu. Dubstep</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/CodeWars/">CodeWars</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -854,63 +893,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/04/17/CodeWars-6kyu-Multiples-of-3-or-5/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="CodeWars 6kyu. Multiples of 3 or 5">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-17T08:17:13.000Z">2019-04-17</time></div>
-                    <a href="/2019/04/17/CodeWars-6kyu-Multiples-of-3-or-5/" class="has-link-black-ter is-size-6">CodeWars 6kyu. Multiples of 3 or 5</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/CodeWars/">CodeWars</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/16/Responsive Web (2)/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/html.png" alt="Responsive Web (2)">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-16T11:56:41.000Z">2019-04-16</time></div>
-                    <a href="/2019/04/16/Responsive Web (2)/" class="has-link-black-ter is-size-6">Responsive Web (2)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/HTML-CSS/">HTML/CSS</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/16/Responsive Web (1)/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/html.png" alt="Responsive Web (1)">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-16T11:48:48.000Z">2019-04-16</time></div>
-                    <a href="/2019/04/16/Responsive Web (1)/" class="has-link-black-ter is-size-6">Responsive Web (1)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/HTML-CSS/">HTML/CSS</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -929,7 +911,7 @@
                     <span class="level-item">April 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">22</span>
+                    <span class="level-item tag">25</span>
                 </span>
             </a>
         </li>
@@ -961,7 +943,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Algorithm/">
                         <span class="tag">Algorithm</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
@@ -975,7 +957,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">30</span>
+                        <span class="tag is-grey">31</span>
                     </a>
                 </div>
                 
