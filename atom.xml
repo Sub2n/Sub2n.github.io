@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sub2n.github.io/"/>
-  <updated>2019-04-18T11:47:31.567Z</updated>
+  <updated>2019-04-18T12:15:50.210Z</updated>
   <id>https://sub2n.github.io/</id>
   
   <author>
@@ -15,6 +15,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python Data Type and Data Structure | Jupyter 사용방법</title>
+    <link href="https://sub2n.github.io/2019/04/18/Python-Data-Type-and-Data-Structure-Jupyter-%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95/"/>
+    <id>https://sub2n.github.io/2019/04/18/Python-Data-Type-and-Data-Structure-Jupyter-사용방법/</id>
+    <published>2019-04-18T12:03:30.000Z</published>
+    <updated>2019-04-18T12:15:50.210Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Python" scheme="https://sub2n.github.io/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://sub2n.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python 3.7.3 | Jupyter 설치</title>
+    <link href="https://sub2n.github.io/2019/04/18/Python-3-7-3-Jupyter-%EC%84%A4%EC%B9%98/"/>
+    <id>https://sub2n.github.io/2019/04/18/Python-3-7-3-Jupyter-설치/</id>
+    <published>2019-04-18T11:52:27.000Z</published>
+    <updated>2019-04-18T12:15:34.624Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Window-Python-3-7-3-및-Jupyter-설치"><a href="#Window-Python-3-7-3-및-Jupyter-설치" class="headerlink" title="Window Python 3.7.3 및 Jupyter 설치"></a>Window Python 3.7.3 및 Jupyter 설치</h1><p>파이썬을 공부하기 위해 작업환경을 우선 구축하기로 한다.</p><h2 id="Python-3-7-3-설치"><a href="#Python-3-7-3-설치" class="headerlink" title="Python 3.7.3 설치"></a>Python 3.7.3 설치</h2><ol><li>Python 최신 릴리즈인 <a href="https://www.python.org/downloads/release/python-373/" target="_blank" rel="noopener">3.7.3 다운로드</a> 페이지로 이동한다.</li></ol><p><img src="https://user-images.githubusercontent.com/48080762/56359343-45226880-621c-11e9-9d8d-12cfb3d12b59.png" alt="www.python.org/download"></p><ol start="2"><li><p>Download for Windows의 Python 3.7.3 버튼을 누르면 자동으로 설치 실행 파일이 다운로드 된다.</p></li><li><p>다운받은 <code>python-3.7.3.exe</code> 파일을 관리자 권한으로 실행 후, 설치를 진행한다. PATH를 자동으로 생성하는 것이 좋다!</p></li><li><p>다운로드가 완료되면 cmd 창을 열어 <code>python --version</code> 명령어로 설치가 제대로 되었는지 확인한다.</p><p> <img src="https://user-images.githubusercontent.com/48080762/56359512-bd892980-621c-11e9-8241-1fc8a260c10b.png" alt="python 설치 확인"></p></li></ol><h2 id="Jupyter-설치"><a href="#Jupyter-설치" class="headerlink" title="Jupyter 설치"></a>Jupyter 설치</h2><p>위의 Python 설치 4단계에서, cmd 명령으로 확인을 정상적으로 마쳤다면 추가적인 명령 한 줄로 Jupyter를 설치할 수 있다.</p><ol><li>cmd 창에 <code>pip install jupyter</code>를 입력한다.<br> <img src="https://user-images.githubusercontent.com/48080762/56359642-1c4ea300-621d-11e9-9c40-cd5fd89b9a24.png" alt="jupyter 설치"></li></ol><p>여기까지 하면 Python 사용을 위한 간단한 작업 환경 구성이 완료된다.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Window-Python-3-7-3-및-Jupyter-설치&quot;&gt;&lt;a href=&quot;#Window-Python-3-7-3-및-Jupyter-설치&quot; class=&quot;headerlink&quot; title=&quot;Window Python 3.7.3 및 Jupyte
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://sub2n.github.io/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://sub2n.github.io/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>190418-TIL</title>
@@ -35,9 +78,9 @@
     
       <category term="LeetCode" scheme="https://sub2n.github.io/categories/Algorithm/LeetCode/"/>
     
-      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
-    
       <category term="HTML/CSS" scheme="https://sub2n.github.io/categories/HTML-CSS/"/>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
     
       <category term="jQuery" scheme="https://sub2n.github.io/categories/JavaScript/jQuery/"/>
     
@@ -75,13 +118,13 @@
     <link href="https://sub2n.github.io/2019/04/18/CodeWars-6kyu-Dubstep/"/>
     <id>https://sub2n.github.io/2019/04/18/CodeWars-6kyu-Dubstep/</id>
     <published>2019-04-18T11:17:20.000Z</published>
-    <updated>2019-04-18T11:47:04.489Z</updated>
+    <updated>2019-04-18T11:50:12.956Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="CodeWars-6kyu-Multiples-of-3-or-5"><a href="#CodeWars-6kyu-Multiples-of-3-or-5" class="headerlink" title="CodeWars 6kyu. Multiples of 3 or 5"></a><a href="https://www.codewars.com/kata/multiples-of-3-or-5/train/javascript" target="_blank" rel="noopener">CodeWars 6kyu. Multiples of 3 or 5</a></h2><a id="more"></a><blockquote><p>Polycarpus works as a DJ in the best Berland nightclub, and he often uses dubstep music in his performance. Recently, he has decided to take a couple of old songs and make dubstep remixes from them.</p></blockquote><blockquote><p>Let’s assume that a song consists of some number of words (that don’t contain WUB). To make the dubstep remix of this song, Polycarpus inserts a certain number of words “WUB” before the first word of the song (the number may be zero), after the last word (the number may be zero), and between words (at least one between any pair of neighbouring words), and then the boy glues together all the words, including “WUB”, in one string and plays the song at the club.</p></blockquote><blockquote><p>For example, a song with words “I AM X” can transform into a dubstep remix as “WUBWUBIWUBAMWUBWUBX” and cannot transform into “WUBWUBIAMWUBX”.</p></blockquote><blockquote><p>Recently, Jonny has heard Polycarpus’s new dubstep track, but since he isn’t into modern music, he decided to find out what was the initial song that Polycarpus remixed. Help Jonny restore the original song.</p></blockquote><blockquote><p>Input</p><p>The input consists of a single non-empty string, consisting only of uppercase English letters, the string’s length doesn’t exceed 200 characters</p></blockquote><blockquote><p>Output</p><p>Return the words of the initial song that Polycarpus used to make a dubsteb remix. Separate the words with a space.</p></blockquote><blockquote><p>Examples<br><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">songDecoder(<span class="hljs-string">"WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB"</span>)</span><br><span class="line">  <span class="hljs-comment">// =&gt;  WE ARE THE CHAMPIONS MY FRIEND</span></span><br></pre></td></tr></table></figure></p></blockquote><h3 id="요구조건"><a href="#요구조건" class="headerlink" title="요구조건"></a>요구조건</h3><ol><li><p>input으로 200자를 넘지 않고 비어있지 않은 string 하나가 들어오면 WUB가 끼어들어가있지 않은 원래의 song 제목으로 decoding해 return 한다.</p></li><li><p>각 단어는 space로 나눠져야 한다.</p></li></ol><h3 id="해결책"><a href="#해결책" class="headerlink" title="해결책"></a>해결책</h3><p>여러가지 방법으로 해결했다. Regular Expression을 활용해 string을 처리했다.</p><ol><li>replace method와 RegEx를 사용해 song에 존재하는 모든 “WUB”를 “ “(space)로 대체한다. 단어 사이에 space가 여러개 있을 수 있으니 하나 이상의 space(\s+)로 string을 배열로 조각낸 후, 각 단어를 다시 space를 사이에 넣어 join한다.</li></ol><p>1-1. 이렇게 되면 string의 시작과 끝에 존재하는 공백이 처리되지 않는다. 처음 Solution 1을 작성할 때는 trim() method를 몰랐으므로 직접 if문으로 처리했다.</p><ol start="2"><li><p>filter() method와 새로운 function 문법 =&gt; 를 써보고 싶어 작성한 Suolution</p></li><li><p>정규 표현식과 trim method를 활용해 코드의 길이를 줄였다.</p></li></ol><h3 id="javaScript-Solution-1"><a href="#javaScript-Solution-1" class="headerlink" title="javaScript Solution 1"></a>javaScript Solution 1</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">songDecoder</span>(<span class="hljs-params">song</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">let</span> result = song.replace(<span class="hljs-regexp">/WUB/gi</span>, <span class="hljs-string">' '</span>).split(<span class="hljs-regexp">/\s+/</span>).join(<span class="hljs-string">' '</span>);</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">if</span>(result[<span class="hljs-number">0</span>] === <span class="hljs-string">' '</span>)&#123;</span><br><span class="line">    result = result.slice(<span class="hljs-number">1</span>);</span><br><span class="line">  &#125; <span class="hljs-keyword">if</span>(result[result.length<span class="hljs-number">-1</span>] === <span class="hljs-string">' '</span>)&#123;</span><br><span class="line">    result = result.slice(<span class="hljs-number">0</span>, <span class="hljs-number">-1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="javaScript-Solution-2"><a href="#javaScript-Solution-2" class="headerlink" title="javaScript Solution 2"></a>javaScript Solution 2</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">songDecoder</span>(<span class="hljs-params">song</span>)</span>&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> song.replace(<span class="hljs-regexp">/WUB/g</span>, <span class="hljs-string">' '</span>).split(<span class="hljs-string">' '</span>).filter(<span class="hljs-function"><span class="hljs-params">word</span>=&gt;</span>word!=<span class="hljs-string">''</span>).join(<span class="hljs-string">' '</span>);</span><br><span class="line">;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="javaScript-Solution-3"><a href="#javaScript-Solution-3" class="headerlink" title="javaScript Solution 3"></a>javaScript Solution 3</h3><p><img src="https://user-images.githubusercontent.com/48080762/56358001-46519680-6218-11e9-804a-facea4d24994.png" alt="my Solution Submit"></p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">songDecoder</span>(<span class="hljs-params">song</span>)</span>&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> song.replace(<span class="hljs-regexp">/(WUB)+/g</span>,<span class="hljs-string">" "</span>).trim();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Regular-Expression"><a href="#Regular-Expression" class="headerlink" title="Regular Expression"></a>Regular Expression</h3><ul><li>^x : 문자열의 시작이 x</li><li>x$ : 문자열의 끝이 x</li><li>.x : x로 끝나는 임의의 문자</li><li>x+ : x가 1번 이상 반복</li><li>x* : x가 0번 이상 반복</li><li>x? : x가 존재하거나 존재하지 않음</li><li>x{n} : x를 n번 반복한 문자를 찾음</li><li>x{n,} : x를 n번 이상 반복한 문자를 찾음</li><li>x{n, m} : x를 n번 이상, m번 이하 반복하는 문자를 찾음</li></ul><h4 id="Flags"><a href="#Flags" class="headerlink" title="Flags"></a>Flags</h4><ul><li>g (Global) : 문자열 내에 존재하는 모든 패턴을 찾음</li><li>i (Ignore Case) : 대소문자 구분 없이 찾음</li><li>m (Multi Line) : 문자열의 행이 바뀌어도 찾음</li></ul><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 객체초기화(Object initializer) 방법</span></span><br><span class="line"><span class="hljs-keyword">var</span> regExp = <span class="hljs-regexp">/정규표현식/</span>[Flag];</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h2 id="CodeWars-6kyu-Dubstep"><a href="#CodeWars-6kyu-Dubstep" class="headerlink" title="CodeWars 6kyu. Dubstep"></a><a href="https://www.codewars.com/kata/dubstep/train/javascript" target="_blank" rel="noopener">CodeWars 6kyu. Dubstep</a></h2><a id="more"></a><blockquote><p>Polycarpus works as a DJ in the best Berland nightclub, and he often uses dubstep music in his performance. Recently, he has decided to take a couple of old songs and make dubstep remixes from them.</p></blockquote><blockquote><p>Let’s assume that a song consists of some number of words (that don’t contain WUB). To make the dubstep remix of this song, Polycarpus inserts a certain number of words “WUB” before the first word of the song (the number may be zero), after the last word (the number may be zero), and between words (at least one between any pair of neighbouring words), and then the boy glues together all the words, including “WUB”, in one string and plays the song at the club.</p></blockquote><blockquote><p>For example, a song with words “I AM X” can transform into a dubstep remix as “WUBWUBIWUBAMWUBWUBX” and cannot transform into “WUBWUBIAMWUBX”.</p></blockquote><blockquote><p>Recently, Jonny has heard Polycarpus’s new dubstep track, but since he isn’t into modern music, he decided to find out what was the initial song that Polycarpus remixed. Help Jonny restore the original song.</p></blockquote><blockquote><p>Input</p><p>The input consists of a single non-empty string, consisting only of uppercase English letters, the string’s length doesn’t exceed 200 characters</p></blockquote><blockquote><p>Output</p><p>Return the words of the initial song that Polycarpus used to make a dubsteb remix. Separate the words with a space.</p></blockquote><blockquote><p>Examples<br><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">songDecoder(<span class="hljs-string">"WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB"</span>)</span><br><span class="line">  <span class="hljs-comment">// =&gt;  WE ARE THE CHAMPIONS MY FRIEND</span></span><br></pre></td></tr></table></figure></p></blockquote><h3 id="요구조건"><a href="#요구조건" class="headerlink" title="요구조건"></a>요구조건</h3><ol><li><p>input으로 200자를 넘지 않고 비어있지 않은 string 하나가 들어오면 WUB가 끼어들어가있지 않은 원래의 song 제목으로 decoding해 return 한다.</p></li><li><p>각 단어는 space로 나눠져야 한다.</p></li></ol><h3 id="해결책"><a href="#해결책" class="headerlink" title="해결책"></a>해결책</h3><p>여러가지 방법으로 해결했다. Regular Expression을 활용해 string을 처리했다.</p><ol><li>replace method와 RegEx를 사용해 song에 존재하는 모든 “WUB”를 “ “(space)로 대체한다. 단어 사이에 space가 여러개 있을 수 있으니 하나 이상의 space(\s+)로 string을 배열로 조각낸 후, 각 단어를 다시 space를 사이에 넣어 join한다.</li></ol><p>1-1. 이렇게 되면 string의 시작과 끝에 존재하는 공백이 처리되지 않는다. 처음 Solution 1을 작성할 때는 trim() method를 몰랐으므로 직접 if문으로 처리했다.</p><ol start="2"><li><p>filter() method와 새로운 function 문법 =&gt; 를 써보고 싶어 작성한 Suolution</p></li><li><p>정규 표현식과 trim method를 활용해 코드의 길이를 줄였다.</p></li></ol><h3 id="javaScript-Solution-1"><a href="#javaScript-Solution-1" class="headerlink" title="javaScript Solution 1"></a>javaScript Solution 1</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">songDecoder</span>(<span class="hljs-params">song</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">let</span> result = song.replace(<span class="hljs-regexp">/WUB/gi</span>, <span class="hljs-string">' '</span>).split(<span class="hljs-regexp">/\s+/</span>).join(<span class="hljs-string">' '</span>);</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">if</span>(result[<span class="hljs-number">0</span>] === <span class="hljs-string">' '</span>)&#123;</span><br><span class="line">    result = result.slice(<span class="hljs-number">1</span>);</span><br><span class="line">  &#125; <span class="hljs-keyword">if</span>(result[result.length<span class="hljs-number">-1</span>] === <span class="hljs-string">' '</span>)&#123;</span><br><span class="line">    result = result.slice(<span class="hljs-number">0</span>, <span class="hljs-number">-1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="javaScript-Solution-2"><a href="#javaScript-Solution-2" class="headerlink" title="javaScript Solution 2"></a>javaScript Solution 2</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">songDecoder</span>(<span class="hljs-params">song</span>)</span>&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> song.replace(<span class="hljs-regexp">/WUB/g</span>, <span class="hljs-string">' '</span>).split(<span class="hljs-string">' '</span>).filter(<span class="hljs-function"><span class="hljs-params">word</span>=&gt;</span>word!=<span class="hljs-string">''</span>).join(<span class="hljs-string">' '</span>);</span><br><span class="line">;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="javaScript-Solution-3"><a href="#javaScript-Solution-3" class="headerlink" title="javaScript Solution 3"></a>javaScript Solution 3</h3><p><img src="https://user-images.githubusercontent.com/48080762/56358001-46519680-6218-11e9-804a-facea4d24994.png" alt="my Solution Submit"></p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">songDecoder</span>(<span class="hljs-params">song</span>)</span>&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> song.replace(<span class="hljs-regexp">/(WUB)+/g</span>,<span class="hljs-string">" "</span>).trim();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Regular-Expression"><a href="#Regular-Expression" class="headerlink" title="Regular Expression"></a>Regular Expression</h3><ul><li>^x : 문자열의 시작이 x</li><li>x$ : 문자열의 끝이 x</li><li>.x : x로 끝나는 임의의 문자</li><li>x+ : x가 1번 이상 반복</li><li>x* : x가 0번 이상 반복</li><li>x? : x가 존재하거나 존재하지 않음</li><li>x{n} : x를 n번 반복한 문자를 찾음</li><li>x{n,} : x를 n번 이상 반복한 문자를 찾음</li><li>x{n, m} : x를 n번 이상, m번 이하 반복하는 문자를 찾음</li></ul><h4 id="Flags"><a href="#Flags" class="headerlink" title="Flags"></a>Flags</h4><ul><li>g (Global) : 문자열 내에 존재하는 모든 패턴을 찾음</li><li>i (Ignore Case) : 대소문자 구분 없이 찾음</li><li>m (Multi Line) : 문자열의 행이 바뀌어도 찾음</li></ul><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 객체초기화(Object initializer) 방법</span></span><br><span class="line"><span class="hljs-keyword">var</span> regExp = <span class="hljs-regexp">/정규표현식/</span>[Flag];</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;CodeWars-6kyu-Multiples-of-3-or-5&quot;&gt;&lt;a href=&quot;#CodeWars-6kyu-Multiples-of-3-or-5&quot; class=&quot;headerlink&quot; title=&quot;CodeWars 6kyu. Multiples of 3 or 5&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.codewars.com/kata/multiples-of-3-or-5/train/javascript&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CodeWars 6kyu. Multiples of 3 or 5&lt;/a&gt;&lt;/h2&gt;
+      &lt;h2 id=&quot;CodeWars-6kyu-Dubstep&quot;&gt;&lt;a href=&quot;#CodeWars-6kyu-Dubstep&quot; class=&quot;headerlink&quot; title=&quot;CodeWars 6kyu. Dubstep&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.codewars.com/kata/dubstep/train/javascript&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CodeWars 6kyu. Dubstep&lt;/a&gt;&lt;/h2&gt;
     
     </summary>
     
@@ -455,58 +498,6 @@
     <updated>2019-04-16T08:15:53.747Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><h4 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h4></li></ul><ul><li><p>⭐️ <code>&lt;dl&gt;</code> tag에 대해서 배웠다. </p><ul><li><code>&lt;dl&gt;</code> : Defines a definition list.</li><li><code>&lt;dt&gt;</code> : Defines a term/name in a description list.</li><li><p><code>&lt;dd&gt;</code> : Is used to describe a term/name in a description list.</p><p>Ø 원래 <code>&lt;dt&gt;</code>와<code>&lt;dd&gt;</code> 를 <code>&lt;div&gt;</code>로 묶으면 안 됐었는데 허용됨 </p><p>: 다만 맞는 <code>&lt;dt&gt;</code>를 설명하는 모든 <code>&lt;dd&gt;</code> 함께 묶어야 함.</p></li></ul></li><li><p>⭐️ Web Cafe 예제 중 배너와 검색영역을 Markup, 디자인 설계 했다.</p><p>&gt; 웹 관련 용어 배너 디자인 : float 사용<br><img src="https://user-images.githubusercontent.com/48080762/55720167-27464e00-5a3b-11e9-9b27-2245edf79e0e.png" alt="웹 관련 용어 배너"></p><p>&gt; Logical order and Markup design</p><p><img src="https://user-images.githubusercontent.com/48080762/55720168-27dee480-5a3b-11e9-807a-c6fd8a9ebec9.jpg" alt="Design practice(1)"><br><img src="https://user-images.githubusercontent.com/48080762/55720170-27dee480-5a3b-11e9-8227-038a7456ffc0.jpg" alt="Design practice(2)"><br><img src="https://user-images.githubusercontent.com/48080762/55720171-27dee480-5a3b-11e9-8b36-c1ed2ebd21b5.jpg" alt="Design practice(3)"></p></li><li><p>⭐️ LINEcorp 페이지 Markup을 처음부터 다시 했다.</p><p>디자인 관점이 아닌 컨텐츠 관점으로 논리적인 Markup 순서를 정하고 html과 CSS를 작성했다.</p></li></ul><ul><li><h4 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h4></li></ul><ul><li>경험이 부족해서인지 아직 content에 맞게 semantic한 tag를 생각해내는 게 어렵다.</li></ul><hr><p>👼 <a href="https://github.com/Sub2n/homework/tree/master/line_semantic" target="_blank" rel="noopener">More Semantic LINEpluscorp</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;오늘-한
-      
-    
-    </summary>
-    
-      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
-    
-    
-      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>190406~07-TIL</title>
-    <link href="https://sub2n.github.io/2019/04/08/190406-07-TIL/"/>
-    <id>https://sub2n.github.io/2019/04/08/190406-07-TIL/</id>
-    <published>2019-04-08T00:47:04.000Z</published>
-    <updated>2019-04-16T08:16:45.973Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><h4 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h4></li></ul><ul><li><p>음수마진에 대해서 배웠다.</p></li><li><p>CSS grid framework에 대해서 배웠다.</p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;오늘-한
-      
-    
-    </summary>
-    
-      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
-    
-    
-      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>190405-TIL</title>
-    <link href="https://sub2n.github.io/2019/04/05/190405-TIL/"/>
-    <id>https://sub2n.github.io/2019/04/05/190405-TIL/</id>
-    <published>2019-04-05T08:26:47.000Z</published>
-    <updated>2019-04-16T08:16:56.565Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><h4 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h4></li></ul><ul><li><p>로그인 메뉴를 구성하는 form tag와 input의 여러 속성에 대해서 배웠다.</p></li><li><p>fieldset에 대해 처음 알았다.</p></li><li><p>접근성을 위해 label 과 input 을 bind 해야한다는 것을 알았다.</p></li><li><p>box-shadow, section에 heading하는 법을 알았다.</p></li></ul><ul><li><h4 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h4></li></ul><ul><li><p>오늘은 실습 위주의 수업이라 재미있었다.</p></li><li><p>하루종일 너무 많은 정보를 들어서 어지러운데 다 내 걸로 만들어야겠다!</p></li></ul>]]></content>
     
     <summary type="html">
     
