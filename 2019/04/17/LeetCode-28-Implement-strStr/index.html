@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="LeetCode 28. Implement strStr()">
+    <meta name="description" content="LeetCode 28. Implement strStr()strStr()을 구현하기 : javaScript, C">
 <meta name="keywords" content="Algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode 28. Implement strStr()">
 <meta property="og:url" content="https://sub2n.github.io/2019/04/17/LeetCode-28-Implement-strStr/index.html">
 <meta property="og:site_name" content="수빈 개발블로그">
-<meta property="og:description" content="LeetCode 28. Implement strStr()">
+<meta property="og:description" content="LeetCode 28. Implement strStr()strStr()을 구현하기 : javaScript, C">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/algorithm.png">
-<meta property="og:updated_time" content="2019-04-17T11:40:19.125Z">
+<meta property="og:updated_time" content="2019-04-20T08:46:05.320Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode 28. Implement strStr()">
-<meta name="twitter:description" content="LeetCode 28. Implement strStr()">
+<meta name="twitter:description" content="LeetCode 28. Implement strStr()strStr()을 구현하기 : javaScript, C">
 <meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/algorithm.png">
 
 
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 275 words)
+                    2 minutes read (About 285 words)
                 </span>
                 
                 
@@ -183,7 +183,8 @@
             
         </h1>
         <div class="content">
-            <h2 id="LeetCode-28-Implement-strStr"><a href="#LeetCode-28-Implement-strStr" class="headerlink" title="LeetCode 28. Implement strStr()"></a><a href="https://leetcode.com/problems/implement-strstr/" target="_blank" rel="noopener">LeetCode 28. Implement strStr()</a></h2><a id="more"></a>
+            <h2 id="LeetCode-28-Implement-strStr"><a href="#LeetCode-28-Implement-strStr" class="headerlink" title="LeetCode 28. Implement strStr()"></a><a href="https://leetcode.com/problems/implement-strstr/" target="_blank" rel="noopener">LeetCode 28. Implement strStr()</a></h2><p>strStr()을 구현하기 : javaScript, C</p>
+<a id="more"></a>
 <blockquote>
 <p>Implement strStr().</p>
 <p>Return the index of the first occurrence of needle in haystack, or -1 &gt; if needle is not part of haystack.</p>
@@ -198,10 +199,10 @@
 <li>javaScript의 indexOf() method를 이용해 해결했다.</li>
 <li>method를 쓰지 않고 C로 해결해보려고 했는데 한 1년 C를 쓰지 않았다고 기능이 기억이 나지 않아 여러 번 찾아봐야 했다. 포인터 개념도 다시 한 번 훑어봐야겠다.</li>
 </ol>
-<h3 id="javaScript-Solution-1"><a href="#javaScript-Solution-1" class="headerlink" title="javaScript Solution 1"></a>javaScript Solution 1</h3><p><img src="https://user-images.githubusercontent.com/48080762/56282327-dd9be880-6149-11e9-95f8-ba96c666a2c4.png" alt="Submit 1 : javaSript"></p>
+<h3 id="javaScript-Solution"><a href="#javaScript-Solution" class="headerlink" title="javaScript Solution"></a>javaScript Solution</h3><p><img src="https://user-images.githubusercontent.com/48080762/56282327-dd9be880-6149-11e9-95f8-ba96c666a2c4.png" alt="Submit 1 : javaSript"></p>
 <p>: Runtime 56 ms    | Memory Usage 33.8 MB</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;string&#125; haystack</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;string&#125; needle</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-keyword">var</span> strStr = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">haystack, needle</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (needle === <span class="hljs-string">""</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">return</span> haystack.indexOf(needle);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p><img src="https://user-images.githubusercontent.com/48080762/56284645-10e17600-6150-11e9-85ea-a202348ec60b.png" alt="Submit 2 : C"></p>
+<h3 id="C-Solution"><a href="#C-Solution" class="headerlink" title="C Solution"></a>C Solution</h3><p><img src="https://user-images.githubusercontent.com/48080762/56284645-10e17600-6150-11e9-85ea-a202348ec60b.png" alt="Submit 2 : C"></p>
 <p>: Runtime 1300 ms    | Memory Usage 7 MB</p>
 <figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">strStr</span><span class="hljs-params">(<span class="hljs-keyword">char</span>* haystack, <span class="hljs-keyword">char</span>* needle)</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">if</span>(needle[<span class="hljs-number">0</span>] == <span class="hljs-string">'\0'</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">int</span> index = <span class="hljs-number">-1</span>;</span><br><span class="line">  <span class="hljs-keyword">int</span> hayLen = <span class="hljs-built_in">strlen</span>(haystack);</span><br><span class="line">  <span class="hljs-keyword">int</span> neeLen = <span class="hljs-built_in">strlen</span>(needle);</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i&lt; hayLen; i++)&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span>(haystack[i] == needle[<span class="hljs-number">0</span>])&#123;</span><br><span class="line">          index = i;</span><br><span class="line">          <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>; j &lt; neeLen ; j++)&#123;</span><br><span class="line">              <span class="hljs-keyword">if</span>(i+j &gt;= hayLen || haystack[i+j] != needle[j])&#123;</span><br><span class="line">                  index = <span class="hljs-number">-1</span>;</span><br><span class="line">                  <span class="hljs-keyword">break</span>;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;  </span><br><span class="line">      &#125;  </span><br><span class="line">      <span class="hljs-keyword">if</span>(index &gt; <span class="hljs-number">-1</span>) <span class="hljs-keyword">return</span> index;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
