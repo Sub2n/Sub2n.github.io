@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sub2n.github.io/2019/04/20/CodeWars-6kyu-Directions-Reduction/</loc>
+    
+    <lastmod>2019-04-20T08:53:05.841Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sub2n.github.io/2019/04/15/LeetCode-26-Remove-Duplicates-from-Sorted-Array/</loc>
     
     <lastmod>2019-04-20T08:51:14.750Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>https://sub2n.github.io/2019/04/17/LeetCode-28-Implement-strStr/</loc>
     
     <lastmod>2019-04-20T08:46:05.320Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sub2n.github.io/2019/04/20/CodeWars-6kyu-Directions-Reduction/</loc>
-    
-    <lastmod>2019-04-20T08:44:30.110Z</lastmod>
     
   </url>
   
