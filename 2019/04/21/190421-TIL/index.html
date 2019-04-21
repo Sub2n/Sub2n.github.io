@@ -2,25 +2,25 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>190418-TIL - 수빈 개발블로그</title>
+<title>190421-TIL - 수빈 개발블로그</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="Today I Learned오늘 한 일 Epsilon, Number Digit 등 컴퓨터에서 실수를 표현하는 방식과 상대오차에 대해서 깊게 배웠다.  실수형의 논리비교를 위한 is_equal 함수를 만들었다.   123456789101112131415function is_equal(x, y, allowed=0)&amp;#123;	// 둘 중 큰 수의 다음 숫자와의">
+    <meta name="description" content="Today I LearnedLeetCode 5. Longest Palindromic Substring금요일부터 오늘까지 내내 나를 괴롭히던 문제를 해결(?) 했다. 시간을 많이 들여도 도저히 답이 나오지 않으면 포기하기보다 다른 사람들의 Solution을 보고 분석하는 것 또한 공부라고 생각한다. Python에 익숙해질겸, Dynamic Programmin">
 <meta name="keywords" content="TIL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="190418-TIL">
-<meta property="og:url" content="https://sub2n.github.io/2019/04/18/190418-TIL/index.html">
+<meta property="og:title" content="190421-TIL">
+<meta property="og:url" content="https://sub2n.github.io/2019/04/21/190421-TIL/index.html">
 <meta property="og:site_name" content="수빈 개발블로그">
-<meta property="og:description" content="Today I Learned오늘 한 일 Epsilon, Number Digit 등 컴퓨터에서 실수를 표현하는 방식과 상대오차에 대해서 깊게 배웠다.  실수형의 논리비교를 위한 is_equal 함수를 만들었다.   123456789101112131415function is_equal(x, y, allowed=0)&amp;#123;	// 둘 중 큰 수의 다음 숫자와의">
+<meta property="og:description" content="Today I LearnedLeetCode 5. Longest Palindromic Substring금요일부터 오늘까지 내내 나를 괴롭히던 문제를 해결(?) 했다. 시간을 많이 들여도 도저히 답이 나오지 않으면 포기하기보다 다른 사람들의 Solution을 보고 분석하는 것 또한 공부라고 생각한다. Python에 익숙해질겸, Dynamic Programmin">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/yellow.png">
-<meta property="og:updated_time" content="2019-04-19T12:39:27.424Z">
+<meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/cherry.png">
+<meta property="og:updated_time" content="2019-04-21T11:56:54.940Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="190418-TIL">
-<meta name="twitter:description" content="Today I Learned오늘 한 일 Epsilon, Number Digit 등 컴퓨터에서 실수를 표현하는 방식과 상대오차에 대해서 깊게 배웠다.  실수형의 논리비교를 위한 is_equal 함수를 만들었다.   123456789101112131415function is_equal(x, y, allowed=0)&amp;#123;	// 둘 중 큰 수의 다음 숫자와의">
-<meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/yellow.png">
+<meta name="twitter:title" content="190421-TIL">
+<meta name="twitter:description" content="Today I LearnedLeetCode 5. Longest Palindromic Substring금요일부터 오늘까지 내내 나를 괴롭히던 문제를 해결(?) 했다. 시간을 많이 들여도 도저히 답이 나오지 않으면 포기하기보다 다른 사람들의 Solution을 보고 분석하는 것 또한 공부라고 생각한다. Python에 익숙해질겸, Dynamic Programmin">
+<meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/cherry.png">
 
 
 
@@ -103,7 +103,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="190418-TIL" height="28">
+                <img src="/images/logo.svg" alt="190421-TIL" height="28">
             
             </a>
         </div>
@@ -152,7 +152,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="190418-TIL">
+            <img class="thumbnail" src="/gallery/thumbnails/cherry.png" alt="190421-TIL">
         </span>
     </div>
     
@@ -160,7 +160,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-18T11:47:31.000Z">2019-04-18</time>
+                <time class="level-item has-text-grey" datetime="2019-04-21T11:51:59.000Z">2019-04-21</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 182 words)
+                    a minute read (About 134 words)
                 </span>
                 
                 
@@ -179,19 +179,12 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                190418-TIL
+                190421-TIL
             
         </h1>
         <div class="content">
-            <h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><h2 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h2><ul>
-<li><p>Epsilon, Number Digit 등 컴퓨터에서 실수를 표현하는 방식과 상대오차에 대해서 깊게 배웠다.</p>
-</li>
-<li><p>실수형의 논리비교를 위한 is_equal 함수를 만들었다.</p>
-  <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">is_equal</span>(<span class="hljs-params">x, y, allowed=<span class="hljs-number">0</span></span>)</span>&#123;</span><br><span class="line">	<span class="hljs-comment">// 둘 중 큰 수의 다음 숫자와의 오차의 allowed 배 정도 되는 범위 안에 있으면 같다고 판단한다.</span></span><br><span class="line">	<span class="hljs-keyword">return</span> (<span class="hljs-built_in">Math</span>.abs(x-y) &lt;= <span class="hljs-built_in">Math</span>.max(<span class="hljs-built_in">Math</span>.abs(x), <span class="hljs-built_in">Math</span>.abs(y))*<span class="hljs-built_in">Number</span>.EPSILON*<span class="hljs-built_in">Math</span>.pow(<span class="hljs-number">2</span>, allowed));</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">	<span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>;</span><br><span class="line">	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i =<span class="hljs-number">0</span>; i&lt; <span class="hljs-number">100</span>; i++)&#123;</span><br><span class="line">		sum += <span class="hljs-number">0.01</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-keyword">if</span>(is_equal(sum, <span class="hljs-number">1.0</span>, <span class="hljs-number">2</span>))&#123;</span><br><span class="line">		<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"THE SAME"</span>);</span><br><span class="line">	&#125; <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">		<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"NOT THE SAME"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Python을 배우는데 너무 재미있다. 익숙하지 않아 찾아보는 것이 번거롭지만 문법이나 기능이 흥미롭다.</p>
-</li>
-</ul>
+            <h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><h3 id="LeetCode-5-Longest-Palindromic-Substring"><a href="#LeetCode-5-Longest-Palindromic-Substring" class="headerlink" title="LeetCode 5. Longest Palindromic Substring"></a>LeetCode 5. Longest Palindromic Substring</h3><p>금요일부터 오늘까지 내내 나를 괴롭히던 문제를 해결(?) 했다. 시간을 많이 들여도 도저히 답이 나오지 않으면 포기하기보다 다른 사람들의 Solution을 보고 분석하는 것 또한 공부라고 생각한다.</p>
+<p>Python에 익숙해질겸, Dynamic Programming을 재정리할겸 여러 시도를 해보았지만 내가 생각하지 못한 기발한 방법으로 문제를 해결한 사람들이 많았다.</p>
 
         </div>
         
@@ -216,17 +209,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/04/18/Python-3-7-3-Jupyter-설치/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Python 3.7.3 | Jupyter 설치</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/04/18/LeetCode-35-Search-Insert-Position/">
-                <span class="level-item">LeetCode 35. Search Insert Position</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/04/20/190420-TIL/">
+                <span class="level-item">190420-TIL</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -944,7 +930,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="190418-TIL" height="28">
+                    <img src="/images/logo.svg" alt="190421-TIL" height="28">
                 
                 </a>
                 <p class="is-size-7">
