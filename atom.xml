@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sub2n.github.io/"/>
-  <updated>2019-04-21T11:56:54.940Z</updated>
+  <updated>2019-04-21T11:59:05.933Z</updated>
   <id>https://sub2n.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://sub2n.github.io/2019/04/21/190421-TIL/"/>
     <id>https://sub2n.github.io/2019/04/21/190421-TIL/</id>
     <published>2019-04-21T11:51:59.000Z</published>
-    <updated>2019-04-21T11:56:54.940Z</updated>
+    <updated>2019-04-21T11:59:05.933Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><h3 id="LeetCode-5-Longest-Palindromic-Substring"><a href="#LeetCode-5-Longest-Palindromic-Substring" class="headerlink" title="LeetCode 5. Longest Palindromic Substring"></a>LeetCode 5. Longest Palindromic Substring</h3><p>금요일부터 오늘까지 내내 나를 괴롭히던 문제를 해결(?) 했다. 시간을 많이 들여도 도저히 답이 나오지 않으면 포기하기보다 다른 사람들의 Solution을 보고 분석하는 것 또한 공부라고 생각한다.</p><p>Python에 익숙해질겸, Dynamic Programming을 재정리할겸 여러 시도를 해보았지만 내가 생각하지 못한 기발한 방법으로 문제를 해결한 사람들이 많았다.</p>]]></content>
     
