@@ -181,7 +181,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 456 words)
+                    7 minutes read (About 1052 words)
                 </span>
                 
                 
@@ -226,11 +226,57 @@
 </li>
 </ul>
 <h2 id="Python-Data-Type"><a href="#Python-Data-Type" class="headerlink" title="Python Data Type"></a>Python Data Type</h2><ol>
-<li>Number Type : Int, Float</li>
+<li><p>Number Type : Int, Float</p>
+<p> <img src="https://user-images.githubusercontent.com/48080762/56361443-52425600-6222-11e9-97b1-371dc1abd277.png" alt="Python Number Type"></p>
+<p> javaScript와 다르게 C처럼 int, float등 정수형과 실수형을 구분한다.</p>
+</li>
+<li><p>String</p>
+</li>
 </ol>
-<p><img src="https://user-images.githubusercontent.com/48080762/56361443-52425600-6222-11e9-97b1-371dc1abd277.png" alt="Python Number Type"></p>
-<p>javaScript와 다르게 C처럼 int, float등 정수형과 실수형을 구분한다.</p>
-<p>2. </p>
+<ul>
+<li>character와 string의 구분 없이 str type을 가진다.</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/48080762/56498247-d30f9380-653b-11e9-9411-aa3ed46d0be6.png" alt="String"></p>
+<h2 id="Python-Data-Structure"><a href="#Python-Data-Structure" class="headerlink" title="Python Data Structure"></a>Python Data Structure</h2><h3 id="Mutable-and-Immutable-Object"><a href="#Mutable-and-Immutable-Object" class="headerlink" title="Mutable and Immutable Object"></a>Mutable and Immutable Object</h3><h3 id="Mutable-object-변경-가능-객체"><a href="#Mutable-object-변경-가능-객체" class="headerlink" title="Mutable object (변경 가능 객체)"></a>Mutable object (변경 가능 객체)</h3><ol>
+<li>list</li>
+<li>dictionary</li>
+<li>set</li>
+</ol>
+<h3 id="Immutable-object-변경-불가능-객체"><a href="#Immutable-object-변경-불가능-객체" class="headerlink" title="Immutable object (변경 불가능 객체)"></a>Immutable object (변경 불가능 객체)</h3><ol>
+<li>int, float 등 숫자는 immutable : 값을 덮어쓰는 것이 아니라 새로운 memory 공간에 할당하고 그 값을 가리킨다. 이름 객체가 값 객체를 가리키는 것을 binding이라고 한다.</li>
+<li>string </li>
+<li>Tuple</li>
+</ol>
+<h2 id="Dynamic-Typing"><a href="#Dynamic-Typing" class="headerlink" title="Dynamic Typing"></a>Dynamic Typing</h2><p><img src="https://user-images.githubusercontent.com/48080762/56497145-5ed2f100-6537-11e9-91f6-df0d42532653.png" alt="Dynamic Typing"></p>
+<p>Python은 Dynamic typing 언어로, C / C++ 같은 정적 타이핑 언어처럼 자료형을 미리 선언하지 않아도 알아서 동적으로 자료형을 할당할 수 있다.</p>
+<h2 id="Data-Assignment"><a href="#Data-Assignment" class="headerlink" title="Data Assignment"></a>Data Assignment</h2><p><img src="https://user-images.githubusercontent.com/48080762/56498081-31884200-653b-11e9-86f8-1cc9eb29c9a1.png" alt="Memory Assignment (C / Python)"></p>
+<ul>
+<li>C : char a = 10;<ul>
+<li>A라는 이름을 가진 공간에 10의 값이 저장된다.</li>
+<li>20으로 변경시 같은 메모리 공간의 값을 변경한다.</li>
+</ul>
+</li>
+<li>Python : a = 10;<ul>
+<li>10이라는 값을 가진 객체가 생기고, a라는 이름을 가진 객체가 10을 가리키게 된다.</li>
+<li>만약 a=20으로 재할당할 경우 20이라는 값을 가진 객체가 생기고 a는 20을 가리켜, 10은 자신을 가리키는 객체가 없으므로 제거된다.</li>
+<li>20으로 변경시 10의 메모리공간을 건드리지 않고 새로운 공간을 만든다.</li>
+</ul>
+</li>
+<li>Integer, float등 number type은 immutable 객체</li>
+</ul>
+<h3 id="Python-성질"><a href="#Python-성질" class="headerlink" title="Python 성질"></a>Python 성질</h3><ol>
+<li>모든 것이 객체<br>: integer가 그냥 4 byte가 아니라 객체로 필요한 것들이 붙어있어 크기를 더 차지함</li>
+<li>Overflow<br>: overflow 되는 대신 4 byte를 8 byte로 늘림. 대신 경계검사 하므로 속도 저하</li>
+</ol>
+<h3 id="Language-Abstraction"><a href="#Language-Abstraction" class="headerlink" title="Language Abstraction"></a>Language Abstraction</h3><ul>
+<li>Hardware 의존적인 Assembly 언어에서 벗어나 하드웨어 독립적인 C언어로 Coding하고 각 하드웨어 별 어셈블러로 해석하게끔 함 ▶ 하드웨어 추상화 (각 어셈블러가 어떻게 동작하는지 몰라도 C로 코딩하면 됨)</li>
+<li>Assembly : low level language</li>
+<li>C / C++ : hardware abstraction 됐으나 memory abstraction X ▶ 메모리를 직접 할당, 해제</li>
+<li>Java / C# : 언어 자체에서 메모리 할당, 해제 ▶ garbage collection. Memory abstraction O 그러나 Data Type은 선언해줘야함</li>
+<li>Python / javaScript : Data type abstraction. Interpreter Language</li>
+<li>Level은 abstraction level을 말하는 것이지 급을 나누는 것이 아님</li>
+<li>성능은 C/C++ 생산성은 Python</li>
+</ul>
 
         </div>
         
@@ -358,7 +404,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        48
+                        53
                     </p>
                 </div>
             </div>
@@ -368,7 +414,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        7
+                        8
                     </p>
                 </div>
             </div>
@@ -378,7 +424,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        12
                     </p>
                 </div>
             </div>
@@ -471,7 +517,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/HTML-CSS/" style="font-size: 13.33px;">HTML, CSS</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a>
+        <a href="/tags/Algorithm/" style="font-size: 18px;">Algorithm</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 16px;">HTML, CSS</a> <a href="/tags/Python/" style="font-size: 14px;">Python</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/javaScript/" style="font-size: 12px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a>
     </div>
 </div>
 
@@ -495,7 +541,7 @@
                 <span class="level-item">Algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">8</span>
+                <span class="level-item tag">9</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Algorithm/CodeWars/">
@@ -503,7 +549,7 @@
                 <span class="level-item">CodeWars</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">3</span>
+                <span class="level-item tag">4</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Algorithm/LeetCode/">
@@ -514,6 +560,14 @@
                 <span class="level-item tag">5</span>
             </span>
         </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Computer-Engineering/">
+            <span class="level-start">
+                <span class="level-item">Computer Engineering</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/HTML-CSS/">
             <span class="level-start">
                 <span class="level-item">HTML/CSS</span>
@@ -535,7 +589,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">35</span>
+                <span class="level-item tag">36</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -560,16 +614,16 @@
         
         <article class="media">
             
-            <a href="/2019/04/21/190421-TIL/" class="media-left">
+            <a href="/2019/04/22/190422-TIL/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/rose.png" alt="190421-TIL">
+                    <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190422-TIL">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-21T11:51:59.000Z">2019-04-21</time></div>
-                    <a href="/2019/04/21/190421-TIL/" class="has-link-black-ter is-size-6">190421-TIL</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-22T12:09:23.000Z">2019-04-22</time></div>
+                    <a href="/2019/04/22/190422-TIL/" class="has-link-black-ter is-size-6">190422-TIL</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
@@ -579,18 +633,18 @@
         
         <article class="media">
             
-            <a href="/2019/04/20/190420-TIL/" class="media-left">
+            <a href="/2019/04/22/First-class-Function/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190420-TIL">
+                    <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="First-class Function">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-20T08:33:50.000Z">2019-04-20</time></div>
-                    <a href="/2019/04/20/190420-TIL/" class="has-link-black-ter is-size-6">190420-TIL</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-22T12:05:45.000Z">2019-04-22</time></div>
+                    <a href="/2019/04/22/First-class-Function/" class="has-link-black-ter is-size-6">First-class Function</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                        <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a>
                     </p>
                 </div>
             </div>
@@ -598,56 +652,56 @@
         
         <article class="media">
             
-            <a href="/2019/04/20/CodeWars-6kyu-Directions-Reduction/" class="media-left">
+            <a href="/2019/04/22/Call-by-Value-Call-by-Reference-and-Call-by-Object-Reference/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="CodeWars 6kyu. Directions Reduction">
+                    <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="Call by Value, Call by Reference and Call by Object Reference">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-20T08:23:59.000Z">2019-04-20</time></div>
-                    <a href="/2019/04/20/CodeWars-6kyu-Directions-Reduction/" class="has-link-black-ter is-size-6">CodeWars 6kyu. Directions Reduction</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-22T11:28:15.000Z">2019-04-22</time></div>
+                    <a href="/2019/04/22/Call-by-Value-Call-by-Reference-and-Call-by-Object-Reference/" class="has-link-black-ter is-size-6">Call by Value, Call by Reference and Call by Object Reference</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/04/22/Local-Variable-and-Global-Variable/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="Local Variable and Global Variable">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-22T10:32:36.000Z">2019-04-22</time></div>
+                    <a href="/2019/04/22/Local-Variable-and-Global-Variable/" class="has-link-black-ter is-size-6">Local Variable and Global Variable</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/04/22/LeetCode-5-Longest-Palindromic-Substring/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="LeetCode 5. Longest Palindromic Substring">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-22T10:27:54.000Z">2019-04-22</time></div>
+                    <a href="/2019/04/22/LeetCode-5-Longest-Palindromic-Substring/" class="has-link-black-ter is-size-6">LeetCode 5. Longest Palindromic Substring</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/LeetCode/">LeetCode</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/19/CodeWars-6kyu-Persistent-Bugger/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="CodeWars 6kyu. Persistent Bugger">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-19T12:46:18.000Z">2019-04-19</time></div>
-                    <a href="/2019/04/19/CodeWars-6kyu-Persistent-Bugger/" class="has-link-black-ter is-size-6">CodeWars 6kyu. Persistent Bugger</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/CodeWars/">CodeWars</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/19/190419-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/yellow2.png" alt="190419-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-19T12:39:53.000Z">2019-04-19</time></div>
-                    <a href="/2019/04/19/190419-TIL/" class="has-link-black-ter is-size-6">190419-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
                 </div>
             </div>
@@ -671,7 +725,7 @@
                     <span class="level-item">April 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">32</span>
+                    <span class="level-item tag">37</span>
                 </span>
             </a>
         </li>
@@ -703,7 +757,42 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Algorithm/">
                         <span class="tag">Algorithm</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/C/">
+                        <span class="tag">C</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Call-by-Object-Reference/">
+                        <span class="tag">Call by Object Reference</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Call-by-Reference/">
+                        <span class="tag">Call by Reference</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Call-by-Value/">
+                        <span class="tag">Call by Value</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Fisrt-class-Function/">
+                        <span class="tag">Fisrt-class Function</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -717,14 +806,21 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Python/">
                         <span class="tag">Python</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">35</span>
+                        <span class="tag is-grey">36</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/global-variable/">
+                        <span class="tag">global variable</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -732,6 +828,13 @@
                     <a class="tags has-addons" href="/tags/javaScript/">
                         <span class="tag">javaScript</span>
                         <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/local-variavble/">
+                        <span class="tag">local variavble</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -767,7 +870,7 @@
                 <span class="level-item">Algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">8</span>
+                <span class="level-item tag">9</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Algorithm/CodeWars/">
@@ -775,7 +878,7 @@
                 <span class="level-item">CodeWars</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">3</span>
+                <span class="level-item tag">4</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Algorithm/LeetCode/">
@@ -786,6 +889,14 @@
                 <span class="level-item tag">5</span>
             </span>
         </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Computer-Engineering/">
+            <span class="level-start">
+                <span class="level-item">Computer Engineering</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/HTML-CSS/">
             <span class="level-start">
                 <span class="level-item">HTML/CSS</span>
@@ -807,7 +918,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">35</span>
+                <span class="level-item tag">36</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -832,16 +943,16 @@
         
         <article class="media">
             
-            <a href="/2019/04/21/190421-TIL/" class="media-left">
+            <a href="/2019/04/22/190422-TIL/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/rose.png" alt="190421-TIL">
+                    <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190422-TIL">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-21T11:51:59.000Z">2019-04-21</time></div>
-                    <a href="/2019/04/21/190421-TIL/" class="has-link-black-ter is-size-6">190421-TIL</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-22T12:09:23.000Z">2019-04-22</time></div>
+                    <a href="/2019/04/22/190422-TIL/" class="has-link-black-ter is-size-6">190422-TIL</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
@@ -851,18 +962,18 @@
         
         <article class="media">
             
-            <a href="/2019/04/20/190420-TIL/" class="media-left">
+            <a href="/2019/04/22/First-class-Function/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190420-TIL">
+                    <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="First-class Function">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-20T08:33:50.000Z">2019-04-20</time></div>
-                    <a href="/2019/04/20/190420-TIL/" class="has-link-black-ter is-size-6">190420-TIL</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-22T12:05:45.000Z">2019-04-22</time></div>
+                    <a href="/2019/04/22/First-class-Function/" class="has-link-black-ter is-size-6">First-class Function</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                        <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a>
                     </p>
                 </div>
             </div>
@@ -870,56 +981,56 @@
         
         <article class="media">
             
-            <a href="/2019/04/20/CodeWars-6kyu-Directions-Reduction/" class="media-left">
+            <a href="/2019/04/22/Call-by-Value-Call-by-Reference-and-Call-by-Object-Reference/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="CodeWars 6kyu. Directions Reduction">
+                    <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="Call by Value, Call by Reference and Call by Object Reference">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-20T08:23:59.000Z">2019-04-20</time></div>
-                    <a href="/2019/04/20/CodeWars-6kyu-Directions-Reduction/" class="has-link-black-ter is-size-6">CodeWars 6kyu. Directions Reduction</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-22T11:28:15.000Z">2019-04-22</time></div>
+                    <a href="/2019/04/22/Call-by-Value-Call-by-Reference-and-Call-by-Object-Reference/" class="has-link-black-ter is-size-6">Call by Value, Call by Reference and Call by Object Reference</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/04/22/Local-Variable-and-Global-Variable/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="Local Variable and Global Variable">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-22T10:32:36.000Z">2019-04-22</time></div>
+                    <a href="/2019/04/22/Local-Variable-and-Global-Variable/" class="has-link-black-ter is-size-6">Local Variable and Global Variable</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/04/22/LeetCode-5-Longest-Palindromic-Substring/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="LeetCode 5. Longest Palindromic Substring">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-22T10:27:54.000Z">2019-04-22</time></div>
+                    <a href="/2019/04/22/LeetCode-5-Longest-Palindromic-Substring/" class="has-link-black-ter is-size-6">LeetCode 5. Longest Palindromic Substring</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/LeetCode/">LeetCode</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/19/CodeWars-6kyu-Persistent-Bugger/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="CodeWars 6kyu. Persistent Bugger">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-19T12:46:18.000Z">2019-04-19</time></div>
-                    <a href="/2019/04/19/CodeWars-6kyu-Persistent-Bugger/" class="has-link-black-ter is-size-6">CodeWars 6kyu. Persistent Bugger</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/CodeWars/">CodeWars</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/19/190419-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/yellow2.png" alt="190419-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-19T12:39:53.000Z">2019-04-19</time></div>
-                    <a href="/2019/04/19/190419-TIL/" class="has-link-black-ter is-size-6">190419-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
                 </div>
             </div>
@@ -943,7 +1054,7 @@
                     <span class="level-item">April 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">32</span>
+                    <span class="level-item tag">37</span>
                 </span>
             </a>
         </li>
@@ -975,7 +1086,42 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Algorithm/">
                         <span class="tag">Algorithm</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/C/">
+                        <span class="tag">C</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Call-by-Object-Reference/">
+                        <span class="tag">Call by Object Reference</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Call-by-Reference/">
+                        <span class="tag">Call by Reference</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Call-by-Value/">
+                        <span class="tag">Call by Value</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Fisrt-class-Function/">
+                        <span class="tag">Fisrt-class Function</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -989,14 +1135,21 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Python/">
                         <span class="tag">Python</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">35</span>
+                        <span class="tag is-grey">36</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/global-variable/">
+                        <span class="tag">global variable</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1004,6 +1157,13 @@
                     <a class="tags has-addons" href="/tags/javaScript/">
                         <span class="tag">javaScript</span>
                         <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/local-variavble/">
+                        <span class="tag">local variavble</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
