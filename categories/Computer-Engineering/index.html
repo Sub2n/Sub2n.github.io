@@ -162,6 +162,87 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/04/24/Quick-Sort/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="Quick Sort">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-24T07:46:32.000Z">2019-04-24</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Computer-Engineering/Algorithm/">Algorithm</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes read (About 554 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/24/Quick-Sort/">Quick Sort</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="Quick-Sort"><a href="#Quick-Sort" class="headerlink" title="Quick Sort"></a>Quick Sort</h1><ul>
+<li>Divide and Conquer Algorithm으로, recursion을 적절히 사용한다.</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/48080762/56641764-00318280-66b1-11e9-926a-c54f4184fc99.png" alt="Initialize"></p>
+<ol start="0">
+<li><p>정렬해야할 list, 시작점 start와 끝점 end를 넘겨 받는다. left = start, right = end로 정한다.</p>
+</li>
+<li><p>양방향의 left와 right를 pivot 방향으로 움직이며 pivot 값과 left, right index의 element 값을 비교한다.</p>
+</li>
+<li><p>left의 element 값이 pivot 보다 크고, right의 element 값이 pivot보다 작을 때 둘을 교환하고 각 index를 하나씩 이동한다.(left면 +1, right면 -1)</p>
+</li>
+<li><p>left와 right가 교차되기 전까지 반복하면서 sorting한다.</p>
+</li>
+<li><p>한 번 교차되면 while문을 빠져나오는데, 이 때 pivot을 기준으로 왼쪽은 pivot보다 작은 값들로, 오른쪽은 pivot보다 큰 값들로만 이루어져있다.</p>
+</li>
+<li><p>Recursion으로 pivot을 포함하지 않고 왼쪽과 오른쪽을 각각 다시 돌려준다. 이 때 base case는 start가 end와 같아지거나 교차하면 return하는 것이다.</p>
+</li>
+</ol>
+<ul>
+<li><p>코드를 보는 게 더 이해가 쉬울 것 같다. 그림으로 그려보며 진행하는 게 가장 도움이 된다.</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">quickSort</span><span class="hljs-params">(li, start, end)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">if</span> start &gt;= end:</span><br><span class="line">        <span class="hljs-keyword">return</span></span><br><span class="line">    left = start</span><br><span class="line">    right = end</span><br><span class="line">    pivot = li[(left+right)//<span class="hljs-number">2</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">while</span> left &lt;= right:</span><br><span class="line">        <span class="hljs-keyword">while</span> li[left] &lt; pivot:</span><br><span class="line">            left += <span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">while</span> li[right] &gt; pivot:</span><br><span class="line">            right -= <span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">if</span> left &lt;= right:</span><br><span class="line">            li[left], li[right] = li[right], li[left]</span><br><span class="line">            left += <span class="hljs-number">1</span></span><br><span class="line">            right -= <span class="hljs-number">1</span></span><br><span class="line">            </span><br><span class="line">    quickSort(li, start, right<span class="hljs-number">-1</span>)</span><br><span class="line">    quickSort(li, left, end)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:</span><br><span class="line">    num_data=int(input(<span class="hljs-string">'데이터 개수(0이면 종료):'</span>))</span><br><span class="line">    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> num_data:</span><br><span class="line">        <span class="hljs-keyword">break</span></span><br><span class="line">    data=[random.randint(<span class="hljs-number">1</span>, <span class="hljs-number">100</span>) <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(num_data)]</span><br><span class="line">    print(data)</span><br><span class="line">    quickSort(data, <span class="hljs-number">0</span>, len(data)<span class="hljs-number">-1</span>)</span><br><span class="line">    print(data)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>What’s the fastest way to alphabetize your bookshelf?</p>
+<p><a href="https://youtu.be/WaNLJf8xzC4" target="_blank" rel="noopener"><img src="http://img.youtube.com/vi/WaNLJf8xzC4/0.jpg" alt="What&#39;s the fastest way to alphabetize your bookshelf"></a> Quick sort에 관련된 TED edu 영상</p>
+</li>
+<li><p>문제는 pivot을 어떻게 결정할 것이냐이다. Pivot이 정렬해야할 list의 모든 값들의 평균치일 때는 n/2번을 비교하는 것으로 가장 좋지만, 예를 들어 최솟값이나 최댓값을 기준으로 pivot이 선택될 경우 n번을 계산해야한다.</p>
+</li>
+<li><p>pivot을 정렬된 list의 가운데 값으로 결정하는 것이 Best case지만, 정렬을 하기 위해서 pivot을 사용하는 것이므로 실현될 수 없는 이야기이다.</p>
+</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/04/24/4-Fundamental-of-Object-Oriented-Programming/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="4 Fundamental of Object Oriented Programming">
         </a>
@@ -238,7 +319,7 @@
     
     <div class="card-image">
         <a href="/2019/04/23/Recursion/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="Recursion">
+            <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="Recursion">
         </a>
     </div>
     
@@ -637,7 +718,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        56
+                        59
                     </p>
                 </div>
             </div>
@@ -657,7 +738,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        17
+                        21
                     </p>
                 </div>
             </div>
@@ -750,7 +831,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Abstraction/" style="font-size: 10px;">Abstraction</a> <a href="/tags/Algorithm/" style="font-size: 18px;">Algorithm</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Encapsulation/" style="font-size: 10px;">Encapsulation</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 16px;">HTML, CSS</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/OOP/" style="font-size: 10px;">OOP</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Python/" style="font-size: 14px;">Python</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/javaScript/" style="font-size: 12px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a>
+        <a href="/tags/Abstraction/" style="font-size: 10px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Algorithm/" style="font-size: 17.5px;">Algorithm</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Encapsulation/" style="font-size: 10px;">Encapsulation</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/OOP/" style="font-size: 12.5px;">OOP</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/javaScript/" style="font-size: 12.5px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a>
     </div>
 </div>
 
@@ -798,7 +879,7 @@
                 <span class="level-item">Computer Engineering</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">5</span>
+                <span class="level-item tag">6</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Computer-Engineering/Algorithm/">
@@ -806,7 +887,7 @@
                 <span class="level-item">Algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/HTML-CSS/">
@@ -822,7 +903,7 @@
                 <span class="level-item">Python</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TIL/">
@@ -830,7 +911,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">37</span>
+                <span class="level-item tag">38</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -855,6 +936,63 @@
         
         <article class="media">
             
+            <a href="/2019/04/24/Quick-Sort/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="Quick Sort">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-24T07:46:32.000Z">2019-04-24</time></div>
+                    <a href="/2019/04/24/Quick-Sort/" class="has-link-black-ter is-size-6">Quick Sort</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a> / <a class="has-link-grey -link" href="/categories/Computer-Engineering/Algorithm/">Algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/04/24/Python-Class-and-Access-Modifier/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/python.png" alt="Python Class and Access Modifier">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-24T06:19:56.000Z">2019-04-24</time></div>
+                    <a href="/2019/04/24/Python-Class-and-Access-Modifier/" class="has-link-black-ter is-size-6">Python Class and Access Modifier</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Python/">Python</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/04/24/190424-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/flower.png" alt="190424-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-24T06:18:00.000Z">2019-04-24</time></div>
+                    <a href="/2019/04/24/190424-TIL/" class="has-link-black-ter is-size-6">190424-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/04/24/4-Fundamental-of-Object-Oriented-Programming/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="4 Fundamental of Object Oriented Programming">
@@ -876,7 +1014,7 @@
             
             <a href="/2019/04/23/Recursion/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="Recursion">
+                    <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="Recursion">
                 </p>
             </a>
             
@@ -886,63 +1024,6 @@
                     <a href="/2019/04/23/Recursion/" class="has-link-black-ter is-size-6">Recursion</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a> / <a class="has-link-grey -link" href="/categories/Computer-Engineering/Algorithm/">Algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/23/190423-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/pink.png" alt="190423-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-23T09:09:35.000Z">2019-04-23</time></div>
-                    <a href="/2019/04/23/190423-TIL/" class="has-link-black-ter is-size-6">190423-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/22/190422-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190422-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-22T12:09:23.000Z">2019-04-22</time></div>
-                    <a href="/2019/04/22/190422-TIL/" class="has-link-black-ter is-size-6">190422-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/22/First-class-Function/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="First-class Function">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-22T12:05:45.000Z">2019-04-22</time></div>
-                    <a href="/2019/04/22/First-class-Function/" class="has-link-black-ter is-size-6">First-class Function</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a>
                     </p>
                 </div>
             </div>
@@ -966,7 +1047,7 @@
                     <span class="level-item">April 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">40</span>
+                    <span class="level-item tag">43</span>
                 </span>
             </a>
         </li>
@@ -1003,9 +1084,16 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Access-Modifier/">
+                        <span class="tag">Access Modifier</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Algorithm/">
                         <span class="tag">Algorithm</span>
-                        <span class="tag is-grey">8</span>
+                        <span class="tag is-grey">10</span>
                     </a>
                 </div>
                 
@@ -1033,6 +1121,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Call-by-Value/">
                         <span class="tag">Call by Value</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Class/">
+                        <span class="tag">Class</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1068,7 +1163,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/OOP/">
                         <span class="tag">OOP</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1082,7 +1177,21 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Python/">
                         <span class="tag">Python</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Quick-sort/">
+                        <span class="tag">Quick sort</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Recursion/">
+                        <span class="tag">Recursion</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1170,7 +1279,7 @@
                 <span class="level-item">Computer Engineering</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">5</span>
+                <span class="level-item tag">6</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Computer-Engineering/Algorithm/">
@@ -1178,7 +1287,7 @@
                 <span class="level-item">Algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/HTML-CSS/">
@@ -1194,7 +1303,7 @@
                 <span class="level-item">Python</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TIL/">
@@ -1202,7 +1311,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">37</span>
+                <span class="level-item tag">38</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1227,6 +1336,63 @@
         
         <article class="media">
             
+            <a href="/2019/04/24/Quick-Sort/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="Quick Sort">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-24T07:46:32.000Z">2019-04-24</time></div>
+                    <a href="/2019/04/24/Quick-Sort/" class="has-link-black-ter is-size-6">Quick Sort</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a> / <a class="has-link-grey -link" href="/categories/Computer-Engineering/Algorithm/">Algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/04/24/Python-Class-and-Access-Modifier/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/python.png" alt="Python Class and Access Modifier">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-24T06:19:56.000Z">2019-04-24</time></div>
+                    <a href="/2019/04/24/Python-Class-and-Access-Modifier/" class="has-link-black-ter is-size-6">Python Class and Access Modifier</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Python/">Python</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/04/24/190424-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/flower.png" alt="190424-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-24T06:18:00.000Z">2019-04-24</time></div>
+                    <a href="/2019/04/24/190424-TIL/" class="has-link-black-ter is-size-6">190424-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/04/24/4-Fundamental-of-Object-Oriented-Programming/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="4 Fundamental of Object Oriented Programming">
@@ -1248,7 +1414,7 @@
             
             <a href="/2019/04/23/Recursion/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="Recursion">
+                    <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="Recursion">
                 </p>
             </a>
             
@@ -1258,63 +1424,6 @@
                     <a href="/2019/04/23/Recursion/" class="has-link-black-ter is-size-6">Recursion</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a> / <a class="has-link-grey -link" href="/categories/Computer-Engineering/Algorithm/">Algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/23/190423-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/pink.png" alt="190423-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-23T09:09:35.000Z">2019-04-23</time></div>
-                    <a href="/2019/04/23/190423-TIL/" class="has-link-black-ter is-size-6">190423-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/22/190422-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190422-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-22T12:09:23.000Z">2019-04-22</time></div>
-                    <a href="/2019/04/22/190422-TIL/" class="has-link-black-ter is-size-6">190422-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/22/First-class-Function/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="First-class Function">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-22T12:05:45.000Z">2019-04-22</time></div>
-                    <a href="/2019/04/22/First-class-Function/" class="has-link-black-ter is-size-6">First-class Function</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a>
                     </p>
                 </div>
             </div>
@@ -1338,7 +1447,7 @@
                     <span class="level-item">April 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">40</span>
+                    <span class="level-item tag">43</span>
                 </span>
             </a>
         </li>
@@ -1375,9 +1484,16 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Access-Modifier/">
+                        <span class="tag">Access Modifier</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Algorithm/">
                         <span class="tag">Algorithm</span>
-                        <span class="tag is-grey">8</span>
+                        <span class="tag is-grey">10</span>
                     </a>
                 </div>
                 
@@ -1405,6 +1521,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Call-by-Value/">
                         <span class="tag">Call by Value</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Class/">
+                        <span class="tag">Class</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1440,7 +1563,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/OOP/">
                         <span class="tag">OOP</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1454,7 +1577,21 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Python/">
                         <span class="tag">Python</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Quick-sort/">
+                        <span class="tag">Quick sort</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Recursion/">
+                        <span class="tag">Recursion</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 

@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sub2n.github.io/2019/04/24/Quick-Sort/</loc>
+    
+    <lastmod>2019-04-24T07:57:12.389Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sub2n.github.io/2019/04/23/Recursion/</loc>
     
-    <lastmod>2019-04-24T01:57:36.904Z</lastmod>
+    <lastmod>2019-04-24T07:47:35.189Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/04/24/190424-TIL/</loc>
+    
+    <lastmod>2019-04-24T07:00:19.830Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/04/24/Python-Class-and-Access-Modifier/</loc>
+    
+    <lastmod>2019-04-24T06:56:13.878Z</lastmod>
     
   </url>
   
