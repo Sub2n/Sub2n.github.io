@@ -183,7 +183,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 554 words)
+                    6 minutes read (About 839 words)
                 </span>
                 
                 
@@ -226,7 +226,13 @@
 </li>
 <li><p>pivot을 정렬된 list의 가운데 값으로 결정하는 것이 Best case지만, 정렬을 하기 위해서 pivot을 사용하는 것이므로 실현될 수 없는 이야기이다.</p>
 </li>
+<li><p>Quick Sort의 Time Complexity는 O(nlogn)으로, average case일 때를 기준으로 한다. Pivot을 random pivot으로 둘 경우 확률적으로 avarage case를 만족한다.</p>
+</li>
+<li><p>li의 start와 end와 mid를 정렬한 결과의 중간 값을 return한다. Random Pivot을 이용하기 위해 코드를 수정했다.</p>
+</li>
 </ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getMiddleIndex</span><span class="hljs-params">(li, start, mid, end)</span>:</span></span><br><span class="line">    <span class="hljs-string">"""</span></span><br><span class="line"><span class="hljs-string">    list의 맨 처음 값, 끝 값, 중간 값 정렬시 가운데 값의 index 반환</span></span><br><span class="line"><span class="hljs-string">    """</span></span><br><span class="line">    indices = [start, mid, end]</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">if</span> li[indices[<span class="hljs-number">0</span>]] &gt; li[indices[<span class="hljs-number">1</span>]]:</span><br><span class="line">        indices[<span class="hljs-number">0</span>], indices[<span class="hljs-number">1</span>] = indices[<span class="hljs-number">1</span>], indices[<span class="hljs-number">0</span>]</span><br><span class="line">    <span class="hljs-keyword">if</span> li[indices[<span class="hljs-number">1</span>] &gt; li[indices[<span class="hljs-number">2</span>]]]:</span><br><span class="line">        indices[<span class="hljs-number">1</span>], indices[<span class="hljs-number">2</span>] = indices[<span class="hljs-number">2</span>], indices[<span class="hljs-number">1</span>]</span><br><span class="line">    <span class="hljs-keyword">if</span> li[indices[<span class="hljs-number">0</span>]] &gt; li[indices[<span class="hljs-number">1</span>]]:</span><br><span class="line">        indices[<span class="hljs-number">0</span>], indices[<span class="hljs-number">1</span>] = indices[<span class="hljs-number">1</span>], indices[<span class="hljs-number">0</span>]</span><br><span class="line">        </span><br><span class="line">    <span class="hljs-keyword">return</span> indices[<span class="hljs-number">1</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="전체-반영한-결과"><a href="#전체-반영한-결과" class="headerlink" title="전체 반영한 결과"></a>전체 반영한 결과</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getMiddleIndex</span><span class="hljs-params">(li, start, mid, end)</span>:</span></span><br><span class="line">    <span class="hljs-string">"""</span></span><br><span class="line"><span class="hljs-string">    list의 맨 처음 값, 끝 값, 중간 값 정렬시 가운데 값의 index 반환</span></span><br><span class="line"><span class="hljs-string">    """</span></span><br><span class="line">    indices = [start, mid, end]</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">if</span> li[indices[<span class="hljs-number">0</span>]] &gt; li[indices[<span class="hljs-number">1</span>]]:</span><br><span class="line">        indices[<span class="hljs-number">0</span>], indices[<span class="hljs-number">1</span>] = indices[<span class="hljs-number">1</span>], indices[<span class="hljs-number">0</span>]</span><br><span class="line">    <span class="hljs-keyword">if</span> li[indices[<span class="hljs-number">1</span>] &gt; li[indices[<span class="hljs-number">2</span>]]]:</span><br><span class="line">        indices[<span class="hljs-number">1</span>], indices[<span class="hljs-number">2</span>] = indices[<span class="hljs-number">2</span>], indices[<span class="hljs-number">1</span>]</span><br><span class="line">    <span class="hljs-keyword">if</span> li[indices[<span class="hljs-number">0</span>]] &gt; li[indices[<span class="hljs-number">1</span>]]:</span><br><span class="line">        indices[<span class="hljs-number">0</span>], indices[<span class="hljs-number">1</span>] = indices[<span class="hljs-number">1</span>], indices[<span class="hljs-number">0</span>]</span><br><span class="line">        </span><br><span class="line">    <span class="hljs-keyword">return</span> indices[<span class="hljs-number">1</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">quickSort</span><span class="hljs-params">(li, start, end)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">if</span> start &gt;= end:</span><br><span class="line">        <span class="hljs-keyword">return</span></span><br><span class="line">    left = start</span><br><span class="line">    right = end</span><br><span class="line">    mid = (left+right)//<span class="hljs-number">2</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-comment">#추가된 코드</span></span><br><span class="line">    mid_index = getMiddleIndex(li, start, mid, end)</span><br><span class="line">    li[mid_index], li[mid] = li[mid], li[mid_index]</span><br><span class="line">    </span><br><span class="line">    pivot = li[mid]</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">while</span> left &lt;= right:</span><br><span class="line">        <span class="hljs-keyword">while</span> li[left] &lt; pivot:</span><br><span class="line">            left += <span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">while</span> li[right] &gt; pivot:</span><br><span class="line">            right -= <span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">if</span> left &lt;= right:</span><br><span class="line">            li[left], li[right] = li[right], li[left]</span><br><span class="line">            left += <span class="hljs-number">1</span></span><br><span class="line">            right -= <span class="hljs-number">1</span></span><br><span class="line">            </span><br><span class="line">    quickSort(li, start, right<span class="hljs-number">-1</span>)</span><br><span class="line">    quickSort(li, left, end)</span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -372,7 +378,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        59
+                        60
                     </p>
                 </div>
             </div>
@@ -509,7 +515,7 @@
                 <span class="level-item">Algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">9</span>
+                <span class="level-item tag">10</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Algorithm/CodeWars/">
@@ -517,7 +523,7 @@
                 <span class="level-item">CodeWars</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">5</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Algorithm/LeetCode/">
@@ -587,6 +593,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/04/25/CodeWars-5kyu-Maximum-subarray-sum/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="CodeWars 5kyu Maximum subarray sum">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-25T11:50:45.000Z">2019-04-25</time></div>
+                    <a href="/2019/04/25/CodeWars-5kyu-Maximum-subarray-sum/" class="has-link-black-ter is-size-6">CodeWars 5kyu Maximum subarray sum</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/CodeWars/">CodeWars</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -664,25 +689,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/04/23/Recursion/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="Recursion">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-23T09:31:17.000Z">2019-04-23</time></div>
-                    <a href="/2019/04/23/Recursion/" class="has-link-black-ter is-size-6">Recursion</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a> / <a class="has-link-grey -link" href="/categories/Computer-Engineering/Algorithm/">Algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -701,7 +707,7 @@
                     <span class="level-item">April 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">43</span>
+                    <span class="level-item tag">44</span>
                 </span>
             </a>
         </li>
@@ -747,7 +753,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Algorithm/">
                         <span class="tag">Algorithm</span>
-                        <span class="tag is-grey">10</span>
+                        <span class="tag is-grey">11</span>
                     </a>
                 </div>
                 
@@ -909,7 +915,7 @@
                 <span class="level-item">Algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">9</span>
+                <span class="level-item tag">10</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Algorithm/CodeWars/">
@@ -917,7 +923,7 @@
                 <span class="level-item">CodeWars</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">5</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Algorithm/LeetCode/">
@@ -987,6 +993,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/04/25/CodeWars-5kyu-Maximum-subarray-sum/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="CodeWars 5kyu Maximum subarray sum">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-25T11:50:45.000Z">2019-04-25</time></div>
+                    <a href="/2019/04/25/CodeWars-5kyu-Maximum-subarray-sum/" class="has-link-black-ter is-size-6">CodeWars 5kyu Maximum subarray sum</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/CodeWars/">CodeWars</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1064,25 +1089,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/04/23/Recursion/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="Recursion">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-23T09:31:17.000Z">2019-04-23</time></div>
-                    <a href="/2019/04/23/Recursion/" class="has-link-black-ter is-size-6">Recursion</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a> / <a class="has-link-grey -link" href="/categories/Computer-Engineering/Algorithm/">Algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1101,7 +1107,7 @@
                     <span class="level-item">April 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">43</span>
+                    <span class="level-item tag">44</span>
                 </span>
             </a>
         </li>
@@ -1147,7 +1153,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Algorithm/">
                         <span class="tag">Algorithm</span>
-                        <span class="tag is-grey">10</span>
+                        <span class="tag is-grey">11</span>
                     </a>
                 </div>
                 

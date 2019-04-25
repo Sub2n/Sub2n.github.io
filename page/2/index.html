@@ -151,6 +151,90 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/04/22/Local-Variable-and-Global-Variable/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="Local Variable and Global Variable">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-22T10:32:36.000Z">2019-04-22</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 411 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/22/Local-Variable-and-Global-Variable/">Local Variable and Global Variable</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="전역변수-global-variable-지역변수-local-variable"><a href="#전역변수-global-variable-지역변수-local-variable" class="headerlink" title="전역변수 (global variable) / 지역변수 (local variable)"></a>전역변수 (global variable) / 지역변수 (local variable)</h1><ol>
+<li>변수의 scope와 lifetime</li>
+</ol>
+<ul>
+<li>변수는 선언하는 순간부터 속한 scope 내에서 lifetime을 가진다. 즉, 특정 범위의 코드가 실행되고 있을 때는 메모리에 존재하지만, 실행이 끝나면 이 변수는 메모리에서 사라진다.</li>
+</ul>
+<ol start="2">
+<li><p>변수의 선언 위치</p>
+<p> a. Block 외부 : block({})으로 감싸진 main 함수와 여러 함수들의 외부 공간에 변수를 선언할 수 있다.</p>
+<p> b. Block 내부 : block 내부에 변수를 선언할 수 있다. C는 block의 최상단에 모든 지역변수를 선언해야한다.</p>
+<p> c. 함수의 parameter : 함수의 매개변수는 그 함수의 block 내에서 선언된 변수와 동일한 효과를 갖는다.</p>
+</li>
+<li><p>전역변수 (a case)</p>
+</li>
+</ol>
+<ul>
+<li><p>Block 외부에 선언되는 변수. 전역 변수는 프로그램이 시작되는 순간부터 종료되는 순간까지 메모리를 차지하고 있으며 사라지지 않는다.</p>
+</li>
+<li><p>C라면 <code>main()</code> 위, <code>#include &lt;stdio.h&gt;</code>와 함수 원형 밑 그 사이에 선언</p>
+</li>
+<li><p>전역변수는 어느 block에서도 언제든지 접근이 가능하다 &gt; sycncrinize 고려</p>
+</li>
+</ul>
+<ol start="4">
+<li>지역변수 (b case, c case)</li>
+</ol>
+<ul>
+<li><p>지역변수는 block 내부에서 선언되는 변수이다. { } 안에 선언되어있다면 무조건 지역변수</p>
+</li>
+<li><p>지역변수는 선언된 block 내부로 scope가 한정되며 그 block의 실행이 끝나면 lifetime 또한 소멸된다.</p>
+</li>
+<li><p>함수의 parameter로서 선언되는 local variable도 이와 같다. 함수 body 내에서 선언되는 것과 똑같다.</p>
+</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/04/22/LeetCode-5-Longest-Palindromic-Substring/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="LeetCode 5. Longest Palindromic Substring">
         </a>
@@ -777,64 +861,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/18/LeetCode-35-Search-Insert-Position/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="LeetCode 35. Search Insert Position">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-18T11:18:45.000Z">2019-04-18</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/LeetCode/">LeetCode</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 275 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/18/LeetCode-35-Search-Insert-Position/">LeetCode 35. Search Insert Position</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="LeetCode-35-Search-Insert-Position"><a href="#LeetCode-35-Search-Insert-Position" class="headerlink" title="LeetCode 35. Search Insert Position"></a><a href="https://leetcode.com/problems/search-insert-position/" target="_blank" rel="noopener">LeetCode 35. Search Insert Position</a></h2><p>Insert할 Position을 찾는 문제 : C++, Binary Search 사용</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/18/LeetCode-35-Search-Insert-Position/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -903,7 +929,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        59
+                        60
                     </p>
                 </div>
             </div>
@@ -1040,7 +1066,7 @@
                 <span class="level-item">Algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">9</span>
+                <span class="level-item tag">10</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Algorithm/CodeWars/">
@@ -1048,7 +1074,7 @@
                 <span class="level-item">CodeWars</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">5</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Algorithm/LeetCode/">
@@ -1118,6 +1144,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/04/25/CodeWars-5kyu-Maximum-subarray-sum/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="CodeWars 5kyu Maximum subarray sum">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-25T11:50:45.000Z">2019-04-25</time></div>
+                    <a href="/2019/04/25/CodeWars-5kyu-Maximum-subarray-sum/" class="has-link-black-ter is-size-6">CodeWars 5kyu Maximum subarray sum</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/CodeWars/">CodeWars</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1195,25 +1240,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/04/23/Recursion/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="Recursion">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-23T09:31:17.000Z">2019-04-23</time></div>
-                    <a href="/2019/04/23/Recursion/" class="has-link-black-ter is-size-6">Recursion</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a> / <a class="has-link-grey -link" href="/categories/Computer-Engineering/Algorithm/">Algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1232,7 +1258,7 @@
                     <span class="level-item">April 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">43</span>
+                    <span class="level-item tag">44</span>
                 </span>
             </a>
         </li>
@@ -1278,7 +1304,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Algorithm/">
                         <span class="tag">Algorithm</span>
-                        <span class="tag is-grey">10</span>
+                        <span class="tag is-grey">11</span>
                     </a>
                 </div>
                 
@@ -1440,7 +1466,7 @@
                 <span class="level-item">Algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">9</span>
+                <span class="level-item tag">10</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Algorithm/CodeWars/">
@@ -1448,7 +1474,7 @@
                 <span class="level-item">CodeWars</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">5</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Algorithm/LeetCode/">
@@ -1518,6 +1544,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/04/25/CodeWars-5kyu-Maximum-subarray-sum/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="CodeWars 5kyu Maximum subarray sum">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-25T11:50:45.000Z">2019-04-25</time></div>
+                    <a href="/2019/04/25/CodeWars-5kyu-Maximum-subarray-sum/" class="has-link-black-ter is-size-6">CodeWars 5kyu Maximum subarray sum</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/CodeWars/">CodeWars</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1595,25 +1640,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/04/23/Recursion/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="Recursion">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-23T09:31:17.000Z">2019-04-23</time></div>
-                    <a href="/2019/04/23/Recursion/" class="has-link-black-ter is-size-6">Recursion</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a> / <a class="has-link-grey -link" href="/categories/Computer-Engineering/Algorithm/">Algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1632,7 +1658,7 @@
                     <span class="level-item">April 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">43</span>
+                    <span class="level-item tag">44</span>
                 </span>
             </a>
         </li>
@@ -1678,7 +1704,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Algorithm/">
                         <span class="tag">Algorithm</span>
-                        <span class="tag is-grey">10</span>
+                        <span class="tag is-grey">11</span>
                     </a>
                 </div>
                 
