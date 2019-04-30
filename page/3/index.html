@@ -151,6 +151,335 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/04/22/190422-TIL/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190422-TIL">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-22T12:09:23.000Z">2019-04-22</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a few seconds read (About 46 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/22/190422-TIL/">190422-TIL</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><h3 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h3><ul>
+<li><p>Python Functions(호출 방식, stack, map filter 등)을 배우고 posting으로 정리했다.</p>
+</li>
+<li><p>LeetCode 알고리즘을 풀고, 알고리즘 스터디를 했다.</p>
+</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
+        <a href="/2019/04/22/First-class-Function/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="First-class Function">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-22T12:05:45.000Z">2019-04-22</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 322 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/22/First-class-Function/">First-class Function</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="First-class-Function"><a href="#First-class-Function" class="headerlink" title="First-class Function"></a>First-class Function</h1><ul>
+<li>프로그래밍 언어 중 함수를 다른 변수와 동일하게 다루는 언어를 함수우선순위(First-class Functions) 가졌다고 표현한다.</li>
+<li>함수를 다른 함수의 argument로 사용하고, 함수에서 함수를 return하거나 변수의 값으로 함수를 할당할 수 있다.</li>
+</ul>
+<ol>
+<li>변수에 함수를 할당 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> foo = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"foobar"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">// 변수를 사용하여 호출</span></span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="2">
+<li>함수를 인자로 전달 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-string">"Hello, "</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greeting</span>(<span class="hljs-params">helloMessage, name</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(helloMessage() + name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">// `sayHello`를 `greeting` 함수에 인자로 전달</span></span><br><span class="line">greeting(sayHello, <span class="hljs-string">"JavaScript!"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>다른 함수에 인자로 전달된 함수를 Call Back 함수라고 한다. </li>
+<li>다른 언어들과 같이 sayHello()를 호출하면 바로 실행되지만, 위와 같이 greeting(satHello, “)의 인자로 전달된 sayHello의 경우 greeting 함수의 helloMessage parameter로 전달된 후에, 필요한 경우 helloMessage()에서 호출된다.</li>
+<li>전달된 이후 나중에 호출되기 때문에 CallBack 함수라고 불린다.</li>
+</ul>
+<ol start="3">
+<li><p>함수를 return 값으로 전달 (함수 return)</p>
+ <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Hello!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>함수가 함수를 반환하는 예시문. JavaScript에서는 함수를 변수처럼 취급하므로 함수를 return할 수 있다.</li>
+<li>Higher-Order Function : 함수를 반환하는 함수</li>
+</ul>
+</li>
+</ol>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
+        <a href="/2019/04/22/Call-by-Value-Call-by-Reference-and-Call-by-Object-Reference/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="Call by Value, Call by Reference and Call by Object Reference">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-22T11:28:15.000Z">2019-04-22</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes read (About 1021 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/22/Call-by-Value-Call-by-Reference-and-Call-by-Object-Reference/">Call by Value, Call by Reference and Call by Object Reference</a>
+            
+        </h1>
+        <div class="content">
+            <p>우선 Parameter와 Argument의 차이를 짚고 가도록 한다.</p>
+<h2 id="Parameter"><a href="#Parameter" class="headerlink" title="Parameter"></a>Parameter</h2><p>The names given in the function definition are called Parameters.</p>
+<h2 id="Argument"><a href="#Argument" class="headerlink" title="Argument"></a>Argument</h2><p>The values supplied in the function call are called Arguments.</p>
+<h1 id="Call-by-Value"><a href="#Call-by-Value" class="headerlink" title="Call by Value"></a>Call by Value</h1><ul>
+<li><p>함수를 호출할 때, 변수의 값을 복사하여 argument로 넘기는 것</p>
+<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">change_value</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">  x = val;</span><br><span class="line">  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"x : %d in change_value \n"</span>, *x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">int</span> x = <span class="hljs-number">10</span>;</span><br><span class="line">  change_value(x, <span class="hljs-number">20</span>);</span><br><span class="line">  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"x : %d in main \n"</span>, x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/48080762/56498729-04895e80-653e-11e9-9fcc-11c71a94318b.png" alt="Call by Value"></p>
+<ul>
+<li>위 코드에서는 단순히 x에 10이라는 값이 복사되어 들어가기 때문에, change_value(x, 20)에서 x를 변경하더라도 main 함수에서의 x에 영향을 미치지 못한다.</li>
+</ul>
+</li>
+</ul>
+<h1 id="Call-by-Reference"><a href="#Call-by-Reference" class="headerlink" title="Call by Reference"></a>Call by Reference</h1><ul>
+<li>함수를 호출할 때 변수의 값을 넘기는 것이 아니라, 변수의 주소(변수의 위치)를 복사하여 함수에 넘긴다.</li>
+<li><p>넘겨받은 주소로 실제 변수에 접근하고 값을 변경할 수 있다.</p>
+<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">change_value</span><span class="hljs-params">(<span class="hljs-keyword">int</span> * x, <span class="hljs-keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">  *x = val;</span><br><span class="line">  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"x : %d in change_value \n"</span>, *x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">int</span> x = <span class="hljs-number">10</span>;</span><br><span class="line">  change_value(&amp;x, <span class="hljs-number">20</span>);</span><br><span class="line">  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"x : %d in main \n"</span>, x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/48080762/56498618-76ad7380-653d-11e9-9dce-3b56346565ce.png" alt="Call by Reference"></p>
+</li>
+<li><p>주소값을 전달 (참조값을 전달) : 주소값을 알고 있으면 해당 memory 주소에 저장되어있는 값을 참조할 수 있다.</p>
+</li>
+<li><p>*x가 x를 참조하고 있다 : 가리키고 있다.</p>
+<p>이를 이해하기 위해서는 pointer에 대한 이해가 필요하다.</p>
+</li>
+<li><p>Pointer </p>
+<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> *pnum;</span><br><span class="line"><span class="hljs-keyword">int</span> num = <span class="hljs-number">12345</span>;</span><br><span class="line">pnum = &amp;num <span class="hljs-comment">//num의 주소값을 return하여 pnum에 저장</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>변수를 만들 때 변수 이름 앞에 *를 붙이면 pointer 변수 됨</li>
+<li>&amp;연산자: &amp;오른쪽에 오는 피연산자의 주소값을 반환</li>
+<li>*연산자: 포인터가 가리키는 메모리 공간에 접근할 때 사용되는 연산자. 포인터 변수를 이용해 포인터 변수가 가리키는 변수의 값을 바꿀 수도 있다.</li>
+</ul>
+</li>
+</ul>
+<h1 id="Call-by-Assignment-Call-by-Object-Reference"><a href="#Call-by-Assignment-Call-by-Object-Reference" class="headerlink" title="Call by Assignment (Call by Object Reference)"></a>Call by Assignment (Call by Object Reference)</h1><blockquote>
+<p>The actual parameters (arguments) to a function call are introduced in the local symbol table of the called function when it is called; thus, arguments are passed using call by value (where the value is always an object reference, not the value of the object). [1] When a function calls another function, a new local symbol table is created for that call.</p>
+</blockquote>
+<p>이 문장이 나를 얼마나 헷갈리게 했는지 모른다. 그러니까 Python에서는 function의 argument가 call by value로 넘어오는데, 그 value는 언제나 object의 값이 아닌 object의 reference라는 것이다.</p>
+<blockquote>
+<p>Actually, call by object reference would be a better description, since if a mutable object is passed, the caller will see any changes the callee makes to it (items inserted into a list).</p>
+</blockquote>
+<p>정확하게는 call by object reference라는 설명이 더 맞다. 왜냐면 mutable 객체가 넘어올 때에는 call by reference처럼 원본 값을 변경할 수 있기 때문이다.</p>
+<ul>
+<li>파이썬은 모든 것이 object이고, Object에는 두 종류가 있다.</li>
+</ul>
+<ol>
+<li>Immutable object<ul>
+<li>int, float, str, tuple</li>
+<li>Immtable 객체가 함수의 인자로 전달되면, 처음에는 call by reference로 받지만 값이 변경되면 call by value로 동작한다.</li>
+<li>즉, 함수 내에서 formal parameter 값이 바뀌어도 actual parameter에는 영향이 없다.</li>
+<li>함수 내부에서 값을 변경할 수 없다!</li>
+<li>그래서 tuple은 변경하려면 함수에서 element와 tuple 인자로 넘겨 아예 새로 할당해줘야 함</li>
+</ul>
+</li>
+<li>Mutable object<ul>
+<li>list, dict, set</li>
+<li>Mutable 객체가 함수의 인자로 넘어가면 call by reference도 동작한다. 즉, object referene가 전달되어 actual parameter의 값에 영향을 미칠 수도 있다.</li>
+<li>새로운 객체를 할당하는 게 아니라면, 함수 내부에서 값을 변경할 수 있다!</li>
+</ul>
+</li>
+</ol>
+<h2 id="정리"><a href="#정리" class="headerlink" title="정리"></a>정리</h2><ul>
+<li>Python은 함수를 실행할때 Call by reference같은 느낌으로 reference를 넘겨준다. 하지만 이때 넘겨주는 것은 변수(Variable)의 reference가 아니라 변수가 담고 있는 자료(Data)의 reference이다. </li>
+<li>자료가 mutable하다면 변경해도 reference가 보존되므로 결과적으로 Call by reference처럼 보일 것이고, 자료가 immutable하다면 결과적으로 Call by value처럼 보일 것이다.</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
+        <a href="/2019/04/22/Local-Variable-and-Global-Variable/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="Local Variable and Global Variable">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-22T10:32:36.000Z">2019-04-22</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 411 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/22/Local-Variable-and-Global-Variable/">Local Variable and Global Variable</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="전역변수-global-variable-지역변수-local-variable"><a href="#전역변수-global-variable-지역변수-local-variable" class="headerlink" title="전역변수 (global variable) / 지역변수 (local variable)"></a>전역변수 (global variable) / 지역변수 (local variable)</h1><ol>
+<li>변수의 scope와 lifetime</li>
+</ol>
+<ul>
+<li>변수는 선언하는 순간부터 속한 scope 내에서 lifetime을 가진다. 즉, 특정 범위의 코드가 실행되고 있을 때는 메모리에 존재하지만, 실행이 끝나면 이 변수는 메모리에서 사라진다.</li>
+</ul>
+<ol start="2">
+<li><p>변수의 선언 위치</p>
+<p> a. Block 외부 : block({})으로 감싸진 main 함수와 여러 함수들의 외부 공간에 변수를 선언할 수 있다.</p>
+<p> b. Block 내부 : block 내부에 변수를 선언할 수 있다. C는 block의 최상단에 모든 지역변수를 선언해야한다.</p>
+<p> c. 함수의 parameter : 함수의 매개변수는 그 함수의 block 내에서 선언된 변수와 동일한 효과를 갖는다.</p>
+</li>
+<li><p>전역변수 (a case)</p>
+</li>
+</ol>
+<ul>
+<li><p>Block 외부에 선언되는 변수. 전역 변수는 프로그램이 시작되는 순간부터 종료되는 순간까지 메모리를 차지하고 있으며 사라지지 않는다.</p>
+</li>
+<li><p>C라면 <code>main()</code> 위, <code>#include &lt;stdio.h&gt;</code>와 함수 원형 밑 그 사이에 선언</p>
+</li>
+<li><p>전역변수는 어느 block에서도 언제든지 접근이 가능하다 &gt; sycncrinize 고려</p>
+</li>
+</ul>
+<ol start="4">
+<li>지역변수 (b case, c case)</li>
+</ol>
+<ul>
+<li><p>지역변수는 block 내부에서 선언되는 변수이다. { } 안에 선언되어있다면 무조건 지역변수</p>
+</li>
+<li><p>지역변수는 선언된 block 내부로 scope가 한정되며 그 block의 실행이 끝나면 lifetime 또한 소멸된다.</p>
+</li>
+<li><p>함수의 parameter로서 선언되는 local variable도 이와 같다. 함수 body 내에서 선언되는 것과 똑같다.</p>
+</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/04/22/LeetCode-5-Longest-Palindromic-Substring/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="LeetCode 5. Longest Palindromic Substring">
         </a>
@@ -516,325 +845,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/18/Python-Data-Type-and-Data-Structure-Jupyter-사용방법/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/python.png" alt="Python Data Type and Data Structure | Jupyter 사용방법">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-18T12:03:30.000Z">2019-04-18</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Python/">Python</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    7 minutes read (About 1052 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/18/Python-Data-Type-and-Data-Structure-Jupyter-사용방법/">Python Data Type and Data Structure | Jupyter 사용방법</a>
-            
-        </h1>
-        <div class="content">
-            <h1 id="Jupyter-사용법-Python-Data-Type"><a href="#Jupyter-사용법-Python-Data-Type" class="headerlink" title="Jupyter 사용법 | Python Data Type"></a>Jupyter 사용법 | Python Data Type</h1><h2 id="Jupyter-notebook"><a href="#Jupyter-notebook" class="headerlink" title="Jupyter notebook"></a>Jupyter notebook</h2><ol>
-<li>window 사용을 기준으로 Window PowerShell을 실행한다.</li>
-<li><code>pwd</code>로 현재 폴더를, <code>ls</code>로 현재 폴더에 존재하는 file들을 확인 후 <code>mkdir 폴더이름</code> command로 python file을 만들고 실습할 폴더 하나를 생성한다.</li>
-<li>나는 python-basic이라는 폴더를 만들고 <code>cd python-basic</code> 명령으로 해당 폴더로 이동했다. </li>
-<li><p>만든 폴더로 이동한 후 cmd에 <code>jupyter notebook</code> command를 입력한다.</p>
-<p> <img src="https://user-images.githubusercontent.com/48080762/56360433-97b15400-621f-11e9-9328-7bc93b0eb4d0.png" alt="PowerShell에 jupyter notebook 입력"></p>
-</li>
-<li><p>조금 기다리다보면 (10초 이상 소요) 브라우저 새 창으로 jupyter notebook이 실행된다.</p>
-<p> <img src="https://user-images.githubusercontent.com/48080762/56360962-1b1f7500-6221-11e9-848b-cfdefbca5d82.png" alt="jupyter notebook 실행화면"></p>
-</li>
-<li><p>그림과 같이 우측의 new button을 눌러 새로운 python file을 생성한다.</p>
-<p> <img src="https://user-images.githubusercontent.com/48080762/56360884-ea3f4000-6220-11e9-8425-de0b1699311f.png" alt="create new python file"></p>
-</li>
-<li><p>그럼 새로운 탭에 생성된 file이 보여진다.</p>
-<p> <img src="https://user-images.githubusercontent.com/48080762/56361029-4609c900-6221-11e9-9e4b-3add1af431fa.png" alt="untitled.ipynb"></p>
-</li>
-<li><p>제목을 수정하고 실습을 시작하면 된다!</p>
-</li>
-</ol>
-<ul>
-<li><p>method 이름을 치고 <code>Shift + Tab</code>을 하면 function의 signature를 확인할 수 있다.</p>
-<p><img src="https://user-images.githubusercontent.com/48080762/56361146-954ff980-6221-11e9-8607-ac367aaa5ab7.png" alt="function signature 확인 단축키 : shift + tab"></p>
-</li>
-<li><p>object (variable)을 입력한 상태에서 <code>Tab</code> 키를 누르면 사용 가능한 method들을 확인할 수 있다.</p>
-<p><img src="https://user-images.githubusercontent.com/48080762/56361198-b1ec3180-6221-11e9-8bf0-1efaada1f834.png" alt="method 확인 단축키 : tab"></p>
-</li>
-<li><p>instruction을 작성한 후 <code>Shift + Enter</code>를 누르면 해당 line이 실행된다.</p>
-</li>
-<li><p>어떤 line에 focus가 있는 상태에서, <code>ESC + m</code>을 누르고 <code>Enter</code>를 치면 markdown으로 작성할 수 있다.</p>
-</li>
-</ul>
-<h2 id="Python-Data-Type"><a href="#Python-Data-Type" class="headerlink" title="Python Data Type"></a>Python Data Type</h2><ol>
-<li><p>Number Type : Int, Float</p>
-<p> <img src="https://user-images.githubusercontent.com/48080762/56361443-52425600-6222-11e9-97b1-371dc1abd277.png" alt="Python Number Type"></p>
-<p> javaScript와 다르게 C처럼 int, float등 정수형과 실수형을 구분한다.</p>
-</li>
-<li><p>String</p>
-</li>
-</ol>
-<ul>
-<li>character와 string의 구분 없이 str type을 가진다.</li>
-</ul>
-<p><img src="https://user-images.githubusercontent.com/48080762/56498247-d30f9380-653b-11e9-9411-aa3ed46d0be6.png" alt="String"></p>
-<h2 id="Python-Data-Structure"><a href="#Python-Data-Structure" class="headerlink" title="Python Data Structure"></a>Python Data Structure</h2><h3 id="Mutable-and-Immutable-Object"><a href="#Mutable-and-Immutable-Object" class="headerlink" title="Mutable and Immutable Object"></a>Mutable and Immutable Object</h3><h3 id="Mutable-object-변경-가능-객체"><a href="#Mutable-object-변경-가능-객체" class="headerlink" title="Mutable object (변경 가능 객체)"></a>Mutable object (변경 가능 객체)</h3><ol>
-<li>list</li>
-<li>dictionary</li>
-<li>set</li>
-</ol>
-<h3 id="Immutable-object-변경-불가능-객체"><a href="#Immutable-object-변경-불가능-객체" class="headerlink" title="Immutable object (변경 불가능 객체)"></a>Immutable object (변경 불가능 객체)</h3><ol>
-<li>int, float 등 숫자는 immutable : 값을 덮어쓰는 것이 아니라 새로운 memory 공간에 할당하고 그 값을 가리킨다. 이름 객체가 값 객체를 가리키는 것을 binding이라고 한다.</li>
-<li>string </li>
-<li>Tuple</li>
-</ol>
-<h2 id="Dynamic-Typing"><a href="#Dynamic-Typing" class="headerlink" title="Dynamic Typing"></a>Dynamic Typing</h2><p><img src="https://user-images.githubusercontent.com/48080762/56497145-5ed2f100-6537-11e9-91f6-df0d42532653.png" alt="Dynamic Typing"></p>
-<p>Python은 Dynamic typing 언어로, C / C++ 같은 정적 타이핑 언어처럼 자료형을 미리 선언하지 않아도 알아서 동적으로 자료형을 할당할 수 있다.</p>
-<h2 id="Data-Assignment"><a href="#Data-Assignment" class="headerlink" title="Data Assignment"></a>Data Assignment</h2><p><img src="https://user-images.githubusercontent.com/48080762/56498081-31884200-653b-11e9-86f8-1cc9eb29c9a1.png" alt="Memory Assignment (C / Python)"></p>
-<ul>
-<li>C : char a = 10;<ul>
-<li>A라는 이름을 가진 공간에 10의 값이 저장된다.</li>
-<li>20으로 변경시 같은 메모리 공간의 값을 변경한다.</li>
-</ul>
-</li>
-<li>Python : a = 10;<ul>
-<li>10이라는 값을 가진 객체가 생기고, a라는 이름을 가진 객체가 10을 가리키게 된다.</li>
-<li>만약 a=20으로 재할당할 경우 20이라는 값을 가진 객체가 생기고 a는 20을 가리켜, 10은 자신을 가리키는 객체가 없으므로 제거된다.</li>
-<li>20으로 변경시 10의 메모리공간을 건드리지 않고 새로운 공간을 만든다.</li>
-</ul>
-</li>
-<li>Integer, float등 number type은 immutable 객체</li>
-</ul>
-<h3 id="Python-성질"><a href="#Python-성질" class="headerlink" title="Python 성질"></a>Python 성질</h3><ol>
-<li>모든 것이 객체<br>: integer가 그냥 4 byte가 아니라 객체로 필요한 것들이 붙어있어 크기를 더 차지함</li>
-<li>Overflow<br>: overflow 되는 대신 4 byte를 8 byte로 늘림. 대신 경계검사 하므로 속도 저하</li>
-</ol>
-<h3 id="Language-Abstraction"><a href="#Language-Abstraction" class="headerlink" title="Language Abstraction"></a>Language Abstraction</h3><ul>
-<li>Hardware 의존적인 Assembly 언어에서 벗어나 하드웨어 독립적인 C언어로 Coding하고 각 하드웨어 별 어셈블러로 해석하게끔 함 ▶ 하드웨어 추상화 (각 어셈블러가 어떻게 동작하는지 몰라도 C로 코딩하면 됨)</li>
-<li>Assembly : low level language</li>
-<li>C / C++ : hardware abstraction 됐으나 memory abstraction X ▶ 메모리를 직접 할당, 해제</li>
-<li>Java / C# : 언어 자체에서 메모리 할당, 해제 ▶ garbage collection. Memory abstraction O 그러나 Data Type은 선언해줘야함</li>
-<li>Python / javaScript : Data type abstraction. Interpreter Language</li>
-<li>Level은 abstraction level을 말하는 것이지 급을 나누는 것이 아님</li>
-<li>성능은 C/C++ 생산성은 Python</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/18/Python-3-7-3-Jupyter-설치/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/python.png" alt="Python 3.7.3 | Jupyter 설치">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-18T11:52:27.000Z">2019-04-18</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Python/">Python</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 297 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/18/Python-3-7-3-Jupyter-설치/">Python 3.7.3 | Jupyter 설치</a>
-            
-        </h1>
-        <div class="content">
-            <h1 id="Window-Python-3-7-3-및-Jupyter-설치"><a href="#Window-Python-3-7-3-및-Jupyter-설치" class="headerlink" title="Window Python 3.7.3 및 Jupyter 설치"></a>Window Python 3.7.3 및 Jupyter 설치</h1><p>파이썬을 공부하기 위해 작업환경을 우선 구축하기로 한다.</p>
-<h2 id="Python-3-7-3-설치"><a href="#Python-3-7-3-설치" class="headerlink" title="Python 3.7.3 설치"></a>Python 3.7.3 설치</h2><ol>
-<li>Python 최신 릴리즈인 <a href="https://www.python.org/downloads/release/python-373/" target="_blank" rel="noopener">3.7.3 다운로드</a> 페이지로 이동한다.</li>
-</ol>
-<p><img src="https://user-images.githubusercontent.com/48080762/56359343-45226880-621c-11e9-9d8d-12cfb3d12b59.png" alt="www.python.org/download"></p>
-<ol start="2">
-<li><p>Download for Windows의 Python 3.7.3 버튼을 누르면 자동으로 설치 실행 파일이 다운로드 된다.</p>
-</li>
-<li><p>다운받은 <code>python-3.7.3.exe</code> 파일을 관리자 권한으로 실행 후, 설치를 진행한다. PATH를 자동으로 생성하는 것이 좋다!</p>
-</li>
-<li><p>다운로드가 완료되면 cmd 창을 열어 <code>python --version</code> 명령어로 설치가 제대로 되었는지 확인한다.</p>
-<p> <img src="https://user-images.githubusercontent.com/48080762/56359512-bd892980-621c-11e9-8241-1fc8a260c10b.png" alt="python 설치 확인"></p>
-</li>
-</ol>
-<h2 id="Jupyter-설치"><a href="#Jupyter-설치" class="headerlink" title="Jupyter 설치"></a>Jupyter 설치</h2><p>위의 Python 설치 4단계에서, cmd 명령으로 확인을 정상적으로 마쳤다면 추가적인 명령 한 줄로 Jupyter를 설치할 수 있다.</p>
-<ol>
-<li>cmd 창에 <code>pip install jupyter</code>를 입력한다.<br> <img src="https://user-images.githubusercontent.com/48080762/56359642-1c4ea300-621d-11e9-9c40-cd5fd89b9a24.png" alt="jupyter 설치"></li>
-</ol>
-<p>여기까지 하면 Python 사용을 위한 간단한 작업 환경 구성이 완료된다.</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/18/190418-TIL/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="190418-TIL">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-18T11:47:31.000Z">2019-04-18</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 182 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/18/190418-TIL/">190418-TIL</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><h2 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h2><ul>
-<li><p>Epsilon, Number Digit 등 컴퓨터에서 실수를 표현하는 방식과 상대오차에 대해서 깊게 배웠다.</p>
-</li>
-<li><p>실수형의 논리비교를 위한 is_equal 함수를 만들었다.</p>
-  <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">is_equal</span>(<span class="hljs-params">x, y, allowed=<span class="hljs-number">0</span></span>)</span>&#123;</span><br><span class="line">	<span class="hljs-comment">// 둘 중 큰 수의 다음 숫자와의 오차의 allowed 배 정도 되는 범위 안에 있으면 같다고 판단한다.</span></span><br><span class="line">	<span class="hljs-keyword">return</span> (<span class="hljs-built_in">Math</span>.abs(x-y) &lt;= <span class="hljs-built_in">Math</span>.max(<span class="hljs-built_in">Math</span>.abs(x), <span class="hljs-built_in">Math</span>.abs(y))*<span class="hljs-built_in">Number</span>.EPSILON*<span class="hljs-built_in">Math</span>.pow(<span class="hljs-number">2</span>, allowed));</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">	<span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>;</span><br><span class="line">	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i =<span class="hljs-number">0</span>; i&lt; <span class="hljs-number">100</span>; i++)&#123;</span><br><span class="line">		sum += <span class="hljs-number">0.01</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-keyword">if</span>(is_equal(sum, <span class="hljs-number">1.0</span>, <span class="hljs-number">2</span>))&#123;</span><br><span class="line">		<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"THE SAME"</span>);</span><br><span class="line">	&#125; <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">		<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"NOT THE SAME"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Python을 배우는데 너무 재미있다. 익숙하지 않아 찾아보는 것이 번거롭지만 문법이나 기능이 흥미롭다.</p>
-</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/18/LeetCode-35-Search-Insert-Position/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="LeetCode 35. Search Insert Position">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-18T11:18:45.000Z">2019-04-18</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/LeetCode/">LeetCode</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 275 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/18/LeetCode-35-Search-Insert-Position/">LeetCode 35. Search Insert Position</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="LeetCode-35-Search-Insert-Position"><a href="#LeetCode-35-Search-Insert-Position" class="headerlink" title="LeetCode 35. Search Insert Position"></a><a href="https://leetcode.com/problems/search-insert-position/" target="_blank" rel="noopener">LeetCode 35. Search Insert Position</a></h2><p>Insert할 Position을 찾는 문제 : C++, Binary Search 사용</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/18/LeetCode-35-Search-Insert-Position/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -857,7 +867,7 @@
             
             <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
             
-            <li><a class="pagination-link has-text-black-ter" href="/page/7/">7</a></li>
+            <li><a class="pagination-link has-text-black-ter" href="/page/8/">8</a></li>
             
         </ul>
     </nav>
@@ -907,7 +917,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        69
+                        73
                     </p>
                 </div>
             </div>
@@ -917,7 +927,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        12
+                        15
                     </p>
                 </div>
             </div>
@@ -927,7 +937,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        28
+                        33
                     </p>
                 </div>
             </div>
@@ -1020,7 +1030,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 12px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Algorithm/" style="font-size: 18px;">Algorithm</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/Encapsulation/" style="font-size: 12px;">Encapsulation</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 16px;">HTML, CSS</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 12px;">JavaScript</a> <a href="/tags/OOP/" style="font-size: 14px;">OOP</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Python/" style="font-size: 16px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/javaScript/" style="font-size: 12px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a>
+        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 12px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Algorithm/" style="font-size: 18px;">Algorithm</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/Encapsulation/" style="font-size: 12px;">Encapsulation</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 16px;">HTML, CSS</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 12px;">JavaScript</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OOP/" style="font-size: 14px;">OOP</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Python/" style="font-size: 16px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/javaScript/" style="font-size: 12px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a>
     </div>
 </div>
 
@@ -1044,7 +1054,7 @@
                 <span class="level-item">Algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">12</span>
+                <span class="level-item tag">13</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Algorithm/CodeWars/">
@@ -1060,7 +1070,7 @@
                 <span class="level-item">LeetCode</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">5</span>
+                <span class="level-item tag">6</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/Computer-Engineering/">
@@ -1068,7 +1078,7 @@
                 <span class="level-item">Computer Engineering</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">8</span>
+                <span class="level-item tag">9</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Computer-Engineering/Algorithm/">
@@ -1092,7 +1102,7 @@
                 <span class="level-item">Data Structure</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/HTML-CSS/">
@@ -1100,7 +1110,7 @@
                 <span class="level-item">HTML/CSS</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/JavaScript/">
@@ -1108,7 +1118,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">6</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1124,7 +1134,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">41</span>
+                <span class="level-item tag">42</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1132,7 +1142,7 @@
                 <span class="level-item">git</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li>
             </ul>
@@ -1149,6 +1159,82 @@
         
         <article class="media">
             
+            <a href="/2019/04/30/190430-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="190430-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-30T12:46:10.000Z">2019-04-30</time></div>
+                    <a href="/2019/04/30/190430-TIL/" class="has-link-black-ter is-size-6">190430-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/LeetCode/">LeetCode</a> / <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a> / <a class="has-link-grey -link" href="/categories/Computer-Engineering/Data-Structure/">Data Structure</a> / <a class="has-link-grey -link" href="/categories/HTML-CSS/">HTML/CSS</a> / <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a> / <a class="has-link-grey -link" href="/categories/TIL/">TIL</a> / <a class="has-link-grey -link" href="/categories/git/">git</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/04/30/5-Data-Type/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="5. Data Type">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-30T11:22:12.000Z">2019-04-30</time></div>
+                    <a href="/2019/04/30/5-Data-Type/" class="has-link-black-ter is-size-6">5. Data Type</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/04/30/4-Variable/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="4. Variable">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-30T07:07:31.000Z">2019-04-30</time></div>
+                    <a href="/2019/04/30/4-Variable/" class="has-link-black-ter is-size-6">4. Variable</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/04/30/3-JavaScript-Develop-Environment-and-Execute/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="3. JavaScript Develop Environment and Execute">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-30T02:53:43.000Z">2019-04-30</time></div>
+                    <a href="/2019/04/30/3-JavaScript-Develop-Environment-and-Execute/" class="has-link-black-ter is-size-6">3. JavaScript Develop Environment and Execute</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/04/29/190429-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190429-TIL">
@@ -1161,82 +1247,6 @@
                     <a href="/2019/04/29/190429-TIL/" class="has-link-black-ter is-size-6">190429-TIL</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/29/1-OOP-and-ADT/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/html.png" alt="1. OOP and ADT">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-29T11:51:41.000Z">2019-04-29</time></div>
-                    <a href="/2019/04/29/1-OOP-and-ADT/" class="has-link-black-ter is-size-6">1. OOP and ADT</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a> / <a class="has-link-grey -link" href="/categories/Computer-Engineering/Data-Structure/">Data Structure</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/29/2-What-is-JavaScript/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="2. What is JavaScript?">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-29T09:10:43.000Z">2019-04-29</time></div>
-                    <a href="/2019/04/29/2-What-is-JavaScript/" class="has-link-black-ter is-size-6">2. What is JavaScript?</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/29/1-What-is-Programming/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="1. What is Programming?">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-29T09:10:24.000Z">2019-04-29</time></div>
-                    <a href="/2019/04/29/1-What-is-Programming/" class="has-link-black-ter is-size-6">1. What is Programming?</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/29/Difference-between-Subsequence-and-Substring/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="Difference between Subsequence and Substring">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-29T02:26:20.000Z">2019-04-29</time></div>
-                    <a href="/2019/04/29/Difference-between-Subsequence-and-Substring/" class="has-link-black-ter is-size-6">Difference between Subsequence and Substring</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a> / <a class="has-link-grey -link" href="/categories/Computer-Engineering/Basic/">Basic</a>
                     </p>
                 </div>
             </div>
@@ -1260,7 +1270,7 @@
                     <span class="level-item">April 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">53</span>
+                    <span class="level-item tag">57</span>
                 </span>
             </a>
         </li>
@@ -1313,7 +1323,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Algorithm/">
                         <span class="tag">Algorithm</span>
-                        <span class="tag is-grey">13</span>
+                        <span class="tag is-grey">14</span>
                     </a>
                 </div>
                 
@@ -1360,6 +1370,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Data-Type/">
+                        <span class="tag">Data Type</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/ECMA/">
                         <span class="tag">ECMA</span>
                         <span class="tag is-grey">1</span>
@@ -1388,6 +1405,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Hoisting/">
+                        <span class="tag">Hoisting</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Inheritance/">
                         <span class="tag">Inheritance</span>
                         <span class="tag is-grey">1</span>
@@ -1398,6 +1422,13 @@
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
                         <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Node-js/">
+                        <span class="tag">Node.js</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1460,7 +1491,21 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">41</span>
+                        <span class="tag is-grey">42</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Variable/">
+                        <span class="tag">Variable</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Web-Browser/">
+                        <span class="tag">Web Browser</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1517,7 +1562,7 @@
                 <span class="level-item">Algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">12</span>
+                <span class="level-item tag">13</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Algorithm/CodeWars/">
@@ -1533,7 +1578,7 @@
                 <span class="level-item">LeetCode</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">5</span>
+                <span class="level-item tag">6</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/Computer-Engineering/">
@@ -1541,7 +1586,7 @@
                 <span class="level-item">Computer Engineering</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">8</span>
+                <span class="level-item tag">9</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Computer-Engineering/Algorithm/">
@@ -1565,7 +1610,7 @@
                 <span class="level-item">Data Structure</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/HTML-CSS/">
@@ -1573,7 +1618,7 @@
                 <span class="level-item">HTML/CSS</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/JavaScript/">
@@ -1581,7 +1626,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">6</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1597,7 +1642,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">41</span>
+                <span class="level-item tag">42</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1605,7 +1650,7 @@
                 <span class="level-item">git</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li>
             </ul>
@@ -1622,6 +1667,82 @@
         
         <article class="media">
             
+            <a href="/2019/04/30/190430-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="190430-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-30T12:46:10.000Z">2019-04-30</time></div>
+                    <a href="/2019/04/30/190430-TIL/" class="has-link-black-ter is-size-6">190430-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/LeetCode/">LeetCode</a> / <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a> / <a class="has-link-grey -link" href="/categories/Computer-Engineering/Data-Structure/">Data Structure</a> / <a class="has-link-grey -link" href="/categories/HTML-CSS/">HTML/CSS</a> / <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a> / <a class="has-link-grey -link" href="/categories/TIL/">TIL</a> / <a class="has-link-grey -link" href="/categories/git/">git</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/04/30/5-Data-Type/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="5. Data Type">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-30T11:22:12.000Z">2019-04-30</time></div>
+                    <a href="/2019/04/30/5-Data-Type/" class="has-link-black-ter is-size-6">5. Data Type</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/04/30/4-Variable/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="4. Variable">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-30T07:07:31.000Z">2019-04-30</time></div>
+                    <a href="/2019/04/30/4-Variable/" class="has-link-black-ter is-size-6">4. Variable</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/04/30/3-JavaScript-Develop-Environment-and-Execute/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="3. JavaScript Develop Environment and Execute">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-30T02:53:43.000Z">2019-04-30</time></div>
+                    <a href="/2019/04/30/3-JavaScript-Develop-Environment-and-Execute/" class="has-link-black-ter is-size-6">3. JavaScript Develop Environment and Execute</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/04/29/190429-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190429-TIL">
@@ -1634,82 +1755,6 @@
                     <a href="/2019/04/29/190429-TIL/" class="has-link-black-ter is-size-6">190429-TIL</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/29/1-OOP-and-ADT/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/html.png" alt="1. OOP and ADT">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-29T11:51:41.000Z">2019-04-29</time></div>
-                    <a href="/2019/04/29/1-OOP-and-ADT/" class="has-link-black-ter is-size-6">1. OOP and ADT</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a> / <a class="has-link-grey -link" href="/categories/Computer-Engineering/Data-Structure/">Data Structure</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/29/2-What-is-JavaScript/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="2. What is JavaScript?">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-29T09:10:43.000Z">2019-04-29</time></div>
-                    <a href="/2019/04/29/2-What-is-JavaScript/" class="has-link-black-ter is-size-6">2. What is JavaScript?</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/29/1-What-is-Programming/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="1. What is Programming?">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-29T09:10:24.000Z">2019-04-29</time></div>
-                    <a href="/2019/04/29/1-What-is-Programming/" class="has-link-black-ter is-size-6">1. What is Programming?</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/29/Difference-between-Subsequence-and-Substring/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="Difference between Subsequence and Substring">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-29T02:26:20.000Z">2019-04-29</time></div>
-                    <a href="/2019/04/29/Difference-between-Subsequence-and-Substring/" class="has-link-black-ter is-size-6">Difference between Subsequence and Substring</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a> / <a class="has-link-grey -link" href="/categories/Computer-Engineering/Basic/">Basic</a>
                     </p>
                 </div>
             </div>
@@ -1733,7 +1778,7 @@
                     <span class="level-item">April 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">53</span>
+                    <span class="level-item tag">57</span>
                 </span>
             </a>
         </li>
@@ -1786,7 +1831,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Algorithm/">
                         <span class="tag">Algorithm</span>
-                        <span class="tag is-grey">13</span>
+                        <span class="tag is-grey">14</span>
                     </a>
                 </div>
                 
@@ -1833,6 +1878,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Data-Type/">
+                        <span class="tag">Data Type</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/ECMA/">
                         <span class="tag">ECMA</span>
                         <span class="tag is-grey">1</span>
@@ -1861,6 +1913,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Hoisting/">
+                        <span class="tag">Hoisting</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Inheritance/">
                         <span class="tag">Inheritance</span>
                         <span class="tag is-grey">1</span>
@@ -1871,6 +1930,13 @@
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
                         <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Node-js/">
+                        <span class="tag">Node.js</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1933,7 +1999,21 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">41</span>
+                        <span class="tag is-grey">42</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Variable/">
+                        <span class="tag">Variable</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Web-Browser/">
+                        <span class="tag">Web Browser</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
