@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sub2n.github.io/2019/04/29/2-What-is-JavaScript/</loc>
+    
+    <lastmod>2019-04-30T02:49:26.480Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sub2n.github.io/2019/04/29/1-What-is-Programming/</loc>
     
     <lastmod>2019-04-30T01:11:43.865Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://sub2n.github.io/2019/04/29/1-OOP-and-ADT/</loc>
     
     <lastmod>2019-04-29T12:45:27.129Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sub2n.github.io/2019/04/29/2-What-is-JavaScript/</loc>
-    
-    <lastmod>2019-04-29T11:55:42.870Z</lastmod>
     
   </url>
   

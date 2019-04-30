@@ -301,7 +301,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 206 words)
+                    7 minutes read (About 1063 words)
                 </span>
                 
                 
@@ -320,7 +320,103 @@
 <h1 id="2-Fragmentation-and-Standardization-of-JavaScript"><a href="#2-Fragmentation-and-Standardization-of-JavaScript" class="headerlink" title="2. Fragmentation and Standardization of JavaScript"></a>2. Fragmentation and Standardization of JavaScript</h1><p>In August 1996, Microsoft added a derived version of JavaScript, “JScript”, to Internet Explorer 3.0. But the problem is that JScript and JavaScript are not standardized and are moderately compatible. In other words, they have competitively begun adding features that only work with their browsers to gain market share in their browsers.</p>
 <p>This has led to cross-browsing issues where webpages are not working properly, and it has become extremely difficult to develop webpages that work across all browsers.</p>
 <p>Thus, the need for stadard of JavaScript which works same in all browser has begun to be raised. For this, Netscape Communications requested standardization of JavaScript to ECMA International in November 1996.</p>
-<h1 id="3-History-of-JavaScript"><a href="#3-History-of-JavaScript" class="headerlink" title="3. History of JavaScript"></a>3. History of JavaScript</h1><h1 id="4-JavaScript-and-ECMAScript"><a href="#4-JavaScript-and-ECMAScript" class="headerlink" title="4. JavaScript and ECMAScript"></a>4. JavaScript and ECMAScript</h1><h1 id="5-Characteristics-of-JavaScript"><a href="#5-Characteristics-of-JavaScript" class="headerlink" title="5. Characteristics of JavaScript"></a>5. Characteristics of JavaScript</h1><hr>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Release</th>
+<th>Specification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ES1</td>
+<td>1997</td>
+<td>First version</td>
+</tr>
+<tr>
+<td>ES2</td>
+<td>1998</td>
+<td>Application of the same standards as ISO/IEC 16262 international standards</td>
+</tr>
+<tr>
+<td>ES3</td>
+<td>1999</td>
+<td>Regular Expression, try … catch Exception</td>
+</tr>
+<tr>
+<td>ES5</td>
+<td>2009</td>
+<td>Standard released with HTML5. JSON, strict mode, accessor property(getter, setter), improved array manipulation (forEach, map, filter, reduce, some, every)</td>
+</tr>
+<tr>
+<td>ES6 (ECMAScript 2015)</td>
+<td>2015</td>
+<td>let, const, class, arrow function expression(=&gt;), template literal, destructuring assignment, spread operator, rest parameter, Symbol, Promise, Map/Set, iterator/generator, module import/export</td>
+</tr>
+<tr>
+<td>ES7 (ECMAScript 2016)</td>
+<td>2016</td>
+<td>Exponential operator(**), Array.prototype.includes, String.prototype.includes</td>
+</tr>
+<tr>
+<td>ES8 (ECMAScript 2017)</td>
+<td>2017</td>
+<td>async/await, Object static method(Object.values, Object.getOwnPropertyDescriptors)</td>
+</tr>
+<tr>
+<td>ES9 (ECMAScript 2018)</td>
+<td>2018</td>
+<td>Object Rest/Spread Property</td>
+</tr>
+</tbody>
+</table>
+<h1 id="3-History-of-JavaScript"><a href="#3-History-of-JavaScript" class="headerlink" title="3. History of JavaScript"></a>3. History of JavaScript</h1><p>Early JavaScript was used for limited purposes to perform the supplementary functions of webpages. During this time, most logics were run primarily on Web servers and browsers were simply rendering HTML and CSS delivered from the server.</p>
+<blockquote>
+<h2 id="Rendering"><a href="#Rendering" class="headerlink" title="Rendering?"></a>Rendering?</h2><p>Rendering refers to interpreting data expressed in HTML and CSS and expressing it visually on a browser.</p>
+</blockquote>
+<p>In 1999, Ajax(Asynchronous JavaScript and XML), a communication function that allows server and browser to exchange data asynchronously using JavaScript, has emerger under the name of XMLHttpRequest.</p>
+<p>Previous webpages worked by receiving complete HTML from the server and rendering the entire web page. So when screen switches, it received a new HTML file from server and started rendering a whole web page again from beginning.</p>
+<p>This is a disadvantageous way because unnecessary data communication occurs when receive HTML including unchanged parts from a server and browser should be rendering that whole HTML again including unchanged parts. This causes the screen to flash momentarily when a screen transition occurs, which has been accepted as the limit for web applications.</p>
+<p>The advent of Ajax changed the previous paradigm. In other words, it make possible to do not rendering again the parts unnecessary to change and rendering only the part need to change by receiving only a necessary data from server. This enables fast performance and smooth screen transitions similar to desktop applications in web browsers.</p>
+<p>In 2005, Google Maps, which operates on JavaScript and Ajax in a web browser, has shown performance and smooth screen transitions that are comparable to desktop applications.</p>
+<p>In 2006, the advent of jQuery made it easier to control the rather cumbersome DOM(Document Object Model) and resolved cross-browsing issues to some extent. jQuery quickly secured a large user base. This resulted in the mass production of developers who preferred jQuery, which was easier to learn and more intuitive than JavaScript.</p>
+<p>In 2008, V8 JavaScript Engine from google made more fast performance in web browser. With the advent of the V8 JavaScript engine, JavaScript has become a web application development programming language that can provide a user experience(UX) similar to that of desktop applications.</p>
+<p>In 2009, the Node.js that enable operate JavaScript in an environment other than a browser emerged. JavaScript is now a standard for web programming languages that cover not only front-end but also back-end areas.</p>
+<h1 id="4-JavaScript-and-ECMAScript"><a href="#4-JavaScript-and-ECMAScript" class="headerlink" title="4. JavaScript and ECMAScript"></a>4. JavaScript and ECMAScript</h1><h2 id="ECMAScript"><a href="#ECMAScript" class="headerlink" title="ECMAScript"></a>ECMAScript</h2><p>ECMAScript refers ECMA-262, which standard specification of JavaScript and defines core syntax such as the type, value, objace and property, function, built-in object, etc. Each</p>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p>JavaScript is typically a programming language that encompasses ECMAScript as a core and client side Web API, which is supported separately by the browser.</p>
+<h2 id="Web-API"><a href="#Web-API" class="headerlink" title="Web API"></a>Web API</h2><p>DOM, BOM, Canvas, XMLHttpRequest, Fetch, requestAnimationFrame, SVG, Web Storage, Web Component, Web worker, etc.</p>
+<p>Apart from ECMAScript, the client side Web API is managed as a separate specification by the World Wide Web Consortium (W3C).</p>
+<h1 id="5-Characteristics-of-JavaScript"><a href="#5-Characteristics-of-JavaScript" class="headerlink" title="5. Characteristics of JavaScript"></a>5. Characteristics of JavaScript</h1><p>JavaScript is one of the components that compose the web with HTML and CSS, and is the only programming language that works with a web browser. It use basic syntax from C, prototype-based inheritance from Self, first-class function from Scheme.</p>
+<p>JavaScript is interpreter language that developer not have to do compile work. Almost modern JavaScript engines(V8 by Chrome, Spidermonkey by FireFox, JavaScriptCore by Safari, Chakra by Microsoft Edge) combined advantage of interpreter and compiler to resole disadvantage of slow interpreter.</p>
+<h2 id="Interperter"><a href="#Interperter" class="headerlink" title="Interperter"></a>Interperter</h2><ul>
+<li>Translates program one statement at a time.</li>
+<li>It takes less amount of time to analyze the source code but the overall execution time is slower.</li>
+<li>No intermediate object code is generated, hence are memory efficient.</li>
+<li>Continues translating the program until the first error is met, in which case it stops. Hence debugging is easy.</li>
+<li>Programming language like Python, Ruby use interpreters.</li>
+</ul>
+<h2 id="Compiler"><a href="#Compiler" class="headerlink" title="Compiler"></a>Compiler</h2><ul>
+<li>Scans the entire program and translates it as a whole into machine code.</li>
+<li>It takes large amount of time to analyze the source code but the overall execution time is comparatively faster.</li>
+<li>It takes large amount of time to analyze the source code but the overall execution time is comparatively faster.</li>
+<li>It generates the error message only after scanning the whole program. Hence debugging is comparatively hard.</li>
+<li>Programming language like C, C++ use compilers.</li>
+</ul>
+<h2 id="Execute-JavaScript"><a href="#Execute-JavaScript" class="headerlink" title="Execute JavaScript"></a>Execute JavaScript</h2><ol>
+<li>Node.js environment<ul>
+<li>ES + Node.js API (file control)</li>
+</ul>
+</li>
+<li>Browser<ul>
+<li>Rendering HTML, CSS</li>
+<li>JavaScript : ES + Web API (created by browser vendors and managed by W3C) (DOM API, event) only browser can execute </li>
+</ul>
+</li>
+</ol>
+<p>Actually JavaScript complie but not make executable file. So JavaScript is interpreter lanuage.</p>
+<p>JavaScript is a multi-paradigm programming language that supports imprerative, functional, and prototype-based object-oriented programming.</p>
+<hr>
 <p>Reference</p>
 <p><a href="https://poiemaweb.com/js-introduction" target="_blank" rel="noopener">자바스크립트란?</a></p>
 
