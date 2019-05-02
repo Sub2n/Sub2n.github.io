@@ -2,25 +2,25 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Local Variable and Global Variable - 수빈 개발블로그</title>
+<title>190502-TIL - 수빈 개발블로그</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="전역변수 (global variable) / 지역변수 (local variable) 변수의 scope와 lifetime   변수는 선언하는 순간부터 속한 scope 내에서 lifetime을 가진다. 즉, 특정 범위의 코드가 실행되고 있을 때는 메모리에 존재하지만, 실행이 끝나면 이 변수는 메모리에서 사라진다.   변수의 선언 위치  a. Block 외부 :">
-<meta name="keywords" content="Python,global variable,local variavble">
+    <meta name="description" content="Today I LearnedAlgorithm study Solved Double cola problem! Studied about Control flow statement of JavaScript">
+<meta name="keywords" content="TIL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Local Variable and Global Variable">
-<meta property="og:url" content="https://sub2n.github.io/2019/04/22/Local-Variable-and-Global-Variable/index.html">
+<meta property="og:title" content="190502-TIL">
+<meta property="og:url" content="https://sub2n.github.io/2019/05/02/190502-TIL/index.html">
 <meta property="og:site_name" content="수빈 개발블로그">
-<meta property="og:description" content="전역변수 (global variable) / 지역변수 (local variable) 변수의 scope와 lifetime   변수는 선언하는 순간부터 속한 scope 내에서 lifetime을 가진다. 즉, 특정 범위의 코드가 실행되고 있을 때는 메모리에 존재하지만, 실행이 끝나면 이 변수는 메모리에서 사라진다.   변수의 선언 위치  a. Block 외부 :">
+<meta property="og:description" content="Today I LearnedAlgorithm study Solved Double cola problem! Studied about Control flow statement of JavaScript">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/computer.png">
-<meta property="og:updated_time" content="2019-04-22T11:29:26.100Z">
+<meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/purple.png">
+<meta property="og:updated_time" content="2019-05-02T12:47:46.918Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Local Variable and Global Variable">
-<meta name="twitter:description" content="전역변수 (global variable) / 지역변수 (local variable) 변수의 scope와 lifetime   변수는 선언하는 순간부터 속한 scope 내에서 lifetime을 가진다. 즉, 특정 범위의 코드가 실행되고 있을 때는 메모리에 존재하지만, 실행이 끝나면 이 변수는 메모리에서 사라진다.   변수의 선언 위치  a. Block 외부 :">
-<meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/computer.png">
+<meta name="twitter:title" content="190502-TIL">
+<meta name="twitter:description" content="Today I LearnedAlgorithm study Solved Double cola problem! Studied about Control flow statement of JavaScript">
+<meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/purple.png">
 
 
 
@@ -103,7 +103,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Local Variable and Global Variable" height="28">
+                <img src="/images/logo.svg" alt="190502-TIL" height="28">
             
             </a>
         </div>
@@ -152,7 +152,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="Local Variable and Global Variable">
+            <img class="thumbnail" src="/gallery/thumbnails/purple.png" alt="190502-TIL">
         </span>
     </div>
     
@@ -160,17 +160,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-22T10:32:36.000Z">2019-04-22</time>
+                <time class="level-item has-text-grey" datetime="2019-05-02T12:45:17.000Z">2019-05-02</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a>
+                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 411 words)
+                    a few seconds read (About 16 words)
                 </span>
                 
                 
@@ -179,44 +179,13 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Local Variable and Global Variable
+                190502-TIL
             
         </h1>
         <div class="content">
-            <h1 id="전역변수-global-variable-지역변수-local-variable"><a href="#전역변수-global-variable-지역변수-local-variable" class="headerlink" title="전역변수 (global variable) / 지역변수 (local variable)"></a>전역변수 (global variable) / 지역변수 (local variable)</h1><ol>
-<li>변수의 scope와 lifetime</li>
-</ol>
-<ul>
-<li>변수는 선언하는 순간부터 속한 scope 내에서 lifetime을 가진다. 즉, 특정 범위의 코드가 실행되고 있을 때는 메모리에 존재하지만, 실행이 끝나면 이 변수는 메모리에서 사라진다.</li>
-</ul>
-<ol start="2">
-<li><p>변수의 선언 위치</p>
-<p> a. Block 외부 : block({})으로 감싸진 main 함수와 여러 함수들의 외부 공간에 변수를 선언할 수 있다.</p>
-<p> b. Block 내부 : block 내부에 변수를 선언할 수 있다. C는 block의 최상단에 모든 지역변수를 선언해야한다.</p>
-<p> c. 함수의 parameter : 함수의 매개변수는 그 함수의 block 내에서 선언된 변수와 동일한 효과를 갖는다.</p>
-</li>
-<li><p>전역변수 (a case)</p>
-</li>
-</ol>
-<ul>
-<li><p>Block 외부에 선언되는 변수. 전역 변수는 프로그램이 시작되는 순간부터 종료되는 순간까지 메모리를 차지하고 있으며 사라지지 않는다.</p>
-</li>
-<li><p>C라면 <code>main()</code> 위, <code>#include &lt;stdio.h&gt;</code>와 함수 원형 밑 그 사이에 선언</p>
-</li>
-<li><p>전역변수는 어느 block에서도 언제든지 접근이 가능하다 &gt; sycncrinize 고려</p>
-</li>
-</ul>
-<ol start="4">
-<li>지역변수 (b case, c case)</li>
-</ol>
-<ul>
-<li><p>지역변수는 block 내부에서 선언되는 변수이다. { } 안에 선언되어있다면 무조건 지역변수</p>
-</li>
-<li><p>지역변수는 선언된 block 내부로 scope가 한정되며 그 block의 실행이 끝나면 lifetime 또한 소멸된다.</p>
-</li>
-<li><p>함수의 parameter로서 선언되는 local variable도 이와 같다. 함수 body 내에서 선언되는 것과 똑같다.</p>
-</li>
-</ul>
+            <h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><p>Algorithm study</p>
+<p>Solved Double cola problem!</p>
+<p>Studied about Control flow statement of JavaScript</p>
 
         </div>
         
@@ -224,7 +193,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Python/">Python</a>, <a class="has-link-grey -link" href="/tags/global-variable/">global variable</a>, <a class="has-link-grey -link" href="/tags/local-variavble/">local variavble</a>
+                    <a class="has-link-grey -link" href="/tags/TIL/">TIL</a>
                 </div>
             </div>
         </div>
@@ -241,17 +210,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/04/22/Call-by-Value-Call-by-Reference-and-Call-by-Object-Reference/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Call by Value, Call by Reference and Call by Object Reference</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/04/22/LeetCode-5-Longest-Palindromic-Substring/">
-                <span class="level-item">LeetCode 5. Longest Palindromic Substring</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/05/02/CodeWars-6kyu-Playing-with-digits/">
+                <span class="level-item">CodeWars 6kyu. Playing with digits</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -1507,7 +1469,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Local Variable and Global Variable" height="28">
+                    <img src="/images/logo.svg" alt="190502-TIL" height="28">
                 
                 </a>
                 <p class="is-size-7">
