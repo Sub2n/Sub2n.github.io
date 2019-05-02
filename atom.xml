@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sub2n.github.io/"/>
-  <updated>2019-05-01T12:47:46.464Z</updated>
+  <updated>2019-05-02T06:23:47.783Z</updated>
   <id>https://sub2n.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CodeWars 6kyu. Playing with digits</title>
+    <link href="https://sub2n.github.io/2019/05/02/CodeWars-6kyu-Playing-with-digits/"/>
+    <id>https://sub2n.github.io/2019/05/02/CodeWars-6kyu-Playing-with-digits/</id>
+    <published>2019-05-02T06:11:03.000Z</published>
+    <updated>2019-05-02T06:23:47.783Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="CodeWars-6kyu-Playing-with-digits"><a href="#CodeWars-6kyu-Playing-with-digits" class="headerlink" title="CodeWars 6kyu. Playing with digits"></a><a href="https://www.codewars.com/kata/playing-with-digits/train/javascript" target="_blank" rel="noopener">CodeWars 6kyu. Playing with digits</a></h2><p>Play with digits 😊</p><a id="more"></a><p>I changed the type of input n to cycle through each digit.</p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">digPow</span>(<span class="hljs-params">n, p</span>)</span>&#123;</span><br><span class="line">  <span class="hljs-keyword">let</span> digitSum = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">let</span> strNum = <span class="hljs-built_in">String</span>(n);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i <span class="hljs-keyword">in</span> strNum)&#123;</span><br><span class="line">    digitSum += strNum[i]**p;</span><br><span class="line">    p++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-built_in">Number</span>.isInteger(digitSum/n) ? digitSum/n : <span class="hljs-number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="https://user-images.githubusercontent.com/48080762/57058695-4196e300-6cec-11e9-9f36-2b196d64fba6.png" alt="Submit screen"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;CodeWars-6kyu-Playing-with-digits&quot;&gt;&lt;a href=&quot;#CodeWars-6kyu-Playing-with-digits&quot; class=&quot;headerlink&quot; title=&quot;CodeWars 6kyu. Playing with digits&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.codewars.com/kata/playing-with-digits/train/javascript&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CodeWars 6kyu. Playing with digits&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Play with digits 😊&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="https://sub2n.github.io/categories/Algorithm/"/>
+    
+      <category term="CodeWars" scheme="https://sub2n.github.io/categories/Algorithm/CodeWars/"/>
+    
+    
+      <category term="Algorithm" scheme="https://sub2n.github.io/tags/Algorithm/"/>
+    
+  </entry>
   
   <entry>
     <title>190501-TIL</title>
@@ -67,6 +91,30 @@
       <category term="Statement" scheme="https://sub2n.github.io/tags/Statement/"/>
     
       <category term="Operater" scheme="https://sub2n.github.io/tags/Operater/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CodeWars 6kyu. Find The Parity Outlier</title>
+    <link href="https://sub2n.github.io/2019/05/01/CodeWars-6kyu-Find-The-Parity-Outlier/"/>
+    <id>https://sub2n.github.io/2019/05/01/CodeWars-6kyu-Find-The-Parity-Outlier/</id>
+    <published>2019-05-01T06:11:42.000Z</published>
+    <updated>2019-05-02T06:20:59.425Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="CodeWars-6kyu-Find-The-Parity-Outlier"><a href="#CodeWars-6kyu-Find-The-Parity-Outlier" class="headerlink" title="CodeWars 6kyu. Find The Parity Outlier"></a><a href="https://www.codewars.com/kata/5526fc09a1bbd946250002dc" target="_blank" rel="noopener">CodeWars 6kyu. Find The Parity Outlier</a></h2><p>Find one odd / even number in last all even / odd numbers.</p><a id="more"></a><blockquote><p>You are given an array (which will have a length of at least 3, but could be very large) containing integers. The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N. Write a method that takes the array as an argument and returns this “outlier” N.</p></blockquote><blockquote><p>Examples</p></blockquote><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[2, 4, 0, 100, 4, 11, 2602, 36]</span><br><span class="line">Should return: 11 (the only odd number)</span><br><span class="line"></span><br><span class="line">[160, 3, 1719, 19, 11, 13, -21]</span><br><span class="line">Should return: 160 (the only even number)</span><br></pre></td></tr></table></figure><h2 id="First-Solution"><a href="#First-Solution" class="headerlink" title="First Solution"></a>First Solution</h2><p><img src="https://user-images.githubusercontent.com/48080762/57058944-b1f23400-6ced-11e9-882d-2e346bbc23af.png" alt="Solution1 submit"></p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">findOutlier</span>(<span class="hljs-params">integers</span>)</span>&#123;</span><br><span class="line">  <span class="hljs-keyword">var</span> isOdd = <span class="hljs-literal">true</span>;</span><br><span class="line">  <span class="hljs-keyword">if</span> (integers[<span class="hljs-number">0</span>]%<span class="hljs-number">2</span> == <span class="hljs-number">0</span>)&#123;</span><br><span class="line">    <span class="hljs-comment">// even</span></span><br><span class="line">    <span class="hljs-keyword">if</span> (integers[<span class="hljs-number">1</span>]%<span class="hljs-number">2</span> == <span class="hljs-number">0</span>)&#123;</span><br><span class="line">      <span class="hljs-comment">// even even</span></span><br><span class="line">      isOdd = <span class="hljs-literal">false</span>;</span><br><span class="line">    &#125; <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">      <span class="hljs-comment">// even odd</span></span><br><span class="line">      <span class="hljs-keyword">if</span>(integers[<span class="hljs-number">2</span>]%<span class="hljs-number">2</span> ==<span class="hljs-number">0</span>)&#123;</span><br><span class="line">        <span class="hljs-comment">// if even odd even, return odd</span></span><br><span class="line">        <span class="hljs-keyword">return</span> integers[<span class="hljs-number">1</span>];</span><br><span class="line">      &#125; <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">        <span class="hljs-comment">// else if even odd odd, return even</span></span><br><span class="line">        <span class="hljs-keyword">return</span> integers[<span class="hljs-number">0</span>];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">    <span class="hljs-comment">// odd</span></span><br><span class="line">    <span class="hljs-keyword">if</span> (integers[<span class="hljs-number">1</span>]%<span class="hljs-number">2</span> == <span class="hljs-number">0</span>)&#123;</span><br><span class="line">      <span class="hljs-comment">// odd even</span></span><br><span class="line">      <span class="hljs-keyword">if</span> (integers[<span class="hljs-number">2</span>]%<span class="hljs-number">2</span> == <span class="hljs-number">0</span>)&#123;</span><br><span class="line">        <span class="hljs-comment">// if odd even even, return odd</span></span><br><span class="line">        <span class="hljs-keyword">return</span> integers[<span class="hljs-number">0</span>];</span><br><span class="line">      &#125; <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">        <span class="hljs-comment">// if odd even odd, return even</span></span><br><span class="line">        <span class="hljs-keyword">return</span> integers[<span class="hljs-number">1</span>];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-keyword">if</span>(isOdd == <span class="hljs-literal">true</span>)&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">2</span>; i&lt;integers.length; i++)&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span>(integers[i]%<span class="hljs-number">2</span> == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> integers[i];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">2</span>; i&lt;integers.length; i++)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(integers[i]%<span class="hljs-number">2</span> != <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> integers[i];</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="Second-Solution"><a href="#Second-Solution" class="headerlink" title="Second Solution"></a>Second Solution</h2><p><img src="https://user-images.githubusercontent.com/48080762/57058974-d0f0c600-6ced-11e9-9735-00208b67e603.png" alt="Solution2 submit"></p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">findOutlier</span>(<span class="hljs-params">integers</span>)</span>&#123;</span><br><span class="line">  <span class="hljs-keyword">var</span> even = integers.filter(<span class="hljs-function"><span class="hljs-params">a</span>=&gt;</span>a%<span class="hljs-number">2</span>==<span class="hljs-number">0</span>);</span><br><span class="line">  <span class="hljs-keyword">var</span> odd = integers.filter(<span class="hljs-function"><span class="hljs-params">a</span>=&gt;</span>a%<span class="hljs-number">2</span>!=<span class="hljs-number">0</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-keyword">return</span> even.length == <span class="hljs-number">1</span> ? <span class="hljs-built_in">Number</span>(even) : <span class="hljs-built_in">Number</span>(odd);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;CodeWars-6kyu-Find-The-Parity-Outlier&quot;&gt;&lt;a href=&quot;#CodeWars-6kyu-Find-The-Parity-Outlier&quot; class=&quot;headerlink&quot; title=&quot;CodeWars 6kyu. Find The Parity Outlier&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.codewars.com/kata/5526fc09a1bbd946250002dc&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CodeWars 6kyu. Find The Parity Outlier&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Find one odd / even number in last all even / odd numbers.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="https://sub2n.github.io/categories/Algorithm/"/>
+    
+      <category term="CodeWars" scheme="https://sub2n.github.io/categories/Algorithm/CodeWars/"/>
+    
+    
+      <category term="Algorithm" scheme="https://sub2n.github.io/tags/Algorithm/"/>
     
   </entry>
   
@@ -322,7 +370,7 @@
     <link href="https://sub2n.github.io/2019/04/29/CodeWars-6kyu-Decode-the-Morse-code/"/>
     <id>https://sub2n.github.io/2019/04/29/CodeWars-6kyu-Decode-the-Morse-code/</id>
     <published>2019-04-29T01:53:43.000Z</published>
-    <updated>2019-04-29T02:01:04.871Z</updated>
+    <updated>2019-05-02T06:11:51.645Z</updated>
     
     <content type="html"><![CDATA[<h2 id="CodeWars-6kyu-Decode-the-Morse-code"><a href="#CodeWars-6kyu-Decode-the-Morse-code" class="headerlink" title="CodeWars 6kyu. Decode the Morse code"></a><a href="https://www.codewars.com/kata/decode-the-morse-code/train/javascript" target="_blank" rel="noopener">CodeWars 6kyu. Decode the Morse code</a></h2><p>Decode Morse code to plain text</p><a id="more"></a><blockquote><p>The Morse code encodes every character as a sequence of “dots” and “dashes”. For example, the letter A is coded as ·−, letter Q is coded as −−·−, and digit 1 is coded as ·−−−−. The Morse code is case-insensitive, traditionally capital letters are used. When the message is written in Morse code, a single space is used to separate the character codes and 3 spaces are used to separate words. For example, the message HEY JUDE in Morse code is ···· · −·−−   ·−−− ··− −·· ·.</p></blockquote><blockquote><p>NOTE: Extra spaces before or after the code have no meaning and should be ignored.</p></blockquote><blockquote><p>In addition to letters, digits and some punctuation, there are some special service codes, the most notorious of those is the international distress signal SOS (that was first issued by Titanic), that is coded as ···−−−···. These special codes are treated as single special characters, and usually are transmitted as separate words.</p><p>Your task is to implement a function that would take the morse code as input and return a decoded human-readable string.</p></blockquote><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">decodeMorse(<span class="hljs-string">'.... . -.--   .--- ..- -.. .'</span>)</span><br><span class="line"><span class="hljs-comment">//should return "HEY JUDE"</span></span><br></pre></td></tr></table></figure><ol><li>Each word distinguished by <code>&quot;   &quot;</code> (3 spaces)</li><li>Free to use the preloaded Morse code table as a dictionary. By <code>MORSE_CODE[&#39;.--&#39;]</code></li></ol><h2 id="javaScript-Solution"><a href="#javaScript-Solution" class="headerlink" title="javaScript Solution"></a>javaScript Solution</h2><p><img src="https://user-images.githubusercontent.com/48080762/56873375-eefbc380-6a6c-11e9-864d-86e29c152aea.png" alt="Submit screen"></p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">decodeMorse = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">morseCode</span>)</span>&#123;</span><br><span class="line">  <span class="hljs-keyword">var</span> words = morseCode.split(<span class="hljs-string">"   "</span>);</span><br><span class="line">  <span class="hljs-keyword">var</span> string = <span class="hljs-string">""</span></span><br><span class="line">  </span><br><span class="line">  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i <span class="hljs-keyword">in</span> words)&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(words[i] != <span class="hljs-string">''</span>)&#123;</span><br><span class="line">      <span class="hljs-keyword">var</span> word = words[i].split(<span class="hljs-string">" "</span>);</span><br><span class="line">      <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> j <span class="hljs-keyword">in</span> word)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(word[j] != <span class="hljs-string">''</span>)&#123;</span><br><span class="line">          string += MORSE_CODE[word[j]];</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="hljs-keyword">if</span>(i &lt; words.length<span class="hljs-number">-1</span>)&#123;</span><br><span class="line">        string += <span class="hljs-string">" "</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;  </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -499,65 +547,6 @@
       <category term="Class" scheme="https://sub2n.github.io/tags/Class/"/>
     
       <category term="Access Modifier" scheme="https://sub2n.github.io/tags/Access-Modifier/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>190424-TIL</title>
-    <link href="https://sub2n.github.io/2019/04/24/190424-TIL/"/>
-    <id>https://sub2n.github.io/2019/04/24/190424-TIL/</id>
-    <published>2019-04-24T06:18:00.000Z</published>
-    <updated>2019-04-24T08:01:32.678Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><h3 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h3><ul><li><p>Python Class 선언과 instance를 만드는 방법에 대해서 배웠다.</p></li><li><p>Object-Oriented Programming에 대해서 정리한 내용을 포스팅했다. ✨<a href="https://sub2n.github.io/2019/04/24/4-Fundamental-of-Object-Oriented-Programming/">4 Fundamentals of OOP</a></p></li><li><p>Python Access Modifier에 대해서 알고 정리했다.</p></li><li><p>Network 계층 및 Eathernet과 IP Protocol에 대해서 배웠다.</p></li><li><p>Quick sort | Divide and Conquer - Python으로 Code를 짰다</p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;h3 id=&quot;오늘-한-일&quot;&gt;&lt;a hr
-      
-    
-    </summary>
-    
-      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
-    
-    
-      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>4 Fundamental of Object Oriented Programming</title>
-    <link href="https://sub2n.github.io/2019/04/24/4-Fundamental-of-Object-Oriented-Programming/"/>
-    <id>https://sub2n.github.io/2019/04/24/4-Fundamental-of-Object-Oriented-Programming/</id>
-    <published>2019-04-24T01:09:40.000Z</published>
-    <updated>2019-04-24T01:55:19.944Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="추상화-Abstraction"><a href="#추상화-Abstraction" class="headerlink" title="추상화 | Abstraction ?"></a>추상화 | Abstraction ?</h2><ul><li><p>추상화란, 복잡한 로직을 가지고 있는 기능에서 그것을 다루기 위해 필요한 최소한의 핵심만을 추출해내는 것을 말한다. 정의만 들으면 어렵다. </p><p>TV 전원을 예로 들어 생각해보자. 새로 산 TV의 설명서를 보면 TV를 켜려면 전원 버튼을 누르라고 되어있다. 사용자는 전원 버튼을 누르면 쉽게 TV를 켤 수 있다.</p><p>그러나 실제로 TV의 전원 버튼을 누르는 순간 내부 전기회로에서는 복잡한 기능이 실행될 것이다. 사용자는 그것을 알 수 없고, 알 필요도 없다. TV 제작 회사에서 TV에 대한 추상화를 시켜 사용자가 쉽게 TV를 동작시킬 수 있도록 한 것이다.</p></li><li><p>함수를 보통 function, routine, procedure 라고 부른다. 이 때, procedure 단위로 추상화를 하고 procdural하게 진행하는 프로그램을 절차 지향 프로그램이라고 한다. 그러나 프로그램이 거대해지고, 코드가 길어지자 프로그램을 객체(object)로 추상화하는 방법론이 나왔고 그걸 적용한 게 객체 지향 프로그램이다.</p></li></ul><h3 id="절차-지향-Procedural-Programming-procedure-단위-추상화"><a href="#절차-지향-Procedural-Programming-procedure-단위-추상화" class="headerlink" title="절차 지향 Procedural Programming : procedure 단위 추상화"></a>절차 지향 Procedural Programming : procedure 단위 추상화</h3><h3 id="객체-지향-Object-Oriented-Programming-Object-단위-추상화"><a href="#객체-지향-Object-Oriented-Programming-Object-단위-추상화" class="headerlink" title="객체 지향 Object Oriented Programming : Object 단위 추상화"></a>객체 지향 Object Oriented Programming : Object 단위 추상화</h3><h2 id="Function-Abstraction"><a href="#Function-Abstraction" class="headerlink" title="Function Abstraction"></a>Function Abstraction</h2><ul><li>Function Signature (Interface) : function name, parameter, return calue</li><li>Implementation : operations</li><li>함수의 명세(Function Signature)와 내부구현(Implementation)을 분리하는 것</li></ul><h1 id="4-Fundamental-of-Object-Oriented-Programming"><a href="#4-Fundamental-of-Object-Oriented-Programming" class="headerlink" title="4 Fundamental of Object Oriented Programming"></a>4 Fundamental of Object Oriented Programming</h1><h2 id="Encapsulation"><a href="#Encapsulation" class="headerlink" title="Encapsulation"></a>Encapsulation</h2><p>Encapsulation은 모든 object가 그 state(private variables)를 class내부에 private으로 보유하고 있을 때 지켜진다. 다른 object들은 그 state에 직접 접근할 필요 없이, 해당 object의 public object(method)를 호출한다. 결과적으로 object는 자신의 state를 method를 통해 관리한다.</p><h2 id="Abstraction"><a href="#Abstraction" class="headerlink" title="Abstraction"></a>Abstraction</h2><p>추상화는 encapsulation을 자연스럽게 확장한 것으로 볼 수 있다.<br>추상화를 적용한다는 것은, 각 object를 사용할 때 오직 high-level machanism만을 공개해야한다는 것이다. 이 mechanism은 내부 implementation을 숨기고, 오직 관련된 객체의 operation으로만 접근할 수 있다. 즉, 사용자는 class의 method가 어떻게 작동하는지 알 필요 없이 제공된 interface(method name, parameter, return value)만 알고 사용할 수 있다.</p><h2 id="Inheritance"><a href="#Inheritance" class="headerlink" title="Inheritance"></a>Inheritance</h2><p>대부분의 object는 비슷하고 공통된 logic을 공유한다. 상속을 통해 중복되는 코드를 최대한 방지하는 것이 inheritance의 핵심이다. Parent class로부터 child class를 만들 수 있으며, child class는 parent class의 모든 영역을 재사용할 수 있는 특권을 가진다. Parent class의 기능에 자신만의 method를 추가하거나 재정의(override)할 수 있다.</p><h2 id="Polymorphism-One-Interface-and-Multiple-Implementations"><a href="#Polymorphism-One-Interface-and-Multiple-Implementations" class="headerlink" title="Polymorphism | One Interface and Multiple Implementations."></a>Polymorphism | One Interface and Multiple Implementations.</h2><p>다형성. 우리가 parent class와 그로부터 상속받은 여러 child class를 가지고 있을 때, 이 모든 class를 collection처럼 한번에 쓰고 싶을 때가 있을 것이다. Polymorphism은 class를 이렇게 사용할 수 있게 하는 방법 제공한다. Parent class에 interface method를 선언하고(implementation은 하지 않는다!) child class에서 그 method의 implementation을 담당하는 것이다.</p><blockquote><p>상속은 많은 형태의 변화를 가능케 한다. Parent class를 상속하는 child class는 parent class로 정의될 수 있다. (ex. Child C = new Parent(); ) </p></blockquote><h2 id="Function-OverLoading-이름은-같지만-signature-parameter-수-data-type-는-다른-method를-중복으로-선언하는-것"><a href="#Function-OverLoading-이름은-같지만-signature-parameter-수-data-type-는-다른-method를-중복으로-선언하는-것" class="headerlink" title="Function OverLoading : 이름은 같지만 signature(parameter 수, data type)는 다른 method를 중복으로 선언하는 것"></a>Function OverLoading : 이름은 같지만 signature(parameter 수, data type)는 다른 method를 중복으로 선언하는 것</h2><p>method 이름은 같아야 한다. Parameter 수는 달라야 하며, 같다면 data type이 달라야 한다.</p><h2 id="Method-OverRiding-부모-클래스의-method-동작-방법을-재정의하여-우선적으로-사용하는-것"><a href="#Method-OverRiding-부모-클래스의-method-동작-방법을-재정의하여-우선적으로-사용하는-것" class="headerlink" title="Method OverRiding : 부모 클래스의 method 동작 방법을 재정의하여 우선적으로 사용하는 것."></a>Method OverRiding : 부모 클래스의 method 동작 방법을 재정의하여 우선적으로 사용하는 것.</h2><p>override 하고자 하는 method가 상위 클래스에 존재해야 한다. Method 이름이 같아야 하며, parameter 개수, data type, return type 등 모든 signature를 동일하게 사용한다. 달라지는 것은 내부 구현 뿐이다.</p><p>부르는 object만 달라질뿐 method 이름을 동일하게 하면 하나의 method로 여러 기능을 실행할 수 있다.</p><hr><p>참고 자료 <a href="https://medium.freecodecamp.org/object-oriented-programming-concepts-21bb035f7260" target="_blank" rel="noopener">How to explain object-oriented programming concepts to a 6-year-old</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;추상화-Abstraction&quot;&gt;&lt;a href=&quot;#추상화-Abstraction&quot; class=&quot;headerlink&quot; title=&quot;추상화 | Abstraction ?&quot;&gt;&lt;/a&gt;추상화 | Abstraction ?&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;추
-      
-    
-    </summary>
-    
-      <category term="Computer Engineering" scheme="https://sub2n.github.io/categories/Computer-Engineering/"/>
-    
-    
-      <category term="OOP" scheme="https://sub2n.github.io/tags/OOP/"/>
-    
-      <category term="Encapsulation" scheme="https://sub2n.github.io/tags/Encapsulation/"/>
-    
-      <category term="Abstraction" scheme="https://sub2n.github.io/tags/Abstraction/"/>
-    
-      <category term="Polymorphisim" scheme="https://sub2n.github.io/tags/Polymorphisim/"/>
-    
-      <category term="Inheritance" scheme="https://sub2n.github.io/tags/Inheritance/"/>
     
   </entry>
   

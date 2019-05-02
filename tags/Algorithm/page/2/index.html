@@ -161,6 +161,151 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/04/23/Recursion/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="Recursion">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-23T09:31:17.000Z">2019-04-23</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Computer-Engineering/Algorithm/">Algorithm</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 272 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/23/Recursion/">Recursion</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="Recursion-재귀"><a href="#Recursion-재귀" class="headerlink" title="Recursion (재귀)"></a>Recursion (재귀)</h1><ol>
+<li>함수 호출 도중에 자기 자신을 다시 호출하는 것</li>
+<li><p>Base case가 필수 (기초, 종료, 탈출 조건)</p>
+<p> Base case가 없으면 무한으로 자기 자신을 호출해서 stack overflow가 된다.</p>
+</li>
+</ol>
+<h2 id="재귀함수를-만드는-방법"><a href="#재귀함수를-만드는-방법" class="headerlink" title="재귀함수를 만드는 방법"></a>재귀함수를 만드는 방법</h2><ol>
+<li>패턴을 찾는다. 즉, 점화식(Induction)을 만든다.</li>
+<li>Base case를 만든다.</li>
+</ol>
+<h2 id="예제1-Factorial"><a href="#예제1-Factorial" class="headerlink" title="예제1: Factorial !"></a>예제1: Factorial !</h2><ul>
+<li><p>Basis </p>
+<p> 0! = 1! = 1</p>
+</li>
+<li><p>Induction Step </p>
+<p>n! = (n-1) <em> (n-2) </em> (n-3) <em> … 3 </em> 2 * 1</p>
+</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">factorial</span><span class="hljs-params">(n)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">if</span> n &lt;= <span class="hljs-number">1</span>:</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span></span><br><span class="line">    <span class="hljs-keyword">else</span>:</span><br><span class="line">        <span class="hljs-keyword">return</span> n*factorial(n<span class="hljs-number">-1</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="예제2-Fibonacci"><a href="#예제2-Fibonacci" class="headerlink" title="예제2: Fibonacci"></a>예제2: Fibonacci</h2><ul>
+<li><p>Basis</p>
+<p>  fib(0) = fib(1) = 1</p>
+</li>
+<li><p>Induction Step</p>
+<p>  fib(n) = fib(n-1) + fib(n-2)</p>
+</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fib</span><span class="hljs-params">(n)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">if</span> n &lt;= <span class="hljs-number">1</span>:</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span></span><br><span class="line">    <span class="hljs-keyword">else</span>:</span><br><span class="line">        <span class="hljs-keyword">return</span> fib(n<span class="hljs-number">-1</span>) + fib(n<span class="hljs-number">-2</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="Fibonacci-Dynamic-Programming"><a href="#Fibonacci-Dynamic-Programming" class="headerlink" title="Fibonacci Dynamic Programming"></a>Fibonacci Dynamic Programming</h2><ol>
+<li>Memorization (Top Down)</li>
+</ol>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">f = [<span class="hljs-number">-1</span> <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(<span class="hljs-number">100</span>)]</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fib_memorize</span><span class="hljs-params">(n)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">if</span> f[n] &gt; <span class="hljs-number">-1</span>:</span><br><span class="line">        <span class="hljs-keyword">return</span> f[n]</span><br><span class="line">    <span class="hljs-keyword">elif</span> n &lt;= <span class="hljs-number">1</span>:</span><br><span class="line">        f[n] = <span class="hljs-number">1</span></span><br><span class="line">    <span class="hljs-keyword">else</span>:</span><br><span class="line">        f[n] = fib_memorize(n<span class="hljs-number">-1</span>) + fib_memorize(n<span class="hljs-number">-2</span>)</span><br><span class="line">    <span class="hljs-keyword">return</span> f[n]</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>Bottom Up</li>
+</ol>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f2 = [<span class="hljs-number">-1</span> <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(<span class="hljs-number">100</span>)]</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fib_bottup</span><span class="hljs-params">(n)</span>:</span></span><br><span class="line">    f2[<span class="hljs-number">0</span>] = f[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span></span><br><span class="line">    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">2</span>, n+<span class="hljs-number">1</span>):</span><br><span class="line">        f[n] = f[n<span class="hljs-number">-1</span>] + f[n<span class="hljs-number">-2</span>]</span><br><span class="line">    <span class="hljs-keyword">return</span> f[n]</span><br></pre></td></tr></table></figure>
+<h2 id="예제3-Hanoi-Tower"><a href="#예제3-Hanoi-Tower" class="headerlink" title="예제3: Hanoi Tower"></a>예제3: Hanoi Tower</h2><p><a href="https://www.mathsisfun.com/games/towerofhanoi.html" target="_blank" rel="noopener">Play Tower of Hanoi</a></p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">hanoi</span><span class="hljs-params">(n, _from, _by, _to)</span>:</span></span><br><span class="line">    <span class="hljs-comment"># base case</span></span><br><span class="line">    <span class="hljs-keyword">if</span> n==<span class="hljs-number">1</span>:</span><br><span class="line">        print(<span class="hljs-string">f'<span class="hljs-subst">&#123;n&#125;</span>번째 쟁반을 <span class="hljs-subst">&#123;_from&#125;</span>에서 <span class="hljs-subst">&#123;_to&#125;</span>로 옮긴다.'</span>)</span><br><span class="line">        <span class="hljs-keyword">return</span></span><br><span class="line">    hanoi(n<span class="hljs-number">-1</span>, _from, _to, _by)</span><br><span class="line">    print(<span class="hljs-string">f'<span class="hljs-subst">&#123;n&#125;</span>번째 쟁반을 <span class="hljs-subst">&#123;_from&#125;</span>에서 <span class="hljs-subst">&#123;_to&#125;</span>로 옮긴다.'</span>)</span><br><span class="line">    hanoi(n<span class="hljs-number">-1</span>, _by, _from, _to)</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
+        <a href="/2019/04/22/LeetCode-5-Longest-Palindromic-Substring/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="LeetCode 5. Longest Palindromic Substring">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-22T10:27:54.000Z">2019-04-22</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/LeetCode/">LeetCode</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes read (About 646 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/22/LeetCode-5-Longest-Palindromic-Substring/">LeetCode 5. Longest Palindromic Substring</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="LeetCode-5-Longest-Palindromic-Substring"><a href="#LeetCode-5-Longest-Palindromic-Substring" class="headerlink" title="LeetCode 5. Longest Palindromic Substring"></a><a href="https://leetcode.com/problems/longest-palindromic-substring/" target="_blank" rel="noopener">LeetCode 5. Longest Palindromic Substring</a></h2><p>가장 긴, 거꾸로 해도 똑같은 Substring을 찾는 문제</p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/22/LeetCode-5-Longest-Palindromic-Substring/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/04/19/CodeWars-6kyu-Persistent-Bugger/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="CodeWars 6kyu. Persistent Bugger">
         </a>
@@ -390,122 +535,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/17/CodeWars-6kyu-Multiples-of-3-or-5/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="CodeWars 6kyu. Multiples of 3 or 5">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-17T08:17:13.000Z">2019-04-17</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/CodeWars/">CodeWars</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 265 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/17/CodeWars-6kyu-Multiples-of-3-or-5/">CodeWars 6kyu. Multiples of 3 or 5</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="CodeWars-6kyu-Multiples-of-3-or-5"><a href="#CodeWars-6kyu-Multiples-of-3-or-5" class="headerlink" title="CodeWars 6kyu. Multiples of 3 or 5"></a><a href="https://www.codewars.com/kata/multiples-of-3-or-5/train/javascript" target="_blank" rel="noopener">CodeWars 6kyu. Multiples of 3 or 5</a></h2><p>3 또는 5의 배수의 합 구하기</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/17/CodeWars-6kyu-Multiples-of-3-or-5/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/16/LeetCode-27-Remove-Element/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="LeetCode 27. Remove Element">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-16T10:46:18.000Z">2019-04-16</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/LeetCode/">LeetCode</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 562 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/16/LeetCode-27-Remove-Element/">LeetCode 27. Remove Element</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="LeetCode-27-Remove-Element"><a href="#LeetCode-27-Remove-Element" class="headerlink" title="LeetCode 27. Remove Element"></a><a href="https://leetcode.com/problems/remove-element/" target="_blank" rel="noopener">LeetCode 27. Remove Element</a></h2><p>Input 배열의 요소를 제거하기 : in-place Algorithm</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/16/LeetCode-27-Remove-Element/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -572,7 +601,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        75
+                        77
                     </p>
                 </div>
             </div>
@@ -709,7 +738,7 @@
                 <span class="level-item">Algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">12</span>
+                <span class="level-item tag">14</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Algorithm/CodeWars/">
@@ -717,7 +746,7 @@
                 <span class="level-item">CodeWars</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">7</span>
+                <span class="level-item tag">9</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Algorithm/LeetCode/">
@@ -814,6 +843,25 @@
         
         <article class="media">
             
+            <a href="/2019/05/02/CodeWars-6kyu-Playing-with-digits/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="CodeWars 6kyu. Playing with digits">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-02T06:11:03.000Z">2019-05-02</time></div>
+                    <a href="/2019/05/02/CodeWars-6kyu-Playing-with-digits/" class="has-link-black-ter is-size-6">CodeWars 6kyu. Playing with digits</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/CodeWars/">CodeWars</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/05/01/190501-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190501-TIL">
@@ -852,6 +900,25 @@
         
         <article class="media">
             
+            <a href="/2019/05/01/CodeWars-6kyu-Find-The-Parity-Outlier/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="CodeWars 6kyu. Find The Parity Outlier">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-01T06:11:42.000Z">2019-05-01</time></div>
+                    <a href="/2019/05/01/CodeWars-6kyu-Find-The-Parity-Outlier/" class="has-link-black-ter is-size-6">CodeWars 6kyu. Find The Parity Outlier</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/CodeWars/">CodeWars</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/04/30/190430-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/cherry.png" alt="190430-TIL">
@@ -864,44 +931,6 @@
                     <a href="/2019/04/30/190430-TIL/" class="has-link-black-ter is-size-6">190430-TIL</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/30/5-Data-Type/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="5. Data Type">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-30T11:22:12.000Z">2019-04-30</time></div>
-                    <a href="/2019/04/30/5-Data-Type/" class="has-link-black-ter is-size-6">5. Data Type</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/30/4-Variable/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="4. Variable">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-30T07:07:31.000Z">2019-04-30</time></div>
-                    <a href="/2019/04/30/4-Variable/" class="has-link-black-ter is-size-6">4. Variable</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
                     </p>
                 </div>
             </div>
@@ -925,7 +954,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -989,7 +1018,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Algorithm/">
                         <span class="tag">Algorithm</span>
-                        <span class="tag is-grey">13</span>
+                        <span class="tag is-grey">15</span>
                     </a>
                 </div>
                 
@@ -1249,7 +1278,7 @@
                 <span class="level-item">Algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">12</span>
+                <span class="level-item tag">14</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Algorithm/CodeWars/">
@@ -1257,7 +1286,7 @@
                 <span class="level-item">CodeWars</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">7</span>
+                <span class="level-item tag">9</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Algorithm/LeetCode/">
@@ -1354,6 +1383,25 @@
         
         <article class="media">
             
+            <a href="/2019/05/02/CodeWars-6kyu-Playing-with-digits/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="CodeWars 6kyu. Playing with digits">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-02T06:11:03.000Z">2019-05-02</time></div>
+                    <a href="/2019/05/02/CodeWars-6kyu-Playing-with-digits/" class="has-link-black-ter is-size-6">CodeWars 6kyu. Playing with digits</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/CodeWars/">CodeWars</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/05/01/190501-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190501-TIL">
@@ -1392,6 +1440,25 @@
         
         <article class="media">
             
+            <a href="/2019/05/01/CodeWars-6kyu-Find-The-Parity-Outlier/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="CodeWars 6kyu. Find The Parity Outlier">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-01T06:11:42.000Z">2019-05-01</time></div>
+                    <a href="/2019/05/01/CodeWars-6kyu-Find-The-Parity-Outlier/" class="has-link-black-ter is-size-6">CodeWars 6kyu. Find The Parity Outlier</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/CodeWars/">CodeWars</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/04/30/190430-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/cherry.png" alt="190430-TIL">
@@ -1404,44 +1471,6 @@
                     <a href="/2019/04/30/190430-TIL/" class="has-link-black-ter is-size-6">190430-TIL</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/30/5-Data-Type/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="5. Data Type">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-30T11:22:12.000Z">2019-04-30</time></div>
-                    <a href="/2019/04/30/5-Data-Type/" class="has-link-black-ter is-size-6">5. Data Type</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/30/4-Variable/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="4. Variable">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-30T07:07:31.000Z">2019-04-30</time></div>
-                    <a href="/2019/04/30/4-Variable/" class="has-link-black-ter is-size-6">4. Variable</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
                     </p>
                 </div>
             </div>
@@ -1465,7 +1494,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1529,7 +1558,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Algorithm/">
                         <span class="tag">Algorithm</span>
-                        <span class="tag is-grey">13</span>
+                        <span class="tag is-grey">15</span>
                     </a>
                 </div>
                 

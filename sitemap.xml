@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sub2n.github.io/2019/05/02/CodeWars-6kyu-Playing-with-digits/</loc>
+    
+    <lastmod>2019-05-02T06:23:47.783Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/05/01/CodeWars-6kyu-Find-The-Parity-Outlier/</loc>
+    
+    <lastmod>2019-05-02T06:20:59.425Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/04/29/CodeWars-6kyu-Decode-the-Morse-code/</loc>
+    
+    <lastmod>2019-05-02T06:11:51.645Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sub2n.github.io/2019/05/01/190501-TIL/</loc>
     
     <lastmod>2019-05-01T12:47:46.464Z</lastmod>
@@ -89,13 +110,6 @@
     <loc>https://sub2n.github.io/2019/04/29/Difference-between-Subsequence-and-Substring/</loc>
     
     <lastmod>2019-04-29T09:07:31.688Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sub2n.github.io/2019/04/29/CodeWars-6kyu-Decode-the-Morse-code/</loc>
-    
-    <lastmod>2019-04-29T02:01:04.871Z</lastmod>
     
   </url>
   
