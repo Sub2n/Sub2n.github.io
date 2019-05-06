@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sub2n.github.io/2019/05/04/190503-TIL/</loc>
+    
+    <lastmod>2019-05-06T11:34:13.226Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/05/01/6-Operator/</loc>
+    
+    <lastmod>2019-05-03T10:08:35.124Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/04/29/1-What-is-Programming/</loc>
+    
+    <lastmod>2019-05-03T08:29:43.140Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/04/30/5-Data-Type/</loc>
+    
+    <lastmod>2019-05-03T08:22:12.203Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/04/30/4-Variable/</loc>
+    
+    <lastmod>2019-05-03T05:40:14.228Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sub2n.github.io/2019/05/02/190502-TIL/</loc>
     
     <lastmod>2019-05-02T12:47:46.918Z</lastmod>
@@ -37,30 +72,9 @@
   </url>
   
   <url>
-    <loc>https://sub2n.github.io/2019/05/01/6-Operator/</loc>
-    
-    <lastmod>2019-05-01T12:42:59.243Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sub2n.github.io/2019/04/30/5-Data-Type/</loc>
-    
-    <lastmod>2019-05-01T11:43:09.199Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://sub2n.github.io/2019/04/30/190430-TIL/</loc>
     
     <lastmod>2019-05-01T00:08:59.059Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sub2n.github.io/2019/04/30/4-Variable/</loc>
-    
-    <lastmod>2019-04-30T11:21:48.893Z</lastmod>
     
   </url>
   
@@ -75,13 +89,6 @@
     <loc>https://sub2n.github.io/2019/04/29/2-What-is-JavaScript/</loc>
     
     <lastmod>2019-04-30T06:06:09.435Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sub2n.github.io/2019/04/29/1-What-is-Programming/</loc>
-    
-    <lastmod>2019-04-30T01:11:43.865Z</lastmod>
     
   </url>
   
