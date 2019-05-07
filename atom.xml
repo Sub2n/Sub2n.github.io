@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sub2n.github.io/"/>
-  <updated>2019-05-06T11:34:13.226Z</updated>
+  <updated>2019-05-07T12:42:58.770Z</updated>
   <id>https://sub2n.github.io/</id>
   
   <author>
@@ -17,19 +17,54 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>190503-TIL</title>
-    <link href="https://sub2n.github.io/2019/05/04/190503-TIL/"/>
-    <id>https://sub2n.github.io/2019/05/04/190503-TIL/</id>
-    <published>2019-05-04T10:51:17.000Z</published>
-    <updated>2019-05-06T11:34:13.226Z</updated>
+    <title>10. Comparing primitive and objects</title>
+    <link href="https://sub2n.github.io/2019/05/07/10-Comparing-primitive-and-objects/"/>
+    <id>https://sub2n.github.io/2019/05/07/10-Comparing-primitive-and-objects/</id>
+    <published>2019-05-07T11:24:49.000Z</published>
+    <updated>2019-05-07T12:42:58.770Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2>]]></content>
+    <content type="html"><![CDATA[<h2 id="Difference-between-primitive-type-and-object-type"><a href="#Difference-between-primitive-type-and-object-type" class="headerlink" title="Difference between primitive type and object type"></a>Difference between primitive type and object type</h2><table><thead><tr><th style="text-align:center">Primitive Type</th><th style="text-align:center">Object Type</th></tr></thead><tbody><tr><td style="text-align:center">immutable value</td><td style="text-align:center">mutable value</td></tr><tr><td style="text-align:center">stored as real value</td><td style="text-align:center">stored as reference value</td></tr><tr><td style="text-align:center">pass by value</td><td style="text-align:center">pass by reference</td></tr></tbody></table><h1 id="Primitive-Value"><a href="#Primitive-Value" class="headerlink" title="Primitive Value"></a>Primitive Value</h1><h2 id="Immutable-Value"><a href="#Immutable-Value" class="headerlink" title="Immutable Value"></a>Immutable Value</h2><ul><li>The value of primitive type is an <strong>immutable value</strong>. (Read only, can not change)</li><li>Can not change value doesn’t mean can not reassign value.</li><li>Variable can be reassigned a new value, but the value can not be changed.</li><li>When reassigning a new value to a variable, instead of changing the value stored in the memory space pointed to by the variable, assign a value to the new memory space and make the variable refer to the new memory space. This is because the primitive value is immutable.</li><li>If the primitive value is a mutable value, the memory address referenced by the variable will not change when reassigning the variable.</li><li>immutability : Since the primitive value is an immutable value, when the value of the variable is changed, the new value is stored in the new memory space, and the memory space is referred to. This property is called the <strong>immutability</strong> of the primitive value.</li></ul><h2 id="String-and-Immutability"><a href="#String-and-Immutability" class="headerlink" title="String and Immutability"></a>String and Immutability</h2><ul><li><p>String is immutable because it’s also primitive type of JavaScript.</p></li><li><p>String is an array-like object.</p><blockquote><h3 id="Array-like-Object"><a href="#Array-like-Object" class="headerlink" title="Array-like Object"></a>Array-like Object</h3><p>An array-like object is an object that is not an array, but can be treated like an array. A string can access each character through an index like an array, or it can be traversed by a for statement. This means that the string can be an object with a length property.</p></blockquote></li></ul><ul><li>You can not change <code>str[0]</code>, but error doesn’t occur.</li></ul><p><img src="https://user-images.githubusercontent.com/48080762/57296797-dba1c580-7108-11e9-83bd-86e735652c18.png" alt="String is immutable value"></p><ul><li>But, it is of course possible to reassign the new string. Because it is not a change to the existing string but a new assignment of the new string.</li></ul><h2 id="Pass-by-value"><a href="#Pass-by-value" class="headerlink" title="Pass by value"></a>Pass by value</h2><p>What happens when a variable is assigned to a variable? </p><p>If assigned variable is primitive type, the assigned variable value is copied and passed. It’s <strong>pass by value</strong>.</p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> score = <span class="hljs-number">80</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> mine = score;</span><br></pre></td></tr></table></figure><p>Variable <code>score</code> and <code>mine</code> have a value 80, but it’s a separate value in memory. The value 80 in <code>mine</code> is not same as 80 in <code>score</code>.</p><p><img src="https://user-images.githubusercontent.com/48080762/57297341-57e8d880-710a-11e9-9007-36ec715ebcf7.png" alt="Pass by Value"></p><p>Thus, reassigning another value to the variable <code>score</code> does not affect the value of the variable <code>mine</code>.</p><h1 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h1><ul><li>An object is a collection of properties consisting of key and value. A property whose value is a function is called a method.</li><li>Since the number of properties is not fixed and the object can be added and deleted dynamically, the size of the memory space can not be preset in the dictionary like the primitive value.</li></ul><blockquote><h2 id="How-JavaScript-manages-objects"><a href="#How-JavaScript-manages-objects" class="headerlink" title="How JavaScript manages objects"></a>How JavaScript manages objects</h2><p>Unlike with an class-based object-oriented language, JavaScript can create an object without class and dynamically add a property and method even after an object have been created.</p><p>For this reason, almost modern JavaScript engine uses a function-based dictionary-like structure to score a location of object property in memory.</p><p>This is theoretically more costly and inefficient than object management in class-based object-oriented programming languages such as Java. So V8 JavaScript engine uses hidden class method. A hidden class operates like class in Java.</p></blockquote><h2 id="Mutable-Value"><a href="#Mutable-Value" class="headerlink" title="Mutable Value"></a>Mutable Value</h2><p>The value of an object (reference) type, that is, an object is a mutable value.</p><p>A variable that has been assigned a primitive value has its primitive value as its value. </p><p>But, the variable that the object is assigned has a <strong>reference value</strong> as a value. The reference value is <strong>the address of the memory space</strong> in which the generated object is stored, itself.</p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> student = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p><img src="https://user-images.githubusercontent.com/48080762/57298300-d181c600-710c-11e9-96ba-119ba0ffc866.png" alt="Assignment of an object"></p><ul><li><p><code>student</code> variable has a memory address of the memory space where a created object is stored. This is a <strong>reference value</strong>. A variable can access the object by this reference value.</p></li><li><p>When evaluating a variable that assigns an object, it returns the object by accessing the actual object through the reference value rather than returning the reference value stored in memory.</p></li><li><p>An object pointed to by a variable can be added dynamically after it has been created, updated, or deleted. In other words, an object is a <strong>mutable value</strong>.</p></li><li><p>Objects can be very large and change fluidly, so instead of reallocating each time as a primitive value and changing the memory address, it changes the object itself to be referenced directly.</p></li><li><p>In other words, copying an object as a primitive value (a deep copy) is expensive and inefficient, so it copies the reference value.</p><blockquote><h3 id="Shallow-copy-and-Deep-copy"><a href="#Shallow-copy-and-Deep-copy" class="headerlink" title="Shallow copy and Deep copy"></a>Shallow copy and Deep copy</h3><ul><li>Shallow copy : copying reference values</li><li>Deep copy : copying and recreating the object itself as a primitive value</li></ul></blockquote></li></ul><ul><li><p>A side effect of storing an object’s reference value is that an object can be referenced by multiple identifiers.</p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> student = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="hljs-keyword">var</span> teacher = student;</span><br><span class="line"></span><br><span class="line">teacher.age = <span class="hljs-number">35</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(teacher);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(student);</span><br></pre></td></tr></table></figure><p><img src="https://user-images.githubusercontent.com/48080762/57299503-b06ea480-710f-11e9-8dd4-19c322cbf727.png" alt="Referenced by multiple identifiers"></p><ul><li>The property is added only to the object of the teacher variable, but the changes are shared because the objects referenced by the student and teacher are the same.</li></ul></li></ul><h2 id="Pass-by-Reference"><a href="#Pass-by-Reference" class="headerlink" title="Pass by Reference"></a>Pass by Reference</h2><p>If you assign a variable that points to an object to another variable, the original reference value is copied and passed. This is called <strong>pass by reference.</strong></p><p><img src="https://user-images.githubusercontent.com/48080762/57299971-d34d8880-7110-11e9-8fc7-1ee9d64a5f13.png" alt="Pass by Reference"></p><p>As shown in the figure above, since the memory address of the same object is referenced, <code>student</code> and <code>teacher</code> refer to the same object and change it.</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;
+        &lt;h2 id=&quot;Difference-between-primitive-type-and-object-type&quot;&gt;&lt;a href=&quot;#Difference-between-primitive-type-and-object-type&quot; class=&quot;headerlink&quot; t
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
+    
+    
+      <category term="immutable" scheme="https://sub2n.github.io/tags/immutable/"/>
+    
+      <category term="mutable" scheme="https://sub2n.github.io/tags/mutable/"/>
+    
+      <category term="primitive" scheme="https://sub2n.github.io/tags/primitive/"/>
+    
+      <category term="object" scheme="https://sub2n.github.io/tags/object/"/>
+    
+      <category term="pass by reference" scheme="https://sub2n.github.io/tags/pass-by-reference/"/>
+    
+      <category term="pass by value" scheme="https://sub2n.github.io/tags/pass-by-value/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>190507-TIL</title>
+    <link href="https://sub2n.github.io/2019/05/07/190503-TIL/"/>
+    <id>https://sub2n.github.io/2019/05/07/190503-TIL/</id>
+    <published>2019-05-07T10:51:17.000Z</published>
+    <updated>2019-05-07T11:21:52.650Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><p>Studied JavaScript operator, contitional statement, type coercion and short-circuit evaluation, object literal.</p><p>Algorithm study - CodeWars [6kyu] Consecutive strings. We will start to implement underscore library functions like map, reduce.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;p&gt;Studied JavaScript
       
     
     </summary>
@@ -510,32 +545,6 @@
     
     
       <category term="Algorithm" scheme="https://sub2n.github.io/tags/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>190425-TIL</title>
-    <link href="https://sub2n.github.io/2019/04/25/190425-TIL/"/>
-    <id>https://sub2n.github.io/2019/04/25/190425-TIL/</id>
-    <published>2019-04-25T07:44:02.000Z</published>
-    <updated>2019-04-26T07:54:39.274Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><p>Fastcampus에서 진행한 졸업생과의 티타임 시간에 졸업한 개발자분을 만나뵙고 경험들을 들었다. 많은 도움이 됐다.</p></li><li><p>Network를 대략적으로 살펴봤다. 나는 학교에서 배웠지만 오래되어 다시 한 번 정리하는 게 필요할 것 같다. </p><p><a href="https://d2.naver.com/helloworld/47667" target="_blank" rel="noopener">TCP/IP 네트워크 스택 이해하기</a></p></li><li><p>Quick Sort의 성능 분석 및 정리해서 posting 했다.</p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Fastcampu
-      
-    
-    </summary>
-    
-      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
-    
-    
-      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
     
   </entry>
   

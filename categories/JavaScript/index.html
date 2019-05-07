@@ -162,6 +162,152 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/05/07/10-Comparing-primitive-and-objects/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="10. Comparing primitive and objects">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-07T11:24:49.000Z">2019-05-07</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    6 minutes read (About 973 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/07/10-Comparing-primitive-and-objects/">10. Comparing primitive and objects</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="Difference-between-primitive-type-and-object-type"><a href="#Difference-between-primitive-type-and-object-type" class="headerlink" title="Difference between primitive type and object type"></a>Difference between primitive type and object type</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Primitive Type</th>
+<th style="text-align:center">Object Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">immutable value</td>
+<td style="text-align:center">mutable value</td>
+</tr>
+<tr>
+<td style="text-align:center">stored as real value</td>
+<td style="text-align:center">stored as reference value</td>
+</tr>
+<tr>
+<td style="text-align:center">pass by value</td>
+<td style="text-align:center">pass by reference</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Primitive-Value"><a href="#Primitive-Value" class="headerlink" title="Primitive Value"></a>Primitive Value</h1><h2 id="Immutable-Value"><a href="#Immutable-Value" class="headerlink" title="Immutable Value"></a>Immutable Value</h2><ul>
+<li>The value of primitive type is an <strong>immutable value</strong>. (Read only, can not change)</li>
+<li>Can not change value doesn’t mean can not reassign value.</li>
+<li>Variable can be reassigned a new value, but the value can not be changed.</li>
+<li>When reassigning a new value to a variable, instead of changing the value stored in the memory space pointed to by the variable, assign a value to the new memory space and make the variable refer to the new memory space. This is because the primitive value is immutable.</li>
+<li>If the primitive value is a mutable value, the memory address referenced by the variable will not change when reassigning the variable.</li>
+<li>immutability : Since the primitive value is an immutable value, when the value of the variable is changed, the new value is stored in the new memory space, and the memory space is referred to. This property is called the <strong>immutability</strong> of the primitive value.</li>
+</ul>
+<h2 id="String-and-Immutability"><a href="#String-and-Immutability" class="headerlink" title="String and Immutability"></a>String and Immutability</h2><ul>
+<li><p>String is immutable because it’s also primitive type of JavaScript.</p>
+</li>
+<li><p>String is an array-like object.</p>
+<blockquote>
+<h3 id="Array-like-Object"><a href="#Array-like-Object" class="headerlink" title="Array-like Object"></a>Array-like Object</h3><p>An array-like object is an object that is not an array, but can be treated like an array. A string can access each character through an index like an array, or it can be traversed by a for statement. This means that the string can be an object with a length property.</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>You can not change <code>str[0]</code>, but error doesn’t occur.</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/48080762/57296797-dba1c580-7108-11e9-83bd-86e735652c18.png" alt="String is immutable value"></p>
+<ul>
+<li>But, it is of course possible to reassign the new string. Because it is not a change to the existing string but a new assignment of the new string.</li>
+</ul>
+<h2 id="Pass-by-value"><a href="#Pass-by-value" class="headerlink" title="Pass by value"></a>Pass by value</h2><p>What happens when a variable is assigned to a variable? </p>
+<p>If assigned variable is primitive type, the assigned variable value is copied and passed. It’s <strong>pass by value</strong>.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> score = <span class="hljs-number">80</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> mine = score;</span><br></pre></td></tr></table></figure>
+<p>Variable <code>score</code> and <code>mine</code> have a value 80, but it’s a separate value in memory. The value 80 in <code>mine</code> is not same as 80 in <code>score</code>.</p>
+<p><img src="https://user-images.githubusercontent.com/48080762/57297341-57e8d880-710a-11e9-9007-36ec715ebcf7.png" alt="Pass by Value"></p>
+<p>Thus, reassigning another value to the variable <code>score</code> does not affect the value of the variable <code>mine</code>.</p>
+<h1 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h1><ul>
+<li>An object is a collection of properties consisting of key and value. A property whose value is a function is called a method.</li>
+<li>Since the number of properties is not fixed and the object can be added and deleted dynamically, the size of the memory space can not be preset in the dictionary like the primitive value.</li>
+</ul>
+<blockquote>
+<h2 id="How-JavaScript-manages-objects"><a href="#How-JavaScript-manages-objects" class="headerlink" title="How JavaScript manages objects"></a>How JavaScript manages objects</h2><p>Unlike with an class-based object-oriented language, JavaScript can create an object without class and dynamically add a property and method even after an object have been created.</p>
+<p>For this reason, almost modern JavaScript engine uses a function-based dictionary-like structure to score a location of object property in memory.</p>
+<p>This is theoretically more costly and inefficient than object management in class-based object-oriented programming languages such as Java. So V8 JavaScript engine uses hidden class method. A hidden class operates like class in Java.</p>
+</blockquote>
+<h2 id="Mutable-Value"><a href="#Mutable-Value" class="headerlink" title="Mutable Value"></a>Mutable Value</h2><p>The value of an object (reference) type, that is, an object is a mutable value.</p>
+<p>A variable that has been assigned a primitive value has its primitive value as its value. </p>
+<p>But, the variable that the object is assigned has a <strong>reference value</strong> as a value. The reference value is <strong>the address of the memory space</strong> in which the generated object is stored, itself.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> student = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/48080762/57298300-d181c600-710c-11e9-96ba-119ba0ffc866.png" alt="Assignment of an object"></p>
+<ul>
+<li><p><code>student</code> variable has a memory address of the memory space where a created object is stored. This is a <strong>reference value</strong>. A variable can access the object by this reference value.</p>
+</li>
+<li><p>When evaluating a variable that assigns an object, it returns the object by accessing the actual object through the reference value rather than returning the reference value stored in memory.</p>
+</li>
+<li><p>An object pointed to by a variable can be added dynamically after it has been created, updated, or deleted. In other words, an object is a <strong>mutable value</strong>.</p>
+</li>
+<li><p>Objects can be very large and change fluidly, so instead of reallocating each time as a primitive value and changing the memory address, it changes the object itself to be referenced directly.</p>
+</li>
+<li><p>In other words, copying an object as a primitive value (a deep copy) is expensive and inefficient, so it copies the reference value.</p>
+<blockquote>
+<h3 id="Shallow-copy-and-Deep-copy"><a href="#Shallow-copy-and-Deep-copy" class="headerlink" title="Shallow copy and Deep copy"></a>Shallow copy and Deep copy</h3><ul>
+<li>Shallow copy : copying reference values</li>
+<li>Deep copy : copying and recreating the object itself as a primitive value</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>A side effect of storing an object’s reference value is that an object can be referenced by multiple identifiers.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> student = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="hljs-keyword">var</span> teacher = student;</span><br><span class="line"></span><br><span class="line">teacher.age = <span class="hljs-number">35</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(teacher);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(student);</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/48080762/57299503-b06ea480-710f-11e9-8dd4-19c322cbf727.png" alt="Referenced by multiple identifiers"></p>
+<ul>
+<li>The property is added only to the object of the teacher variable, but the changes are shared because the objects referenced by the student and teacher are the same.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Pass-by-Reference"><a href="#Pass-by-Reference" class="headerlink" title="Pass by Reference"></a>Pass by Reference</h2><p>If you assign a variable that points to an object to another variable, the original reference value is copied and passed. This is called <strong>pass by reference.</strong></p>
+<p><img src="https://user-images.githubusercontent.com/48080762/57299971-d34d8880-7110-11e9-8fc7-1ee9d64a5f13.png" alt="Pass by Reference"></p>
+<p>As shown in the figure above, since the memory address of the same object is referenced, <code>student</code> and <code>teacher</code> refer to the same object and change it.</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/05/01/6-Operator/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="6. Operator">
         </a>
@@ -839,70 +985,25 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/29/1-What-is-Programming/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="1. What is Programming?">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-29T09:10:24.000Z">2019-04-29</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 538 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/29/1-What-is-Programming/">1. What is Programming?</a>
-            
-        </h1>
-        <div class="content">
-            <h1 id="1-Computational-Thinking"><a href="#1-Computational-Thinking" class="headerlink" title="1. Computational Thinking"></a>1. Computational Thinking</h1><p>Programming is communication that sends commands to be performed to the computer. In order to define the “command to be performed,” the resolution task (problem/requirements) must be clearly understood, the complexity must be simply desconstructed, the data organized and sorted by modeling, and the actions arranged in sequence.</p>
-<p>In other words, clear understanding of reguirements and proper definitaion of solution are needed before programming. What is required at this time is the problem-solving skill. Some people tend to equate problem-solving abilities with algorithms, but it does not. Of course studying algorithm is very helpful to get problem-solving skill, but problem-solving skill is more higher level of ability.</p>
-<p>Programming is just a means of expression to produce the final result of solving a problem. Programming itself doesn’t solve the problem. Considering the solution of the problem, you should look at preoblem from a computer’s point of view. Computational thinking is required this kind of time. You should do computational thinking with solving problems.</p>
-<p>This requires logical and mathematical thinking, and all concepts that will be used within the programming should be defined as assessable, breaking down and patterning the resolution tasks into smaller units.</p>
-<h1 id="2-Programming-Language"><a href="#2-Programming-Language" class="headerlink" title="2. Programming Language"></a>2. Programming Language</h1><p>As above, solution defined based on problem-solving skill should be communicated to computer. At this point, computer do perform the commands. So the command should be communicated by machine code, not a natural language. But it is very difficult that human to understand machine code. It is even described in bits.</p>
-<p>The most useful alternative to delivering commands in direct mechanical language is to use a kind of translator to write a program using “programming language” consisting of promised phrases (Syntax) that humans can understand and then convert it into machine language that computers can understand. This kind of translator is called complier or interpreter.</p>
-<p>Programming is a kind of communication that sends commands to the computer that you want to perform using the programming language. The programming language is expressed as a combination of Syntax and Semantics.</p>
-<h1 id="3-Syntax-amp-Semantics"><a href="#3-Syntax-amp-Semantics" class="headerlink" title="3. Syntax &amp; Semantics"></a>3. Syntax &amp; Semantics</h1><p>Understanding both syntax and semantics properly is important to use language well. In the end, solutions created through problem-solving ability are expressed through the syntax of programming languages. The code is a specific implementation of the solution. This is only archeive semantics when the requirements are fulfilled(problem solved).</p>
-<p>Most of programming languages provide syntax such as variables and values, keywords, operators, expressions, flow control by conditional and loop statements, statements, functions(set of statements), and data structures such as objects and arrays. </p>
-<p>What a programmer needs to do is find a solution for problem and implement it in a code that has correct syntax. Implemented code should act as expected and solve the problem. It should be predictable and explainable how the code work inside the computer and what it will give back.</p>
-<p>To do this, it is important to have an accurate understanding of the basic concepts and operating principles of programming language. If you just copy &amp; paste code without understand basic concept and principle, that code is not reliable. And problem-solving skills will not grow anymore.</p>
-<hr>
-<p>Reference</p>
-<p><a href="https://poiemaweb.com/coding" target="_blank" rel="noopener">프로그래밍이란?</a></p>
 
+    
+<div class="card card-transparent">
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+        <div class="pagination-previous is-invisible is-hidden-mobile">
+            <a class="is-flex-grow has-text-black-ter" href="/categories/JavaScript/page/0/">Previous</a>
         </div>
-        
-        
-        
-    </div>
+        <div class="pagination-next">
+            <a class="is-flex-grow has-text-black-ter" href="/categories/JavaScript/page/2/">Next</a>
+        </div>
+        <ul class="pagination-list is-hidden-mobile">
+            
+            <li><a class="pagination-link is-current" href="/categories/JavaScript/">1</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/categories/JavaScript/page/2/">2</a></li>
+            
+        </ul>
+    </nav>
 </div>
-
-
-
-
-
-
-
-
 </div>
                 
 
@@ -948,7 +1049,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        79
+                        80
                     </p>
                 </div>
             </div>
@@ -968,7 +1069,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        36
+                        42
                     </p>
                 </div>
             </div>
@@ -1061,7 +1162,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 12px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Algorithm/" style="font-size: 18px;">Algorithm</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/Encapsulation/" style="font-size: 12px;">Encapsulation</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 16px;">HTML, CSS</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 12px;">JavaScript</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OOP/" style="font-size: 14px;">OOP</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Python/" style="font-size: 16px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/javaScript/" style="font-size: 12px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a>
+        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 12px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Algorithm/" style="font-size: 18px;">Algorithm</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/Encapsulation/" style="font-size: 12px;">Encapsulation</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 16px;">HTML, CSS</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 12px;">JavaScript</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OOP/" style="font-size: 14px;">OOP</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Python/" style="font-size: 16px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 12px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a>
     </div>
 </div>
 
@@ -1149,7 +1250,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">6</span>
+                <span class="level-item tag">7</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1190,16 +1291,35 @@
         
         <article class="media">
             
-            <a href="/2019/05/04/190503-TIL/" class="media-left">
+            <a href="/2019/05/07/10-Comparing-primitive-and-objects/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/pink.png" alt="190503-TIL">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="10. Comparing primitive and objects">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-04T10:51:17.000Z">2019-05-04</time></div>
-                    <a href="/2019/05/04/190503-TIL/" class="has-link-black-ter is-size-6">190503-TIL</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-07T11:24:49.000Z">2019-05-07</time></div>
+                    <a href="/2019/05/07/10-Comparing-primitive-and-objects/" class="has-link-black-ter is-size-6">10. Comparing primitive and objects</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/07/190503-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/pink.png" alt="190507-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-07T10:51:17.000Z">2019-05-07</time></div>
+                    <a href="/2019/05/07/190503-TIL/" class="has-link-black-ter is-size-6">190507-TIL</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
@@ -1264,25 +1384,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/01/6-Operator/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="6. Operator">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-01T11:43:56.000Z">2019-05-01</time></div>
-                    <a href="/2019/05/01/6-Operator/" class="has-link-black-ter is-size-6">6. Operator</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1301,7 +1402,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">7</span>
                 </span>
             </a>
         </li>
@@ -1580,6 +1681,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/immutable/">
+                        <span class="tag">immutable</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/javaScript/">
                         <span class="tag">javaScript</span>
                         <span class="tag is-grey">2</span>
@@ -1589,6 +1697,41 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/local-variavble/">
                         <span class="tag">local variavble</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/mutable/">
+                        <span class="tag">mutable</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/object/">
+                        <span class="tag">object</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/pass-by-reference/">
+                        <span class="tag">pass by reference</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/pass-by-value/">
+                        <span class="tag">pass by value</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/primitive/">
+                        <span class="tag">primitive</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1689,7 +1832,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">6</span>
+                <span class="level-item tag">7</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1730,16 +1873,35 @@
         
         <article class="media">
             
-            <a href="/2019/05/04/190503-TIL/" class="media-left">
+            <a href="/2019/05/07/10-Comparing-primitive-and-objects/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/pink.png" alt="190503-TIL">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="10. Comparing primitive and objects">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-04T10:51:17.000Z">2019-05-04</time></div>
-                    <a href="/2019/05/04/190503-TIL/" class="has-link-black-ter is-size-6">190503-TIL</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-07T11:24:49.000Z">2019-05-07</time></div>
+                    <a href="/2019/05/07/10-Comparing-primitive-and-objects/" class="has-link-black-ter is-size-6">10. Comparing primitive and objects</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/07/190503-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/pink.png" alt="190507-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-07T10:51:17.000Z">2019-05-07</time></div>
+                    <a href="/2019/05/07/190503-TIL/" class="has-link-black-ter is-size-6">190507-TIL</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
@@ -1804,25 +1966,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/01/6-Operator/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="6. Operator">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-01T11:43:56.000Z">2019-05-01</time></div>
-                    <a href="/2019/05/01/6-Operator/" class="has-link-black-ter is-size-6">6. Operator</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1841,7 +1984,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">7</span>
                 </span>
             </a>
         </li>
@@ -2120,6 +2263,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/immutable/">
+                        <span class="tag">immutable</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/javaScript/">
                         <span class="tag">javaScript</span>
                         <span class="tag is-grey">2</span>
@@ -2129,6 +2279,41 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/local-variavble/">
                         <span class="tag">local variavble</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/mutable/">
+                        <span class="tag">mutable</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/object/">
+                        <span class="tag">object</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/pass-by-reference/">
+                        <span class="tag">pass by reference</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/pass-by-value/">
+                        <span class="tag">pass by value</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/primitive/">
+                        <span class="tag">primitive</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
