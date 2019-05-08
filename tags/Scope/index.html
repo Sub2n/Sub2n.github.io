@@ -180,7 +180,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 0 words)
+                    4 minutes read (About 630 words)
                 </span>
                 
                 
@@ -193,7 +193,85 @@
             
         </h1>
         <div class="content">
-            
+            <p>The scope determines the extent to which the identifier can be referenced. A scope is a data structure that keeps the binding of identifiers and values, and is managed by the JavaScript engine.</p>
+<h1 id="What-is-Scope"><a href="#What-is-Scope" class="headerlink" title="What is Scope?"></a>What is Scope?</h1><p>The range in which the variable is valid. That is, the extent to which other code can refer to the variable itself. The scope is created by the location <strong>where the variable is declared</strong>.</p>
+<p>When there are variables with the same name in different scopes, JavaScript engine must decide which variable to reference at runtime. JavaScript uses the scope to determine which variables to reference. That is, <strong>the scope is the rule that the JavaScript engine uses to search for variables to reference.</strong></p>
+<p>By default, JavaScript supports function-level scopes rather than block-level scopes. Variables declared with <code>var</code> form a function-level scope. However, variables declared with <code>let</code> or <code>const</code> form a block-level scopes.</p>
+<p>If there is no scope, the name of the variable in the program should be unique.</p>
+<blockquote>
+<h4 id="Duplicate-declaration-of-var-keyword-variable"><a href="#Duplicate-declaration-of-var-keyword-variable" class="headerlink" title="Duplicate declaration of var keyword variable"></a>Duplicate declaration of <code>var</code> keyword variable</h4><p>Variables declared with the <code>var</code> keyword allow duplicate declarations within the same scope.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">&gt;     <span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>;	</span><br><span class="line">&gt;     </span><br><span class="line">&gt;     <span class="hljs-comment">// This statement operates like x = 2;</span></span><br><span class="line">&gt;     <span class="hljs-comment">// So reassignment occurs.</span></span><br><span class="line">&gt;     <span class="hljs-keyword">var</span> x = <span class="hljs-number">2</span>;	<span class="hljs-comment">//2</span></span><br><span class="line">&gt;     </span><br><span class="line">&gt;     <span class="hljs-built_in">console</span>.log(x); <span class="hljs-comment">//2</span></span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; foo();</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>Variables declared as <code>let</code> or <code>const</code> do not allow duplicate declarations, so it is better to use them.</p>
+</blockquote>
+<h1 id="Types-of-scope"><a href="#Types-of-scope" class="headerlink" title="Types of scope"></a>Types of scope</h1><p>Code can be distinguished as global and local.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:center">Global</th>
+<th style="text-align:center">Local</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Explanation</td>
+<td style="text-align:center">Outermost area of code</td>
+<td style="text-align:center">Inside of function body</td>
+</tr>
+<tr>
+<td style="text-align:left">Scope</td>
+<td style="text-align:center">Global scope</td>
+<td style="text-align:center">Local scope</td>
+</tr>
+<tr>
+<td style="text-align:left">Vaiable</td>
+<td style="text-align:center">Global variable</td>
+<td style="text-align:center">Local variable</td>
+</tr>
+</tbody>
+</table>
+<p>The variable is determined by its declared location (global or local) to the scope in which it is valid. </p>
+<ul>
+<li>A variable declared in global is a global variable having a global scope</li>
+<li>A variable declared in local is a local variable having a local scope.</li>
+</ul>
+<p>Declaring a variable in global is a global variable with a global scope. Global variables can be referenced anywhere. In other words, global variables are valid in the global scope.</p>
+<p>Local variables can be referenced only in the declared region and sub-region (nested function). In other words, local variables are valid in their local and subregional scopes.</p>
+<h1 id="Scope-Chain"><a href="#Scope-Chain" class="headerlink" title="Scope Chain"></a>Scope Chain</h1><p>Scopes are created by functions. Functions can be nested, so the local scope of a function can also be nested. This means that <strong>the scope has a hierarchical structure by nesting of functions</strong>.</p>
+<p>The local scope of the outer function is the top scope of the nested function.</p>
+<p><strong>The scope chain</strong> refers to a structure in which the scopes from the deepest local scope to the global scope of the overlap are hierarchically connected.</p>
+<p>When referring to a variable, the JavaScript engine starts at the scope of the code that references the variable, moves to the top scope, and searches for the declared variable.</p>
+<h1 id="Function-level-Scope"><a href="#Function-level-Scope" class="headerlink" title="Function-level Scope"></a>Function-level Scope</h1><ul>
+<li>Most programming language like C, Java <ul>
+<li>Block-level scope</li>
+<li>All code blocks (if, for, while, try / catch, etc.), not just the function body, create the local scope.</li>
+</ul>
+</li>
+<li>Variables declared with the <code>var</code> keyword <ul>
+<li><strong>Function-level scope</strong></li>
+<li>Accept only the code block of the <strong>function</strong> as the local scope.</li>
+</ul>
+</li>
+</ul>
+<p>The <code>let</code> and <code>const</code> keywords introduced in ES6 support block level scopes.</p>
+<h1 id="Lexical-Scope"><a href="#Lexical-Scope" class="headerlink" title="Lexical Scope"></a>Lexical Scope</h1><ul>
+<li>Dynamic Scope<ul>
+<li>The function’s top scope is determined by <strong>where the function is called.</strong></li>
+</ul>
+</li>
+<li><strong>Lexical Scope</strong> / Static Scope<ul>
+<li>The function’s top scope is determined by <strong>where the function is defined.</strong></li>
+<li>Most programming languages follow the lexical scope.</li>
+</ul>
+</li>
+</ul>
+<p>JavaScript follows a lexical scope. So it determines the top scope depending on where it is defined.</p>
+<h1 id="Implicit-Global-Variable"><a href="#Implicit-Global-Variable" class="headerlink" title="Implicit Global Variable"></a>Implicit Global Variable</h1><p>If declare a variable without <code>var</code> keyword, it becomes a global variable.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    i = <span class="hljs-number">0</span>;	<span class="hljs-comment">//implicit global variable</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// var i = 0 is a duplicate declaration</span></span><br><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) &#123;</span><br><span class="line">    foo();</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(i);</span><br><span class="line">&#125;	<span class="hljs-comment">// infinite loop</span></span><br></pre></td></tr></table></figure>
+<p>Global variables are so dangerous!</p>
+
         </div>
         
         
