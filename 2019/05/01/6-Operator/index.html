@@ -16,7 +16,7 @@
 <meta property="og:description" content="Expression and OperatorOperator needs operand as value. And the expression is equivalent with value. So expressions can be located Values ​​can be generated in a variety of ways. The various methods m">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
-<meta property="og:updated_time" content="2019-05-03T10:08:35.124Z">
+<meta property="og:updated_time" content="2019-05-08T10:52:56.450Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="6. Operator">
 <meta name="twitter:description" content="Expression and OperatorOperator needs operand as value. And the expression is equivalent with value. So expressions can be located Values ​​can be generated in a variety of ways. The various methods m">
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    5 minutes read (About 806 words)
+                    11 minutes read (About 1578 words)
                 </span>
                 
                 
@@ -288,6 +288,189 @@
 <li>The prefix increment / decrement operator that located before the operand first increments / decrements the value of the operand, and then performs another operation.</li>
 <li>The postfix increment / decrement operator that located after the operand first performs other operation, and then increments / decrements the value of the operand.</li>
 </ul>
+<h2 id="String-Concatenation-Operator"><a href="#String-Concatenation-Operator" class="headerlink" title="String Concatenation Operator"></a>String Concatenation Operator</h2><p>The <strong>+ operator</strong> acts as a string concatenation operator <strong>if at least one of the operands is a string.</strong></p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'1'</span> + <span class="hljs-number">2</span>); 	<span class="hljs-comment">//12</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> + <span class="hljs-string">'2'</span>); 	<span class="hljs-comment">//12</span></span><br></pre></td></tr></table></figure>
+<p>This is an implicit type coercion by the JavaScript engine, regardless of the developer’s intent.</p>
+<h1 id="Assignment-Operator"><a href="#Assignment-Operator" class="headerlink" title="Assignment Operator"></a>Assignment Operator</h1><p>Assignment Operator assign the operand at right side to the variable at left side. The assignment operator changes the value of a variable by assigning it a value.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Assignment Operator</th>
+<th style="text-align:center">Example</th>
+<th style="text-align:center">Same Expression</th>
+<th style="text-align:center">Side Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">=</td>
+<td style="text-align:center">x = 5</td>
+<td style="text-align:center">x = 5</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td style="text-align:center">+=</td>
+<td style="text-align:center">x += 5</td>
+<td style="text-align:center">x = x + 5</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td style="text-align:center">-=</td>
+<td style="text-align:center">x -= 5</td>
+<td style="text-align:center">x = x - 5</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td style="text-align:center">*=</td>
+<td style="text-align:center">x *= 5</td>
+<td style="text-align:center">x = x * 5</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td style="text-align:center">/=</td>
+<td style="text-align:center">x /= 5</td>
+<td style="text-align:center">x = x / 5</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td style="text-align:center">%=</td>
+<td style="text-align:center">x %= 5</td>
+<td style="text-align:center">x = x % 5</td>
+<td style="text-align:center">O</td>
+</tr>
+</tbody>
+</table>
+<p>An assignment operation is an expression that evaluates to a single value. The assignment expression is evaluated to the assigned value.</p>
+<h1 id="Comparison-Operator"><a href="#Comparison-Operator" class="headerlink" title="Comparison Operator"></a>Comparison Operator</h1><p>Comparison Operator compares the left and right operands, and then returns a Boolean value. Comparison operators are often used in conditional expressions of control statements such as if statements and for statements.</p>
+<h2 id="Loose-Equality-Operator-and-Strict-Equality-Operator"><a href="#Loose-Equality-Operator-and-Strict-Equality-Operator" class="headerlink" title="Loose Equality Operator and  Strict Equality Operator"></a>Loose Equality Operator and  Strict Equality Operator</h2><p>Loose equality operator and  strict equality operator are both returns the Boolean value by comparing whether the left operand and the right operand have the same value. </p>
+<ul>
+<li>Loose equality operator (==) : loose comparison</li>
+<li>Strict equality operator (===) : strict comparison</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Equality Operator</th>
+<th style="text-align:center">Meaning</th>
+<th style="text-align:center">Example</th>
+<th style="text-align:center">Explanation</th>
+<th style="text-align:center">Side Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">==</td>
+<td style="text-align:center">Loose equality comparison</td>
+<td style="text-align:center">x == y</td>
+<td style="text-align:center">values of x and y are equal</td>
+<td style="text-align:center">X</td>
+</tr>
+<tr>
+<td style="text-align:center">===</td>
+<td style="text-align:center">Strict equality comparison</td>
+<td style="text-align:center">x === y</td>
+<td style="text-align:center">both value and type of x and y are equal</td>
+<td style="text-align:center">X</td>
+</tr>
+<tr>
+<td style="text-align:center">!=</td>
+<td style="text-align:center">Loose inequality comparison</td>
+<td style="text-align:center">x != y</td>
+<td style="text-align:center">values of x and y are different</td>
+<td style="text-align:center">X</td>
+</tr>
+<tr>
+<td style="text-align:center">!==</td>
+<td style="text-align:center">Strict inequality comparison</td>
+<td style="text-align:center">x !== y</td>
+<td style="text-align:center">value and type of x and y are different</td>
+<td style="text-align:center">X</td>
+</tr>
+</tbody>
+</table>
+<p>Loose equality operator (==) compares the types by implicit type conversion and then compares them with the same value. Thus, the loose equality operator returns true if the operand of the left and right terms is the same value after the implicit type conversion, even if the type is different.</p>
+<p>Strict equality operator (===) return false if the types of operands are different. But NaN is the only value that does not match itself.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// NaN is the only value that does not match itself.</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-literal">NaN</span> === <span class="hljs-literal">NaN</span>);	<span class="hljs-comment">//false</span></span><br></pre></td></tr></table></figure>
+<p>Use the built-in function <code>isNaN</code> to check if a number is NaN.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">isNaN</span>(<span class="hljs-literal">NaN</span>));	<span class="hljs-comment">//true</span></span><br></pre></td></tr></table></figure>
+<h2 id="Relational-Operators"><a href="#Relational-Operators" class="headerlink" title="Relational Operators"></a>Relational Operators</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Relational Operator</th>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">Example</th>
+<th style="text-align:center">Side Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&gt;</td>
+<td style="text-align:center">Greater than operator</td>
+<td style="text-align:center">x &gt; y</td>
+<td style="text-align:center">X</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;</td>
+<td style="text-align:center">Less than operator</td>
+<td style="text-align:center">x &lt; y</td>
+<td style="text-align:center">X</td>
+</tr>
+<tr>
+<td style="text-align:center">>=</td>
+<td style="text-align:center">Greater than or equal operator</td>
+<td style="text-align:center">x &gt;= y</td>
+<td style="text-align:center">X</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;=</td>
+<td style="text-align:center">Less than or equal operator</td>
+<td style="text-align:center">x &lt;= y</td>
+<td style="text-align:center">X</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Conditional-Ternary-Operator"><a href="#Conditional-Ternary-Operator" class="headerlink" title="Conditional Ternary Operator"></a>Conditional Ternary Operator</h1><p>The ternary operator determines the value to return based on the evaluation of the conditional expression. It is the only ternary operator in JavaScript and has no side effects.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Conditional expression ? return value when the conditional expression is true : return value when the conditional expression is false</span><br></pre></td></tr></table></figure>
+<p>If the evaluation result of the conditional expression is not a Boolean value, it is implicitly typed as a Boolean value.</p>
+<p>Conditional ternary operator expressions are expressions that can be evaluated as values. Therefore, the conditional ternary operator expression can be part of another expression and is very useful.</p>
+<h1 id="Logical-Operator"><a href="#Logical-Operator" class="headerlink" title="Logical Operator"></a>Logical Operator</h1><ul>
+<li><p>OR ||</p>
+</li>
+<li><ul>
+<li>Return true if only one operand is true</li>
+</ul>
+</li>
+<li><p>AND &amp;&amp;</p>
+</li>
+<li><ul>
+<li>Return false if any operand is false</li>
+</ul>
+</li>
+<li><p>NOT !</p>
+</li>
+<li><ul>
+<li>Return true if operand is false, Return false if operand is true</li>
+</ul>
+</li>
+<li><p>The logical OR operator and logical AND operator do not return only the boolean result of the operation. It returns one of the operands.</p>
+</li>
+<li><p>But the NOT operator must return a boolean.</p>
+</li>
+</ul>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Cat'</span> &amp;&amp; <span class="hljs-string">'Dog'</span>); 	<span class="hljs-comment">// 'Dog'</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Cat'</span> || <span class="hljs-string">'Dog'</span>);	<span class="hljs-comment">// 'Cat'</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(!<span class="hljs-string">'Cat'</span>); 	<span class="hljs-comment">//false</span></span><br></pre></td></tr></table></figure>
+<h1 id="Comma-Operator"><a href="#Comma-Operator" class="headerlink" title="Comma Operator"></a>Comma Operator</h1><p>Comma(,) operator evaluate from the left operand in turn, return the result of the last operand and return the result.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> x, y, z;</span><br><span class="line">x = <span class="hljs-number">1</span>, y = <span class="hljs-number">2</span>, z = <span class="hljs-number">3</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="Group-Operator"><a href="#Group-Operator" class="headerlink" title="Group Operator"></a>Group Operator</h1><p>Group operator <code>()</code>  evaluates the expression that is the operand first. Therefore, group operators can be used to control the priority of operators.</p>
+<h1 id="typeof-Operator"><a href="#typeof-Operator" class="headerlink" title="typeof Operator"></a>typeof Operator</h1><p>The typeof operator returns the string as the data type of the operand after itself. The string returned by the typeof operator does not match the 7 data types.</p>
+<p>The typeof operator returns one of the 7 strings “string”, “number”, “boolean”, “undefined”, “symbol”, “object”, or “function” It does not return “null”; it returns “function” for functions.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">typeof</span> <span class="hljs-string">''</span>              <span class="hljs-comment">// "string"</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> <span class="hljs-number">1</span>               <span class="hljs-comment">// "number"</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> <span class="hljs-literal">NaN</span>             <span class="hljs-comment">// "number"</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> <span class="hljs-literal">true</span>            <span class="hljs-comment">// "boolean"</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> <span class="hljs-literal">undefined</span>       <span class="hljs-comment">// "undefined"</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> <span class="hljs-built_in">Symbol</span>()        <span class="hljs-comment">// "symbol"</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> <span class="hljs-literal">null</span>            <span class="hljs-comment">// "object"</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> []              <span class="hljs-comment">// "object"</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> &#123;&#125;              <span class="hljs-comment">// "object"</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()      <span class="hljs-comment">// "object"</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> /test/gi        <span class="hljs-comment">// "object"</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;&#125;  <span class="hljs-comment">// "function"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Since typeof null is an object, when checking null, use === operator.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> foo = <span class="hljs-literal">null</span>;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> foo === <span class="hljs-literal">null</span>); <span class="hljs-comment">// false</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(foo === <span class="hljs-literal">null</span>);        <span class="hljs-comment">// true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>If an identifier not declared by the typeof operator is computed, it returns “undefined”.</p>
+</li>
+</ul>
 
         </div>
         
@@ -376,7 +559,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        83
+                        86
                     </p>
                 </div>
             </div>
@@ -489,7 +672,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 12px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Algorithm/" style="font-size: 18px;">Algorithm</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/Encapsulation/" style="font-size: 12px;">Encapsulation</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 16px;">HTML, CSS</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 16px;">JavaScript</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OOP/" style="font-size: 14px;">OOP</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Python/" style="font-size: 16px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 12px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a>
+        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Algorithm/" style="font-size: 18.33px;">Algorithm</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a>
     </div>
 </div>
 
@@ -577,7 +760,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">9</span>
+                <span class="level-item tag">12</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -729,7 +912,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">13</span>
                 </span>
             </a>
         </li>
@@ -898,7 +1081,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">5</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
@@ -1166,7 +1349,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">9</span>
+                <span class="level-item tag">12</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1318,7 +1501,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">13</span>
                 </span>
             </a>
         </li>
@@ -1487,7 +1670,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">5</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 

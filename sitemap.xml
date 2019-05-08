@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sub2n.github.io/2019/05/05/9-Object-Literal/</loc>
+    
+    <lastmod>2019-05-08T12:16:17.181Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/05/04/8-Type-Coercion-and-Short-Circuit-Evaluation/</loc>
+    
+    <lastmod>2019-05-08T11:40:52.698Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/05/03/7-Control-Flow-Statement/</loc>
+    
+    <lastmod>2019-05-08T11:15:17.663Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/05/01/6-Operator/</loc>
+    
+    <lastmod>2019-05-08T10:52:56.450Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/05/07/CodeWars-6kyu-Consecutive-strings/</loc>
+    
+    <lastmod>2019-05-08T10:07:35.182Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sub2n.github.io/2019/05/08/11-Function/</loc>
     
     <lastmod>2019-05-08T09:03:15.802Z</lastmod>
@@ -23,23 +58,9 @@
   </url>
   
   <url>
-    <loc>https://sub2n.github.io/2019/05/07/CodeWars-6kyu-Consecutive-strings/</loc>
-    
-    <lastmod>2019-05-08T00:46:40.377Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://sub2n.github.io/2019/05/07/190503-TIL/</loc>
     
     <lastmod>2019-05-07T11:21:52.650Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sub2n.github.io/2019/05/01/6-Operator/</loc>
-    
-    <lastmod>2019-05-03T10:08:35.124Z</lastmod>
     
   </url>
   
