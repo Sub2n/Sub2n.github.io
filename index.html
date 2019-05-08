@@ -151,6 +151,56 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/05/08/12-Scope/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="12. Scope">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-08T06:23:34.000Z">2019-05-08</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a few seconds read (About 0 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/08/12-Scope/">12. Scope</a>
+            
+        </h1>
+        <div class="content">
+            
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/05/08/11-Function/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="11. Function">
         </a>
@@ -170,7 +220,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    10 minutes read (About 1485 words)
+                    11 minutes read (About 1594 words)
                 </span>
                 
                 
@@ -193,7 +243,12 @@
 </ul>
 <p>And function has a name as identifier. </p>
 <p>A function is created by a <strong>function definition</strong>. You must call the function to execute the generated function. This is called a <strong>function call</strong>.</p>
-<h1 id="Function-Literal"><a href="#Function-Literal" class="headerlink" title="Function Literal"></a>Function Literal</h1><p>Just as objects are created as object literals, functions can also be created as function literals. Function literal consists of function keyword, function name, list of parameters and function body.</p>
+<h1 id="Why-use-a-function"><a href="#Why-use-a-function" class="headerlink" title="Why use a function?"></a>Why use a function?</h1><ul>
+<li>To <strong>reuse</strong> the same code repeated in many parts.</li>
+<li>To remove redundant code to improve <strong>maintenance</strong> efficiency.</li>
+<li>To improve the <strong>readability</strong> of your code using function names that specify functions.</li>
+</ul>
+<h1 id="Function-Literal"><a href="#Function-Literal" class="headerlink" title="Function Literal"></a>Function Literal</h1><p>Just as objects are created as object literals, functions can also be created as function literals. Function literal consists of function keyword, function name, list of parameters and function body. A <strong>function literal is evaluated to create a function object</strong>.</p>
 <ul>
 <li>Function name<ul>
 <li>Since the function name is an identifier, it must conform to the identifier naming rules.</li>
@@ -214,7 +269,7 @@
 </li>
 </ul>
 <p>A function literal is evaluated to produce a value, which is an object. In other words, <strong>the function of JavaScript is an object.</strong></p>
-<p>Unlike regular objects, functions can be called and have unique properties.</p>
+<p>Unlike regular objects, functions can be called and have unique properties. All function objects have <code>[[Call]]</code>.</p>
 <h1 id="Definition-of-Function"><a href="#Definition-of-Function" class="headerlink" title="Definition of Function"></a>Definition of Function</h1><p>There are 4 ways to define a function.</p>
 <ul>
 <li><p>Function Declaration / Function Statement</p>
@@ -237,12 +292,18 @@
 </li>
 </ul>
 <p>Each method defines a function, but there is an important difference.</p>
-<h2 id="Function-Declaration"><a href="#Function-Declaration" class="headerlink" title="Function Declaration"></a>Function Declaration</h2><p>The function declaration has the same format as the function literal, but <strong>the function name can not be omitted.</strong></p>
+<h2 id="Function-Declaration"><a href="#Function-Declaration" class="headerlink" title="Function Declaration"></a>Function Declaration</h2><p>The function declaration has the same format as the function literal, but <strong>the function name can not be omitted.</strong> This is because the JavaScript engine needs to create variables with function names.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Function Declaration</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//Function Call</span></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>); <span class="hljs-comment">//5</span></span><br></pre></td></tr></table></figure>
 <p>The function name is an identifier that can be referenced only within the function body.</p>
 <p>However, when you call a function outside a function, you use the function name.</p>
-<p>When a function declaration is executed to create a function object, a variable is needed to assign the function object. This is because the function object can not be stored in memory unless it is allocated anywhere. Therefore, the JavaScript engine implicitly declares an identifier of the same name as the function name and assigns the generated function object.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// This is the pseudo code when the above function add statement is executed.</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// var add is an identifier created by the JavaScript engine with the same name as the function name implicitly. </span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
+<p>When a function declaration is executed to create a function object, a variable is needed to assign the function object. This is because the function object can not be stored in memory unless it is allocated anywhere. </p>
+<p>Therefore, the JavaScript engine</p>
+<ol>
+<li>Implicitly declares an identifier of the same name as the function name</li>
+<li>Assigns the created function object to the identifier.</li>
+</ol>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// This is the pseudo code when the above function add statement is executed.</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// variable add is an identifier created by the JavaScript engine with the same name as the function name implicitly. </span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
+<p>Function name can only be referenced within a function, and implicitly created <strong>variable</strong> name can be referenced <strong>in the scope where the function is defined</strong>.</p>
 <p>This pseudo code is the following function expression. That is, the JavaScript engine converts function declarations into function expressions to create function objects.</p>
 <h2 id="Function-Expression"><a href="#Function-Expression" class="headerlink" title="Function Expression"></a>Function Expression</h2><h3 id="First-class-object"><a href="#First-class-object" class="headerlink" title="First-class object"></a>First-class object</h3><p>An object that can be assigned to a variable, such as a value, which can be the value of a property or an element of an array.</p>
 <p>Function in JavaScript is a first-class object. It means that a function can be freely used as a value. </p>
@@ -250,16 +311,24 @@
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Function Expression</span></span><br><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
 <p>Unlike function declarations, function literals can omit function names. It is common to use anonymous functions in function expressions.</p>
 <p>Since a function name is an identifier that can be referenced only by a function body, even if a named function is used, the function must be called with the variable name to which the function object is assigned.</p>
-<h2 id="Function-Creation-time-and-Function-Hoisting"><a href="#Function-Creation-time-and-Function-Hoisting" class="headerlink" title="Function Creation time and Function Hoisting"></a>Function Creation time and Function Hoisting</h2><p>Function declarations and function expressions seem to behave similarly, because the JavaScript engine implicitly declares the variable as a function name in the function declaration statement and allocates the generated object.<br>However, function declaration is non-expression statement, and function expression is an expression statement. Therefore, there is an important difference.</p>
+<h2 id="Function-Creation-time-and-Function-Hoisting"><a href="#Function-Creation-time-and-Function-Hoisting" class="headerlink" title="Function Creation time and Function Hoisting"></a>Function Creation time and Function Hoisting</h2><p>Function declarations and function expressions seem to behave similarly, because the JavaScript engine implicitly declares the variable as a function name in the function declaration statement and allocates the created object.<br>However, function declaration is non-expression statement, and function expression is an expression statement. Therefore, there is an important difference.</p>
 <p>The point at which the function is created is when the JavaScript engine evaluates the function declaration to create the function object.</p>
-<p><strong>Function declaration statements are executed before runtime</strong> because they are declarations themselves. However, f<strong>unction expressions are executed at run-time</strong> because they are assignment statements that assign function literals to variables. That is, the function created by the function declaration statement and the function generated by the function expression are created at different times.</p>
+<ul>
+<li><p><strong>Function declaration statements are executed before runtime</strong> because they are declarations themselves. </p>
+</li>
+<li><p>However, <strong>function expressions are executed at run-time</strong> because they are assignment statements that assign function literals to variables. </p>
+</li>
+</ul>
+<p>That is, the function created by the function declaration statement and the function generated by the function expression are created at different times.</p>
 <p>Functions created with function declarations are executed and hoisted before runtime, but functions created with function expressions are not hoisted.</p>
+<p>Unlike variable hoisting, in the case of function hoisting, a function object is referenced instead of undefined.</p>
 <h2 id="Function-Constructor"><a href="#Function-Constructor" class="headerlink" title="Function Constructor"></a>Function Constructor</h2><blockquote>
 <h2 id="Constructor-Function"><a href="#Constructor-Function" class="headerlink" title="Constructor Function"></a>Constructor Function</h2><p>A constructor function is a function that creates an object.</p>
 </blockquote>
 <p>The <code>function</code> constructor function, which is a built-in function provided by JavaScript, receives a parameter list and a function body as a string. It is called with the <code>new</code> operator and returns the created function object.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Function Constructor</span></span><br><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>(<span class="hljs-string">'x'</span>, <span class="hljs-string">'y'</span>, <span class="hljs-string">'return x + y'</span>);</span><br><span class="line"></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
 <p>However, creating a function as a function constructor is not common. These functions behave differently from function declarations or function expressions.</p>
+<p>Do not use it!</p>
 <h2 id="Arrow-Function"><a href="#Arrow-Function" class="headerlink" title="Arrow Function"></a>Arrow Function</h2><p>An arrow function introduced in ES6 can make a function simply without a <code>function</code> keyword. </p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Arrow Function</span></span><br><span class="line"><span class="hljs-keyword">const</span> add = <span class="hljs-function">(<span class="hljs-params">x, y</span>) =&gt;</span> x + y;</span><br><span class="line"></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
 <p>The arrow function is not available in all situations.</p>
@@ -954,58 +1023,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/30/190430-TIL/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/cherry.png" alt="190430-TIL">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-30T12:46:10.000Z">2019-04-30</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a few seconds read (About 14 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/30/190430-TIL/">190430-TIL</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><p>Algorithm study</p>
-<p>Studied history, variable, data type and operation of JavaScript</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -1074,7 +1091,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        82
+                        83
                     </p>
                 </div>
             </div>
@@ -1094,7 +1111,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        42
+                        43
                     </p>
                 </div>
             </div>
@@ -1187,7 +1204,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 12px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Algorithm/" style="font-size: 18px;">Algorithm</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/Encapsulation/" style="font-size: 12px;">Encapsulation</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 16px;">HTML, CSS</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OOP/" style="font-size: 14px;">OOP</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Python/" style="font-size: 16px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 12px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a>
+        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 12px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Algorithm/" style="font-size: 18px;">Algorithm</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/Encapsulation/" style="font-size: 12px;">Encapsulation</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 16px;">HTML, CSS</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 16px;">JavaScript</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OOP/" style="font-size: 14px;">OOP</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Python/" style="font-size: 16px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 12px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a>
     </div>
 </div>
 
@@ -1275,7 +1292,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">8</span>
+                <span class="level-item tag">9</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1313,6 +1330,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/08/12-Scope/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="12. Scope">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-08T06:23:34.000Z">2019-05-08</time></div>
+                    <a href="/2019/05/08/12-Scope/" class="has-link-black-ter is-size-6">12. Scope</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1390,25 +1426,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/02/190502-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/purple.png" alt="190502-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-02T12:45:17.000Z">2019-05-02</time></div>
-                    <a href="/2019/05/02/190502-TIL/" class="has-link-black-ter is-size-6">190502-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1427,7 +1444,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">9</span>
+                    <span class="level-item tag">10</span>
                 </span>
             </a>
         </li>
@@ -1596,7 +1613,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
@@ -1652,6 +1669,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Recursion/">
                         <span class="tag">Recursion</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Scope/">
+                        <span class="tag">Scope</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1857,7 +1881,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">8</span>
+                <span class="level-item tag">9</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1895,6 +1919,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/08/12-Scope/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="12. Scope">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-08T06:23:34.000Z">2019-05-08</time></div>
+                    <a href="/2019/05/08/12-Scope/" class="has-link-black-ter is-size-6">12. Scope</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1972,25 +2015,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/02/190502-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/purple.png" alt="190502-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-02T12:45:17.000Z">2019-05-02</time></div>
-                    <a href="/2019/05/02/190502-TIL/" class="has-link-black-ter is-size-6">190502-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2009,7 +2033,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">9</span>
+                    <span class="level-item tag">10</span>
                 </span>
             </a>
         </li>
@@ -2178,7 +2202,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
@@ -2234,6 +2258,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Recursion/">
                         <span class="tag">Recursion</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Scope/">
+                        <span class="tag">Scope</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
