@@ -347,7 +347,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6 minutes read (About 973 words)
+                    7 minutes read (About 1118 words)
                 </span>
                 
                 
@@ -373,12 +373,12 @@
 <td style="text-align:center">mutable value</td>
 </tr>
 <tr>
-<td style="text-align:center">stored as real value</td>
-<td style="text-align:center">stored as reference value</td>
+<td style="text-align:center">stored as value itself</td>
+<td style="text-align:center">stored as reference value (memory address of an object)</td>
 </tr>
 <tr>
-<td style="text-align:center">pass by value</td>
-<td style="text-align:center">pass by reference</td>
+<td style="text-align:center">Pass by value</td>
+<td style="text-align:center">Pass by reference</td>
 </tr>
 </tbody>
 </table>
@@ -390,6 +390,14 @@
 <li>If the primitive value is a mutable value, the memory address referenced by the variable will not change when reassigning the variable.</li>
 <li>immutability : Since the primitive value is an immutable value, when the value of the variable is changed, the new value is stored in the new memory space, and the memory space is referred to. This property is called the <strong>immutability</strong> of the primitive value.</li>
 </ul>
+<blockquote>
+<h2 id="Immutable-constant"><a href="#Immutable-constant" class="headerlink" title="Immutable? constant?"></a>Immutable? constant?</h2><p>In programming language, variable is a mechanism that store and refer data values. So, constant is also variable but can not assign more than once.</p>
+<p>Variables, and constants are memory spaces that can hold values, and the concept of mutable, immutable is about whether the value can change.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-comment">//Constants declared with the const keyword are not reassigned.</span></span><br><span class="line">&gt; <span class="hljs-keyword">const</span> obj = &#123;&#125;;</span><br><span class="line">&gt; </span><br><span class="line">&gt; obj.a = <span class="hljs-number">1</span>;</span><br><span class="line">&gt; <span class="hljs-built_in">console</span>.log(obj); <span class="hljs-comment">// &#123;a: 1&#125;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>Objects declared as <code>const</code> can be changed. This is because you are not reassigning a new object to <code>const</code>. That is, the constant is only a variable for which reassignment is prohibited.</p>
+</blockquote>
 <h2 id="String-and-Immutability"><a href="#String-and-Immutability" class="headerlink" title="String and Immutability"></a>String and Immutability</h2><ul>
 <li><p>String is immutable because it’s also primitive type of JavaScript.</p>
 </li>
@@ -398,23 +406,23 @@
 <h3 id="Array-like-Object"><a href="#Array-like-Object" class="headerlink" title="Array-like Object"></a>Array-like Object</h3><p>An array-like object is an object that is not an array, but can be treated like an array. A string can access each character through an index like an array, or it can be traversed by a for statement. This means that the string can be an object with a length property.</p>
 </blockquote>
 </li>
-</ul>
-<ul>
-<li>You can not change <code>str[0]</code>, but error doesn’t occur.</li>
+<li><p>You can not change <code>str[0]</code>, but error doesn’t occur. Just ignore it.</p>
+</li>
 </ul>
 <p><img src="https://user-images.githubusercontent.com/48080762/57296797-dba1c580-7108-11e9-83bd-86e735652c18.png" alt="String is immutable value"></p>
 <ul>
 <li>But, it is of course possible to reassign the new string. Because it is not a change to the existing string but a new assignment of the new string.</li>
+<li>The string gives the confidence that the value does not change without reassignment.</li>
 </ul>
 <h2 id="Pass-by-value"><a href="#Pass-by-value" class="headerlink" title="Pass by value"></a>Pass by value</h2><p>What happens when a variable is assigned to a variable? </p>
 <p>If assigned variable is primitive type, the assigned variable value is copied and passed. It’s <strong>pass by value</strong>.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> score = <span class="hljs-number">80</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> mine = score;</span><br></pre></td></tr></table></figure>
-<p>Variable <code>score</code> and <code>mine</code> have a value 80, but it’s a separate value in memory. The value 80 in <code>mine</code> is not same as 80 in <code>score</code>.</p>
+<p>Variable <code>score</code> and <code>mine</code> have a value 80, but it’s a separate value in memory. The value 80 in <code>mine</code> is not same as 80 in <code>score</code>. This is because the memory space of the variables <code>mine</code> and <code>score</code> is different and each contains a value.</p>
 <p><img src="https://user-images.githubusercontent.com/48080762/57297341-57e8d880-710a-11e9-9007-36ec715ebcf7.png" alt="Pass by Value"></p>
 <p>Thus, reassigning another value to the variable <code>score</code> does not affect the value of the variable <code>mine</code>.</p>
 <h1 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h1><ul>
 <li>An object is a collection of properties consisting of key and value. A property whose value is a function is called a method.</li>
-<li>Since the number of properties is not fixed and the object can be added and deleted dynamically, the size of the memory space can not be preset in the dictionary like the primitive value.</li>
+<li>Since the number of properties is not fixed and the object can be added and deleted dynamically, the size of the memory space can not be preset in advance like the primitive value.</li>
 </ul>
 <blockquote>
 <h2 id="How-JavaScript-manages-objects"><a href="#How-JavaScript-manages-objects" class="headerlink" title="How JavaScript manages objects"></a>How JavaScript manages objects</h2><p>Unlike with an class-based object-oriented language, JavaScript can create an object without class and dynamically add a property and method even after an object have been created.</p>
@@ -423,23 +431,23 @@
 </blockquote>
 <h2 id="Mutable-Value"><a href="#Mutable-Value" class="headerlink" title="Mutable Value"></a>Mutable Value</h2><p>The value of an object (reference) type, that is, an object is a mutable value.</p>
 <p>A variable that has been assigned a primitive value has its primitive value as its value. </p>
-<p>But, the variable that the object is assigned has a <strong>reference value</strong> as a value. The reference value is <strong>the address of the memory space</strong> in which the generated object is stored, itself.</p>
+<p>But, the variable that the object is assigned has a <strong>reference value</strong> as a value. The reference value is <strong>the address of the memory space</strong> in which the created object is stored, itself.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> student = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p><img src="https://user-images.githubusercontent.com/48080762/57298300-d181c600-710c-11e9-96ba-119ba0ffc866.png" alt="Assignment of an object"></p>
 <ul>
-<li><p><code>student</code> variable has a memory address of the memory space where a created object is stored. This is a <strong>reference value</strong>. A variable can access the object by this reference value.</p>
+<li><p><code>student</code> variable has a <strong>address of the memory space</strong> where a created object is stored. This is a <strong>reference value</strong>. A variable can access the object by this reference value.</p>
 </li>
 <li><p>When evaluating a variable that assigns an object, it returns the object by accessing the actual object through the reference value rather than returning the reference value stored in memory.</p>
 </li>
-<li><p>An object pointed to by a variable can be added dynamically after it has been created, updated, or deleted. In other words, an object is a <strong>mutable value</strong>.</p>
+<li><p>An object pointed by a variable can be added dynamically after it has been created, updated, or deleted. In other words, an object is a <strong>mutable value</strong>.</p>
 </li>
 <li><p>Objects can be very large and change fluidly, so instead of reallocating each time as a primitive value and changing the memory address, it changes the object itself to be referenced directly.</p>
 </li>
-<li><p>In other words, copying an object as a primitive value (a deep copy) is expensive and inefficient, so it copies the reference value.</p>
+<li><p>In other words, copying an object as a primitive value (a deep copy) is <strong>expensive and inefficient</strong>, so it copies the reference value.</p>
 <blockquote>
 <h3 id="Shallow-copy-and-Deep-copy"><a href="#Shallow-copy-and-Deep-copy" class="headerlink" title="Shallow copy and Deep copy"></a>Shallow copy and Deep copy</h3><ul>
 <li>Shallow copy : copying reference values</li>
-<li>Deep copy : copying and recreating the object itself as a primitive value</li>
+<li>Deep copy : copying and recreating the object itself as a primitive value. The larger the object, the higher the cost.</li>
 </ul>
 </blockquote>
 </li>
