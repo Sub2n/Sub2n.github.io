@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sub2n.github.io/2019/05/09/15-Property-Definition/</loc>
+    
+    <lastmod>2019-05-09T06:11:34.117Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/05/09/13-Problems-with-global-variables/</loc>
+    
+    <lastmod>2019-05-09T06:10:32.596Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/05/09/14-let-const-and-a-Block-level-Scope/</loc>
+    
+    <lastmod>2019-05-09T06:09:54.250Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sub2n.github.io/2019/05/08/190508-TIL/</loc>
     
     <lastmod>2019-05-08T12:23:59.545Z</lastmod>
