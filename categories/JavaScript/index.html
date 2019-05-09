@@ -181,7 +181,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 0 words)
+                    9 minutes read (About 1298 words)
                 </span>
                 
                 
@@ -194,7 +194,52 @@
             
         </h1>
         <div class="content">
-            
+            <h1 id="1-What-is-Property-Definition"><a href="#1-What-is-Property-Definition" class="headerlink" title="1. What is Property Definition?"></a>1. What is Property Definition?</h1><p>프로퍼티 정의란 프로퍼티 어트리뷰트의 값을 정의하여 프로퍼티의 상태를 관리하는 것. 예를 들면 프로퍼티 값을 갱신 가능하도록 할 것인지, 프로퍼티를 열거 가능하도록 할 것인지, 재정의 가능하도록 할 것인지를 정의할 수 있다.</p>
+<p>객체 리터럴이 평가되거나 프로퍼티가 동적 생성될 때 프로퍼티가 생성된다. 자바스크립트 엔진은 프로퍼티를 생성할 때 프로퍼티의 상태를 나타내는 프로퍼티 어트리뷰트를 기본값으로 자동 정의한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> obj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//Dynamic creation of properties. The JavaScript engine creates the property and defines the property's attributes as the default.</span></span><br><span class="line">obj.prop = <span class="hljs-number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> descriptor = <span class="hljs-built_in">Object</span>.getOwnPropertyDescriptor(obj, <span class="hljs-string">'prop'</span>);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(descriptor);</span><br><span class="line"><span class="hljs-comment">// &#123;value: 10, writable: true, enumerable: true, configurable: true&#125;</span></span><br></pre></td></tr></table></figure>
+<p>프로퍼티 동적 생성은 프로퍼티가 존재하지 않을 때 프로퍼티를 생성하여 추가하는 것이다.</p>
+<p>프로퍼티 정의는 프로퍼티 어트리뷰트를 정의하는 것을 말한다. 프로퍼티 어트리뷰트는 프로퍼티의 상태를 나타낸다.</p>
+<p>프로퍼티의 상태란 프로퍼티의,</p>
+<ul>
+<li>value</li>
+<li>writable</li>
+<li>enumerable</li>
+<li>configurable</li>
+</ul>
+<p>프로퍼티 어트리뷰트는 <code>Object.getOwnPropertyDescriptor</code> 메소드를 사용해 참조할 수 있다. 이 메소드는 프로퍼티 어트리뷰트를 객체로 표현한 PropertyDescriptor 객체를 반환한다. 존재하지 않는 프로퍼티나, 상속받은 프로퍼티에 대한 PropertyDescriptor를 요구하면 undefined가 반환된다.</p>
+<p>프로퍼티가 동적 생성될 때 자바스크립트 엔진은 프로퍼티 어트리뷰트를 기본값으로 정의한다. 이미 정의된 프로퍼티 어트리뷰트를 재정의할 수도 있다.</p>
+<h1 id="2-Internal-Slot-Method"><a href="#2-Internal-Slot-Method" class="headerlink" title="2. Internal Slot / Method"></a>2. Internal Slot / Method</h1><p>Internal slot and internal method는 ECMAScript 스펙에서 요구하는 객체 관련 내부 상태와 내부 동작을 정의한 것이다. ECMAScript 스펙에서 <code>[[...]]</code>로 감싼 이름들이 내부 슬롯과 내부 메소드이다.</p>
+<p>Internal slot과 method는 자바스크립트 엔진의 내부 구현 사양을 정의한 것이므로 외부에 노출되지 않는다. </p>
+<p>객체의 프로퍼티 키로 프로퍼티 값에 접근할 때 <code>[[Get]]</code> 내부 메소드가 내부적으로 호출된다. <code>[[Get]]</code> 내부 메소드는 다음과 같이 동작한다.</p>
+<ol>
+<li>프로퍼티 키가 유효한지 확인한다. (문자열 또는 심볼)</li>
+<li>프로토타입 체인에서 프로퍼티를 검색한다.</li>
+</ol>
+<blockquote>
+<h3 id="Prototype-and-Prototype-Chain"><a href="#Prototype-and-Prototype-Chain" class="headerlink" title="Prototype and Prototype Chain"></a>Prototype and Prototype Chain</h3><p>프로토타입은 어떤 객체의 parent 객체 역할을 하는 객체이다. 프로토타입은 Child 객체에게 자신의 프로퍼티와 메소드를 상속한다. Prototype객체의 프로퍼티나 메소드를 상속받은 child 객체는 parent 객체의 프로퍼티나 메소드를 자유롭게 사용한다.</p>
+<p>프로토타입 체인은 프로토타입 객체가 연결되어있는 상속 구조이다. 어떤 객체의 프로퍼티나 메소드에 접근하려고 할 때, 해당 객체에 접근하려는 프로퍼티나 메소드가 없다면 프로토타입 체인을 따라 상위(부모) 객체의 프로퍼티나 메소드를 차례대로 검색한다.</p>
+</blockquote>
+<ol start="3">
+<li>검색된 프로퍼티가 Data property라면 프로퍼티 값(데이터 프로퍼티의 프로퍼티 어트리뷰트 [[Value]])의 값을 그대로 반환한다.</li>
+<li>만약 검색된 프로퍼티가 Accessor property라면 접근자 프로퍼티의 프로퍼티 어트리뷰트 [[Get]]의 값, 즉 getter 함수를 호출하고 그 결과를 반환한다.</li>
+</ol>
+<p>함수 객체에는 [[Call]]이라는 고유한 internal method가 있다. [[Call]]은 함수를 호출하면 내부적으로 호출된다. 이는 일반 객체에는 없는 함수 객체만의 고유한 internal method이다.</p>
+<h1 id="3-Accessor-Property"><a href="#3-Accessor-Property" class="headerlink" title="3. Accessor Property"></a>3. Accessor Property</h1><p>프로퍼티는 Data property와 Accessor property로 구분할 수 있다.</p>
+<ul>
+<li>Data property<ul>
+<li>키와 값으로 구성된 일반 프로퍼티. 지금까지 살펴본 모든 프로퍼티는 데이터 프로퍼티이다.</li>
+</ul>
+</li>
+<li>Accessor property<ul>
+<li>자체적으로는 값을 갖지 않고 다른 data property의 값을 읽거나 저장할 때 사용자는 Accessor function으로 구성된 프로퍼티</li>
+</ul>
+</li>
+</ul>
+<p>Accessor function은 getter / setter 함수라고도 부른다. </p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> student = &#123;</span><br><span class="line">    <span class="hljs-comment">// Data property</span></span><br><span class="line">    name: <span class="hljs-string">'Park'</span>,</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-comment">// Accessor property</span></span><br><span class="line">    <span class="hljs-keyword">get</span> infoName() &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.name;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="hljs-keyword">set</span> infoName(newName) &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.name = newName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// A reference to a property value through a data property.</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(student);	<span class="hljs-comment">// &#123;name: "Park", age: 25&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Setting Property Values with Accessor Properties</span></span><br><span class="line"><span class="hljs-comment">// If store the value in the accessor property infoName, the setter function is called.</span></span><br><span class="line">student.infoName = <span class="hljs-string">'Kim'</span>;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(student);	<span class="hljs-comment">// &#123;name: "Kim", age: 25&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Getting Property Values with Accessor Properties</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(student.infoName);	<span class="hljs-comment">// Kim</span></span><br></pre></td></tr></table></figure>
+<p>student 객체의 name은 일반적인 데이터 프로퍼티이다.</p>
+<p>get infoName은 getter 함수, set infoName은 setter 함수이고 함수의 이름인 infoName이 바로 접근자 프로퍼티이다. 접근자 프로터티는 값([[Value]] attribute)을 가지지 않고 데이터 프로퍼티의 값을 읽거나(get) 저장(set)할 때 동작한다.</p>
+
         </div>
         
         
@@ -939,7 +984,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        90
+                        92
                     </p>
                 </div>
             </div>
@@ -1076,7 +1121,7 @@
                 <span class="level-item">Algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">15</span>
+                <span class="level-item tag">16</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Algorithm/CodeWars/">
@@ -1084,7 +1129,7 @@
                 <span class="level-item">CodeWars</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">10</span>
+                <span class="level-item tag">11</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Algorithm/LeetCode/">
@@ -1156,7 +1201,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">46</span>
+                <span class="level-item tag">47</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1178,6 +1223,44 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/09/CodeWars-6kyu-Build-a-pile-of-Cubes/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="CodeWars 6kyu. Build a pile of Cubes">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-09T07:19:09.000Z">2019-05-09</time></div>
+                    <a href="/2019/05/09/CodeWars-6kyu-Build-a-pile-of-Cubes/" class="has-link-black-ter is-size-6">CodeWars 6kyu. Build a pile of Cubes</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/CodeWars/">CodeWars</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/09/190509-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/light.png" alt="190509-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-09T07:15:52.000Z">2019-05-09</time></div>
+                    <a href="/2019/05/09/190509-TIL/" class="has-link-black-ter is-size-6">190509-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1236,44 +1319,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/08/190508-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="190508-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-08T12:19:28.000Z">2019-05-08</time></div>
-                    <a href="/2019/05/08/190508-TIL/" class="has-link-black-ter is-size-6">190508-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/08/12-Scope/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="12. Scope">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-08T06:23:34.000Z">2019-05-08</time></div>
-                    <a href="/2019/05/08/12-Scope/" class="has-link-black-ter is-size-6">12. Scope</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1292,7 +1337,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">17</span>
+                    <span class="level-item tag">19</span>
                 </span>
             </a>
         </li>
@@ -1356,7 +1401,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Algorithm/">
                         <span class="tag">Algorithm</span>
-                        <span class="tag is-grey">16</span>
+                        <span class="tag is-grey">17</span>
                     </a>
                 </div>
                 
@@ -1552,7 +1597,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">46</span>
+                        <span class="tag is-grey">47</span>
                     </a>
                 </div>
                 
@@ -1665,7 +1710,7 @@
                 <span class="level-item">Algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">15</span>
+                <span class="level-item tag">16</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Algorithm/CodeWars/">
@@ -1673,7 +1718,7 @@
                 <span class="level-item">CodeWars</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">10</span>
+                <span class="level-item tag">11</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Algorithm/LeetCode/">
@@ -1745,7 +1790,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">46</span>
+                <span class="level-item tag">47</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1767,6 +1812,44 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/09/CodeWars-6kyu-Build-a-pile-of-Cubes/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="CodeWars 6kyu. Build a pile of Cubes">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-09T07:19:09.000Z">2019-05-09</time></div>
+                    <a href="/2019/05/09/CodeWars-6kyu-Build-a-pile-of-Cubes/" class="has-link-black-ter is-size-6">CodeWars 6kyu. Build a pile of Cubes</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/CodeWars/">CodeWars</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/09/190509-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/light.png" alt="190509-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-09T07:15:52.000Z">2019-05-09</time></div>
+                    <a href="/2019/05/09/190509-TIL/" class="has-link-black-ter is-size-6">190509-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1825,44 +1908,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/08/190508-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="190508-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-08T12:19:28.000Z">2019-05-08</time></div>
-                    <a href="/2019/05/08/190508-TIL/" class="has-link-black-ter is-size-6">190508-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/08/12-Scope/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="12. Scope">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-08T06:23:34.000Z">2019-05-08</time></div>
-                    <a href="/2019/05/08/12-Scope/" class="has-link-black-ter is-size-6">12. Scope</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1881,7 +1926,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">17</span>
+                    <span class="level-item tag">19</span>
                 </span>
             </a>
         </li>
@@ -1945,7 +1990,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Algorithm/">
                         <span class="tag">Algorithm</span>
-                        <span class="tag is-grey">16</span>
+                        <span class="tag is-grey">17</span>
                     </a>
                 </div>
                 
@@ -2141,7 +2186,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">46</span>
+                        <span class="tag is-grey">47</span>
                     </a>
                 </div>
                 
