@@ -162,6 +162,105 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/05/10/16-Creating-an-Object-with-a-Constructor-Function/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="16. Creating an Object with a Constructor Function">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-10T06:43:45.000Z">2019-05-10</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    6 minutes read (About 955 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/10/16-Creating-an-Object-with-a-Constructor-Function/">16. Creating an Object with a Constructor Function</a>
+            
+        </h1>
+        <div class="content">
+            <p>객체 리터럴 표기법은 가장 일반적이고 간단한 객체 생성 방법이다. 객체는 객체 리터럴 표기법 외에도 다양한 방법으로 생성할 수 있다.</p>
+<h1 id="1-Object-Constructor-Function"><a href="#1-Object-Constructor-Function" class="headerlink" title="1. Object Constructor Function"></a>1. Object Constructor Function</h1><p>객체 리터럴 표기법은 분명 간단한 방법이지만, 같은 구조를 가진 객체를 <strong>여러 개</strong> 만들어야할 경우가 있다.</p>
+<p>new 연선자와 함께 Object 생성자 함수를 호출하면 빈 객체를 생성하여 반환한다. 생성한 빈 객체에 프로퍼티와 메소드를 추가한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> student = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>();</span><br><span class="line"></span><br><span class="line">student.name = <span class="hljs-string">'Park'</span>;</span><br><span class="line">student.sayHello = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Hi! I am '</span> + <span class="hljs-keyword">this</span>.name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Object 생성자 함수는 함수 <strong>객체</strong>이므로 프로퍼티와 메소드를 갖는다. 앞서 살펴본 <code>Object.getOwnPropertyDescriptor()</code> 또한 Object 생성자 함수의 메소드이다.</p>
+<p>Constructor 함수는 new 연산자와 함께 호출해서 Object(instance)를 생성하는 함수이다. 생성자 함수에 의해 생성된 객체는 instance라고 한다.</p>
+<blockquote>
+<h3 id="Instance"><a href="#Instance" class="headerlink" title="Instance"></a>Instance</h3><p>생성자 함수도 객체이므로 생성자 함수나 클래스가 생성한 객체를 다른 객체와 구분하기 위해 실체라는 의미로 인스턴스라고 한다.</p>
+</blockquote>
+<p>자바스크립트는 Object 생성자 함수 이외에도 String, Number, Boolean, Function, Array, Date, RegExp 등의 built-in(intrinsic) 생성자 함수를 제공한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>(<span class="hljs-string">'str'</span>);	<span class="hljs-comment">//가능하지만 잘 안 씀</span></span><br><span class="line"><span class="hljs-keyword">const</span> strObj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">String</span>(<span class="hljs-string">'str'</span>);</span><br><span class="line"><span class="hljs-keyword">const</span> numObj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Number</span>(<span class="hljs-number">123</span>);</span><br></pre></td></tr></table></figure>
+<p>String, Number 생성자 함수로 형변환도 가능하지만 잘 안 쓴다.</p>
+<blockquote>
+<h3 id="Wrapper-Object"><a href="#Wrapper-Object" class="headerlink" title="Wrapper Object"></a>Wrapper Object</h3><p>원시 값을 객체처럼 쓰면 자바스크립트 엔진이 원시값 타입의 객체로 순간 바꾸고 평가한 후 다시 원시 값으로 되돌린다. 이 때 원시값 타입의 객체를 wrapper object라고 부른다.</p>
+</blockquote>
+<h1 id="2-User-Constructor-Function"><a href="#2-User-Constructor-Function" class="headerlink" title="2. User Constructor Function"></a>2. User Constructor Function</h1><h2 id="2-1-Advantages-of-object-creation-by-constructor-function"><a href="#2-1-Advantages-of-object-creation-by-constructor-function" class="headerlink" title="2.1 Advantages of object creation by constructor function"></a>2.1 Advantages of object creation by constructor function</h2><p>객체 리터럴로 객체를 생성하는 경우 프로퍼티 구조가 동일해도 매번 같은 프로퍼티와 메소드를 작성해야하는 문제가 있다. 동일한 코드 중복 또한 문제가 된다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Constructor Function</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Circle</span>(<span class="hljs-params">radius</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// this indicates the instance that the constructor function will create.</span></span><br><span class="line">    <span class="hljs-keyword">this</span>.radius = radius;</span><br><span class="line">    <span class="hljs-keyword">this</span>.getDiameter = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">      <span class="hljs-keyword">return</span> <span class="hljs-number">2</span> * <span class="hljs-keyword">this</span>.radius;  </span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// instance creation</span></span><br><span class="line"><span class="hljs-keyword">const</span> circle1 = <span class="hljs-keyword">new</span> Circle(<span class="hljs-number">5</span>);</span><br><span class="line"><span class="hljs-keyword">const</span> circle2 = <span class="hljs-keyword">new</span> Circle(<span class="hljs-number">10</span>);</span><br></pre></td></tr></table></figure>
+<p>new 연산자 없이 함수를 호출하면, 즉 일반적인 함수로서 호출하면 this는 전역 객체(window)가 된다.</p>
+<p>생성자 함수가 호출되면 자바스크립트 내부에서 빈 객체  this를 만들고 내부 코드를 실행한 후 <code>this</code>를 return한다. 즉, <code>this</code>는 생성자 함수로 생성하는 instance가 된다.</p>
+<blockquote>
+<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><p><code>this</code>는 객체 자신의 프로퍼티나 메소드를 참조하기 위한 Self-regerencing variable이다. <code>this</code>가 가리키는 객체는 함수 호출 방식에 따라 동적으로 결정된다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Function call</th>
+<th style="text-align:center">Object <code>this</code> points to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">As a general function</td>
+<td style="text-align:center">Global object (window)</td>
+</tr>
+<tr>
+<td style="text-align:center">As a method</td>
+<td style="text-align:center">Object that called a method</td>
+</tr>
+<tr>
+<td style="text-align:center">As a constructor function</td>
+<td style="text-align:center">Instance that a constructor function will create in the future.</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// As a general function</span></span><br><span class="line">foo ();	<span class="hljs-comment">// window</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// As a method</span></span><br><span class="line"><span class="hljs-keyword">const</span> obj = &#123; foo &#125;;	<span class="hljs-comment">// ES6 property shorthand</span></span><br><span class="line">obj.foo();	<span class="hljs-comment">// obj</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// As a constructor function</span></span><br><span class="line"><span class="hljs-keyword">const</span> inst = <span class="hljs-keyword">new</span> foo();	<span class="hljs-comment">// inst</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-3-Internal-method-Call-and-Constructor"><a href="#2-3-Internal-method-Call-and-Constructor" class="headerlink" title="2.3. Internal method [[Call]] and [[Constructor]]"></a>2.3. Internal method [[Call]] and [[Constructor]]</h2><p>함수 객체는 일반 객체와 달리 내부 메소드로 [[Call]]과 [[Constructor]]를 가진다.</p>
+<p>내부 메소드 [[Call]]은 함수가 일반 함수로 호출되었을 때 실행되고, 내부 메소드 [[Constructor]]는 함수가 생성자 함수로 호출되었을 때 실행된다.</p>
+<p>내부 메소드 [[Call]]이 구현되어 있는 객체를 callable, [[Constuctor]]가 구현되어 있는 객체는 constructor, [[Constructor]]가 구현되어 있지 않은 객체는 non-constructor라고 부른다.</p>
+<p>단, arrow function은 constructor function으로 생성할 수 없다. 따라서 모든 함수는 callable이지만 모두 constructor인 것은 아니다.</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/05/09/15-Property-Definition/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="15. Property Definition">
         </a>
@@ -181,7 +280,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    10 minutes read (About 1559 words)
+                    14 minutes read (About 2144 words)
                 </span>
                 
                 
@@ -194,7 +293,7 @@
             
         </h1>
         <div class="content">
-            <h1 id="1-What-is-Property-Definition"><a href="#1-What-is-Property-Definition" class="headerlink" title="1. What is Property Definition?"></a>1. What is Property Definition?</h1><p>프로퍼티 정의란 프로퍼티 어트리뷰트의 값을 정의하여 프로퍼티의 상태를 관리하는 것. 예를 들면 프로퍼티 값을 갱신 가능하도록 할 것인지, 프로퍼티를 열거 가능하도록 할 것인지, 재정의 가능하도록 할 것인지를 정의할 수 있다.</p>
+            <h1 id="1-What-is-Property-Definition"><a href="#1-What-is-Property-Definition" class="headerlink" title="1. What is Property Definition?"></a>1. What is Property Definition?</h1><p>프로퍼티 정의란 프로퍼티 어트리뷰트의 값을 정의하여 프로퍼티의 상태를 관리하는 것이다. 예를 들면 프로퍼티 값을 갱신 가능하도록 할 것인지(writable), 프로퍼티를 열거 가능하도록 할 것인지(enumarable), 재정의 가능하도록 할 것인지(configurable)를 정의할 수 있다.</p>
 <p>객체 리터럴이 평가되거나 프로퍼티가 동적 생성될 때 프로퍼티가 생성된다. 자바스크립트 엔진은 프로퍼티를 생성할 때 프로퍼티의 상태를 나타내는 프로퍼티 어트리뷰트를 기본값으로 자동 정의한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> obj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//Dynamic creation of properties. The JavaScript engine creates the property and defines the property's attributes as the default.</span></span><br><span class="line">obj.prop = <span class="hljs-number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> descriptor = <span class="hljs-built_in">Object</span>.getOwnPropertyDescriptor(obj, <span class="hljs-string">'prop'</span>);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(descriptor);</span><br><span class="line"><span class="hljs-comment">// &#123;value: 10, writable: true, enumerable: true, configurable: true&#125;</span></span><br></pre></td></tr></table></figure>
 <p>프로퍼티 동적 생성은 프로퍼티가 존재하지 않을 때 프로퍼티를 생성하여 추가하는 것이다.</p>
@@ -224,6 +323,9 @@
 <li>만약 검색된 프로퍼티가 Accessor property라면 접근자 프로퍼티의 프로퍼티 어트리뷰트 [[Get]]의 값, 즉 getter 함수를 호출하고 그 결과를 반환한다.</li>
 </ol>
 <p>함수 객체에는 [[Call]]이라는 고유한 internal method가 있다. [[Call]]은 함수를 호출하면 내부적으로 호출된다. 이는 일반 객체에는 없는 함수 객체만의 고유한 internal method이다.</p>
+<blockquote>
+<h3 id="Abstract-Operation"><a href="#Abstract-Operation" class="headerlink" title="Abstract Operation"></a>Abstract Operation</h3><p>ECMAScript 스펙에서 Abstract operation으로 구현 방향을 제시한다. ECMAScript의 내부 동작을 이해하기 위해서 읽으면 좋음..</p>
+</blockquote>
 <h1 id="3-Accessor-Property"><a href="#3-Accessor-Property" class="headerlink" title="3. Accessor Property"></a>3. Accessor Property</h1><p>프로퍼티는 Data property와 Accessor property로 구분할 수 있다.</p>
 <ul>
 <li>Data property<ul>
@@ -249,6 +351,17 @@
 <p>Accessor property와 data property의 구별 방법</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// The __proto__ of a generic object is an accessor property.</span></span><br><span class="line"><span class="hljs-built_in">Object</span>.getOwnPropertyDescriptor(<span class="hljs-built_in">Object</span>.prototype, <span class="hljs-string">'__proto__'</span>);</span><br><span class="line"><span class="hljs-comment">// &#123;get: ƒ, set: ƒ, enumerable: false, configurable: true&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// The prototype of a function object is a data property.</span></span><br><span class="line"><span class="hljs-built_in">Object</span>.getOwnPropertyDescriptor(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;&#125;, <span class="hljs-string">'prototype'</span>);</span><br><span class="line"><span class="hljs-comment">// &#123;value: &#123;…&#125;, writable: true, enumerable: false, configurable: false&#125;</span></span><br></pre></td></tr></table></figure>
 <p>Accessor property와 data property의 property descriptor object의 프로퍼티가 다르다.</p>
+<h1 id="4-Property-Attribute"><a href="#4-Property-Attribute" class="headerlink" title="4. Property Attribute"></a>4. Property Attribute</h1><p>모든 프로퍼티는 자신의 상태와 동작을 정의한 내부 슬롯 / 메소드를 가진다. 이것들을 property attribute라고 한다. Property attribute는 자바스크립트 엔진이 프로퍼티를 생성할 때 default로 자동 정의된다.</p>
+<ul>
+<li><p>Data Property Attributes</p>
+<p>| Property Attribute |                         Description                          | Property of Property Descriptor Object |<br>| :—————-: | :———————————————————-: | :————————————: |<br>|     [[Value]]      | - 프로퍼티 키로 프로퍼티 값에 접근하면 내부 메소드 [[Get]]에 의해 반환되는 값<br>-    프로퍼티 키로 프로퍼티 값을 저장하면 [[Value]]에 값을 저장한다. 이때 프로퍼티가 없으면 프로퍼티를 생성하고 생성된 프로퍼티의 [[Value]]에 값을 저장한다. |                 value                  |<br>|    [[Writable]]    | - 프로퍼티 값의 변경 가능 여부. Boolean<br>- [[Writable]]의 값이 false인 경우, 해당 프로퍼티의 [[Value]]의 값을 변경할 수 없다. |                writable                |<br>|   [[Enumarable]]   | - 프로퍼티의 열거 가능 여부. Boolean<br>- [[Enumerable]]의 값이 false인 경우, 해당 프로퍼티는 for…in 문이나 Object.keys 메소드 등으로 열거할 수 없다. |               enumerable               |<br>|  [[Configurable]]  | - 프로퍼티의 재정의 가능 여부. Boolean<br>- [[Configurable]]의 값이 false인 경우, 해당 프로퍼티의 삭제와 프로퍼티 어트리뷰트 값의 변경이 금지된다.<br> - 단, [[Writable]]이 true인 경우, [[Value]]의 변경과 [[Writable]]을 false로 변경하는 것은 허용된다. |              configurable              |</p>
+</li>
+</ul>
+<ul>
+<li><p>Accessor Property Attributes</p>
+<p>| Property Attribute |                         Description                          | Property of Property Descriptor Object |<br>| :—————-: | :———————————————————-: | :————————————: |<br>|      [[Get]]       | - 접근자 프로퍼티를 통해 데이터 프로퍼티의 값을 읽을 때 호출되는 접근자 함수 <br>- 접근자 프로퍼티 키로 프로퍼티 값에 접근하면 프로퍼티 어트리뷰트 [[Get]]의 값인 getter 함수가 호출되고 그 결과가 프로퍼티 값으로 반환 |                  get                   |<br>|      [[Set]]       | - 접근자 프로퍼티를 통해 데이터 프로퍼티의 값을 저장할 때 호출되는 접근자 함수 <br>- 접근자 프로퍼티 키로 프로퍼티 값을 저장하면 프로퍼티 어트리뷰트 [[Set]]의 값인 setter 함수가 호출되고 그 결과가 프로퍼티 값으로 반환 |                  set                   |<br>|   [[Enumerable]]   |            Same as Data Property’s [[Enumerable]]            |               enumerable               |<br>|  [[Configurable]]  |           Same as Data Property’s [[Configurable]]           |              configurable              |</p>
+</li>
+</ul>
 
         </div>
         
@@ -286,7 +399,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    12 minutes read (About 1826 words)
+                    12 minutes read (About 1836 words)
                 </span>
                 
                 
@@ -299,13 +412,13 @@
             
         </h1>
         <div class="content">
-            <h1 id="Problems-with-Variables-declared-with-the-var-keyword"><a href="#Problems-with-Variables-declared-with-the-var-keyword" class="headerlink" title="Problems with Variables declared with the var keyword"></a>Problems with Variables declared with the <code>var</code> keyword</h1><p>ES5까지 변수를 선언할 수 있는 유일한 키워드는 <code>var</code> 하나였다. <code>var</code> 키워드로 선언된 변수는 다른 언어와는 구별되는 특징을 가진다.</p>
-<h2 id="1-Allow-Duplicate-Variable-Declaration"><a href="#1-Allow-Duplicate-Variable-Declaration" class="headerlink" title="1. Allow Duplicate Variable Declaration"></a>1. Allow Duplicate Variable Declaration</h2><p><code>var</code> 키워드로 선언한 변수는 중복 선언이 가능하다.</p>
+            <h1 id="1-Problems-with-Variables-declared-with-the-var-keyword"><a href="#1-Problems-with-Variables-declared-with-the-var-keyword" class="headerlink" title="1. Problems with Variables declared with the var keyword"></a>1. Problems with Variables declared with the <code>var</code> keyword</h1><p>ES5까지 변수를 선언할 수 있는 유일한 키워드는 <code>var</code> 하나였다. <code>var</code> 키워드로 선언된 변수는 다른 언어와는 구별되는 특징을 가진다.</p>
+<h2 id="1-1-Allow-Duplicate-Variable-Declaration"><a href="#1-1-Allow-Duplicate-Variable-Declaration" class="headerlink" title="1.1. Allow Duplicate Variable Declaration"></a>1.1. Allow Duplicate Variable Declaration</h2><p><code>var</code> 키워드로 선언한 변수는 중복 선언이 가능하다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>;</span><br><span class="line"><span class="hljs-comment">// No Error</span></span><br><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">10</span>;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(x); <span class="hljs-comment">//10</span></span><br></pre></td></tr></table></figure>
 <p>같은 스코프 내에서 변수를 중복 선언하면 나중에 선언된 변수는 선언문이 아닌 할당문처럼 동작한다. 이 때 에러가 발생하지 않기 때문에 중복 선언을 인지하기 힘들다. 이로 인해 의도치 않게 변수값이 변경될 수 있다.</p>
-<h2 id="1-1-Function-level-Scope"><a href="#1-1-Function-level-Scope" class="headerlink" title="1.1. Function-level Scope"></a>1.1. Function-level Scope</h2><p><code>var</code> 키워드로 선언한 변수는 오로지 함수의 코드 블록만을 지역 스코프로 인정한다. 따라서, if문이나 for문 등에서 선언한 <code>var</code> 변수는 모두 전역 변수가 된다.</p>
+<h2 id="1-2-Function-level-Scope"><a href="#1-2-Function-level-Scope" class="headerlink" title="1.2. Function-level Scope"></a>1.2. Function-level Scope</h2><p><code>var</code> 키워드로 선언한 변수는 오로지 함수의 코드 블록만을 지역 스코프로 인정한다. 따라서, if문이나 for문 등에서 선언한 <code>var</code> 변수는 모두 전역 변수가 된다.</p>
 <p>대부분의 프로그래밍 언어는 block-level scope이기 때문에 function-level scope를 이용하는 것은 전역 변수를 남발할 가능성을 높인다.</p>
-<h2 id="1-2-Variable-Hoisting"><a href="#1-2-Variable-Hoisting" class="headerlink" title="1.2. Variable Hoisting"></a>1.2. Variable Hoisting</h2><p><code>var</code>키워드로 선언한 변수는 변수 호이스팅에 의해 변수 선언문이 스코프의 가장 위로 끌어 올려진 것처럼 동작한다. 즉, 선언 이전에 <code>var</code> 변수를 참조해도 에러가 나지 않는다. 이는 프로그램의 흐름을 해치고 가독성을 떨어뜨린다.</p>
+<h2 id="1-3-Variable-Hoisting"><a href="#1-3-Variable-Hoisting" class="headerlink" title="1.3. Variable Hoisting"></a>1.3. Variable Hoisting</h2><p><code>var</code>키워드로 선언한 변수는 변수 호이스팅에 의해 변수 선언문이 스코프의 가장 위로 끌어 올려진 것처럼 동작한다. 즉, 선언 이전에 <code>var</code> 변수를 참조해도 에러가 나지 않는다. 이는 프로그램의 흐름을 해치고 가독성을 떨어뜨린다.</p>
 <h1 id="2-let-keyword"><a href="#2-let-keyword" class="headerlink" title="2. let keyword"></a>2. <code>let</code> keyword</h1><p><code>var</code> 키워드의 단점들을 보완하기 위해 ES6에서 <code>var</code>와 <code>const</code> 키워드가 추가되었다. 이들은 <code>var</code> 키워드와 같이 변수를 선언할 때 사용된다.</p>
 <h2 id="2-1-Ban-Duplicate-Variable-Declaration"><a href="#2-1-Ban-Duplicate-Variable-Declaration" class="headerlink" title="2.1. Ban Duplicate Variable Declaration"></a>2.1. Ban Duplicate Variable Declaration</h2><p><code>let</code> 키워드로 선언한 변수를 중복 선언하면 <code>var</code>와 달리 SyntaxError가 발생한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> x = <span class="hljs-number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">let</span> x = <span class="hljs-number">10</span>;	<span class="hljs-comment">// SyntaxError: Identifier 'x' has already been declared</span></span><br></pre></td></tr></table></figure>
@@ -314,13 +427,13 @@
 <h2 id="2-3-Variable-Hoisting"><a href="#2-3-Variable-Hoisting" class="headerlink" title="2.3. Variable Hoisting"></a>2.3. Variable Hoisting</h2><p><code>let</code> 키워드로 선언한 변수는 변수 호이스팅이 발생하지 않는 것처럼 동작한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(foo);	<span class="hljs-comment">// ReferenceError: foo is not defined</span></span><br><span class="line"><span class="hljs-keyword">let</span> foo;</span><br></pre></td></tr></table></figure>
 <p>그렇다면 <code>let</code> 키워드로 선언한 선언문은는 런타임 이전에 실행되지 않는 것일까? </p>
-<p>일반적으로 <code>var</code> 키워드로 선언한 변수는 런타임 이전에 자바스크립트 엔진에 의해 암묵적으로 declaration phase와 initialization phase가 한 번에 진행된다.</p>
-<p><img src="https://user-images.githubusercontent.com/48080762/57429988-2f2b2500-7269-11e9-8f93-6bca725a6df2.png" alt="var declaration"></p>
+<p>일반적으로 <code>var</code> 키워드로 선언한 변수는 런타임 이전에 자바스크립트 엔진에 의해 암묵적으로 declaration phase와 initialization phase가 <strong>한 번에</strong> 진행된다.</p>
+<p><img src="https://user-images.githubusercontent.com/48080762/57504827-02424500-7331-11e9-960b-75e673a99ae3.png" alt="var declaration"></p>
 <ol>
 <li>Declaration phase : Execution context의 lexical environment에 있는 스코프에 변수 식별자를 등록하여 변수의 존재를 알린다.</li>
 <li>Initialization phase : declaration phase가 끝나는 즉시 값을 저장하기 위한 메모리 공간을 확보하고 암묵적으로 undefined로 변수를 할당해 초기화한다.</li>
 </ol>
-<p><code>let</code> 키워드로 선언한 변수는 “Declaration phase”와 “Initialization Phase”가 분리되어 진행된다.  즉, 런타임 이전에 암묵적으로 declaration phase가 먼저 실행되지만 initialization phase는 런타임에 변수 선언문에 도달했을 때 실행된다.</p>
+<p><code>let</code> 키워드로 선언한 변수는 “Declaration phase”와 “Initialization Phase”가 <strong>분리되어 진행</strong>된다.  즉, 런타임 이전에 암묵적으로 declaration phase가 먼저 실행되지만 <strong>initialization phase는 런타임에 변수 선언문에 도달했을 때 실행</strong>된다.</p>
 <p><img src="https://user-images.githubusercontent.com/48080762/57430144-acef3080-7269-11e9-987d-75b1881b029a.png" alt="let declaration"></p>
 <p>initialization phase가 실행되기 이전에 변수에 접근하려고 하면 reference error가 발생한다. 아직 변수를 위한 메모리 공간이 확보되지 않았기 때문이다. 따라서 스코프의 시작 지점부터 변수 선언문을 만나서 initialization phase가 시작되기 전까지는 변수를 참조할 수 없다.</p>
 <blockquote>
@@ -347,6 +460,7 @@
 <li>ES6 사용시 <code>var</code> 키워드 사용하지 않는다.</li>
 <li>재할당이 필요한 경우에만 <code>let</code> 키워드를 사용하고, 변수의 스코프를 최소화 한다.</li>
 <li>객체와 변경을 하지 않을 원시 값에는 <code>const</code> 키워드를 사용한다.</li>
+<li><code>var</code> 와 <code>let</code>/<code>const</code>를 함께 쓰지 않는다.</li>
 </ul>
 
         </div>
@@ -385,7 +499,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    9 minutes read (About 1328 words)
+                    12 minutes read (About 1758 words)
                 </span>
                 
                 
@@ -416,12 +530,26 @@
 <h1 id="3-How-to-Suppress-Using-Global-Variables"><a href="#3-How-to-Suppress-Using-Global-Variables" class="headerlink" title="3. How to Suppress Using Global Variables"></a>3. How to Suppress Using Global Variables</h1><p>위에서 살펴본 바와 같이 전역 변수의 사용은 위험하다. 반드시 사용해야할 때가 아니라면 지역 변수를 사용해야 한다. </p>
 <h2 id="3-1-Immediately-Invoke-Function-Expression"><a href="#3-1-Immediately-Invoke-Function-Expression" class="headerlink" title="3.1. Immediately Invoke Function Expression"></a>3.1. Immediately Invoke Function Expression</h2><p>즉시 실행 함수는 함수의 정의와 동시에 한 번만 호출되는 함수로, 모든 코드를 즉시 실행 함수로 감싸면 모든 변수는 즉시 실행 함수의 지역 변수가 된다. 함수는 스코프를 만들고, 함수 내에 선언된 변수는 지역 변수가 된다는 것을 이용한 방법이다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> foo = <span class="hljs-number">10</span>;	<span class="hljs-comment">//local variable of IIF</span></span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
+<p>가장 간단하고 일반적인 방식이다.</p>
 <h2 id="3-2-Namespace-Object"><a href="#3-2-Namespace-Object" class="headerlink" title="3.2. Namespace Object"></a>3.2. Namespace Object</h2><p>전역 네임 스페이스 역할을 담당할 객체를 생성하고, 전역 변수처럼 사용하고 싶은 변수를 프로퍼티로 추가한다. 즉, 전역 변수를 네임 스페이스 객체의 프로퍼티로 등록하고 사용하는 방법이다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> GLOBAL = &#123;&#125;;	<span class="hljs-comment">// global namespace object</span></span><br><span class="line">GLOBAL.name = <span class="hljs-string">'Lee'</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="3-3-Module-Pattern"><a href="#3-3-Module-Pattern" class="headerlink" title="3.3. Module Pattern"></a>3.3. Module Pattern</h2><p>캡슐화란 내부의 구현을 외부로부터 감추는 것을 말한다. C++이나 Java의 class는 기본적으로 Access modifier를 제공하여 공개 범위를 한정할 수 있게 한다.</p>
-<p>자바스크립트는 access modifier를 제공하지 않는다. 모듈 패턴은 전역 네임 스페이스의 오염을 막는 기능에 더해서, 한정적이기는 하지만 캡슐화를 구현하기 위해 사용한다.</p>
+<p>현재는 잘 안 쓰는 방식.</p>
+<h2 id="3-3-Module-Pattern"><a href="#3-3-Module-Pattern" class="headerlink" title="3.3. Module Pattern"></a>3.3. Module Pattern</h2><p>모듈 패턴은 클래스를 모방하여 관련이 있는 변수와 함수를 모아서 즉시 실행함수로 감싸 하나의 모듈로 만든다. 모듈 패턴은 자바스크립트의 <strong>클로저</strong>를 기반으로 동작한다.</p>
+<p><strong>캡슐화란 보호하고자 하는 내부 구현을 외부로부터 감추는 것</strong>을 말한다. 캡슐화의 목적은 상태 유지로, 외부에서 객체 내부의 상태를 변경하는 것을 제한한다. C++이나 Java의 class는 기본적으로 Access modifier를 제공하여 공개 범위를 한정할 수 있게 한다.</p>
+<p>자바스크립트는 Access modifier를 제공하지 않는다. 모듈 패턴은 전역 네임 스페이스의 오염을 막는 기능에 더해서, 한정적이기는 하지만 캡슐화를 구현하기 위해 사용한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> Account = (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">  <span class="hljs-comment">// private variable</span></span><br><span class="line">  <span class="hljs-keyword">var</span> balance = <span class="hljs-number">0</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-keyword">return</span> &#123;</span><br><span class="line">      deposit(money) &#123;</span><br><span class="line">        balance += money;</span><br><span class="line">          <span class="hljs-keyword">return</span> balance;</span><br><span class="line">      &#125;,</span><br><span class="line">      withdraw(money) &#123;</span><br><span class="line">          balance -= money;</span><br><span class="line">          <span class="hljs-keyword">return</span> balance;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;());</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(Account.balance);        <span class="hljs-comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(Account.deposit(<span class="hljs-number">3000</span>));		<span class="hljs-comment">//3000</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(Account.withdraw(<span class="hljs-number">1000</span>));	<span class="hljs-comment">//2000</span></span><br></pre></td></tr></table></figure>
 <p>위 코드의 즉시 실행 함수는 외부에 노출할 메소드를 객체에 담아 반환한다. 이 때 반환되는 객체의 프로퍼티는 외부에 노출되는 퍼블릭 멤버이다. 반환되는 객체에 추가되지 않은 변수나 함수는 모두 외부에서 접근할 수 없는 프라이빗 멤버가 된다.</p>
+<blockquote>
+<h4 id="Closure"><a href="#Closure" class="headerlink" title="Closure?"></a>Closure?</h4><p>그런데 즉시 실행 함수는 선언과 동시에 실행되고 종료되는데 deposit()과 withdraw() 메소드가 어떻게 num을 참조할 수 있을까? </p>
+<p>deposit()과 withdraw()는 즉시 실행 함수의 중첩 함수로, 중첩 함수가 외부 함수보다 더 오래 살아남아 있을 경우 이를 <strong>클로저</strong>라고 부른다. </p>
+<p>자바스크립트의 함수 객체는 생성될 때, 프로퍼티 어트리뷰트로 [[Environment]]라는 내부 슬롯을 가진다. 이 곳에 자신이 생성될 때의 외부 스코프(Lexical scope)를 담는다. 이는 함수 객체가 소멸하기 전까지 유지된다. 위의 num같은 변수를 자유변수라고 한다.</p>
+<p>deposit()과 withdraw()는 같은 lexical scope object를 참조하고 있다. 모던 자바스크립트 프로그래밍에서는 클로저의 사용을 적극 권장한다.</p>
+</blockquote>
+<h2 id="3-4-ES6-Module"><a href="#3-4-ES6-Module" class="headerlink" title="3.4 ES6 Module"></a>3.4 ES6 Module</h2><ul>
+<li>import</li>
+<li>export</li>
+</ul>
+<p>ES6가 구체적인 구현 스펙을 제안하지 않아 대부분의 브라우저가 완전히 지원하지는 않는다. 그러나 Webpack 등의 모듈 번들러를 사용해서 ES6 모듈을 사용할 수 있다.</p>
 
         </div>
         
@@ -775,160 +903,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/05/07/10-Comparing-primitive-and-objects/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="10. Comparing primitive and objects">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-07T11:24:49.000Z">2019-05-07</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    7 minutes read (About 1118 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/07/10-Comparing-primitive-and-objects/">10. Comparing primitive and objects</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="Difference-between-primitive-type-and-object-type"><a href="#Difference-between-primitive-type-and-object-type" class="headerlink" title="Difference between primitive type and object type"></a>Difference between primitive type and object type</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">Primitive Type</th>
-<th style="text-align:center">Object Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">immutable value</td>
-<td style="text-align:center">mutable value</td>
-</tr>
-<tr>
-<td style="text-align:center">stored as value itself</td>
-<td style="text-align:center">stored as reference value (memory address of an object)</td>
-</tr>
-<tr>
-<td style="text-align:center">Pass by value</td>
-<td style="text-align:center">Pass by reference</td>
-</tr>
-</tbody>
-</table>
-<h1 id="Primitive-Value"><a href="#Primitive-Value" class="headerlink" title="Primitive Value"></a>Primitive Value</h1><h2 id="Immutable-Value"><a href="#Immutable-Value" class="headerlink" title="Immutable Value"></a>Immutable Value</h2><ul>
-<li>The value of primitive type is an <strong>immutable value</strong>. (Read only, can not change)</li>
-<li>Can not change value doesn’t mean can not reassign value.</li>
-<li>Variable can be reassigned a new value, but the value can not be changed.</li>
-<li>When reassigning a new value to a variable, instead of changing the value stored in the memory space pointed to by the variable, assign a value to the new memory space and make the variable refer to the new memory space. This is because the primitive value is immutable.</li>
-<li>If the primitive value is a mutable value, the memory address referenced by the variable will not change when reassigning the variable.</li>
-<li>immutability : Since the primitive value is an immutable value, when the value of the variable is changed, the new value is stored in the new memory space, and the memory space is referred to. This property is called the <strong>immutability</strong> of the primitive value.</li>
-</ul>
-<blockquote>
-<h2 id="Immutable-constant"><a href="#Immutable-constant" class="headerlink" title="Immutable? constant?"></a>Immutable? constant?</h2><p>In programming language, variable is a mechanism that store and refer data values. So, constant is also variable but can not assign more than once.</p>
-<p>Variables, and constants are memory spaces that can hold values, and the concept of mutable, immutable is about whether the value can change.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-comment">//Constants declared with the const keyword are not reassigned.</span></span><br><span class="line">&gt; <span class="hljs-keyword">const</span> obj = &#123;&#125;;</span><br><span class="line">&gt; </span><br><span class="line">&gt; obj.a = <span class="hljs-number">1</span>;</span><br><span class="line">&gt; <span class="hljs-built_in">console</span>.log(obj); <span class="hljs-comment">// &#123;a: 1&#125;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>Objects declared as <code>const</code> can be changed. This is because you are not reassigning a new object to <code>const</code>. That is, the constant is only a variable for which reassignment is prohibited.</p>
-</blockquote>
-<h2 id="String-and-Immutability"><a href="#String-and-Immutability" class="headerlink" title="String and Immutability"></a>String and Immutability</h2><ul>
-<li><p>String is immutable because it’s also primitive type of JavaScript.</p>
-</li>
-<li><p>String is an array-like object.</p>
-<blockquote>
-<h3 id="Array-like-Object"><a href="#Array-like-Object" class="headerlink" title="Array-like Object"></a>Array-like Object</h3><p>An array-like object is an object that is not an array, but can be treated like an array. A string can access each character through an index like an array, or it can be traversed by a for statement. This means that the string can be an object with a length property.</p>
-</blockquote>
-</li>
-<li><p>You can not change <code>str[0]</code>, but error doesn’t occur. Just ignore it.</p>
-</li>
-</ul>
-<p><img src="https://user-images.githubusercontent.com/48080762/57296797-dba1c580-7108-11e9-83bd-86e735652c18.png" alt="String is immutable value"></p>
-<ul>
-<li>But, it is of course possible to reassign the new string. Because it is not a change to the existing string but a new assignment of the new string.</li>
-<li>The string gives the confidence that the value does not change without reassignment.</li>
-</ul>
-<h2 id="Pass-by-value"><a href="#Pass-by-value" class="headerlink" title="Pass by value"></a>Pass by value</h2><p>What happens when a variable is assigned to a variable? </p>
-<p>If assigned variable is primitive type, the assigned variable value is copied and passed. It’s <strong>pass by value</strong>.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> score = <span class="hljs-number">80</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> mine = score;</span><br></pre></td></tr></table></figure>
-<p>Variable <code>score</code> and <code>mine</code> have a value 80, but it’s a separate value in memory. The value 80 in <code>mine</code> is not same as 80 in <code>score</code>. This is because the memory space of the variables <code>mine</code> and <code>score</code> is different and each contains a value.</p>
-<p><img src="https://user-images.githubusercontent.com/48080762/57297341-57e8d880-710a-11e9-9007-36ec715ebcf7.png" alt="Pass by Value"></p>
-<p>Thus, reassigning another value to the variable <code>score</code> does not affect the value of the variable <code>mine</code>.</p>
-<h1 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h1><ul>
-<li>An object is a collection of properties consisting of key and value. A property whose value is a function is called a method.</li>
-<li>Since the number of properties is not fixed and the object can be added and deleted dynamically, the size of the memory space can not be preset in advance like the primitive value.</li>
-</ul>
-<blockquote>
-<h2 id="How-JavaScript-manages-objects"><a href="#How-JavaScript-manages-objects" class="headerlink" title="How JavaScript manages objects"></a>How JavaScript manages objects</h2><p>Unlike with an class-based object-oriented language, JavaScript can create an object without class and dynamically add a property and method even after an object have been created.</p>
-<p>For this reason, almost modern JavaScript engine uses a function-based dictionary-like structure to score a location of object property in memory.</p>
-<p>This is theoretically more costly and inefficient than object management in class-based object-oriented programming languages such as Java. So V8 JavaScript engine uses hidden class method. A hidden class operates like class in Java.</p>
-</blockquote>
-<h2 id="Mutable-Value"><a href="#Mutable-Value" class="headerlink" title="Mutable Value"></a>Mutable Value</h2><p>The value of an object (reference) type, that is, an object is a mutable value.</p>
-<p>A variable that has been assigned a primitive value has its primitive value as its value. </p>
-<p>But, the variable that the object is assigned has a <strong>reference value</strong> as a value. The reference value is <strong>the address of the memory space</strong> in which the created object is stored, itself.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> student = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p><img src="https://user-images.githubusercontent.com/48080762/57298300-d181c600-710c-11e9-96ba-119ba0ffc866.png" alt="Assignment of an object"></p>
-<ul>
-<li><p><code>student</code> variable has a <strong>address of the memory space</strong> where a created object is stored. This is a <strong>reference value</strong>. A variable can access the object by this reference value.</p>
-</li>
-<li><p>When evaluating a variable that assigns an object, it returns the object by accessing the actual object through the reference value rather than returning the reference value stored in memory.</p>
-</li>
-<li><p>An object pointed by a variable can be added dynamically after it has been created, updated, or deleted. In other words, an object is a <strong>mutable value</strong>.</p>
-</li>
-<li><p>Objects can be very large and change fluidly, so instead of reallocating each time as a primitive value and changing the memory address, it changes the object itself to be referenced directly.</p>
-</li>
-<li><p>In other words, copying an object as a primitive value (a deep copy) is <strong>expensive and inefficient</strong>, so it copies the reference value.</p>
-<blockquote>
-<h3 id="Shallow-copy-and-Deep-copy"><a href="#Shallow-copy-and-Deep-copy" class="headerlink" title="Shallow copy and Deep copy"></a>Shallow copy and Deep copy</h3><ul>
-<li>Shallow copy : copying reference values</li>
-<li>Deep copy : copying and recreating the object itself as a primitive value. The larger the object, the higher the cost.</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li><p>A side effect of storing an object’s reference value is that an object can be referenced by multiple identifiers.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> student = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="hljs-keyword">var</span> teacher = student;</span><br><span class="line"></span><br><span class="line">teacher.age = <span class="hljs-number">35</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(teacher);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(student);</span><br></pre></td></tr></table></figure>
-<p><img src="https://user-images.githubusercontent.com/48080762/57299503-b06ea480-710f-11e9-8dd4-19c322cbf727.png" alt="Referenced by multiple identifiers"></p>
-<ul>
-<li>The property is added only to the object of the teacher variable, but the changes are shared because the objects referenced by the student and teacher are the same.</li>
-</ul>
-</li>
-</ul>
-<h2 id="Pass-by-Reference"><a href="#Pass-by-Reference" class="headerlink" title="Pass by Reference"></a>Pass by Reference</h2><p>If you assign a variable that points to an object to another variable, the original reference value is copied and passed. This is called <strong>pass by reference.</strong></p>
-<p><img src="https://user-images.githubusercontent.com/48080762/57299971-d34d8880-7110-11e9-8fc7-1ee9d64a5f13.png" alt="Pass by Reference"></p>
-<p>As shown in the figure above, since the memory address of the same object is referenced, <code>student</code> and <code>teacher</code> refer to the same object and change it.</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -995,7 +969,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        92
+                        93
                     </p>
                 </div>
             </div>
@@ -1015,7 +989,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        43
+                        44
                     </p>
                 </div>
             </div>
@@ -1108,7 +1082,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Algorithm/" style="font-size: 18.33px;">Algorithm</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a>
+        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Algorithm/" style="font-size: 18.33px;">Algorithm</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a>
     </div>
 </div>
 
@@ -1196,7 +1170,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">15</span>
+                <span class="level-item tag">16</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1234,6 +1208,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/10/16-Creating-an-Object-with-a-Constructor-Function/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="16. Creating an Object with a Constructor Function">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-10T06:43:45.000Z">2019-05-10</time></div>
+                    <a href="/2019/05/10/16-Creating-an-Object-with-a-Constructor-Function/" class="has-link-black-ter is-size-6">16. Creating an Object with a Constructor Function</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1311,25 +1304,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/09/13-Problems-with-global-variables/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="13. Problems with Global Variables">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-09T02:26:46.000Z">2019-05-09</time></div>
-                    <a href="/2019/05/09/13-Problems-with-global-variables/" class="has-link-black-ter is-size-6">13. Problems with Global Variables</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1348,7 +1322,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">19</span>
+                    <span class="level-item tag">20</span>
                 </span>
             </a>
         </li>
@@ -1517,7 +1491,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">11</span>
+                        <span class="tag is-grey">12</span>
                     </a>
                 </div>
                 
@@ -1532,6 +1506,13 @@
                     <a class="tags has-addons" href="/tags/OOP/">
                         <span class="tag">OOP</span>
                         <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Object/">
+                        <span class="tag">Object</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1785,7 +1766,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">15</span>
+                <span class="level-item tag">16</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1823,6 +1804,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/10/16-Creating-an-Object-with-a-Constructor-Function/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="16. Creating an Object with a Constructor Function">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-10T06:43:45.000Z">2019-05-10</time></div>
+                    <a href="/2019/05/10/16-Creating-an-Object-with-a-Constructor-Function/" class="has-link-black-ter is-size-6">16. Creating an Object with a Constructor Function</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1900,25 +1900,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/09/13-Problems-with-global-variables/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="13. Problems with Global Variables">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-09T02:26:46.000Z">2019-05-09</time></div>
-                    <a href="/2019/05/09/13-Problems-with-global-variables/" class="has-link-black-ter is-size-6">13. Problems with Global Variables</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1937,7 +1918,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">19</span>
+                    <span class="level-item tag">20</span>
                 </span>
             </a>
         </li>
@@ -2106,7 +2087,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">11</span>
+                        <span class="tag is-grey">12</span>
                     </a>
                 </div>
                 
@@ -2121,6 +2102,13 @@
                     <a class="tags has-addons" href="/tags/OOP/">
                         <span class="tag">OOP</span>
                         <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Object/">
+                        <span class="tag">Object</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 

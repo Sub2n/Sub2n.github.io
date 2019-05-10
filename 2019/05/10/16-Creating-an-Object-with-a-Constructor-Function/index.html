@@ -2,25 +2,25 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>190315-TIL - 수빈 개발블로그</title>
+<title>16. Creating an Object with a Constructor Function - 수빈 개발블로그</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="Today I Learned 오늘 한 일 LeetCode Medium 문제를 풀었다. C나 C++이 아니고 익숙하지 않은 JavaScript로 알고리즘 문제를 풀려니 메소드를 하나하나 찾아야해서 시간이 오래 걸렸다.   🐸 2. Add Two Numbers : if문을 잔뜩 사용한 내 코드와 달리 carry를 이용한 솔루션을 보고 알고리즘 공부를 꾸준히">
-<meta name="keywords" content="TIL">
+    <meta name="description" content="객체 리터럴 표기법은 가장 일반적이고 간단한 객체 생성 방법이다. 객체는 객체 리터럴 표기법 외에도 다양한 방법으로 생성할 수 있다. 1. Object Constructor Function객체 리터럴 표기법은 분명 간단한 방법이지만, 같은 구조를 가진 객체를 여러 개 만들어야할 경우가 있다. new 연선자와 함께 Object 생성자 함수를 호출하면 빈 객체">
+<meta name="keywords" content="JavaScript,Object">
 <meta property="og:type" content="article">
-<meta property="og:title" content="190315-TIL">
-<meta property="og:url" content="https://sub2n.github.io/2019/03/15/190315-TIL/index.html">
+<meta property="og:title" content="16. Creating an Object with a Constructor Function">
+<meta property="og:url" content="https://sub2n.github.io/2019/05/10/16-Creating-an-Object-with-a-Constructor-Function/index.html">
 <meta property="og:site_name" content="수빈 개발블로그">
-<meta property="og:description" content="Today I Learned 오늘 한 일 LeetCode Medium 문제를 풀었다. C나 C++이 아니고 익숙하지 않은 JavaScript로 알고리즘 문제를 풀려니 메소드를 하나하나 찾아야해서 시간이 오래 걸렸다.   🐸 2. Add Two Numbers : if문을 잔뜩 사용한 내 코드와 달리 carry를 이용한 솔루션을 보고 알고리즘 공부를 꾸준히">
+<meta property="og:description" content="객체 리터럴 표기법은 가장 일반적이고 간단한 객체 생성 방법이다. 객체는 객체 리터럴 표기법 외에도 다양한 방법으로 생성할 수 있다. 1. Object Constructor Function객체 리터럴 표기법은 분명 간단한 방법이지만, 같은 구조를 가진 객체를 여러 개 만들어야할 경우가 있다. new 연선자와 함께 Object 생성자 함수를 호출하면 빈 객체">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/cherry.png">
-<meta property="og:updated_time" content="2019-04-16T08:21:41.037Z">
+<meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
+<meta property="og:updated_time" content="2019-05-10T08:23:36.804Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="190315-TIL">
-<meta name="twitter:description" content="Today I Learned 오늘 한 일 LeetCode Medium 문제를 풀었다. C나 C++이 아니고 익숙하지 않은 JavaScript로 알고리즘 문제를 풀려니 메소드를 하나하나 찾아야해서 시간이 오래 걸렸다.   🐸 2. Add Two Numbers : if문을 잔뜩 사용한 내 코드와 달리 carry를 이용한 솔루션을 보고 알고리즘 공부를 꾸준히">
-<meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/cherry.png">
+<meta name="twitter:title" content="16. Creating an Object with a Constructor Function">
+<meta name="twitter:description" content="객체 리터럴 표기법은 가장 일반적이고 간단한 객체 생성 방법이다. 객체는 객체 리터럴 표기법 외에도 다양한 방법으로 생성할 수 있다. 1. Object Constructor Function객체 리터럴 표기법은 분명 간단한 방법이지만, 같은 구조를 가진 객체를 여러 개 만들어야할 경우가 있다. new 연선자와 함께 Object 생성자 함수를 호출하면 빈 객체">
+<meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
 
 
 
@@ -103,7 +103,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="190315-TIL" height="28">
+                <img src="/images/logo.svg" alt="16. Creating an Object with a Constructor Function" height="28">
             
             </a>
         </div>
@@ -152,7 +152,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/cherry.png" alt="190315-TIL">
+            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="16. Creating an Object with a Constructor Function">
         </span>
     </div>
     
@@ -160,17 +160,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-03-15T13:30:39.000Z">2019-03-15</time>
+                <time class="level-item has-text-grey" datetime="2019-05-10T06:43:45.000Z">2019-05-10</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 268 words)
+                    6 minutes read (About 955 words)
                 </span>
                 
                 
@@ -179,26 +179,59 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                190315-TIL
+                16. Creating an Object with a Constructor Function
             
         </h1>
         <div class="content">
-            <h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul>
-<li><h4 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h4><ul>
-<li>LeetCode Medium 문제를 풀었다. C나 C++이 아니고 익숙하지 않은 JavaScript로 알고리즘 문제를 풀려니 메소드를 하나하나 찾아야해서 시간이 오래 걸렸다. </li>
-</ul>
-<p>🐸 <a href="https://leetcode.com/problems/add-two-numbers" target="_blank" rel="noopener">2. Add Two Numbers</a></p>
-<p>: if문을 잔뜩 사용한 내 코드와 달리 carry를 이용한 솔루션을 보고 알고리즘 공부를 꾸준히 해서 효율성을 높여야겠다는 목표가 생겼다. 적어도 하루에 하나씩은 LeetCode 문제를 풀려고 한다.</p>
-<ul>
-<li>오후엔 JavaScript를 이용해 Lotto 추첨기를 만들었다. </li>
-</ul>
-</li>
-<li><h4 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점:"></a>느낀 점:</h4><p>사용자의 입력을 받아서 화면에 적절히 출력하는 게 아직 어렵다. </p>
-<p>3명이 팀별로 진행하다보니 알고리즘을 짜는 데에도 토의를 하느라 시간이 길어졌다. 협엽과 HTML, CSS, JS를 다루는 법에 조금 더 익숙해져야겠다.</p>
-</li>
-</ul>
-<hr>
-<p>  🐸 Lottery Machine git address<br>  <a href="https://github.com/GoodSungJin/web-basic/blob/master/week02/subin_week02/0315_Lotto.html" target="_blank" rel="noopener">LOTTERY Machine</a></p>
+            <p>객체 리터럴 표기법은 가장 일반적이고 간단한 객체 생성 방법이다. 객체는 객체 리터럴 표기법 외에도 다양한 방법으로 생성할 수 있다.</p>
+<h1 id="1-Object-Constructor-Function"><a href="#1-Object-Constructor-Function" class="headerlink" title="1. Object Constructor Function"></a>1. Object Constructor Function</h1><p>객체 리터럴 표기법은 분명 간단한 방법이지만, 같은 구조를 가진 객체를 <strong>여러 개</strong> 만들어야할 경우가 있다.</p>
+<p>new 연선자와 함께 Object 생성자 함수를 호출하면 빈 객체를 생성하여 반환한다. 생성한 빈 객체에 프로퍼티와 메소드를 추가한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> student = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>();</span><br><span class="line"></span><br><span class="line">student.name = <span class="hljs-string">'Park'</span>;</span><br><span class="line">student.sayHello = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Hi! I am '</span> + <span class="hljs-keyword">this</span>.name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Object 생성자 함수는 함수 <strong>객체</strong>이므로 프로퍼티와 메소드를 갖는다. 앞서 살펴본 <code>Object.getOwnPropertyDescriptor()</code> 또한 Object 생성자 함수의 메소드이다.</p>
+<p>Constructor 함수는 new 연산자와 함께 호출해서 Object(instance)를 생성하는 함수이다. 생성자 함수에 의해 생성된 객체는 instance라고 한다.</p>
+<blockquote>
+<h3 id="Instance"><a href="#Instance" class="headerlink" title="Instance"></a>Instance</h3><p>생성자 함수도 객체이므로 생성자 함수나 클래스가 생성한 객체를 다른 객체와 구분하기 위해 실체라는 의미로 인스턴스라고 한다.</p>
+</blockquote>
+<p>자바스크립트는 Object 생성자 함수 이외에도 String, Number, Boolean, Function, Array, Date, RegExp 등의 built-in(intrinsic) 생성자 함수를 제공한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>(<span class="hljs-string">'str'</span>);	<span class="hljs-comment">//가능하지만 잘 안 씀</span></span><br><span class="line"><span class="hljs-keyword">const</span> strObj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">String</span>(<span class="hljs-string">'str'</span>);</span><br><span class="line"><span class="hljs-keyword">const</span> numObj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Number</span>(<span class="hljs-number">123</span>);</span><br></pre></td></tr></table></figure>
+<p>String, Number 생성자 함수로 형변환도 가능하지만 잘 안 쓴다.</p>
+<blockquote>
+<h3 id="Wrapper-Object"><a href="#Wrapper-Object" class="headerlink" title="Wrapper Object"></a>Wrapper Object</h3><p>원시 값을 객체처럼 쓰면 자바스크립트 엔진이 원시값 타입의 객체로 순간 바꾸고 평가한 후 다시 원시 값으로 되돌린다. 이 때 원시값 타입의 객체를 wrapper object라고 부른다.</p>
+</blockquote>
+<h1 id="2-User-Constructor-Function"><a href="#2-User-Constructor-Function" class="headerlink" title="2. User Constructor Function"></a>2. User Constructor Function</h1><h2 id="2-1-Advantages-of-object-creation-by-constructor-function"><a href="#2-1-Advantages-of-object-creation-by-constructor-function" class="headerlink" title="2.1 Advantages of object creation by constructor function"></a>2.1 Advantages of object creation by constructor function</h2><p>객체 리터럴로 객체를 생성하는 경우 프로퍼티 구조가 동일해도 매번 같은 프로퍼티와 메소드를 작성해야하는 문제가 있다. 동일한 코드 중복 또한 문제가 된다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Constructor Function</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Circle</span>(<span class="hljs-params">radius</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// this indicates the instance that the constructor function will create.</span></span><br><span class="line">    <span class="hljs-keyword">this</span>.radius = radius;</span><br><span class="line">    <span class="hljs-keyword">this</span>.getDiameter = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">      <span class="hljs-keyword">return</span> <span class="hljs-number">2</span> * <span class="hljs-keyword">this</span>.radius;  </span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// instance creation</span></span><br><span class="line"><span class="hljs-keyword">const</span> circle1 = <span class="hljs-keyword">new</span> Circle(<span class="hljs-number">5</span>);</span><br><span class="line"><span class="hljs-keyword">const</span> circle2 = <span class="hljs-keyword">new</span> Circle(<span class="hljs-number">10</span>);</span><br></pre></td></tr></table></figure>
+<p>new 연산자 없이 함수를 호출하면, 즉 일반적인 함수로서 호출하면 this는 전역 객체(window)가 된다.</p>
+<p>생성자 함수가 호출되면 자바스크립트 내부에서 빈 객체  this를 만들고 내부 코드를 실행한 후 <code>this</code>를 return한다. 즉, <code>this</code>는 생성자 함수로 생성하는 instance가 된다.</p>
+<blockquote>
+<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><p><code>this</code>는 객체 자신의 프로퍼티나 메소드를 참조하기 위한 Self-regerencing variable이다. <code>this</code>가 가리키는 객체는 함수 호출 방식에 따라 동적으로 결정된다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Function call</th>
+<th style="text-align:center">Object <code>this</code> points to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">As a general function</td>
+<td style="text-align:center">Global object (window)</td>
+</tr>
+<tr>
+<td style="text-align:center">As a method</td>
+<td style="text-align:center">Object that called a method</td>
+</tr>
+<tr>
+<td style="text-align:center">As a constructor function</td>
+<td style="text-align:center">Instance that a constructor function will create in the future.</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// As a general function</span></span><br><span class="line">foo ();	<span class="hljs-comment">// window</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// As a method</span></span><br><span class="line"><span class="hljs-keyword">const</span> obj = &#123; foo &#125;;	<span class="hljs-comment">// ES6 property shorthand</span></span><br><span class="line">obj.foo();	<span class="hljs-comment">// obj</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// As a constructor function</span></span><br><span class="line"><span class="hljs-keyword">const</span> inst = <span class="hljs-keyword">new</span> foo();	<span class="hljs-comment">// inst</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-3-Internal-method-Call-and-Constructor"><a href="#2-3-Internal-method-Call-and-Constructor" class="headerlink" title="2.3. Internal method [[Call]] and [[Constructor]]"></a>2.3. Internal method [[Call]] and [[Constructor]]</h2><p>함수 객체는 일반 객체와 달리 내부 메소드로 [[Call]]과 [[Constructor]]를 가진다.</p>
+<p>내부 메소드 [[Call]]은 함수가 일반 함수로 호출되었을 때 실행되고, 내부 메소드 [[Constructor]]는 함수가 생성자 함수로 호출되었을 때 실행된다.</p>
+<p>내부 메소드 [[Call]]이 구현되어 있는 객체를 callable, [[Constuctor]]가 구현되어 있는 객체는 constructor, [[Constructor]]가 구현되어 있지 않은 객체는 non-constructor라고 부른다.</p>
+<p>단, arrow function은 constructor function으로 생성할 수 없다. 따라서 모든 함수는 callable이지만 모두 constructor인 것은 아니다.</p>
 
         </div>
         
@@ -206,7 +239,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/TIL/">TIL</a>
+                    <a class="has-link-grey -link" href="/tags/JavaScript/">JavaScript</a>, <a class="has-link-grey -link" href="/tags/Object/">Object</a>
                 </div>
             </div>
         </div>
@@ -223,17 +256,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/03/17/190317-TIL/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">190317-TIL</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/03/14/190314-TIL/">
-                <span class="level-item">190314-TIL</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/05/09/CodeWars-6kyu-Build-a-pile-of-Cubes/">
+                <span class="level-item">CodeWars 6kyu. Build a pile of Cubes</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -1601,7 +1627,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="190315-TIL" height="28">
+                    <img src="/images/logo.svg" alt="16. Creating an Object with a Constructor Function" height="28">
                 
                 </a>
                 <p class="is-size-7">
