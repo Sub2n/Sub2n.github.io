@@ -1793,7 +1793,29 @@ document.addEventListener('DOMContentLoaded', function () {
 <link rel="stylesheet" href="/css/insight.css">
     
 </body>
-</html>rameter, the missing parameter has the value undefined. (No error)</li>
+</html> x + y'</span>);</span><br><span class="line"></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
+<p>However, creating a function as a function constructor is not common. These functions behave differently from function declarations or function expressions.</p>
+<p>Do not use it!</p>
+<h2 id="Arrow-Function"><a href="#Arrow-Function" class="headerlink" title="Arrow Function"></a>Arrow Function</h2><p>An arrow function introduced in ES6 can make a function simply without a <code>function</code> keyword. </p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Arrow Function</span></span><br><span class="line"><span class="hljs-keyword">const</span> add = <span class="hljs-function">(<span class="hljs-params">x, y</span>) =&gt;</span> x + y;</span><br><span class="line"></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
+<p>The arrow function is not available in all situations.</p>
+<h1 id="Function-Call"><a href="#Function-Call" class="headerlink" title="Function Call"></a>Function Call</h1><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Function Call</span></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>add</code> : Variable name referring to function object, not function name</li>
+<li><code>( )</code> : Function call operator</li>
+<li><code>2, 3</code> : Arguments to be assigned to the parameter</li>
+</ul>
+<p>Calling a function stops the current execution flow and passes control to the called function. At this point, arguments are assigned to the parameters and the statements in the function body begin to execute.</p>
+<h1 id="Parameter-and-Argument"><a href="#Parameter-and-Argument" class="headerlink" title="Parameter and Argument"></a>Parameter and Argument</h1><ul>
+<li>Parameter<ul>
+<li>Declare when defining a function</li>
+<li>Treated as variables in the function body</li>
+<li>When a function is called, the parameter is implicitly created in the function body, initialized to undefined, and then an argument is assigned.</li>
+<li>The scope of the parameter is inside the function.</li>
+</ul>
+</li>
+<li>Argument<ul>
+<li>If the argument is passed less than the parameter, the missing parameter has the value undefined. (No error)</li>
 <li>If the argument is passed in more than the parameter, the excess argument is ignored and kept in the arguments object.</li>
 </ul>
 </li>

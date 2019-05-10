@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://sub2n.github.io/2019/05/09/CodeWars-6kyu-Build-a-pile-of-Cubes/</loc>
+    <loc>https://sub2n.github.io/2019/05/09/13-Problems-with-global-variables/</loc>
     
-    <lastmod>2019-05-09T07:33:22.678Z</lastmod>
+    <lastmod>2019-05-10T04:24:20.691Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/05/09/14-let-const-and-a-Block-level-Scope/</loc>
+    
+    <lastmod>2019-05-10T04:04:40.753Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://sub2n.github.io/2019/05/09/15-Property-Definition/</loc>
     
-    <lastmod>2019-05-09T07:29:28.966Z</lastmod>
+    <lastmod>2019-05-10T02:38:48.117Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/05/09/CodeWars-6kyu-Build-a-pile-of-Cubes/</loc>
+    
+    <lastmod>2019-05-09T08:17:34.744Z</lastmod>
     
   </url>
   
@@ -19,20 +33,6 @@
     <loc>https://sub2n.github.io/2019/05/09/190509-TIL/</loc>
     
     <lastmod>2019-05-09T07:18:13.168Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sub2n.github.io/2019/05/09/13-Problems-with-global-variables/</loc>
-    
-    <lastmod>2019-05-09T06:12:37.917Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sub2n.github.io/2019/05/09/14-let-const-and-a-Block-level-Scope/</loc>
-    
-    <lastmod>2019-05-09T06:09:54.250Z</lastmod>
     
   </url>
   

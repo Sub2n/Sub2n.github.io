@@ -16,7 +16,7 @@
 <meta property="og:description" content="1. What is Property Definition?프로퍼티 정의란 프로퍼티 어트리뷰트의 값을 정의하여 프로퍼티의 상태를 관리하는 것. 예를 들면 프로퍼티 값을 갱신 가능하도록 할 것인지, 프로퍼티를 열거 가능하도록 할 것인지, 재정의 가능하도록 할 것인지를 정의할 수 있다. 객체 리터럴이 평가되거나 프로퍼티가 동적 생성될 때 프로퍼티가 생성된다. 자바">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
-<meta property="og:updated_time" content="2019-05-09T07:29:28.966Z">
+<meta property="og:updated_time" content="2019-05-10T02:38:48.117Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="15. Property Definition">
 <meta name="twitter:description" content="1. What is Property Definition?프로퍼티 정의란 프로퍼티 어트리뷰트의 값을 정의하여 프로퍼티의 상태를 관리하는 것. 예를 들면 프로퍼티 값을 갱신 가능하도록 할 것인지, 프로퍼티를 열거 가능하도록 할 것인지, 재정의 가능하도록 할 것인지를 정의할 수 있다. 객체 리터럴이 평가되거나 프로퍼티가 동적 생성될 때 프로퍼티가 생성된다. 자바">
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    9 minutes read (About 1298 words)
+                    10 minutes read (About 1559 words)
                 </span>
                 
                 
@@ -220,7 +220,7 @@
 </ul>
 </li>
 <li>Accessor property<ul>
-<li>자체적으로는 값을 갖지 않고 다른 data property의 값을 읽거나 저장할 때 사용자는 Accessor function으로 구성된 프로퍼티</li>
+<li>자체적으로는 값을 갖지 않고 다른 data property의 값을 읽거나 저장할 때 사용되는 Accessor function으로 구성된 프로퍼티</li>
 </ul>
 </li>
 </ul>
@@ -228,6 +228,16 @@
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> student = &#123;</span><br><span class="line">    <span class="hljs-comment">// Data property</span></span><br><span class="line">    name: <span class="hljs-string">'Park'</span>,</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-comment">// Accessor property</span></span><br><span class="line">    <span class="hljs-keyword">get</span> infoName() &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.name;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="hljs-keyword">set</span> infoName(newName) &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.name = newName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// A reference to a property value through a data property.</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(student);	<span class="hljs-comment">// &#123;name: "Park", age: 25&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Setting Property Values with Accessor Properties</span></span><br><span class="line"><span class="hljs-comment">// If store the value in the accessor property infoName, the setter function is called.</span></span><br><span class="line">student.infoName = <span class="hljs-string">'Kim'</span>;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(student);	<span class="hljs-comment">// &#123;name: "Kim", age: 25&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Getting Property Values with Accessor Properties</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(student.infoName);	<span class="hljs-comment">// Kim</span></span><br></pre></td></tr></table></figure>
 <p>student 객체의 name은 일반적인 데이터 프로퍼티이다.</p>
 <p>get infoName은 getter 함수, set infoName은 setter 함수이고 함수의 이름인 infoName이 바로 접근자 프로퍼티이다. 접근자 프로터티는 값([[Value]] attribute)을 가지지 않고 데이터 프로퍼티의 값을 읽거나(get) 저장(set)할 때 동작한다.</p>
+<p>Accessor property infoName으로 프로퍼티 값에 접근하면 내부적으로 [[Get]] internal method가 호출되어 다음과 같이 동작한다.</p>
+<ol>
+<li>프로퍼티 키가 유효한지 확인한다. (문자열 또는 숫자인지)</li>
+<li>프로토타입 체인에서 프로퍼티를 검색한다.</li>
+<li>검색된 infoName 프로퍼티가 data property인지 accessor property인지 확인한다. infoName은 Accessor property이다.</li>
+<li>Accessor property infoName의 프로퍼티 어트리뷰트 [[Get]]의 값, 즉 getter 함수를 호출해 결과를 반환한다. 프로퍼티 infoName의 프로퍼티 어트리뷰트 [[Get]]의 값은 Object.getOwnPropertyDescriptor 메소드가 반환하는 프로퍼티 디스크립터(PropertyDescriptor) 객체의 get 프로퍼티 값과 같다.</li>
+</ol>
+<p>Accessor property와 data property의 구별 방법</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// The __proto__ of a generic object is an accessor property.</span></span><br><span class="line"><span class="hljs-built_in">Object</span>.getOwnPropertyDescriptor(<span class="hljs-built_in">Object</span>.prototype, <span class="hljs-string">'__proto__'</span>);</span><br><span class="line"><span class="hljs-comment">// &#123;get: ƒ, set: ƒ, enumerable: false, configurable: true&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// The prototype of a function object is a data property.</span></span><br><span class="line"><span class="hljs-built_in">Object</span>.getOwnPropertyDescriptor(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;&#125;, <span class="hljs-string">'prototype'</span>);</span><br><span class="line"><span class="hljs-comment">// &#123;value: &#123;…&#125;, writable: true, enumerable: false, configurable: false&#125;</span></span><br></pre></td></tr></table></figure>
+<p>Accessor property와 data property의 property descriptor object의 프로퍼티가 다르다.</p>
 
         </div>
         
