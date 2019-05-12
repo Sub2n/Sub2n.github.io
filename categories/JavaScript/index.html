@@ -162,6 +162,106 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/05/12/18-JavaScript-Prototype/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="18. JavaScript Prototype">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-12T01:42:10.000Z">2019-05-12</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a few seconds read (About 0 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/12/18-JavaScript-Prototype/">18. JavaScript Prototype</a>
+            
+        </h1>
+        <div class="content">
+            
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
+        <a href="/2019/05/12/17-Function-and-First-class-Object/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="17. Function and First-class Object">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-12T01:40:32.000Z">2019-05-12</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a few seconds read (About 0 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/12/17-Function-and-First-class-Object/">17. Function and First-class Object</a>
+            
+        </h1>
+        <div class="content">
+            
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/05/10/16-Creating-an-Object-with-a-Constructor-Function/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="16. Creating an Object with a Constructor Function">
         </a>
@@ -181,7 +281,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6 minutes read (About 955 words)
+                    7 minutes read (About 1036 words)
                 </span>
                 
                 
@@ -212,7 +312,6 @@
 <h1 id="2-User-Constructor-Function"><a href="#2-User-Constructor-Function" class="headerlink" title="2. User Constructor Function"></a>2. User Constructor Function</h1><h2 id="2-1-Advantages-of-object-creation-by-constructor-function"><a href="#2-1-Advantages-of-object-creation-by-constructor-function" class="headerlink" title="2.1 Advantages of object creation by constructor function"></a>2.1 Advantages of object creation by constructor function</h2><p>객체 리터럴로 객체를 생성하는 경우 프로퍼티 구조가 동일해도 매번 같은 프로퍼티와 메소드를 작성해야하는 문제가 있다. 동일한 코드 중복 또한 문제가 된다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Constructor Function</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Circle</span>(<span class="hljs-params">radius</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// this indicates the instance that the constructor function will create.</span></span><br><span class="line">    <span class="hljs-keyword">this</span>.radius = radius;</span><br><span class="line">    <span class="hljs-keyword">this</span>.getDiameter = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">      <span class="hljs-keyword">return</span> <span class="hljs-number">2</span> * <span class="hljs-keyword">this</span>.radius;  </span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// instance creation</span></span><br><span class="line"><span class="hljs-keyword">const</span> circle1 = <span class="hljs-keyword">new</span> Circle(<span class="hljs-number">5</span>);</span><br><span class="line"><span class="hljs-keyword">const</span> circle2 = <span class="hljs-keyword">new</span> Circle(<span class="hljs-number">10</span>);</span><br></pre></td></tr></table></figure>
 <p>new 연산자 없이 함수를 호출하면, 즉 일반적인 함수로서 호출하면 this는 전역 객체(window)가 된다.</p>
-<p>생성자 함수가 호출되면 자바스크립트 내부에서 빈 객체  this를 만들고 내부 코드를 실행한 후 <code>this</code>를 return한다. 즉, <code>this</code>는 생성자 함수로 생성하는 instance가 된다.</p>
 <blockquote>
 <h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><p><code>this</code>는 객체 자신의 프로퍼티나 메소드를 참조하기 위한 Self-regerencing variable이다. <code>this</code>가 가리키는 객체는 함수 호출 방식에 따라 동적으로 결정된다.</p>
 <table>
@@ -242,7 +341,13 @@
 <h2 id="2-3-Internal-method-Call-and-Constructor"><a href="#2-3-Internal-method-Call-and-Constructor" class="headerlink" title="2.3. Internal method [[Call]] and [[Constructor]]"></a>2.3. Internal method [[Call]] and [[Constructor]]</h2><p>함수 객체는 일반 객체와 달리 내부 메소드로 [[Call]]과 [[Constructor]]를 가진다.</p>
 <p>내부 메소드 [[Call]]은 함수가 일반 함수로 호출되었을 때 실행되고, 내부 메소드 [[Constructor]]는 함수가 생성자 함수로 호출되었을 때 실행된다.</p>
 <p>내부 메소드 [[Call]]이 구현되어 있는 객체를 callable, [[Constuctor]]가 구현되어 있는 객체는 constructor, [[Constructor]]가 구현되어 있지 않은 객체는 non-constructor라고 부른다.</p>
-<p>단, arrow function은 constructor function으로 생성할 수 없다. 따라서 모든 함수는 callable이지만 모두 constructor인 것은 아니다.</p>
+<p>단, arrow function은 constructor function으로 생성할 수 없다. ES6의 메소드 축약 표현으로 선언한 메소드 또한 non-constructor이다. 따라서 모든 함수는 callable이지만 모두 constructor인 것은 아니다.</p>
+<h2 id="2-4-constructors-and-non-constructors"><a href="#2-4-constructors-and-non-constructors" class="headerlink" title="2.4. constructors and non-constructors"></a>2.4. constructors and non-constructors</h2><h2 id="2-5-How-the-Constructor-Function-Works"><a href="#2-5-How-the-Constructor-Function-Works" class="headerlink" title="2.5. How the Constructor Function Works"></a>2.5. How the Constructor Function Works</h2><p>생성자 함수의 역할은 인스턴스를 생성하는 것과 생성된 인스턴스의 프로퍼티 값을 초기화하는 것이다.</p>
+<p>생성자 함수가 호출되면,</p>
+<ol>
+<li>자바스크립트 내부에서 빈 객체를 만들고 <code>this</code>에 할당한다. (this binding)</li>
+<li>내부 코드를 실행한 후 <code>this</code>를 return한다. 즉, <code>this</code>는 생성자 함수로 생성하는 instance가 된다.</li>
+</ol>
 
         </div>
         
@@ -565,344 +670,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/05/08/12-Scope/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="12. Scope">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-08T06:23:34.000Z">2019-05-08</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 630 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/08/12-Scope/">12. Scope</a>
-            
-        </h1>
-        <div class="content">
-            <p>The scope determines the extent to which the identifier can be referenced. A scope is a data structure that keeps the binding of identifiers and values, and is managed by the JavaScript engine.</p>
-<h1 id="What-is-Scope"><a href="#What-is-Scope" class="headerlink" title="What is Scope?"></a>What is Scope?</h1><p>The range in which the variable is valid. That is, the extent to which other code can refer to the variable itself. The scope is created by the location <strong>where the variable is declared</strong>.</p>
-<p>When there are variables with the same name in different scopes, JavaScript engine must decide which variable to reference at runtime. JavaScript uses the scope to determine which variables to reference. That is, <strong>the scope is the rule that the JavaScript engine uses to search for variables to reference.</strong></p>
-<p>By default, JavaScript supports function-level scopes rather than block-level scopes. Variables declared with <code>var</code> form a function-level scope. However, variables declared with <code>let</code> or <code>const</code> form a block-level scopes.</p>
-<p>If there is no scope, the name of the variable in the program should be unique.</p>
-<blockquote>
-<h4 id="Duplicate-declaration-of-var-keyword-variable"><a href="#Duplicate-declaration-of-var-keyword-variable" class="headerlink" title="Duplicate declaration of var keyword variable"></a>Duplicate declaration of <code>var</code> keyword variable</h4><p>Variables declared with the <code>var</code> keyword allow duplicate declarations within the same scope.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">&gt;     <span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>;	</span><br><span class="line">&gt;     </span><br><span class="line">&gt;     <span class="hljs-comment">// This statement operates like x = 2;</span></span><br><span class="line">&gt;     <span class="hljs-comment">// So reassignment occurs.</span></span><br><span class="line">&gt;     <span class="hljs-keyword">var</span> x = <span class="hljs-number">2</span>;	<span class="hljs-comment">//2</span></span><br><span class="line">&gt;     </span><br><span class="line">&gt;     <span class="hljs-built_in">console</span>.log(x); <span class="hljs-comment">//2</span></span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; foo();</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>Variables declared as <code>let</code> or <code>const</code> do not allow duplicate declarations, so it is better to use them.</p>
-</blockquote>
-<h1 id="Types-of-scope"><a href="#Types-of-scope" class="headerlink" title="Types of scope"></a>Types of scope</h1><p>Code can be distinguished as global and local.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left"></th>
-<th style="text-align:center">Global</th>
-<th style="text-align:center">Local</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Explanation</td>
-<td style="text-align:center">Outermost area of code</td>
-<td style="text-align:center">Inside of function body</td>
-</tr>
-<tr>
-<td style="text-align:left">Scope</td>
-<td style="text-align:center">Global scope</td>
-<td style="text-align:center">Local scope</td>
-</tr>
-<tr>
-<td style="text-align:left">Vaiable</td>
-<td style="text-align:center">Global variable</td>
-<td style="text-align:center">Local variable</td>
-</tr>
-</tbody>
-</table>
-<p>The variable is determined by its declared location (global or local) to the scope in which it is valid. </p>
-<ul>
-<li>A variable declared in global is a global variable having a global scope</li>
-<li>A variable declared in local is a local variable having a local scope.</li>
-</ul>
-<p>Declaring a variable in global is a global variable with a global scope. Global variables can be referenced anywhere. In other words, global variables are valid in the global scope.</p>
-<p>Local variables can be referenced only in the declared region and sub-region (nested function). In other words, local variables are valid in their local and subregional scopes.</p>
-<h1 id="Scope-Chain"><a href="#Scope-Chain" class="headerlink" title="Scope Chain"></a>Scope Chain</h1><p>Scopes are created by functions. Functions can be nested, so the local scope of a function can also be nested. This means that <strong>the scope has a hierarchical structure by nesting of functions</strong>.</p>
-<p>The local scope of the outer function is the top scope of the nested function.</p>
-<p><strong>The scope chain</strong> refers to a structure in which the scopes from the deepest local scope to the global scope of the overlap are hierarchically connected.</p>
-<p>When referring to a variable, the JavaScript engine starts at the scope of the code that references the variable, moves to the top scope, and searches for the declared variable.</p>
-<h1 id="Function-level-Scope"><a href="#Function-level-Scope" class="headerlink" title="Function-level Scope"></a>Function-level Scope</h1><ul>
-<li>Most programming language like C, Java <ul>
-<li>Block-level scope</li>
-<li>All code blocks (if, for, while, try / catch, etc.), not just the function body, create the local scope.</li>
-</ul>
-</li>
-<li>Variables declared with the <code>var</code> keyword <ul>
-<li><strong>Function-level scope</strong></li>
-<li>Accept only the code block of the <strong>function</strong> as the local scope.</li>
-</ul>
-</li>
-</ul>
-<p>The <code>let</code> and <code>const</code> keywords introduced in ES6 support block level scopes.</p>
-<h1 id="Lexical-Scope"><a href="#Lexical-Scope" class="headerlink" title="Lexical Scope"></a>Lexical Scope</h1><ul>
-<li>Dynamic Scope<ul>
-<li>The function’s top scope is determined by <strong>where the function is called.</strong></li>
-</ul>
-</li>
-<li><strong>Lexical Scope</strong> / Static Scope<ul>
-<li>The function’s top scope is determined by <strong>where the function is defined.</strong></li>
-<li>Most programming languages follow the lexical scope.</li>
-</ul>
-</li>
-</ul>
-<p>JavaScript follows a lexical scope. So it determines the top scope depending on where it is defined.</p>
-<h1 id="Implicit-Global-Variable"><a href="#Implicit-Global-Variable" class="headerlink" title="Implicit Global Variable"></a>Implicit Global Variable</h1><p>If declare a variable without <code>var</code> keyword, it becomes a global variable.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    i = <span class="hljs-number">0</span>;	<span class="hljs-comment">//implicit global variable</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// var i = 0 is a duplicate declaration</span></span><br><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) &#123;</span><br><span class="line">    foo();</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(i);</span><br><span class="line">&#125;	<span class="hljs-comment">// infinite loop</span></span><br></pre></td></tr></table></figure>
-<p>Global variables are so dangerous!</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/05/08/11-Function/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="11. Function">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-08T00:47:35.000Z">2019-05-08</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    15 minutes read (About 2205 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/08/11-Function/">11. Function</a>
-            
-        </h1>
-        <div class="content">
-            <h1 id="What-is-a-Function"><a href="#What-is-a-Function" class="headerlink" title="What is a Function?"></a>What is a Function?</h1><p>In mathematics, a function defines the process of receiving an input and outputting it.</p>
-<p>In programming language, a function is defined as a unit of execution by implementing a series of processes as statements and wrapping them in code blocks. This function also receive input and outputting it.</p>
-<p>In function,</p>
-<ul>
-<li>parameter : variable that receiving input</li>
-<li>argument : input</li>
-<li>return value : output</li>
-</ul>
-<p>And function has a name as identifier. </p>
-<p>A function is created by a <strong>function definition</strong>. You must call the function to execute the generated function. This is called a <strong>function call</strong>.</p>
-<h1 id="Why-use-a-function"><a href="#Why-use-a-function" class="headerlink" title="Why use a function?"></a>Why use a function?</h1><ul>
-<li>To <strong>reuse</strong> the same code repeated in many parts.</li>
-<li>To remove redundant code to improve <strong>maintenance</strong> efficiency.</li>
-<li>To improve the <strong>readability</strong> of your code using function names that specify functions.</li>
-</ul>
-<h1 id="Function-Literal"><a href="#Function-Literal" class="headerlink" title="Function Literal"></a>Function Literal</h1><p>Just as objects are created as object literals, functions can also be created as function literals. Function literal consists of function keyword, function name, list of parameters and function body. A <strong>function literal is evaluated to create a function object</strong>.</p>
-<ul>
-<li>Function name<ul>
-<li>Since the function name is an identifier, it must conform to the identifier naming rules.</li>
-<li>A function name is an identifier that can be referenced <strong>only within a function body</strong>.</li>
-<li>The function name can be omitted. A function with a function name is called a <strong><em>named function</em></strong>, and a function without a function name is called an <strong><em>anonymous function</em></strong>.</li>
-</ul>
-</li>
-<li>List of parameters<ul>
-<li>Wrap 0 or more parameters in parentheses and separate them with commas.</li>
-<li>Parameters are assigned arguments.</li>
-<li>Parameters are treated the same as variables in the function body.</li>
-</ul>
-</li>
-<li>Function body<ul>
-<li>It is a block of code that defines the statements to be executed in batches as a unit of execution when the function is called.</li>
-<li>The function body is executed by a function call.</li>
-</ul>
-</li>
-</ul>
-<p>A function literal is evaluated to produce a value, which is an object. In other words, <strong>the function of JavaScript is an object.</strong></p>
-<p>Unlike regular objects, functions can be called and have unique properties. All function objects have <code>[[Call]]</code>.</p>
-<h1 id="Definition-of-Function"><a href="#Definition-of-Function" class="headerlink" title="Definition of Function"></a>Definition of Function</h1><p>There are 4 ways to define a function.</p>
-<ul>
-<li><p>Function Declaration / Function Statement</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>Function Expression</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>Function Constructor</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>(<span class="hljs-string">'x'</span>, <span class="hljs-string">'y'</span>, <span class="hljs-string">'return x + y'</span>);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>Arrow Function (ES6)</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-function">(<span class="hljs-params">x, y</span>) =&gt;</span> x + y;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>Each method defines a function, but there is an important difference.</p>
-<h2 id="Function-Declaration"><a href="#Function-Declaration" class="headerlink" title="Function Declaration"></a>Function Declaration</h2><p>The function declaration has the same format as the function literal, but <strong>the function name can not be omitted.</strong> This is because the JavaScript engine needs to create variables with function names.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Function Declaration</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//Function Call</span></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>); <span class="hljs-comment">//5</span></span><br></pre></td></tr></table></figure>
-<p>The function name is an identifier that can be referenced only within the function body.</p>
-<p>However, when you call a function outside a function, you use the function name.</p>
-<p>When a function declaration is executed to create a function object, a variable is needed to assign the function object. This is because the function object can not be stored in memory unless it is allocated anywhere. </p>
-<p>Therefore, the JavaScript engine</p>
-<ol>
-<li>Implicitly declares an identifier of the same name as the function name</li>
-<li>Assigns the created function object to the identifier.</li>
-</ol>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// This is the pseudo code when the above function add statement is executed.</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// variable add is an identifier created by the JavaScript engine with the same name as the function name implicitly. </span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
-<p>Function name can only be referenced within a function, and implicitly created <strong>variable</strong> name can be referenced <strong>in the scope where the function is defined</strong>.</p>
-<p><img src="https://user-images.githubusercontent.com/48080762/57363047-21b76180-71bb-11e9-9fa1-d67593e265e4.png" alt="Pseudo Code"></p>
-<p>This pseudo code is the following function expression. That is, the JavaScript engine converts function declarations into function expressions to create function objects.</p>
-<h2 id="Function-Expression"><a href="#Function-Expression" class="headerlink" title="Function Expression"></a>Function Expression</h2><h3 id="First-class-object"><a href="#First-class-object" class="headerlink" title="First-class object"></a>First-class object</h3><p>An object that can be assigned to a variable, such as a value, which can be the value of a property or an element of an array.</p>
-<p>Function in JavaScript is a first-class object. It means that a function can be freely used as a value. </p>
-<p>A function object created with a function literal can be assigned to a variable. This way of defining a function is called a <strong>function expression</strong>.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Function Expression</span></span><br><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
-<p>Unlike function declarations, function literals can omit function names. It is common to use anonymous functions in function expressions.</p>
-<p>Since a function name is an identifier that can be referenced only by a function body, even if a named function is used, the function must be called with the variable name to which the function object is assigned.</p>
-<h2 id="Function-Creation-time-and-Function-Hoisting"><a href="#Function-Creation-time-and-Function-Hoisting" class="headerlink" title="Function Creation time and Function Hoisting"></a>Function Creation time and Function Hoisting</h2><p>Function declarations and function expressions seem to behave similarly, because the JavaScript engine implicitly declares the variable as a function name in the function declaration statement and allocates the created object.<br>However, function declaration is non-expression statement, and function expression is an expression statement. Therefore, there is an important difference.</p>
-<p>The point at which the function is created is when the JavaScript engine evaluates the function declaration to create the function object.</p>
-<ul>
-<li><p><strong>Function declaration statements are executed before runtime</strong> because they are declarations themselves. </p>
-</li>
-<li><p>However, <strong>function expressions are executed at run-time</strong> because they are assignment statements that assign function literals to variables. </p>
-</li>
-</ul>
-<p>That is, the function created by the function declaration statement and the function generated by the function expression are created at different times.</p>
-<p>Functions created with function declarations are executed and hoisted before runtime, but functions created with function expressions are not hoisted.</p>
-<p>Unlike variable hoisting, in the case of function hoisting, a function object is referenced instead of undefined.</p>
-<h2 id="Function-Constructor"><a href="#Function-Constructor" class="headerlink" title="Function Constructor"></a>Function Constructor</h2><blockquote>
-<h2 id="Constructor-Function"><a href="#Constructor-Function" class="headerlink" title="Constructor Function"></a>Constructor Function</h2><p>A constructor function is a function that creates an object.</p>
-</blockquote>
-<p>The <code>function</code> constructor function, which is a built-in function provided by JavaScript, receives a parameter list and a function body as a string. It is called with the <code>new</code> operator and returns the created function object.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Function Constructor</span></span><br><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>(<span class="hljs-string">'x'</span>, <span class="hljs-string">'y'</span>, <span class="hljs-string">'return x + y'</span>);</span><br><span class="line"></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
-<p>However, creating a function as a function constructor is not common. These functions behave differently from function declarations or function expressions.</p>
-<p>Do not use it!</p>
-<h2 id="Arrow-Function"><a href="#Arrow-Function" class="headerlink" title="Arrow Function"></a>Arrow Function</h2><p>An arrow function introduced in ES6 can make a function simply without a <code>function</code> keyword. </p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Arrow Function</span></span><br><span class="line"><span class="hljs-keyword">const</span> add = <span class="hljs-function">(<span class="hljs-params">x, y</span>) =&gt;</span> x + y;</span><br><span class="line"></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
-<p>The arrow function is not available in all situations.</p>
-<h1 id="Function-Call"><a href="#Function-Call" class="headerlink" title="Function Call"></a>Function Call</h1><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Function Call</span></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>add</code> : Variable name referring to function object, not function name</li>
-<li><code>( )</code> : Function call operator</li>
-<li><code>2, 3</code> : Arguments to be assigned to the parameter</li>
-</ul>
-<p>Calling a function stops the current execution flow and passes control to the called function. At this point, arguments are assigned to the parameters and the statements in the function body begin to execute.</p>
-<h1 id="Parameter-and-Argument"><a href="#Parameter-and-Argument" class="headerlink" title="Parameter and Argument"></a>Parameter and Argument</h1><ul>
-<li>Parameter<ul>
-<li>Declare when defining a function</li>
-<li>Treated as variables in the function body</li>
-<li>When a function is called, the parameter is implicitly created in the function body, initialized to undefined, and then an argument is assigned.</li>
-<li>The scope of the parameter is inside the function.</li>
-</ul>
-</li>
-<li>Argument<ul>
-<li>If the argument is passed less than the parameter, the missing parameter has the value undefined. (No error)</li>
-<li>If the argument is passed in more than the parameter, the excess argument is ignored and kept in the arguments object.</li>
-</ul>
-</li>
-</ul>
-<h1 id="Argument-Check"><a href="#Argument-Check" class="headerlink" title="Argument Check"></a>Argument Check</h1><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> x !== <span class="hljs-string">'number'</span> || <span class="hljs-keyword">typeof</span> y !== <span class="hljs-string">'number'</span>)</span><br><span class="line">    	<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">TypeError</span>(<span class="hljs-string">'Non-number type value has assigned to parameter.'</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add(<span class="hljs-number">2</span>);			<span class="hljs-comment">// TypeError: Non-number type value has assigned to parameter.</span></span><br><span class="line">add(<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>);	<span class="hljs-comment">// TypeError: Non-number type value has assigned to parameter.</span></span><br></pre></td></tr></table></figure>
-<p>It is necessary to check whether the argument is passed properly in the JavaScript function. Because..</p>
-<ul>
-<li>JavaScript functions do not check that the number of parameters and arguments match.</li>
-<li>Because JavaScript is a dynamic type language, functions do not specify the type of parameters in advance.</li>
-</ul>
-<h1 id="Number-of-parameters"><a href="#Number-of-parameters" class="headerlink" title="Number of parameters"></a>Number of parameters</h1><p>The smaller the number of parameters, the better. A function with 0 parameters is ideal. The more parameters, the more things to consider when using the function, which leads to errors.</p>
-<p>Also, if the number or sequence of parameters changes, all the code that calls the function must be modified.</p>
-<p>The ideal function should only do one thing and make it as small as possible. In addition to functions, classes and other functional units must be as clear and small as possible too.</p>
-<h1 id="External-State-Changes-and-Functional-Programming"><a href="#External-State-Changes-and-Functional-Programming" class="headerlink" title="External State Changes and Functional Programming"></a>External State Changes and Functional Programming</h1><p>Since functions are objects, they follow pass by reference. Passing a value to a function’s parameters is called as <strong>Call by value</strong> and <strong>Call by reference</strong>, but the behavior is the same as <strong>Pass by value</strong> and <strong>Pass by reference</strong>.</p>
-<p>As we saw in <a href="https://sub2n.github.io/2019/05/07/10-Comparing-primitive-and-objects/">10. Comparing primitive and objects</a>, there is a side effect in which the original object is changed by reference values passed from inside the function body to outside of the function. This is called change of external state.</p>
-<ul>
-<li>Pure function : functions that do not change any external state (No side effect)</li>
-<li>Impure function : functions that change the external state inside a function (Side effect)</li>
-</ul>
-<p><img src="https://user-images.githubusercontent.com/48080762/57363055-2714ac00-71bb-11e9-9810-7770c44966c8.png" alt="External State Change"></p>
-<p>Functional programming is a programming paradigm that avoids state changes by suppressing the use of variables and solves complexity by eliminating conditional statements and loops in the logic through the combination of pure and auxiliary functions. Variable values can be changed by someone at any time, and conditional statements or loop statements can make the flow of logic difficult to understand, which can impair readability and become a root cause of errors.</p>
-<p>Functional programming is a way to avoid errors and increase the stability of programs by minimizing side effects through pure functions.</p>
-<h2 id="Return-Statement"><a href="#Return-Statement" class="headerlink" title="Return Statement"></a>Return Statement</h2><p>The function returns the execution result through a return statement consisting of the <code>retur</code>n keyword and the return value.</p>
-<p>When the return statement is executed, execution of the function is aborted and the function body is exited.</p>
-<p>If do not write anything after the <code>return</code> keyword or write a return statement, <code>undefined</code> is returned implicitly.</p>
-<h2 id="Types-of-various-Functions"><a href="#Types-of-various-Functions" class="headerlink" title="Types of various Functions"></a>Types of various Functions</h2><h3 id="IIFE-Immediately-Invoke-Function-Expression"><a href="#IIFE-Immediately-Invoke-Function-Expression" class="headerlink" title="IIFE ( Immediately Invoke Function Expression)"></a>IIFE ( Immediately Invoke Function Expression)</h3><p>A function that <em>executes concurrently with the definition</em> of a function. It is common to use anonymous functions and can not be called again once.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Anonymous immediately invoke function</span></span><br><span class="line">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> a = <span class="hljs-number">2</span>;</span><br><span class="line">    <span class="hljs-keyword">var</span> b = <span class="hljs-number">3</span>;</span><br><span class="line">    <span class="hljs-keyword">return</span> a + b;</span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
-<p>Even if a named function is used, the function name can not be referenced outside of the function and can not be called again.</p>
-<p>An immediate function must be enclosed in the group operator <code>()</code>. Otherwise, it will not be identified and an error will occur.</p>
-<p>If put the code in the immediate function, collision of the variable name or the function name can be prevented. An immediate execution function is used for this purpose.</p>
-<h3 id="Recursive-Function"><a href="#Recursive-Function" class="headerlink" title="Recursive Function"></a>Recursive Function</h3><p>A recursive call is to call itself. A function that calls itself is called a recursive function.</p>
-<p>When creating a recursive function, a base case with an escape condition must be included. Stack overflow occurs when a function is called without escaping.</p>
-<p>Most of what can be implemented as recursive functions can be implemented as loops.</p>
-<h3 id="Nested-Function-Inner-Function"><a href="#Nested-Function-Inner-Function" class="headerlink" title="Nested Function / Inner Function"></a>Nested Function / Inner Function</h3><p>A function defined inside a function is called a nested function (or inner function). A nested function acts as a helper function of an outer function that contains itself.</p>
-<p>A nested function can access variables of an outer function, but an outer function can not access variables of a nested function. The nesting of functions means the nesting of the scope.</p>
-<h3 id="Callback-Function"><a href="#Callback-Function" class="headerlink" title="Callback Function"></a>Callback Function</h3><p>Because JavaScript functions are first-class objects, can pass functions as arguments to functions.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Function that recieves calback function</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">print</span>(<span class="hljs-params">f</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> string = <span class="hljs-string">'Good'</span>;</span><br><span class="line">    <span class="hljs-comment">// Determine when to call the callback function passed in parameter and call the function</span></span><br><span class="line">    <span class="hljs-keyword">return</span> f(string);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// It calls the print function and passes the callback function</span></span><br><span class="line"><span class="hljs-keyword">var</span> upper = print(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">str</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> str.toUpperCase();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// It calls the print function and passes the callback function</span></span><br><span class="line"><span class="hljs-keyword">var</span> lower = print(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">str</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> str.toLowerCase();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(upper, lower);	<span class="hljs-comment">//GOOD good</span></span><br></pre></td></tr></table></figure>
-<p>The function passed to the print function as an argument is called a <strong>callback function</strong>. The callback function calls the function that receives the callback function as an argument by determining the point of call.</p>
-<p>Using a callback function is like pushing a nested function depending on your needs and circumstances.</p>
-<p>Just as a nested function acts as a helper function to help an outer function, the callback function is passed to the function to serve as a helper function. However, since the nested function is fixed and can not be replaced, the callback function can be freely replaced because it is injected as an argument outside the function.</p>
-<p>When you pass a callback function from the outside, you can create a function that performs various actions depending on the callback function.</p>
-<p>That is, it is useful to use the callback function in situations where it is changed instead of being fixed like a nested function.</p>
-<p>Callback functions are mainly used for <strong>event handling</strong>, Ajax communication, and higher-order functions.</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -969,7 +736,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        93
+                        95
                     </p>
                 </div>
             </div>
@@ -989,7 +756,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        44
+                        47
                     </p>
                 </div>
             </div>
@@ -1082,7 +849,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Algorithm/" style="font-size: 18.33px;">Algorithm</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a>
+        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Algorithm/" style="font-size: 18.33px;">Algorithm</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a>
     </div>
 </div>
 
@@ -1170,7 +937,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">16</span>
+                <span class="level-item tag">18</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1208,6 +975,44 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/18-JavaScript-Prototype/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="18. JavaScript Prototype">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T01:42:10.000Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/18-JavaScript-Prototype/" class="has-link-black-ter is-size-6">18. JavaScript Prototype</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/17-Function-and-First-class-Object/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="17. Function and First-class Object">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T01:40:32.000Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/17-Function-and-First-class-Object/" class="has-link-black-ter is-size-6">17. Function and First-class Object</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1266,44 +1071,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/09/15-Property-Definition/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="15. Property Definition">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-09T06:11:04.000Z">2019-05-09</time></div>
-                    <a href="/2019/05/09/15-Property-Definition/" class="has-link-black-ter is-size-6">15. Property Definition</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/09/14-let-const-and-a-Block-level-Scope/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="14. let, const and a Block-level Scope">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-09T04:58:23.000Z">2019-05-09</time></div>
-                    <a href="/2019/05/09/14-let-const-and-a-Block-level-Scope/" class="has-link-black-ter is-size-6">14. let, const and a Block-level Scope</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1322,7 +1089,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">20</span>
+                    <span class="level-item tag">22</span>
                 </span>
             </a>
         </li>
@@ -1461,6 +1228,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/First-class-object/">
+                        <span class="tag">First-class object</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Fisrt-class-Function/">
                         <span class="tag">Fisrt-class Function</span>
                         <span class="tag is-grey">1</span>
@@ -1491,7 +1265,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">12</span>
+                        <span class="tag is-grey">14</span>
                     </a>
                 </div>
                 
@@ -1533,6 +1307,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Programming/">
                         <span class="tag">Programming</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Prototype/">
+                        <span class="tag">Prototype</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1666,6 +1447,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/primitive/">
                         <span class="tag">primitive</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/일급-객체/">
+                        <span class="tag">일급 객체</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1766,7 +1554,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">16</span>
+                <span class="level-item tag">18</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1804,6 +1592,44 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/18-JavaScript-Prototype/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="18. JavaScript Prototype">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T01:42:10.000Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/18-JavaScript-Prototype/" class="has-link-black-ter is-size-6">18. JavaScript Prototype</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/17-Function-and-First-class-Object/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="17. Function and First-class Object">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T01:40:32.000Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/17-Function-and-First-class-Object/" class="has-link-black-ter is-size-6">17. Function and First-class Object</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1862,44 +1688,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/09/15-Property-Definition/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="15. Property Definition">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-09T06:11:04.000Z">2019-05-09</time></div>
-                    <a href="/2019/05/09/15-Property-Definition/" class="has-link-black-ter is-size-6">15. Property Definition</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/09/14-let-const-and-a-Block-level-Scope/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="14. let, const and a Block-level Scope">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-09T04:58:23.000Z">2019-05-09</time></div>
-                    <a href="/2019/05/09/14-let-const-and-a-Block-level-Scope/" class="has-link-black-ter is-size-6">14. let, const and a Block-level Scope</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1918,7 +1706,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">20</span>
+                    <span class="level-item tag">22</span>
                 </span>
             </a>
         </li>
@@ -2057,6 +1845,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/First-class-object/">
+                        <span class="tag">First-class object</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Fisrt-class-Function/">
                         <span class="tag">Fisrt-class Function</span>
                         <span class="tag is-grey">1</span>
@@ -2087,7 +1882,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">12</span>
+                        <span class="tag is-grey">14</span>
                     </a>
                 </div>
                 
@@ -2129,6 +1924,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Programming/">
                         <span class="tag">Programming</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Prototype/">
+                        <span class="tag">Prototype</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -2262,6 +2064,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/primitive/">
                         <span class="tag">primitive</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/일급-객체/">
+                        <span class="tag">일급 객체</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
