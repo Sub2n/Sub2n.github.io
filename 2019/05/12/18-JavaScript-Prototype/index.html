@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="3. prototype ObjectPrototype Object(prototype)는 Object간 상속을 구현하기 위해 사용된다. 프로토타입은 어떤 객체의 Parent object 역할을 하는 객체로, 다른 객체에 Shared property를 재공한다.  Prototype을 상속받은 Child object는 Parent object의 프로퍼티를 자신의">
+    <meta name="description" content="3. prototype ObjectPrototype Object(prototype)는 Object간 상속을 구현하기 위해 사용된다. 프로토타입은 어떤 객체의 Parent object 역할을 하는 객체로, 다른 객체에 Shared property를 제공한다.  Prototype을 상속받은 Child object는 Parent object의 프로퍼티를 자신의">
 <meta name="keywords" content="JavaScript,Prototype">
 <meta property="og:type" content="article">
 <meta property="og:title" content="18. JavaScript Prototype">
 <meta property="og:url" content="https://sub2n.github.io/2019/05/12/18-JavaScript-Prototype/index.html">
 <meta property="og:site_name" content="수빈 개발블로그">
-<meta property="og:description" content="3. prototype ObjectPrototype Object(prototype)는 Object간 상속을 구현하기 위해 사용된다. 프로토타입은 어떤 객체의 Parent object 역할을 하는 객체로, 다른 객체에 Shared property를 재공한다.  Prototype을 상속받은 Child object는 Parent object의 프로퍼티를 자신의">
+<meta property="og:description" content="3. prototype ObjectPrototype Object(prototype)는 Object간 상속을 구현하기 위해 사용된다. 프로토타입은 어떤 객체의 Parent object 역할을 하는 객체로, 다른 객체에 Shared property를 제공한다.  Prototype을 상속받은 Child object는 Parent object의 프로퍼티를 자신의">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
-<meta property="og:updated_time" content="2019-05-13T03:56:52.720Z">
+<meta property="og:updated_time" content="2019-05-13T05:45:24.059Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="18. JavaScript Prototype">
-<meta name="twitter:description" content="3. prototype ObjectPrototype Object(prototype)는 Object간 상속을 구현하기 위해 사용된다. 프로토타입은 어떤 객체의 Parent object 역할을 하는 객체로, 다른 객체에 Shared property를 재공한다.  Prototype을 상속받은 Child object는 Parent object의 프로퍼티를 자신의">
+<meta name="twitter:description" content="3. prototype ObjectPrototype Object(prototype)는 Object간 상속을 구현하기 위해 사용된다. 프로토타입은 어떤 객체의 Parent object 역할을 하는 객체로, 다른 객체에 Shared property를 제공한다.  Prototype을 상속받은 Child object는 Parent object의 프로퍼티를 자신의">
 <meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
 
 
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6 minutes read (About 898 words)
+                    6 minutes read (About 901 words)
                 </span>
                 
                 
@@ -183,7 +183,7 @@
             
         </h1>
         <div class="content">
-            <h1 id="3-prototype-Object"><a href="#3-prototype-Object" class="headerlink" title="3. prototype Object"></a>3. prototype Object</h1><p>Prototype Object(prototype)는 Object간 상속을 구현하기 위해 사용된다. 프로토타입은 어떤 객체의 Parent object 역할을 하는 객체로, 다른 객체에 Shared property를 재공한다.  Prototype을 상속받은 Child object는 Parent object의 프로퍼티를 자신의 프로퍼티처럼 사용할 수 있다.</p>
+            <h1 id="3-prototype-Object"><a href="#3-prototype-Object" class="headerlink" title="3. prototype Object"></a>3. prototype Object</h1><p>Prototype Object(prototype)는 Object간 상속을 구현하기 위해 사용된다. 프로토타입은 어떤 객체의 Parent object 역할을 하는 객체로, 다른 객체에 Shared property를 제공한다.  Prototype을 상속받은 Child object는 Parent object의 프로퍼티를 자신의 프로퍼티처럼 사용할 수 있다.</p>
 <p>모든 객체는 <code>[[Prototype]]</code> 내부 슬롯을 가지며, 내부 슬롯의 값으로 프로토타입 객체의 참조를 저장한다. 프로토타입은 객체의 생성 방식에 의해 결정된다.</p>
 <p>객체 리터럴로 생성된 객체의 프로토타입은 Object.prototype이고, 생성자 함수에 의해 생성된 객체의 프로토타입은 자신을 생성한 함수의 prototype 프로퍼티이다.</p>
 <p>모든 객체는 하나의 프로토타입을 가지며 모든 프로토타입은 생성자 함수와 연결되어 있다. 이는 객체와 프로토타입, 생성자 사이를 연결한다.</p>
@@ -194,7 +194,7 @@
 </ul>
 <h2 id="3-1-Object’s-proto-Accessor-Property"><a href="#3-1-Object’s-proto-Accessor-Property" class="headerlink" title="3.1. Object’s  proto  Accessor Property"></a>3.1. Object’s <strong> proto </strong> Accessor Property</h2><p>모든 객체는 <strong> proto </strong> 접근자 프로퍼티를 통해 자신의 프로토타입 ([[Prototype]] 내부 슬롯)에 접근할 수 있다.</p>
 <h4 id="proto-is-an-Accessor-Property"><a href="#proto-is-an-Accessor-Property" class="headerlink" title=" proto  is an Accessor Property"></a><strong> proto </strong> is an Accessor Property</h4><p>내부 슬롯은 프로퍼티가 아니므로 직접 접근할 수 없고 제공하는 접근자 프로퍼티를 통해서 접근할 수 있다. 접근자 프로퍼티는 접근자 함수로 구성된 프로터티다.</p>
-<p><img src="C:\Users\xiaht\AppData\Roaming\Typora\typora-user-images\1557712667152.png" alt="1557712667152"></p>
+<p><img src="https://user-images.githubusercontent.com/48080762/57598149-05397180-758d-11e9-88f0-6b24cffc4ef4.png" alt="__proto__"></p>
 <p>Object.prototype의 <strong> proto </strong> 접근자 프로퍼티는 자신의 getter, settter 함수(get, set <strong> proto </strong>)를 통해 [[Prototype]] 내부 슬롯의 값, 즉 프로토타입을 가져오거나 저장한다. </p>
 <blockquote>
 <h4 id="Internal-Method-GetPrototypeOf-amp-SetPrototypeOf"><a href="#Internal-Method-GetPrototypeOf-amp-SetPrototypeOf" class="headerlink" title="Internal Method [[GetPrototypeOf]] &amp; [[SetPrototypeOf]]"></a>Internal Method [[GetPrototypeOf]] &amp; [[SetPrototypeOf]]</h4><p>get <strong> proto </strong>는 자신의 프로토타입 취득시 [[GetPrototypeOf]] 내부 메소드를 호출</p>

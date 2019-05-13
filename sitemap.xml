@@ -2,23 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://sub2n.github.io/2019/05/10/16-Creating-an-Object-with-a-Constructor-Function/</loc>
-    
-    <lastmod>2019-05-13T05:25:48.969Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://sub2n.github.io/2019/05/12/18-JavaScript-Prototype/</loc>
     
-    <lastmod>2019-05-13T03:56:52.720Z</lastmod>
+    <lastmod>2019-05-13T05:45:24.059Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://sub2n.github.io/2019/05/12/17-Function-and-First-class-Object/</loc>
     
-    <lastmod>2019-05-13T01:42:40.317Z</lastmod>
+    <lastmod>2019-05-13T05:35:37.304Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/05/10/16-Creating-an-Object-with-a-Constructor-Function/</loc>
+    
+    <lastmod>2019-05-13T05:25:48.969Z</lastmod>
     
   </url>
   
