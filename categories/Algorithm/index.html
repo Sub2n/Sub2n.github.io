@@ -181,7 +181,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 14 words)
+                    a few seconds read (About 50 words)
                 </span>
                 
                 
@@ -195,7 +195,7 @@
         </h1>
         <div class="content">
             <p><img src="https://user-images.githubusercontent.com/48080762/57747874-59ba2980-7712-11e9-8a09-b7f1825254e4.png" alt="each pass"></p>
-
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">_.each = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">collection, iterator</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Array</span>.isArray(collection)) &#123;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> index = <span class="hljs-number">0</span>; index &lt; collection.length; index++) &#123;</span><br><span class="line">      iterator(collection[index], <span class="hljs-built_in">Number</span>(index), collection);</span><br><span class="line">    &#125; </span><br><span class="line">  &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">in</span> collection) &#123;</span><br><span class="line">      <span class="hljs-keyword">if</span> (key !== <span class="hljs-string">'someProperty'</span>)</span><br><span class="line">        iterator(collection[key], key, collection);</span><br><span class="line">    &#125;   </span><br><span class="line">  &#125; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
         </div>
         
         
