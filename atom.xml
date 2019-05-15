@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sub2n.github.io/"/>
-  <updated>2019-05-13T08:48:53.046Z</updated>
+  <updated>2019-05-15T04:09:12.008Z</updated>
   <id>https://sub2n.github.io/</id>
   
   <author>
@@ -15,6 +15,83 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Underscore: each</title>
+    <link href="https://sub2n.github.io/2019/05/15/Underscore-each/"/>
+    <id>https://sub2n.github.io/2019/05/15/Underscore-each/</id>
+    <published>2019-05-15T04:08:16.000Z</published>
+    <updated>2019-05-15T04:09:12.008Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://user-images.githubusercontent.com/48080762/57747874-59ba2980-7712-11e9-8a09-b7f1825254e4.png" alt="each pass"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/48080762/57747874-59ba2980-7712-11e9-8a09-b7f1825254e4.png&quot; alt=&quot;each pass&quot;&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="https://sub2n.github.io/categories/Algorithm/"/>
+    
+      <category term="UnderScore" scheme="https://sub2n.github.io/categories/Algorithm/UnderScore/"/>
+    
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/tags/JavaScript/"/>
+    
+      <category term="Algorithm" scheme="https://sub2n.github.io/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20. this</title>
+    <link href="https://sub2n.github.io/2019/05/15/20-this/"/>
+    <id>https://sub2n.github.io/2019/05/15/20-this/</id>
+    <published>2019-05-15T03:45:06.000Z</published>
+    <updated>2019-05-15T03:58:36.214Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-this-Keyword"><a href="#1-this-Keyword" class="headerlink" title="1. this Keyword"></a>1. this Keyword</h1><p>this는 객체가 자신의 프로퍼티나 메소드를 참조하기 위한 자기 참조 변수(Self-referencing variable)이다. 함수 호출시 arguments 객체와 this가 암묵적으로 함수 내부에 전달된다. arguments 객체와 this는 함수 내부에서 지역 변수처럼 사용할 수 있다. this가 가리키는 값은 <strong>함수 호출 방식에 의해 동적으로 결정</strong>된다.</p><p>C++, Java와 같은 클래스 기반 언어에서 this는 항상 클래스로부터 생성되는 인스턴스를 가리킨다. 그러나 자바스크립트의 this는 함수가 호출되는 방식에 따라서 this에 바인딩될 객체가 동적으로 결정된다.</p><blockquote><h4 id="Binding"><a href="#Binding" class="headerlink" title="Binding"></a>Binding</h4><p>바인딩이란 식별자와 값을 연결하는 과정을 의미한다.</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;1-this-Keyword&quot;&gt;&lt;a href=&quot;#1-this-Keyword&quot; class=&quot;headerlink&quot; title=&quot;1. this Keyword&quot;&gt;&lt;/a&gt;1. this Keyword&lt;/h1&gt;&lt;p&gt;this는 객체가 자신의 프로퍼티나 
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/tags/JavaScript/"/>
+    
+      <category term="this" scheme="https://sub2n.github.io/tags/this/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>19. Global Object</title>
+    <link href="https://sub2n.github.io/2019/05/15/19-Global-Object/"/>
+    <id>https://sub2n.github.io/2019/05/15/19-Global-Object/</id>
+    <published>2019-05-15T03:43:39.000Z</published>
+    <updated>2019-05-15T03:45:31.958Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/tags/JavaScript/"/>
+    
+      <category term="window" scheme="https://sub2n.github.io/tags/window/"/>
+    
+  </entry>
   
   <entry>
     <title>18. JavaScript Prototype</title>
@@ -470,80 +547,6 @@
     
     
       <category term="JavaScript" scheme="https://sub2n.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>190502-TIL</title>
-    <link href="https://sub2n.github.io/2019/05/02/190502-TIL/"/>
-    <id>https://sub2n.github.io/2019/05/02/190502-TIL/</id>
-    <published>2019-05-02T12:45:17.000Z</published>
-    <updated>2019-05-02T12:47:46.918Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><p>Algorithm study</p><p>Solved Double cola problem!</p><p>Studied about Control flow statement of JavaScript</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;p&gt;Algorithm study&lt;/p
-      
-    
-    </summary>
-    
-      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
-    
-    
-      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CodeWars 6kyu. Playing with digits</title>
-    <link href="https://sub2n.github.io/2019/05/02/CodeWars-6kyu-Playing-with-digits/"/>
-    <id>https://sub2n.github.io/2019/05/02/CodeWars-6kyu-Playing-with-digits/</id>
-    <published>2019-05-02T06:11:03.000Z</published>
-    <updated>2019-05-02T06:23:47.783Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="CodeWars-6kyu-Playing-with-digits"><a href="#CodeWars-6kyu-Playing-with-digits" class="headerlink" title="CodeWars 6kyu. Playing with digits"></a><a href="https://www.codewars.com/kata/playing-with-digits/train/javascript" target="_blank" rel="noopener">CodeWars 6kyu. Playing with digits</a></h2><p>Play with digits 😊</p><a id="more"></a><p>I changed the type of input n to cycle through each digit.</p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">digPow</span>(<span class="hljs-params">n, p</span>)</span>&#123;</span><br><span class="line">  <span class="hljs-keyword">let</span> digitSum = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">let</span> strNum = <span class="hljs-built_in">String</span>(n);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i <span class="hljs-keyword">in</span> strNum)&#123;</span><br><span class="line">    digitSum += strNum[i]**p;</span><br><span class="line">    p++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-built_in">Number</span>.isInteger(digitSum/n) ? digitSum/n : <span class="hljs-number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="https://user-images.githubusercontent.com/48080762/57058695-4196e300-6cec-11e9-9f36-2b196d64fba6.png" alt="Submit screen"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;CodeWars-6kyu-Playing-with-digits&quot;&gt;&lt;a href=&quot;#CodeWars-6kyu-Playing-with-digits&quot; class=&quot;headerlink&quot; title=&quot;CodeWars 6kyu. Playing with digits&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.codewars.com/kata/playing-with-digits/train/javascript&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CodeWars 6kyu. Playing with digits&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Play with digits 😊&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Algorithm" scheme="https://sub2n.github.io/categories/Algorithm/"/>
-    
-      <category term="CodeWars" scheme="https://sub2n.github.io/categories/Algorithm/CodeWars/"/>
-    
-    
-      <category term="Algorithm" scheme="https://sub2n.github.io/tags/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>190501-TIL</title>
-    <link href="https://sub2n.github.io/2019/05/01/190501-TIL/"/>
-    <id>https://sub2n.github.io/2019/05/01/190501-TIL/</id>
-    <published>2019-05-01T12:43:16.000Z</published>
-    <updated>2019-05-01T12:47:46.464Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><p>I learned about the operation principle and process of web browser. HTML parser creates DOM tree, CSS parser creates CSSOM tree and JavaScript parser creates AST(Abstract Syntax Tree).</p><p>Now I can explain JavaScript and ECMAScript.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;p&gt;I learned about th
-      
-    
-    </summary>
-    
-      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
-    
-    
-      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
     
   </entry>
   
