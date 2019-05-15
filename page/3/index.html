@@ -151,6 +151,100 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/05/03/7-Control-Flow-Statement/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="7. Control Flow Statement">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-03T10:53:14.000Z">2019-05-03</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes read (About 532 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/03/7-Control-Flow-Statement/">7. Control Flow Statement</a>
+            
+        </h1>
+        <div class="content">
+            <ul>
+<li><p>Controls the flow of code that runs sequentially from top to bottom.</p>
+</li>
+<li><p>Control statements make the flow of code difficult to understand, which detracts from readability.</p>
+</li>
+<li>Should suppress the use of control statements with using high order functions (map, filter, reduce, forEach)</li>
+</ul>
+<h1 id="Block-Statement-Compound-Statement"><a href="#Block-Statement-Compound-Statement" class="headerlink" title="Block Statement / Compound Statement"></a>Block Statement / Compound Statement</h1><ul>
+<li>0 or more statements enclosed in curly braces <code>{}</code></li>
+<li>In other languages, a block creates a scope, but JavaScript creates a function-level scope. Therefore, variables created in block are global variables.</li>
+<li>Block statements (code blocks) are treated as one execution unit.</li>
+<li><p>A semicolon (;) is usually appended to the end of the statement, but no semicolon at the end of the block statement.</p>
+<h1 id="Conditional-Statement"><a href="#Conditional-Statement" class="headerlink" title="Conditional Statement"></a>Conditional Statement</h1></li>
+<li><p>Determine whether to execute a code block based on the evaluation result of a given conditional expression.</p>
+<blockquote>
+<h3 id="Conditional-expression"><a href="#Conditional-expression" class="headerlink" title="Conditional expression"></a>Conditional expression</h3><p>Expression that can be evaluated as boolean value</p>
+</blockquote>
+</li>
+<li><p>JavaScript provides 2 conditional statements as if..else statements and switch statement</p>
+</li>
+</ul>
+<h3 id="if-…-else-Statement"><a href="#if-…-else-Statement" class="headerlink" title="if … else Statement"></a>if … else Statement</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span> (Conditional expression) &#123;</span><br><span class="line">  <span class="hljs-comment">// This code block is executed if the conditional expression is true.</span></span><br><span class="line">&#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">  <span class="hljs-comment">// This code block is executed if the conditional expression is false.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Most if … else statement can be replaced with the ternary conditional operator discussed in <a href="https://sub2n.github.io/2019/05/01/6-Operator/1">6. Operators</a>.</p>
+<h3 id="switch-Statement"><a href="#switch-Statement" class="headerlink" title="switch Statement"></a>switch Statement</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">switch</span> (Expression) &#123;</span><br><span class="line">  <span class="hljs-keyword">case</span> Expression1:</span><br><span class="line">   	<span class="hljs-comment">// The statement to be executed if the expression in the switch statement matches expression 1;</span></span><br><span class="line">    <span class="hljs-keyword">break</span>;</span><br><span class="line">  <span class="hljs-keyword">case</span> Expression2:</span><br><span class="line">    <span class="hljs-comment">// The statement to be executed if the expression in the switch statement matches expression 2;</span></span><br><span class="line">    <span class="hljs-keyword">break</span>;</span><br><span class="line">  <span class="hljs-keyword">default</span>:</span><br><span class="line">    <span class="hljs-comment">// The statement to be executed when there is no case statement with an expression that matches the expression in the switch statement;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>If the code can be represented by if…else, the use of the switch should be avoided whenever possible.</li>
+<li>Evaluates a given conditional expression and moves the execution order to a case statement with an expression that matches the value.</li>
+<li>Used when there are more cases than if…else statements.</li>
+<li>If do not use a break statement in a case, all the cases are checked sequentially to the default due to the <strong>fall through</strong> property of the switch.</li>
+</ul>
+<h1 id="Loop-Statement"><a href="#Loop-Statement" class="headerlink" title="Loop Statement"></a>Loop Statement</h1><p>Loop statement executes the code block repeatedly until the conditional expression is false.</p>
+<h2 id="for-Statement"><a href="#for-Statement" class="headerlink" title="for Statement"></a>for Statement</h2><p>The for statement executes the code block repeatedly until the conditional expression is determined to be false.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span> (declaration statement or assignment statement; conditional expression; Increase / decrease expression)&#123;</span><br><span class="line">	<span class="hljs-comment">// Statements that will be executed when conditional expression return true;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">2</span>; i++) &#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="while-Statement"><a href="#while-Statement" class="headerlink" title="while Statement"></a>while Statement</h2><p>The while statement repeatedly executes the code block repeatedly if the evaluation result of the given conditional expression is true.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">while</span> (conditional expression)&#123;</span><br><span class="line">    <span class="hljs-comment">// Escape condition is needed</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="do-while-Statement"><a href="#do-while-Statement" class="headerlink" title="do while Statement"></a>do while Statement</h2><p>It’s the same as while, but once it runs and checks the conditional</p>
+<h1 id="break-Statement"><a href="#break-Statement" class="headerlink" title="break Statement"></a>break Statement</h1><p>The break statement exits the code block. </p>
+<p>Actually it escapes the label statement, the for loop (for, for … in, for … of, while, do … while) or the code block of the switch statement. </p>
+<p>If a break statement is used in addition to the label statement, the loop statement, or the code block of the switch statement, SyntaxError occurs.</p>
+<h1 id="continue-Statement"><a href="#continue-Statement" class="headerlink" title="continue Statement"></a>continue Statement</h1><ul>
+<li>If continue is encountered, the code will stop running and move to the increment or decrement statement of the loop</li>
+<li>The statements under continue are not executed.</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/05/02/190502-TIL/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/purple.png" alt="190502-TIL">
         </a>
@@ -1154,59 +1248,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/29/190429-TIL/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190429-TIL">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-29T12:45:46.000Z">2019-04-29</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a few seconds read (About 53 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/29/190429-TIL/">190429-TIL</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><p>Solved Morse code decoding problem <a href="https://sub2n.github.io/2019/04/29/CodeWars-6kyu-Decode-the-Morse-code">my Algorithm Post</a></p>
-<p>Wrote posting about JavaScript <a href="https://sub2n.github.io/2019/04/29/1-What-is-Programming/">1. What is Programming?</a></p>
-<p>Studied Data Structure and posted <a href="https://sub2n.github.io/2019/04/29/1-OOP-and-ADT/">1. OOP and ADT</a></p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -1279,7 +1320,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        98
+                        99
                     </p>
                 </div>
             </div>
@@ -1504,7 +1545,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">47</span>
+                <span class="level-item tag">48</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1526,6 +1567,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/15/190515-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190515-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T07:38:04.000Z">2019-05-15</time></div>
+                    <a href="/2019/05/15/190515-TIL/" class="has-link-black-ter is-size-6">190515-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1603,25 +1663,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/12/17-Function-and-First-class-Object/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="17. Function and First-class Object">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T01:40:32.000Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/17-Function-and-First-class-Object/" class="has-link-black-ter is-size-6">17. Function and First-class Object</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1640,7 +1681,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">25</span>
+                    <span class="level-item tag">26</span>
                 </span>
             </a>
         </li>
@@ -1921,7 +1962,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">47</span>
+                        <span class="tag is-grey">48</span>
                     </a>
                 </div>
                 
@@ -2143,7 +2184,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">47</span>
+                <span class="level-item tag">48</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -2165,6 +2206,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/15/190515-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190515-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T07:38:04.000Z">2019-05-15</time></div>
+                    <a href="/2019/05/15/190515-TIL/" class="has-link-black-ter is-size-6">190515-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -2242,25 +2302,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/12/17-Function-and-First-class-Object/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="17. Function and First-class Object">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T01:40:32.000Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/17-Function-and-First-class-Object/" class="has-link-black-ter is-size-6">17. Function and First-class Object</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2279,7 +2320,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">25</span>
+                    <span class="level-item tag">26</span>
                 </span>
             </a>
         </li>
@@ -2560,7 +2601,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">47</span>
+                        <span class="tag is-grey">48</span>
                     </a>
                 </div>
                 

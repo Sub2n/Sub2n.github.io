@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="Post what I studied">
+    <meta name="description" content="전역 객체는 어떤 객체보다도 먼저 생성하고 어느 객체에도 속하지 않는 최상위 객체.  client side 환경(브라우저)에서는 window  server side 환경에서는 global 객체   전역 객체는  개발자가 의도적으로 생성할 수 없다. 전역 객체의 프로퍼티를 참조할 때 window를 생략할 수 있다. 전역 객체는 Object, String, N">
 <meta name="keywords" content="JavaScript,window">
 <meta property="og:type" content="article">
 <meta property="og:title" content="19. Global Object">
 <meta property="og:url" content="https://sub2n.github.io/2019/05/15/19-Global-Object/index.html">
 <meta property="og:site_name" content="수빈 개발블로그">
-<meta property="og:description" content="Post what I studied">
+<meta property="og:description" content="전역 객체는 어떤 객체보다도 먼저 생성하고 어느 객체에도 속하지 않는 최상위 객체.  client side 환경(브라우저)에서는 window  server side 환경에서는 global 객체   전역 객체는  개발자가 의도적으로 생성할 수 없다. 전역 객체의 프로퍼티를 참조할 때 window를 생략할 수 있다. 전역 객체는 Object, String, N">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
-<meta property="og:updated_time" content="2019-05-15T03:45:31.958Z">
+<meta property="og:updated_time" content="2019-05-15T06:03:04.310Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="19. Global Object">
-<meta name="twitter:description" content="Post what I studied">
+<meta name="twitter:description" content="전역 객체는 어떤 객체보다도 먼저 생성하고 어느 객체에도 속하지 않는 최상위 객체.  client side 환경(브라우저)에서는 window  server side 환경에서는 global 객체   전역 객체는  개발자가 의도적으로 생성할 수 없다. 전역 객체의 프로퍼티를 참조할 때 window를 생략할 수 있다. 전역 객체는 Object, String, N">
 <meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
 
 
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 0 words)
+                    6 minutes read (About 949 words)
                 </span>
                 
                 
@@ -183,7 +183,57 @@
             
         </h1>
         <div class="content">
-            
+            <p>전역 객체는 어떤 객체보다도 먼저 생성하고 어느 객체에도 속하지 않는 최상위 객체.</p>
+<ul>
+<li><p>client side 환경(브라우저)에서는 window</p>
+</li>
+<li><p>server side 환경에서는 global 객체</p>
+</li>
+</ul>
+<p>전역 객체는</p>
+<ul>
+<li>개발자가 의도적으로 생성할 수 없다.</li>
+<li>전역 객체의 프로퍼티를 참조할 때 window를 생략할 수 있다.</li>
+<li>전역 객체는 Object, String, Number,Boolean, Function, Array RegExp, Date, Math, Promise 등 모든 built-in 객체를 프로퍼티로 가지고 있다.</li>
+<li>브라우저의 window 객체는 DOM, BOM, Canvas, XMLHttpRequest, Fetch, SVG, Web Storage 등 Client side Web API를 프로퍼티로 소유한다.</li>
+<li>var 키워드로 선언한 전역 변수와 암묵적 전역 변수, 전역 함수는 전역 객체의 프로퍼티가 된다. (단, let이나 const 키워드로 선언한 전역 변수는 전역 객체  window의 프로퍼티가 아니다.)</li>
+<li>전역 객체의 프로퍼티와 메소드는 window를 생략하고 참조/호출 할 수 있으므로 전역 함수처럼 사용할 수 있다.</li>
+</ul>
+<h1 id="1-Global-Property"><a href="#1-Global-Property" class="headerlink" title="1. Global Property"></a>1. Global Property</h1><p>전역 프로퍼티는 전역 객체의 프로퍼티이다.</p>
+<h2 id="1-1-Infinity"><a href="#1-1-Infinity" class="headerlink" title="1.1. Infinity"></a>1.1. Infinity</h2><p>Infinity 프로퍼티는 양/음의 무한대를 나타내는 Number Infinity를 갖는다. 숫자를 0으로 나누면 NaN이 될 것 같지만 무한대를 나타낸다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">4</span>/<span class="hljs-number">0</span>);	<span class="hljs-comment">// Infinity</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">4</span>/<span class="hljs-number">-0</span>);	<span class="hljs-comment">// -Infinity</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-literal">Infinity</span>);	<span class="hljs-comment">// number</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-2-NaN"><a href="#1-2-NaN" class="headerlink" title="1.2. NaN"></a>1.2. NaN</h2><p>NaN(Not-a-Number) 프로퍼티는 숫자가 아님을 나타내는 Number NaN을 갖는다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Number</span>(<span class="hljs-string">'string'</span>));	<span class="hljs-comment">// NaN</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> * <span class="hljs-string">'string'</span>); <span class="hljs-comment">// NaN</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-literal">NaN</span>);	<span class="hljs-comment">// number</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-3-undefined"><a href="#1-3-undefined" class="headerlink" title="1.3. undefined"></a>1.3. undefined</h2><p>undefined 프로퍼티는 primitive type undefined를 값으로 갖는다.</p>
+<h1 id="2-Global-Function"><a href="#2-Global-Function" class="headerlink" title="2. Global Function"></a>2. Global Function</h1><p>전역 함수는 전역 객체의 메소드이다. 애플리케이션 전역에서 호출할 수 있다.</p>
+<h2 id="2-1-eval"><a href="#2-1-eval" class="headerlink" title="2.1. eval"></a>2.1. eval</h2><p>문자열로 코드를 주면 그 코드를 실행하는데, 평가시 자신의 스코프를 만들고 상위 스코프로 변형시켜 비용이 많이 든다.</p>
+<h2 id="2-2-isFinite"><a href="#2-2-isFinite" class="headerlink" title="2.2. isFinite"></a>2.2. isFinite</h2><p>parameter에 전달된 값이 정상적인 유한수인지 검사해서 Boolean을 리턴한다. 숫자가 아닌 값 전달받으면 숫자 타입으로 변환 후 검사를 수행한다.</p>
+<h2 id="2-3-isNaN"><a href="#2-3-isNaN" class="headerlink" title="2.3. isNaN"></a>2.3. isNaN</h2><p>parameter에 전달된 값이 NaN인지 검사해서 Boolean을 리턴한다. 숫자가 아닌 값 전달받으면 숫자 타입으로 변환 후 검사를 수행한다.</p>
+<h2 id="2-4-parseFloat"><a href="#2-4-parseFloat" class="headerlink" title="2.4. parseFloat"></a>2.4. parseFloat</h2><p>parameter에 전달된 <strong>String을 부동소숫점 숫자(floating point number)로</strong> 변환하여 반환한다.</p>
+<h2 id="2-5-parseInt"><a href="#2-5-parseInt" class="headerlink" title="2.5. parseInt"></a>2.5. parseInt</h2><p>parameter에 전달된 <strong>String을 정수형 숫자(Integer)로</strong> parsing하여 리턴한다. 리턴값은 10진수이다.</p>
+<p>10진수 숫자를 10진수가 아닌 수의 문자열로 변환하고 싶을 때는 Number.prototype.toString 메소드를 사용한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> x = <span class="hljs-number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(x.toString(<span class="hljs-number">2</span>));	<span class="hljs-comment">// '1010'</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(x.toString(<span class="hljs-number">8</span>));	<span class="hljs-comment">// '12'</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(x.toString(<span class="hljs-number">16</span>));	<span class="hljs-comment">// 'a'</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(x.toString());	<span class="hljs-comment">// '10'</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-6-encodeURI-decodeURI"><a href="#2-6-encodeURI-decodeURI" class="headerlink" title="2.6. encodeURI / decodeURI"></a>2.6. encodeURI / decodeURI</h2><p>encodeURI 함수는 paremeter로 전달된 URI(Uniform Resource Identifier)를 인코딩한다.</p>
+<blockquote>
+<h4 id="URI-Uniform-Resource-Identifier"><a href="#URI-Uniform-Resource-Identifier" class="headerlink" title="URI (Uniform Resource Identifier)"></a>URI (Uniform Resource Identifier)</h4><p>인터넷에 있는 자원을 나타내는 유일한 주소. URI의 하위 개념으로 URL, URN이 있다.</p>
+<ul>
+<li>Scheme(protocol) : 통신 방식</li>
+<li>Host : 찾아갈 server의 주소<ul>
+<li>localhost : 컴퓨터 한 대에서 client와 server를 동시에 돌릴 때 server를 의미. Port 번호로 server에 고유 번호를 매김</li>
+</ul>
+</li>
+<li>Port : port 번호</li>
+<li>Path : file 경로<ul>
+<li>REST API : 서버와 통신시 메소드 호출방식처럼 사용</li>
+</ul>
+</li>
+<li>Query Parameter : ?key=value&amp;key=value&amp;key=value</li>
+<li>Fragment : # page 내 이동에서 씀</li>
+</ul>
+</blockquote>
+<p>인코딩이랑 URI의 문자들을 Escape 처리 하는 것을 의미한다. Escape 처리는 네트워크를 통해 정보를 공유할 때 ASCII Character-set으로 변환하는 것이다. 한글은 %EC%9E%90 등과 같이 인코딩 된다.</p>
+<p>decodeURI 함수는 paremeter로 전달된 encoded URI을 전달받아 escape 처리 되기 전으로 디코딩한다.</p>
+
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -271,7 +321,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        98
+                        99
                     </p>
                 </div>
             </div>
@@ -496,7 +546,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">47</span>
+                <span class="level-item tag">48</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -518,6 +568,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/15/190515-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190515-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T07:38:04.000Z">2019-05-15</time></div>
+                    <a href="/2019/05/15/190515-TIL/" class="has-link-black-ter is-size-6">190515-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -595,25 +664,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/12/17-Function-and-First-class-Object/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="17. Function and First-class Object">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T01:40:32.000Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/17-Function-and-First-class-Object/" class="has-link-black-ter is-size-6">17. Function and First-class Object</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -632,7 +682,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">25</span>
+                    <span class="level-item tag">26</span>
                 </span>
             </a>
         </li>
@@ -913,7 +963,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">47</span>
+                        <span class="tag is-grey">48</span>
                     </a>
                 </div>
                 
@@ -1135,7 +1185,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">47</span>
+                <span class="level-item tag">48</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1157,6 +1207,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/15/190515-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190515-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T07:38:04.000Z">2019-05-15</time></div>
+                    <a href="/2019/05/15/190515-TIL/" class="has-link-black-ter is-size-6">190515-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1234,25 +1303,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/12/17-Function-and-First-class-Object/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="17. Function and First-class Object">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T01:40:32.000Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/17-Function-and-First-class-Object/" class="has-link-black-ter is-size-6">17. Function and First-class Object</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1271,7 +1321,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">25</span>
+                    <span class="level-item tag">26</span>
                 </span>
             </a>
         </li>
@@ -1552,7 +1602,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">47</span>
+                        <span class="tag is-grey">48</span>
                     </a>
                 </div>
                 

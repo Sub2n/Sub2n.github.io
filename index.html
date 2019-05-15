@@ -151,6 +151,60 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/05/15/190515-TIL/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190515-TIL">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-15T07:38:04.000Z">2019-05-15</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a few seconds read (About 39 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/15/190515-TIL/">190515-TIL</a>
+            
+        </h1>
+        <div class="content">
+            <h4 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h4><ul>
+<li>자바스크립트의 Strict Mode, 전역 객체 window, this 바인딩에 대해서 배웠다.</li>
+<li>Underscore의 each 메소드를 구현했다.</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/05/15/Underscore-each/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="Underscore: each">
         </a>
@@ -221,7 +275,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 212 words)
+                    10 minutes read (About 1541 words)
                 </span>
                 
                 
@@ -239,6 +293,77 @@
 <blockquote>
 <h4 id="Binding"><a href="#Binding" class="headerlink" title="Binding"></a>Binding</h4><p>바인딩이란 식별자와 값을 연결하는 과정을 의미한다.</p>
 </blockquote>
+<p>객체 리터럴은 할당 단계에 평가되므로 객체의 식별자를 this 대신 사용할 수 있지만, 일반적이지 않다. 생성자를 이용해서 객체를 생성할 때는 인스턴트를 가리킬 식별자를 미리 알 수 없기 때문이다.</p>
+<p>this는 객체의 프로퍼티나 메소드를 참조하기 위한 변수이므로 객체의 메소드 또는 생성자 함수에서만 의미가 있다. strict mode가 적용된 일반 함수 내부의 this에는 undefined가 바인딩 된다. 적용되지 않을 경우 일반 함수 내부에서 this는 전역 객체 window를 가리킨다.</p>
+<blockquote>
+<h4 id="strict-mode"><a href="#strict-mode" class="headerlink" title="strict mode"></a>strict mode</h4><p>‘use strict’;</p>
+</blockquote>
+<h1 id="2-Function-call-types-and-this-Binding"><a href="#2-Function-call-types-and-this-Binding" class="headerlink" title="2. Function call types and this Binding"></a>2. Function call types and this Binding</h1><p><strong>스코프</strong>의 경우 렉시컬 스코프(Lexical Scope)는 <strong>함수 정의가 평가되어 함수 객체가 생성되는 시점</strong>에 상위 스코프가 결정된다. <strong>this</strong>에 바인딩될 객체는 <strong>함수 호출 시점</strong>에 결정된다.</p>
+<p>함수 호출 방식은 다음과 같다.</p>
+<ol>
+<li>일반 함수 호출 : this는 window</li>
+<li>메소드 호출 : this는 메소드를 호출한 객체</li>
+<li>생성자 함수 호출 : this는 생성할 instance</li>
+<li>Function.prototype.apply/call/bind 메소드에 의한 간접 호출 (??)</li>
+</ol>
+<h2 id="2-1-General-Function-Call"><a href="#2-1-General-Function-Call" class="headerlink" title="2.1. General Function Call"></a>2.1. General Function Call</h2><p><strong>일반 함수로 호출된 함수 내부의 this</strong>에는 <strong>전역 객체(Global Object)</strong>가 바인딩된다.</p>
+<p>전역 함수는 물론 <strong>중첩 함수를 일반 함수로 호출했을 때에도 함수 내부의 this에는 전역 객체가 바인딩</strong>된다. 일반 함수에서는 this로 객체의 프로퍼티나 메소드를 참조할 일이 없으므로 this에 의미가 없다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'foo this: '</span>, <span class="hljs-keyword">this</span>);	<span class="hljs-comment">// window</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'bar this: '</span>, <span class="hljs-keyword">this</span>);	<span class="hljs-comment">// window</span></span><br><span class="line">    &#125;</span><br><span class="line">    bar();</span><br><span class="line">&#125;</span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
+<p>메소드 내에서 정의한 중첩 함수일지라도 <strong>일반 함수로 호출되면 중첩 함수의 this는 전역 객체</strong>이다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> obj = &#123;</span><br><span class="line">  foo() &#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'foo this: '</span>, <span class="hljs-keyword">this</span>);	<span class="hljs-comment">// &#123;foo: f&#125;</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'bar this: '</span>, <span class="hljs-keyword">this</span>);	<span class="hljs-comment">// window</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-comment">// 메소드 내부에서 정의한 중첩 함수라도 일반 함수로 호출하면 this에 전역 객체가 바인딩된다.</span></span><br><span class="line">    bar();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.foo();</span><br></pre></td></tr></table></figure>
+<p>마찬가지로 콜백 함수 내부의 this에도 전역 객체가 바인딩된다. 정리하면 일반 함수로 호출된 모든 함수(중첩 함수, 콜백 함수 포함) 내부의 this에는 전역 객체가 바인딩된다.</p>
+<p>메소드 내부의 중첩 함수나 콜백 함수의 this 바인딩을 메소드의 this 바인딩과 일치시키기 위한 방법은 다음과 같다.</p>
+<ol>
+<li><p>this를 변수에 저장하고 콜백 함수의 this를 변수로 대체 </p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> obj = &#123;</span><br><span class="line">  value: <span class="hljs-number">100</span>,</span><br><span class="line">  foo() &#123;</span><br><span class="line">    cosnt that = <span class="hljs-keyword">this</span>;</span><br><span class="line">    setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">        <span class="hljs-built_in">console</span>.log(that.value); <span class="hljs-comment">// 100</span></span><br><span class="line">    &#125;, <span class="hljs-number">100</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="2">
+<li><p>Function.prototype.apply, Function.prototype.call, Function.prototype.bind 메소드 이용</p>
+ <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> obj = &#123;</span><br><span class="line">  value: <span class="hljs-number">100</span>,</span><br><span class="line">  foo() &#123;</span><br><span class="line">    <span class="hljs-comment">// bind method의 argument를 콜백 함수의 this로 바인딩한다.</span></span><br><span class="line">    setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.value); <span class="hljs-comment">// 100</span></span><br><span class="line">    &#125;.bind(<span class="hljs-keyword">this</span>), <span class="hljs-number">100</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="2-2-Method-Call"><a href="#2-2-Method-Call" class="headerlink" title="2.2. Method Call"></a>2.2. Method Call</h2><p><strong>메소드 내부의 this는 메소드를 호출한 객체</strong>, 즉 메소드 호출시 (.) 연산자 앞의 객체에 바인딩된다.</p>
+<p>메소드를 소유한 객체가 아닌, 메소드를 호출한 객체에 바인딩된다는 것이 주의해야할 점이다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.getName = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.name;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> me = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">'Park'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> you = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Kim'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">you.getName = me.getName;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(me.getName()); <span class="hljs-comment">// "Park"</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(you.getName()); <span class="hljs-comment">// "Kim"</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-3-Constructor-Function-Call"><a href="#2-3-Constructor-Function-Call" class="headerlink" title="2.3. Constructor Function Call"></a>2.3. Constructor Function Call</h2><h2 id="2-4-Indirect-Call-by-Function-prototype-apply-call-bind-method"><a href="#2-4-Indirect-Call-by-Function-prototype-apply-call-bind-method" class="headerlink" title="2.4. Indirect Call by Function.prototype.apply / call / bind method"></a>2.4. Indirect Call by Function.prototype.apply / call / bind method</h2><h3 id="apply-call"><a href="#apply-call" class="headerlink" title="apply, call"></a>apply, call</h3><p>Function.prototype의 메소드 apply와 call은 argument로 this와 arguments list를 전달받아 함수를 호출한다. Function 생성자 함수를 constructor 프로퍼티로 가리키는 모든 함수가 Function.prototype.apply와 call을 상속받아 사용할 수 있다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 주어진 this 바인딩과 인수 리스트 배열을 사용하여 함수를 호출한다.</span></span><br><span class="line"><span class="hljs-comment"> * @param thisArg - this로 사용될 객체</span></span><br><span class="line"><span class="hljs-comment"> * @param argsArray - 함수에게 전달할 인수 리스트 배열</span></span><br><span class="line"><span class="hljs-comment"> * @returns 호출된 함수의 반환값</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-built_in">Function</span>.prototype.apply(thisArg, [argsArray]))</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 주어진 this 바인딩과 인수 리스트를 사용하여 함수를 호출한다.</span></span><br><span class="line"><span class="hljs-comment"> * @param thisArg - this로 사용될 객체</span></span><br><span class="line"><span class="hljs-comment"> * @param arg1, arg2, ... - 함수에게 전달할 인수 리스트</span></span><br><span class="line"><span class="hljs-comment"> * @returns 호출된 함수의 반환값</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-built_in">Function</span>.prototype.call(thisArg, arg1, arg2, ...))</span><br></pre></td></tr></table></figure>
+<p>두 메소드의 차이는,</p>
+<ul>
+<li>apply 메소드는 호출할 함수의 arguments를 배열로 묶어 전달한다.</li>
+<li>call 메소드는 호출할 함수의 arguments를 쉼표로 구분한 리스트 형식으로 전달한다.</li>
+</ul>
+<p>apply와 call은 호출할 함수에 argument를 전달하는 방식만 다를 뿐, this로 사용할 객체와 argument를 전달하며 함수를 호출한다.</p>
+<h4 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h4><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.callName = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">callback</span>) </span>&#123;</span><br><span class="line">    callback.bind(<span class="hljs-keyword">this</span>)();</span><br><span class="line">    <span class="hljs-comment">// callback.apply(this);</span></span><br><span class="line">    <span class="hljs-comment">// callback.apply(this);</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>bind로 this를 전달한 callback을 실행할 수도 있고, apply나 call로 this를 전달하며 동시에 호출할 수도 있다.</p>
+<p>정리하면 this 바인딩은 다음과 같이 실행된다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">함수 호출 방식</th>
+<th style="text-align:center">this 바인딩</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">일반 함수 호출</td>
+<td style="text-align:center">전역 객체</td>
+</tr>
+<tr>
+<td style="text-align:center">메소드 호출</td>
+<td style="text-align:center">메소드를 호출한 객체</td>
+</tr>
+<tr>
+<td style="text-align:center">생성자 함수 호출</td>
+<td style="text-align:center">생성자 함수가 생성할 instance</td>
+</tr>
+<tr>
+<td style="text-align:center">Function.prototype.apply/call/bind 메소드에 의한 간접 호출</td>
+<td style="text-align:center">Function.prototype.apply/call/bind 메소드에 argument로 전달한 객체</td>
+</tr>
+</tbody>
+</table>
 
         </div>
         
@@ -276,7 +401,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 0 words)
+                    6 minutes read (About 949 words)
                 </span>
                 
                 
@@ -289,7 +414,57 @@
             
         </h1>
         <div class="content">
-            
+            <p>전역 객체는 어떤 객체보다도 먼저 생성하고 어느 객체에도 속하지 않는 최상위 객체.</p>
+<ul>
+<li><p>client side 환경(브라우저)에서는 window</p>
+</li>
+<li><p>server side 환경에서는 global 객체</p>
+</li>
+</ul>
+<p>전역 객체는</p>
+<ul>
+<li>개발자가 의도적으로 생성할 수 없다.</li>
+<li>전역 객체의 프로퍼티를 참조할 때 window를 생략할 수 있다.</li>
+<li>전역 객체는 Object, String, Number,Boolean, Function, Array RegExp, Date, Math, Promise 등 모든 built-in 객체를 프로퍼티로 가지고 있다.</li>
+<li>브라우저의 window 객체는 DOM, BOM, Canvas, XMLHttpRequest, Fetch, SVG, Web Storage 등 Client side Web API를 프로퍼티로 소유한다.</li>
+<li>var 키워드로 선언한 전역 변수와 암묵적 전역 변수, 전역 함수는 전역 객체의 프로퍼티가 된다. (단, let이나 const 키워드로 선언한 전역 변수는 전역 객체  window의 프로퍼티가 아니다.)</li>
+<li>전역 객체의 프로퍼티와 메소드는 window를 생략하고 참조/호출 할 수 있으므로 전역 함수처럼 사용할 수 있다.</li>
+</ul>
+<h1 id="1-Global-Property"><a href="#1-Global-Property" class="headerlink" title="1. Global Property"></a>1. Global Property</h1><p>전역 프로퍼티는 전역 객체의 프로퍼티이다.</p>
+<h2 id="1-1-Infinity"><a href="#1-1-Infinity" class="headerlink" title="1.1. Infinity"></a>1.1. Infinity</h2><p>Infinity 프로퍼티는 양/음의 무한대를 나타내는 Number Infinity를 갖는다. 숫자를 0으로 나누면 NaN이 될 것 같지만 무한대를 나타낸다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">4</span>/<span class="hljs-number">0</span>);	<span class="hljs-comment">// Infinity</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">4</span>/<span class="hljs-number">-0</span>);	<span class="hljs-comment">// -Infinity</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-literal">Infinity</span>);	<span class="hljs-comment">// number</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-2-NaN"><a href="#1-2-NaN" class="headerlink" title="1.2. NaN"></a>1.2. NaN</h2><p>NaN(Not-a-Number) 프로퍼티는 숫자가 아님을 나타내는 Number NaN을 갖는다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Number</span>(<span class="hljs-string">'string'</span>));	<span class="hljs-comment">// NaN</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> * <span class="hljs-string">'string'</span>); <span class="hljs-comment">// NaN</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-literal">NaN</span>);	<span class="hljs-comment">// number</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-3-undefined"><a href="#1-3-undefined" class="headerlink" title="1.3. undefined"></a>1.3. undefined</h2><p>undefined 프로퍼티는 primitive type undefined를 값으로 갖는다.</p>
+<h1 id="2-Global-Function"><a href="#2-Global-Function" class="headerlink" title="2. Global Function"></a>2. Global Function</h1><p>전역 함수는 전역 객체의 메소드이다. 애플리케이션 전역에서 호출할 수 있다.</p>
+<h2 id="2-1-eval"><a href="#2-1-eval" class="headerlink" title="2.1. eval"></a>2.1. eval</h2><p>문자열로 코드를 주면 그 코드를 실행하는데, 평가시 자신의 스코프를 만들고 상위 스코프로 변형시켜 비용이 많이 든다.</p>
+<h2 id="2-2-isFinite"><a href="#2-2-isFinite" class="headerlink" title="2.2. isFinite"></a>2.2. isFinite</h2><p>parameter에 전달된 값이 정상적인 유한수인지 검사해서 Boolean을 리턴한다. 숫자가 아닌 값 전달받으면 숫자 타입으로 변환 후 검사를 수행한다.</p>
+<h2 id="2-3-isNaN"><a href="#2-3-isNaN" class="headerlink" title="2.3. isNaN"></a>2.3. isNaN</h2><p>parameter에 전달된 값이 NaN인지 검사해서 Boolean을 리턴한다. 숫자가 아닌 값 전달받으면 숫자 타입으로 변환 후 검사를 수행한다.</p>
+<h2 id="2-4-parseFloat"><a href="#2-4-parseFloat" class="headerlink" title="2.4. parseFloat"></a>2.4. parseFloat</h2><p>parameter에 전달된 <strong>String을 부동소숫점 숫자(floating point number)로</strong> 변환하여 반환한다.</p>
+<h2 id="2-5-parseInt"><a href="#2-5-parseInt" class="headerlink" title="2.5. parseInt"></a>2.5. parseInt</h2><p>parameter에 전달된 <strong>String을 정수형 숫자(Integer)로</strong> parsing하여 리턴한다. 리턴값은 10진수이다.</p>
+<p>10진수 숫자를 10진수가 아닌 수의 문자열로 변환하고 싶을 때는 Number.prototype.toString 메소드를 사용한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> x = <span class="hljs-number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(x.toString(<span class="hljs-number">2</span>));	<span class="hljs-comment">// '1010'</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(x.toString(<span class="hljs-number">8</span>));	<span class="hljs-comment">// '12'</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(x.toString(<span class="hljs-number">16</span>));	<span class="hljs-comment">// 'a'</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(x.toString());	<span class="hljs-comment">// '10'</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-6-encodeURI-decodeURI"><a href="#2-6-encodeURI-decodeURI" class="headerlink" title="2.6. encodeURI / decodeURI"></a>2.6. encodeURI / decodeURI</h2><p>encodeURI 함수는 paremeter로 전달된 URI(Uniform Resource Identifier)를 인코딩한다.</p>
+<blockquote>
+<h4 id="URI-Uniform-Resource-Identifier"><a href="#URI-Uniform-Resource-Identifier" class="headerlink" title="URI (Uniform Resource Identifier)"></a>URI (Uniform Resource Identifier)</h4><p>인터넷에 있는 자원을 나타내는 유일한 주소. URI의 하위 개념으로 URL, URN이 있다.</p>
+<ul>
+<li>Scheme(protocol) : 통신 방식</li>
+<li>Host : 찾아갈 server의 주소<ul>
+<li>localhost : 컴퓨터 한 대에서 client와 server를 동시에 돌릴 때 server를 의미. Port 번호로 server에 고유 번호를 매김</li>
+</ul>
+</li>
+<li>Port : port 번호</li>
+<li>Path : file 경로<ul>
+<li>REST API : 서버와 통신시 메소드 호출방식처럼 사용</li>
+</ul>
+</li>
+<li>Query Parameter : ?key=value&amp;key=value&amp;key=value</li>
+<li>Fragment : # page 내 이동에서 씀</li>
+</ul>
+</blockquote>
+<p>인코딩이랑 URI의 문자들을 Escape 처리 하는 것을 의미한다. Escape 처리는 네트워크를 통해 정보를 공유할 때 ASCII Character-set으로 변환하는 것이다. 한글은 %EC%9E%90 등과 같이 인코딩 된다.</p>
+<p>decodeURI 함수는 paremeter로 전달된 encoded URI을 전달받아 escape 처리 되기 전으로 디코딩한다.</p>
+
         </div>
         
         
@@ -326,7 +501,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    12 minutes read (About 1805 words)
+                    12 minutes read (About 1806 words)
                 </span>
                 
                 
@@ -424,7 +599,7 @@
 </tbody>
 </table>
 <h1 id="4-Constructor-Functions-and-Prototypes-of-Objects-Created-by-Literal-Notation"><a href="#4-Constructor-Functions-and-Prototypes-of-Objects-Created-by-Literal-Notation" class="headerlink" title="4. Constructor Functions and Prototypes of Objects Created by Literal Notation"></a>4. Constructor Functions and Prototypes of Objects Created by Literal Notation</h1><p>생성자 함수로 만들지 않은 객체도 Object.prototype을 상속받아야하므로 Object constructor function과도 연결된다.</p>
-<p>웹 애플리케이션 실행시 window 객체 만들어지고, built-in 생성자 함수들이 만들어짐과 동시에 prototype property도 정의된다.</p>
+<p>웹 애플리케이션 실행시 window 객체가 만들어지고, built-in 생성자 함수들이 만들어짐과 동시에 prototype property도 정의된다.</p>
 
         </div>
         
@@ -935,106 +1110,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/05/09/14-let-const-and-a-Block-level-Scope/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="14. let, const and a Block-level Scope">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-09T04:58:23.000Z">2019-05-09</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    12 minutes read (About 1836 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/09/14-let-const-and-a-Block-level-Scope/">14. let, const and a Block-level Scope</a>
-            
-        </h1>
-        <div class="content">
-            <h1 id="1-Problems-with-Variables-declared-with-the-var-keyword"><a href="#1-Problems-with-Variables-declared-with-the-var-keyword" class="headerlink" title="1. Problems with Variables declared with the var keyword"></a>1. Problems with Variables declared with the <code>var</code> keyword</h1><p>ES5까지 변수를 선언할 수 있는 유일한 키워드는 <code>var</code> 하나였다. <code>var</code> 키워드로 선언된 변수는 다른 언어와는 구별되는 특징을 가진다.</p>
-<h2 id="1-1-Allow-Duplicate-Variable-Declaration"><a href="#1-1-Allow-Duplicate-Variable-Declaration" class="headerlink" title="1.1. Allow Duplicate Variable Declaration"></a>1.1. Allow Duplicate Variable Declaration</h2><p><code>var</code> 키워드로 선언한 변수는 중복 선언이 가능하다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>;</span><br><span class="line"><span class="hljs-comment">// No Error</span></span><br><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">10</span>;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(x); <span class="hljs-comment">//10</span></span><br></pre></td></tr></table></figure>
-<p>같은 스코프 내에서 변수를 중복 선언하면 나중에 선언된 변수는 선언문이 아닌 할당문처럼 동작한다. 이 때 에러가 발생하지 않기 때문에 중복 선언을 인지하기 힘들다. 이로 인해 의도치 않게 변수값이 변경될 수 있다.</p>
-<h2 id="1-2-Function-level-Scope"><a href="#1-2-Function-level-Scope" class="headerlink" title="1.2. Function-level Scope"></a>1.2. Function-level Scope</h2><p><code>var</code> 키워드로 선언한 변수는 오로지 함수의 코드 블록만을 지역 스코프로 인정한다. 따라서, if문이나 for문 등에서 선언한 <code>var</code> 변수는 모두 전역 변수가 된다.</p>
-<p>대부분의 프로그래밍 언어는 block-level scope이기 때문에 function-level scope를 이용하는 것은 전역 변수를 남발할 가능성을 높인다.</p>
-<h2 id="1-3-Variable-Hoisting"><a href="#1-3-Variable-Hoisting" class="headerlink" title="1.3. Variable Hoisting"></a>1.3. Variable Hoisting</h2><p><code>var</code>키워드로 선언한 변수는 변수 호이스팅에 의해 변수 선언문이 스코프의 가장 위로 끌어 올려진 것처럼 동작한다. 즉, 선언 이전에 <code>var</code> 변수를 참조해도 에러가 나지 않는다. 이는 프로그램의 흐름을 해치고 가독성을 떨어뜨린다.</p>
-<h1 id="2-let-keyword"><a href="#2-let-keyword" class="headerlink" title="2. let keyword"></a>2. <code>let</code> keyword</h1><p><code>var</code> 키워드의 단점들을 보완하기 위해 ES6에서 <code>var</code>와 <code>const</code> 키워드가 추가되었다. 이들은 <code>var</code> 키워드와 같이 변수를 선언할 때 사용된다.</p>
-<h2 id="2-1-Ban-Duplicate-Variable-Declaration"><a href="#2-1-Ban-Duplicate-Variable-Declaration" class="headerlink" title="2.1. Ban Duplicate Variable Declaration"></a>2.1. Ban Duplicate Variable Declaration</h2><p><code>let</code> 키워드로 선언한 변수를 중복 선언하면 <code>var</code>와 달리 SyntaxError가 발생한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> x = <span class="hljs-number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">let</span> x = <span class="hljs-number">10</span>;	<span class="hljs-comment">// SyntaxError: Identifier 'x' has already been declared</span></span><br></pre></td></tr></table></figure>
-<h2 id="2-2-Block-level-Scope"><a href="#2-2-Block-level-Scope" class="headerlink" title="2.2. Block-level Scope"></a>2.2. Block-level Scope</h2><p><code>var</code> 키워드로 선언한 변수는 함수의 코드 블록만을 지역 스코프로 인정하는 함수 레벨 스코프를 따른다. 그러나 <code>let</code> 키워드로 선언한 변수는 모든 코드 블록 <code>{}</code>을 지역 스코프로 인정하는 블록 레벨 스코프를 따른다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> foo = <span class="hljs-number">1</span>;	<span class="hljs-comment">// global variable</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> foo = <span class="hljs-number">3</span>;	<span class="hljs-comment">// local variable</span></span><br><span class="line">    <span class="hljs-keyword">let</span> bar = <span class="hljs-number">4</span>;	<span class="hljs-comment">// local variable</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-built_in">console</span>.log(foo); 	<span class="hljs-comment">// 3</span></span><br><span class="line">	<span class="hljs-built_in">console</span>.log(bar);	<span class="hljs-comment">// 4</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(foo); 	<span class="hljs-comment">// 1</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(bar);	<span class="hljs-comment">// ReferenceError: bar is not defined</span></span><br></pre></td></tr></table></figure>
-<h2 id="2-3-Variable-Hoisting"><a href="#2-3-Variable-Hoisting" class="headerlink" title="2.3. Variable Hoisting"></a>2.3. Variable Hoisting</h2><p><code>let</code> 키워드로 선언한 변수는 변수 호이스팅이 발생하지 않는 것처럼 동작한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(foo);	<span class="hljs-comment">// ReferenceError: foo is not defined</span></span><br><span class="line"><span class="hljs-keyword">let</span> foo;</span><br></pre></td></tr></table></figure>
-<p>그렇다면 <code>let</code> 키워드로 선언한 선언문은는 런타임 이전에 실행되지 않는 것일까? </p>
-<p>일반적으로 <code>var</code> 키워드로 선언한 변수는 런타임 이전에 자바스크립트 엔진에 의해 암묵적으로 declaration phase와 initialization phase가 <strong>한 번에</strong> 진행된다.</p>
-<p><img src="https://user-images.githubusercontent.com/48080762/57504827-02424500-7331-11e9-960b-75e673a99ae3.png" alt="var declaration"></p>
-<ol>
-<li>Declaration phase : Execution context의 lexical environment에 있는 스코프에 변수 식별자를 등록하여 변수의 존재를 알린다.</li>
-<li>Initialization phase : declaration phase가 끝나는 즉시 값을 저장하기 위한 메모리 공간을 확보하고 암묵적으로 undefined로 변수를 할당해 초기화한다.</li>
-</ol>
-<p><code>let</code> 키워드로 선언한 변수는 “Declaration phase”와 “Initialization Phase”가 <strong>분리되어 진행</strong>된다.  즉, 런타임 이전에 암묵적으로 declaration phase가 먼저 실행되지만 <strong>initialization phase는 런타임에 변수 선언문에 도달했을 때 실행</strong>된다.</p>
-<p><img src="https://user-images.githubusercontent.com/48080762/57430144-acef3080-7269-11e9-987d-75b1881b029a.png" alt="let declaration"></p>
-<p>initialization phase가 실행되기 이전에 변수에 접근하려고 하면 reference error가 발생한다. 아직 변수를 위한 메모리 공간이 확보되지 않았기 때문이다. 따라서 스코프의 시작 지점부터 변수 선언문을 만나서 initialization phase가 시작되기 전까지는 변수를 참조할 수 없다.</p>
-<blockquote>
-<h3 id="TDZ-Temporal-Dead-Zone"><a href="#TDZ-Temporal-Dead-Zone" class="headerlink" title="TDZ (Temporal Dead Zone)"></a>TDZ (Temporal Dead Zone)</h3><p>스코프의 시작 지점부터 Initialization phase 시작 지점까지의 구간 </p>
-</blockquote>
-<p><code>let</code> 키워드로 선언한 변수는 hoisting이 되지 않는 게 아니라, 선언문을 만났을 때 initialization phase를 진행하는 것이다.</p>
-<h2 id="2-4-Global-Object-and-let"><a href="#2-4-Global-Object-and-let" class="headerlink" title="2.4. Global Object and let"></a>2.4. Global Object and <code>let</code></h2><p><strong>전역 객체(Global Object)</strong>는 모든 객체의 유일한 최상위 객체를 의미하며 일반적으로 브라우저 환경에서는 window 객체, Node.js 환경에서는 global 객체를 말한다.</p>
-<p><strong><code>var</code> 키워드로 선언한 전역 변수와, 키워드 없이 선언하고 값을 할당한 암묵적 전역변수, 그리고 전역 함수는 전역 객체의 프로퍼티가 된다.</strong></p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>;</span><br><span class="line">y = <span class="hljs-number">2</span>;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.x === x);		<span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.y === y);		<span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.foo === foo);	<span class="hljs-comment">// true</span></span><br></pre></td></tr></table></figure>
-<p>전역 객체의 프로퍼티는 전역 변수처럼 사용할 수 있다. 전역 객체의 프로퍼티를 참조할 때 window를 생략할 수 있다.</p>
-<p>그러나 <code>let</code> 키워드로 선언한 전역 변수는 전역 객체 window의 프로퍼티가 아니다. <code>let</code> 전역 변수는 전역 렉시컬 환경의 선언적 환경 레코드 내에 존재하게 된다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> x = <span class="hljs-number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.x);	<span class="hljs-comment">// undefined</span></span><br></pre></td></tr></table></figure>
-<h1 id="3-const-Keyword"><a href="#3-const-Keyword" class="headerlink" title="3. const Keyword"></a>3. <code>const</code> Keyword</h1><p><code>const</code> 키워드는 상수(변하지 않는 고정된 값)를 선언하기 위해 사용한다. <code>let</code> 과 <code>const</code> 는 동일한 특징이 많다. 차이점을 살펴보자.</p>
-<h2 id="3-1-Declaration-and-Initialization"><a href="#3-1-Declaration-and-Initialization" class="headerlink" title="3.1. Declaration and Initialization"></a>3.1. Declaration and Initialization</h2><p><code>let</code> 키워드로 선언한 변수와 달리 <code>const</code> 키워드로 선언한 변수는 재할당이 금지된다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> PI = <span class="hljs-number">3.14</span>;</span><br><span class="line"></span><br><span class="line">PI = <span class="hljs-number">3.141492</span>;	<span class="hljs-comment">// TypeError: Assignment to constant variable.</span></span><br></pre></td></tr></table></figure>
-<p><code>const</code> 키워드로 선언한 변수는 반드시 선언과 할당이 동시에 이루어져야 한다. 이후로는 재할당을 할 수 없다.</p>
-<p><code>const</code> 키워드로 선언한 변수 또한 block-level scope를 갖는다.</p>
-<h2 id="3-2-Constant"><a href="#3-2-Constant" class="headerlink" title="3.2. Constant"></a>3.2. Constant</h2><p>변수를 만들고 재할당을 하지 않을 거라면 상수를 적극적으로 쓰는 게 좋다. 고정된 값을 상수로 만들어 쓰면 코드의 가독성을 높일 수 있다. 상수는 프로그램 전체에서 사용하므로, 유지보수에 효율적이다.</p>
-<h2 id="3-3-const-Keyword-and-Object"><a href="#3-3-const-Keyword-and-Object" class="headerlink" title="3.3. const Keyword and Object"></a>3.3. <code>const</code> Keyword and Object</h2><p><code>const</code> 키워드로 선언한 변수에 primitive value를 할당한 경우, primitive value는 immutable value이고 재할당이 금지되므로 할당된 값을 변경할 수 있는 방법이 없다.</p>
-<p><code>const</code> 키워드로 선언한 변수에 객체를 할당한 경우, 재할당이 금지되는 것은 마찬가지이다. 그러나 객체는 mutable value이므로 <code>const</code> 키워드로 선언된 변수에 할당된 객체는 변경이 가능하다.</p>
-<p>즉, <code>const</code> 키워드는 재할당을 금지할 뿐 immutable을 의미하지 않는다. immutable과 mutable은 상수와 변수의 개념이 아닌, 값의 변경에 대한 개념이다.</p>
-<h1 id="4-var-vs-let-vs-const"><a href="#4-var-vs-let-vs-const" class="headerlink" title="4. var vs. let vs. const"></a>4. <code>var</code> vs. <code>let</code> vs. <code>const</code></h1><p>변수 선언에는 기본적으로 <code>const</code>를 사용하고 <code>let</code>은 재할당이 필요한 경우에 사용하는 것이 좋다. </p>
-<ul>
-<li>ES6 사용시 <code>var</code> 키워드 사용하지 않는다.</li>
-<li>재할당이 필요한 경우에만 <code>let</code> 키워드를 사용하고, 변수의 스코프를 최소화 한다.</li>
-<li>객체와 변경을 하지 않을 원시 값에는 <code>const</code> 키워드를 사용한다.</li>
-<li><code>var</code> 와 <code>let</code>/<code>const</code>를 함께 쓰지 않는다.</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -1103,7 +1178,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        98
+                        99
                     </p>
                 </div>
             </div>
@@ -1328,7 +1403,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">47</span>
+                <span class="level-item tag">48</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1350,6 +1425,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/15/190515-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190515-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T07:38:04.000Z">2019-05-15</time></div>
+                    <a href="/2019/05/15/190515-TIL/" class="has-link-black-ter is-size-6">190515-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1427,25 +1521,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/12/17-Function-and-First-class-Object/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="17. Function and First-class Object">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T01:40:32.000Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/17-Function-and-First-class-Object/" class="has-link-black-ter is-size-6">17. Function and First-class Object</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1464,7 +1539,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">25</span>
+                    <span class="level-item tag">26</span>
                 </span>
             </a>
         </li>
@@ -1745,7 +1820,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">47</span>
+                        <span class="tag is-grey">48</span>
                     </a>
                 </div>
                 
@@ -1967,7 +2042,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">47</span>
+                <span class="level-item tag">48</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1989,6 +2064,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/15/190515-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190515-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T07:38:04.000Z">2019-05-15</time></div>
+                    <a href="/2019/05/15/190515-TIL/" class="has-link-black-ter is-size-6">190515-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -2066,25 +2160,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/12/17-Function-and-First-class-Object/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="17. Function and First-class Object">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T01:40:32.000Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/17-Function-and-First-class-Object/" class="has-link-black-ter is-size-6">17. Function and First-class Object</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2103,7 +2178,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">25</span>
+                    <span class="level-item tag">26</span>
                 </span>
             </a>
         </li>
@@ -2384,7 +2459,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">47</span>
+                        <span class="tag is-grey">48</span>
                     </a>
                 </div>
                 
