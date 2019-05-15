@@ -2,23 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://sub2n.github.io/2019/05/15/190515-TIL/</loc>
+    <loc>https://sub2n.github.io/2019/05/15/21-Number-Math-Date-and-String-Object/</loc>
     
-    <lastmod>2019-05-15T08:50:37.585Z</lastmod>
+    <lastmod>2019-05-15T10:27:56.958Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://sub2n.github.io/2019/05/15/Underscore-each/</loc>
     
-    <lastmod>2019-05-15T07:40:21.372Z</lastmod>
+    <lastmod>2019-05-15T10:22:40.073Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://sub2n.github.io/2019/05/15/20-this/</loc>
     
-    <lastmod>2019-05-15T07:36:18.563Z</lastmod>
+    <lastmod>2019-05-15T10:20:40.997Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/05/15/190515-TIL/</loc>
+    
+    <lastmod>2019-05-15T08:51:59.648Z</lastmod>
     
   </url>
   
