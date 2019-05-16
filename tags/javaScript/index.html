@@ -1963,7 +1963,23 @@ document.addEventListener('DOMContentLoaded', function () {
 <link rel="stylesheet" href="/css/insight.css">
     
 </body>
-</html>nts object는 parameter의 개수를 확정할 수 없는 <strong>가변 인자 함수 (Variable Argument Function)</strong>를 구현할 때 유용하게 사용한다.</p>
+</html>ine"><span class="hljs-comment">// &#123;get: ƒ, set: ƒ, enumerable: false, configurable: true&#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>함수 객체의 데이터 프로퍼티 : argunemts, caller, length, name, prototype </li>
+<li><strong> proto </strong>는 접근자 프로퍼티로, Object.prototype객체의 프로퍼티를 상속받은 것.</li>
+</ul>
+<h2 id="2-1-arguments-Property"><a href="#2-1-arguments-Property" class="headerlink" title="2.1 arguments Property"></a>2.1 arguments Property</h2><p>arguments 프로퍼티의 value는 arguments 객체이다. arguments 객체는 함수 호출 시 전달된 argument들의 정보를 담고 있는 iterable array-like object이며, 함수 내부에서만 참조 가능하다.</p>
+<blockquote>
+<h4 id="arguments-Property"><a href="#arguments-Property" class="headerlink" title="arguments Property"></a>arguments Property</h4><p>함수 객체의 arguments property는 일부 브라우저에서 지원하고 있으나 ES3부터 표준에서 페지되었다. arguments 프로퍼티를 통해서가 아니라 함수 내부에서 지역 변수처럼 사용할 수 있는 <strong>arguments 객체를 직접 참조</strong>하는 것이 좋다.</p>
+</blockquote>
+<h4 id="arguments-Object"><a href="#arguments-Object" class="headerlink" title="arguments Object"></a>arguments Object</h4><p><img src="https://user-images.githubusercontent.com/48080762/57577250-ef08b400-74ad-11e9-820a-d6bf77e6ae79.png" alt="arguments object"></p>
+<ul>
+<li>argument들을 value로 가진다. 0, 1, 2 등 key는 argumet의 전달 순서를 나타낸다.</li>
+<li>callee:  호출된 함수, 즉 arguments 객체를 생성한 함수를 가리킨다.</li>
+<li>length: argument의 개수</li>
+<li>Symbol(Symbol.iteraor): arguments object를 순회 가능한 iterable 자료 구조로 만들기 위한 프로퍼티.</li>
+</ul>
+<p>arguments object는 parameter의 개수를 확정할 수 없는 <strong>가변 인자 함수 (Variable Argument Function)</strong>를 구현할 때 유용하게 사용한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> result = <span class="hljs-number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-comment">// arguments 객체는 length property를 가진 array-like object이므로 iterable하다.</span></span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">arguments</span>.length; i++)</span><br><span class="line">        result += <span class="hljs-built_in">arguments</span>[i];</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>Array-like Object</strong>란 length property를 가진 객체로, 실제 배열이 아니지만 for 문 등으로 순회할 수 있는 객체를 말한다. 배열이 아니므로 배열 메소드를 사용하면 에러가 발생한다.</p>
 <p>arguments object에 reduce, for…each 등 고차 함수를 사용하기 위해 배열로 변환한 후 사용하기도 한다.</p>
