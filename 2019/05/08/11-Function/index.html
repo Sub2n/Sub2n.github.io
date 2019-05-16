@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="What is a Function?In mathematics, a function defines the process of receiving an input and outputting it. In programming language, a function is defined as a unit of execution by implementing a serie">
+    <meta name="description" content="What is a Function?수학에서 함수는 input을 받아 output을 내보내는 일련의 과정(series of processes)을 정의한 것이다. 프로그래밍 언어에서 함수는 input을 받아 output을 내보내는 일련의 과정을 문(statement)들로 구현하고 코드 블록으로 감싸서 하나의 실행 단위로 정의한 것이다.  함수의 구성 요소로는,">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="11. Function">
 <meta property="og:url" content="https://sub2n.github.io/2019/05/08/11-Function/index.html">
 <meta property="og:site_name" content="수빈 개발블로그">
-<meta property="og:description" content="What is a Function?In mathematics, a function defines the process of receiving an input and outputting it. In programming language, a function is defined as a unit of execution by implementing a serie">
+<meta property="og:description" content="What is a Function?수학에서 함수는 input을 받아 output을 내보내는 일련의 과정(series of processes)을 정의한 것이다. 프로그래밍 언어에서 함수는 input을 받아 output을 내보내는 일련의 과정을 문(statement)들로 구현하고 코드 블록으로 감싸서 하나의 실행 단위로 정의한 것이다.  함수의 구성 요소로는,">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
-<meta property="og:updated_time" content="2019-05-08T09:03:15.802Z">
+<meta property="og:updated_time" content="2019-05-16T02:33:20.552Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="11. Function">
-<meta name="twitter:description" content="What is a Function?In mathematics, a function defines the process of receiving an input and outputting it. In programming language, a function is defined as a unit of execution by implementing a serie">
+<meta name="twitter:description" content="What is a Function?수학에서 함수는 input을 받아 output을 내보내는 일련의 과정(series of processes)을 정의한 것이다. 프로그래밍 언어에서 함수는 input을 받아 output을 내보내는 일련의 과정을 문(statement)들로 구현하고 코드 블록으로 감싸서 하나의 실행 단위로 정의한 것이다.  함수의 구성 요소로는,">
 <meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
 
 
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    15 minutes read (About 2205 words)
+                    16 minutes read (About 2371 words)
                 </span>
                 
                 
@@ -183,20 +183,21 @@
             
         </h1>
         <div class="content">
-            <h1 id="What-is-a-Function"><a href="#What-is-a-Function" class="headerlink" title="What is a Function?"></a>What is a Function?</h1><p>In mathematics, a function defines the process of receiving an input and outputting it.</p>
-<p>In programming language, a function is defined as a unit of execution by implementing a series of processes as statements and wrapping them in code blocks. This function also receive input and outputting it.</p>
-<p>In function,</p>
+            <h1 id="What-is-a-Function"><a href="#What-is-a-Function" class="headerlink" title="What is a Function?"></a>What is a Function?</h1><p>수학에서 함수는 input을 받아 output을 내보내는 일련의 과정(series of processes)을 정의한 것이다.</p>
+<p>프로그래밍 언어에서 함수는 input을 받아 output을 내보내는 일련의 과정을 문(statement)들로 구현하고 코드 블록으로 감싸서 하나의 실행 단위로 정의한 것이다. </p>
+<p>함수의 구성 요소로는,</p>
 <ul>
-<li>parameter : variable that receiving input</li>
-<li>argument : input</li>
-<li>return value : output</li>
+<li>parameter(매개변수) : input을 함수 내부로 전달받는 변수</li>
+<li>argument(인수) : input</li>
+<li>return value(반환값) : output</li>
 </ul>
-<p>And function has a name as identifier. </p>
-<p>A function is created by a <strong>function definition</strong>. You must call the function to execute the generated function. This is called a <strong>function call</strong>.</p>
-<h1 id="Why-use-a-function"><a href="#Why-use-a-function" class="headerlink" title="Why use a function?"></a>Why use a function?</h1><ul>
-<li>To <strong>reuse</strong> the same code repeated in many parts.</li>
-<li>To remove redundant code to improve <strong>maintenance</strong> efficiency.</li>
-<li>To improve the <strong>readability</strong> of your code using function names that specify functions.</li>
+<p>함수는 식별자로 함수명을 사용한다.</p>
+<p>함수는 함수를 정의함으로써 생성된다. 생성된 함수를 실행시키기 위해서는 함수를 호출해야한다. </p>
+<h1 id="Why-use-a-function"><a href="#Why-use-a-function" class="headerlink" title="Why use a function?"></a>Why use a function?</h1><p>함수를 사용해야 하는 이유는 다음과 같다.</p>
+<ul>
+<li>동일한 작업을 반복적으로 수행할 때 함수를 호출해 <strong>코드를 재사용</strong>하기 위해서 사용</li>
+<li>중복되는 코드를 제가해서 <strong>유지보수의 효율성</strong>을 높이기 위해서 사용</li>
+<li>함수의 이름으로 기능을 명시해 코드의 <strong>가독성을 높일 수 있다</strong>.</li>
 </ul>
 <h1 id="Function-Literal"><a href="#Function-Literal" class="headerlink" title="Function Literal"></a>Function Literal</h1><p>Just as objects are created as object literals, functions can also be created as function literals. Function literal consists of function keyword, function name, list of parameters and function body. A <strong>function literal is evaluated to create a function object</strong>.</p>
 <ul>
