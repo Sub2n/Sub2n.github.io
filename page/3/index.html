@@ -151,6 +151,124 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/05/05/9-Object-Literal/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="9. Object Literal">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-05T11:16:54.000Z">2019-05-05</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5 minutes read (About 787 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/05/9-Object-Literal/">9. Object Literal</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="What-is-Object"><a href="#What-is-Object" class="headerlink" title="What is Object?"></a>What is Object?</h1><p>JavaScript is an object-based programming language and almost “everything” that makes up JavaScript is an object. The rest of the values (functions, arrays, regular expressions, etc.) are all objects except primitive types.</p>
+<p>Object / reference type is a complex data structure that consists of several types of values (primitive type values or other objects) in a single unit.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Primitive value</th>
+<th style="text-align:center">Object</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">immutable value</td>
+<td style="text-align:center">mutable value</td>
+</tr>
+<tr>
+<td style="text-align:center">pass by value</td>
+<td style="text-align:center">pass by reference</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Object</strong> is a set of properties that consist of keys and values.</p>
+<p>Any value that is available in JavaScript can be used as the value of the property. Functions in JavaScript are first-class objects, so they can be treated as values.</p>
+<p>JavaScript functions are first-class objects, so they can be used as property values. If the property value is a function, it is called a <strong>method</strong> to distinguish it from a normal function.</p>
+<ul>
+<li>Attributes are refer to additional information of an object. </li>
+<li>Properties are describing the characteristics of an object.</li>
+</ul>
+<p>An object is a set of methods, which means properties that refer to data and behavior that can refer to and manipulate data.</p>
+<h1 id="Create-Object-by-Object-Literal"><a href="#Create-Object-by-Object-Literal" class="headerlink" title="Create Object by Object Literal"></a>Create Object by Object Literal</h1><p>Class-based object-oriented languages such as C ++ and Java pre-define classes and create objects by calling the constructor with the new operator at the point in time. However, JavaScript is a prototype-based object-oriented language that creates objects differently.</p>
+<p>Then how JavaScript creates object?</p>
+<ul>
+<li>Object literal</li>
+<li>Object constructor function</li>
+<li>Constructor function</li>
+<li>Object.create method</li>
+<li>Class (ES6)</li>
+</ul>
+<p>The most basic and general method is using object literal.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// empty object</span></span><br><span class="line"><span class="hljs-keyword">var</span> empty = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// At the time of assignment, the object literal is interpreted and the resulting object is created.</span></span><br><span class="line"><span class="hljs-keyword">var</span> student = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span>,</span><br><span class="line">    hello: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">        Console.log(<span class="hljs-string">'Hello. I'</span>m $&#123;<span class="hljs-keyword">this</span>.name&#125;.<span class="hljs-string">');</span></span><br><span class="line"><span class="hljs-string">	&#125;</span></span><br><span class="line"><span class="hljs-string">&#125;;</span></span><br></pre></td></tr></table></figure>
+<p>The <code>{}</code> used to create the object is not a block of code. It is an object literal because it ends with a <code>;</code>.</p>
+<p>You can create a property as soon as you create the object by including the property in an object literal, or you can dynamically add a property after you create the object.</p>
+<h1 id="Property"><a href="#Property" class="headerlink" title="Property"></a>Property</h1><p>An object is a set of properties. A property consists of a key and a value.</p>
+<p>The values that can be used for property key and property values are as follows.</p>
+<ul>
+<li>Property key : all strings include empty string or symbol value</li>
+<li>Property value : all values in JavaScript</li>
+</ul>
+<p>Quotes can be omitted if the property key is a name that conforms to the identifier naming convention, that is, a valid name that can be used in JavaScript.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> student = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Dynamically add property key</span></span><br><span class="line">student[<span class="hljs-string">'age'</span>] = <span class="hljs-number">25</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(student); 	<span class="hljs-comment">// &#123;name: "Park", age: 25&#125;</span></span><br></pre></td></tr></table></figure>
+<p>Property keys are allowed to be duplicated, and in the event of duplication, the last declared key is valid.</p>
+<h1 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h1><p>If the property value is a function, it is called a method to distinguish it from a normal function. In other words, a method means a function restricted to an object.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> circle = &#123;</span><br><span class="line">  radius: <span class="hljs-number">5</span>, <span class="hljs-comment">// ← property</span></span><br><span class="line">  getDiameter: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123; <span class="hljs-comment">// ← method</span></span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">2</span> * <span class="hljs-keyword">this</span>.radius; <span class="hljs-comment">// this pointing circle</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(circle.getDiameter());  <span class="hljs-comment">// 10</span></span><br></pre></td></tr></table></figure>
+<p><code>this</code> is a reference variable that points to the object that called it.</p>
+<h1 id="Access-of-Property"><a href="#Access-of-Property" class="headerlink" title="Access of Property"></a>Access of Property</h1><p>You can access the properties in such a way,</p>
+<ul>
+<li>Dot notation </li>
+<li>Bracket notation</li>
+</ul>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> student = &#123;</span><br><span class="line">	name: <span class="hljs-string">'Park'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(student.name);		<span class="hljs-comment">// Access by dot notaion</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(student[<span class="hljs-string">'name'</span>];	<span class="hljs-comment">// Access by bracket notation</span></span><br></pre></td></tr></table></figure>
+<p>If the property key follows the identifier naming convention, 2 notations are both available. If not, only bracket notation is available.</p>
+<p>If the property key is not a name that does conform to the identifier naming convention, that is, not a valid name that can be used in JavaScript,  must use square bracket notation. However, the quotation marks <code>&#39;&#39;</code> can be omitted if the property key is a string of numbers.</p>
+<h1 id="Update-Property-Value"><a href="#Update-Property-Value" class="headerlink" title="Update Property Value"></a>Update Property Value</h1><p>If assign a value to an existing property, the property value is updated.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> student = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">student.name = <span class="hljs-string">'Kim'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(student);	<span class="hljs-comment">// &#123;name: "Kim"&#125;</span></span><br></pre></td></tr></table></figure>
+<h1 id="Dynamic-property-creation"><a href="#Dynamic-property-creation" class="headerlink" title="Dynamic property creation"></a>Dynamic property creation</h1><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> student = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">student.age = <span class="hljs-string">'22'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(student); <span class="hljs-comment">// &#123;name: "Park", age: "22"&#125;</span></span><br></pre></td></tr></table></figure>
+<p>Can add, modify, and delete properties after object creation is complete.</p>
+<h1 id="New-ES6-Object-Literal-Functions"><a href="#New-ES6-Object-Literal-Functions" class="headerlink" title="New ES6 Object Literal Functions"></a>New ES6 Object Literal Functions</h1><h2 id="Property-shorthand"><a href="#Property-shorthand" class="headerlink" title="Property shorthand"></a>Property shorthand</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> x = <span class="hljs-number">1</span>, y = <span class="hljs-number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> obj = &#123; x, y &#125;;   <span class="hljs-comment">// &#123; x:1, y: 2 &#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Property-key-dynamic-creation"><a href="#Property-key-dynamic-creation" class="headerlink" title="Property key dynamic creation"></a>Property key dynamic creation</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// ES6</span></span><br><span class="line"><span class="hljs-keyword">const</span> prefix = <span class="hljs-string">'prop'</span>;</span><br><span class="line"><span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 객체 리터럴 내부에서 프로퍼티 키 동적 생성</span></span><br><span class="line"><span class="hljs-keyword">var</span> obj = &#123;</span><br><span class="line">    [<span class="hljs-string">`<span class="hljs-subst">$&#123;prefix&#125;</span>-<span class="hljs-subst">$&#123;++i&#125;</span>`</span>]: i,</span><br><span class="line">    [<span class="hljs-string">`<span class="hljs-subst">$&#123;prefix&#125;</span>-<span class="hljs-subst">$&#123;++i&#125;</span>`</span>]: i,</span><br><span class="line">    [<span class="hljs-string">`<span class="hljs-subst">$&#123;prefix&#125;</span>-<span class="hljs-subst">$&#123;++i&#125;</span>`</span>]: i</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(obj); <span class="hljs-comment">// &#123;prop-1: 1, prop-2: 2, prop-3: 3&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Method-shorthand"><a href="#Method-shorthand" class="headerlink" title="Method shorthand"></a>Method shorthand</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// ES6</span></span><br><span class="line"><span class="hljs-keyword">const</span> obj = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span>,</span><br><span class="line">    <span class="hljs-comment">// 메소드 축약 표현</span></span><br><span class="line">    sayHi(other) &#123;</span><br><span class="line">        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Hi, <span class="hljs-subst">$&#123;other&#125;</span>! I'm <span class="hljs-subst">$&#123;<span class="hljs-keyword">this</span>.name&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.sayHi(<span class="hljs-string">'Sam'</span>); <span class="hljs-comment">// Hi, Sam! I'm Park</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/05/04/8-Type-Coercion-and-Short-Circuit-Evaluation/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="8. Type Coercion and Short-Circuit Evaluation">
         </a>
@@ -1130,119 +1248,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/30/4-Variable/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="4. Variable">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-30T07:07:31.000Z">2019-04-30</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    8 minutes read (About 1147 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/30/4-Variable/">4. Variable</a>
-            
-        </h1>
-        <div class="content">
-            <h1 id="What-is-variable"><a href="#What-is-variable" class="headerlink" title="What is variable?"></a>What is variable?</h1><p>Application uses data. And the variable is core concept for managing data.</p>
-<p>Computer is computing machine. To do simple operation like sum of 1 and 2, computer should memorize these operand 1 and 2 in register. Computer uses memory to memorze the data. </p>
-<blockquote>
-<h2 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h2><p>Memory is a collection of memory cells that can store data. Size of one cell is 1byte(8bit) and computer read or wirte data by one cell, 1 byte size. Each memory cell has its own address. That address means location of memory space and can be represented from 0 to memory size.</p>
-</blockquote>
-<p>Computer can simply compute 1 + 2, but how to use this result of sum? What you need at this point is the variable. To store data in memory and read to use data from memory, programming language provide variable.</p>
-<p><strong>Variable</strong> refers name of memory space or memory space itself. Simply, variable is mechanism that store and refer data values.</p>
-<p>Through variable, developer can store, refer and change value wihout access to memory directly.</p>
-<p>Just, like it.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> result = <span class="hljs-number">1</span> + <span class="hljs-number">2</span>;</span><br></pre></td></tr></table></figure>
-<p><img src="https://user-images.githubusercontent.com/48080762/56947343-cf959100-6b67-11e9-8bde-d3e9553a4bf1.png" alt="variable in memory"></p>
-<p>In JavaScript, <code>var</code> means variable. In that code, ‘result’ is a name of the variable and 3 is a value of the variable. Storing value in variable is called <strong>assignment</strong> and reading data from variable is called <strong>reference</strong>. </p>
-<p>The variable name is the name given to the memory space where the value is stored for the person.</p>
-<h1 id="Declaration-of-variable"><a href="#Declaration-of-variable" class="headerlink" title="Declaration of variable"></a>Declaration of variable</h1><p>Variable name is the name given to memory space. To use a variable, variable must be declared. Use <code>var</code>, <code>let</code>, <code>const</code> keywords to declare variable.</p>
-<p>Before ES6 introduced <code>let</code> and <code>const</code> keywords, <code>var</code> was the only method to declare variable. </p>
-<blockquote>
-<h2 id="Keyword"><a href="#Keyword" class="headerlink" title="Keyword"></a>Keyword</h2><p>Keyword is kind of command that defines the actions performed by JavaScript engines that execute JavaScript code. When JavaScript engine meets </p>
-</blockquote>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> soup;</span><br></pre></td></tr></table></figure>
-<p>After declaring a variable, the variable never been assigned. Therefore, the memory space allocated by the variable declaration may be considered to be empty, but the allocated memory space is implicitly allocated with the value <code>undefined</code> by the JavaScript engine. This is a unique feature of JavaScript.</p>
-<blockquote>
-<h2 id="undefined"><a href="#undefined" class="headerlink" title="undefined"></a>undefined</h2><p><code>undefined</code> is primitive value of JavaScript.</p>
-</blockquote>
-<p>JavaScript engine operates declaration of variable by 2 phases.</p>
-<ol>
-<li>Declaration phase : Register the variable name to tell the JavaScript engine the existence of the variable.</li>
-<li>Initialization phase : Allocates memory space to store the value and implicitly assigns <code>undefined</code>.</li>
-</ol>
-<p>Variable declaration using the <code>var</code> keyword proceeds both in the declaration phase and in the initialization phase. <code>var soup;</code> registers the variable name soup through the declaration phase, and initializes it by assigning <code>undefined</code> to the variable score through the initialization step. </p>
-<p>In general, <strong>initialization</strong> refers to assigning a value first after a variable is declared. JavaScript automatically do implicit initialization to <code>undefined</code>. Therefore, even if you declare a variable and do not assign any value, the variable has a value of <code>undefined</code>.</p>
-<p>If you do not go through the initialization phase, the reserved memory space may still contain values that were previously used by other applications. These values are called <strong>garbage values</strong>. Therefore, garbage value can be obtained by referring to a variable value immediately after allocating memory space and not allocating a value.</p>
-<p>Declarations are required to use variables. Not just variables, but all identifiers (functions, classes, etc.). If you access the identifier without declaration, a ReferenceError is raised. ReferenceError is a error that occurs when the JavaScript engine tries to reference a value through an identifier but can not find the registered identifier.</p>
-<h1 id="Variable-Declaration-run-time-and-Hoisting"><a href="#Variable-Declaration-run-time-and-Hoisting" class="headerlink" title="Variable Declaration run time and Hoisting"></a>Variable Declaration run time and Hoisting</h1><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(soup);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> soup;</span><br></pre></td></tr></table></figure>
-<p>In C, the avobe code will occur compile error because it access to the variable before its declaration. But in JavaScript print <code>undefined</code> instead of ReferenceError.</p>
-<p>Variable declaration is processed <strong>before the run-time</strong> that source code execute in line step. In other words, JavaScript engine estimate entire source code in advance. At this time, it finds all of declaration(variable declaration, function declaration), declare and initialize identifiers. After that run source codes sequentially except declarations.</p>
-<h2 id="What-is-Hoisting"><a href="#What-is-Hoisting" class="headerlink" title="What is Hoisting?"></a>What is Hoisting?</h2><p>Hoist means to lift something. It is a variable that is hoisted in JavaScript. </p>
-<p>Hoist means that the definition of a variable is separated into declarations and allocations according to its scope.<br>Declarations execute before other codes so it seems like declarations are hoisted to top of the source code. In JavaScript, all of variable declarations are hoisted. </p>
-<p><strong>Warning</strong></p>
-<p>Function hoisting hoists function declarations too, but not hoist the value of variables. So think separate declarations and assignment is important. It’s relevant with run-time and parsing-time.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">foo();</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'ok'</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="hljs-comment">// Ok</span></span><br><span class="line"></span><br><span class="line">foo();</span><br><span class="line"><span class="hljs-keyword">var</span> foo = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'ok'</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="hljs-comment">// Syntax error!</span></span><br></pre></td></tr></table></figure>
-<h1 id="Assignment-of-Values"><a href="#Assignment-of-Values" class="headerlink" title="Assignment of Values"></a>Assignment of Values</h1><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> soup; <span class="hljs-comment">// Variable Declaration</span></span><br><span class="line">soup = <span class="hljs-number">3</span>; <span class="hljs-comment">// Assignment value</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> soup = <span class="hljs-number">3</span>; <span class="hljs-comment">// Variable declaration and assigment</span></span><br></pre></td></tr></table></figure>
-<p>Variable declaration is executed at parsing-time and assignment is executed in run-time, affter the parsing-time. Of course when declare variable, it is initialized to <code>undefined</code>. </p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(soup);  <span class="hljs-comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> soup = <span class="hljs-number">3</span>;       <span class="hljs-comment">// Variable declaration and assigment</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(soup);  <span class="hljs-comment">// 3</span></span><br></pre></td></tr></table></figure>
-<p>So soup is re-initialized to 3.</p>
-<h1 id="Reassignment-of-Value"><a href="#Reassignment-of-Value" class="headerlink" title="Reassignment of Value"></a>Reassignment of Value</h1><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> soup = <span class="hljs-number">3</span>; <span class="hljs-comment">// Declaration and Assignment</span></span><br><span class="line">soup = <span class="hljs-number">5</span>; <span class="hljs-comment">// Reassignment</span></span><br></pre></td></tr></table></figure>
-<p>Variable that declared by <code>var</code> keyword can be reassigned. Reassignment is that variable discards the current value and store new value.</p>
-<p>Reassignment changes old value to new value. If the reassignment is not possible, it is called a <strong>constant</strong> not a variable. A constant is a value that does not change once set. In other words, constants are variables that can be assigned only once.</p>
-<blockquote>
-<h2 id="const-keyword"><a href="#const-keyword" class="headerlink" title="const keyword"></a>const keyword</h2><p>Introduced from ES6, variable that declared by <code>const</code> is prohibited reassignment. But <code>const</code> keyword does not only used for constant.</p>
-</blockquote>
-<h1 id="Identifier-Naming-Convention"><a href="#Identifier-Naming-Convention" class="headerlink" title="Identifier Naming Convention"></a>Identifier Naming Convention</h1><p>An identifier is a unique name that can identify any data. The identifier shall conform to the following naming conventions.</p>
-<ul>
-<li>Identifiers can include letters, numbers, underscore ( _ ), and dollar sign ($), except for special characters.</li>
-<li>However, identifiers must begin with a letter, underscore ( _ ), or dollar sign ($), except for special characters. It is not allowed to start with a number.</li>
-<li>Reserved words can not be used as identifiers.</li>
-</ul>
-<p>Since the variable name is an identifier, the above naming rules must be followed. There are 4 naming conventions that are often used to distinguish words at a time when naming identifiers composed of one or more English words.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// camelCase</span></span><br><span class="line"><span class="hljs-keyword">var</span> firstName;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// snake_case</span></span><br><span class="line"><span class="hljs-keyword">var</span> first_name;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// PascalCase</span></span><br><span class="line"><span class="hljs-keyword">var</span> FirstName;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// typeHungarianCase</span></span><br><span class="line"><span class="hljs-keyword">var</span> strFirstName;          <span class="hljs-comment">// type + identifier</span></span><br><span class="line"><span class="hljs-keyword">var</span> $elem = $(<span class="hljs-string">'.myClass'</span>); <span class="hljs-comment">// jQuery</span></span><br></pre></td></tr></table></figure>
-<p>Any naming convention may be used if it is consistent. The most common is to <strong>use a camel case for the name of a variable or function</strong> and <strong>a Pascal case for the name of a constructor function or class</strong>.</p>
-<p>In order to improve the readability of the entire code, it is advantageous to follow the above naming convention.</p>
-<hr>
-<p>Reference</p>
-<p><a href="https://poiemaweb.com/js-data-type-variable" target="_blank" rel="noopener">Data type &amp; Variable</a></p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -1265,7 +1270,7 @@
             
             <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
             
-            <li><a class="pagination-link has-text-black-ter" href="/page/10/">10</a></li>
+            <li><a class="pagination-link has-text-black-ter" href="/page/11/">11</a></li>
             
         </ul>
     </nav>
@@ -1315,7 +1320,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        100
+                        101
                     </p>
                 </div>
             </div>
@@ -1540,7 +1545,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">48</span>
+                <span class="level-item tag">49</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1562,6 +1567,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/16/190516-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/cherry.png" alt="190516-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-16T09:48:57.000Z">2019-05-16</time></div>
+                    <a href="/2019/05/16/190516-TIL/" class="has-link-black-ter is-size-6">190516-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1639,25 +1663,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/15/19-Global-Object/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="19. Global Object">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T03:43:39.000Z">2019-05-15</time></div>
-                    <a href="/2019/05/15/19-Global-Object/" class="has-link-black-ter is-size-6">19. Global Object</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1676,7 +1681,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">27</span>
+                    <span class="level-item tag">28</span>
                 </span>
             </a>
         </li>
@@ -1985,7 +1990,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">48</span>
+                        <span class="tag is-grey">49</span>
                     </a>
                 </div>
                 
@@ -2214,7 +2219,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">48</span>
+                <span class="level-item tag">49</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -2236,6 +2241,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/16/190516-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/cherry.png" alt="190516-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-16T09:48:57.000Z">2019-05-16</time></div>
+                    <a href="/2019/05/16/190516-TIL/" class="has-link-black-ter is-size-6">190516-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -2313,25 +2337,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/15/19-Global-Object/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="19. Global Object">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T03:43:39.000Z">2019-05-15</time></div>
-                    <a href="/2019/05/15/19-Global-Object/" class="has-link-black-ter is-size-6">19. Global Object</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2350,7 +2355,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">27</span>
+                    <span class="level-item tag">28</span>
                 </span>
             </a>
         </li>
@@ -2659,7 +2664,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">48</span>
+                        <span class="tag is-grey">49</span>
                     </a>
                 </div>
                 

@@ -151,6 +151,65 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/04/18/190418-TIL/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="190418-TIL">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-18T11:47:31.000Z">2019-04-18</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 182 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/18/190418-TIL/">190418-TIL</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><h2 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h2><ul>
+<li><p>Epsilon, Number Digit 등 컴퓨터에서 실수를 표현하는 방식과 상대오차에 대해서 깊게 배웠다.</p>
+</li>
+<li><p>실수형의 논리비교를 위한 is_equal 함수를 만들었다.</p>
+  <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">is_equal</span>(<span class="hljs-params">x, y, allowed=<span class="hljs-number">0</span></span>)</span>&#123;</span><br><span class="line">	<span class="hljs-comment">// 둘 중 큰 수의 다음 숫자와의 오차의 allowed 배 정도 되는 범위 안에 있으면 같다고 판단한다.</span></span><br><span class="line">	<span class="hljs-keyword">return</span> (<span class="hljs-built_in">Math</span>.abs(x-y) &lt;= <span class="hljs-built_in">Math</span>.max(<span class="hljs-built_in">Math</span>.abs(x), <span class="hljs-built_in">Math</span>.abs(y))*<span class="hljs-built_in">Number</span>.EPSILON*<span class="hljs-built_in">Math</span>.pow(<span class="hljs-number">2</span>, allowed));</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">	<span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>;</span><br><span class="line">	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i =<span class="hljs-number">0</span>; i&lt; <span class="hljs-number">100</span>; i++)&#123;</span><br><span class="line">		sum += <span class="hljs-number">0.01</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-keyword">if</span>(is_equal(sum, <span class="hljs-number">1.0</span>, <span class="hljs-number">2</span>))&#123;</span><br><span class="line">		<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"THE SAME"</span>);</span><br><span class="line">	&#125; <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">		<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"NOT THE SAME"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Python을 배우는데 너무 재미있다. 익숙하지 않아 찾아보는 것이 번거롭지만 문법이나 기능이 흥미롭다.</p>
+</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/04/18/LeetCode-35-Search-Insert-Position/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="LeetCode 35. Search Insert Position">
         </a>
@@ -677,64 +736,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/15/LeetCode-26-Remove-Duplicates-from-Sorted-Array/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="LeetCode 26. Remove Duplicates from Sorted Array">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-15T12:37:47.000Z">2019-04-15</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/LeetCode/">LeetCode</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 611 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/15/LeetCode-26-Remove-Duplicates-from-Sorted-Array/">LeetCode 26. Remove Duplicates from Sorted Array</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="LeetCode-26-Remove-Duplicates-from-Sorted-Array"><a href="#LeetCode-26-Remove-Duplicates-from-Sorted-Array" class="headerlink" title="LeetCode 26. Remove Duplicates from Sorted Array"></a><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/" target="_blank" rel="noopener">LeetCode 26. Remove Duplicates from Sorted Array</a></h2><p>정렬된 배열에서 중복되는 값 제거 : in-place Algorithm</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/15/LeetCode-26-Remove-Duplicates-from-Sorted-Array/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -757,9 +758,9 @@
             
             <li><a class="pagination-link has-text-black-ter" href="/page/8/">8</a></li>
             
-            <li><a class="pagination-link has-text-black-ter" href="/page/9/">9</a></li>
+            <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
             
-            <li><a class="pagination-link has-text-black-ter" href="/page/10/">10</a></li>
+            <li><a class="pagination-link has-text-black-ter" href="/page/11/">11</a></li>
             
         </ul>
     </nav>
@@ -809,7 +810,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        100
+                        101
                     </p>
                 </div>
             </div>
@@ -1034,7 +1035,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">48</span>
+                <span class="level-item tag">49</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1056,6 +1057,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/16/190516-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/cherry.png" alt="190516-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-16T09:48:57.000Z">2019-05-16</time></div>
+                    <a href="/2019/05/16/190516-TIL/" class="has-link-black-ter is-size-6">190516-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1133,25 +1153,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/15/19-Global-Object/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="19. Global Object">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T03:43:39.000Z">2019-05-15</time></div>
-                    <a href="/2019/05/15/19-Global-Object/" class="has-link-black-ter is-size-6">19. Global Object</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1170,7 +1171,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">27</span>
+                    <span class="level-item tag">28</span>
                 </span>
             </a>
         </li>
@@ -1479,7 +1480,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">48</span>
+                        <span class="tag is-grey">49</span>
                     </a>
                 </div>
                 
@@ -1708,7 +1709,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">48</span>
+                <span class="level-item tag">49</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1730,6 +1731,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/16/190516-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/cherry.png" alt="190516-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-16T09:48:57.000Z">2019-05-16</time></div>
+                    <a href="/2019/05/16/190516-TIL/" class="has-link-black-ter is-size-6">190516-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1807,25 +1827,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/15/19-Global-Object/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="19. Global Object">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T03:43:39.000Z">2019-05-15</time></div>
-                    <a href="/2019/05/15/19-Global-Object/" class="has-link-black-ter is-size-6">19. Global Object</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1844,7 +1845,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">27</span>
+                    <span class="level-item tag">28</span>
                 </span>
             </a>
         </li>
@@ -2153,7 +2154,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">48</span>
+                        <span class="tag is-grey">49</span>
                     </a>
                 </div>
                 

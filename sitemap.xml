@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sub2n.github.io/2019/05/16/190516-TIL/</loc>
+    
+    <lastmod>2019-05-16T09:52:47.241Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/05/15/Underscore-each/</loc>
+    
+    <lastmod>2019-05-16T09:49:08.935Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sub2n.github.io/2019/05/15/21-Number-Math-Date-and-String-Object/</loc>
     
     <lastmod>2019-05-16T07:31:36.429Z</lastmod>
@@ -26,13 +40,6 @@
     <loc>https://sub2n.github.io/2019/05/08/11-Function/</loc>
     
     <lastmod>2019-05-16T02:33:20.552Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sub2n.github.io/2019/05/15/Underscore-each/</loc>
-    
-    <lastmod>2019-05-15T10:22:40.073Z</lastmod>
     
   </url>
   
