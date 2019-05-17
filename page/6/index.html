@@ -151,6 +151,82 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/04/22/First-class-Function/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="First-class Function">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-22T12:05:45.000Z">2019-04-22</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 322 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/22/First-class-Function/">First-class Function</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="First-class-Function"><a href="#First-class-Function" class="headerlink" title="First-class Function"></a>First-class Function</h1><ul>
+<li>프로그래밍 언어 중 함수를 다른 변수와 동일하게 다루는 언어를 함수우선순위(First-class Functions) 가졌다고 표현한다.</li>
+<li>함수를 다른 함수의 argument로 사용하고, 함수에서 함수를 return하거나 변수의 값으로 함수를 할당할 수 있다.</li>
+</ul>
+<ol>
+<li>변수에 함수를 할당 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> foo = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"foobar"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">// 변수를 사용하여 호출</span></span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="2">
+<li>함수를 인자로 전달 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-string">"Hello, "</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greeting</span>(<span class="hljs-params">helloMessage, name</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(helloMessage() + name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">// `sayHello`를 `greeting` 함수에 인자로 전달</span></span><br><span class="line">greeting(sayHello, <span class="hljs-string">"JavaScript!"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>다른 함수에 인자로 전달된 함수를 Call Back 함수라고 한다. </li>
+<li>다른 언어들과 같이 sayHello()를 호출하면 바로 실행되지만, 위와 같이 greeting(satHello, “)의 인자로 전달된 sayHello의 경우 greeting 함수의 helloMessage parameter로 전달된 후에, 필요한 경우 helloMessage()에서 호출된다.</li>
+<li>전달된 이후 나중에 호출되기 때문에 CallBack 함수라고 불린다.</li>
+</ul>
+<ol start="3">
+<li><p>함수를 return 값으로 전달 (함수 return)</p>
+ <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Hello!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>함수가 함수를 반환하는 예시문. JavaScript에서는 함수를 변수처럼 취급하므로 함수를 return할 수 있다.</li>
+<li>Higher-Order Function : 함수를 반환하는 함수</li>
+</ul>
+</li>
+</ol>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/04/22/Call-by-Value-Call-by-Reference-and-Call-by-Object-Reference/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="Call by Value, Call by Reference and Call by Object Reference">
         </a>
@@ -846,75 +922,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/18/Python-3-7-3-Jupyter-설치/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/python.png" alt="Python 3.7.3 | Jupyter 설치">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-18T11:52:27.000Z">2019-04-18</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Python/">Python</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 297 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/18/Python-3-7-3-Jupyter-설치/">Python 3.7.3 | Jupyter 설치</a>
-            
-        </h1>
-        <div class="content">
-            <h1 id="Window-Python-3-7-3-및-Jupyter-설치"><a href="#Window-Python-3-7-3-및-Jupyter-설치" class="headerlink" title="Window Python 3.7.3 및 Jupyter 설치"></a>Window Python 3.7.3 및 Jupyter 설치</h1><p>파이썬을 공부하기 위해 작업환경을 우선 구축하기로 한다.</p>
-<h2 id="Python-3-7-3-설치"><a href="#Python-3-7-3-설치" class="headerlink" title="Python 3.7.3 설치"></a>Python 3.7.3 설치</h2><ol>
-<li>Python 최신 릴리즈인 <a href="https://www.python.org/downloads/release/python-373/" target="_blank" rel="noopener">3.7.3 다운로드</a> 페이지로 이동한다.</li>
-</ol>
-<p><img src="https://user-images.githubusercontent.com/48080762/56359343-45226880-621c-11e9-9d8d-12cfb3d12b59.png" alt="www.python.org/download"></p>
-<ol start="2">
-<li><p>Download for Windows의 Python 3.7.3 버튼을 누르면 자동으로 설치 실행 파일이 다운로드 된다.</p>
-</li>
-<li><p>다운받은 <code>python-3.7.3.exe</code> 파일을 관리자 권한으로 실행 후, 설치를 진행한다. PATH를 자동으로 생성하는 것이 좋다!</p>
-</li>
-<li><p>다운로드가 완료되면 cmd 창을 열어 <code>python --version</code> 명령어로 설치가 제대로 되었는지 확인한다.</p>
-<p> <img src="https://user-images.githubusercontent.com/48080762/56359512-bd892980-621c-11e9-8241-1fc8a260c10b.png" alt="python 설치 확인"></p>
-</li>
-</ol>
-<h2 id="Jupyter-설치"><a href="#Jupyter-설치" class="headerlink" title="Jupyter 설치"></a>Jupyter 설치</h2><p>위의 Python 설치 4단계에서, cmd 명령으로 확인을 정상적으로 마쳤다면 추가적인 명령 한 줄로 Jupyter를 설치할 수 있다.</p>
-<ol>
-<li>cmd 창에 <code>pip install jupyter</code>를 입력한다.<br> <img src="https://user-images.githubusercontent.com/48080762/56359642-1c4ea300-621d-11e9-9c40-cd5fd89b9a24.png" alt="jupyter 설치"></li>
-</ol>
-<p>여기까지 하면 Python 사용을 위한 간단한 작업 환경 구성이 완료된다.</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -989,7 +996,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        101
+                        102
                     </p>
                 </div>
             </div>
@@ -1214,7 +1221,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">49</span>
+                <span class="level-item tag">50</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1239,6 +1246,25 @@
         
         <article class="media">
             
+            <a href="/2019/05/17/190517-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190517-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-17T07:46:21.000Z">2019-05-17</time></div>
+                    <a href="/2019/05/17/190517-TIL/" class="has-link-black-ter is-size-6">190517-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/05/16/190516-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/cherry.png" alt="190516-TIL">
@@ -1260,14 +1286,14 @@
             
             <a href="/2019/05/15/21-Number-Math-Date-and-String-Object/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="21. Number, Math, Date and String Object">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="21. Number, Math and String Object">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T10:23:44.000Z">2019-05-15</time></div>
-                    <a href="/2019/05/15/21-Number-Math-Date-and-String-Object/" class="has-link-black-ter is-size-6">21. Number, Math, Date and String Object</a>
+                    <a href="/2019/05/15/21-Number-Math-Date-and-String-Object/" class="has-link-black-ter is-size-6">21. Number, Math and String Object</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
                     </p>
@@ -1313,25 +1339,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/15/20-this/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="20. this">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T03:45:06.000Z">2019-05-15</time></div>
-                    <a href="/2019/05/15/20-this/" class="has-link-black-ter is-size-6">20. this</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1350,7 +1357,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">28</span>
+                    <span class="level-item tag">29</span>
                 </span>
             </a>
         </li>
@@ -1659,7 +1666,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">49</span>
+                        <span class="tag is-grey">50</span>
                     </a>
                 </div>
                 
@@ -1888,7 +1895,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">49</span>
+                <span class="level-item tag">50</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1913,6 +1920,25 @@
         
         <article class="media">
             
+            <a href="/2019/05/17/190517-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190517-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-17T07:46:21.000Z">2019-05-17</time></div>
+                    <a href="/2019/05/17/190517-TIL/" class="has-link-black-ter is-size-6">190517-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/05/16/190516-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/cherry.png" alt="190516-TIL">
@@ -1934,14 +1960,14 @@
             
             <a href="/2019/05/15/21-Number-Math-Date-and-String-Object/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="21. Number, Math, Date and String Object">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="21. Number, Math and String Object">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T10:23:44.000Z">2019-05-15</time></div>
-                    <a href="/2019/05/15/21-Number-Math-Date-and-String-Object/" class="has-link-black-ter is-size-6">21. Number, Math, Date and String Object</a>
+                    <a href="/2019/05/15/21-Number-Math-Date-and-String-Object/" class="has-link-black-ter is-size-6">21. Number, Math and String Object</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
                     </p>
@@ -1987,25 +2013,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/15/20-this/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="20. this">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T03:45:06.000Z">2019-05-15</time></div>
-                    <a href="/2019/05/15/20-this/" class="has-link-black-ter is-size-6">20. this</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2024,7 +2031,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">28</span>
+                    <span class="level-item tag">29</span>
                 </span>
             </a>
         </li>
@@ -2333,7 +2340,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">49</span>
+                        <span class="tag is-grey">50</span>
                     </a>
                 </div>
                 

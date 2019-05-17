@@ -162,7 +162,7 @@
     
     <div class="card-image">
         <a href="/2019/05/15/21-Number-Math-Date-and-String-Object/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="21. Number, Math, Date and String Object">
+            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="21. Number, Math and String Object">
         </a>
     </div>
     
@@ -180,7 +180,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    19 minutes read (About 2832 words)
+                    19 minutes read (About 2860 words)
                 </span>
                 
                 
@@ -189,7 +189,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/15/21-Number-Math-Date-and-String-Object/">21. Number, Math, Date and String Object</a>
+                <a class="has-link-black-ter" href="/2019/05/15/21-Number-Math-Date-and-String-Object/">21. Number, Math and String Object</a>
             
         </h1>
         <div class="content">
@@ -266,7 +266,7 @@
 <h3 id="1-3-9-Number-prototype-valueOf-number-ES1"><a href="#1-3-9-Number-prototype-valueOf-number-ES1" class="headerlink" title="1.3.9. Number.prototype.valueOf(): number ES1"></a>1.3.9. Number.prototype.valueOf(): number <sup>ES1</sup></h3><p>Number.prototype.valueOf() 메소드는 Number 객체의 primitive value를 리턴한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> numObj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Number</span>(<span class="hljs-string">'30'</span>);</span><br><span class="line"><span class="hljs-keyword">const</span> num = numObj.valueOf();</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">typeof</span> numObj; <span class="hljs-comment">// object</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> num; <span class="hljs-comment">// number</span></span><br></pre></td></tr></table></figure>
 <h1 id="2-Math-Object"><a href="#2-Math-Object" class="headerlink" title="2. Math Object"></a>2. Math Object</h1><p>Math Object : 수학 상수와 함수를 위한 프로퍼티와 메소드를 제공하는 built-in 객체.</p>
-<p>Math 객체의 프로퍼티와 메소드는 static 프로퍼티와 메소드이다.</p>
+<p>Math 객체의 프로퍼티와 메소드는 전부 static 프로퍼티와 메소드이다. 생성자 함수 또한 존재하지 않아 직접 Math.property, Math.method()로 호출하면 된다.</p>
 <h2 id="2-1-Math-Property"><a href="#2-1-Math-Property" class="headerlink" title="2.1. Math Property"></a>2.1. Math Property</h2><h2 id="2-1-1-Math-PI"><a href="#2-1-1-Math-PI" class="headerlink" title="2.1.1.Math.PI"></a>2.1.1.Math.PI</h2><p>Math.PI는 PI값(&pi;)을 리턴한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Math</span>.PI; <span class="hljs-comment">// 3.141592653589793</span></span><br></pre></td></tr></table></figure>
 <h2 id="2-2-Math-Method"><a href="#2-2-Math-Method" class="headerlink" title="2.2. Math Method"></a>2.2. Math Method</h2><h3 id="2-2-1-Math-abs-x-number-number-ES1"><a href="#2-2-1-Math-abs-x-number-number-ES1" class="headerlink" title="2.2.1. Math.abs(x: number): number ES1"></a>2.2.1. Math.abs(x: number): number <sup>ES1</sup></h3><p>Math.abs() 메소드는 숫자의 절댓값(Absolute Value)을 리턴한다. Number.prototype의 메소드처럼 엄격한 type 검사를 하지 않는다.</p>
@@ -288,7 +288,7 @@
 <p>Math.max 의 argument로 배열을 전달할 수 없기 때문에 Function.prototype.apply() 메소드를 이용해서 배열 argument를 전달할 수 있었다.</p>
 <p>그러나 ES6에서는 Spread Operator의 도입으로 apply() 메소드를 사용하지 않아도 배열을 열거된 list argument처럼 풀어서 전달할 수 있다.</p>
 <h3 id="2-2-9-Math-min-…-values-number-number-ES1"><a href="#2-2-9-Math-min-…-values-number-number-ES1" class="headerlink" title="2.2.9. Math.min(… values: number[]): number ES1"></a>2.2.9. Math.min(… values: number[]): number <sup>ES1</sup></h3><p>Math.min() 메소드는 argument들 중 가장 작은 수를 리턴한다. 사용법은 Math.max와 같다.</p>
-<h1 id="3-Date-Object"><a href="#3-Date-Object" class="headerlink" title="3. Date Object"></a>3. Date Object</h1>
+<h1 id="3-String-Object"><a href="#3-String-Object" class="headerlink" title="3. String Object"></a>3. String Object</h1>
         </div>
         
         
@@ -348,7 +348,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        101
+                        102
                     </p>
                 </div>
             </div>
@@ -573,7 +573,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">49</span>
+                <span class="level-item tag">50</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -598,6 +598,25 @@
         
         <article class="media">
             
+            <a href="/2019/05/17/190517-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190517-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-17T07:46:21.000Z">2019-05-17</time></div>
+                    <a href="/2019/05/17/190517-TIL/" class="has-link-black-ter is-size-6">190517-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/05/16/190516-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/cherry.png" alt="190516-TIL">
@@ -619,14 +638,14 @@
             
             <a href="/2019/05/15/21-Number-Math-Date-and-String-Object/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="21. Number, Math, Date and String Object">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="21. Number, Math and String Object">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T10:23:44.000Z">2019-05-15</time></div>
-                    <a href="/2019/05/15/21-Number-Math-Date-and-String-Object/" class="has-link-black-ter is-size-6">21. Number, Math, Date and String Object</a>
+                    <a href="/2019/05/15/21-Number-Math-Date-and-String-Object/" class="has-link-black-ter is-size-6">21. Number, Math and String Object</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
                     </p>
@@ -672,25 +691,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/15/20-this/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="20. this">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T03:45:06.000Z">2019-05-15</time></div>
-                    <a href="/2019/05/15/20-this/" class="has-link-black-ter is-size-6">20. this</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -709,7 +709,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">28</span>
+                    <span class="level-item tag">29</span>
                 </span>
             </a>
         </li>
@@ -1018,7 +1018,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">49</span>
+                        <span class="tag is-grey">50</span>
                     </a>
                 </div>
                 
@@ -1247,7 +1247,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">49</span>
+                <span class="level-item tag">50</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1272,6 +1272,25 @@
         
         <article class="media">
             
+            <a href="/2019/05/17/190517-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190517-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-17T07:46:21.000Z">2019-05-17</time></div>
+                    <a href="/2019/05/17/190517-TIL/" class="has-link-black-ter is-size-6">190517-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/05/16/190516-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/cherry.png" alt="190516-TIL">
@@ -1293,14 +1312,14 @@
             
             <a href="/2019/05/15/21-Number-Math-Date-and-String-Object/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="21. Number, Math, Date and String Object">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="21. Number, Math and String Object">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T10:23:44.000Z">2019-05-15</time></div>
-                    <a href="/2019/05/15/21-Number-Math-Date-and-String-Object/" class="has-link-black-ter is-size-6">21. Number, Math, Date and String Object</a>
+                    <a href="/2019/05/15/21-Number-Math-Date-and-String-Object/" class="has-link-black-ter is-size-6">21. Number, Math and String Object</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
                     </p>
@@ -1346,25 +1365,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/15/20-this/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="20. this">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T03:45:06.000Z">2019-05-15</time></div>
-                    <a href="/2019/05/15/20-this/" class="has-link-black-ter is-size-6">20. this</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1383,7 +1383,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">28</span>
+                    <span class="level-item tag">29</span>
                 </span>
             </a>
         </li>
@@ -1692,7 +1692,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">49</span>
+                        <span class="tag is-grey">50</span>
                     </a>
                 </div>
                 
