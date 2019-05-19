@@ -227,7 +227,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 0 words)
+                    a minute read (About 188 words)
                 </span>
                 
                 
@@ -240,7 +240,12 @@
             
         </h1>
         <div class="content">
-            
+            <h1 id="Regular-Expression"><a href="#Regular-Expression" class="headerlink" title="Regular Expression"></a>Regular Expression</h1><p>정규 표현식은 문자열에서 특정 내용을 찾거나 바꾸거나 뽑아내는 데에 사용된다.</p>
+<p>아이디나 이메일, 비밀번호 등의 유효성 검사에 정규 표현식을 사용할 수 있다. 자주 사용하는 정규 표현식은 간단한 구글 검색으로 찾을 수 있지만, 표현식 구성법에 대해서 우선 정리해볼 것이다.</p>
+<p>정규 표현식은 리터럴 표기법으로 간단하게 생성할 수 있다.</p>
+<p>RegExp.prototype.exec, RegExp.prototype.test, String.prototype.match, String.prototype.replace, String.prototype.search, String.prototype.split 등의 메소드에서 정규 표현식을 사용할 수 있다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// '/(pattern)/(flag: i, g, m)'</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> targetStr = <span class="hljs-string">'I like koala.'</span></span><br><span class="line"><span class="hljs-keyword">const</span> regExp = <span class="hljs-regexp">/k/ig</span>;</span><br></pre></td></tr></table></figure>
+
         </div>
         
         
