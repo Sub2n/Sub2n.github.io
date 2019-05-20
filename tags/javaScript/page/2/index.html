@@ -161,6 +161,106 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/05/15/19-Global-Object/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="19. Global Object">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-15T03:43:39.000Z">2019-05-15</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    6 minutes read (About 949 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/15/19-Global-Object/">19. Global Object</a>
+            
+        </h1>
+        <div class="content">
+            <p>전역 객체는 어떤 객체보다도 먼저 생성하고 어느 객체에도 속하지 않는 최상위 객체.</p>
+<ul>
+<li><p>client side 환경(브라우저)에서는 window</p>
+</li>
+<li><p>server side 환경에서는 global 객체</p>
+</li>
+</ul>
+<p>전역 객체는</p>
+<ul>
+<li>개발자가 의도적으로 생성할 수 없다.</li>
+<li>전역 객체의 프로퍼티를 참조할 때 window를 생략할 수 있다.</li>
+<li>전역 객체는 Object, String, Number,Boolean, Function, Array RegExp, Date, Math, Promise 등 모든 built-in 객체를 프로퍼티로 가지고 있다.</li>
+<li>브라우저의 window 객체는 DOM, BOM, Canvas, XMLHttpRequest, Fetch, SVG, Web Storage 등 Client side Web API를 프로퍼티로 소유한다.</li>
+<li>var 키워드로 선언한 전역 변수와 암묵적 전역 변수, 전역 함수는 전역 객체의 프로퍼티가 된다. (단, let이나 const 키워드로 선언한 전역 변수는 전역 객체  window의 프로퍼티가 아니다.)</li>
+<li>전역 객체의 프로퍼티와 메소드는 window를 생략하고 참조/호출 할 수 있으므로 전역 함수처럼 사용할 수 있다.</li>
+</ul>
+<h1 id="1-Global-Property"><a href="#1-Global-Property" class="headerlink" title="1. Global Property"></a>1. Global Property</h1><p>전역 프로퍼티는 전역 객체의 프로퍼티이다.</p>
+<h2 id="1-1-Infinity"><a href="#1-1-Infinity" class="headerlink" title="1.1. Infinity"></a>1.1. Infinity</h2><p>Infinity 프로퍼티는 양/음의 무한대를 나타내는 Number Infinity를 갖는다. 숫자를 0으로 나누면 NaN이 될 것 같지만 무한대를 나타낸다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">4</span>/<span class="hljs-number">0</span>);	<span class="hljs-comment">// Infinity</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">4</span>/<span class="hljs-number">-0</span>);	<span class="hljs-comment">// -Infinity</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-literal">Infinity</span>);	<span class="hljs-comment">// number</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-2-NaN"><a href="#1-2-NaN" class="headerlink" title="1.2. NaN"></a>1.2. NaN</h2><p>NaN(Not-a-Number) 프로퍼티는 숫자가 아님을 나타내는 Number NaN을 갖는다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Number</span>(<span class="hljs-string">'string'</span>));	<span class="hljs-comment">// NaN</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> * <span class="hljs-string">'string'</span>); <span class="hljs-comment">// NaN</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-literal">NaN</span>);	<span class="hljs-comment">// number</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-3-undefined"><a href="#1-3-undefined" class="headerlink" title="1.3. undefined"></a>1.3. undefined</h2><p>undefined 프로퍼티는 primitive type undefined를 값으로 갖는다.</p>
+<h1 id="2-Global-Function"><a href="#2-Global-Function" class="headerlink" title="2. Global Function"></a>2. Global Function</h1><p>전역 함수는 전역 객체의 메소드이다. 애플리케이션 전역에서 호출할 수 있다.</p>
+<h2 id="2-1-eval"><a href="#2-1-eval" class="headerlink" title="2.1. eval"></a>2.1. eval</h2><p>문자열로 코드를 주면 그 코드를 실행하는데, 평가시 자신의 스코프를 만들고 상위 스코프로 변형시켜 비용이 많이 든다.</p>
+<h2 id="2-2-isFinite"><a href="#2-2-isFinite" class="headerlink" title="2.2. isFinite"></a>2.2. isFinite</h2><p>parameter에 전달된 값이 정상적인 유한수인지 검사해서 Boolean을 리턴한다. 숫자가 아닌 값 전달받으면 숫자 타입으로 변환 후 검사를 수행한다.</p>
+<h2 id="2-3-isNaN"><a href="#2-3-isNaN" class="headerlink" title="2.3. isNaN"></a>2.3. isNaN</h2><p>parameter에 전달된 값이 NaN인지 검사해서 Boolean을 리턴한다. 숫자가 아닌 값 전달받으면 숫자 타입으로 변환 후 검사를 수행한다.</p>
+<h2 id="2-4-parseFloat"><a href="#2-4-parseFloat" class="headerlink" title="2.4. parseFloat"></a>2.4. parseFloat</h2><p>parameter에 전달된 <strong>String을 부동소숫점 숫자(floating point number)로</strong> 변환하여 반환한다.</p>
+<h2 id="2-5-parseInt"><a href="#2-5-parseInt" class="headerlink" title="2.5. parseInt"></a>2.5. parseInt</h2><p>parameter에 전달된 <strong>String을 정수형 숫자(Integer)로</strong> parsing하여 리턴한다. 리턴값은 10진수이다.</p>
+<p>10진수 숫자를 10진수가 아닌 수의 문자열로 변환하고 싶을 때는 Number.prototype.toString 메소드를 사용한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> x = <span class="hljs-number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(x.toString(<span class="hljs-number">2</span>));	<span class="hljs-comment">// '1010'</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(x.toString(<span class="hljs-number">8</span>));	<span class="hljs-comment">// '12'</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(x.toString(<span class="hljs-number">16</span>));	<span class="hljs-comment">// 'a'</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(x.toString());	<span class="hljs-comment">// '10'</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-6-encodeURI-decodeURI"><a href="#2-6-encodeURI-decodeURI" class="headerlink" title="2.6. encodeURI / decodeURI"></a>2.6. encodeURI / decodeURI</h2><p>encodeURI 함수는 paremeter로 전달된 URI(Uniform Resource Identifier)를 인코딩한다.</p>
+<blockquote>
+<h4 id="URI-Uniform-Resource-Identifier"><a href="#URI-Uniform-Resource-Identifier" class="headerlink" title="URI (Uniform Resource Identifier)"></a>URI (Uniform Resource Identifier)</h4><p>인터넷에 있는 자원을 나타내는 유일한 주소. URI의 하위 개념으로 URL, URN이 있다.</p>
+<ul>
+<li>Scheme(protocol) : 통신 방식</li>
+<li>Host : 찾아갈 server의 주소<ul>
+<li>localhost : 컴퓨터 한 대에서 client와 server를 동시에 돌릴 때 server를 의미. Port 번호로 server에 고유 번호를 매김</li>
+</ul>
+</li>
+<li>Port : port 번호</li>
+<li>Path : file 경로<ul>
+<li>REST API : 서버와 통신시 메소드 호출방식처럼 사용</li>
+</ul>
+</li>
+<li>Query Parameter : ?key=value&amp;key=value&amp;key=value</li>
+<li>Fragment : # page 내 이동에서 씀</li>
+</ul>
+</blockquote>
+<p>인코딩이랑 URI의 문자들을 Escape 처리 하는 것을 의미한다. Escape 처리는 네트워크를 통해 정보를 공유할 때 ASCII Character-set으로 변환하는 것이다. 한글은 %EC%9E%90 등과 같이 인코딩 된다.</p>
+<p>decodeURI 함수는 paremeter로 전달된 encoded URI을 전달받아 escape 처리 되기 전으로 디코딩한다.</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/05/12/18-JavaScript-Prototype/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="18. JavaScript Prototype">
         </a>
@@ -878,94 +978,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/05/09/13-Problems-with-global-variables/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="13. Problems with Global Variables">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-09T02:26:46.000Z">2019-05-09</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    12 minutes read (About 1758 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/09/13-Problems-with-global-variables/">13. Problems with Global Variables</a>
-            
-        </h1>
-        <div class="content">
-            <h1 id="1-Life-Cycle-of-a-Variable"><a href="#1-Life-Cycle-of-a-Variable" class="headerlink" title="1. Life Cycle of a Variable"></a>1. Life Cycle of a Variable</h1><p>변수는 선언에 의해 생성되고 할당을 통해 값을 가진다. 생성된 변수는 언젠가는 소멸한다. 변수가 생성되고 소멸되는 주기를 변수의 생명 주기라고 한다.</p>
-<p>변수가 생성된다는 것은 메모리 공간을 차지하는 것이고, 소멸됨은 차지하던 메모리가 해제되는 것이다.</p>
-<p>조금 더 정확히 말하면 변수가 소멸된다는 것은 등록된 식별자가 소멸한다는 것이다. 이때 식별자와 값의 바인딩이 해제된다. 어떤 지역 스코프가 사라질 때 그 스코프에 등록된 식별자들이 소멸된다.</p>
-<p>함수 내부에서 선언된 지역 변수는 함수가 호출되면 생성되고 함수가 종료하면 소멸한다. 즉, 지역 변수의 생명주기는 함수와 생명 주기와 같다. 그래서 지역 변수의 생명주기는 비교적 짧다. 그러나 전역 변수는 다르다.</p>
-<p>함수는 함수 몸체의 문이 끝나거나, return 문이 실행되면 종료한다. 하지만 전역 코드는 마지막 문이 끝나서 더 이상 실행할 문이 없어도 함수처럼 종료하지 않는다. 전역변수는 브라우저를 종료해서 애플리케이션을 종료할 때까지 유효하다. 즉, 전역 변수의 생명주기는 애플리케이션의 생명 주기와 일치한다. 이는 다음과 같은 문제점을 가진다.</p>
-<h1 id="2-Problem-of-Global-Variable"><a href="#2-Problem-of-Global-Variable" class="headerlink" title="2. Problem of Global Variable"></a>2. Problem of Global Variable</h1><h2 id="2-1-Implicit-Coupling"><a href="#2-1-Implicit-Coupling" class="headerlink" title="2.1. Implicit Coupling"></a>2.1. Implicit Coupling</h2><p>전역 변수는 코드의 전체 영역에서 사용할 수 있다. 이는 <strong>모든 코드에서 전역 변수를 참조하고 변경할 수 있는 암묵적 결합</strong>을 허용한다. 문제는 변수의 유효 범위가 크면 클수록 코드의 가독성이 나빠지고 의도치 않은 상태 변경이 일어난다는 것이다.</p>
-<h2 id="2-2-Long-Life-Cycle"><a href="#2-2-Long-Life-Cycle" class="headerlink" title="2.2. Long Life Cycle"></a>2.2. Long Life Cycle</h2><p>전역 변수는 생명 주기가 길다. 이는 다음과 같이 몇 가지 문제점을 가진다.</p>
-<ul>
-<li>전역 변수의 상태를 변경할 수 있는 시간이 길다.</li>
-<li>모든 함수가 참조할 수 있으므로 상태가 변경될 위험이 크다.</li>
-<li>메모리 리소스를 오랜기간 차지한다.</li>
-<li><code>var</code> 키워드는 변수의 중복 선언을 허용하므로 중간에 변수명이 중복되어 의도치 않은 재할당이 일어날 수 있다.</li>
-</ul>
-<h2 id="2-3-Exist-at-the-End-of-the-Scope-Chain"><a href="#2-3-Exist-at-the-End-of-the-Scope-Chain" class="headerlink" title="2.3. Exist at the End of the Scope Chain"></a>2.3. Exist at the End of the Scope Chain</h2><p>전역 변수의 또다른 문제점은 스코프 체인 가장 상위에 존재한다는 것이다. 이는 자바스크립트 엔진이 전역 변수를 찾을 때 가장 마지막 스코프까지 검색해야함을 의미한다. 즉, 전역 변수의 검색 속도가 가장 느리다.</p>
-<h2 id="2-4-Namespace-Pollution"><a href="#2-4-Namespace-Pollution" class="headerlink" title="2.4. Namespace Pollution"></a>2.4. Namespace Pollution</h2><p>자바스크립트의 특성으로, 분리되어있는 파일을 함께 import할 경우 하나의 전역 스코프를 공유한다. 따라서 다른 파일 내에서 동일한 이름으로 명명한 변수나 함수가 겹칠 경우 예상치 못한 결과를 가져올 수 있다.</p>
-<h1 id="3-How-to-Suppress-Using-Global-Variables"><a href="#3-How-to-Suppress-Using-Global-Variables" class="headerlink" title="3. How to Suppress Using Global Variables"></a>3. How to Suppress Using Global Variables</h1><p>위에서 살펴본 바와 같이 전역 변수의 사용은 위험하다. 반드시 사용해야할 때가 아니라면 지역 변수를 사용해야 한다. </p>
-<h2 id="3-1-Immediately-Invoke-Function-Expression"><a href="#3-1-Immediately-Invoke-Function-Expression" class="headerlink" title="3.1. Immediately Invoke Function Expression"></a>3.1. Immediately Invoke Function Expression</h2><p>즉시 실행 함수는 함수의 정의와 동시에 한 번만 호출되는 함수로, 모든 코드를 즉시 실행 함수로 감싸면 모든 변수는 즉시 실행 함수의 지역 변수가 된다. 함수는 스코프를 만들고, 함수 내에 선언된 변수는 지역 변수가 된다는 것을 이용한 방법이다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> foo = <span class="hljs-number">10</span>;	<span class="hljs-comment">//local variable of IIF</span></span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
-<p>가장 간단하고 일반적인 방식이다.</p>
-<h2 id="3-2-Namespace-Object"><a href="#3-2-Namespace-Object" class="headerlink" title="3.2. Namespace Object"></a>3.2. Namespace Object</h2><p>전역 네임 스페이스 역할을 담당할 객체를 생성하고, 전역 변수처럼 사용하고 싶은 변수를 프로퍼티로 추가한다. 즉, 전역 변수를 네임 스페이스 객체의 프로퍼티로 등록하고 사용하는 방법이다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> GLOBAL = &#123;&#125;;	<span class="hljs-comment">// global namespace object</span></span><br><span class="line">GLOBAL.name = <span class="hljs-string">'Lee'</span>;</span><br></pre></td></tr></table></figure>
-<p>현재는 잘 안 쓰는 방식.</p>
-<h2 id="3-3-Module-Pattern"><a href="#3-3-Module-Pattern" class="headerlink" title="3.3. Module Pattern"></a>3.3. Module Pattern</h2><p>모듈 패턴은 클래스를 모방하여 관련이 있는 변수와 함수를 모아서 즉시 실행함수로 감싸 하나의 모듈로 만든다. 모듈 패턴은 자바스크립트의 <strong>클로저</strong>를 기반으로 동작한다.</p>
-<p><strong>캡슐화란 보호하고자 하는 내부 구현을 외부로부터 감추는 것</strong>을 말한다. 캡슐화의 목적은 상태 유지로, 외부에서 객체 내부의 상태를 변경하는 것을 제한한다. C++이나 Java의 class는 기본적으로 Access modifier를 제공하여 공개 범위를 한정할 수 있게 한다.</p>
-<p>자바스크립트는 Access modifier를 제공하지 않는다. 모듈 패턴은 전역 네임 스페이스의 오염을 막는 기능에 더해서, 한정적이기는 하지만 캡슐화를 구현하기 위해 사용한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> Account = (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">  <span class="hljs-comment">// private variable</span></span><br><span class="line">  <span class="hljs-keyword">var</span> balance = <span class="hljs-number">0</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-keyword">return</span> &#123;</span><br><span class="line">      deposit(money) &#123;</span><br><span class="line">        balance += money;</span><br><span class="line">          <span class="hljs-keyword">return</span> balance;</span><br><span class="line">      &#125;,</span><br><span class="line">      withdraw(money) &#123;</span><br><span class="line">          balance -= money;</span><br><span class="line">          <span class="hljs-keyword">return</span> balance;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;());</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(Account.balance);        <span class="hljs-comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(Account.deposit(<span class="hljs-number">3000</span>));		<span class="hljs-comment">//3000</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(Account.withdraw(<span class="hljs-number">1000</span>));	<span class="hljs-comment">//2000</span></span><br></pre></td></tr></table></figure>
-<p>위 코드의 즉시 실행 함수는 외부에 노출할 메소드를 객체에 담아 반환한다. 이 때 반환되는 객체의 프로퍼티는 외부에 노출되는 퍼블릭 멤버이다. 반환되는 객체에 추가되지 않은 변수나 함수는 모두 외부에서 접근할 수 없는 프라이빗 멤버가 된다.</p>
-<blockquote>
-<h4 id="Closure"><a href="#Closure" class="headerlink" title="Closure?"></a>Closure?</h4><p>그런데 즉시 실행 함수는 선언과 동시에 실행되고 종료되는데 deposit()과 withdraw() 메소드가 어떻게 num을 참조할 수 있을까? </p>
-<p>deposit()과 withdraw()는 즉시 실행 함수의 중첩 함수로, 중첩 함수가 외부 함수보다 더 오래 살아남아 있을 경우 이를 <strong>클로저</strong>라고 부른다. </p>
-<p>자바스크립트의 함수 객체는 생성될 때, 프로퍼티 어트리뷰트로 [[Environment]]라는 내부 슬롯을 가진다. 이 곳에 자신이 생성될 때의 외부 스코프(Lexical scope)를 담는다. 이는 함수 객체가 소멸하기 전까지 유지된다. 위의 num같은 변수를 자유변수라고 한다.</p>
-<p>deposit()과 withdraw()는 같은 lexical scope object를 참조하고 있다. 모던 자바스크립트 프로그래밍에서는 클로저의 사용을 적극 권장한다.</p>
-</blockquote>
-<h2 id="3-4-ES6-Module"><a href="#3-4-ES6-Module" class="headerlink" title="3.4 ES6 Module"></a>3.4 ES6 Module</h2><ul>
-<li>import</li>
-<li>export</li>
-</ul>
-<p>ES6가 구체적인 구현 스펙을 제안하지 않아 대부분의 브라우저가 완전히 지원하지는 않는다. 그러나 Webpack 등의 모듈 번들러를 사용해서 ES6 모듈을 사용할 수 있다.</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -1034,7 +1046,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        104
+                        105
                     </p>
                 </div>
             </div>
@@ -1054,7 +1066,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        55
+                        56
                     </p>
                 </div>
             </div>
@@ -1147,7 +1159,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 18.33px;">JavaScript</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a>
+        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 18.33px;">JavaScript</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a>
     </div>
 </div>
 
@@ -1243,7 +1255,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">23</span>
+                <span class="level-item tag">24</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1281,6 +1293,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/20/24-Higher-Order-Function/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="24. Higher Order Function">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-20T01:21:56.000Z">2019-05-20</time></div>
+                    <a href="/2019/05/20/24-Higher-Order-Function/" class="has-link-black-ter is-size-6">24. Higher Order Function</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1358,25 +1389,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/15/21-Number-Math-Date-and-String-Object/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="21. Number, Math and String Object">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T10:23:44.000Z">2019-05-15</time></div>
-                    <a href="/2019/05/15/21-Number-Math-Date-and-String-Object/" class="has-link-black-ter is-size-6">21. Number, Math and String Object</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1395,7 +1407,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">31</span>
+                    <span class="level-item tag">32</span>
                 </span>
             </a>
         </li>
@@ -1562,6 +1574,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Higher-Order-Function/">
+                        <span class="tag">Higher Order Function</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Hoisting/">
                         <span class="tag">Hoisting</span>
                         <span class="tag is-grey">1</span>
@@ -1578,7 +1597,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">20</span>
+                        <span class="tag is-grey">21</span>
                     </a>
                 </div>
                 
@@ -1924,7 +1943,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">23</span>
+                <span class="level-item tag">24</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1962,6 +1981,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/20/24-Higher-Order-Function/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="24. Higher Order Function">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-20T01:21:56.000Z">2019-05-20</time></div>
+                    <a href="/2019/05/20/24-Higher-Order-Function/" class="has-link-black-ter is-size-6">24. Higher Order Function</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -2039,25 +2077,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/15/21-Number-Math-Date-and-String-Object/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="21. Number, Math and String Object">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T10:23:44.000Z">2019-05-15</time></div>
-                    <a href="/2019/05/15/21-Number-Math-Date-and-String-Object/" class="has-link-black-ter is-size-6">21. Number, Math and String Object</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2076,7 +2095,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">31</span>
+                    <span class="level-item tag">32</span>
                 </span>
             </a>
         </li>
@@ -2243,6 +2262,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Higher-Order-Function/">
+                        <span class="tag">Higher Order Function</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Hoisting/">
                         <span class="tag">Hoisting</span>
                         <span class="tag is-grey">1</span>
@@ -2259,7 +2285,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">20</span>
+                        <span class="tag is-grey">21</span>
                     </a>
                 </div>
                 
