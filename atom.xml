@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sub2n.github.io/"/>
-  <updated>2019-05-22T07:16:58.095Z</updated>
+  <updated>2019-05-22T07:58:45.656Z</updated>
   <id>https://sub2n.github.io/</id>
   
   <author>
@@ -17,13 +17,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>29. DOM</title>
+    <link href="https://sub2n.github.io/2019/05/22/29.%20DOM/"/>
+    <id>https://sub2n.github.io/2019/05/22/29. DOM/</id>
+    <published>2019-05-22T07:58:06.000Z</published>
+    <updated>2019-05-22T07:58:45.656Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/tags/JavaScript/"/>
+    
+      <category term="DOM" scheme="https://sub2n.github.io/tags/DOM/"/>
+    
+  </entry>
+  
+  <entry>
     <title>28. Module</title>
     <link href="https://sub2n.github.io/2019/05/22/28-Module/"/>
     <id>https://sub2n.github.io/2019/05/22/28-Module/</id>
     <published>2019-05-22T07:16:28.000Z</published>
-    <updated>2019-05-22T07:16:58.095Z</updated>
+    <updated>2019-05-22T07:44:31.664Z</updated>
+    
+    <content type="html"><![CDATA[<p>원래 모듈화를 하거나 파일을 분리하면 각 모듈, 파일 별로 개별적인 스코프를 가져야하는데 자바스크립트는 파일을 분리해서 함께 사용할 때 하나의 전역 스코프만을 가진다. 즉, 여러 개의 js 파일에서 식별자 명이 겹칠 경우 의도한 바와 다르게 동작할 수 있다.</p><p>이전에는 각 파일을 IIFE(Imediately Invoked Function Expression)로 감쌌으나 근본적인 해결책은 아니다. 특정 클래스나 함수를 외부에 노출시키고 싶지 않을 때는 클로저를 사용해서 선택적으로 노출했다.</p><p>ES6에서 클라이언트 사이드 자바스크립트에서도 동작하는 모듈 기능이 추가되었다. script tag에 <code>type=&quot;module&quot;</code> 어트리뷰트 추가시 해당 자바스크립트 파일은 모듈로 동작하며 파일 스코프를 가진다. 모듈화된 자바스크립트 파일을 사용할 때는 확장자 명을 <code>.mjs</code>라고 한다.</p><p>그러나 아직까지 문법이 엄격하고 구형 브라우저(IE 등)에서는 ES6 모듈을 지원하지 않는 문제가 있다. 그러니까 아직은 바벨 / 웹팩 등을 사용해서 개발해야한다.</p><blockquote><p>바벨: ES6 이상의 문법을 사용해서 코딩하더라도 ES5의 문법으로 다운그레이드해서 구형 브라우저에서 돌아갈 수 있게 함</p><p>웹팩: 여러 파일을 import하면 하나의 파일로 압축해줌</p></blockquote><h3 id="1-File-Scope"><a href="#1-File-Scope" class="headerlink" title="1. File Scope"></a>1. File Scope</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// lib.js</span></span><br><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">10</span>;</span><br></pre></td></tr></table></figure><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// app.js</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(x);</span><br></pre></td></tr></table></figure><p>모듈을 사용하지 않을 경우 정상적으로 코드가 돌아가지만 <code>type=&quot;module&quot;</code> 사용시 각 파일마다 스코프가 분리되어 app.js에서 lib.js의 x에 접근할 수 없다.</p><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">&lt;!-- index.html --&gt;</span></span><br><span class="line"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"ie=edge"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./lib.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./app.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="2-export-Keyword"><a href="#2-export-Keyword" class="headerlink" title="2. export Keyword"></a>2. export Keyword</h3><p>ES6의 모듈을 쓰면 각각 파일이 파일 스코프를 가지기 때문에 다른 파일에 공개할 변수나 함수, 클래스 앞에 <code>export</code> 키워드를 붙여서 선택적으로 노출할 수 있다.</p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// lib.js</span></span><br><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> x = <span class="hljs-number">10</span>;</span><br></pre></td></tr></table></figure><h3 id="3-import-Keyword"><a href="#3-import-Keyword" class="headerlink" title="3. import Keyword"></a>3. import Keyword</h3><p>다른 파일에서 <code>export</code> 키워드로 노출한 변수, 함수, 클래스 등을 <code>import</code> 키워드를 사용함으로써 사용할 수 있다.</p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// app.js</span></span><br><span class="line"><span class="hljs-keyword">import</span> &#123; x &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'./lib.js'</span>;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(x);</span><br></pre></td></tr></table></figure><p>모듈에서 하나만 export할 때는 default 키워드를 사용할 수 있음</p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// lib.js</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">x</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span>;</span><br></pre></td></tr></table></figure><p>default 키워드로 export한 모듈은 import할 때 {} 없이 받아올 수 있다.</p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// app.js</span></span><br><span class="line"><span class="hljs-keyword">import</span> y <span class="hljs-keyword">from</span> <span class="hljs-string">'./lib.js'</span>;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;p&gt;원래 모듈화를 하거나 파일을 분리하면 각 모듈, 파일 별로 개별적인 스코프를 가져야하는데 자바스크립트는 파일을 분리해서 함께 사용할 때 하나의 전역 스코프만을 가진다. 즉, 여러 개의 js 파일에서 식별자 명이 겹칠 경우 의도한 바와 다르게 동작
+      
     
     </summary>
     
@@ -540,30 +567,6 @@
       <category term="JavaScript" scheme="https://sub2n.github.io/tags/JavaScript/"/>
     
       <category term="Object" scheme="https://sub2n.github.io/tags/Object/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CodeWars 6kyu. Build a pile of Cubes</title>
-    <link href="https://sub2n.github.io/2019/05/09/CodeWars-6kyu-Build-a-pile-of-Cubes/"/>
-    <id>https://sub2n.github.io/2019/05/09/CodeWars-6kyu-Build-a-pile-of-Cubes/</id>
-    <published>2019-05-09T07:19:09.000Z</published>
-    <updated>2019-05-09T08:17:34.744Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="CodeWars-6kyu-Build-a-pile-of-Cubes"><a href="#CodeWars-6kyu-Build-a-pile-of-Cubes" class="headerlink" title="CodeWars 6kyu. Build a pile of Cubes"></a><a href="https://www.codewars.com/kata/build-a-pile-of-cubes/javascript" target="_blank" rel="noopener">CodeWars 6kyu. Build a pile of Cubes</a></h2><p>Find the largest number of cubes can be piled.</p><a id="more"></a><blockquote><p>Your task is to construct a building which will be a pile of n cubes. The cube at the bottom will have a volume of n^3, the cube above will have volume of (n-1)^3 and so on until the top which will have a volume of 1^3.</p><p>You are given the total volume m of the building. Being given m can you find the number n of cubes you will have to build?</p><p>The parameter of the function findNb (find_nb, find-nb, findNb) will be an integer m and you have to return the integer n such as n^3 + (n-1)^3 + … + 1^3 = m if such a n exists or -1 if there is no such n.</p></blockquote><blockquote><p>Examples:</p><p>findNb(1071225) –&gt; 45<br>findNb(91716553919377) –&gt; -1<br>mov rdi, 1071225<br>call find_nb            ; rax &lt;– 45</p><p>mov rdi, 91716553919377<br>call find_nb            ; rax &lt;– -1</p></blockquote><h2 id="접근법"><a href="#접근법" class="headerlink" title="접근법"></a>접근법</h2><p>Σ k<sup>3</sup> (k = 1~n) == ((n * (n+1))/2))**2 가 m보다 작아야 한다.</p><p>따라서 n == Math.sqrt(2 * Math.sqrt(m)) 에 근사한 값으로 설정한 후 m보다 커질 때까지 반복한다.</p><h2 id="JavaScript-Solution"><a href="#JavaScript-Solution" class="headerlink" title="JavaScript Solution"></a>JavaScript Solution</h2><p><img src="https://user-images.githubusercontent.com/48080762/57434636-5c320480-7276-11e9-9045-4b17910f48f8.png" alt="Solution Submit"></p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">findNb</span>(<span class="hljs-params">m</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> n = <span class="hljs-built_in">parseInt</span>(<span class="hljs-built_in">Math</span>.sqrt(<span class="hljs-number">2</span> * (<span class="hljs-built_in">Math</span>.sqrt(m)))) - <span class="hljs-number">1</span>;</span><br><span class="line">    <span class="hljs-keyword">while</span> ( ((n * (n+<span class="hljs-number">1</span>))/<span class="hljs-number">2</span>) ** <span class="hljs-number">2</span> &lt; m ) &#123;</span><br><span class="line">      n++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> ((n * (n+<span class="hljs-number">1</span>))/<span class="hljs-number">2</span>) ** <span class="hljs-number">2</span> &gt; m ? <span class="hljs-number">-1</span> : n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;CodeWars-6kyu-Build-a-pile-of-Cubes&quot;&gt;&lt;a href=&quot;#CodeWars-6kyu-Build-a-pile-of-Cubes&quot; class=&quot;headerlink&quot; title=&quot;CodeWars 6kyu. Build a pile of Cubes&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.codewars.com/kata/build-a-pile-of-cubes/javascript&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CodeWars 6kyu. Build a pile of Cubes&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Find the largest number of cubes can be piled.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Algorithm" scheme="https://sub2n.github.io/categories/Algorithm/"/>
-    
-      <category term="CodeWars" scheme="https://sub2n.github.io/categories/Algorithm/CodeWars/"/>
-    
-    
-      <category term="Algorithm" scheme="https://sub2n.github.io/tags/Algorithm/"/>
     
   </entry>
   
