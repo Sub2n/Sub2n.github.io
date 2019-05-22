@@ -162,6 +162,56 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/05/22/28-Module/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="28. Module">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-22T07:16:28.000Z">2019-05-22</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a few seconds read (About 0 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/22/28-Module/">28. Module</a>
+            
+        </h1>
+        <div class="content">
+            
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/05/21/27-Class/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="27. Class">
         </a>
@@ -181,7 +231,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    19 minutes read (About 2799 words)
+                    19 minutes read (About 2903 words)
                 </span>
                 
                 
@@ -246,19 +296,20 @@
 <p>ES6의  class도 사실은 함수이지만, function 키워드로 선언한 함수 선언식은 호이스팅 되는 반면 class로 선언한 함수는 호이스팅 되지 않는다. 즉, 선언만 해놓고 초기화를 하지 않아 호이스팅되지 않는 것처럼 동작한다.</p>
 <p><code>let</code>이나 <code>const</code> 나 class 등의 선언문 이전을 TDZ(Temporal Dead Zone)이라고 한다. 선언만 되고 초기화되지 않아 참조할 수 없는 구간을 말한다.</p>
 </blockquote>
-<h3 id="6-getter-setter"><a href="#6-getter-setter" class="headerlink" title="6. getter, setter"></a>6. getter, setter</h3><p>객체 지향 언어에서 클래스를 사용하는 목적은 내부 상태를 접근하는 방법을 제한하고 최소한의 인터페이스를 제공해서 데이터의 캡슐화를 구현하기 위함이다. 접근자 프로퍼티 (getter, setter)를 사용하는 이유도 이와 같다. 클래스 내의 프로퍼티를 참조할 때는 get 함수, 프로퍼티를 설정할 때는 set 함수만을 이용할 수 있도록 구현해야 한다.</p>
-<h4 id="6-1-getter"><a href="#6-1-getter" class="headerlink" title="6.1. getter"></a>6.1. getter</h4><p>getter는 클래스 프로퍼티에 접근할 때 사용한다. getter는 메소드 이름 앞에 <code>get</code> 키워드를 사용해서 정의한다. 이 때 메소드 이름은 클래스 프로퍼티 키처럼 사용된다. 즉, getter는 호출하는 것이 아니라 프로퍼티처럼 참조하는 것이고, 참조할 때 메소드가 호출된다. getter는 데이터를 얻기위해(get) 사용하므로 반드시 무언가를 리턴해야 한다.</p>
-<h4 id="6-2-setter"><a href="#6-2-setter" class="headerlink" title="6.2. setter"></a>6.2. setter</h4><p>setter는 클래스 프로퍼티에 값을 할당할 때 사용한다. setter는 메소드 이름 앞에 <code>set</code> 키워드를 사용해서 정의한다. get 메소드와 마찬가지로 메소드 이름은 클래스 프로퍼티 키로 사용되어 참조되는 형식으로 메소드를 호출한다. setter는 데이터를 할당하기 위해서 호출하는 것이므로 메소드를 사용해서 할당할 때 set 메소드가 호출된다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// default 값 설정</span></span><br><span class="line">    <span class="hljs-keyword">constructor</span>(firstname = '', lastname = '') &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.firstname = firstname;</span><br><span class="line">        <span class="hljs-keyword">this</span>.lastname = lastname;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">get</span> fullName() &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">$&#123;<span class="hljs-keyword">this</span>.firstname&#125;</span> <span class="hljs-subst">$&#123;<span class="hljs-keyword">this</span>.lastname&#125;</span>`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">set</span> fullName(fullname) &#123;</span><br><span class="line">        [<span class="hljs-keyword">this</span>.firstname, <span class="hljs-keyword">this</span>.lastname] = fullname.split(<span class="hljs-string">' '</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> mimi = <span class="hljs-keyword">new</span> Student(<span class="hljs-string">'Mimi'</span>, <span class="hljs-string">'Kim'</span>); </span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(mimi.fullName); <span class="hljs-comment">// Mimi Kim (getter)</span></span><br><span class="line"></span><br><span class="line">mimi.fullName = <span class="hljs-string">'Mimi Park'</span>;	<span class="hljs-comment">// setter</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(mimi.fullName); <span class="hljs-comment">// Mimi Park (getter)</span></span><br></pre></td></tr></table></figure>
+<h3 id="6-getter-setter"><a href="#6-getter-setter" class="headerlink" title="6. getter, setter"></a>6. getter, setter</h3><p>객체 지향 언어에서 클래스를 사용하는 목적은 내부 상태(내부 데이터)에 접근하는 방법을 제한하고 최소한의 인터페이스를 제공해서 데이터의 캡슐화를 구현하기 위함이다. 접근자 프로퍼티 (getter, setter)를 사용하는 이유도 이와 같다. 클래스 내의 프로퍼티를 참조할 때는 get 함수, 프로퍼티를 설정할 때는 set 함수만을 이용할 수 있도록 구현해야 한다.</p>
+<h4 id="6-1-getter"><a href="#6-1-getter" class="headerlink" title="6.1. getter"></a>6.1. getter</h4><p>getter는 클래스 프로퍼티에 접근할 때 사용한다. getter는 메소드 이름 앞에 <code>get</code> 키워드를 사용해서 정의한다. 이 때 메소드 이름은 클래스 프로퍼티 키처럼 사용된다. 즉, getter는 호출하는 것이 아니라 <strong>프로퍼티처럼 참조하는 것이고, 참조할 때 메소드가 호출</strong>된다. getter는 데이터를 얻기위해(get) 사용하므로 반드시 무언가를 리턴해야 한다.</p>
+<h4 id="6-2-setter"><a href="#6-2-setter" class="headerlink" title="6.2. setter"></a>6.2. setter</h4><p>setter는 클래스 프로퍼티에 값을 할당할 때 사용한다. setter는 메소드 이름 앞에 <code>set</code> 키워드를 사용해서 정의한다. get 메소드와 마찬가지로 메소드 이름은 클래스 <strong>프로퍼티 키로 사용되어 참조되는 형식으로 메소드를 호출</strong>한다. setter는 데이터를 할당하기 위해서 호출하는 것이므로 메소드를 사용해서 할당할 때 set 메소드가 호출된다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// default 값 설정</span></span><br><span class="line">    <span class="hljs-keyword">constructor</span>(firstname = '', lastname = '') &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.firstname = firstname;</span><br><span class="line">        <span class="hljs-keyword">this</span>.lastname = lastname;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">get</span> fullName() &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">$&#123;<span class="hljs-keyword">this</span>.firstname&#125;</span> <span class="hljs-subst">$&#123;<span class="hljs-keyword">this</span>.lastname&#125;</span>`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">set</span> fullName(fullname) &#123;</span><br><span class="line">        [<span class="hljs-keyword">this</span>.firstname, <span class="hljs-keyword">this</span>.lastname] = fullname.split(<span class="hljs-string">' '</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> mimi = <span class="hljs-keyword">new</span> Student(<span class="hljs-string">'Mimi'</span>, <span class="hljs-string">'Kim'</span>); </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 메소드를 직접 호출하는 것이 아니라 프로퍼티에 접근하는 방식으로 getter, setter를 내부적으로 호출한다.</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(mimi.fullName); <span class="hljs-comment">// Mimi Kim (getter)</span></span><br><span class="line"></span><br><span class="line">mimi.fullName = <span class="hljs-string">'Mimi Park'</span>;	<span class="hljs-comment">// setter</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(mimi.fullName); <span class="hljs-comment">// Mimi Park (getter)</span></span><br></pre></td></tr></table></figure>
 <h3 id="7-Static-Method"><a href="#7-Static-Method" class="headerlink" title="7. Static Method"></a>7. Static Method</h3><p>Class는 static 메소드를 정의할 때 <code>static</code> 키워드를 사용한다. 정적 메소드는 인스턴스가 아니라 클래스 이름으로 호출하는 메소드이다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">constructor</span>(prop) &#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.prop = prop;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">static</span> staticMethod() &#123;</span><br><span class="line">    <span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment">    정적 메소드는 this를 사용할 수 없다.</span></span><br><span class="line"><span class="hljs-comment">    정적 메소드 내부에서 this는 클래스의 인스턴스가 아닌 클래스 자신을 가리킨다.</span></span><br><span class="line"><span class="hljs-comment">    */</span></span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-string">'staticMethod'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  prototypeMethod() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.prop;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(Foo.staticMethod()); <span class="hljs-comment">// staticMethod</span></span><br></pre></td></tr></table></figure>
 <p>정적 메소드는 클래스의 인스턴스 생성 없이 클래스 이름으로 호출하며 클래스의 인스턴스로는 호출할 수 없다.</p>
 <h3 id="8-Class-Inheritance"><a href="#8-Class-Inheritance" class="headerlink" title="8. Class Inheritance"></a>8. Class Inheritance</h3><h4 id="8-1-extends-Keyword"><a href="#8-1-extends-Keyword" class="headerlink" title="8.1. extends Keyword"></a>8.1. <code>extends</code> Keyword</h4><p><code>extends</code> 키워드는 parent 클래스를 생속받는 child 클래스를 정의할 때 사용한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// parent class</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Circle</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">constructor</span>(radius) &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.radius = radius;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    getDiameter() &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-number">2</span> * <span class="hljs-keyword">this</span>.radius;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    getArea() &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.PI * (<span class="hljs-keyword">this</span>.radius ** <span class="hljs-number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// child class</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cylinder</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Circle</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">constructor</span>(radius, height) &#123;</span><br><span class="line">    <span class="hljs-keyword">super</span>(radius);</span><br><span class="line">    <span class="hljs-keyword">this</span>.height = height;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-comment">// parent class Circle의 getArea overriding</span></span><br><span class="line">  getArea() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> (<span class="hljs-keyword">this</span>.height * <span class="hljs-keyword">super</span>.getPerimeter()) + (<span class="hljs-number">2</span> * <span class="hljs-keyword">super</span>.getArea());</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-comment">// 자신의 메소드 정의</span></span><br><span class="line">  getVolume() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.getArea() * <span class="hljs-keyword">this</span>.height;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Cylinder class는 Circle class를 상속한다.</span></span><br><span class="line">Cylinder.__proto__ === Circle <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-comment">// Cylinder의 prototype은 Circle의 prototype을 상속한다.</span></span><br><span class="line">Cylinder.prototype.__proto__ === Circle.prototype</span><br></pre></td></tr></table></figure>
-<h4 id="8-2-super-Keyword"><a href="#8-2-super-Keyword" class="headerlink" title="8.2. super Keyword"></a>8.2. <code>super</code> Keyword</h4><p><code>super</code> 키워드는 parent 클래스를 참조하거나  parent 클래스의 constructor를 호출할 때 사용한다.</p>
+<h4 id="8-2-super-Keyword"><a href="#8-2-super-Keyword" class="headerlink" title="8.2. super Keyword"></a>8.2. <code>super</code> Keyword</h4><p><code>super</code> 키워드는 <strong>parent 클래스를 참조</strong>하거나  <strong>parent 클래스의 constructor를 호출</strong>할 때 사용한다.</p>
 <ol>
-<li><p>super 클래스가 메소드로 사용될 때는 parent 클래스의 constructor를 호출한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">parent 클래스의 <span class="hljs-keyword">constructor</span>를 호출한다.class Cylinder extends Circle &#123;</span><br><span class="line">  <span class="hljs-keyword">constructor</span>(radius, height) &#123;</span><br><span class="line">    <span class="hljs-comment">// super가 parent class의 constructor처럼 사용됨</span></span><br><span class="line">    <span class="hljs-keyword">super</span>(radius);</span><br><span class="line">    <span class="hljs-keyword">this</span>.height = height;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<li><p>super 클래스가 메소드로 사용될 때는 parent 클래스의 constructor를 호출한다. <strong>child 클래스의 constructor에서 super()를 호출하지 않으면 this에 대한 ReferenceError가 발생한다.</strong></p>
+<p>child 클래스의 인스턴스를 만들 때 parent 클래스의 인스턴스를 우선 만들고 상속한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">parent 클래스의 <span class="hljs-keyword">constructor</span>를 호출한다.</span><br><span class="line">class Cylinder extends Circle &#123;</span><br><span class="line">  <span class="hljs-keyword">constructor</span>(radius, height) &#123;</span><br><span class="line">    <span class="hljs-comment">// super가 parent class의 constructor처럼 사용됨</span></span><br><span class="line">    <span class="hljs-keyword">super</span>(radius);</span><br><span class="line">    <span class="hljs-keyword">this</span>.height = height;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <ol start="2">
@@ -306,7 +357,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 615 words)
+                    5 minutes read (About 760 words)
                 </span>
                 
                 
@@ -319,18 +370,21 @@
             
         </h1>
         <div class="content">
-            <h3 id="Destructuring"><a href="#Destructuring" class="headerlink" title="Destructuring"></a>Destructuring</h3><p>구조화된 배열 / 객체를 풀어서 개별적인 변수에 할당하는 것. 배열 / 객체 리터럴에서 필요한 값을 추출해서 변수에 할당하거나 리턴할 때 유용</p>
+            <h3 id="Destructuring"><a href="#Destructuring" class="headerlink" title="Destructuring"></a>Destructuring</h3><p>구조화된 배열 / 객체를 풀어서(destructure) 개별적인 변수에 할당하는 것. 배열 / 객체 리터럴에서 필요한 값을 추출해서 변수에 할당하거나 리턴할 때 유용</p>
 <h3 id="1-Array-Destructuring"><a href="#1-Array-Destructuring" class="headerlink" title="1. Array Destructuring"></a>1. Array Destructuring</h3><p>ES6의 배열 디스트럭처링은 배열의 각 요소를 배열에서 추출해 변수 리스트에 할당한다. 배열 인덱스를 기준으로 추출, 할당한다. </p>
 <p>이 때 할당 연산자(=)의 왼 쪽에 <strong>배열 형태의 변수 리스트</strong>가 와야한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// ES6</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> [one, two, three] = arr;</span><br><span class="line"><span class="hljs-comment">// const [one, two, three] = [1, 2, 3];</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(one, two, three); <span class="hljs-comment">// 1 2 3</span></span><br></pre></td></tr></table></figure>
-<p>배열의 인덱스를 기준으로 <strong>오른쪽의 배열</strong>에서 왼쪽의 <strong>변수 리스트</strong>로 할당된다.</p>
+<p>배열의 인덱스를 기준으로 <strong>오른쪽의 배열</strong>에서 왼쪽의 <strong>변수 리스트</strong>로 할당된다. 그러므로 변수의 <strong>순서가 중요</strong>하다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> x, y, z;</span><br><span class="line"></span><br><span class="line">[x, y] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]; </span><br><span class="line"><span class="hljs-built_in">console</span>.log([x, y]); <span class="hljs-comment">// [1, 2]</span></span><br><span class="line"></span><br><span class="line">[x, y] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]; </span><br><span class="line"><span class="hljs-built_in">console</span>.log([x, y]); <span class="hljs-comment">// [1, 2]</span></span><br><span class="line"></span><br><span class="line">[x, y] = [<span class="hljs-number">1</span>]; </span><br><span class="line"><span class="hljs-built_in">console</span>.log([x, y]); <span class="hljs-comment">// [1, undefined]</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// default 설정</span></span><br><span class="line">[x, y = <span class="hljs-number">3</span>, z = <span class="hljs-number">4</span>] = [<span class="hljs-number">1</span>];</span><br><span class="line"><span class="hljs-built_in">console</span>.log([x, y, z]); <span class="hljs-comment">// [1, 3, 4]</span></span><br></pre></td></tr></table></figure>
 <h3 id="2-Object-Destructuring"><a href="#2-Object-Destructuring" class="headerlink" title="2. Object Destructuring"></a>2. Object Destructuring</h3><p>ES6의 객체 디스트럭처링은 객체의 각 프로퍼티를 객체로부터 추출해서 변수 리스트에 할당한다. 할당 기준은 <strong>프로퍼티 키</strong>이다. 할당 연산자 왼쪽에는 <strong>객체 형태의 변수 리스트</strong>가 필요하다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// ES6 Destructuring</span></span><br><span class="line"><span class="hljs-keyword">const</span> obj = &#123; <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Subin'</span>, <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Park'</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> &#123;firstName, lastName &#125; = obj;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(firstName, lastName); <span class="hljs-comment">// Subin Park</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> &#123; <span class="hljs-attr">prop1</span>: p1, <span class="hljs-attr">prop2</span>: p2 &#125; = &#123; <span class="hljs-attr">prop1</span>: <span class="hljs-string">'a'</span>, <span class="hljs-attr">prop2</span>: <span class="hljs-string">'b'</span> &#125;;</span><br><span class="line"><span class="hljs-comment">// prop1, prop2 등 프로퍼티 키가 다르면 안 됨</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(p1, p2); <span class="hljs-comment">// a, b</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(&#123; <span class="hljs-attr">prop1</span>: p1, <span class="hljs-attr">prop2</span>: p2 &#125;); <span class="hljs-comment">// &#123; prop1: 'a', prop2: 'b' &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Shorthand &amp; default 설정</span></span><br><span class="line"><span class="hljs-keyword">const</span> &#123; prop1, prop2, prop3 = <span class="hljs-string">'c'</span> &#125; = &#123; <span class="hljs-attr">prop1</span>: <span class="hljs-string">'a'</span>, <span class="hljs-attr">prop2</span>: <span class="hljs-string">'b'</span> &#125;;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(&#123; prop1, prop2, prop3 &#125;); <span class="hljs-comment">// &#123;prop1: "a", prop2: "b", prop3: "c"&#125;</span></span><br></pre></td></tr></table></figure>
+<p>객체 destructing의 경우 할당 기준이 프로퍼티 키이므로 <strong>프로퍼티 키를 명시해주지 않으려면 변수명과 프로퍼티 키가 같아야 한다</strong>. 순서는 상관 없다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> &#123; <span class="hljs-attr">prop1</span>: p1, <span class="hljs-attr">prop2</span>: p2 &#125; = &#123; <span class="hljs-attr">prop1</span>: <span class="hljs-string">'a'</span>, <span class="hljs-attr">prop2</span>: <span class="hljs-string">'b'</span> &#125;;</span><br><span class="line"><span class="hljs-comment">// 변수명을 prop1, prop2가 아닌 p1, p2로 하기 위해서 pro1: p1 등으로 구분해줌</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(p1, p2); <span class="hljs-comment">// a, b</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(&#123; <span class="hljs-attr">prop1</span>: p1, <span class="hljs-attr">prop2</span>: p2 &#125;); <span class="hljs-comment">// &#123; prop1: 'a', prop2: 'b' &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Shorthand(변수명을 프로퍼티 명과 같게 함) &amp; default 설정</span></span><br><span class="line"><span class="hljs-keyword">const</span> &#123; prop1, prop2, prop3 = <span class="hljs-string">'c'</span> &#125; = &#123; <span class="hljs-attr">prop1</span>: <span class="hljs-string">'a'</span>, <span class="hljs-attr">prop2</span>: <span class="hljs-string">'b'</span> &#125;;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(&#123; prop1, prop2, prop3 &#125;); <span class="hljs-comment">// &#123;prop1: "a", prop2: "b", prop3: "c"&#125;</span></span><br></pre></td></tr></table></figure>
 <p>객체 디스트럭처링으로 객체에서 필요한 프로퍼티 키의 값만을 추출해낼 수 있다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> parts = [</span><br><span class="line">    &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">department</span>: <span class="hljs-string">'Human Resource'</span>, <span class="hljs-attr">checked</span>: <span class="hljs-literal">false</span> &#125;,</span><br><span class="line">    &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">department</span>: <span class="hljs-string">'Development'</span>, <span class="hljs-attr">checked</span>: <span class="hljs-literal">true</span> &#125;,</span><br><span class="line">    &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">department</span>: <span class="hljs-string">'Management'</span>, <span class="hljs-attr">checked</span>: <span class="hljs-literal">false</span> &#125;    </span><br><span class="line">];</span><br><span class="line"><span class="hljs-comment">// parts 배열의 객체 element 중에서 checked 프로퍼티만 추출한다.</span></span><br><span class="line"><span class="hljs-keyword">const</span> checkedParts = parts.filter(<span class="hljs-function">(<span class="hljs-params">&#123;checked&#125;</span>) =&gt;</span> checked);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(checkedParts); <span class="hljs-comment">//  &#123; id: 2, department: 'Development', checked: true &#125;</span></span><br></pre></td></tr></table></figure>
-<p>위의 예제에서 filter 함수의 callback은 argument 로 parts의 객체 element를 하나씩 받는다. parameter로 {checked} 프로퍼티를 지정해 { id: 1, department: ‘Human Resource’, checked: false } 등의 객체 element 중 checked 프로퍼티의 값을 추출하는 것이다. 따라서 checked 프로퍼티의 값을 할당한 변수 checked === true인 객체 element만 필터링된다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> parts = [</span><br><span class="line">    &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">department</span>: <span class="hljs-string">'Human Resource'</span>, <span class="hljs-attr">checked</span>: <span class="hljs-literal">false</span> &#125;,</span><br><span class="line">    &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">department</span>: <span class="hljs-string">'Development'</span>, <span class="hljs-attr">checked</span>: <span class="hljs-literal">true</span> &#125;,</span><br><span class="line">    &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">department</span>: <span class="hljs-string">'Management'</span>, <span class="hljs-attr">checked</span>: <span class="hljs-literal">false</span> &#125;    </span><br><span class="line">];</span><br><span class="line"><span class="hljs-comment">// parts 배열의 객체 element 중에서 checked 프로퍼티의 값만을 checked라는 이름의 변수(parameter)로 받는다.</span></span><br><span class="line"><span class="hljs-keyword">const</span> checkedParts = parts.filter(<span class="hljs-function">(<span class="hljs-params">&#123;checked&#125;</span>) =&gt;</span> checked);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(checkedParts); <span class="hljs-comment">//  &#123; id: 2, department: 'Development', checked: true &#125;</span></span><br></pre></td></tr></table></figure>
+<p>위의 예제에서 filter 함수의 callback은 argument 로 parts의 객체 element를 하나씩 받는다. parameter에 {checked} 를 정의했다는 것은 내부적으로</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; checked &#125; = &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">department</span>: <span class="hljs-string">'Human Resource'</span>, <span class="hljs-attr">checked</span>: <span class="hljs-literal">false</span> &#125;;</span><br></pre></td></tr></table></figure>
+<p>가 실행되는 것과 같다. callback 함수 내에서는 checked라는 parameter 변수에 객체 element의 checked 프로퍼티의 값이 할당되어있다. 따라서 filter 실행시배열의 element 중 checked 프로퍼티의 값을 할당한 변수 checked 가 true인 객체 element만 필터링된다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> student = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span>,</span><br><span class="line">    address: &#123;</span><br><span class="line">        zipCode: <span class="hljs-string">'12345'</span>,</span><br><span class="line">        city: <span class="hljs-string">'NewYork'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> &#123; <span class="hljs-attr">address</span>: &#123; city &#125; &#125; = student;</span><br><span class="line"><span class="hljs-comment">// 왼 쪽의 city 변수에 student 객체의 address 프로퍼티의 값 객체의 city 프로퍼티의 값 'NeyWork'이 할당됨 (프로퍼티 추출)</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(city); <span class="hljs-comment">// 'NewYork'</span></span><br></pre></td></tr></table></figure>
 
         </div>
@@ -621,127 +675,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/05/19/22-Regular-Expression/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="22. Regular Expression">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-19T03:37:56.000Z">2019-05-19</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    5 minutes read (About 747 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/19/22-Regular-Expression/">22. Regular Expression</a>
-            
-        </h1>
-        <div class="content">
-            <h1 id="Regular-Expression"><a href="#Regular-Expression" class="headerlink" title="Regular Expression"></a>Regular Expression</h1><p>정규 표현식은 문자열에서 특정 내용을 찾거나 바꾸거나 뽑아내는 데에 사용된다.</p>
-<p>아이디나 이메일, 비밀번호 등의 유효성 검사에 정규 표현식을 사용할 수 있다. 자주 사용하는 정규 표현식은 간단한 구글 검색으로 찾을 수 있지만, 표현식 구성법에 대해서 우선 정리해볼 것이다.</p>
-<h2 id="How-to-make-Regular-Expression"><a href="#How-to-make-Regular-Expression" class="headerlink" title="How to make Regular Expression?"></a>How to make Regular Expression?</h2><p>정규 표현식을 생성하는 가장 간단한 방법은 리터럴 표기법이다.</p>
-<p>RegExp.prototype.exec, RegExp.prototype.test, String.prototype.match, String.prototype.replace, String.prototype.search, String.prototype.split 등의 메소드에서 정규 표현식을 사용할 수 있다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// '/(pattern)/(flag: i, g, m)'</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> targetStr = <span class="hljs-string">'I like koala.'</span></span><br><span class="line"><span class="hljs-keyword">const</span> regExp = <span class="hljs-regexp">/k/ig</span>;	<span class="hljs-comment">// 정규 표현식</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// RegExp.prototype methods</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(regExp.exec(targetStr)); <span class="hljs-comment">// ["k", index: 4, input: "I like koala.", groups: undefined]</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(regExp.test(targetStr)); <span class="hljs-comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// String.prototype methods</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(targetStr.match(regExp)); <span class="hljs-comment">// (2) ["k", "k"]</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(targetStr.replace(regExp, <span class="hljs-string">'K'</span>)); <span class="hljs-comment">// I liKe Koala.</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(targetStr.search(regExp)); <span class="hljs-comment">// 4</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(targetStr.splitgExp)); <span class="hljs-comment">// (3) ["I li", "e ", "oala."]</span></span><br></pre></td></tr></table></figure>
-<h2 id="1-1-Flag"><a href="#1-1-Flag" class="headerlink" title="1.1. Flag"></a>1.1. Flag</h2><p>정규 표현식의 플래그에는 다음과 같은 종류가 있다.</p>
-<ul>
-<li>i <ul>
-<li>Ignore Case</li>
-<li>대소문자를 구별하지 않고 검색</li>
-</ul>
-</li>
-<li>g<ul>
-<li>Globl</li>
-<li>문자열 내의 모든 패턴을 검색</li>
-</ul>
-</li>
-<li>m<ul>
-<li>Multi Line</li>
-<li>문자열의 행이 바뀌더라도 계속 검색</li>
-</ul>
-</li>
-</ul>
-<p>플래그는 옵션으로, 플래그를 사용하지 않으면 첫번째 매칭된 대상만 검색하고 끝낸다.</p>
-<h2 id="1-2-Pattern"><a href="#1-2-Pattern" class="headerlink" title="1.2. Pattern"></a>1.2. Pattern</h2><p>정규 표현식의 패턴으로 검색할 문자열을 지정한다. 패턴은 특별한 의미를 가진 Meta Character 또는 기호로 표현할 수 있다.</p>
-<ol>
-<li><code>.</code> : 임의의 문자 한 개</li>
-<li>[A-Z] : A ~ Z가 한 번 이상 반복되는 문자열. <code>[]</code> 안에 <code>-</code> 쓰면 범위 지정</li>
-<li><code>*</code> / <code>+</code><ul>
-<li><code>*</code> : 0개 이상 반복되는 패턴</li>
-<li><code>+</code> : 1개 이상 반복되는 패턴</li>
-</ul>
-</li>
-<li><code>[]</code> : [] 내의 문자는 or로 동작</li>
-<li><code>{2, 3}</code> : 2 ~ 3 자리</li>
-<li>\d, \D<ul>
-<li>\d : 숫자</li>
-<li>\D : 숫자가 아닌 문자</li>
-</ul>
-</li>
-<li>\w, \W<ul>
-<li>\w : 알파벳과 숫자</li>
-<li>\W : 알파벳과 숫자가 아닌 문자</li>
-</ul>
-</li>
-<li>\s<ul>
-<li>여러가지 공백 문자 (space, tab 등) [\t\r\n\v\f]</li>
-</ul>
-</li>
-<li><code>^</code><ul>
-<li><code>[^]</code>는 not</li>
-<li><code>[]</code> 밖의 <code>^</code>는 문자열의 처음을 의미</li>
-</ul>
-</li>
-<li><code>$</code><ul>
-<li>문자열의 끝을 의미</li>
-</ul>
-</li>
-</ol>
-<h2 id="1-3-Well-Used-Reguler-Expression"><a href="#1-3-Well-Used-Reguler-Expression" class="headerlink" title="1.3. Well Used Reguler Expression"></a>1.3. Well Used Reguler Expression</h2><p>특정 단어로 시작하는지 검사</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 문자열이 'http'로 시작하는지 검사</span></span><br><span class="line"><span class="hljs-keyword">const</span> regexr = <span class="hljs-regexp">/^http/</span>;</span><br></pre></td></tr></table></figure>
-<p>특정 단어로 끝나는지 검사</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 문자열이 'html'로 끝나는지 검사</span></span><br><span class="line"><span class="hljs-keyword">const</span> regexr = <span class="hljs-regexp">/html$/</span>;</span><br></pre></td></tr></table></figure>
-<p>아이디 유효성 검사</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 알파벳 대소문자 또는 숫자로 시작하고 끝나며 4 ~10자리인지 검사</span></span><br><span class="line"><span class="hljs-comment">// &#123;4,10&#125;: 4 ~ 10자리</span></span><br><span class="line"><span class="hljs-keyword">const</span> regexr = <span class="hljs-regexp">/^[A-Za-z0-9]&#123;4,10&#125;$/</span>;</span><br></pre></td></tr></table></figure>
-<p>메일 주소 유효성 검사</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> regexr = <span class="hljs-regexp">/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]&#123;2,3&#125;$/</span>;</span><br></pre></td></tr></table></figure>
-<p>핸드폰 번호 유효성 검사</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> regexr = <span class="hljs-regexp">/^\d&#123;3&#125;-\d&#123;3,4&#125;-\d&#123;4&#125;$/</span>;</span><br></pre></td></tr></table></figure>
-<p>특수 문자 포함 여부 검사</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// A-Za-z0-9 이외의 문자가 있는지 검사</span></span><br><span class="line"><span class="hljs-keyword">let</span> regexr = <span class="hljs-regexp">/[^A-Za-z0-9]/gi</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 아래 방식도 동작한다. 이 방식의 장점은 특수 문자를 선택적으로 검사할 수 있다.</span></span><br><span class="line">regexr = <span class="hljs-regexp">/[\&#123;\&#125;\[\]\/?.,;:|\)*~`!^\-_+&lt;&gt;@\#$%&amp;\\\=\(\'\"]/gi</span>;</span><br></pre></td></tr></table></figure>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -810,7 +743,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        110
+                        111
                     </p>
                 </div>
             </div>
@@ -830,7 +763,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        59
+                        60
                     </p>
                 </div>
             </div>
@@ -923,7 +856,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 18.33px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 11.67px;">Javascript</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a>
+        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 18.33px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 11.67px;">Javascript</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a>
     </div>
 </div>
 
@@ -1019,7 +952,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">27</span>
+                <span class="level-item tag">28</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1057,6 +990,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/22/28-Module/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="28. Module">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-22T07:16:28.000Z">2019-05-22</time></div>
+                    <a href="/2019/05/22/28-Module/" class="has-link-black-ter is-size-6">28. Module</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1134,25 +1086,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/20/190520-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/pink.png" alt="190520-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-20T04:17:52.000Z">2019-05-20</time></div>
-                    <a href="/2019/05/20/190520-TIL/" class="has-link-black-ter is-size-6">190520-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1171,7 +1104,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">37</span>
+                    <span class="level-item tag">38</span>
                 </span>
             </a>
         </li>
@@ -1375,7 +1308,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">22</span>
+                        <span class="tag is-grey">23</span>
                     </a>
                 </div>
                 
@@ -1389,6 +1322,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Math/">
                         <span class="tag">Math</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Modlue/">
+                        <span class="tag">Modlue</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1728,7 +1668,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">27</span>
+                <span class="level-item tag">28</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1766,6 +1706,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/22/28-Module/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="28. Module">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-22T07:16:28.000Z">2019-05-22</time></div>
+                    <a href="/2019/05/22/28-Module/" class="has-link-black-ter is-size-6">28. Module</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1843,25 +1802,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/20/190520-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/pink.png" alt="190520-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-20T04:17:52.000Z">2019-05-20</time></div>
-                    <a href="/2019/05/20/190520-TIL/" class="has-link-black-ter is-size-6">190520-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1880,7 +1820,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">37</span>
+                    <span class="level-item tag">38</span>
                 </span>
             </a>
         </li>
@@ -2084,7 +2024,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">22</span>
+                        <span class="tag is-grey">23</span>
                     </a>
                 </div>
                 
@@ -2098,6 +2038,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Math/">
                         <span class="tag">Math</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Modlue/">
+                        <span class="tag">Modlue</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

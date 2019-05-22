@@ -151,6 +151,119 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/04/30/4-Variable/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="4. Variable">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-30T07:07:31.000Z">2019-04-30</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    8 minutes read (About 1147 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/30/4-Variable/">4. Variable</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="What-is-variable"><a href="#What-is-variable" class="headerlink" title="What is variable?"></a>What is variable?</h1><p>Application uses data. And the variable is core concept for managing data.</p>
+<p>Computer is computing machine. To do simple operation like sum of 1 and 2, computer should memorize these operand 1 and 2 in register. Computer uses memory to memorze the data. </p>
+<blockquote>
+<h2 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h2><p>Memory is a collection of memory cells that can store data. Size of one cell is 1byte(8bit) and computer read or wirte data by one cell, 1 byte size. Each memory cell has its own address. That address means location of memory space and can be represented from 0 to memory size.</p>
+</blockquote>
+<p>Computer can simply compute 1 + 2, but how to use this result of sum? What you need at this point is the variable. To store data in memory and read to use data from memory, programming language provide variable.</p>
+<p><strong>Variable</strong> refers name of memory space or memory space itself. Simply, variable is mechanism that store and refer data values.</p>
+<p>Through variable, developer can store, refer and change value wihout access to memory directly.</p>
+<p>Just, like it.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> result = <span class="hljs-number">1</span> + <span class="hljs-number">2</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/48080762/56947343-cf959100-6b67-11e9-8bde-d3e9553a4bf1.png" alt="variable in memory"></p>
+<p>In JavaScript, <code>var</code> means variable. In that code, ‘result’ is a name of the variable and 3 is a value of the variable. Storing value in variable is called <strong>assignment</strong> and reading data from variable is called <strong>reference</strong>. </p>
+<p>The variable name is the name given to the memory space where the value is stored for the person.</p>
+<h1 id="Declaration-of-variable"><a href="#Declaration-of-variable" class="headerlink" title="Declaration of variable"></a>Declaration of variable</h1><p>Variable name is the name given to memory space. To use a variable, variable must be declared. Use <code>var</code>, <code>let</code>, <code>const</code> keywords to declare variable.</p>
+<p>Before ES6 introduced <code>let</code> and <code>const</code> keywords, <code>var</code> was the only method to declare variable. </p>
+<blockquote>
+<h2 id="Keyword"><a href="#Keyword" class="headerlink" title="Keyword"></a>Keyword</h2><p>Keyword is kind of command that defines the actions performed by JavaScript engines that execute JavaScript code. When JavaScript engine meets </p>
+</blockquote>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> soup;</span><br></pre></td></tr></table></figure>
+<p>After declaring a variable, the variable never been assigned. Therefore, the memory space allocated by the variable declaration may be considered to be empty, but the allocated memory space is implicitly allocated with the value <code>undefined</code> by the JavaScript engine. This is a unique feature of JavaScript.</p>
+<blockquote>
+<h2 id="undefined"><a href="#undefined" class="headerlink" title="undefined"></a>undefined</h2><p><code>undefined</code> is primitive value of JavaScript.</p>
+</blockquote>
+<p>JavaScript engine operates declaration of variable by 2 phases.</p>
+<ol>
+<li>Declaration phase : Register the variable name to tell the JavaScript engine the existence of the variable.</li>
+<li>Initialization phase : Allocates memory space to store the value and implicitly assigns <code>undefined</code>.</li>
+</ol>
+<p>Variable declaration using the <code>var</code> keyword proceeds both in the declaration phase and in the initialization phase. <code>var soup;</code> registers the variable name soup through the declaration phase, and initializes it by assigning <code>undefined</code> to the variable score through the initialization step. </p>
+<p>In general, <strong>initialization</strong> refers to assigning a value first after a variable is declared. JavaScript automatically do implicit initialization to <code>undefined</code>. Therefore, even if you declare a variable and do not assign any value, the variable has a value of <code>undefined</code>.</p>
+<p>If you do not go through the initialization phase, the reserved memory space may still contain values that were previously used by other applications. These values are called <strong>garbage values</strong>. Therefore, garbage value can be obtained by referring to a variable value immediately after allocating memory space and not allocating a value.</p>
+<p>Declarations are required to use variables. Not just variables, but all identifiers (functions, classes, etc.). If you access the identifier without declaration, a ReferenceError is raised. ReferenceError is a error that occurs when the JavaScript engine tries to reference a value through an identifier but can not find the registered identifier.</p>
+<h1 id="Variable-Declaration-run-time-and-Hoisting"><a href="#Variable-Declaration-run-time-and-Hoisting" class="headerlink" title="Variable Declaration run time and Hoisting"></a>Variable Declaration run time and Hoisting</h1><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(soup);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> soup;</span><br></pre></td></tr></table></figure>
+<p>In C, the avobe code will occur compile error because it access to the variable before its declaration. But in JavaScript print <code>undefined</code> instead of ReferenceError.</p>
+<p>Variable declaration is processed <strong>before the run-time</strong> that source code execute in line step. In other words, JavaScript engine estimate entire source code in advance. At this time, it finds all of declaration(variable declaration, function declaration), declare and initialize identifiers. After that run source codes sequentially except declarations.</p>
+<h2 id="What-is-Hoisting"><a href="#What-is-Hoisting" class="headerlink" title="What is Hoisting?"></a>What is Hoisting?</h2><p>Hoist means to lift something. It is a variable that is hoisted in JavaScript. </p>
+<p>Hoist means that the definition of a variable is separated into declarations and allocations according to its scope.<br>Declarations execute before other codes so it seems like declarations are hoisted to top of the source code. In JavaScript, all of variable declarations are hoisted. </p>
+<p><strong>Warning</strong></p>
+<p>Function hoisting hoists function declarations too, but not hoist the value of variables. So think separate declarations and assignment is important. It’s relevant with run-time and parsing-time.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">foo();</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'ok'</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="hljs-comment">// Ok</span></span><br><span class="line"></span><br><span class="line">foo();</span><br><span class="line"><span class="hljs-keyword">var</span> foo = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'ok'</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="hljs-comment">// Syntax error!</span></span><br></pre></td></tr></table></figure>
+<h1 id="Assignment-of-Values"><a href="#Assignment-of-Values" class="headerlink" title="Assignment of Values"></a>Assignment of Values</h1><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> soup; <span class="hljs-comment">// Variable Declaration</span></span><br><span class="line">soup = <span class="hljs-number">3</span>; <span class="hljs-comment">// Assignment value</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> soup = <span class="hljs-number">3</span>; <span class="hljs-comment">// Variable declaration and assigment</span></span><br></pre></td></tr></table></figure>
+<p>Variable declaration is executed at parsing-time and assignment is executed in run-time, affter the parsing-time. Of course when declare variable, it is initialized to <code>undefined</code>. </p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(soup);  <span class="hljs-comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> soup = <span class="hljs-number">3</span>;       <span class="hljs-comment">// Variable declaration and assigment</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(soup);  <span class="hljs-comment">// 3</span></span><br></pre></td></tr></table></figure>
+<p>So soup is re-initialized to 3.</p>
+<h1 id="Reassignment-of-Value"><a href="#Reassignment-of-Value" class="headerlink" title="Reassignment of Value"></a>Reassignment of Value</h1><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> soup = <span class="hljs-number">3</span>; <span class="hljs-comment">// Declaration and Assignment</span></span><br><span class="line">soup = <span class="hljs-number">5</span>; <span class="hljs-comment">// Reassignment</span></span><br></pre></td></tr></table></figure>
+<p>Variable that declared by <code>var</code> keyword can be reassigned. Reassignment is that variable discards the current value and store new value.</p>
+<p>Reassignment changes old value to new value. If the reassignment is not possible, it is called a <strong>constant</strong> not a variable. A constant is a value that does not change once set. In other words, constants are variables that can be assigned only once.</p>
+<blockquote>
+<h2 id="const-keyword"><a href="#const-keyword" class="headerlink" title="const keyword"></a>const keyword</h2><p>Introduced from ES6, variable that declared by <code>const</code> is prohibited reassignment. But <code>const</code> keyword does not only used for constant.</p>
+</blockquote>
+<h1 id="Identifier-Naming-Convention"><a href="#Identifier-Naming-Convention" class="headerlink" title="Identifier Naming Convention"></a>Identifier Naming Convention</h1><p>An identifier is a unique name that can identify any data. The identifier shall conform to the following naming conventions.</p>
+<ul>
+<li>Identifiers can include letters, numbers, underscore ( _ ), and dollar sign ($), except for special characters.</li>
+<li>However, identifiers must begin with a letter, underscore ( _ ), or dollar sign ($), except for special characters. It is not allowed to start with a number.</li>
+<li>Reserved words can not be used as identifiers.</li>
+</ul>
+<p>Since the variable name is an identifier, the above naming rules must be followed. There are 4 naming conventions that are often used to distinguish words at a time when naming identifiers composed of one or more English words.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// camelCase</span></span><br><span class="line"><span class="hljs-keyword">var</span> firstName;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// snake_case</span></span><br><span class="line"><span class="hljs-keyword">var</span> first_name;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// PascalCase</span></span><br><span class="line"><span class="hljs-keyword">var</span> FirstName;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// typeHungarianCase</span></span><br><span class="line"><span class="hljs-keyword">var</span> strFirstName;          <span class="hljs-comment">// type + identifier</span></span><br><span class="line"><span class="hljs-keyword">var</span> $elem = $(<span class="hljs-string">'.myClass'</span>); <span class="hljs-comment">// jQuery</span></span><br></pre></td></tr></table></figure>
+<p>Any naming convention may be used if it is consistent. The most common is to <strong>use a camel case for the name of a variable or function</strong> and <strong>a Pascal case for the name of a constructor function or class</strong>.</p>
+<p>In order to improve the readability of the entire code, it is advantageous to follow the above naming convention.</p>
+<hr>
+<p>Reference</p>
+<p><a href="https://poiemaweb.com/js-data-type-variable" target="_blank" rel="noopener">Data type &amp; Variable</a></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/04/30/3-JavaScript-Develop-Environment-and-Execute/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="3. JavaScript Develop Environment and Execute">
         </a>
@@ -826,64 +939,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/25/CodeWars-5kyu-Maximum-subarray-sum/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="CodeWars 5kyu Maximum subarray sum">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-25T11:50:45.000Z">2019-04-25</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/CodeWars/">CodeWars</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 621 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/25/CodeWars-5kyu-Maximum-subarray-sum/">CodeWars 5kyu Maximum subarray sum</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="CodeWars-5kyu-Maximum-subarray-sum"><a href="#CodeWars-5kyu-Maximum-subarray-sum" class="headerlink" title="CodeWars 5kyu. Maximum subarray sum"></a><a href="https://www.codewars.com/kata/maximum-subarray-sum/train/javascript" target="_blank" rel="noopener">CodeWars 5kyu. Maximum subarray sum</a></h2><p>Return maximum sum of subarrays</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/25/CodeWars-5kyu-Maximum-subarray-sum/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -908,7 +963,7 @@
             
             <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
             
-            <li><a class="pagination-link has-text-black-ter" href="/page/11/">11</a></li>
+            <li><a class="pagination-link has-text-black-ter" href="/page/12/">12</a></li>
             
         </ul>
     </nav>
@@ -958,7 +1013,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        110
+                        111
                     </p>
                 </div>
             </div>
@@ -978,7 +1033,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        59
+                        60
                     </p>
                 </div>
             </div>
@@ -1071,7 +1126,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 18.33px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 11.67px;">Javascript</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a>
+        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 18.33px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 11.67px;">Javascript</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a>
     </div>
 </div>
 
@@ -1167,7 +1222,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">27</span>
+                <span class="level-item tag">28</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1205,6 +1260,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/22/28-Module/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="28. Module">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-22T07:16:28.000Z">2019-05-22</time></div>
+                    <a href="/2019/05/22/28-Module/" class="has-link-black-ter is-size-6">28. Module</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1282,25 +1356,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/20/190520-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/pink.png" alt="190520-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-20T04:17:52.000Z">2019-05-20</time></div>
-                    <a href="/2019/05/20/190520-TIL/" class="has-link-black-ter is-size-6">190520-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1319,7 +1374,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">37</span>
+                    <span class="level-item tag">38</span>
                 </span>
             </a>
         </li>
@@ -1523,7 +1578,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">22</span>
+                        <span class="tag is-grey">23</span>
                     </a>
                 </div>
                 
@@ -1537,6 +1592,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Math/">
                         <span class="tag">Math</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Modlue/">
+                        <span class="tag">Modlue</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1876,7 +1938,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">27</span>
+                <span class="level-item tag">28</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1914,6 +1976,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/22/28-Module/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="28. Module">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-22T07:16:28.000Z">2019-05-22</time></div>
+                    <a href="/2019/05/22/28-Module/" class="has-link-black-ter is-size-6">28. Module</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1991,25 +2072,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/20/190520-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/pink.png" alt="190520-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-20T04:17:52.000Z">2019-05-20</time></div>
-                    <a href="/2019/05/20/190520-TIL/" class="has-link-black-ter is-size-6">190520-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2028,7 +2090,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">37</span>
+                    <span class="level-item tag">38</span>
                 </span>
             </a>
         </li>
@@ -2232,7 +2294,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">22</span>
+                        <span class="tag is-grey">23</span>
                     </a>
                 </div>
                 
@@ -2246,6 +2308,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Math/">
                         <span class="tag">Math</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Modlue/">
+                        <span class="tag">Modlue</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
