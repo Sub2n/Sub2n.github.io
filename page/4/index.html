@@ -151,6 +151,160 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/05/07/10-Comparing-primitive-and-objects/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="10. Comparing primitive and objects">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-07T11:24:49.000Z">2019-05-07</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes read (About 1118 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/07/10-Comparing-primitive-and-objects/">10. Comparing primitive and objects</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="Difference-between-primitive-type-and-object-type"><a href="#Difference-between-primitive-type-and-object-type" class="headerlink" title="Difference between primitive type and object type"></a>Difference between primitive type and object type</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Primitive Type</th>
+<th style="text-align:center">Object Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">immutable value</td>
+<td style="text-align:center">mutable value</td>
+</tr>
+<tr>
+<td style="text-align:center">stored as value itself</td>
+<td style="text-align:center">stored as reference value (memory address of an object)</td>
+</tr>
+<tr>
+<td style="text-align:center">Pass by value</td>
+<td style="text-align:center">Pass by reference</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Primitive-Value"><a href="#Primitive-Value" class="headerlink" title="Primitive Value"></a>Primitive Value</h1><h2 id="Immutable-Value"><a href="#Immutable-Value" class="headerlink" title="Immutable Value"></a>Immutable Value</h2><ul>
+<li>The value of primitive type is an <strong>immutable value</strong>. (Read only, can not change)</li>
+<li>Can not change value doesn’t mean can not reassign value.</li>
+<li>Variable can be reassigned a new value, but the value can not be changed.</li>
+<li>When reassigning a new value to a variable, instead of changing the value stored in the memory space pointed to by the variable, assign a value to the new memory space and make the variable refer to the new memory space. This is because the primitive value is immutable.</li>
+<li>If the primitive value is a mutable value, the memory address referenced by the variable will not change when reassigning the variable.</li>
+<li>immutability : Since the primitive value is an immutable value, when the value of the variable is changed, the new value is stored in the new memory space, and the memory space is referred to. This property is called the <strong>immutability</strong> of the primitive value.</li>
+</ul>
+<blockquote>
+<h2 id="Immutable-constant"><a href="#Immutable-constant" class="headerlink" title="Immutable? constant?"></a>Immutable? constant?</h2><p>In programming language, variable is a mechanism that store and refer data values. So, constant is also variable but can not assign more than once.</p>
+<p>Variables, and constants are memory spaces that can hold values, and the concept of mutable, immutable is about whether the value can change.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-comment">//Constants declared with the const keyword are not reassigned.</span></span><br><span class="line">&gt; <span class="hljs-keyword">const</span> obj = &#123;&#125;;</span><br><span class="line">&gt; </span><br><span class="line">&gt; obj.a = <span class="hljs-number">1</span>;</span><br><span class="line">&gt; <span class="hljs-built_in">console</span>.log(obj); <span class="hljs-comment">// &#123;a: 1&#125;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>Objects declared as <code>const</code> can be changed. This is because you are not reassigning a new object to <code>const</code>. That is, the constant is only a variable for which reassignment is prohibited.</p>
+</blockquote>
+<h2 id="String-and-Immutability"><a href="#String-and-Immutability" class="headerlink" title="String and Immutability"></a>String and Immutability</h2><ul>
+<li><p>String is immutable because it’s also primitive type of JavaScript.</p>
+</li>
+<li><p>String is an array-like object.</p>
+<blockquote>
+<h3 id="Array-like-Object"><a href="#Array-like-Object" class="headerlink" title="Array-like Object"></a>Array-like Object</h3><p>An array-like object is an object that is not an array, but can be treated like an array. A string can access each character through an index like an array, or it can be traversed by a for statement. This means that the string can be an object with a length property.</p>
+</blockquote>
+</li>
+<li><p>You can not change <code>str[0]</code>, but error doesn’t occur. Just ignore it.</p>
+</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/48080762/57296797-dba1c580-7108-11e9-83bd-86e735652c18.png" alt="String is immutable value"></p>
+<ul>
+<li>But, it is of course possible to reassign the new string. Because it is not a change to the existing string but a new assignment of the new string.</li>
+<li>The string gives the confidence that the value does not change without reassignment.</li>
+</ul>
+<h2 id="Pass-by-value"><a href="#Pass-by-value" class="headerlink" title="Pass by value"></a>Pass by value</h2><p>What happens when a variable is assigned to a variable? </p>
+<p>If assigned variable is primitive type, the assigned variable value is copied and passed. It’s <strong>pass by value</strong>.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> score = <span class="hljs-number">80</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> mine = score;</span><br></pre></td></tr></table></figure>
+<p>Variable <code>score</code> and <code>mine</code> have a value 80, but it’s a separate value in memory. The value 80 in <code>mine</code> is not same as 80 in <code>score</code>. This is because the memory space of the variables <code>mine</code> and <code>score</code> is different and each contains a value.</p>
+<p><img src="https://user-images.githubusercontent.com/48080762/57297341-57e8d880-710a-11e9-9007-36ec715ebcf7.png" alt="Pass by Value"></p>
+<p>Thus, reassigning another value to the variable <code>score</code> does not affect the value of the variable <code>mine</code>.</p>
+<h1 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h1><ul>
+<li>An object is a collection of properties consisting of key and value. A property whose value is a function is called a method.</li>
+<li>Since the number of properties is not fixed and the object can be added and deleted dynamically, the size of the memory space can not be preset in advance like the primitive value.</li>
+</ul>
+<blockquote>
+<h2 id="How-JavaScript-manages-objects"><a href="#How-JavaScript-manages-objects" class="headerlink" title="How JavaScript manages objects"></a>How JavaScript manages objects</h2><p>Unlike with an class-based object-oriented language, JavaScript can create an object without class and dynamically add a property and method even after an object have been created.</p>
+<p>For this reason, almost modern JavaScript engine uses a function-based dictionary-like structure to score a location of object property in memory.</p>
+<p>This is theoretically more costly and inefficient than object management in class-based object-oriented programming languages such as Java. So V8 JavaScript engine uses hidden class method. A hidden class operates like class in Java.</p>
+</blockquote>
+<h2 id="Mutable-Value"><a href="#Mutable-Value" class="headerlink" title="Mutable Value"></a>Mutable Value</h2><p>The value of an object (reference) type, that is, an object is a mutable value.</p>
+<p>A variable that has been assigned a primitive value has its primitive value as its value. </p>
+<p>But, the variable that the object is assigned has a <strong>reference value</strong> as a value. The reference value is <strong>the address of the memory space</strong> in which the created object is stored, itself.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> student = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/48080762/57298300-d181c600-710c-11e9-96ba-119ba0ffc866.png" alt="Assignment of an object"></p>
+<ul>
+<li><p><code>student</code> variable has a <strong>address of the memory space</strong> where a created object is stored. This is a <strong>reference value</strong>. A variable can access the object by this reference value.</p>
+</li>
+<li><p>When evaluating a variable that assigns an object, it returns the object by accessing the actual object through the reference value rather than returning the reference value stored in memory.</p>
+</li>
+<li><p>An object pointed by a variable can be added dynamically after it has been created, updated, or deleted. In other words, an object is a <strong>mutable value</strong>.</p>
+</li>
+<li><p>Objects can be very large and change fluidly, so instead of reallocating each time as a primitive value and changing the memory address, it changes the object itself to be referenced directly.</p>
+</li>
+<li><p>In other words, copying an object as a primitive value (a deep copy) is <strong>expensive and inefficient</strong>, so it copies the reference value.</p>
+<blockquote>
+<h3 id="Shallow-copy-and-Deep-copy"><a href="#Shallow-copy-and-Deep-copy" class="headerlink" title="Shallow copy and Deep copy"></a>Shallow copy and Deep copy</h3><ul>
+<li>Shallow copy : copying reference values</li>
+<li>Deep copy : copying and recreating the object itself as a primitive value. The larger the object, the higher the cost.</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>A side effect of storing an object’s reference value is that an object can be referenced by multiple identifiers.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> student = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="hljs-keyword">var</span> teacher = student;</span><br><span class="line"></span><br><span class="line">teacher.age = <span class="hljs-number">35</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(teacher);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(student);</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/48080762/57299503-b06ea480-710f-11e9-8dd4-19c322cbf727.png" alt="Referenced by multiple identifiers"></p>
+<ul>
+<li>The property is added only to the object of the teacher variable, but the changes are shared because the objects referenced by the student and teacher are the same.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Pass-by-Reference"><a href="#Pass-by-Reference" class="headerlink" title="Pass by Reference"></a>Pass by Reference</h2><p>If you assign a variable that points to an object to another variable, the original reference value is copied and passed. This is called <strong>pass by reference.</strong></p>
+<p><img src="https://user-images.githubusercontent.com/48080762/57299971-d34d8880-7110-11e9-8fc7-1ee9d64a5f13.png" alt="Pass by Reference"></p>
+<p>As shown in the figure above, since the memory address of the same object is referenced, <code>student</code> and <code>teacher</code> refer to the same object and change it.</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/05/07/190503-TIL/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/pink.png" alt="190507-TIL">
         </a>
@@ -1090,58 +1244,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/30/190430-TIL/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/cherry.png" alt="190430-TIL">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-30T12:46:10.000Z">2019-04-30</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a few seconds read (About 14 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/30/190430-TIL/">190430-TIL</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><p>Algorithm study</p>
-<p>Studied history, variable, data type and operation of JavaScript</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -1216,7 +1318,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        112
+                        113
                     </p>
                 </div>
             </div>
@@ -1441,7 +1543,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">52</span>
+                <span class="level-item tag">53</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1463,6 +1565,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/22/190522-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/flower.png" alt="190522-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-22T10:52:13.000Z">2019-05-22</time></div>
+                    <a href="/2019/05/22/190522-TIL/" class="has-link-black-ter is-size-6">190522-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1540,25 +1661,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/21/25-Enhanced-Object-property/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="25. Enhanced Object property">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-21T06:52:28.000Z">2019-05-21</time></div>
-                    <a href="/2019/05/21/25-Enhanced-Object-property/" class="has-link-black-ter is-size-6">25. Enhanced Object property</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1577,7 +1679,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">39</span>
+                    <span class="level-item tag">40</span>
                 </span>
             </a>
         </li>
@@ -1935,7 +2037,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">52</span>
+                        <span class="tag is-grey">53</span>
                     </a>
                 </div>
                 
@@ -2164,7 +2266,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">52</span>
+                <span class="level-item tag">53</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -2186,6 +2288,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/22/190522-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/flower.png" alt="190522-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-22T10:52:13.000Z">2019-05-22</time></div>
+                    <a href="/2019/05/22/190522-TIL/" class="has-link-black-ter is-size-6">190522-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -2263,25 +2384,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/21/25-Enhanced-Object-property/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="25. Enhanced Object property">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-21T06:52:28.000Z">2019-05-21</time></div>
-                    <a href="/2019/05/21/25-Enhanced-Object-property/" class="has-link-black-ter is-size-6">25. Enhanced Object property</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2300,7 +2402,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">39</span>
+                    <span class="level-item tag">40</span>
                 </span>
             </a>
         </li>
@@ -2658,7 +2760,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">52</span>
+                        <span class="tag is-grey">53</span>
                     </a>
                 </div>
                 

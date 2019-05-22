@@ -2,25 +2,25 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>CodeWars 6kyu. Decode the Morse code - 수빈 개발블로그</title>
+<title>190522-TIL - 수빈 개발블로그</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="CodeWars 6kyu. Decode the Morse codeDecode Morse code to plain text">
-<meta name="keywords" content="Algorithm">
+    <meta name="description" content="Today I Learned JavaScript의 Class, super 키워드에 대해서 공부했다. 해커톤 자료구조를 설계하고 사용할 카카오맵 API를 테스트했다.">
+<meta name="keywords" content="TIL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CodeWars 6kyu. Decode the Morse code">
-<meta property="og:url" content="https://sub2n.github.io/2019/04/29/CodeWars-6kyu-Decode-the-Morse-code/index.html">
+<meta property="og:title" content="190522-TIL">
+<meta property="og:url" content="https://sub2n.github.io/2019/05/22/190522-TIL/index.html">
 <meta property="og:site_name" content="수빈 개발블로그">
-<meta property="og:description" content="CodeWars 6kyu. Decode the Morse codeDecode Morse code to plain text">
+<meta property="og:description" content="Today I Learned JavaScript의 Class, super 키워드에 대해서 공부했다. 해커톤 자료구조를 설계하고 사용할 카카오맵 API를 테스트했다.">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/algorithm.png">
-<meta property="og:updated_time" content="2019-05-02T06:11:51.645Z">
+<meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/flower.png">
+<meta property="og:updated_time" content="2019-05-22T10:53:34.594Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CodeWars 6kyu. Decode the Morse code">
-<meta name="twitter:description" content="CodeWars 6kyu. Decode the Morse codeDecode Morse code to plain text">
-<meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/algorithm.png">
+<meta name="twitter:title" content="190522-TIL">
+<meta name="twitter:description" content="Today I Learned JavaScript의 Class, super 키워드에 대해서 공부했다. 해커톤 자료구조를 설계하고 사용할 카카오맵 API를 테스트했다.">
+<meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/flower.png">
 
 
 
@@ -103,7 +103,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="CodeWars 6kyu. Decode the Morse code" height="28">
+                <img src="/images/logo.svg" alt="190522-TIL" height="28">
             
             </a>
         </div>
@@ -152,7 +152,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="CodeWars 6kyu. Decode the Morse code">
+            <img class="thumbnail" src="/gallery/thumbnails/flower.png" alt="190522-TIL">
         </span>
     </div>
     
@@ -160,17 +160,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-29T01:53:43.000Z">2019-04-29</time>
+                <time class="level-item has-text-grey" datetime="2019-05-22T10:52:13.000Z">2019-05-22</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/CodeWars/">CodeWars</a>
+                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 292 words)
+                    a few seconds read (About 44 words)
                 </span>
                 
                 
@@ -179,36 +179,22 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                CodeWars 6kyu. Decode the Morse code
+                190522-TIL
             
         </h1>
         <div class="content">
-            <h2 id="CodeWars-6kyu-Decode-the-Morse-code"><a href="#CodeWars-6kyu-Decode-the-Morse-code" class="headerlink" title="CodeWars 6kyu. Decode the Morse code"></a><a href="https://www.codewars.com/kata/decode-the-morse-code/train/javascript" target="_blank" rel="noopener">CodeWars 6kyu. Decode the Morse code</a></h2><p>Decode Morse code to plain text</p>
-<a id="more"></a>
-<blockquote>
-<p>The Morse code encodes every character as a sequence of “dots” and “dashes”. For example, the letter A is coded as ·−, letter Q is coded as −−·−, and digit 1 is coded as ·−−−−. The Morse code is case-insensitive, traditionally capital letters are used. When the message is written in Morse code, a single space is used to separate the character codes and 3 spaces are used to separate words. For example, the message HEY JUDE in Morse code is ···· · −·−−   ·−−− ··− −·· ·.</p>
-</blockquote>
-<blockquote>
-<p>NOTE: Extra spaces before or after the code have no meaning and should be ignored.</p>
-</blockquote>
-<blockquote>
-<p>In addition to letters, digits and some punctuation, there are some special service codes, the most notorious of those is the international distress signal SOS (that was first issued by Titanic), that is coded as ···−−−···. These special codes are treated as single special characters, and usually are transmitted as separate words.</p>
-<p>Your task is to implement a function that would take the morse code as input and return a decoded human-readable string.</p>
-</blockquote>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">decodeMorse(<span class="hljs-string">'.... . -.--   .--- ..- -.. .'</span>)</span><br><span class="line"><span class="hljs-comment">//should return "HEY JUDE"</span></span><br></pre></td></tr></table></figure>
-<ol>
-<li>Each word distinguished by <code>&quot;   &quot;</code> (3 spaces)</li>
-<li>Free to use the preloaded Morse code table as a dictionary. By <code>MORSE_CODE[&#39;.--&#39;]</code></li>
-</ol>
-<h2 id="javaScript-Solution"><a href="#javaScript-Solution" class="headerlink" title="javaScript Solution"></a>javaScript Solution</h2><p><img src="https://user-images.githubusercontent.com/48080762/56873375-eefbc380-6a6c-11e9-864d-86e29c152aea.png" alt="Submit screen"></p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">decodeMorse = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">morseCode</span>)</span>&#123;</span><br><span class="line">  <span class="hljs-keyword">var</span> words = morseCode.split(<span class="hljs-string">"   "</span>);</span><br><span class="line">  <span class="hljs-keyword">var</span> string = <span class="hljs-string">""</span></span><br><span class="line">  </span><br><span class="line">  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i <span class="hljs-keyword">in</span> words)&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(words[i] != <span class="hljs-string">''</span>)&#123;</span><br><span class="line">      <span class="hljs-keyword">var</span> word = words[i].split(<span class="hljs-string">" "</span>);</span><br><span class="line">      <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> j <span class="hljs-keyword">in</span> word)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(word[j] != <span class="hljs-string">''</span>)&#123;</span><br><span class="line">          string += MORSE_CODE[word[j]];</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="hljs-keyword">if</span>(i &lt; words.length<span class="hljs-number">-1</span>)&#123;</span><br><span class="line">        string += <span class="hljs-string">" "</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;  </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+            <h3 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h3><ul>
+<li>JavaScript의 Class, super 키워드에 대해서 공부했다.</li>
+<li>해커톤 자료구조를 설계하고 사용할 카카오맵 API를 테스트했다.</li>
+</ul>
+
         </div>
         
         <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Algorithm/">Algorithm</a>
+                    <a class="has-link-grey -link" href="/tags/TIL/">TIL</a>
                 </div>
             </div>
         </div>
@@ -225,17 +211,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/04/29/Difference-between-Subsequence-and-Substring/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Difference between Subsequence and Substring</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/04/26/190426-TIL/">
-                <span class="level-item">190426-TIL</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/05/22/29. DOM/">
+                <span class="level-item">29. DOM</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -1857,7 +1836,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="CodeWars 6kyu. Decode the Morse code" height="28">
+                    <img src="/images/logo.svg" alt="190522-TIL" height="28">
                 
                 </a>
                 <p class="is-size-7">
