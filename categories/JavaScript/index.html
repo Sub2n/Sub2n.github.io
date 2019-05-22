@@ -162,6 +162,60 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/05/22/30-Event/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="30. Event">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-22T12:01:02.000Z">2019-05-22</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 292 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/22/30-Event/">30. Event</a>
+            
+        </h1>
+        <div class="content">
+            <p>브라우저의 이벤트는 사용자의 동작에 따라 어느 시점에 발생할 지 미리 알 수 없고 순서 또한 예측할 수 없다. 브라우저에서는 이벤트를 감지할 수 있고 이벤트 발생 시 통지를 해서 사용자와 웹 페이지의 Interaction이 가능케 한다.</p>
+<p>이벤트 발생시 실행될 함수를 등록할 수 있다. 이벤트와 함수를 연결하면 함수는 이벤트 발생 전에는 실행되지 않닥 이벤트가 발생하면 실행된다. 이런 함수를 Event Handler 또는 Event Listener라고 한다.</p>
+<h3 id="Event-Loop-and-Concurrency"><a href="#Event-Loop-and-Concurrency" class="headerlink" title="Event Loop and Concurrency"></a>Event Loop and Concurrency</h3><p>브라우저는 Single-thread에서 Event-driven 방식으로 동작한다.</p>
+<h4 id="Single-thread"><a href="#Single-thread" class="headerlink" title="Single-thread"></a>Single-thread</h4><p>Single thread는 하나의 thread만을 사용하기 때문에 어느 한 순간에 하나의  task만을 처리할 수 있다는 것을 의미한다. 그러나 브라우저를 사용하는 사용자는 동시에 여러 웹 애플리케이션을 실행하고 있는 것처럼 느낄 것이다. <strong>Event Loop</strong>가 자바스크립트의 동시성(Concurrency)을 지원하기 때문이다.</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/05/22/29. DOM/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="29. DOM">
         </a>
@@ -181,7 +235,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 234 words)
+                    11 minutes read (About 1582 words)
                 </span>
                 
                 
@@ -196,7 +250,18 @@
         <div class="content">
             <h3 id="1-DOM-Document-Object-Model"><a href="#1-DOM-Document-Object-Model" class="headerlink" title="1. DOM (Document Object Model)"></a>1. DOM (Document Object Model)</h3><ul>
 <li><p>DOM : DOM Tree + DOM API</p>
-<p>브라우저의 렌더링 엔진이 웹 문서를 파싱해서 메모리에 저장한 결과물</p>
+<ul>
+<li><p>브라우저의 렌더링 엔진이 웹 문서를 파싱해서 메모리에 저장한 결과물</p>
+</li>
+<li><p>즉, DOM이란 모든  element와 element의 attribute, text를 각각의 객체로 만들고 이 객체들을 부모-자식 관계를 나타낼 수 있는 트리 구조로 구성한 것</p>
+</li>
+<li>DOM은 자바스크립트를 통해 동적으로 변경할 수 있고 변경된 DOM은 브라우저 렌더링에 반영된다.</li>
+<li>DOM API(Application Programming Interface) : 웹 문서의 동적 변경을 위해서 DOM에 접근할 수 있도록 제공하는 자바스크립트 객체의 프로퍼티와 메소드의 집합. DOM API를 통해서 DOM에 접근하고 변경해서 웹 페이지를 동적으로 변경할 수 있다.</li>
+</ul>
+<blockquote>
+<h4 id="DOM-tree-HTML-문서에-대한-모델-구성"><a href="#DOM-tree-HTML-문서에-대한-모델-구성" class="headerlink" title="DOM tree | HTML 문서에 대한 모델 구성"></a>DOM tree | HTML 문서에 대한 모델 구성</h4><p>브라우저가 HTML 문서를 로드한 후 해당 문서에 대한 모델을 트리 구조로 메모리에 생성한 것</p>
+<h4 id="DOM-API-ㅣ-HTML-문서-내의-각-요소에-접근-수정"><a href="#DOM-API-ㅣ-HTML-문서-내의-각-요소에-접근-수정" class="headerlink" title="DOM API ㅣ HTML 문서 내의 각 요소에 접근, 수정"></a>DOM API ㅣ HTML 문서 내의 각 요소에 접근, 수정</h4><p>모델 내의 각 객체에 접근하고 수정할 수 있도록 DOM이 제공하는 프로퍼티와 메소드. DOM이 수정되면 브라우저를 통해 웹페이지의 내용이 변경된다.</p>
+</blockquote>
 </li>
 <li><p>jQuery</p>
 <ul>
@@ -216,14 +281,62 @@
 <p>HTML Element 별로 다른 속성을 표현하기 위해서 브라우저에서는 DOM Parsing시 Element의 정보를 DOM 객체의 상속관계로 표현한다.</p>
 <p><img src="https://user-images.githubusercontent.com/48080762/58159094-c30fde80-7cb6-11e9-998d-85c3a3c791b9.png" alt="Proprties"></p>
 <p>DOM Element(node)는 HTML Element의 상태를 보관한다.</p>
-<h3 id="3-DOM-Query"><a href="#3-DOM-Query" class="headerlink" title="3. DOM Query"></a>3. DOM Query</h3><p>DOM API를 이용해서 DOM Element에 접근할 수 있다.  document 객체에 DOM API가 정의되어있다.</p>
-<ul>
-<li>document.getElementById(id)</li>
-<li>document.querySelector(cssSelector)</li>
-<li>document.getElementByClassName(class)</li>
-<li>document.getElementsByTagName(tagName)</li>
-<li>document.querySelectorAll(selector)</li>
+<p>DOM tree는 4 종류의 노드로 구성된다.</p>
+<h4 id="Document-Node"><a href="#Document-Node" class="headerlink" title="Document Node"></a>Document Node</h4><p>트리의 최상위 루트(root). 각 Element, Attribute, Text node에 접근하기 위해서는 트리의 루트인 Document Node를 시작으로 검색해야 한다.</p>
+<h4 id="Element-Node"><a href="#Element-Node" class="headerlink" title="Element Node"></a>Element Node</h4><p>Element node는 HTML element를 표현한다. HTML element는 nesting(중첩)에 의해서 부모-자식 관계를 가지며 이를 통해서 정보를 구조화한다. 따라서 Element Node는 문서의 구조를 표현한다. Attribute, Text node에 접근하기 위해서는 우선 Element node에 접근해야 한다. </p>
+<p>각 Element의 특성을 표현하기 위해서 객체의 상속을 이용한다. 이 때 모든 Element node는 HTMLElement 객체를 상속한다.</p>
+<h4 id="Attribute-Node"><a href="#Attribute-Node" class="headerlink" title="Attribute Node"></a>Attribute Node</h4><p>Attribute Node는 HTML element의 attribute를 표현. Attribute Node는 자신을 가지는Element의 자식이 아니라 일부로 표현된다.</p>
+<h4 id="Text-Node"><a href="#Text-Node" class="headerlink" title="Text Node"></a>Text Node</h4><p>Text Node는 HTML element의 텍스트를 표현한다. Text Node는 Element node의 자식이며 자신의 자식을 가질 수 없다. 즉 DOM tree의 단말 노드이다.</p>
+<h3 id="3-DOM-Query"><a href="#3-DOM-Query" class="headerlink" title="3. DOM Query"></a>3. DOM Query</h3><p>DOM을 통해 웹페이지를 조작하기 위해서는 우선 DOM 객체(element)에 접근할 수 있어야 한다.</p>
+<p>DOM API를 이용해서 DOM Element에 접근할 수 있다.  document 객체에 DOM API가 정의되어있다.</p>
+<h4 id="document-getElementById-id"><a href="#document-getElementById-id" class="headerlink" title="document.getElementById(id)"></a>document.getElementById(id)</h4><ul>
+<li><p><code>id</code> attribute 값으로  Element Node 하나를 선택한다. id가 중복될 경우 첫번째 element만 리턴한다.</p>
+</li>
+<li><p>Return: HTMLElement를 상속받은 객체</p>
+</li>
+<li><p>모든 브라우저에서 동작한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">      .red  &#123; <span class="hljs-attr">color</span>: red; &#125;</span><br><span class="line">      .blue &#123; <span class="hljs-attr">color</span>: blue; &#125;</span><br><span class="line">      .yellow &#123; <span class="hljs-attr">color</span>: yellow; &#125;</span><br><span class="line">    &lt;<span class="hljs-regexp">/style&gt;</span></span><br><span class="line"><span class="hljs-regexp">  &lt;/</span>head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;Cities&lt;<span class="hljs-regexp">/h1&gt;</span></span><br><span class="line"><span class="hljs-regexp">      &lt;ul&gt;</span></span><br><span class="line"><span class="hljs-regexp">        &lt;li id="one" class="red"&gt;Seoul&lt;/</span>li&gt;</span><br><span class="line">        &lt;li id=<span class="hljs-string">"two"</span> <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"blue"</span>&gt;London&lt;<span class="hljs-regexp">/li&gt;</span></span><br><span class="line"><span class="hljs-regexp">        &lt;li id="three" class="red"&gt;Newyork&lt;/</span>li&gt;</span><br><span class="line">        &lt;li id=<span class="hljs-string">"four"</span>&gt;Tokyo&lt;<span class="hljs-regexp">/li&gt;</span></span><br><span class="line"><span class="hljs-regexp">      &lt;/u</span>l&gt;</span><br><span class="line">    &lt;<span class="hljs-regexp">/div&gt;</span></span><br><span class="line"><span class="hljs-regexp">    &lt;script type="text/</span>javascript<span class="hljs-string">"&gt;</span></span><br><span class="line"><span class="hljs-string">      const elem = document.getElementById('one');</span></span><br><span class="line"><span class="hljs-string">      elem.className = 'yellow';</span></span><br><span class="line"><span class="hljs-string">      </span></span><br><span class="line"><span class="hljs-string">console.log(elem); // &lt;li id="</span>one<span class="hljs-string">" class="</span>blue<span class="hljs-string">"&gt;Seoul&lt;/li&gt;</span></span><br><span class="line"><span class="hljs-string">console.log(elem.__proto__);           // HTMLLIElement</span></span><br><span class="line"><span class="hljs-string">console.log(elem.__proto__.__proto__); // HTMLElement</span></span><br><span class="line"><span class="hljs-string">console.log(elem.__proto__.__proto__.__proto__);           // Element</span></span><br><span class="line"><span class="hljs-string">console.log(elem.__proto__.__proto__.__proto__.__proto__); // Node</span></span><br><span class="line"><span class="hljs-string">    &lt;/script&gt;</span></span><br><span class="line"><span class="hljs-string">  &lt;/body&gt;</span></span><br><span class="line"><span class="hljs-string">&lt;/html&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
+<p>  <img src="https://user-images.githubusercontent.com/48080762/58170933-c19ee000-7ccf-11e9-8b2b-f1f05fbd35c3.png" alt="Proto Chain"></p>
+<h4 id="document-querySelector-cssSelector"><a href="#document-querySelector-cssSelector" class="headerlink" title="document.querySelector(cssSelector)"></a>document.querySelector(cssSelector)</h4><ul>
+<li>CSS Selector를 사용해서 Element Node를 한 개 선택한다. 여러 개가 선택되면 첫번째 element만 리턴한다.</li>
+<li>Return: HTMLElement를 상속받은 객체</li>
+<li>IE8 이상 브라우저에서 동작 <a href="https://caniuse.com/#search=document.querySelector" target="_blank" rel="noopener">Can I use document.querySelector ?</a></li>
+</ul>
+<h4 id="document-getElementByClassName-class"><a href="#document-getElementByClassName-class" class="headerlink" title="document.getElementByClassName(class)"></a>document.getElementByClassName(class)</h4><ul>
+<li><p><code>class</code> attribute 값으로  Element Node를 모두 선택. id가 중복될 경우 첫번째 element만 리턴</p>
+</li>
+<li><p>Return: (live)HTMLCollection</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;Cities&lt;<span class="hljs-regexp">/h1&gt;</span></span><br><span class="line"><span class="hljs-regexp">    &lt;ul&gt;</span></span><br><span class="line"><span class="hljs-regexp">      &lt;li id="one" class="red"&gt;Seoul&lt;/</span>li&gt;</span><br><span class="line">      &lt;li id=<span class="hljs-string">"two"</span> <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"red"</span>&gt;London&lt;<span class="hljs-regexp">/li&gt;</span></span><br><span class="line"><span class="hljs-regexp">      &lt;li id="three" class="red"&gt;Newyork&lt;/</span>li&gt;</span><br><span class="line">      &lt;li id=<span class="hljs-string">"four"</span>&gt;Tokyo&lt;<span class="hljs-regexp">/li&gt;</span></span><br><span class="line"><span class="hljs-regexp">    &lt;/u</span>l&gt;</span><br><span class="line">  &lt;<span class="hljs-regexp">/div&gt;</span></span><br><span class="line"><span class="hljs-regexp">  &lt;script type="text/</span>javascript<span class="hljs-string">"&gt;</span></span><br><span class="line"><span class="hljs-string">   const elems = document.getElementsByClassName('red');</span></span><br><span class="line"><span class="hljs-string">   console.log(elems);</span></span><br><span class="line"><span class="hljs-string">   for (let i = 0; i &lt; elems.length; i++) &#123;</span></span><br><span class="line"><span class="hljs-string">     elems[i].className = 'yellow';</span></span><br><span class="line"><span class="hljs-string">   &#125;</span></span><br><span class="line"><span class="hljs-string">  &lt;/script&gt;</span></span><br><span class="line"><span class="hljs-string">&lt;/body&gt;</span></span><br></pre></td></tr></table></figure>
+<p>HTMLCollection이란, 배열이 아닌 유사배열 객체(array-like object)이다. HTMLCollection은 실시간으로 Node의 상태가 변경될 때마다 Collection에 반영하기 때문에 liveHTMLCollection이라고도 한다.</p>
+<p><img src="https://user-images.githubusercontent.com/48080762/58171787-ba78d180-7cd1-11e9-8a92-e9a745831533.png" alt="Result Page"></p>
+<p>위 코드의 실행 결과로 두번째와 네번째 Element의 색이 바뀌지 않은 것은  elems가 참조하는 HTMLCollection이 실시간으로 변경되어 누락되었기 때문이다.</p>
+<ol>
+<li>for 문을 역방향으로 돌리기</li>
+<li>while 문 사용</li>
+<li>HTMLCollection을 배열로 변경</li>
+<li><code>querySelectorAll</code> 메소드를 사용해서 non-live NodeList를 리턴하게 함</li>
+</ol>
+<p>등으로 이런 현상을 방지할 수 있다.</p>
+</li>
+<li><p>IE9 이상의 브라우저에서 동작</p>
+</li>
+</ul>
+<h4 id="document-getElementsByTagName-tagName"><a href="#document-getElementsByTagName-tagName" class="headerlink" title="document.getElementsByTagName(tagName)"></a>document.getElementsByTagName(tagName)</h4><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> &lt;script type=<span class="hljs-string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="hljs-keyword">const</span> elems = <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">'li'</span>);</span><br><span class="line">	<span class="hljs-built_in">console</span>.log(elems); <span class="hljs-comment">// HTMLCollection(4) [li#one.red, li#two.red, li#three.red, li#four, one: li#one.red, two: li#two.red, three: li#three.red, four: li#four]</span></span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; elems.length; i++) &#123;</span><br><span class="line">        elems[i].className = <span class="hljs-string">'blue'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="hljs-regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>getElementsByTagName</code> 메소드도 HTMLCollection을 리턴한다고 명세에 써있으나 Webkit에서는 NodeList를 리턴한다. 크롬에서는 NodeList를 리턴한다.</p>
+<p><img src="https://user-images.githubusercontent.com/48080762/58172154-b5685200-7cd2-11e9-9bc1-802293274981.png" alt="Result Page"></p>
+<h3 id="document-querySelectorAll-selector"><a href="#document-querySelectorAll-selector" class="headerlink" title="document.querySelectorAll(selector)"></a>document.querySelectorAll(selector)</h3><ul>
+<li>CSS Selector를 사용하여 Element Node를 모두 선택.</li>
+<li>Return: <a href="https://developer.mozilla.org/ko/docs/Web/API/NodeList" target="_blank" rel="noopener">NodeList</a> (non-live)</li>
+<li>IE8 이상 브라우저에서 동작</li>
+</ul>
+<h3 id="DOM-Traversal"><a href="#DOM-Traversal" class="headerlink" title="DOM Traversal"></a>DOM Traversal</h3><h3 id="parentNode"><a href="#parentNode" class="headerlink" title="parentNode"></a>parentNode</h3><p>자신의 parent 노드를 탐색. HTMLElement를 상속받은 객체를 리턴하며 모든 브라우저에서 동작한다.</p>
+<h4 id="firstChild-lastChild"><a href="#firstChild-lastChild" class="headerlink" title="firstChild, lastChild"></a>firstChild, lastChild</h4><p>자신의 첫번째 child, 마지막 child 노드를 탐색. HTMLELement를 상속받은 객체를 리턴하며 IE9 이상의 브라우저에서 동작한다.</p>
+<p>IE를 제외한 대부분의 브라우저에서는 element 사이의 공백과 줄바꿈을 Text Node로 취급하기 때문에 주의해야 한다.</p>
+<h4 id="hasChildNodes"><a href="#hasChildNodes" class="headerlink" title="hasChildNodes()"></a>hasChildNodes()</h4><p>child 노트가 있는지 확인하고 Boolean을 리턴. 모든 브라우저에서 동작</p>
+<h4 id="childNodes"><a href="#childNodes" class="headerlink" title="childNodes"></a>childNodes</h4><p>child 노드의 Collection을 리턴. NodeList(non-live)가 리턴됨. 모든 브라우저에서 동작</p>
+<h4 id="children"><a href="#children" class="headerlink" title="children"></a>children</h4><p>child 노드의 Collection을 리턴. HTMLCollection(live)가 리턴됨. IE9 이상 브라우저에서 동작</p>
 
         </div>
         
@@ -565,159 +678,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/05/20/24-Higher-Order-Function/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="24. Higher Order Function">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-20T01:21:56.000Z">2019-05-20</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    12 minutes read (About 1746 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/20/24-Higher-Order-Function/">24. Higher Order Function</a>
-            
-        </h1>
-        <div class="content">
-            <h4 id="고차-함수-Higher-order-function"><a href="#고차-함수-Higher-order-function" class="headerlink" title="고차 함수(Higher order function)"></a>고차 함수(Higher order function)</h4><p>함수를 인자(paremeter)로 전달받거나 함수를 결과로 반환하는 함수.</p>
-<p>고차 함수는 parameter로 받은 함수를 필요한 시점에 호출하거나 <strong>클로저</strong>를 생성해서 리턴한다. 자바스크립트에서 함수는 FIrst-class object이므로 값처럼 parameter 로 전달하고 리턴할 수 있다. </p>
-<p>고차 함수는 외부에서 전달되는 보조 함수(Helper function)에 따라서 다른 동작을 수행할 수 있다. 함수는 선언된 위치의 스코프를 기억하므로 고차 함수가 클로저를 리턴하고 끝나도 클로저에 의해 참조되고 있는 고차 함수 내부의 변수는 소멸하지 않는다. 이렇게 클로저가 참조하고 있어 스코프가 유지되는 변수를 자유 변수(Free variable)라고 한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeAdder</span>(<span class="hljs-params">x</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">var</span> y = <span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">z</span>) </span>&#123;</span><br><span class="line">    y = <span class="hljs-number">100</span>;</span><br><span class="line">    <span class="hljs-keyword">return</span> x + y + z;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> add5 = makeAdder(<span class="hljs-number">5</span>);</span><br><span class="line"><span class="hljs-keyword">const</span> add10 = makeAdder(<span class="hljs-number">10</span>);</span><br></pre></td></tr></table></figure>
-<h4 id="함수형-프로그래밍"><a href="#함수형-프로그래밍" class="headerlink" title="함수형 프로그래밍"></a>함수형 프로그래밍</h4><ul>
-<li>불변성(Immutability)  지향 : 외부 상태 변경이나 가변(mutable) 데이터를 피함</li>
-<li>순수 함수(Pure function) 사용 : 외부 상태를 변경하지 않는 순수 함수를 통해서 side effect를 최대한 억제</li>
-</ul>
-<p>고차 함수는 순수 함수와 보조 함수의 조합을 통해 프로그램의 안정성을 높이는 함수형 프로그래밍에 기반을 두고 있다.</p>
-<h2 id="1-Array-prototype-sort"><a href="#1-Array-prototype-sort" class="headerlink" title="1. Array.prototype.sort()"></a>1. Array.prototype.sort()</h2><p>숫자 배열 정렬</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> points = [<span class="hljs-number">40</span>, <span class="hljs-number">100</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">25</span>, <span class="hljs-number">10</span>];</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 숫자 배열 오름차순 정렬</span></span><br><span class="line"><span class="hljs-comment">// 비교 함수의 반환값이 0보다 작은 경우, a를 우선하여 정렬한다.</span></span><br><span class="line">points.sort(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">a, b</span>) </span>&#123; <span class="hljs-keyword">return</span> a - b; &#125;);</span><br><span class="line"><span class="hljs-comment">// ES6 화살표 함수</span></span><br><span class="line"><span class="hljs-comment">// points.sort((a, b) =&gt; a - b);</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(points); <span class="hljs-comment">// [ 1, 2, 5, 10, 25, 40, 100 ]</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 숫자 배열에서 최소값 취득</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(points[<span class="hljs-number">0</span>]); <span class="hljs-comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 숫자 배열 내림차순 정렬</span></span><br><span class="line"><span class="hljs-comment">// 비교 함수의 반환값이 0보다 큰 경우, b를 우선하여 정렬한다.</span></span><br><span class="line">points.sort(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">a, b</span>) </span>&#123; <span class="hljs-keyword">return</span> b - a; &#125;);</span><br><span class="line"><span class="hljs-comment">// ES6 화살표 함수</span></span><br><span class="line"><span class="hljs-comment">// points.sort((a, b) =&gt; b - a);</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(points); <span class="hljs-comment">// [ 100, 40, 25, 10, 5, 2, 1 ]</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 숫자 배열에서 최대값 취득</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(points[<span class="hljs-number">0</span>]); <span class="hljs-comment">// 100</span></span><br></pre></td></tr></table></figure>
-<p>객체 배열 정렬</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> todos = [</span><br><span class="line">  &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">4</span>, <span class="hljs-attr">content</span>: <span class="hljs-string">'JavaScript'</span> &#125;,</span><br><span class="line">  &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">content</span>: <span class="hljs-string">'HTML'</span> &#125;,</span><br><span class="line">  &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">content</span>: <span class="hljs-string">'CSS'</span> &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 비교 함수</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">compare</span>(<span class="hljs-params">key</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// 프로퍼티 값이 문자열인 경우, - 산술 연산으로 비교하면 NaN이 나오므로 비교 연산을 사용한다.</span></span><br><span class="line">    <span class="hljs-keyword">return</span> a[key] &gt; b[key] ? <span class="hljs-number">1</span> : (a[key] &lt; b[key] ? <span class="hljs-number">-1</span> : <span class="hljs-number">0</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// id를 기준으로 정렬</span></span><br><span class="line">todos.sort(compare(<span class="hljs-string">'id'</span>));</span><br><span class="line"><span class="hljs-built_in">console</span>.log(todos);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// content를 기준으로 정렬</span></span><br><span class="line">todos.sort(compare(<span class="hljs-string">'content'</span>));</span><br><span class="line"><span class="hljs-built_in">console</span>.log(todos);</span><br></pre></td></tr></table></figure>
-<h2 id="2-Array-prototype-forEach-callback-currentValue-index-array-thisArg"><a href="#2-Array-prototype-forEach-callback-currentValue-index-array-thisArg" class="headerlink" title="2. Array.prototype.forEach(callback(currentValue[, index[, array]])[, thisArg])"></a>2. Array.prototype.forEach(callback(currentValue[, index[, array]])[, thisArg])</h2><blockquote>
-<h3 id="Parameter"><a href="#Parameter" class="headerlink" title="Parameter"></a>Parameter</h3><p><strong><code>callback</code>(currentValue[, index, array])</strong></p>
-<ul>
-<li><code>currentValue</code> : 현재 처리할 요소 값</li>
-<li><code>index</code>(option) : 현재 처리할 요소의 인덱스</li>
-<li><code>array</code>(option) : forEach()를 호출한 배열</li>
-</ul>
-<p><strong><code>thisArg</code> (option)</strong></p>
-<p>​    <code>callback</code>이 실행될 때 <code>this</code>로 사용할 값</p>
-<h3 id="Return-Value"><a href="#Return-Value" class="headerlink" title="Return Value"></a>Return Value</h3><p><code>undefined</code></p>
-</blockquote>
-<ul>
-<li>forEach 메소드는  for 문 대신 사용 가능</li>
-<li>for 문보다 성능이 좋지는 않지만 가독성이 좋으므로 사용이 권장된다.</li>
-<li>break 문을 사용할 수 없어 중단 없이 배열의 모든 요소를 순회한다.</li>
-<li>IE 9 이상에서 정상 동작</li>
-</ul>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];</span><br><span class="line"><span class="hljs-keyword">let</span> pows = [];</span><br><span class="line"></span><br><span class="line">numbers.forEach(<span class="hljs-function">(<span class="hljs-params">item</span>) =&gt;</span> pows.push(item ** <span class="hljs-number">2</span>));</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(pows);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>forEach 메소드는 this를 수정할 수 없지만 callback 함수는 세 번째 인자로 넘겨받은 원본 배열과 forEach 메소드의 두번째 인자로 넘겨받은 this를 수정할 수 있다.</li>
-</ul>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Square</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">this</span>.array = [];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Square.prototype.multiply = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>); <span class="hljs-comment">// multiply가 메소드로 호출되었으므로 this는 square 객체 : Square &#123; array: [] &#125;</span></span><br><span class="line">  arr.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item, index, array2</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>);	<span class="hljs-comment">// Square &#123; array: [] &#125; (1.에서 바인딩된 this)</span></span><br><span class="line">    <span class="hljs-built_in">console</span>.log(array2); <span class="hljs-comment">// [1, 2, 3]</span></span><br><span class="line">    <span class="hljs-keyword">this</span>.array.push(item * item);</span><br><span class="line">  &#125;, <span class="hljs-keyword">this</span>);	<span class="hljs-comment">// 1. this를 callback의 this로 바인딩</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> square = <span class="hljs-keyword">new</span> Square(); <span class="hljs-comment">// Square &#123; array: [] &#125;</span></span><br><span class="line">square.multiply([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(square.array); <span class="hljs-comment">// [ 1, 4, 9 ]</span></span><br></pre></td></tr></table></figure>
-<h2 id="3-Array-prototype-map-callback-currentValue-index-array-thisArg"><a href="#3-Array-prototype-map-callback-currentValue-index-array-thisArg" class="headerlink" title="3. Array.prototype.map(callback(currentValue[, index[, array]])[, thisArg])"></a>3. Array.prototype.map(callback(currentValue[, index[, array]])[, thisArg])</h2><blockquote>
-<h3 id="Parameter-1"><a href="#Parameter-1" class="headerlink" title="Parameter"></a>Parameter</h3><p><strong><code>callback</code>(currentValue[, index, array])</strong></p>
-<ul>
-<li><code>currentValue</code> : 현재 처리할 요소 값</li>
-<li><code>index</code>(option) : 현재 처리할 요소의 인덱스</li>
-<li><code>array</code>(option) : forEach()를 호출한 배열</li>
-</ul>
-<p><strong><code>thisArg</code> (option)</strong></p>
-<p>​    <code>callback</code>이 실행될 때 <code>this</code>로 사용할 값</p>
-<h3 id="Return-Value-1"><a href="#Return-Value-1" class="headerlink" title="Return Value"></a>Return Value</h3><p>배열의 각 요소에 대해 실행한  callback의 <strong>리턴 값</strong>(리턴 필수)으로 이루어진 새로운 배열</p>
-</blockquote>
-<h2 id="4-Array-prototype-filter-callback-currentValue-index-array-thisArg"><a href="#4-Array-prototype-filter-callback-currentValue-index-array-thisArg" class="headerlink" title="4. Array.prototype.filter(callback(currentValue[, index[, array]])[, thisArg])"></a>4. Array.prototype.filter(callback(currentValue[, index[, array]])[, thisArg])</h2><blockquote>
-<h3 id="Parameter-2"><a href="#Parameter-2" class="headerlink" title="Parameter"></a>Parameter</h3><p><strong><code>callback</code>(currentValue[, index, array])</strong></p>
-<ul>
-<li><code>currentValue</code> : 현재 처리할 요소 값</li>
-<li><code>index</code>(option) : 현재 처리할 요소의 인덱스</li>
-<li><code>array</code>(option) : forEach()를 호출한 배열</li>
-</ul>
-<p><strong><code>thisArg</code> (option)</strong></p>
-<p>​    <code>callback</code>이 실행될 때 <code>this</code>로 사용할 값</p>
-<h3 id="Return-Value-2"><a href="#Return-Value-2" class="headerlink" title="Return Value"></a>Return Value</h3><p><code>callback</code> 테스트를 통과한 요소로 이루어진 새로운 배열. 조건에 부합하지 않아 리턴된 요소가 없으면 빈 배열을 리턴</p>
-</blockquote>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> result = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>].filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item, index, self</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`[<span class="hljs-subst">$&#123;index&#125;</span>] = <span class="hljs-subst">$&#123;item&#125;</span>`</span>);</span><br><span class="line">  <span class="hljs-keyword">return</span> item % <span class="hljs-number">2</span>; <span class="hljs-comment">// return true인 item만 새로운 배열에 추가한다.</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// [ 1, 3, 5 ]</span></span><br></pre></td></tr></table></figure>
-<h2 id="5-Array-prototype-reduce-callback-initialValue"><a href="#5-Array-prototype-reduce-callback-initialValue" class="headerlink" title="5.  Array.prototype.reduce(callback[, initialValue])"></a>5.  Array.prototype.reduce(callback[, initialValue])</h2><blockquote>
-<h3 id="Parameter-3"><a href="#Parameter-3" class="headerlink" title="Parameter"></a>Parameter</h3><p><code>callback</code></p>
-<ul>
-<li><code>accumulator</code> : accumulator(누산기)는 callback의 리턴값을 누적한다. imitialValue가 제공된 경우에는 initialValue로 초기화되어 시작하고, 아닌 경우 callback의 이전 리턴값이다.</li>
-<li><code>currentValue</code> : 현재 처리할 요소 값</li>
-<li><code>currentIndex</code>(option) : 현재 처리할 요소의 인덱스. initialValue가 제공된 경우 0. 아니면 1부터 시작</li>
-<li><code>array</code>(option) : reduce()를 호출한 배열</li>
-</ul>
-<p><code>initialValue</code>(option)</p>
-<p>​    <code>callback</code>의 최초 호출에서 첫번째 argument에 제공하는 초기값. 초기값을 제공하지 않을 경우 배열의 첫번쨰 요소를 사용. (빈 배열에서 초기값 없이 reduce() 호출시 에러)</p>
-<h3 id="Return-Value-3"><a href="#Return-Value-3" class="headerlink" title="Return Value"></a>Return Value</h3><p>누적 계산 결과 값</p>
-</blockquote>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment">previousValue: 이전 콜백의 반환값</span></span><br><span class="line"><span class="hljs-comment">currentValue : 현재 처리할 배열 요소의 값</span></span><br><span class="line"><span class="hljs-comment">currentIndex : 현재 처리할 배열 요소의 인덱스</span></span><br><span class="line"><span class="hljs-comment">array        : 메소드를 호출한 배열</span></span><br><span class="line"><span class="hljs-comment">*/</span></span><br><span class="line"><span class="hljs-keyword">const</span> sum = arr.reduce(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">previousValue, currentValue, currentIndex, array</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(previousValue + <span class="hljs-string">'+'</span> + currentValue + <span class="hljs-string">'='</span> + (previousValue + currentValue));</span><br><span class="line">  <span class="hljs-keyword">return</span> previousValue + currentValue; <span class="hljs-comment">// 결과는 다음 콜백의 첫번째 인자로 전달된다</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment">1+2=3</span></span><br><span class="line"><span class="hljs-comment">3+3=6</span></span><br><span class="line"><span class="hljs-comment">6+4=10</span></span><br><span class="line"><span class="hljs-comment">10+5=15</span></span><br><span class="line"><span class="hljs-comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(sum); <span class="hljs-comment">// 15: 1~5까지의 합</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> max = arr.reduce(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">prev, cur</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> prev &gt; cur ? prev : cur;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(max); <span class="hljs-comment">// 5: 최대값</span></span><br></pre></td></tr></table></figure>
-<h2 id="6-Array-prototype-some-callback-thisArg-boolean"><a href="#6-Array-prototype-some-callback-thisArg-boolean" class="headerlink" title="6. Array.prototype.some(callback [, thisArg]): boolean"></a>6. Array.prototype.some(callback [, thisArg]): boolean</h2><p>배열 내 <strong>일부 요소</strong>가 콜백 함수의 테스트를 통과하는지 확인해서 결과를 boolean으로 반환한다.</p>
-<h2 id="7-Array-prototype-every-callback-thisArg-boolean"><a href="#7-Array-prototype-every-callback-thisArg-boolean" class="headerlink" title="7. Array.prototype. every(callback [, thisArg]): boolean"></a>7. Array.prototype. every(callback [, thisArg]): boolean</h2><p>배열 내 <strong>모든 요소</strong>가 콜백 함수의 테스트를 통과하는지 확인해서 결과를 boolean으로 반환한다.</p>
-<h2 id="8-Array-prototype-find-callback-thisArg"><a href="#8-Array-prototype-find-callback-thisArg" class="headerlink" title="8. Array.prototype.find(callback[, thisArg])"></a>8. Array.prototype.find(callback[, thisArg])</h2><blockquote>
-<h3 id="Parameter-4"><a href="#Parameter-4" class="headerlink" title="Parameter"></a>Parameter</h3><p><strong><code>callback</code></strong></p>
-<ul>
-<li><code>element</code> : 현재 처리할 요소</li>
-<li><code>index</code>(option) : 현재 처리할 요소의 인덱스</li>
-<li><code>array</code>(option) : find()를 호출한 배열</li>
-</ul>
-<p><strong><code>thisArg</code> (option)</strong></p>
-<p>​    <code>callback</code>이 실행될 때 <code>this</code>로 사용할 객체</p>
-<h3 id="Return-Value-4"><a href="#Return-Value-4" class="headerlink" title="Return Value"></a>Return Value</h3><p><code>callback</code> 테스트를 통과한 첫번째 요소의 값. 못 찾으면 <code>undefined</code></p>
-</blockquote>
-<hr>
-<h2 id="Object-assign-target-…sources"><a href="#Object-assign-target-…sources" class="headerlink" title="Object.assign(target, …sources)"></a>Object.assign(target, …sources)</h2><blockquote>
-<h3 id="Parameter-5"><a href="#Parameter-5" class="headerlink" title="Parameter"></a>Parameter</h3><p><code>target</code> : 대상 객체</p>
-<p><code>sources</code> : 하나 이상의  source 객체</p>
-<h3 id="Return-Value-5"><a href="#Return-Value-5" class="headerlink" title="Return Value"></a>Return Value</h3><p> target(대상 객체)</p>
-</blockquote>
-<p>동일한 키가 존재할 경우 target 객체의 프로퍼티는 source 객체의 프로퍼티로 덮어쓰여진다.</p>
-<p>Object.assign() 메소드는 enumarable한 source 객체의 프로퍼티만  target 객체의 프로퍼티로 덮어쓴다. source 객체의 프로퍼티가 <code>null</code>이나 <code>undefined</code>이어도 에러를 내지 않는다.</p>
-<blockquote>
-<h3 id="Parameter-6"><a href="#Parameter-6" class="headerlink" title="Parameter"></a>Parameter</h3><p><strong><code>callback</code>(currentValue[, index, array])</strong></p>
-<ul>
-<li><code>currentValue</code> : 현재 처리할 요소 값</li>
-<li><code>index</code> : 현재 처리할 요소의 인덱스</li>
-<li><code>array</code> : forEach()를 호출한 배열</li>
-</ul>
-<p><strong><code>thisArg</code> (option)</strong></p>
-<p><code>callback</code>이 실행될 때 <code>this</code>로 사용할 값</p>
-<h3 id="Return-Value-6"><a href="#Return-Value-6" class="headerlink" title="Return Value"></a>Return Value</h3><p><code>undefined</code></p>
-</blockquote>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -786,7 +746,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        113
+                        114
                     </p>
                 </div>
             </div>
@@ -806,7 +766,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        61
+                        62
                     </p>
                 </div>
             </div>
@@ -899,7 +859,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 18.33px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 11.67px;">Javascript</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a>
+        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 18.33px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 11.67px;">Javascript</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a>
     </div>
 </div>
 
@@ -995,7 +955,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">29</span>
+                <span class="level-item tag">30</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1033,6 +993,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/22/30-Event/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="30. Event">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-22T12:01:02.000Z">2019-05-22</time></div>
+                    <a href="/2019/05/22/30-Event/" class="has-link-black-ter is-size-6">30. Event</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1110,25 +1089,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/21/26-Destructuring/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="26. Destructuring">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-21T07:16:23.000Z">2019-05-21</time></div>
-                    <a href="/2019/05/21/26-Destructuring/" class="has-link-black-ter is-size-6">26. Destructuring</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1147,7 +1107,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">40</span>
+                    <span class="level-item tag">41</span>
                 </span>
             </a>
         </li>
@@ -1307,6 +1267,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Event/">
+                        <span class="tag">Event</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Expression/">
                         <span class="tag">Expression</span>
                         <span class="tag is-grey">1</span>
@@ -1358,7 +1325,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">24</span>
+                        <span class="tag is-grey">25</span>
                     </a>
                 </div>
                 
@@ -1718,7 +1685,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">29</span>
+                <span class="level-item tag">30</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1756,6 +1723,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/22/30-Event/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="30. Event">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-22T12:01:02.000Z">2019-05-22</time></div>
+                    <a href="/2019/05/22/30-Event/" class="has-link-black-ter is-size-6">30. Event</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1833,25 +1819,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/21/26-Destructuring/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="26. Destructuring">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-21T07:16:23.000Z">2019-05-21</time></div>
-                    <a href="/2019/05/21/26-Destructuring/" class="has-link-black-ter is-size-6">26. Destructuring</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1870,7 +1837,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">40</span>
+                    <span class="level-item tag">41</span>
                 </span>
             </a>
         </li>
@@ -2030,6 +1997,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Event/">
+                        <span class="tag">Event</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Expression/">
                         <span class="tag">Expression</span>
                         <span class="tag is-grey">1</span>
@@ -2081,7 +2055,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">24</span>
+                        <span class="tag is-grey">25</span>
                     </a>
                 </div>
                 
