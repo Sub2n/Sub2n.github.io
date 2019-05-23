@@ -16,7 +16,7 @@
 <meta property="og:description" content="1. DOM (Document Object Model) DOM : DOM Tree + DOM API  브라우저의 렌더링 엔진이 웹 문서를 파싱해서 메모리에 저장한 결과물  즉, DOM이란 모든  element와 element의 attribute, text를 각각의 객체로 만들고 이 객체들을 부모-자식 관계를 나타낼 수 있는 트리 구조로 구성한 것  DOM은">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
-<meta property="og:updated_time" content="2019-05-23T04:45:01.533Z">
+<meta property="og:updated_time" content="2019-05-23T06:17:59.219Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="29. DOM">
 <meta name="twitter:description" content="1. DOM (Document Object Model) DOM : DOM Tree + DOM API  브라우저의 렌더링 엔진이 웹 문서를 파싱해서 메모리에 저장한 결과물  즉, DOM이란 모든  element와 element의 attribute, text를 각각의 객체로 만들고 이 객체들을 부모-자식 관계를 나타낼 수 있는 트리 구조로 구성한 것  DOM은">
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    12 minutes read (About 1756 words)
+                    13 minutes read (About 1944 words)
                 </span>
                 
                 
@@ -246,6 +246,7 @@
 <li>Return: HTMLElement를 상속받은 객체</li>
 <li>IE8 이상 브라우저에서 동작 <a href="https://caniuse.com/#search=document.querySelector" target="_blank" rel="noopener">Can I use document.querySelector ?</a></li>
 <li>getElement계열보다 querySelector를 쓰자.</li>
+<li>조건에 부합하는 대상이 없을 경우 null 리턴</li>
 </ul>
 <h4 id="document-getElementByClassName-class"><a href="#document-getElementByClassName-class" class="headerlink" title="document.getElementByClassName(class)"></a>document.getElementByClassName(class)</h4><ul>
 <li><p><code>class</code> attribute 값으로  Element Node를 모두 선택. id가 중복될 경우 첫번째 element만 리턴</p>
@@ -274,6 +275,7 @@
 <li>Return: <a href="https://developer.mozilla.org/ko/docs/Web/API/NodeList" target="_blank" rel="noopener">NodeList</a> (non-live)</li>
 <li>IE8 이상 브라우저에서 동작</li>
 <li>여러개 선택할 때는 getElements 대신 querySelectorAll을 쓰자.</li>
+<li>조건에 부합하는 대상이 없을 경우 빈 NodeList [] 리턴</li>
 </ul>
 <h4 id="element-className"><a href="#element-className" class="headerlink" title="element.className"></a>element.className</h4><p><code>class=&quot;red blue&quot;</code>에서 ‘red blue’를 의미. class를 한 번에 전부 수정하는 데에 좋다. 하나를 추가하고 싶을 때는 아래와 같이 쓴다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> elem = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#one'</span>);</span><br><span class="line">elem.className += <span class="hljs-string">'yellow'</span>;</span><br></pre></td></tr></table></figure>
@@ -284,8 +286,15 @@
 <p>IE를 제외한 대부분의 브라우저에서는 element 사이의 공백과 줄바꿈을 Text Node로 취급하기 때문에 주의해야 한다.</p>
 <h4 id="hasChildNodes"><a href="#hasChildNodes" class="headerlink" title="hasChildNodes()"></a>hasChildNodes()</h4><p>child 노트가 있는지 확인하고 Boolean을 리턴. 모든 브라우저에서 동작</p>
 <h4 id="childNodes"><a href="#childNodes" class="headerlink" title="childNodes"></a>childNodes</h4><p>child 노드의 Collection을 리턴. NodeList(non-live)가 리턴됨. 모든 브라우저에서 동작</p>
-<h4 id="children"><a href="#children" class="headerlink" title="children"></a>children</h4><p>child 노드의 Collection을 리턴. HTMLCollection(live)가 리턴됨. IE9 이상 브라우저에서 동작</p>
-
+<h4 id="children"><a href="#children" class="headerlink" title="children"></a>children</h4><p>child 노드의 Collection을 리턴. <strong>HTMLCollection(live)가 리턴</strong>됨. IE9 이상 브라우저에서 동작.  childNodes 대신 children을 쓰자</p>
+<h4 id="previousSibling-nextSibling"><a href="#previousSibling-nextSibling" class="headerlink" title="previousSibling, nextSibling"></a>previousSibling, nextSibling</h4><p>Text Node를 포함한 모든 형제 노드를 탐색. HTMLElement를 상속받은 객체가 리턴됨. 모든 브라우저에서 동작</p>
+<h4 id="previosElementSibling-nextElementSibling"><a href="#previosElementSibling-nextElementSibling" class="headerlink" title="previosElementSibling, nextElementSibling,"></a>previosElementSibling, nextElementSibling,</h4><p>Element type의 형제 노드만을 탐색. HTMLElement를 상속받은 객체가 리턴됨. IE9 이상 브라우저에서 동작</p>
+<h2 id="4-DOM-Manipulation"><a href="#4-DOM-Manipulation" class="headerlink" title="4. DOM Manipulation"></a>4. DOM Manipulation</h2><h3 id="1-Text-Node-Access-and-Manipulation"><a href="#1-Text-Node-Access-and-Manipulation" class="headerlink" title="1. Text Node Access and Manipulation"></a>1. Text Node Access and Manipulation</h3><ol>
+<li>Text Node의 parent인  Element Node를 선택한다.</li>
+<li>firstChild 프로퍼티로 Text Node를 탐색한다.</li>
+<li>Text Node의 프로퍼티 <code>nodeValue</code>를 이용해서 텍스트에 접근하고 수정한다.</li>
+</ol>
+<h3 id="2-Attribute-Node-Access-and-Manipulation"><a href="#2-Attribute-Node-Access-and-Manipulation" class="headerlink" title="2. Attribute Node Access and Manipulation"></a>2. Attribute Node Access and Manipulation</h3><h4 id="hasAttribute-attribute"><a href="#hasAttribute-attribute" class="headerlink" title="hasAttribute(attribute)"></a>hasAttribute(attribute)</h4><h4 id="getAttribute-attribute"><a href="#getAttribute-attribute" class="headerlink" title="getAttribute(attribute)"></a>getAttribute(attribute)</h4><h4 id="setAttribute-attribute-value"><a href="#setAttribute-attribute-value" class="headerlink" title="setAttribute(attribute, value)"></a>setAttribute(attribute, value)</h4><h4 id="removeAttribute-attribute"><a href="#removeAttribute-attribute" class="headerlink" title="removeAttribute(attribute)"></a>removeAttribute(attribute)</h4>
         </div>
         
         <div class="level is-size-7 is-uppercase">
