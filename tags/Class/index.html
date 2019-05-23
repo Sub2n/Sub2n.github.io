@@ -180,7 +180,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    19 minutes read (About 2903 words)
+                    20 minutes read (About 2995 words)
                 </span>
                 
                 
@@ -257,11 +257,11 @@
 <h4 id="8-2-super-Keyword"><a href="#8-2-super-Keyword" class="headerlink" title="8.2. super Keyword"></a>8.2. <code>super</code> Keyword</h4><p><code>super</code> 키워드는 <strong>parent 클래스를 참조</strong>하거나  <strong>parent 클래스의 constructor를 호출</strong>할 때 사용한다.</p>
 <ol>
 <li><p>super 클래스가 메소드로 사용될 때는 parent 클래스의 constructor를 호출한다. <strong>child 클래스의 constructor에서 super()를 호출하지 않으면 this에 대한 ReferenceError가 발생한다.</strong></p>
-<p>child 클래스의 인스턴스를 만들 때 parent 클래스의 인스턴스를 우선 만들고 상속한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">parent 클래스의 <span class="hljs-keyword">constructor</span>를 호출한다.</span><br><span class="line">class Cylinder extends Circle &#123;</span><br><span class="line">  <span class="hljs-keyword">constructor</span>(radius, height) &#123;</span><br><span class="line">    <span class="hljs-comment">// super가 parent class의 constructor처럼 사용됨</span></span><br><span class="line">    <span class="hljs-keyword">super</span>(radius);</span><br><span class="line">    <span class="hljs-keyword">this</span>.height = height;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>child 클래스의 인스턴스를 만들 때 parent 클래스의 인스턴스를 우선 만들고 상속한다. </p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// parent 클래스의 constructor를 호출한다.</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cylinder</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Circle</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">constructor</span>(radius, height) &#123;</span><br><span class="line">    <span class="hljs-comment">// super가 parent class의 constructor처럼 사용됨</span></span><br><span class="line">    <span class="hljs-keyword">super</span>(radius);</span><br><span class="line">    <span class="hljs-keyword">this</span>.height = height;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/48080762/58225537-6c111480-7d5d-11e9-9cbb-45fc8d66a2ff.png" alt="super"></p>
+<p>ECMAScript의 스펙을 살펴보면 super가 argument를 전달받으며 호출될 때는 내부적으로 자신의 parent 클래스의 constructor를 호출하여 constructor가 리턴한 this 객체를 child 클래스 constructor의 this(child 클래스가 생성할 인스턴스)에 바인딩한다.</p>
 </li>
-</ol>
-<ol start="2">
 <li><p>super 클래스가 객체로 사용될 때는 parent 클래스를 참조한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// super가 parent class Circle처럼 사용됨</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// parent class Circle의 getArea overriding</span></span><br><span class="line">  getArea() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> (<span class="hljs-keyword">this</span>.height * <span class="hljs-keyword">super</span>.getPerimeter()) + (<span class="hljs-number">2</span> * <span class="hljs-keyword">super</span>.getArea());</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-comment">// 자신의 메소드 정의</span></span><br><span class="line">  getVolume() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.getArea() * <span class="hljs-keyword">this</span>.height;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>

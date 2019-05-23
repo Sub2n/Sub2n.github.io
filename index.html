@@ -279,7 +279,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    11 minutes read (About 1582 words)
+                    12 minutes read (About 1756 words)
                 </span>
                 
                 
@@ -329,10 +329,17 @@
 <h4 id="Document-Node"><a href="#Document-Node" class="headerlink" title="Document Node"></a>Document Node</h4><p>트리의 최상위 루트(root). 각 Element, Attribute, Text node에 접근하기 위해서는 트리의 루트인 Document Node를 시작으로 검색해야 한다.</p>
 <h4 id="Element-Node"><a href="#Element-Node" class="headerlink" title="Element Node"></a>Element Node</h4><p>Element node는 HTML element를 표현한다. HTML element는 nesting(중첩)에 의해서 부모-자식 관계를 가지며 이를 통해서 정보를 구조화한다. 따라서 Element Node는 문서의 구조를 표현한다. Attribute, Text node에 접근하기 위해서는 우선 Element node에 접근해야 한다. </p>
 <p>각 Element의 특성을 표현하기 위해서 객체의 상속을 이용한다. 이 때 모든 Element node는 HTMLElement 객체를 상속한다.</p>
-<h4 id="Attribute-Node"><a href="#Attribute-Node" class="headerlink" title="Attribute Node"></a>Attribute Node</h4><p>Attribute Node는 HTML element의 attribute를 표현. Attribute Node는 자신을 가지는Element의 자식이 아니라 일부로 표현된다.</p>
-<h4 id="Text-Node"><a href="#Text-Node" class="headerlink" title="Text Node"></a>Text Node</h4><p>Text Node는 HTML element의 텍스트를 표현한다. Text Node는 Element node의 자식이며 자신의 자식을 가질 수 없다. 즉 DOM tree의 단말 노드이다.</p>
+<h4 id="Attribute-Node"><a href="#Attribute-Node" class="headerlink" title="Attribute Node"></a>Attribute Node</h4><p>Attribute Node는 HTML element의 attribute를 표현. Attribute Node는 자신을 가지는 <strong>Element의 자식이 아니라 형제(sibling)</strong>로 표현된다.</p>
+<h4 id="Text-Node"><a href="#Text-Node" class="headerlink" title="Text Node"></a>Text Node</h4><p>Text Node는 HTML element의 텍스트를 표현한다. <strong>Text Node는 Element node의 자식</strong>이며 자신의 자식을 가질 수 없다. 즉 DOM tree의 단말 노드이다.</p>
 <h3 id="3-DOM-Query"><a href="#3-DOM-Query" class="headerlink" title="3. DOM Query"></a>3. DOM Query</h3><p>DOM을 통해 웹페이지를 조작하기 위해서는 우선 DOM 객체(element)에 접근할 수 있어야 한다.</p>
 <p>DOM API를 이용해서 DOM Element에 접근할 수 있다.  document 객체에 DOM API가 정의되어있다.</p>
+<blockquote>
+<h4 id="HTML-element에-id-사용을-자제해야하는-이유"><a href="#HTML-element에-id-사용을-자제해야하는-이유" class="headerlink" title="HTML element에 id 사용을 자제해야하는 이유"></a>HTML element에 id 사용을 자제해야하는 이유</h4><ol>
+<li>중복되면 안되지만 중복되어도 에러가 나지 않는다.</li>
+<li>HTML element의 id는 전역변수이다.</li>
+</ol>
+<p>되도록 class를 사용하는 것이 좋다.</p>
+</blockquote>
 <h4 id="document-getElementById-id"><a href="#document-getElementById-id" class="headerlink" title="document.getElementById(id)"></a>document.getElementById(id)</h4><ul>
 <li><p><code>id</code> attribute 값으로  Element Node 하나를 선택한다. id가 중복될 경우 첫번째 element만 리턴한다.</p>
 </li>
@@ -344,9 +351,10 @@
 </ul>
 <p>  <img src="https://user-images.githubusercontent.com/48080762/58170933-c19ee000-7ccf-11e9-8b2b-f1f05fbd35c3.png" alt="Proto Chain"></p>
 <h4 id="document-querySelector-cssSelector"><a href="#document-querySelector-cssSelector" class="headerlink" title="document.querySelector(cssSelector)"></a>document.querySelector(cssSelector)</h4><ul>
-<li>CSS Selector를 사용해서 Element Node를 한 개 선택한다. 여러 개가 선택되면 첫번째 element만 리턴한다.</li>
+<li><strong>CSS Selector를 사용</strong>해서 Element Node를 한 개 선택한다. 여러 개가 선택되면 첫번째 element만 리턴한다.</li>
 <li>Return: HTMLElement를 상속받은 객체</li>
 <li>IE8 이상 브라우저에서 동작 <a href="https://caniuse.com/#search=document.querySelector" target="_blank" rel="noopener">Can I use document.querySelector ?</a></li>
+<li>getElement계열보다 querySelector를 쓰자.</li>
 </ul>
 <h4 id="document-getElementByClassName-class"><a href="#document-getElementByClassName-class" class="headerlink" title="document.getElementByClassName(class)"></a>document.getElementByClassName(class)</h4><ul>
 <li><p><code>class</code> attribute 값으로  Element Node를 모두 선택. id가 중복될 경우 첫번째 element만 리턴</p>
@@ -371,10 +379,15 @@
 <p><code>getElementsByTagName</code> 메소드도 HTMLCollection을 리턴한다고 명세에 써있으나 Webkit에서는 NodeList를 리턴한다. 크롬에서는 NodeList를 리턴한다.</p>
 <p><img src="https://user-images.githubusercontent.com/48080762/58172154-b5685200-7cd2-11e9-9bc1-802293274981.png" alt="Result Page"></p>
 <h3 id="document-querySelectorAll-selector"><a href="#document-querySelectorAll-selector" class="headerlink" title="document.querySelectorAll(selector)"></a>document.querySelectorAll(selector)</h3><ul>
-<li>CSS Selector를 사용하여 Element Node를 모두 선택.</li>
+<li><strong>CSS Selector를 사용</strong>하여 Element Node를 모두 선택.</li>
 <li>Return: <a href="https://developer.mozilla.org/ko/docs/Web/API/NodeList" target="_blank" rel="noopener">NodeList</a> (non-live)</li>
 <li>IE8 이상 브라우저에서 동작</li>
+<li>여러개 선택할 때는 getElements 대신 querySelectorAll을 쓰자.</li>
 </ul>
+<h4 id="element-className"><a href="#element-className" class="headerlink" title="element.className"></a>element.className</h4><p><code>class=&quot;red blue&quot;</code>에서 ‘red blue’를 의미. class를 한 번에 전부 수정하는 데에 좋다. 하나를 추가하고 싶을 때는 아래와 같이 쓴다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> elem = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#one'</span>);</span><br><span class="line">elem.className += <span class="hljs-string">'yellow'</span>;</span><br></pre></td></tr></table></figure>
+<p>추가나 삭제에는 classList의 method를 사용하는 것이 편리하다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> elem = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#one'</span>);</span><br><span class="line">elem.classList.add(<span class="hljs-string">'blue'</span>);</span><br><span class="line">elem.classList.remove(<span class="hljs-string">'blue'</span>);</span><br></pre></td></tr></table></figure>
 <h3 id="DOM-Traversal"><a href="#DOM-Traversal" class="headerlink" title="DOM Traversal"></a>DOM Traversal</h3><h3 id="parentNode"><a href="#parentNode" class="headerlink" title="parentNode"></a>parentNode</h3><p>자신의 parent 노드를 탐색. HTMLElement를 상속받은 객체를 리턴하며 모든 브라우저에서 동작한다.</p>
 <h4 id="firstChild-lastChild"><a href="#firstChild-lastChild" class="headerlink" title="firstChild, lastChild"></a>firstChild, lastChild</h4><p>자신의 첫번째 child, 마지막 child 노드를 탐색. HTMLELement를 상속받은 객체를 리턴하며 IE9 이상의 브라우저에서 동작한다.</p>
 <p>IE를 제외한 대부분의 브라우저에서는 element 사이의 공백과 줄바꿈을 Text Node로 취급하기 때문에 주의해야 한다.</p>
@@ -488,7 +501,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    19 minutes read (About 2903 words)
+                    20 minutes read (About 2995 words)
                 </span>
                 
                 
@@ -565,11 +578,11 @@
 <h4 id="8-2-super-Keyword"><a href="#8-2-super-Keyword" class="headerlink" title="8.2. super Keyword"></a>8.2. <code>super</code> Keyword</h4><p><code>super</code> 키워드는 <strong>parent 클래스를 참조</strong>하거나  <strong>parent 클래스의 constructor를 호출</strong>할 때 사용한다.</p>
 <ol>
 <li><p>super 클래스가 메소드로 사용될 때는 parent 클래스의 constructor를 호출한다. <strong>child 클래스의 constructor에서 super()를 호출하지 않으면 this에 대한 ReferenceError가 발생한다.</strong></p>
-<p>child 클래스의 인스턴스를 만들 때 parent 클래스의 인스턴스를 우선 만들고 상속한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">parent 클래스의 <span class="hljs-keyword">constructor</span>를 호출한다.</span><br><span class="line">class Cylinder extends Circle &#123;</span><br><span class="line">  <span class="hljs-keyword">constructor</span>(radius, height) &#123;</span><br><span class="line">    <span class="hljs-comment">// super가 parent class의 constructor처럼 사용됨</span></span><br><span class="line">    <span class="hljs-keyword">super</span>(radius);</span><br><span class="line">    <span class="hljs-keyword">this</span>.height = height;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>child 클래스의 인스턴스를 만들 때 parent 클래스의 인스턴스를 우선 만들고 상속한다. </p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// parent 클래스의 constructor를 호출한다.</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cylinder</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Circle</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">constructor</span>(radius, height) &#123;</span><br><span class="line">    <span class="hljs-comment">// super가 parent class의 constructor처럼 사용됨</span></span><br><span class="line">    <span class="hljs-keyword">super</span>(radius);</span><br><span class="line">    <span class="hljs-keyword">this</span>.height = height;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/48080762/58225537-6c111480-7d5d-11e9-9cbb-45fc8d66a2ff.png" alt="super"></p>
+<p>ECMAScript의 스펙을 살펴보면 super가 argument를 전달받으며 호출될 때는 내부적으로 자신의 parent 클래스의 constructor를 호출하여 constructor가 리턴한 this 객체를 child 클래스 constructor의 this(child 클래스가 생성할 인스턴스)에 바인딩한다.</p>
 </li>
-</ol>
-<ol start="2">
 <li><p>super 클래스가 객체로 사용될 때는 parent 클래스를 참조한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// super가 parent class Circle처럼 사용됨</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// parent class Circle의 getArea overriding</span></span><br><span class="line">  getArea() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> (<span class="hljs-keyword">this</span>.height * <span class="hljs-keyword">super</span>.getPerimeter()) + (<span class="hljs-number">2</span> * <span class="hljs-keyword">super</span>.getArea());</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-comment">// 자신의 메소드 정의</span></span><br><span class="line">  getVolume() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.getArea() * <span class="hljs-keyword">this</span>.height;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
