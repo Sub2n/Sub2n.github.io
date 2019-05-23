@@ -181,7 +181,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    7 minutes read (About 1085 words)
+                    11 minutes read (About 1595 words)
                 </span>
                 
                 
@@ -251,6 +251,29 @@
 <li>HTML element 뿐만 아니라 DOM 요소(HTML, XML, SVG)에도 동작한다.</li>
 </ol>
 <p>IE9 이상에서 동작하므로 IE8 이하에서는 attachEvent 메소드를 사용한다.</p>
+<h3 id="5-this-in-Event-Handler"><a href="#5-this-in-Event-Handler" class="headerlink" title="5. this in Event Handler"></a>5. this in Event Handler</h3><ol>
+<li><p>인라인 이벤트 핸들러 방식</p>
+<p>이벤트 핸들러가 일반 함수로 호출되므로 내부의 this는 전역 객체 window이다.</p>
+</li>
+<li><p>이벤트 핸들러 프로퍼티</p>
+<p>이벤트 핸들러가 메소드이므로 내부의 this는 이벤트에 바인딩된 element를 가리킨다. event 객체의 currentTarget 프로퍼티 값과 같다.</p>
+</li>
+<li><p>addEventListener 메소드</p>
+<p>이벤트 핸들러 내의 this는 addEventListener 메소드를 호출한 element, 즉 이벤트 리스너에 바인딩된 element를 가리킨다. event 객체의 currentTarget 프로퍼티 값과 같다.</p>
+</li>
+</ol>
+<h3 id="6-Event-Flow"><a href="#6-Event-Flow" class="headerlink" title="6. Event Flow"></a>6. Event Flow</h3><h4 id="Event-Propagation"><a href="#Event-Propagation" class="headerlink" title="Event Propagation"></a>Event Propagation</h4><p>HTML element에 이벤트가 발생할 경우 속한 계층을 따라서 이벤트가 전파(Event Propagation)된다.</p>
+<ul>
+<li>Event Capturing : child element에서 발생한 이벤트가 parent element부터 시작해서 이벤트를 발생시킨 child element까지 도달하는 것</li>
+<li>Event Bubbling : child element에서 발생한 이벤트가 parent element까지 전이되는 것</li>
+</ul>
+<p>버블링과 캡처링은 둘 중 하나만 발생하는 것이 아니라 <strong>캡처링으로 시작해 버블링으로 끝난다.</strong></p>
+<p>addEventListener 메소드의 세번째 argument를 true로 주면 캡처링으로 이동하는 이벤트를 캐치하고, flase 또는 주지 않으면 default로 버블링으로 이동하는 이벤트를 캐치한다.</p>
+<h3 id="7-Event-Object"><a href="#7-Event-Object" class="headerlink" title="7. Event Object"></a>7. Event Object</h3><p>이벤트 발생시 event 객체가 동적으로 생성되어 이벤트를 처리할 핸들러에 argument로 전달된다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">eventHandler</span>(<span class="hljs-params">e</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(e.clientX, e.clientY);</span><br><span class="line">&#125;</span><br><span class="line">addEventListener(<span class="hljs-string">'click'</span>, eventHandler);</span><br></pre></td></tr></table></figure>
+<h4 id="Event-target"><a href="#Event-target" class="headerlink" title="Event.target"></a>Event.target</h4><p>e.target은 <strong>실제로 이벤트를 발생시킨 element</strong>를 가리킨다. Event.target은 this와 반드시 일치하지 않는다.</p>
+<h4 id="Event-currentTarget"><a href="#Event-currentTarget" class="headerlink" title="Event.currentTarget"></a>Event.currentTarget</h4><p><strong>이벤트에 바인딩된 DOM element</strong>를 가리킨다. addEventListener로 지정한 이벤트 핸들러 내부의 this와 일치한다.</p>
+<h3 id="8-Event-Elegation"><a href="#8-Event-Elegation" class="headerlink" title="8. Event Elegation"></a>8. Event Elegation</h3><p>여러 child element의 이벤트를 캐치하고 싶을 때 이벤트 위임을 이용해서 parent element에 이벤트 핸들러를 바인딩한다. </p>
 
         </div>
         
