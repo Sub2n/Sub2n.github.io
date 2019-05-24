@@ -151,6 +151,217 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/05/08/11-Function/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="11. Function">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-08T00:47:35.000Z">2019-05-08</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    16 minutes read (About 2371 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/08/11-Function/">11. Function</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="What-is-a-Function"><a href="#What-is-a-Function" class="headerlink" title="What is a Function?"></a>What is a Function?</h1><p>수학에서 함수는 input을 받아 output을 내보내는 일련의 과정(series of processes)을 정의한 것이다.</p>
+<p>프로그래밍 언어에서 함수는 input을 받아 output을 내보내는 일련의 과정을 문(statement)들로 구현하고 코드 블록으로 감싸서 하나의 실행 단위로 정의한 것이다. </p>
+<p>함수의 구성 요소로는,</p>
+<ul>
+<li>parameter(매개변수) : input을 함수 내부로 전달받는 변수</li>
+<li>argument(인수) : input</li>
+<li>return value(반환값) : output</li>
+</ul>
+<p>함수는 식별자로 함수명을 사용한다.</p>
+<p>함수는 함수를 정의함으로써 생성된다. 생성된 함수를 실행시키기 위해서는 함수를 호출해야한다. </p>
+<h1 id="Why-use-a-function"><a href="#Why-use-a-function" class="headerlink" title="Why use a function?"></a>Why use a function?</h1><p>함수를 사용해야 하는 이유는 다음과 같다.</p>
+<ul>
+<li>동일한 작업을 반복적으로 수행할 때 함수를 호출해 <strong>코드를 재사용</strong>하기 위해서 사용</li>
+<li>중복되는 코드를 제가해서 <strong>유지보수의 효율성</strong>을 높이기 위해서 사용</li>
+<li>함수의 이름으로 기능을 명시해 코드의 <strong>가독성을 높일 수 있다</strong>.</li>
+</ul>
+<h1 id="Function-Literal"><a href="#Function-Literal" class="headerlink" title="Function Literal"></a>Function Literal</h1><p>Just as objects are created as object literals, functions can also be created as function literals. Function literal consists of function keyword, function name, list of parameters and function body. A <strong>function literal is evaluated to create a function object</strong>.</p>
+<ul>
+<li>Function name<ul>
+<li>Since the function name is an identifier, it must conform to the identifier naming rules.</li>
+<li>A function name is an identifier that can be referenced <strong>only within a function body</strong>.</li>
+<li>The function name can be omitted. A function with a function name is called a <strong><em>named function</em></strong>, and a function without a function name is called an <strong><em>anonymous function</em></strong>.</li>
+</ul>
+</li>
+<li>List of parameters<ul>
+<li>Wrap 0 or more parameters in parentheses and separate them with commas.</li>
+<li>Parameters are assigned arguments.</li>
+<li>Parameters are treated the same as variables in the function body.</li>
+</ul>
+</li>
+<li>Function body<ul>
+<li>It is a block of code that defines the statements to be executed in batches as a unit of execution when the function is called.</li>
+<li>The function body is executed by a function call.</li>
+</ul>
+</li>
+</ul>
+<p>A function literal is evaluated to produce a value, which is an object. In other words, <strong>the function of JavaScript is an object.</strong></p>
+<p>Unlike regular objects, functions can be called and have unique properties. All function objects have <code>[[Call]]</code>.</p>
+<h1 id="Definition-of-Function"><a href="#Definition-of-Function" class="headerlink" title="Definition of Function"></a>Definition of Function</h1><p>There are 4 ways to define a function.</p>
+<ul>
+<li><p>Function Declaration / Function Statement</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>Function Expression</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>Function Constructor</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>(<span class="hljs-string">'x'</span>, <span class="hljs-string">'y'</span>, <span class="hljs-string">'return x + y'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>Arrow Function (ES6)</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-function">(<span class="hljs-params">x, y</span>) =&gt;</span> x + y;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Each method defines a function, but there is an important difference.</p>
+<h2 id="Function-Declaration"><a href="#Function-Declaration" class="headerlink" title="Function Declaration"></a>Function Declaration</h2><p>The function declaration has the same format as the function literal, but <strong>the function name can not be omitted.</strong> This is because the JavaScript engine needs to create variables with function names.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Function Declaration</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//Function Call</span></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>); <span class="hljs-comment">//5</span></span><br></pre></td></tr></table></figure>
+<p>The function name is an identifier that can be referenced only within the function body.</p>
+<p>However, when you call a function outside a function, you use the function name.</p>
+<p>When a function declaration is executed to create a function object, a variable is needed to assign the function object. This is because the function object can not be stored in memory unless it is allocated anywhere. </p>
+<p>Therefore, the JavaScript engine</p>
+<ol>
+<li>Implicitly declares an identifier of the same name as the function name</li>
+<li>Assigns the created function object to the identifier.</li>
+</ol>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// This is the pseudo code when the above function add statement is executed.</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// variable add is an identifier created by the JavaScript engine with the same name as the function name implicitly. </span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
+<p>Function name can only be referenced within a function, and implicitly created <strong>variable</strong> name can be referenced <strong>in the scope where the function is defined</strong>.</p>
+<p><img src="https://user-images.githubusercontent.com/48080762/57363047-21b76180-71bb-11e9-9fa1-d67593e265e4.png" alt="Pseudo Code"></p>
+<p>This pseudo code is the following function expression. That is, the JavaScript engine converts function declarations into function expressions to create function objects.</p>
+<h2 id="Function-Expression"><a href="#Function-Expression" class="headerlink" title="Function Expression"></a>Function Expression</h2><h3 id="First-class-object"><a href="#First-class-object" class="headerlink" title="First-class object"></a>First-class object</h3><p>An object that can be assigned to a variable, such as a value, which can be the value of a property or an element of an array.</p>
+<p>Function in JavaScript is a first-class object. It means that a function can be freely used as a value. </p>
+<p>A function object created with a function literal can be assigned to a variable. This way of defining a function is called a <strong>function expression</strong>.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Function Expression</span></span><br><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
+<p>Unlike function declarations, function literals can omit function names. It is common to use anonymous functions in function expressions.</p>
+<p>Since a function name is an identifier that can be referenced only by a function body, even if a named function is used, the function must be called with the variable name to which the function object is assigned.</p>
+<h2 id="Function-Creation-time-and-Function-Hoisting"><a href="#Function-Creation-time-and-Function-Hoisting" class="headerlink" title="Function Creation time and Function Hoisting"></a>Function Creation time and Function Hoisting</h2><p>Function declarations and function expressions seem to behave similarly, because the JavaScript engine implicitly declares the variable as a function name in the function declaration statement and allocates the created object.<br>However, function declaration is non-expression statement, and function expression is an expression statement. Therefore, there is an important difference.</p>
+<p>The point at which the function is created is when the JavaScript engine evaluates the function declaration to create the function object.</p>
+<ul>
+<li><p><strong>Function declaration statements are executed before runtime</strong> because they are declarations themselves. </p>
+</li>
+<li><p>However, <strong>function expressions are executed at run-time</strong> because they are assignment statements that assign function literals to variables. </p>
+</li>
+</ul>
+<p>That is, the function created by the function declaration statement and the function generated by the function expression are created at different times.</p>
+<p>Functions created with function declarations are executed and hoisted before runtime, but functions created with function expressions are not hoisted.</p>
+<p>Unlike variable hoisting, in the case of function hoisting, a function object is referenced instead of undefined.</p>
+<h2 id="Function-Constructor"><a href="#Function-Constructor" class="headerlink" title="Function Constructor"></a>Function Constructor</h2><blockquote>
+<h2 id="Constructor-Function"><a href="#Constructor-Function" class="headerlink" title="Constructor Function"></a>Constructor Function</h2><p>A constructor function is a function that creates an object.</p>
+</blockquote>
+<p>The <code>function</code> constructor function, which is a built-in function provided by JavaScript, receives a parameter list and a function body as a string. It is called with the <code>new</code> operator and returns the created function object.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Function Constructor</span></span><br><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>(<span class="hljs-string">'x'</span>, <span class="hljs-string">'y'</span>, <span class="hljs-string">'return x + y'</span>);</span><br><span class="line"></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
+<p>However, creating a function as a function constructor is not common. These functions behave differently from function declarations or function expressions.</p>
+<p>Do not use it!</p>
+<h2 id="Arrow-Function"><a href="#Arrow-Function" class="headerlink" title="Arrow Function"></a>Arrow Function</h2><p>An arrow function introduced in ES6 can make a function simply without a <code>function</code> keyword. </p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Arrow Function</span></span><br><span class="line"><span class="hljs-keyword">const</span> add = <span class="hljs-function">(<span class="hljs-params">x, y</span>) =&gt;</span> x + y;</span><br><span class="line"></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
+<p>The arrow function is not available in all situations.</p>
+<h1 id="Function-Call"><a href="#Function-Call" class="headerlink" title="Function Call"></a>Function Call</h1><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Function Call</span></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>add</code> : Variable name referring to function object, not function name</li>
+<li><code>( )</code> : Function call operator</li>
+<li><code>2, 3</code> : Arguments to be assigned to the parameter</li>
+</ul>
+<p>Calling a function stops the current execution flow and passes control to the called function. At this point, arguments are assigned to the parameters and the statements in the function body begin to execute.</p>
+<h1 id="Parameter-and-Argument"><a href="#Parameter-and-Argument" class="headerlink" title="Parameter and Argument"></a>Parameter and Argument</h1><ul>
+<li>Parameter<ul>
+<li>Declare when defining a function</li>
+<li>Treated as variables in the function body</li>
+<li>When a function is called, the parameter is implicitly created in the function body, initialized to undefined, and then an argument is assigned.</li>
+<li>The scope of the parameter is inside the function.</li>
+</ul>
+</li>
+<li>Argument<ul>
+<li>If the argument is passed less than the parameter, the missing parameter has the value undefined. (No error)</li>
+<li>If the argument is passed in more than the parameter, the excess argument is ignored and kept in the arguments object.</li>
+</ul>
+</li>
+</ul>
+<h1 id="Argument-Check"><a href="#Argument-Check" class="headerlink" title="Argument Check"></a>Argument Check</h1><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> x !== <span class="hljs-string">'number'</span> || <span class="hljs-keyword">typeof</span> y !== <span class="hljs-string">'number'</span>)</span><br><span class="line">    	<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">TypeError</span>(<span class="hljs-string">'Non-number type value has assigned to parameter.'</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add(<span class="hljs-number">2</span>);			<span class="hljs-comment">// TypeError: Non-number type value has assigned to parameter.</span></span><br><span class="line">add(<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>);	<span class="hljs-comment">// TypeError: Non-number type value has assigned to parameter.</span></span><br></pre></td></tr></table></figure>
+<p>It is necessary to check whether the argument is passed properly in the JavaScript function. Because..</p>
+<ul>
+<li>JavaScript functions do not check that the number of parameters and arguments match.</li>
+<li>Because JavaScript is a dynamic type language, functions do not specify the type of parameters in advance.</li>
+</ul>
+<h1 id="Number-of-parameters"><a href="#Number-of-parameters" class="headerlink" title="Number of parameters"></a>Number of parameters</h1><p>The smaller the number of parameters, the better. A function with 0 parameters is ideal. The more parameters, the more things to consider when using the function, which leads to errors.</p>
+<p>Also, if the number or sequence of parameters changes, all the code that calls the function must be modified.</p>
+<p>The ideal function should only do one thing and make it as small as possible. In addition to functions, classes and other functional units must be as clear and small as possible too.</p>
+<h1 id="External-State-Changes-and-Functional-Programming"><a href="#External-State-Changes-and-Functional-Programming" class="headerlink" title="External State Changes and Functional Programming"></a>External State Changes and Functional Programming</h1><p>Since functions are objects, they follow pass by reference. Passing a value to a function’s parameters is called as <strong>Call by value</strong> and <strong>Call by reference</strong>, but the behavior is the same as <strong>Pass by value</strong> and <strong>Pass by reference</strong>.</p>
+<p>As we saw in <a href="https://sub2n.github.io/2019/05/07/10-Comparing-primitive-and-objects/">10. Comparing primitive and objects</a>, there is a side effect in which the original object is changed by reference values passed from inside the function body to outside of the function. This is called change of external state.</p>
+<ul>
+<li>Pure function : functions that do not change any external state (No side effect)</li>
+<li>Impure function : functions that change the external state inside a function (Side effect)</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/48080762/57363055-2714ac00-71bb-11e9-9810-7770c44966c8.png" alt="External State Change"></p>
+<p>Functional programming is a programming paradigm that avoids state changes by suppressing the use of variables and solves complexity by eliminating conditional statements and loops in the logic through the combination of pure and auxiliary functions. Variable values can be changed by someone at any time, and conditional statements or loop statements can make the flow of logic difficult to understand, which can impair readability and become a root cause of errors.</p>
+<p>Functional programming is a way to avoid errors and increase the stability of programs by minimizing side effects through pure functions.</p>
+<h2 id="Return-Statement"><a href="#Return-Statement" class="headerlink" title="Return Statement"></a>Return Statement</h2><p>The function returns the execution result through a return statement consisting of the <code>retur</code>n keyword and the return value.</p>
+<p>When the return statement is executed, execution of the function is aborted and the function body is exited.</p>
+<p>If do not write anything after the <code>return</code> keyword or write a return statement, <code>undefined</code> is returned implicitly.</p>
+<h2 id="Types-of-various-Functions"><a href="#Types-of-various-Functions" class="headerlink" title="Types of various Functions"></a>Types of various Functions</h2><h3 id="IIFE-Immediately-Invoke-Function-Expression"><a href="#IIFE-Immediately-Invoke-Function-Expression" class="headerlink" title="IIFE ( Immediately Invoke Function Expression)"></a>IIFE ( Immediately Invoke Function Expression)</h3><p>A function that <em>executes concurrently with the definition</em> of a function. It is common to use anonymous functions and can not be called again once.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Anonymous immediately invoke function</span></span><br><span class="line">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> a = <span class="hljs-number">2</span>;</span><br><span class="line">    <span class="hljs-keyword">var</span> b = <span class="hljs-number">3</span>;</span><br><span class="line">    <span class="hljs-keyword">return</span> a + b;</span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
+<p>Even if a named function is used, the function name can not be referenced outside of the function and can not be called again.</p>
+<p>An immediate function must be enclosed in the group operator <code>()</code>. Otherwise, it will not be identified and an error will occur.</p>
+<p>If put the code in the immediate function, collision of the variable name or the function name can be prevented. An immediate execution function is used for this purpose.</p>
+<h3 id="Recursive-Function"><a href="#Recursive-Function" class="headerlink" title="Recursive Function"></a>Recursive Function</h3><p>A recursive call is to call itself. A function that calls itself is called a recursive function.</p>
+<p>When creating a recursive function, a base case with an escape condition must be included. Stack overflow occurs when a function is called without escaping.</p>
+<p>Most of what can be implemented as recursive functions can be implemented as loops.</p>
+<h3 id="Nested-Function-Inner-Function"><a href="#Nested-Function-Inner-Function" class="headerlink" title="Nested Function / Inner Function"></a>Nested Function / Inner Function</h3><p>A function defined inside a function is called a nested function (or inner function). A nested function acts as a helper function of an outer function that contains itself.</p>
+<p>A nested function can access variables of an outer function, but an outer function can not access variables of a nested function. The nesting of functions means the nesting of the scope.</p>
+<h3 id="Callback-Function"><a href="#Callback-Function" class="headerlink" title="Callback Function"></a>Callback Function</h3><p>Because JavaScript functions are first-class objects, can pass functions as arguments to functions.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Function that recieves calback function</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">print</span>(<span class="hljs-params">f</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> string = <span class="hljs-string">'Good'</span>;</span><br><span class="line">    <span class="hljs-comment">// Determine when to call the callback function passed in parameter and call the function</span></span><br><span class="line">    <span class="hljs-keyword">return</span> f(string);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// It calls the print function and passes the callback function</span></span><br><span class="line"><span class="hljs-keyword">var</span> upper = print(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">str</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> str.toUpperCase();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// It calls the print function and passes the callback function</span></span><br><span class="line"><span class="hljs-keyword">var</span> lower = print(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">str</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> str.toLowerCase();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(upper, lower);	<span class="hljs-comment">//GOOD good</span></span><br></pre></td></tr></table></figure>
+<p>The function passed to the print function as an argument is called a <strong>callback function</strong>. The callback function calls the function that receives the callback function as an argument by determining the point of call.</p>
+<p>Using a callback function is like pushing a nested function depending on your needs and circumstances.</p>
+<p>Just as a nested function acts as a helper function to help an outer function, the callback function is passed to the function to serve as a helper function. However, since the nested function is fixed and can not be replaced, the callback function can be freely replaced because it is injected as an argument outside the function.</p>
+<p>When you pass a callback function from the outside, you can create a function that performs various actions depending on the callback function.</p>
+<p>That is, it is useful to use the callback function in situations where it is changed instead of being fixed like a nested function.</p>
+<p>Callback functions are mainly used for <strong>event handling</strong>, Ajax communication, and higher-order functions.</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/05/07/CodeWars-6kyu-Consecutive-strings/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="CodeWars 6kyu. Consecutive strings">
         </a>
@@ -906,344 +1117,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/05/01/6-Operator/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="6. Operator">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-01T11:43:56.000Z">2019-05-01</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    11 minutes read (About 1578 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/01/6-Operator/">6. Operator</a>
-            
-        </h1>
-        <div class="content">
-            <h1 id="Expression-and-Operator"><a href="#Expression-and-Operator" class="headerlink" title="Expression and Operator"></a>Expression and Operator</h1><p>Operator needs operand as value. And the expression is equivalent with value. So expressions can be located</p>
-<p>Values ​​can be generated in a variety of ways. The various methods mentioned here are expressions. Expressions in a programming language have a very important meaning.</p>
-<p>Expression is combination of tokens(literal, identifier(variable name, function name, etc), operator, function call). The expression is evaluated to produce a single value. That is, an <strong>expression is a statement that can be evaluated as a single value</strong>.</p>
-<p>Expression can be divided into a literal notation, an identifier expression, an operator expression, a function/method call expression, but they are all the same in that they are evaluated and made into a single value.</p>
-<p>The value that generated by evaluation of an expression is equivalent with an expression. In other words, expressions can be used like values. This means that an expression can also be placed where the value can be placed.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// expression x + 30 consists of a combination of an identifier expression(x), number literal(30) and operator(+)</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(x + <span class="hljs-number">30</span>); <span class="hljs-comment">//40</span></span><br></pre></td></tr></table></figure>
-<h1 id="Statement-and-Expression"><a href="#Statement-and-Expression" class="headerlink" title="Statement and Expression"></a>Statement and Expression</h1><p><strong>A statement</strong> is a <strong>command to a JavaScript engine that consists of a combination of one or more expressions and keywords.</strong> A program is made up of a set of statements, and programming is to write the statements and sequence them.</p>
-<p>A statement can be divided into</p>
-<ul>
-<li>declare statement</li>
-<li>expression statement</li>
-<li>conditional statement</li>
-<li>loop statement. </li>
-</ul>
-<p>Statement should end up with semicolon(;). Do not add a semicolon after the code block.</p>
-<p>All codes of JavaScript are statements. An expression can itself be a statement. But the statement can not be an expression.</p>
-<p>It is difficult that distinguish statement and expression. The expression evaluates to produce a value, but can not do anything further. The statement can be used to create variables, functions, and classes using declarative keywords such as <code>var</code>, <code>let</code>, <code>const</code>, function (declare statement), and class and to control the program flow by generating conditional statements such as <code>if</code>, <code>for</code>, and <code>while</code> statements.</p>
-<p>The role of expression is that generates value. The role of statement is that command to JavaScript engine using a value that is generated by expression.</p>
-<h1 id="Expression-statement-and-Non-expression-statement"><a href="#Expression-statement-and-Non-expression-statement" class="headerlink" title="Expression statement and Non-expression statement"></a>Expression statement and Non-expression statement</h1><p>There are expression statement and non-expression statement. A expression statement is a statement that can be evaluated as a value, and non-expression statement is a statement that can not be evaluated as a value.</p>
-<p>For example, assignment statement can not be evaluated as a value. So it’s non-expression statement. </p>
-<p><strong>The simplest and most obvious way to distinguish expressions from expressions is to assign them to variables.</strong> An expression statement can be evaluated as value so it can be assigned to a variable.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// declare statement : non-expression statement</span></span><br><span class="line">&gt; <span class="hljs-keyword">var</span> x;</span><br><span class="line">&lt; <span class="hljs-literal">undefined</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// assignment statement : expression statement</span></span><br><span class="line">&gt; x = <span class="hljs-number">5</span>;</span><br><span class="line">&lt; <span class="hljs-number">5</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// function declare statement : non-expression statement</span></span><br><span class="line">&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>)</span>&#123;&#125;</span><br><span class="line">&lt; <span class="hljs-literal">undefined</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// conditional statement : non-expression statement</span></span><br><span class="line">&gt; <span class="hljs-keyword">if</span>(x &gt;= <span class="hljs-number">5</span>) &#123; <span class="hljs-built_in">console</span>.log(x); &#125;</span><br><span class="line">  <span class="hljs-number">5</span></span><br><span class="line">&lt; <span class="hljs-literal">undefined</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// loop statement</span></span><br><span class="line">&gt; <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">2</span>; i++) &#123; <span class="hljs-built_in">console</span>.log(i); &#125;</span><br><span class="line">  <span class="hljs-number">0</span></span><br><span class="line">  <span class="hljs-number">1</span></span><br><span class="line">&lt; <span class="hljs-literal">undefined</span></span><br></pre></td></tr></table></figure>
-<p>Expression always prints a evaluated value in Chrome developer tool.</p>
-<h1 id="What-is-Operator"><a href="#What-is-Operator" class="headerlink" title="What is Operator?"></a>What is Operator?</h1><p>An operator creates one value by performing arithmetic, assignment, comparison, logic, and type operations on one or more expressions. </p>
-<ul>
-<li>operand : the object of the operation</li>
-</ul>
-<p>The operand is also an expression because it is evaluated and a single value, and the expression is also an expression that combines the operand with the operator.</p>
-<h1 id="Arithmetic-Operator"><a href="#Arithmetic-Operator" class="headerlink" title="Arithmetic Operator"></a>Arithmetic Operator</h1><p>The Arithmetic Operator performs a mathematical computation on the operands to produce new numeric values. If arithmetic is not possible, NaN is returned.</p>
-<p>Arithmetic operators can be classified into binary arithmetic operators and unary arithmetic operators according to the number of operands.</p>
-<h2 id="Binary-Arithmetic-Operator"><a href="#Binary-Arithmetic-Operator" class="headerlink" title="Binary Arithmetic Operator"></a>Binary Arithmetic Operator</h2><p>The binary arithmetic operator creates one Number type value by operating arithmetic on two operands.</p>
-<p>All binary arithmetic operators have no side effects that change the value of the operand. In other words, any arithmetic operation does not change the value of the operand. It always creates new values.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Binary arithmetic operator</th>
-<th style="text-align:center">Meaning</th>
-<th style="text-align:center">Side effect</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">+</td>
-<td style="text-align:center">Addition</td>
-<td style="text-align:center">X</td>
-</tr>
-<tr>
-<td style="text-align:center">-</td>
-<td style="text-align:center">Subtraction</td>
-<td style="text-align:center">X</td>
-</tr>
-<tr>
-<td style="text-align:center">*</td>
-<td style="text-align:center">Multiplication</td>
-<td style="text-align:center">X</td>
-</tr>
-<tr>
-<td style="text-align:center">/</td>
-<td style="text-align:center">Division</td>
-<td style="text-align:center">X</td>
-</tr>
-<tr>
-<td style="text-align:center">%</td>
-<td style="text-align:center">Remainder</td>
-<td style="text-align:center">X</td>
-</tr>
-</tbody>
-</table>
-<h2 id="Unary-Arithmetic-Operator"><a href="#Unary-Arithmetic-Operator" class="headerlink" title="Unary Arithmetic Operator"></a>Unary Arithmetic Operator</h2><p>Unary arithmetic operators perform arithmetic operations on a single operand to produce a numeric type value. The increment / decrement (++ / –) operator has side effects that change the value of the operand. </p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Unary arithmetic operator</th>
-<th style="text-align:center">Meaning</th>
-<th style="text-align:center">Side effect</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">++</td>
-<td style="text-align:center">Increment</td>
-<td style="text-align:center">O</td>
-</tr>
-<tr>
-<td style="text-align:center">–</td>
-<td style="text-align:center">Decrement</td>
-<td style="text-align:center">O</td>
-</tr>
-<tr>
-<td style="text-align:center">+</td>
-<td style="text-align:center">No effect. Negative numbers are not reversed to positive numbers.</td>
-<td style="text-align:center">X</td>
-</tr>
-<tr>
-<td style="text-align:center">-</td>
-<td style="text-align:center">Returns a positive number that is a negative number and a negative number that is a positive number.</td>
-<td style="text-align:center">X</td>
-</tr>
-</tbody>
-</table>
-<p>The position of increment/decrement(++/–) operator has meaning.</p>
-<ul>
-<li>The prefix increment / decrement operator that located before the operand first increments / decrements the value of the operand, and then performs another operation.</li>
-<li>The postfix increment / decrement operator that located after the operand first performs other operation, and then increments / decrements the value of the operand.</li>
-</ul>
-<h2 id="String-Concatenation-Operator"><a href="#String-Concatenation-Operator" class="headerlink" title="String Concatenation Operator"></a>String Concatenation Operator</h2><p>The <strong>+ operator</strong> acts as a string concatenation operator <strong>if at least one of the operands is a string.</strong></p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'1'</span> + <span class="hljs-number">2</span>); 	<span class="hljs-comment">//12</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> + <span class="hljs-string">'2'</span>); 	<span class="hljs-comment">//12</span></span><br></pre></td></tr></table></figure>
-<p>This is an implicit type coercion by the JavaScript engine, regardless of the developer’s intent.</p>
-<h1 id="Assignment-Operator"><a href="#Assignment-Operator" class="headerlink" title="Assignment Operator"></a>Assignment Operator</h1><p>Assignment Operator assign the operand at right side to the variable at left side. The assignment operator changes the value of a variable by assigning it a value.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Assignment Operator</th>
-<th style="text-align:center">Example</th>
-<th style="text-align:center">Same Expression</th>
-<th style="text-align:center">Side Effect</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">=</td>
-<td style="text-align:center">x = 5</td>
-<td style="text-align:center">x = 5</td>
-<td style="text-align:center">O</td>
-</tr>
-<tr>
-<td style="text-align:center">+=</td>
-<td style="text-align:center">x += 5</td>
-<td style="text-align:center">x = x + 5</td>
-<td style="text-align:center">O</td>
-</tr>
-<tr>
-<td style="text-align:center">-=</td>
-<td style="text-align:center">x -= 5</td>
-<td style="text-align:center">x = x - 5</td>
-<td style="text-align:center">O</td>
-</tr>
-<tr>
-<td style="text-align:center">*=</td>
-<td style="text-align:center">x *= 5</td>
-<td style="text-align:center">x = x * 5</td>
-<td style="text-align:center">O</td>
-</tr>
-<tr>
-<td style="text-align:center">/=</td>
-<td style="text-align:center">x /= 5</td>
-<td style="text-align:center">x = x / 5</td>
-<td style="text-align:center">O</td>
-</tr>
-<tr>
-<td style="text-align:center">%=</td>
-<td style="text-align:center">x %= 5</td>
-<td style="text-align:center">x = x % 5</td>
-<td style="text-align:center">O</td>
-</tr>
-</tbody>
-</table>
-<p>An assignment operation is an expression that evaluates to a single value. The assignment expression is evaluated to the assigned value.</p>
-<h1 id="Comparison-Operator"><a href="#Comparison-Operator" class="headerlink" title="Comparison Operator"></a>Comparison Operator</h1><p>Comparison Operator compares the left and right operands, and then returns a Boolean value. Comparison operators are often used in conditional expressions of control statements such as if statements and for statements.</p>
-<h2 id="Loose-Equality-Operator-and-Strict-Equality-Operator"><a href="#Loose-Equality-Operator-and-Strict-Equality-Operator" class="headerlink" title="Loose Equality Operator and  Strict Equality Operator"></a>Loose Equality Operator and  Strict Equality Operator</h2><p>Loose equality operator and  strict equality operator are both returns the Boolean value by comparing whether the left operand and the right operand have the same value. </p>
-<ul>
-<li>Loose equality operator (==) : loose comparison</li>
-<li>Strict equality operator (===) : strict comparison</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Equality Operator</th>
-<th style="text-align:center">Meaning</th>
-<th style="text-align:center">Example</th>
-<th style="text-align:center">Explanation</th>
-<th style="text-align:center">Side Effect</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">==</td>
-<td style="text-align:center">Loose equality comparison</td>
-<td style="text-align:center">x == y</td>
-<td style="text-align:center">values of x and y are equal</td>
-<td style="text-align:center">X</td>
-</tr>
-<tr>
-<td style="text-align:center">===</td>
-<td style="text-align:center">Strict equality comparison</td>
-<td style="text-align:center">x === y</td>
-<td style="text-align:center">both value and type of x and y are equal</td>
-<td style="text-align:center">X</td>
-</tr>
-<tr>
-<td style="text-align:center">!=</td>
-<td style="text-align:center">Loose inequality comparison</td>
-<td style="text-align:center">x != y</td>
-<td style="text-align:center">values of x and y are different</td>
-<td style="text-align:center">X</td>
-</tr>
-<tr>
-<td style="text-align:center">!==</td>
-<td style="text-align:center">Strict inequality comparison</td>
-<td style="text-align:center">x !== y</td>
-<td style="text-align:center">value and type of x and y are different</td>
-<td style="text-align:center">X</td>
-</tr>
-</tbody>
-</table>
-<p>Loose equality operator (==) compares the types by implicit type conversion and then compares them with the same value. Thus, the loose equality operator returns true if the operand of the left and right terms is the same value after the implicit type conversion, even if the type is different.</p>
-<p>Strict equality operator (===) return false if the types of operands are different. But NaN is the only value that does not match itself.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// NaN is the only value that does not match itself.</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-literal">NaN</span> === <span class="hljs-literal">NaN</span>);	<span class="hljs-comment">//false</span></span><br></pre></td></tr></table></figure>
-<p>Use the built-in function <code>isNaN</code> to check if a number is NaN.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">isNaN</span>(<span class="hljs-literal">NaN</span>));	<span class="hljs-comment">//true</span></span><br></pre></td></tr></table></figure>
-<h2 id="Relational-Operators"><a href="#Relational-Operators" class="headerlink" title="Relational Operators"></a>Relational Operators</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">Relational Operator</th>
-<th style="text-align:center">Name</th>
-<th style="text-align:center">Example</th>
-<th style="text-align:center">Side Effect</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">&gt;</td>
-<td style="text-align:center">Greater than operator</td>
-<td style="text-align:center">x &gt; y</td>
-<td style="text-align:center">X</td>
-</tr>
-<tr>
-<td style="text-align:center">&lt;</td>
-<td style="text-align:center">Less than operator</td>
-<td style="text-align:center">x &lt; y</td>
-<td style="text-align:center">X</td>
-</tr>
-<tr>
-<td style="text-align:center">>=</td>
-<td style="text-align:center">Greater than or equal operator</td>
-<td style="text-align:center">x &gt;= y</td>
-<td style="text-align:center">X</td>
-</tr>
-<tr>
-<td style="text-align:center">&lt;=</td>
-<td style="text-align:center">Less than or equal operator</td>
-<td style="text-align:center">x &lt;= y</td>
-<td style="text-align:center">X</td>
-</tr>
-</tbody>
-</table>
-<h1 id="Conditional-Ternary-Operator"><a href="#Conditional-Ternary-Operator" class="headerlink" title="Conditional Ternary Operator"></a>Conditional Ternary Operator</h1><p>The ternary operator determines the value to return based on the evaluation of the conditional expression. It is the only ternary operator in JavaScript and has no side effects.</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Conditional expression ? return value when the conditional expression is true : return value when the conditional expression is false</span><br></pre></td></tr></table></figure>
-<p>If the evaluation result of the conditional expression is not a Boolean value, it is implicitly typed as a Boolean value.</p>
-<p>Conditional ternary operator expressions are expressions that can be evaluated as values. Therefore, the conditional ternary operator expression can be part of another expression and is very useful.</p>
-<h1 id="Logical-Operator"><a href="#Logical-Operator" class="headerlink" title="Logical Operator"></a>Logical Operator</h1><ul>
-<li><p>OR ||</p>
-</li>
-<li><ul>
-<li>Return true if only one operand is true</li>
-</ul>
-</li>
-<li><p>AND &amp;&amp;</p>
-</li>
-<li><ul>
-<li>Return false if any operand is false</li>
-</ul>
-</li>
-<li><p>NOT !</p>
-</li>
-<li><ul>
-<li>Return true if operand is false, Return false if operand is true</li>
-</ul>
-</li>
-<li><p>The logical OR operator and logical AND operator do not return only the boolean result of the operation. It returns one of the operands.</p>
-</li>
-<li><p>But the NOT operator must return a boolean.</p>
-</li>
-</ul>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Cat'</span> &amp;&amp; <span class="hljs-string">'Dog'</span>); 	<span class="hljs-comment">// 'Dog'</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Cat'</span> || <span class="hljs-string">'Dog'</span>);	<span class="hljs-comment">// 'Cat'</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(!<span class="hljs-string">'Cat'</span>); 	<span class="hljs-comment">//false</span></span><br></pre></td></tr></table></figure>
-<h1 id="Comma-Operator"><a href="#Comma-Operator" class="headerlink" title="Comma Operator"></a>Comma Operator</h1><p>Comma(,) operator evaluate from the left operand in turn, return the result of the last operand and return the result.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> x, y, z;</span><br><span class="line">x = <span class="hljs-number">1</span>, y = <span class="hljs-number">2</span>, z = <span class="hljs-number">3</span>;</span><br></pre></td></tr></table></figure>
-<h1 id="Group-Operator"><a href="#Group-Operator" class="headerlink" title="Group Operator"></a>Group Operator</h1><p>Group operator <code>()</code>  evaluates the expression that is the operand first. Therefore, group operators can be used to control the priority of operators.</p>
-<h1 id="typeof-Operator"><a href="#typeof-Operator" class="headerlink" title="typeof Operator"></a>typeof Operator</h1><p>The typeof operator returns the string as the data type of the operand after itself. The string returned by the typeof operator does not match the 7 data types.</p>
-<p>The typeof operator returns one of the 7 strings “string”, “number”, “boolean”, “undefined”, “symbol”, “object”, or “function” It does not return “null”; it returns “function” for functions.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">typeof</span> <span class="hljs-string">''</span>              <span class="hljs-comment">// "string"</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> <span class="hljs-number">1</span>               <span class="hljs-comment">// "number"</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> <span class="hljs-literal">NaN</span>             <span class="hljs-comment">// "number"</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> <span class="hljs-literal">true</span>            <span class="hljs-comment">// "boolean"</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> <span class="hljs-literal">undefined</span>       <span class="hljs-comment">// "undefined"</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> <span class="hljs-built_in">Symbol</span>()        <span class="hljs-comment">// "symbol"</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> <span class="hljs-literal">null</span>            <span class="hljs-comment">// "object"</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> []              <span class="hljs-comment">// "object"</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> &#123;&#125;              <span class="hljs-comment">// "object"</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()      <span class="hljs-comment">// "object"</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> /test/gi        <span class="hljs-comment">// "object"</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;&#125;  <span class="hljs-comment">// "function"</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>Since typeof null is an object, when checking null, use === operator.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> foo = <span class="hljs-literal">null</span>;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> foo === <span class="hljs-literal">null</span>); <span class="hljs-comment">// false</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(foo === <span class="hljs-literal">null</span>);        <span class="hljs-comment">// true</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>If an identifier not declared by the typeof operator is computed, it returns “undefined”.</p>
-</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -1318,7 +1191,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        114
+                        115
                     </p>
                 </div>
             </div>
@@ -1338,7 +1211,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        62
+                        64
                     </p>
                 </div>
             </div>
@@ -1431,7 +1304,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 18.33px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 11.67px;">Javascript</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a>
+        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 10px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 10px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 18.33px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 11.67px;">Javascript</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a>
     </div>
 </div>
 
@@ -1543,7 +1416,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">53</span>
+                <span class="level-item tag">54</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1565,6 +1438,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/24/190524-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/teamDoctor.png" alt="190524-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-24T12:23:39.000Z">2019-05-24</time></div>
+                    <a href="/2019/05/24/190524-TIL/" class="has-link-black-ter is-size-6">190524-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1642,25 +1534,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/21/27-Class/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="27. Class">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-21T07:56:56.000Z">2019-05-21</time></div>
-                    <a href="/2019/05/21/27-Class/" class="has-link-black-ter is-size-6">27. Class</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1679,7 +1552,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">41</span>
+                    <span class="level-item tag">42</span>
                 </span>
             </a>
         </li>
@@ -1853,6 +1726,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/FDS12/">
+                        <span class="tag">FDS12</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/First-class-object/">
                         <span class="tag">First-class object</span>
                         <span class="tag is-grey">1</span>
@@ -1870,6 +1750,13 @@
                     <a class="tags has-addons" href="/tags/HTML-CSS/">
                         <span class="tag">HTML, CSS</span>
                         <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hackaton/">
+                        <span class="tag">Hackaton</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -2044,7 +1931,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">53</span>
+                        <span class="tag is-grey">54</span>
                     </a>
                 </div>
                 
@@ -2273,7 +2160,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">53</span>
+                <span class="level-item tag">54</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -2295,6 +2182,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/24/190524-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/teamDoctor.png" alt="190524-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-24T12:23:39.000Z">2019-05-24</time></div>
+                    <a href="/2019/05/24/190524-TIL/" class="has-link-black-ter is-size-6">190524-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -2372,25 +2278,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/21/27-Class/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="27. Class">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-21T07:56:56.000Z">2019-05-21</time></div>
-                    <a href="/2019/05/21/27-Class/" class="has-link-black-ter is-size-6">27. Class</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2409,7 +2296,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">41</span>
+                    <span class="level-item tag">42</span>
                 </span>
             </a>
         </li>
@@ -2583,6 +2470,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/FDS12/">
+                        <span class="tag">FDS12</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/First-class-object/">
                         <span class="tag">First-class object</span>
                         <span class="tag is-grey">1</span>
@@ -2600,6 +2494,13 @@
                     <a class="tags has-addons" href="/tags/HTML-CSS/">
                         <span class="tag">HTML, CSS</span>
                         <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hackaton/">
+                        <span class="tag">Hackaton</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -2774,7 +2675,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">53</span>
+                        <span class="tag is-grey">54</span>
                     </a>
                 </div>
                 
