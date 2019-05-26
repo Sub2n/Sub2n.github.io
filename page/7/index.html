@@ -151,6 +151,81 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/04/24/4-Fundamental-of-Object-Oriented-Programming/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="4 Fundamental of Object Oriented Programming">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-24T01:09:40.000Z">2019-04-24</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes read (About 1054 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/24/4-Fundamental-of-Object-Oriented-Programming/">4 Fundamental of Object Oriented Programming</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="추상화-Abstraction"><a href="#추상화-Abstraction" class="headerlink" title="추상화 | Abstraction ?"></a>추상화 | Abstraction ?</h2><ul>
+<li><p>추상화란, 복잡한 로직을 가지고 있는 기능에서 그것을 다루기 위해 필요한 최소한의 핵심만을 추출해내는 것을 말한다. 정의만 들으면 어렵다. </p>
+<p>TV 전원을 예로 들어 생각해보자. 새로 산 TV의 설명서를 보면 TV를 켜려면 전원 버튼을 누르라고 되어있다. 사용자는 전원 버튼을 누르면 쉽게 TV를 켤 수 있다.</p>
+<p>그러나 실제로 TV의 전원 버튼을 누르는 순간 내부 전기회로에서는 복잡한 기능이 실행될 것이다. 사용자는 그것을 알 수 없고, 알 필요도 없다. TV 제작 회사에서 TV에 대한 추상화를 시켜 사용자가 쉽게 TV를 동작시킬 수 있도록 한 것이다.</p>
+</li>
+<li><p>함수를 보통 function, routine, procedure 라고 부른다. 이 때, procedure 단위로 추상화를 하고 procdural하게 진행하는 프로그램을 절차 지향 프로그램이라고 한다. 그러나 프로그램이 거대해지고, 코드가 길어지자 프로그램을 객체(object)로 추상화하는 방법론이 나왔고 그걸 적용한 게 객체 지향 프로그램이다.</p>
+</li>
+</ul>
+<h3 id="절차-지향-Procedural-Programming-procedure-단위-추상화"><a href="#절차-지향-Procedural-Programming-procedure-단위-추상화" class="headerlink" title="절차 지향 Procedural Programming : procedure 단위 추상화"></a>절차 지향 Procedural Programming : procedure 단위 추상화</h3><h3 id="객체-지향-Object-Oriented-Programming-Object-단위-추상화"><a href="#객체-지향-Object-Oriented-Programming-Object-단위-추상화" class="headerlink" title="객체 지향 Object Oriented Programming : Object 단위 추상화"></a>객체 지향 Object Oriented Programming : Object 단위 추상화</h3><h2 id="Function-Abstraction"><a href="#Function-Abstraction" class="headerlink" title="Function Abstraction"></a>Function Abstraction</h2><ul>
+<li>Function Signature (Interface) : function name, parameter, return calue</li>
+<li>Implementation : operations</li>
+<li>함수의 명세(Function Signature)와 내부구현(Implementation)을 분리하는 것</li>
+</ul>
+<h1 id="4-Fundamental-of-Object-Oriented-Programming"><a href="#4-Fundamental-of-Object-Oriented-Programming" class="headerlink" title="4 Fundamental of Object Oriented Programming"></a>4 Fundamental of Object Oriented Programming</h1><h2 id="Encapsulation"><a href="#Encapsulation" class="headerlink" title="Encapsulation"></a>Encapsulation</h2><p>Encapsulation은 모든 object가 그 state(private variables)를 class내부에 private으로 보유하고 있을 때 지켜진다. 다른 object들은 그 state에 직접 접근할 필요 없이, 해당 object의 public object(method)를 호출한다. 결과적으로 object는 자신의 state를 method를 통해 관리한다.</p>
+<h2 id="Abstraction"><a href="#Abstraction" class="headerlink" title="Abstraction"></a>Abstraction</h2><p>추상화는 encapsulation을 자연스럽게 확장한 것으로 볼 수 있다.<br>추상화를 적용한다는 것은, 각 object를 사용할 때 오직 high-level machanism만을 공개해야한다는 것이다. 이 mechanism은 내부 implementation을 숨기고, 오직 관련된 객체의 operation으로만 접근할 수 있다. 즉, 사용자는 class의 method가 어떻게 작동하는지 알 필요 없이 제공된 interface(method name, parameter, return value)만 알고 사용할 수 있다.</p>
+<h2 id="Inheritance"><a href="#Inheritance" class="headerlink" title="Inheritance"></a>Inheritance</h2><p>대부분의 object는 비슷하고 공통된 logic을 공유한다. 상속을 통해 중복되는 코드를 최대한 방지하는 것이 inheritance의 핵심이다. Parent class로부터 child class를 만들 수 있으며, child class는 parent class의 모든 영역을 재사용할 수 있는 특권을 가진다. Parent class의 기능에 자신만의 method를 추가하거나 재정의(override)할 수 있다.</p>
+<h2 id="Polymorphism-One-Interface-and-Multiple-Implementations"><a href="#Polymorphism-One-Interface-and-Multiple-Implementations" class="headerlink" title="Polymorphism | One Interface and Multiple Implementations."></a>Polymorphism | One Interface and Multiple Implementations.</h2><p>다형성. 우리가 parent class와 그로부터 상속받은 여러 child class를 가지고 있을 때, 이 모든 class를 collection처럼 한번에 쓰고 싶을 때가 있을 것이다. Polymorphism은 class를 이렇게 사용할 수 있게 하는 방법 제공한다. Parent class에 interface method를 선언하고(implementation은 하지 않는다!) child class에서 그 method의 implementation을 담당하는 것이다.</p>
+<blockquote>
+<p>상속은 많은 형태의 변화를 가능케 한다. Parent class를 상속하는 child class는 parent class로 정의될 수 있다. (ex. Child C = new Parent(); ) </p>
+</blockquote>
+<h2 id="Function-OverLoading-이름은-같지만-signature-parameter-수-data-type-는-다른-method를-중복으로-선언하는-것"><a href="#Function-OverLoading-이름은-같지만-signature-parameter-수-data-type-는-다른-method를-중복으로-선언하는-것" class="headerlink" title="Function OverLoading : 이름은 같지만 signature(parameter 수, data type)는 다른 method를 중복으로 선언하는 것"></a>Function OverLoading : 이름은 같지만 signature(parameter 수, data type)는 다른 method를 중복으로 선언하는 것</h2><p>method 이름은 같아야 한다. Parameter 수는 달라야 하며, 같다면 data type이 달라야 한다.</p>
+<h2 id="Method-OverRiding-부모-클래스의-method-동작-방법을-재정의하여-우선적으로-사용하는-것"><a href="#Method-OverRiding-부모-클래스의-method-동작-방법을-재정의하여-우선적으로-사용하는-것" class="headerlink" title="Method OverRiding : 부모 클래스의 method 동작 방법을 재정의하여 우선적으로 사용하는 것."></a>Method OverRiding : 부모 클래스의 method 동작 방법을 재정의하여 우선적으로 사용하는 것.</h2><p>override 하고자 하는 method가 상위 클래스에 존재해야 한다. Method 이름이 같아야 하며, parameter 개수, data type, return type 등 모든 signature를 동일하게 사용한다. 달라지는 것은 내부 구현 뿐이다.</p>
+<p>부르는 object만 달라질뿐 method 이름을 동일하게 하면 하나의 method로 여러 기능을 실행할 수 있다.</p>
+<hr>
+<p>참고 자료 <a href="https://medium.freecodecamp.org/object-oriented-programming-concepts-21bb035f7260" target="_blank" rel="noopener">How to explain object-oriented programming concepts to a 6-year-old</a></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/04/23/Recursion/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="Recursion">
         </a>
@@ -834,64 +909,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/20/CodeWars-5kyu-Directions-Reduction/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="CodeWars 5kyu. Directions Reduction">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-20T08:23:59.000Z">2019-04-20</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/CodeWars/">CodeWars</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 minutes read (About 379 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/20/CodeWars-5kyu-Directions-Reduction/">CodeWars 5kyu. Directions Reduction</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="CodeWars-6kyu-Dubstep"><a href="#CodeWars-6kyu-Dubstep" class="headerlink" title="CodeWars 6kyu. Dubstep"></a><a href="https://www.codewars.com/kata/dubstep/train/javascript" target="_blank" rel="noopener">CodeWars 6kyu. Dubstep</a></h2><p>뒤죽박죽 방향 지시를 효율적으로 만들기</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/20/CodeWars-5kyu-Directions-Reduction/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -966,7 +983,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        115
+                        116
                     </p>
                 </div>
             </div>
@@ -986,7 +1003,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        64
+                        65
                     </p>
                 </div>
             </div>
@@ -1079,7 +1096,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 10px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 10px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 18.33px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 11.67px;">Javascript</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a>
+        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 10px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 10px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 18.33px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 11.67px;">Javascript</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a>
     </div>
 </div>
 
@@ -1175,7 +1192,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">30</span>
+                <span class="level-item tag">31</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1213,6 +1230,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/26/31-Ajax/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="31. Ajax">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-26T02:33:41.000Z">2019-05-26</time></div>
+                    <a href="/2019/05/26/31-Ajax/" class="has-link-black-ter is-size-6">31. Ajax</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1290,25 +1326,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/22/28-Module/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="28. Module">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-22T07:16:28.000Z">2019-05-22</time></div>
-                    <a href="/2019/05/22/28-Module/" class="has-link-black-ter is-size-6">28. Module</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1327,7 +1344,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">42</span>
+                    <span class="level-item tag">43</span>
                 </span>
             </a>
         </li>
@@ -1384,6 +1401,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Access-Modifier/">
                         <span class="tag">Access Modifier</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Ajax/">
+                        <span class="tag">Ajax</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1559,7 +1583,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">25</span>
+                        <span class="tag is-grey">26</span>
                     </a>
                 </div>
                 
@@ -1919,7 +1943,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">30</span>
+                <span class="level-item tag">31</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1957,6 +1981,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/26/31-Ajax/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="31. Ajax">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-26T02:33:41.000Z">2019-05-26</time></div>
+                    <a href="/2019/05/26/31-Ajax/" class="has-link-black-ter is-size-6">31. Ajax</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -2034,25 +2077,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/22/28-Module/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="28. Module">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-22T07:16:28.000Z">2019-05-22</time></div>
-                    <a href="/2019/05/22/28-Module/" class="has-link-black-ter is-size-6">28. Module</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2071,7 +2095,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">42</span>
+                    <span class="level-item tag">43</span>
                 </span>
             </a>
         </li>
@@ -2128,6 +2152,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Access-Modifier/">
                         <span class="tag">Access Modifier</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Ajax/">
+                        <span class="tag">Ajax</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -2303,7 +2334,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">25</span>
+                        <span class="tag is-grey">26</span>
                     </a>
                 </div>
                 
