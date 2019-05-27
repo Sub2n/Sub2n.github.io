@@ -162,6 +162,198 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/05/21/27-Class/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="27. Class">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-21T07:56:56.000Z">2019-05-21</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    20 minutes read (About 2995 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/21/27-Class/">27. Class</a>
+            
+        </h1>
+        <div class="content">
+            <p>자바스크립트는 Prototype-based 객체지향 언어이다. Prototype-based 프로그래밍은 클래스 없이 프로토타입과 클로저 등으로 상속, 캡슐화 등의 개념을 구현할 수 있다.</p>
+<p>대부분의 객체 지향 언어가 클래스 기반인 점을 고려하여 ES6에서 클래스를 도입했다. 그러나 그 <strong>클래스도 사실은 함수</strong>이고 기존의 프로토타입 기반 객체지향 패턴으로 동작한다.</p>
+<h3 id="1-Calss-Definition"><a href="#1-Calss-Definition" class="headerlink" title="1. Calss Definition"></a>1. Calss Definition</h3><p>ES6 클래스는 다른 언어들과 같이 class 키워드를 사용해 정의한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// constructor</span></span><br><span class="line">    <span class="hljs-keyword">constructor</span>(name) &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>._name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-comment">// default method definition: class's prototype method</span></span><br><span class="line">    sayHello() &#123;</span><br><span class="line">        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Hi! <span class="hljs-subst">$&#123;<span class="hljs-keyword">this</span>._name&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> mimi = <span class="hljs-keyword">new</span> Student(<span class="hljs-string">'Mimi'</span>);</span><br><span class="line">mimi.sayHello(); <span class="hljs-comment">// Hi! Mimi</span></span><br></pre></td></tr></table></figure>
+<p>표현식으로도 클래스를 정의할 수 있으나 일반적이지 않다. 클래스 표현식에서 사용한 클래스 이름은 외부 코드에서 접근할 수 없기 때문이다. 클래스가 함수처럼 동작하는 것은 사실 클래스도 함수이기 때문이다.</p>
+<h3 id="2-Creation-of-Instance"><a href="#2-Creation-of-Instance" class="headerlink" title="2. Creation of Instance"></a>2. Creation of Instance</h3><p>Class의 instance를 생성하기 위해서는 new 연산자와 함께 constuctor를 호출한다. 클래스 선언식으로 정의한 클래스의 이름은 constructor와 동일하다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> foo = <span class="hljs-keyword">new</span> Foo();</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(Foo === Foo.prototype.constructor); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(Foo === <span class="hljs-built_in">Object</span>.getPrototypeOf(foo).constructor); <span class="hljs-comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> foo2 = Foo(); <span class="hljs-comment">// TypeError: Class constructor Foo cannot be invoked without 'new'</span></span><br></pre></td></tr></table></figure>
+<p>new 연산자를 사용하지 않고 constructor를 호출하면 TypeError가 발생한다. 즉, <strong>클래스의 constructor는 new 연산자 없이 호출할 수 없다.</strong> new 연산자 없이 호출시 오류 없이 생성자 대신 일반 함수로 호출되던 생성자 함수와 다른 점이다.</p>
+<h3 id="3-Constructor"><a href="#3-Constructor" class="headerlink" title="3. Constructor"></a>3. Constructor</h3><p>constructor는 인스턴스를 생성하고 클래스 필드를 초기화하는 특수한 메소드이다.</p>
+<blockquote>
+<h4 id="Class-Field"><a href="#Class-Field" class="headerlink" title="Class Field"></a>Class Field</h4><p>= Data Member, Member Variable. 클래스 내부의 캡슐화된 변수. Instance의 프로퍼티 또는 Static  프로퍼티를  Class field 라고 한다.</p>
+</blockquote>
+<ul>
+<li>class 내에는 최대 한 개의 constructor만 존재할 수 있다.</li>
+<li>new 연산자와 constructor로 인스턴스 생성시 constructor의 파라미터로 전달한 값으로 클래스의 필드를 초기화한다.</li>
+<li>class 내부에 constructor 정의를 생략하면 default로 <code>constructor() {}</code> 가 동작한다. 즉, 빈 객체 { }를 생성한다.</li>
+<li>constructor는 인스턴스의 생성과 동시에 클래스 필드의 생성과 초기화를 실행한다.</li>
+</ul>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> </span>&#123;&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bar</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">constructor</span>(num) &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.num = num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> foo = <span class="hljs-keyword">new</span> Foo();</span><br><span class="line"><span class="hljs-built_in">console</span>.log(foo); <span class="hljs-comment">// Foo &#123;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> bar = <span class="hljs-keyword">new</span> Bar(<span class="hljs-number">200</span>);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(bar); <span class="hljs-comment">// Bar &#123;num: 200&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-Class-Field"><a href="#4-Class-Field" class="headerlink" title="4. Class  Field"></a>4. Class  Field</h3><p>클래스 내부에는 메소드만 선언할 수 있다. 모든 프로퍼티(인스턴스의  멤버 변수)는 <strong>반드시 constructor 내부에 선언</strong>해야 한다.</p>
+<blockquote>
+<h4 id="Class-Field-Declarations-Proposal"><a href="#Class-Field-Declarations-Proposal" class="headerlink" title="Class Field Declarations Proposal"></a>Class Field Declarations Proposal</h4><p>아직 표준은 아니지만 stage3 단계에 Class FIeld 선언 관련된 표준안이 있다.</p>
+<ul>
+<li>Field Declaration</li>
+<li>Private Field</li>
+<li>Static Public Fields</li>
+</ul>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> </span>&#123;</span><br><span class="line">&gt;   x = <span class="hljs-number">1</span>; <span class="hljs-comment">// 생성자 함수 밖에서도 field 선언 가능</span></span><br><span class="line">&gt;   #p = 2; // private field</span><br><span class="line">&gt;   <span class="hljs-keyword">static</span> y = <span class="hljs-number">3</span>; <span class="hljs-comment">// Static puplic field</span></span><br><span class="line">&gt;   <span class="hljs-comment">// 현재 field declaration만 chrome에 구현됨</span></span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// default 값 설정</span></span><br><span class="line">    <span class="hljs-keyword">constructor</span>(name = '') &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>._name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    sayHello() &#123;</span><br><span class="line">        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Hi! <span class="hljs-subst">$&#123;<span class="hljs-keyword">this</span>._name&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>constructor 내부의 this는 클래스가 생성할 인스턴스이다. constructor는 this, 즉 생성할 인스턴스에 선언한 프로퍼티를 바인딩한다. 이런 방식으로  constructor는 클래스가 생성할 인스턴스와 인스턴스의 프로퍼티를 생성하고 초기화한다. </p>
+<p>클래스 프로퍼티는 언제나 <code>public</code>이다. 생성된 인스턴스를 통해서 클래스 외부에서도 클래스 내부의 프로퍼티에 접근할 수 있다.</p>
+<p>ES6의 클래스는 다른 객체지향 언어처럼 private, public, protect 등의 Access Modifier(접근 제한자)를 지원하지 않는다.</p>
+<h3 id="5-Hoisting"><a href="#5-Hoisting" class="headerlink" title="5. Hoisting"></a>5. Hoisting</h3><p>클래스는 ES6에서 추가 도입된 <code>let</code>, <code>const</code>와 같이 Hoisting 되지 않는 것처럼 동작한다. 선언 이전에 참조하면 ReferenceError가 발생한다.</p>
+<blockquote>
+<h4 id="Hoisting-되지-않는-것처럼-동작한다는-것"><a href="#Hoisting-되지-않는-것처럼-동작한다는-것" class="headerlink" title="Hoisting 되지 않는 것처럼 동작한다는 것"></a>Hoisting 되지 않는 것처럼 동작한다는 것</h4><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-comment">// x 선언 없이 참조</span></span><br><span class="line">&gt; <span class="hljs-built_in">console</span>.log(x); <span class="hljs-comment">// ReferenceError: x is not defined</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>코드 전역에서 x의 선언 없이 x를 참조하면 x is not defined, 즉 정의되지 않았다는 참조 에러가 뜬다.</p>
+<p>그러나 let으로 선언하기 전에 x를 참조하면 다르게 동작한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-comment">// x를 참조하고 밑에서 let 키워드로 선언</span></span><br><span class="line">&gt; x; <span class="hljs-comment">// ReferenceError: Cannot access 'x' before initialization</span></span><br><span class="line">&gt; <span class="hljs-keyword">let</span> x = <span class="hljs-number">10</span>; </span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>위와 같이 x가 정의되지 않았다고 하지 않고, initialization 전에 x에 접근할 수 없다는 참조 에러가 뜬다. 왜일까?</p>
+<p><code>var</code> 키워드와 다르게 <code>let</code>, <code>const</code> 키워드는 런타임 이전에 자바스크립트 엔진이 선언문을 미리 실행할 때, 1. 선언 단계(Declaration Phase)와 2. 초기화 단계(Initialization Phase)가 함께 진행되지 않는다. <code>let</code>, <code>const</code> 키워드로 선언한 변수는 1. 선언 단계만 미리 실행되어 스코프에 변수 명이 등록되지만 2. 초기화 단계는 런타임에 선언문이 실행될 때 실행된다. 2. 초기화 단계는 변수의 값을 위한 메모리 공간을 할당하고 undefined라는 값을 암묵적으로 넣어주는 것이다. 이런 초기화 단계를 진행하지 않았으니 참조 에러가 나는 것이다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-comment">// 클래스 Gee를 선언하기 전에 참조</span></span><br><span class="line">&gt; <span class="hljs-keyword">const</span> f = <span class="hljs-keyword">new</span> Gee(); <span class="hljs-comment">// ReferenceError: Cannot access 'Gee' before initialization</span></span><br><span class="line">&gt; <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Gee</span> </span>&#123;&#125;;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>마찬가지로 class도 <code>let</code>이나 <code>const</code> 키워드로 선언한 변수처럼 동작한다. 호이스팅을 하지 <strong>않는 것처럼</strong> 동작한다고 하는 이유는, 런타임 이전에 1. 선언 단계가 진행되어 정말로 선언되지 않은 변수를 참조했을 때 발생하는 is not defined와는 다른 에러가 발생하기 때문이다.</p>
+<p>ES6의  class도 사실은 함수이지만, function 키워드로 선언한 함수 선언식은 호이스팅 되는 반면 class로 선언한 함수는 호이스팅 되지 않는다. 즉, 선언만 해놓고 초기화를 하지 않아 호이스팅되지 않는 것처럼 동작한다.</p>
+<p><code>let</code>이나 <code>const</code> 나 class 등의 선언문 이전을 TDZ(Temporal Dead Zone)이라고 한다. 선언만 되고 초기화되지 않아 참조할 수 없는 구간을 말한다.</p>
+</blockquote>
+<h3 id="6-getter-setter"><a href="#6-getter-setter" class="headerlink" title="6. getter, setter"></a>6. getter, setter</h3><p>객체 지향 언어에서 클래스를 사용하는 목적은 내부 상태(내부 데이터)에 접근하는 방법을 제한하고 최소한의 인터페이스를 제공해서 데이터의 캡슐화를 구현하기 위함이다. 접근자 프로퍼티 (getter, setter)를 사용하는 이유도 이와 같다. 클래스 내의 프로퍼티를 참조할 때는 get 함수, 프로퍼티를 설정할 때는 set 함수만을 이용할 수 있도록 구현해야 한다.</p>
+<h4 id="6-1-getter"><a href="#6-1-getter" class="headerlink" title="6.1. getter"></a>6.1. getter</h4><p>getter는 클래스 프로퍼티에 접근할 때 사용한다. getter는 메소드 이름 앞에 <code>get</code> 키워드를 사용해서 정의한다. 이 때 메소드 이름은 클래스 프로퍼티 키처럼 사용된다. 즉, getter는 호출하는 것이 아니라 <strong>프로퍼티처럼 참조하는 것이고, 참조할 때 메소드가 호출</strong>된다. getter는 데이터를 얻기위해(get) 사용하므로 반드시 무언가를 리턴해야 한다.</p>
+<h4 id="6-2-setter"><a href="#6-2-setter" class="headerlink" title="6.2. setter"></a>6.2. setter</h4><p>setter는 클래스 프로퍼티에 값을 할당할 때 사용한다. setter는 메소드 이름 앞에 <code>set</code> 키워드를 사용해서 정의한다. get 메소드와 마찬가지로 메소드 이름은 클래스 <strong>프로퍼티 키로 사용되어 참조되는 형식으로 메소드를 호출</strong>한다. setter는 데이터를 할당하기 위해서 호출하는 것이므로 메소드를 사용해서 할당할 때 set 메소드가 호출된다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// default 값 설정</span></span><br><span class="line">    <span class="hljs-keyword">constructor</span>(firstname = '', lastname = '') &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.firstname = firstname;</span><br><span class="line">        <span class="hljs-keyword">this</span>.lastname = lastname;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">get</span> fullName() &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">$&#123;<span class="hljs-keyword">this</span>.firstname&#125;</span> <span class="hljs-subst">$&#123;<span class="hljs-keyword">this</span>.lastname&#125;</span>`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">set</span> fullName(fullname) &#123;</span><br><span class="line">        [<span class="hljs-keyword">this</span>.firstname, <span class="hljs-keyword">this</span>.lastname] = fullname.split(<span class="hljs-string">' '</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> mimi = <span class="hljs-keyword">new</span> Student(<span class="hljs-string">'Mimi'</span>, <span class="hljs-string">'Kim'</span>); </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 메소드를 직접 호출하는 것이 아니라 프로퍼티에 접근하는 방식으로 getter, setter를 내부적으로 호출한다.</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(mimi.fullName); <span class="hljs-comment">// Mimi Kim (getter)</span></span><br><span class="line"></span><br><span class="line">mimi.fullName = <span class="hljs-string">'Mimi Park'</span>;	<span class="hljs-comment">// setter</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(mimi.fullName); <span class="hljs-comment">// Mimi Park (getter)</span></span><br></pre></td></tr></table></figure>
+<h3 id="7-Static-Method"><a href="#7-Static-Method" class="headerlink" title="7. Static Method"></a>7. Static Method</h3><p>Class는 static 메소드를 정의할 때 <code>static</code> 키워드를 사용한다. 정적 메소드는 인스턴스가 아니라 클래스 이름으로 호출하는 메소드이다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">constructor</span>(prop) &#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.prop = prop;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">static</span> staticMethod() &#123;</span><br><span class="line">    <span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment">    정적 메소드는 this를 사용할 수 없다.</span></span><br><span class="line"><span class="hljs-comment">    정적 메소드 내부에서 this는 클래스의 인스턴스가 아닌 클래스 자신을 가리킨다.</span></span><br><span class="line"><span class="hljs-comment">    */</span></span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-string">'staticMethod'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  prototypeMethod() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.prop;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(Foo.staticMethod()); <span class="hljs-comment">// staticMethod</span></span><br></pre></td></tr></table></figure>
+<p>정적 메소드는 클래스의 인스턴스 생성 없이 클래스 이름으로 호출하며 클래스의 인스턴스로는 호출할 수 없다.</p>
+<h3 id="8-Class-Inheritance"><a href="#8-Class-Inheritance" class="headerlink" title="8. Class Inheritance"></a>8. Class Inheritance</h3><h4 id="8-1-extends-Keyword"><a href="#8-1-extends-Keyword" class="headerlink" title="8.1. extends Keyword"></a>8.1. <code>extends</code> Keyword</h4><p><code>extends</code> 키워드는 parent 클래스를 생속받는 child 클래스를 정의할 때 사용한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// parent class</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Circle</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">constructor</span>(radius) &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.radius = radius;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    getDiameter() &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-number">2</span> * <span class="hljs-keyword">this</span>.radius;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    getArea() &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.PI * (<span class="hljs-keyword">this</span>.radius ** <span class="hljs-number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// child class</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cylinder</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Circle</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">constructor</span>(radius, height) &#123;</span><br><span class="line">    <span class="hljs-keyword">super</span>(radius);</span><br><span class="line">    <span class="hljs-keyword">this</span>.height = height;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-comment">// parent class Circle의 getArea overriding</span></span><br><span class="line">  getArea() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> (<span class="hljs-keyword">this</span>.height * <span class="hljs-keyword">super</span>.getPerimeter()) + (<span class="hljs-number">2</span> * <span class="hljs-keyword">super</span>.getArea());</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-comment">// 자신의 메소드 정의</span></span><br><span class="line">  getVolume() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.getArea() * <span class="hljs-keyword">this</span>.height;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Cylinder class는 Circle class를 상속한다.</span></span><br><span class="line">Cylinder.__proto__ === Circle <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-comment">// Cylinder의 prototype은 Circle의 prototype을 상속한다.</span></span><br><span class="line">Cylinder.prototype.__proto__ === Circle.prototype</span><br></pre></td></tr></table></figure>
+<h4 id="8-2-super-Keyword"><a href="#8-2-super-Keyword" class="headerlink" title="8.2. super Keyword"></a>8.2. <code>super</code> Keyword</h4><p><code>super</code> 키워드는 <strong>parent 클래스를 참조</strong>하거나  <strong>parent 클래스의 constructor를 호출</strong>할 때 사용한다.</p>
+<ol>
+<li><p>super 클래스가 메소드로 사용될 때는 parent 클래스의 constructor를 호출한다. <strong>child 클래스의 constructor에서 super()를 호출하지 않으면 this에 대한 ReferenceError가 발생한다.</strong></p>
+<p>child 클래스의 인스턴스를 만들 때 parent 클래스의 인스턴스를 우선 만들고 상속한다. </p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// parent 클래스의 constructor를 호출한다.</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cylinder</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Circle</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">constructor</span>(radius, height) &#123;</span><br><span class="line">    <span class="hljs-comment">// super가 parent class의 constructor처럼 사용됨</span></span><br><span class="line">    <span class="hljs-keyword">super</span>(radius);</span><br><span class="line">    <span class="hljs-keyword">this</span>.height = height;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/48080762/58225537-6c111480-7d5d-11e9-9cbb-45fc8d66a2ff.png" alt="super"></p>
+<p>ECMAScript의 스펙을 살펴보면 super가 argument를 전달받으며 호출될 때는 내부적으로 자신의 parent 클래스의 constructor를 호출하여 constructor가 리턴한 this 객체를 child 클래스 constructor의 this(child 클래스가 생성할 인스턴스)에 바인딩한다.</p>
+</li>
+<li><p>super 클래스가 객체로 사용될 때는 parent 클래스를 참조한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// super가 parent class Circle처럼 사용됨</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// parent class Circle의 getArea overriding</span></span><br><span class="line">  getArea() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> (<span class="hljs-keyword">this</span>.height * <span class="hljs-keyword">super</span>.getPerimeter()) + (<span class="hljs-number">2</span> * <span class="hljs-keyword">super</span>.getArea());</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-comment">// 자신의 메소드 정의</span></span><br><span class="line">  getVolume() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.getArea() * <span class="hljs-keyword">this</span>.height;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="8-3-Inheritance-of-Static-Method-and-Prototype-Method"><a href="#8-3-Inheritance-of-Static-Method-and-Prototype-Method" class="headerlink" title="8.3. Inheritance of Static Method and Prototype Method"></a>8.3. Inheritance of Static Method and Prototype Method</h4><p>Child 클래스의 static 메소드 내부에서 super 키워드를 사용하면 parent 클래스의 static 메소드를 호출할 수 있다. child 클래스는 프로토타입 체인에서 parent 클래스의 정적 메소드를 참조할 수 있기 때문이다.</p>
+<p>그러나 child 클래스의 일반 메소드(prototype  메소드) 내부에서는 super 키워드를 사용해서 parent 클래스의 static 메소드를 호출할 수 없다. 이는 child 클래스의 <strong>인스턴스</strong>는 프로토타입 체인에 의해 parent 클래스의 static 메소드를 참조할 수 없기 때문이다. child 클래스의 인스턴스는 프로토타입 체인 상에 parent 클래스가 아니라 parent 클래스의 prototype만 가지고 있다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">constructor</span>(prop) &#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.prop = prop;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">static</span> staticMethod() &#123;</span><br><span class="line">    <span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment">    정적 메소드는 this를 사용할 수 없다.</span></span><br><span class="line"><span class="hljs-comment">    정적 메소드 내부에서 this는 클래스의 인스턴스가 아닌 클래스 자신을 가리킨다.</span></span><br><span class="line"><span class="hljs-comment">    */</span></span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-string">'staticMethod'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  prototypeMethod() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.prop;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bar</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Foo</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">static</span> staticMethod2() &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.staticMethod();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    prototypeMethod() &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.staticMethod();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(Bar.staticMethod2()); <span class="hljs-comment">// staticMethod</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> bar = <span class="hljs-keyword">new</span> Bar();</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(bar.prototypeMethod()); <span class="hljs-comment">// TypeError: (intermediate value).staticMethod is not a function</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
+        <a href="/2019/05/21/26-Destructuring/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="26. Destructuring">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-21T07:16:23.000Z">2019-05-21</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5 minutes read (About 760 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/21/26-Destructuring/">26. Destructuring</a>
+            
+        </h1>
+        <div class="content">
+            <h3 id="Destructuring"><a href="#Destructuring" class="headerlink" title="Destructuring"></a>Destructuring</h3><p>구조화된 배열 / 객체를 풀어서(destructure) 개별적인 변수에 할당하는 것. 배열 / 객체 리터럴에서 필요한 값을 추출해서 변수에 할당하거나 리턴할 때 유용</p>
+<h3 id="1-Array-Destructuring"><a href="#1-Array-Destructuring" class="headerlink" title="1. Array Destructuring"></a>1. Array Destructuring</h3><p>ES6의 배열 디스트럭처링은 배열의 각 요소를 배열에서 추출해 변수 리스트에 할당한다. 배열 인덱스를 기준으로 추출, 할당한다. </p>
+<p>이 때 할당 연산자(=)의 왼 쪽에 <strong>배열 형태의 변수 리스트</strong>가 와야한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// ES6</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> [one, two, three] = arr;</span><br><span class="line"><span class="hljs-comment">// const [one, two, three] = [1, 2, 3];</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(one, two, three); <span class="hljs-comment">// 1 2 3</span></span><br></pre></td></tr></table></figure>
+<p>배열의 인덱스를 기준으로 <strong>오른쪽의 배열</strong>에서 왼쪽의 <strong>변수 리스트</strong>로 할당된다. 그러므로 변수의 <strong>순서가 중요</strong>하다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> x, y, z;</span><br><span class="line"></span><br><span class="line">[x, y] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]; </span><br><span class="line"><span class="hljs-built_in">console</span>.log([x, y]); <span class="hljs-comment">// [1, 2]</span></span><br><span class="line"></span><br><span class="line">[x, y] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]; </span><br><span class="line"><span class="hljs-built_in">console</span>.log([x, y]); <span class="hljs-comment">// [1, 2]</span></span><br><span class="line"></span><br><span class="line">[x, y] = [<span class="hljs-number">1</span>]; </span><br><span class="line"><span class="hljs-built_in">console</span>.log([x, y]); <span class="hljs-comment">// [1, undefined]</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// default 설정</span></span><br><span class="line">[x, y = <span class="hljs-number">3</span>, z = <span class="hljs-number">4</span>] = [<span class="hljs-number">1</span>];</span><br><span class="line"><span class="hljs-built_in">console</span>.log([x, y, z]); <span class="hljs-comment">// [1, 3, 4]</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-Object-Destructuring"><a href="#2-Object-Destructuring" class="headerlink" title="2. Object Destructuring"></a>2. Object Destructuring</h3><p>ES6의 객체 디스트럭처링은 객체의 각 프로퍼티를 객체로부터 추출해서 변수 리스트에 할당한다. 할당 기준은 <strong>프로퍼티 키</strong>이다. 할당 연산자 왼쪽에는 <strong>객체 형태의 변수 리스트</strong>가 필요하다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// ES6 Destructuring</span></span><br><span class="line"><span class="hljs-keyword">const</span> obj = &#123; <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Subin'</span>, <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Park'</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> &#123;firstName, lastName &#125; = obj;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(firstName, lastName); <span class="hljs-comment">// Subin Park</span></span><br></pre></td></tr></table></figure>
+<p>객체 destructing의 경우 할당 기준이 프로퍼티 키이므로 <strong>프로퍼티 키를 명시해주지 않으려면 변수명과 프로퍼티 키가 같아야 한다</strong>. 순서는 상관 없다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> &#123; <span class="hljs-attr">prop1</span>: p1, <span class="hljs-attr">prop2</span>: p2 &#125; = &#123; <span class="hljs-attr">prop1</span>: <span class="hljs-string">'a'</span>, <span class="hljs-attr">prop2</span>: <span class="hljs-string">'b'</span> &#125;;</span><br><span class="line"><span class="hljs-comment">// 변수명을 prop1, prop2가 아닌 p1, p2로 하기 위해서 pro1: p1 등으로 구분해줌</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(p1, p2); <span class="hljs-comment">// a, b</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(&#123; <span class="hljs-attr">prop1</span>: p1, <span class="hljs-attr">prop2</span>: p2 &#125;); <span class="hljs-comment">// &#123; prop1: 'a', prop2: 'b' &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Shorthand(변수명을 프로퍼티 명과 같게 함) &amp; default 설정</span></span><br><span class="line"><span class="hljs-keyword">const</span> &#123; prop1, prop2, prop3 = <span class="hljs-string">'c'</span> &#125; = &#123; <span class="hljs-attr">prop1</span>: <span class="hljs-string">'a'</span>, <span class="hljs-attr">prop2</span>: <span class="hljs-string">'b'</span> &#125;;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(&#123; prop1, prop2, prop3 &#125;); <span class="hljs-comment">// &#123;prop1: "a", prop2: "b", prop3: "c"&#125;</span></span><br></pre></td></tr></table></figure>
+<p>객체 디스트럭처링으로 객체에서 필요한 프로퍼티 키의 값만을 추출해낼 수 있다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> parts = [</span><br><span class="line">    &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">department</span>: <span class="hljs-string">'Human Resource'</span>, <span class="hljs-attr">checked</span>: <span class="hljs-literal">false</span> &#125;,</span><br><span class="line">    &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">department</span>: <span class="hljs-string">'Development'</span>, <span class="hljs-attr">checked</span>: <span class="hljs-literal">true</span> &#125;,</span><br><span class="line">    &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">department</span>: <span class="hljs-string">'Management'</span>, <span class="hljs-attr">checked</span>: <span class="hljs-literal">false</span> &#125;    </span><br><span class="line">];</span><br><span class="line"><span class="hljs-comment">// parts 배열의 객체 element 중에서 checked 프로퍼티의 값만을 checked라는 이름의 변수(parameter)로 받는다.</span></span><br><span class="line"><span class="hljs-keyword">const</span> checkedParts = parts.filter(<span class="hljs-function">(<span class="hljs-params">&#123;checked&#125;</span>) =&gt;</span> checked);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(checkedParts); <span class="hljs-comment">//  &#123; id: 2, department: 'Development', checked: true &#125;</span></span><br></pre></td></tr></table></figure>
+<p>위의 예제에서 filter 함수의 callback은 argument 로 parts의 객체 element를 하나씩 받는다. parameter에 {checked} 를 정의했다는 것은 내부적으로</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; checked &#125; = &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">department</span>: <span class="hljs-string">'Human Resource'</span>, <span class="hljs-attr">checked</span>: <span class="hljs-literal">false</span> &#125;;</span><br></pre></td></tr></table></figure>
+<p>가 실행되는 것과 같다. callback 함수 내에서는 checked라는 parameter 변수에 객체 element의 checked 프로퍼티의 값이 할당되어있다. 따라서 filter 실행시배열의 element 중 checked 프로퍼티의 값을 할당한 변수 checked 가 true인 객체 element만 필터링된다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> student = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span>,</span><br><span class="line">    address: &#123;</span><br><span class="line">        zipCode: <span class="hljs-string">'12345'</span>,</span><br><span class="line">        city: <span class="hljs-string">'NewYork'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> &#123; <span class="hljs-attr">address</span>: &#123; city &#125; &#125; = student;</span><br><span class="line"><span class="hljs-comment">// 왼 쪽의 city 변수에 student 객체의 address 프로퍼티의 값 객체의 city 프로퍼티의 값 'NeyWork'이 할당됨 (프로퍼티 추출)</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(city); <span class="hljs-comment">// 'NewYork'</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/05/21/25-Enhanced-Object-property/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="25. Enhanced Object property">
         </a>
@@ -554,282 +746,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/05/15/21-Number-Math-Date-and-String-Object/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="21. Number, Math and String Object">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-15T10:23:44.000Z">2019-05-15</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    19 minutes read (About 2860 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/15/21-Number-Math-Date-and-String-Object/">21. Number, Math and String Object</a>
-            
-        </h1>
-        <div class="content">
-            <h1 id="1-Number-wrapper-object"><a href="#1-Number-wrapper-object" class="headerlink" title="1. Number wrapper object"></a>1. Number wrapper object</h1><p>Number 객체 : primitive type number를 다룰 때 유용한 프로퍼티와 메소드를 제공하는 wrapper 객체. 변수 또는 객체의 프로퍼티의 값이 숫자라면 Number 객체를 별도로 생성하지 않고 Number 객체의 프로퍼티와 메소드를 사용할 수 있다.</p>
-<p>Primitive type이 wrapper 객체의 메소드를 사용할 수 있는 이유: primitive type으로 wrapper 객체의 프로퍼티나 메소드를 호출할 때 일시적으로 해당 타입과 연관된 wrapper 객체로 변환해 프로토타입 객체를 공유하기 때문.</p>
-<h2 id="1-1-Number-Constructor"><a href="#1-1-Number-Constructor" class="headerlink" title="1.1 Number Constructor"></a>1.1 Number Constructor</h2><p>Number 객체는 Number() 생성자 함수를 통해 생성한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> x = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Number</span>(<span class="hljs-number">123</span>);</span><br><span class="line"><span class="hljs-keyword">const</span> y = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Number</span>(<span class="hljs-string">'123'</span>);</span><br><span class="line"><span class="hljs-keyword">const</span> z = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Number</span>(<span class="hljs-string">'string'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(x); <span class="hljs-comment">// 123</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(y); <span class="hljs-comment">// 123</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(z); <span class="hljs-comment">// NaN</span></span><br></pre></td></tr></table></figure>
-<p>new 연산자 없이 Number() 함수를 사용하면 Number 객체가 아니라 primitive type number를 반환한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> x = <span class="hljs-built_in">Number</span>(<span class="hljs-number">123</span>);</span><br><span class="line"><span class="hljs-keyword">const</span> y = <span class="hljs-built_in">Number</span>(<span class="hljs-string">'123'</span>);</span><br><span class="line"><span class="hljs-keyword">const</span> z = <span class="hljs-built_in">Number</span>(<span class="hljs-string">'string'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(x); <span class="hljs-comment">// 123</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(y); <span class="hljs-comment">// 123</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(z); <span class="hljs-comment">// NaN</span></span><br></pre></td></tr></table></figure>
-<p>이를 이용해 형변환을 할 수 있다.</p>
-<h2 id="1-2-Number-Property"><a href="#1-2-Number-Property" class="headerlink" title="1.2. Number Property"></a>1.2. Number Property</h2><p>Number 객체의 프로퍼티는 static property로, Number 객체를 생성할 필요 없이 Number.propertyName의 형태로 사용한다.</p>
-<blockquote>
-<h4 id="Static-Property"><a href="#Static-Property" class="headerlink" title="Static Property"></a>Static Property</h4><p>Static method는 생성자 함수로 인스턴트 객체를 만들지 않아도 생성자 함수의 메소드로 직접 호출 가능하며, 생성자 함수가 생성한 인스턴스 객체에서는 사용할 수 없다.</p>
-</blockquote>
-<h3 id="1-2-1-Number-EPSILONES6"><a href="#1-2-1-Number-EPSILONES6" class="headerlink" title="1.2.1. Number.EPSILONES6"></a>1.2.1. Number.EPSILON<sup>ES6</sup></h3><p>Number.EPSILON은 JavaScript에서 표현할 수 있는 가장 작은 수를 나타낸다. EPSILON은 컴퓨터에서 부동소숫점을 표현하는 데에 한계가 있기 때문에 발생하는 오차이다. </p>
-<p>컴퓨터가 표현할 수있는 어떤 임의의 수와, 그 바로 다음으로 표현할 수 있는 수와의 차이를 EPSILON이라고 한다. </p>
-<p>컴퓨터에서 부동소숫점 수를 비교할 때는 Number.EPSILON을 사용하여 두 수의 차이가 최소 오차인 Number.EPSILON보다 작으면 같은 수로 인정한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">0.1</span> + <span class="hljs-number">0.2</span> === <span class="hljs-number">0.3</span>); <span class="hljs-comment">// false</span></span><br><span class="line"><span class="hljs-comment">// 0.1 + 0.2 = 0.30000000000000004</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isEqual</span>(<span class="hljs-params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.abs(a - b) &lt; <span class="hljs-built_in">Number</span>.EPSILON;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(isEqual(<span class="hljs-number">0.1</span> + <span class="hljs-number">0.2</span>, <span class="hljs-number">0.3</span>)); <span class="hljs-comment">// true</span></span><br></pre></td></tr></table></figure>
-<h3 id="1-2-2-Number-MAX-VALUEES1"><a href="#1-2-2-Number-MAX-VALUEES1" class="headerlink" title="1.2.2. Number.MAX_VALUEES1"></a>1.2.2. Number.MAX_VALUE<sup>ES1</sup></h3><p>Number.MAX_VALUE는 JavaScript에서 사용 가능한 가장 큰 숫자를 반환한다. MAX_VALUE보다 큰 숫자는 Infinity이다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Number</span>.MAX_VALUE; <span class="hljs-comment">// 1.7976931348623157e+308</span></span><br><span class="line"><span class="hljs-keyword">const</span> num = <span class="hljs-built_in">Number</span>.MAX_VALUE + <span class="hljs-number">1</span>; <span class="hljs-comment">// num = Number.MAX_VALUE</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-literal">Infinity</span> &gt; <span class="hljs-built_in">Number</span>.MAX_VALUE); <span class="hljs-comment">// true</span></span><br></pre></td></tr></table></figure>
-<h3 id="1-2-3-Number-MIN-VALUEES1"><a href="#1-2-3-Number-MIN-VALUEES1" class="headerlink" title="1.2.3. Number.MIN_VALUEES1"></a>1.2.3. Number.MIN_VALUE<sup>ES1</sup></h3><p>Number.MIN_VALUE는 JavaScript에서 사용 가능한 가장 작은 숫자를 반환한다. MIN_VALUE는 0에 가장 가까운 양수 값이다. MIN_VALUE보다 작은 숫자는 0으로 변환된다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Number</span>.MIN_VALUE; <span class="hljs-comment">// 5e-324</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MinEpsilon</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line"> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Number</span>.MIN_VALUE &gt; <span class="hljs-built_in">Number</span>.EPSILON) &#123;</span><br><span class="line">	<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'MIN_VALUE &gt; EPSILON'</span>);</span><br><span class="line"> &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Number</span>.MIN_VALUE &lt; <span class="hljs-built_in">Number</span>.EPSILON) &#123;</span><br><span class="line">	<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'MIN_VALUE &lt; EPSILON'</span>);</span><br><span class="line"> &#125; <span class="hljs-keyword">else</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'MIN_VALUE = EPSILON'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MinEpsilon(); <span class="hljs-comment">// MIN_VALUE &lt; EPSILON</span></span><br></pre></td></tr></table></figure>
-<h3 id="1-2-4-Number-POSITIVE-INFINITYES1"><a href="#1-2-4-Number-POSITIVE-INFINITYES1" class="headerlink" title="1.2.4. Number.POSITIVE_INFINITYES1"></a>1.2.4. Number.POSITIVE_INFINITY<sup>ES1</sup></h3><p>Number.POSITIVE_INFINITY는 양의 무한대 <code>Infinity</code>를 반환한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Number</span>.POSITIVE_INFINITY <span class="hljs-comment">// Infinity</span></span><br></pre></td></tr></table></figure>
-<h3 id="1-2-5-Number-NEGATIVE-INFINITYES1"><a href="#1-2-5-Number-NEGATIVE-INFINITYES1" class="headerlink" title="1.2.5. Number.NEGATIVE_INFINITYES1"></a>1.2.5. Number.NEGATIVE_INFINITY<sup>ES1</sup></h3><p>Number.NEGTIVE_INFINITY는 음의 무한대 <code>-Infinity</code>를 반환한다</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Number</span>.NEGATIVE_INFINITY <span class="hljs-comment">// -Infinity</span></span><br></pre></td></tr></table></figure>
-<h3 id="1-2-6-Number-NaNES1"><a href="#1-2-6-Number-NaNES1" class="headerlink" title="1.2.6. Number.NaNES1"></a>1.2.6. Number.NaN<sup>ES1</sup></h3><p>Number.NaN은 Not-a-Number를 나타내는 숫자값이다. Number.NaN 프로퍼티는 window.NaN 프로퍼티와 같다. NaN의 type은 number임을 명심하자.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Number</span>(<span class="hljs-string">'abc'</span>); <span class="hljs-comment">// NaN</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> <span class="hljs-literal">NaN</span>; <span class="hljs-comment">// number</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<h4 id="isNaN-method"><a href="#isNaN-method" class="headerlink" title="isNaN method"></a>isNaN method</h4><p>NaN은 ==나 === 연산자로 NaN인지 판변할 수 없다. 어떤 숫자가 NaN인지 알기 위해서는 isNaN 메소드를 써야하는데, 2가지 종류가 있으며 다르게 동작하니 알아두면 좋다.</p>
-<ul>
-<li>isNaN() (window.isNaN) : built-in 메소드로, 특이한 형변환을 수행한다.<ul>
-<li>argument가 Number 형이 아닐 경우 값을 순간적으로 Number로 형변환 한 후 NaN인지 검사한다.</li>
-<li>즉, argument가 Number로 강제 형변환 될 경우의 NaN 여부를 반환한다.</li>
-</ul>
-</li>
-<li>Number.isNaN() : 위의 global isNaN()의 보다 엄격한 버전으로, 주어진 값이 NaN인지 검사한다.<ul>
-<li>개선된 점으로 argument가 Number 형이고 값이 NaN일 때만 true를, 아니면 false를 반환한다.</li>
-<li>즉, argument를 강제로 Number 형으로 변환하지 않고 Number 형이 아닌 argument를 전달받을 경우 false를 반환한다.</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<h2 id="1-3-Number-Method"><a href="#1-3-Number-Method" class="headerlink" title="1.3. Number Method"></a>1.3. Number Method</h2><p>Number 객체의 메소드</p>
-<h3 id="1-3-1-Number-isFinite-testValue-number-boolean-ES6"><a href="#1-3-1-Number-isFinite-testValue-number-boolean-ES6" class="headerlink" title="1.3.1. Number.isFinite(testValue: number): boolean ES6"></a>1.3.1. Number.isFinite(testValue: number): boolean <sup>ES6</sup></h3><p>Number.isFinite() 메소드는 parameter에 전달된 값이 정상적인 유한수인지를 검사하고 결과를 Boolean으로 리턴한다.</p>
-<p>Number.isFinite()는 전역 함수 isFinite()와 달리 argument를 숫자로 강제 형변환 하지 않는다. 숫자가 아닌 argument가 들어오면 언제나 false를 리턴한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Number</span>.isFinite(<span class="hljs-literal">Infinity</span>); <span class="hljs-comment">// false</span></span><br><span class="line"><span class="hljs-built_in">Number</span>.isFinite(<span class="hljs-literal">NaN</span>); <span class="hljs-comment">// false</span></span><br><span class="line"><span class="hljs-built_in">Number</span>.isFinite(<span class="hljs-built_in">Number</span>.EPSILON); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">Number</span>.isFinite(<span class="hljs-number">0</span>); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">Number</span>.isFinite(<span class="hljs-string">'0'</span>); <span class="hljs-comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// isFinite()와 Number.isFinite()</span></span><br><span class="line"><span class="hljs-built_in">isFinite</span>(<span class="hljs-literal">null</span>); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">Number</span>.isFinite(<span class="hljs-literal">null</span>); <span class="hljs-comment">// false</span></span><br></pre></td></tr></table></figure>
-<h3 id="1-3-2-Number-isInteger-testValue-number-boolean-ES6"><a href="#1-3-2-Number-isInteger-testValue-number-boolean-ES6" class="headerlink" title="1.3.2. Number.isInteger(testValue: number): boolean ES6"></a>1.3.2. Number.isInteger(testValue: number): boolean <sup>ES6</sup></h3><p>Number.isInteger() 메소드는 parameter에 전달된 값이 정수(Integer)인지 검사하고 결과를 Boolean으로 리턴한다. 이 또한 검사 전에 argument를 강제로 Number 형으로 변환하지 않는다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Number</span>.isInteger(<span class="hljs-number">3.14</span>); <span class="hljs-comment">// false</span></span><br><span class="line"><span class="hljs-built_in">Number</span>.isInteger(<span class="hljs-number">3.0000</span>); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">Number</span>.isInteger(<span class="hljs-number">3</span>); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">Number</span>.isInteger(<span class="hljs-literal">NaN</span>); <span class="hljs-comment">// false</span></span><br><span class="line"><span class="hljs-built_in">Number</span>.isInteger(<span class="hljs-string">'string'</span>); <span class="hljs-comment">// false</span></span><br></pre></td></tr></table></figure>
-<h3 id="1-3-3-Number-isNaN-testValue-number-boolean-ES6"><a href="#1-3-3-Number-isNaN-testValue-number-boolean-ES6" class="headerlink" title="1.3.3. Number.isNaN(testValue: number): boolean ES6"></a>1.3.3. Number.isNaN(testValue: number): boolean <sup>ES6</sup></h3><p>Number.isNaN() 메소드는 parameter에 전달된 값이 NaN인지를 검사하고 결과를 Boolean으로 리턴한다. 검사 전에 argument를 숫자로 변환하지 않는다. global isNaN()과 다르다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Number</span>.isNaN(<span class="hljs-literal">true</span>); <span class="hljs-comment">// false</span></span><br><span class="line"><span class="hljs-built_in">Number</span>.isNaN(<span class="hljs-literal">null</span>); <span class="hljs-comment">// false</span></span><br><span class="line"><span class="hljs-built_in">Number</span>.isNaN(<span class="hljs-literal">Infinity</span>); <span class="hljs-comment">// false</span></span><br><span class="line"><span class="hljs-built_in">Number</span>.isNaN(<span class="hljs-number">37</span>); <span class="hljs-comment">// false</span></span><br><span class="line"><span class="hljs-built_in">Number</span>.isNaN(<span class="hljs-literal">NaN</span>); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">Number</span>.isNaN(<span class="hljs-string">'string'</span>); <span class="hljs-comment">// false</span></span><br></pre></td></tr></table></figure>
-<h3 id="1-3-4-Number-isSafeInteger-testValue-number-boolean-ES6"><a href="#1-3-4-Number-isSafeInteger-testValue-number-boolean-ES6" class="headerlink" title="1.3.4. Number.isSafeInteger(testValue: number): boolean ES6"></a>1.3.4. Number.isSafeInteger(testValue: number): boolean <sup>ES6</sup></h3><p>Number.isSafeInteger() 메소드는 parameter에 전달된 값이 정수 표현 범위 내의 안전한 정수 값인지 검사하고 결과를 Boolean으로 리턴한다. 역시 검사 전에 argument를 숫자로 변환하지 않는다.</p>
-<p>안전한 정수 값은  -(2<sup>53</sup> - 1) 이상 (2<sup>53</sup> - 1) 이하의 정수를 말한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Number</span>.isSafeInteger(<span class="hljs-number">2</span>**<span class="hljs-number">53</span>); <span class="hljs-comment">// false</span></span><br><span class="line"><span class="hljs-built_in">Number</span>.isSafeInteger(<span class="hljs-number">2</span>**<span class="hljs-number">53</span> - <span class="hljs-number">1</span>); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">Number</span>.isSafeInteger(-(<span class="hljs-number">2</span>**<span class="hljs-number">53</span>)); <span class="hljs-comment">// false</span></span><br><span class="line"><span class="hljs-built_in">Number</span>.isSafeInteger(-(<span class="hljs-number">2</span>**<span class="hljs-number">53</span> - <span class="hljs-number">1</span>)); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">Number</span>.isSafeInteger(<span class="hljs-literal">Infinity</span>); <span class="hljs-comment">// false</span></span><br></pre></td></tr></table></figure>
-<h3 id="1-3-5-Number-prototype-toExponential-fractionDigits-number-string-ES3"><a href="#1-3-5-Number-prototype-toExponential-fractionDigits-number-string-ES3" class="headerlink" title="1.3.5. Number.prototype.toExponential(fractionDigits?: number): string ES3"></a>1.3.5. Number.prototype.toExponential(fractionDigits?: number): string <sup>ES3</sup></h3><p>Number.prototype.toExponential() 메소드는 호출 대상을 지수 표기법으로 변환하여 문자열로 리턴한다. 지수 표기법(Exponential Notation)이란 큰 숫자를 표기할 때 e(Exponent) 앞에 있는 숫자에 10의 n 제곱을 하는 형식으로 수를 나타내는 방식이다.</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">12345 = 1.2345e+3</span><br><span class="line"></span><br><span class="line">0.0000891 = 8.91e-5</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">0.0000891</span>.toExponential() <span class="hljs-comment">// "8.91e-5"</span></span><br><span class="line"><span class="hljs-number">12345.</span>toExponential() <span class="hljs-comment">// SyntaxError: Invalid or unexpected token</span></span><br><span class="line"><span class="hljs-number">12345</span> .toExponential() <span class="hljs-comment">// "1.2345e+4"</span></span><br><span class="line"><span class="hljs-number">12345.0</span>.toExponential() <span class="hljs-comment">// "1.2345e+4"</span></span><br></pre></td></tr></table></figure>
-<p><code>12345.toExponential()</code>이 SyntaxError를 발생시키는 이유는 무엇일까? 다른 객체와 달리 숫자값 뒤의 <code>.</code>는 2가지 의미를 가진다.</p>
-<ol>
-<li>부동소숫점의 소숫점 구분 기호</li>
-<li>객체 프로퍼티에 접근하기 위한 마침표 표기법(Dot Notation)</li>
-</ol>
-<p>자바스크립트 엔진은 숫자 뒤의 <code>.</code>를 부동 소숫점 숫자의 일부로 해석한다. 따라서 12345.<code>toExponential()</code>이 숫자가 아니기 때문에 문법 오류로 SyntaxError가 발생하는 것이다.</p>
-<p>그렇다면 <code>12345 .toExponential()</code>이 에러를 발생시키지 않는 이유는 무엇일까? <code>.</code>가 숫자 바로 뒤에 오는 것이 아니기 때문에 객체 프로퍼티 접근을 위한 Dot Notation으로 해석했기 때문이다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Object</span>         .prototype === <span class="hljs-built_in">Object</span>.prototype; <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">Object</span>.                 prototype === <span class="hljs-built_in">Object</span>.prototype; <span class="hljs-comment">//true</span></span><br><span class="line"><span class="hljs-built_in">Object</span>         .     prototype === <span class="hljs-built_in">Object</span>.prototype; <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-comment">// 띄어쓰기는 Dot Notation에 영향을 주지 않지만 굳이 그렇게 써야할 필요가 없다.</span></span><br></pre></td></tr></table></figure>
-<p>정수 리터럴에 Number.prototype의 메소드를 사용할 경우 아래처럼 괄호로 묶는 것이 권장된다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="hljs-number">12345</span>).toExponential()</span><br></pre></td></tr></table></figure>
-<h3 id="1-3-6-Number-prototype-toFixed-fractionDigits-number-string-ES3"><a href="#1-3-6-Number-prototype-toFixed-fractionDigits-number-string-ES3" class="headerlink" title="1.3.6. Number.prototype.toFixed(fractionDigits?: number): string ES3"></a>1.3.6. Number.prototype.toFixed(fractionDigits?: number): string <sup>ES3</sup></h3><p>Number.prototype.toFixed() 메소드는 parameter로 지정된 소숫점 자리를 반올림해서 문자열로 리턴한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> num = <span class="hljs-number">12345.6789</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// default: 0</span></span><br><span class="line"><span class="hljs-comment">// 소숫점 이하 반올림</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(num.toFixed()); <span class="hljs-comment">// '12346'</span></span><br><span class="line"><span class="hljs-comment">// 소숫점 이하 1자리수에서 반올림</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(num.toFixed(<span class="hljs-number">1</span>)); <span class="hljs-comment">// '12345.7'</span></span><br><span class="line"><span class="hljs-comment">// 소숫점 이하 2자리수에서 반올림</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(num.toFixed(<span class="hljs-number">2</span>)); <span class="hljs-comment">// '12345.68'</span></span><br><span class="line"><span class="hljs-comment">// 소숫점 이하 3자리수에서 반올림</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(num.toFixed(<span class="hljs-number">3</span>)); <span class="hljs-comment">// '12345.679'</span></span><br><span class="line"><span class="hljs-comment">// 소숫점 이하 4자리수에서 반올림</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(num.toFixed(<span class="hljs-number">4</span>)); <span class="hljs-comment">// '12345.6789'</span></span><br></pre></td></tr></table></figure>
-<h2 id="1-3-7-Number-prototype-toPrecision-precision-number-string-ES3"><a href="#1-3-7-Number-prototype-toPrecision-precision-number-string-ES3" class="headerlink" title="1.3.7. Number.prototype.toPrecision(precision?: number): string ES3"></a>1.3.7. Number.prototype.toPrecision(precision?: number): string <sup>ES3</sup></h2><p>Number.prototype.toPrecision() 메소드는 parameter로 지정된 전체 자릿수(소숫점 자리 아님)까지만 유효하도록 나머지 자릿수를 반올림해서 문자열로 리턴한다. 표현할 수 없는 경우 지수 표기법(Exponential Notation)으로 결과를 반올림한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> num = <span class="hljs-number">12345.6789</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// default: 전체 자릿수</span></span><br><span class="line"><span class="hljs-comment">// 전체 자릿수 유효</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(num.toPrecision()); <span class="hljs-comment">// '12345.6789'</span></span><br><span class="line"><span class="hljs-comment">// 전체 1 자릿수만 유효</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(num.toPrecision(<span class="hljs-number">1</span>)); <span class="hljs-comment">// '1e+4'</span></span><br><span class="line"><span class="hljs-comment">// 전체 2 자릿수만 유효</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(num.toPrecision(<span class="hljs-number">2</span>)); <span class="hljs-comment">// '1.2e+4'</span></span><br><span class="line"><span class="hljs-comment">// 전체 3 자릿수만 유효</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(num.toPrecision(<span class="hljs-number">3</span>)); <span class="hljs-comment">// '1.23e+4'</span></span><br><span class="line"><span class="hljs-comment">// 전체 4 자릿수만 유효</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(num.toPrecision(<span class="hljs-number">4</span>)); <span class="hljs-comment">// '1.235e+4'</span></span><br><span class="line"><span class="hljs-comment">// 전체 5 자릿수만 유효</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(num.toPrecision(<span class="hljs-number">5</span>)); <span class="hljs-comment">// '12346'</span></span><br></pre></td></tr></table></figure>
-<h3 id="1-3-8-Number-prototype-toString-radix-number-string-ES1"><a href="#1-3-8-Number-prototype-toString-radix-number-string-ES1" class="headerlink" title="1.3.8. Number.prototype.toString(radix?: number): string ES1"></a>1.3.8. Number.prototype.toString(radix?: number): string <sup>ES1</sup></h3><p>Number.prototype.toString() 메소드는 숫자를 문자열로 변환해서 리턴한다. radix로 진법(2 ~ 36: 기본 10진수)을 지정할 수 있지만 생략 가능하다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> num = <span class="hljs-number">17</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(num.toString()); <span class="hljs-comment">// '17'</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(num.toString(<span class="hljs-number">2</span>)); <span class="hljs-comment">// '10001'</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(num.toString(<span class="hljs-number">8</span>)); <span class="hljs-comment">// '21'</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(num.toString(<span class="hljs-number">16</span>)); <span class="hljs-comment">// '11'</span></span><br></pre></td></tr></table></figure>
-<h3 id="1-3-9-Number-prototype-valueOf-number-ES1"><a href="#1-3-9-Number-prototype-valueOf-number-ES1" class="headerlink" title="1.3.9. Number.prototype.valueOf(): number ES1"></a>1.3.9. Number.prototype.valueOf(): number <sup>ES1</sup></h3><p>Number.prototype.valueOf() 메소드는 Number 객체의 primitive value를 리턴한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> numObj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Number</span>(<span class="hljs-string">'30'</span>);</span><br><span class="line"><span class="hljs-keyword">const</span> num = numObj.valueOf();</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">typeof</span> numObj; <span class="hljs-comment">// object</span></span><br><span class="line"><span class="hljs-keyword">typeof</span> num; <span class="hljs-comment">// number</span></span><br></pre></td></tr></table></figure>
-<h1 id="2-Math-Object"><a href="#2-Math-Object" class="headerlink" title="2. Math Object"></a>2. Math Object</h1><p>Math Object : 수학 상수와 함수를 위한 프로퍼티와 메소드를 제공하는 built-in 객체.</p>
-<p>Math 객체의 프로퍼티와 메소드는 전부 static 프로퍼티와 메소드이다. 생성자 함수 또한 존재하지 않아 직접 Math.property, Math.method()로 호출하면 된다.</p>
-<h2 id="2-1-Math-Property"><a href="#2-1-Math-Property" class="headerlink" title="2.1. Math Property"></a>2.1. Math Property</h2><h2 id="2-1-1-Math-PI"><a href="#2-1-1-Math-PI" class="headerlink" title="2.1.1.Math.PI"></a>2.1.1.Math.PI</h2><p>Math.PI는 PI값(&pi;)을 리턴한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Math</span>.PI; <span class="hljs-comment">// 3.141592653589793</span></span><br></pre></td></tr></table></figure>
-<h2 id="2-2-Math-Method"><a href="#2-2-Math-Method" class="headerlink" title="2.2. Math Method"></a>2.2. Math Method</h2><h3 id="2-2-1-Math-abs-x-number-number-ES1"><a href="#2-2-1-Math-abs-x-number-number-ES1" class="headerlink" title="2.2.1. Math.abs(x: number): number ES1"></a>2.2.1. Math.abs(x: number): number <sup>ES1</sup></h3><p>Math.abs() 메소드는 숫자의 절댓값(Absolute Value)을 리턴한다. Number.prototype의 메소드처럼 엄격한 type 검사를 하지 않는다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Math</span>.abs(<span class="hljs-number">-1</span>); <span class="hljs-comment">// 1</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.abs(<span class="hljs-string">'-1'</span>); <span class="hljs-comment">// 1</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.abs(-<span class="hljs-literal">Infinity</span>); <span class="hljs-comment">// Infinity</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.abs(<span class="hljs-string">'-Infinity'</span>); <span class="hljs-comment">// Infinity</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.abs(<span class="hljs-literal">null</span>); <span class="hljs-comment">// 0</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.abs([]); <span class="hljs-comment">// 0</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.abs(&#123;&#125;); <span class="hljs-comment">// 0</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.abs(<span class="hljs-literal">undefined</span>); <span class="hljs-comment">// NaN</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.abs(<span class="hljs-string">'string'</span>); <span class="hljs-comment">// NaN</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.abs(); <span class="hljs-comment">// NaN</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-2-2-Math-round-x-number-number-ES1"><a href="#2-2-2-Math-round-x-number-number-ES1" class="headerlink" title="2.2.2. Math.round(x: number): number ES1"></a>2.2.2. Math.round(x: number): number <sup>ES1</sup></h3><p>Math.round() 메소드는 숫자를 가장 인접한 정수로 올림 또는 내림 한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Math</span>.round(<span class="hljs-number">10.4</span>); <span class="hljs-comment">// 10</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.round(<span class="hljs-number">10.499999999999999</span>); <span class="hljs-comment">// 10</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.round(<span class="hljs-number">10.4999999999999992</span>); <span class="hljs-comment">// 11</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.round(<span class="hljs-number">-10.5</span>); <span class="hljs-comment">// -10</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.round(<span class="hljs-number">-10.500000000000001</span>); <span class="hljs-comment">// -11</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.round(<span class="hljs-number">-10.6</span>); <span class="hljs-comment">// -11</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-2-3-Math-sqrt-x-number-number-ES1"><a href="#2-2-3-Math-sqrt-x-number-number-ES1" class="headerlink" title="2.2.3. Math.sqrt(x: number): number ES1"></a>2.2.3. Math.sqrt(x: number): number <sup>ES1</sup></h3><p>Math.sqrt() 메소드는 숫자의 양의 제곱근(square root)을 리턴한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Math</span>.sqrt(<span class="hljs-number">16</span>); <span class="hljs-comment">// 4</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.sqrt(<span class="hljs-number">-16</span>); <span class="hljs-comment">// NaN</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.sqrt(<span class="hljs-string">'16'</span>); <span class="hljs-comment">// 4</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.sqrt(<span class="hljs-literal">Infinity</span>); <span class="hljs-comment">// Infinity</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.sqrt(<span class="hljs-literal">null</span>); <span class="hljs-comment">// 0</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.sqrt([]); <span class="hljs-comment">// 0</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.sqrt(&#123;&#125;); <span class="hljs-comment">// NaN</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-2-4-Math-ceil-x-number-number-ES1"><a href="#2-2-4-Math-ceil-x-number-number-ES1" class="headerlink" title="2.2.4. Math.ceil(x: number): number ES1"></a>2.2.4. Math.ceil(x: number): number <sup>ES1</sup></h3><p>Math.ceil() 메소드는 숫자를  자신과 가장 가까우면서 큰 정수로 올림한다. Ceil은 천장을 뜻하니 올림한다고 생각하자.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Math</span>.ceil(<span class="hljs-number">3.14</span>); <span class="hljs-comment">// 4</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.ceil(<span class="hljs-number">-3.14</span>); <span class="hljs-comment">// -3</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-2-5-Math-floor-x-number-number-ES1"><a href="#2-2-5-Math-floor-x-number-number-ES1" class="headerlink" title="2.2.5. Math.floor(x: number): number ES1"></a>2.2.5. Math.floor(x: number): number <sup>ES1</sup></h3><p>Math.floor() 메소드는 숫자를 자신과 가장 가까우면서 작은 정수로 내림한다. Floor는 바닥을 뜻한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Math</span>.floor(<span class="hljs-number">3.14</span>); <span class="hljs-comment">//3</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.floor(<span class="hljs-number">-3.14</span>); <span class="hljs-comment">// -4</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-2-6-Math-random-number-ES1"><a href="#2-2-6-Math-random-number-ES1" class="headerlink" title="2.2.6. Math.random(): number ES1"></a>2.2.6. Math.random(): number <sup>ES1</sup></h3><p>Math.random() 메소드는 0 이상 1 미만의 임의의 숫자를 리턴한다. 0은 포함하지만 1은 포함하지 않는다는 것에 유의하자. Math.random() 메소드의 결과에 원하는 숫자를 곱해서 PesudoRandom 수를 자유자재로 얻을 수 있다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Math</span>.random(); <span class="hljs-comment">// 0 이상 1 미만의 소수</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 1부터 10까지의 랜덤 정수</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span> + <span class="hljs-number">1</span>);</span><br><span class="line"><span class="hljs-built_in">Math</span>.ceil(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="2-2-7-Math-pow-x-number-y-number-number-ES1"><a href="#2-2-7-Math-pow-x-number-y-number-number-ES1" class="headerlink" title="2.2.7. Math.pow(x: number, y: number): number ES1"></a>2.2.7. Math.pow(x: number, y: number): number <sup>ES1</sup></h3><p>Math.pow(base, exponent) 메소드는 첫번째 argument를 밑(base), 두번째 argument를 지수(exponent)로 한 거듭제곱을 리턴한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Math</span>.pow(<span class="hljs-number">2</span>, <span class="hljs-number">8</span>); <span class="hljs-comment">// 256</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// ES7 Exponentiation Operator</span></span><br><span class="line"><span class="hljs-number">2</span> ** <span class="hljs-number">8</span>; <span class="hljs-comment">// 256</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-2-8-Math-max-…-values-number-number-ES1"><a href="#2-2-8-Math-max-…-values-number-number-ES1" class="headerlink" title="2.2.8. Math.max(… values: number[]): number ES1"></a>2.2.8. Math.max(… values: number[]): number <sup>ES1</sup></h3><p>Math.max() 메소드는 argument들 중 가장 큰 수를 리턴한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Math</span>.max(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>); <span class="hljs-comment">// 5</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.max([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]); <span class="hljs-comment">// NaN</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>];</span><br><span class="line"><span class="hljs-built_in">Math</span>.max.apply(<span class="hljs-literal">null</span>, arr); <span class="hljs-comment">// 5</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// ES6 Spread Opertator</span></span><br><span class="line"><span class="hljs-built_in">Math</span>.max( ... arr); <span class="hljs-comment">// 5</span></span><br></pre></td></tr></table></figure>
-<p>Math.max 의 argument로 배열을 전달할 수 없기 때문에 Function.prototype.apply() 메소드를 이용해서 배열 argument를 전달할 수 있었다.</p>
-<p>그러나 ES6에서는 Spread Operator의 도입으로 apply() 메소드를 사용하지 않아도 배열을 열거된 list argument처럼 풀어서 전달할 수 있다.</p>
-<h3 id="2-2-9-Math-min-…-values-number-number-ES1"><a href="#2-2-9-Math-min-…-values-number-number-ES1" class="headerlink" title="2.2.9. Math.min(… values: number[]): number ES1"></a>2.2.9. Math.min(… values: number[]): number <sup>ES1</sup></h3><p>Math.min() 메소드는 argument들 중 가장 작은 수를 리턴한다. 사용법은 Math.max와 같다.</p>
-<h1 id="3-String-Object"><a href="#3-String-Object" class="headerlink" title="3. String Object"></a>3. String Object</h1>
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/05/15/20-this/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="20. this">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-15T03:45:06.000Z">2019-05-15</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    13 minutes read (About 1893 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/15/20-this/">20. this</a>
-            
-        </h1>
-        <div class="content">
-            <h1 id="1-this-Keyword"><a href="#1-this-Keyword" class="headerlink" title="1. this Keyword"></a>1. this Keyword</h1><p>this는 객체가 자신의 프로퍼티나 메소드를 참조하기 위한 자기 참조 변수(Self-referencing variable)이다. 함수 호출시 arguments 객체와 this가 암묵적으로 함수 내부에 전달된다. arguments 객체와 this는 함수 내부에서 지역 변수처럼 사용할 수 있다. this가 가리키는 값은 <strong>함수 호출 방식에 의해 동적으로 결정</strong>된다.</p>
-<p>C++, Java와 같은 클래스 기반 언어에서 this는 항상 클래스로부터 생성되는 인스턴스를 가리킨다. 그러나 자바스크립트의 this는 함수가 호출되는 방식에 따라서 this에 바인딩될 객체가 동적으로 결정된다.</p>
-<blockquote>
-<h4 id="Binding"><a href="#Binding" class="headerlink" title="Binding"></a>Binding</h4><p>바인딩이란 식별자와 값을 연결하는 과정을 의미한다.</p>
-</blockquote>
-<p>객체 리터럴은 할당 단계에 평가되므로 객체의 식별자를 this 대신 사용할 수 있지만, 일반적이지 않다. 생성자를 이용해서 객체를 생성할 때는 인스턴트를 가리킬 식별자를 미리 알 수 없기 때문이다.</p>
-<p>this는 객체의 프로퍼티나 메소드를 참조하기 위한 변수이므로 객체의 메소드 또는 생성자 함수에서만 의미가 있다. strict mode가 적용된 일반 함수 내부의 this에는 undefined가 바인딩 된다. 적용되지 않을 경우 일반 함수 내부에서 this는 전역 객체 window를 가리킨다.</p>
-<blockquote>
-<h4 id="strict-mode"><a href="#strict-mode" class="headerlink" title="strict mode"></a>strict mode</h4><p>‘use strict’;  strict mode는 자바스크립트 언어의 문법을 보다 엄격히 적용하여 기존에는 무시되던 오류를 발생시킬 가능성이 높거나 자바스크립트 엔진의 최적화 작업에 문제를 일으킬 수 있는 코드에 대해 명시적인 에러를 발생시킨다.</p>
-</blockquote>
-<h1 id="2-Function-call-types-and-this-Binding"><a href="#2-Function-call-types-and-this-Binding" class="headerlink" title="2. Function call types and this Binding"></a>2. Function call types and this Binding</h1><p><strong>스코프</strong>의 경우 렉시컬 스코프(Lexical Scope)는 <strong>함수 정의가 평가되어 함수 객체가 생성되는 시점</strong>에 상위 스코프가 결정된다. <strong>this</strong>에 바인딩될 객체는 <strong>함수 호출 시점</strong>에 결정된다.</p>
-<p>함수 호출 방식은 다음과 같다.</p>
-<ol>
-<li>일반 함수 호출 : this는 window</li>
-<li>메소드 호출 : this는 메소드를 호출한 객체</li>
-<li>생성자 함수 호출 : this는 생성할 instance</li>
-<li>Function.prototype.apply/call/bind 메소드에 의한 간접 호출 (??)</li>
-</ol>
-<h2 id="2-1-General-Function-Call"><a href="#2-1-General-Function-Call" class="headerlink" title="2.1. General Function Call"></a>2.1. General Function Call</h2><p><strong>일반 함수로 호출된 함수 내부의 this</strong>에는 <strong>전역 객체(Global Object)</strong>가 바인딩된다.</p>
-<p>전역 함수는 물론 <strong>중첩 함수를 일반 함수로 호출했을 때에도 함수 내부의 this에는 전역 객체가 바인딩</strong>된다. 일반 함수에서는 this로 객체의 프로퍼티나 메소드를 참조할 일이 없으므로 this에 의미가 없다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'foo this: '</span>, <span class="hljs-keyword">this</span>);	<span class="hljs-comment">// window</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'bar this: '</span>, <span class="hljs-keyword">this</span>);	<span class="hljs-comment">// window</span></span><br><span class="line">    &#125;</span><br><span class="line">    bar();</span><br><span class="line">&#125;</span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
-<p>메소드 내에서 정의한 중첩 함수일지라도 <strong>일반 함수로 호출되면 중첩 함수의 this는 전역 객체</strong>이다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> obj = &#123;</span><br><span class="line">  foo() &#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'foo this: '</span>, <span class="hljs-keyword">this</span>);	<span class="hljs-comment">// &#123;foo: f&#125;</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'bar this: '</span>, <span class="hljs-keyword">this</span>);	<span class="hljs-comment">// window</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-comment">// 메소드 내부에서 정의한 중첩 함수라도 일반 함수로 호출하면 this에 전역 객체가 바인딩된다.</span></span><br><span class="line">    bar();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.foo();</span><br></pre></td></tr></table></figure>
-<p>마찬가지로 콜백 함수 내부의 this에도 전역 객체가 바인딩된다. 정리하면 일반 함수로 호출된 모든 함수(중첩 함수, 콜백 함수 포함) 내부의 this에는 전역 객체가 바인딩된다.</p>
-<p>메소드 내부의 중첩 함수나 콜백 함수의 this 바인딩을 메소드의 this 바인딩과 일치시키기 위한 방법은 다음과 같다.</p>
-<ol>
-<li><p>this를 변수에 저장하고 콜백 함수의 this를 변수로 대체 </p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> obj = &#123;</span><br><span class="line">  value: <span class="hljs-number">100</span>,</span><br><span class="line">  foo() &#123;</span><br><span class="line">    cosnt that = <span class="hljs-keyword">this</span>;</span><br><span class="line">    setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">        <span class="hljs-built_in">console</span>.log(that.value); <span class="hljs-comment">// 100</span></span><br><span class="line">    &#125;, <span class="hljs-number">100</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol start="2">
-<li><p>Function.prototype.apply, Function.prototype.call, Function.prototype.bind 메소드 이용</p>
- <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> obj = &#123;</span><br><span class="line">  value: <span class="hljs-number">100</span>,</span><br><span class="line">  foo() &#123;</span><br><span class="line">    <span class="hljs-comment">// bind method의 argument를 콜백 함수의 this로 바인딩한다.</span></span><br><span class="line">    setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.value); <span class="hljs-comment">// 100</span></span><br><span class="line">    &#125;.bind(<span class="hljs-keyword">this</span>), <span class="hljs-number">100</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="2-2-Method-Call"><a href="#2-2-Method-Call" class="headerlink" title="2.2. Method Call"></a>2.2. Method Call</h2><p><strong>메소드 내부의 this는 메소드를 호출한 객체</strong>, 즉 메소드 호출시 (.) 연산자 앞에 오는 객체에 바인딩된다.</p>
-<p>메소드를 소유한 객체가 아닌, 메소드를 호출한 객체에 바인딩된다는 것을 주의해야 한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.getName = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.name;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> me = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">'Park'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> you = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Kim'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">you.getName = me.getName;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(me.getName()); <span class="hljs-comment">// "Park"</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(you.getName()); <span class="hljs-comment">// "Kim"</span></span><br></pre></td></tr></table></figure>
-<h2 id="2-3-Constructor-Function-Call"><a href="#2-3-Constructor-Function-Call" class="headerlink" title="2.3. Constructor Function Call"></a>2.3. Constructor Function Call</h2><p>생성자 함수 내부의 this에는 생성자 함수가 생성할 instance가 바인딩된다.</p>
-<p>생성자 함수는 객체(instance)를 생성하는 함수로, new 연산자와 함께 호출되면 빈 객체를 만들고 this에 바인딩한다. 연산을 하며 this 객체를 완성시킨 후 this를 리턴한다.</p>
-<p>함수가 new 연산자와 함께 호출되지 않아 일반 함수로 동작할 경우 this는 전역 객체를 가리킨다.</p>
-<h2 id="2-4-Indirect-Call-by-Function-prototype-apply-call-bind-method"><a href="#2-4-Indirect-Call-by-Function-prototype-apply-call-bind-method" class="headerlink" title="2.4. Indirect Call by Function.prototype.apply / call / bind method"></a>2.4. Indirect Call by Function.prototype.apply / call / bind method</h2><h3 id="apply-call"><a href="#apply-call" class="headerlink" title="apply, call"></a>apply, call</h3><p>Function.prototype의 메소드 apply와 call은 argument로 this와 arguments list를 전달받아 함수를 호출한다. Function 생성자 함수를 constructor 프로퍼티로 가리키는 모든 함수가 Function.prototype.apply와 call을 상속받아 사용할 수 있다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 주어진 this 바인딩과 인수 리스트 배열을 사용하여 함수를 호출한다.</span></span><br><span class="line"><span class="hljs-comment"> * @param thisArg - this로 사용될 객체</span></span><br><span class="line"><span class="hljs-comment"> * @param argsArray - 함수에게 전달할 인수 리스트 배열</span></span><br><span class="line"><span class="hljs-comment"> * @returns 호출된 함수의 반환값</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-built_in">Function</span>.prototype.apply(thisArg, [argsArray]))</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 주어진 this 바인딩과 인수 리스트를 사용하여 함수를 호출한다.</span></span><br><span class="line"><span class="hljs-comment"> * @param thisArg - this로 사용될 객체</span></span><br><span class="line"><span class="hljs-comment"> * @param arg1, arg2, ... - 함수에게 전달할 인수 리스트</span></span><br><span class="line"><span class="hljs-comment"> * @returns 호출된 함수의 반환값</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-built_in">Function</span>.prototype.call(thisArg, arg1, arg2, ...))</span><br></pre></td></tr></table></figure>
-<p>두 메소드의 차이는,</p>
-<ul>
-<li>apply 메소드는 호출할 함수의 arguments를 배열로 묶어 전달한다.</li>
-<li>call 메소드는 호출할 함수의 arguments를 쉼표로 구분한 리스트 형식으로 전달한다.</li>
-</ul>
-<p>apply와 call은 호출할 함수에 argument를 전달하는 방식만 다를 뿐, this로 사용할 객체와 argument를 전달하며 함수를 호출한다.</p>
-<h4 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h4><p>bind 메소드는 메소드의 this와, 메소드 내부의 중첩함수 또는 콜백 함수의 this가 불일치하는 문제를 해결할 때 사용된다. 콜백 함수 foo는 외부 함수 callName을 돕는 헬퍼 함수(보조 함수)의 역할을 해야하기 때문에 외부 함수 내부의 this와 콜백함수 내부의 this가 다르면 문제가 발생한다.</p>
-<p>이 때 bind 메소드를 사용해서 this를 일치시킨다. apply와 call 메소드 또한 사용할 수 있다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.callName = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">callback</span>) </span>&#123;</span><br><span class="line">    callback.bind(<span class="hljs-keyword">this</span>)();</span><br><span class="line">    <span class="hljs-comment">// callback.apply(this);</span></span><br><span class="line">    <span class="hljs-comment">// callback.apply(this);</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>bind로 this를 전달한 callback을 실행할 수도 있고, apply나 call로 this를 전달하며 동시에 호출할 수도 있다.</p>
-<p>정리하면 this 바인딩은 다음과 같이 실행된다.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">함수 호출 방식</th>
-<th style="text-align:center">this 바인딩</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">일반 함수 호출</td>
-<td style="text-align:center">전역 객체</td>
-</tr>
-<tr>
-<td style="text-align:center">메소드 호출</td>
-<td style="text-align:center">메소드를 호출한 객체</td>
-</tr>
-<tr>
-<td style="text-align:center">생성자 함수 호출</td>
-<td style="text-align:center">생성자 함수가 생성할 instance</td>
-</tr>
-<tr>
-<td style="text-align:center">Function.prototype.apply/call/bind 메소드에 의한 간접 호출</td>
-<td style="text-align:center">Function.prototype.apply/call/bind 메소드에 argument로 전달한 객체</td>
-</tr>
-</tbody>
-</table>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -900,7 +816,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        116
+                        118
                     </p>
                 </div>
             </div>
@@ -920,7 +836,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        65
+                        67
                     </p>
                 </div>
             </div>
@@ -1013,7 +929,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 10px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 10px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 18.33px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 11.67px;">Javascript</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a>
+        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 10px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 10px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 18.33px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 11.67px;">Javascript</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a>
     </div>
 </div>
 
@@ -1109,7 +1025,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">31</span>
+                <span class="level-item tag">33</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1147,6 +1063,44 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/27/33-Promise/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="33. Promise">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-27T03:53:37.000Z">2019-05-27</time></div>
+                    <a href="/2019/05/27/33-Promise/" class="has-link-black-ter is-size-6">33. Promise</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/27/32-REST-API/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="32. REST API">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-27T02:20:18.000Z">2019-05-27</time></div>
+                    <a href="/2019/05/27/32-REST-API/" class="has-link-black-ter is-size-6">32. REST API</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1205,44 +1159,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/22/190522-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/flower.png" alt="190522-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-22T10:52:13.000Z">2019-05-22</time></div>
-                    <a href="/2019/05/22/190522-TIL/" class="has-link-black-ter is-size-6">190522-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/22/29. DOM/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="29. DOM">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-22T07:58:06.000Z">2019-05-22</time></div>
-                    <a href="/2019/05/22/29. DOM/" class="has-link-black-ter is-size-6">29. DOM</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1261,7 +1177,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">43</span>
+                    <span class="level-item tag">45</span>
                 </span>
             </a>
         </li>
@@ -1500,7 +1416,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">26</span>
+                        <span class="tag is-grey">28</span>
                     </a>
                 </div>
                 
@@ -1575,6 +1491,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Promise/">
+                        <span class="tag">Promise</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Prototype/">
                         <span class="tag">Prototype</span>
                         <span class="tag is-grey">1</span>
@@ -1591,6 +1514,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Quick-sort/">
                         <span class="tag">Quick sort</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/REST-API/">
+                        <span class="tag">REST API</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1860,7 +1790,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">31</span>
+                <span class="level-item tag">33</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1898,6 +1828,44 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/27/33-Promise/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="33. Promise">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-27T03:53:37.000Z">2019-05-27</time></div>
+                    <a href="/2019/05/27/33-Promise/" class="has-link-black-ter is-size-6">33. Promise</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/27/32-REST-API/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="32. REST API">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-27T02:20:18.000Z">2019-05-27</time></div>
+                    <a href="/2019/05/27/32-REST-API/" class="has-link-black-ter is-size-6">32. REST API</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1956,44 +1924,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/22/190522-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/flower.png" alt="190522-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-22T10:52:13.000Z">2019-05-22</time></div>
-                    <a href="/2019/05/22/190522-TIL/" class="has-link-black-ter is-size-6">190522-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/22/29. DOM/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="29. DOM">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-22T07:58:06.000Z">2019-05-22</time></div>
-                    <a href="/2019/05/22/29. DOM/" class="has-link-black-ter is-size-6">29. DOM</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2012,7 +1942,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">43</span>
+                    <span class="level-item tag">45</span>
                 </span>
             </a>
         </li>
@@ -2251,7 +2181,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">26</span>
+                        <span class="tag is-grey">28</span>
                     </a>
                 </div>
                 
@@ -2326,6 +2256,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Promise/">
+                        <span class="tag">Promise</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Prototype/">
                         <span class="tag">Prototype</span>
                         <span class="tag is-grey">1</span>
@@ -2342,6 +2279,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Quick-sort/">
                         <span class="tag">Quick sort</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/REST-API/">
+                        <span class="tag">REST API</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
