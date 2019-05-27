@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sub2n.github.io/2019/05/27/190527-TIL/</loc>
+    
+    <lastmod>2019-05-27T09:47:27.806Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/05/22/29.%20DOM/</loc>
+    
+    <lastmod>2019-05-27T04:45:33.774Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sub2n.github.io/2019/05/27/33-Promise/</loc>
     
     <lastmod>2019-05-27T03:54:38.065Z</lastmod>
@@ -33,13 +47,6 @@
     <loc>https://sub2n.github.io/2019/05/24/190524-TIL/</loc>
     
     <lastmod>2019-05-24T13:00:10.400Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sub2n.github.io/2019/05/22/29.%20DOM/</loc>
-    
-    <lastmod>2019-05-23T06:17:59.219Z</lastmod>
     
   </url>
   

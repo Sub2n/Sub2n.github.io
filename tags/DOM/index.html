@@ -180,7 +180,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    13 minutes read (About 1944 words)
+                    15 minutes read (About 2314 words)
                 </span>
                 
                 
@@ -304,7 +304,78 @@
 <li>firstChild 프로퍼티로 Text Node를 탐색한다.</li>
 <li>Text Node의 프로퍼티 <code>nodeValue</code>를 이용해서 텍스트에 접근하고 수정한다.</li>
 </ol>
-<h3 id="2-Attribute-Node-Access-and-Manipulation"><a href="#2-Attribute-Node-Access-and-Manipulation" class="headerlink" title="2. Attribute Node Access and Manipulation"></a>2. Attribute Node Access and Manipulation</h3><h4 id="hasAttribute-attribute"><a href="#hasAttribute-attribute" class="headerlink" title="hasAttribute(attribute)"></a>hasAttribute(attribute)</h4><h4 id="getAttribute-attribute"><a href="#getAttribute-attribute" class="headerlink" title="getAttribute(attribute)"></a>getAttribute(attribute)</h4><h4 id="setAttribute-attribute-value"><a href="#setAttribute-attribute-value" class="headerlink" title="setAttribute(attribute, value)"></a>setAttribute(attribute, value)</h4><h4 id="removeAttribute-attribute"><a href="#removeAttribute-attribute" class="headerlink" title="removeAttribute(attribute)"></a>removeAttribute(attribute)</h4>
+<h3 id="2-Attribute-Node-Access-and-Manipulation"><a href="#2-Attribute-Node-Access-and-Manipulation" class="headerlink" title="2. Attribute Node Access and Manipulation"></a>2. Attribute Node Access and Manipulation</h3><h4 id="hasAttribute-attribute"><a href="#hasAttribute-attribute" class="headerlink" title="hasAttribute(attribute)"></a>hasAttribute(attribute)</h4><ul>
+<li>지정한 어트리뷰트를 가지고 있는지 검사한다.</li>
+<li>Return : Boolean</li>
+<li>IE8 이상의 브라우저에서 동작한다.</li>
+</ul>
+<h4 id="getAttribute-attribute"><a href="#getAttribute-attribute" class="headerlink" title="getAttribute(attribute)"></a>getAttribute(attribute)</h4><ul>
+<li>어트리뷰트의 값을 취득한다.</li>
+<li>Return : 문자열</li>
+<li>모든 브라우저에서 동작한다.</li>
+</ul>
+<h4 id="setAttribute-attribute-value"><a href="#setAttribute-attribute-value" class="headerlink" title="setAttribute(attribute, value)"></a>setAttribute(attribute, value)</h4><ul>
+<li>어트리뷰트와 어트리뷰트 값을 설정한다.</li>
+<li>Return : undefined</li>
+<li>모든 브라우저에서 동작한다.</li>
+</ul>
+<h4 id="removeAttribute-attribute"><a href="#removeAttribute-attribute" class="headerlink" title="removeAttribute(attribute)"></a>removeAttribute(attribute)</h4><ul>
+<li>지정한 어트리뷰트를 제거한다.</li>
+<li>Return : undefined</li>
+<li>모든 브라우저에서 동작한다.</li>
+</ul>
+<blockquote>
+<h3 id="Difference-between-Attribute-and-Property"><a href="#Difference-between-Attribute-and-Property" class="headerlink" title="Difference between Attribute and Property"></a>Difference between Attribute and Property</h3><p>checkbox input element의 상태를 변경하는 방법 2가지 attribute이용, property 이용</p>
+<ol>
+<li><p><strong>Attribute 이용</strong></p>
+<p>element.setAttribute(‘chekced’, true);</p>
+<p>setting 전에는 <strong>변하지 않는 것</strong>. <strong>element의 초기값</strong></p>
+</li>
+<li><p><strong>Property 이용</strong></p>
+<p>element.checked = true;</p>
+<p><strong>실시간으로 값이 변함</strong>. <strong>element의 현재값(최신 상태)</strong></p>
+</li>
+</ol>
+</blockquote>
+<h3 id="4-3-HTML-Contents-Manipulation"><a href="#4-3-HTML-Contents-Manipulation" class="headerlink" title="4.3.  HTML Contents Manipulation"></a>4.3.  HTML Contents Manipulation</h3><h4 id="textContent"><a href="#textContent" class="headerlink" title="textContent"></a>textContent</h4><h4 id="innerText"><a href="#innerText" class="headerlink" title="innerText"></a>innerText</h4><h4 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h4><h3 id="4-4-DOM-Manipulation-Method"><a href="#4-4-DOM-Manipulation-Method" class="headerlink" title="4.4 DOM Manipulation Method"></a>4.4 DOM Manipulation Method</h3><h4 id="createElement-tagName"><a href="#createElement-tagName" class="headerlink" title="createElement(tagName)"></a>createElement(tagName)</h4><h4 id="createTextNode-text"><a href="#createTextNode-text" class="headerlink" title="createTextNode(text)"></a>createTextNode(text)</h4><h4 id="appendChild-Node"><a href="#appendChild-Node" class="headerlink" title="appendChild(Node)"></a>appendChild(Node)</h4><h4 id="removeChild-Node"><a href="#removeChild-Node" class="headerlink" title="removeChild(Node)"></a>removeChild(Node)</h4><h3 id="4-5-insertAdjacentHTML"><a href="#4-5-insertAdjacentHTML" class="headerlink" title="4.5 insertAdjacentHTML()"></a>4.5 insertAdjacentHTML()</h3><h4 id="insertAdjacentHTML-position-string"><a href="#insertAdjacentHTML-position-string" class="headerlink" title="insertAdjacentHTML(position, string)"></a>insertAdjacentHTML(position, string)</h4><ul>
+<li>인자로 전달한 텍스트를 HTML로 파싱하고 그 결과로 생성된 노드를 DOM 트리의 지정된 위치에 삽입한다.</li>
+<li>position : insert position<ul>
+<li>‘beforebegin’</li>
+<li>‘afterbegin’</li>
+<li>‘beforeend’</li>
+<li>‘afterend’</li>
+</ul>
+</li>
+<li>string: 삽입할 element string</li>
+</ul>
+<ul>
+<li>모든 브라우저에서 동작</li>
+</ul>
+<h4 id="4-6-innerHTML-vs-DOM-manipulation-vs-insertAdjacentHTML"><a href="#4-6-innerHTML-vs-DOM-manipulation-vs-insertAdjacentHTML" class="headerlink" title="4.6. innerHTML vs. DOM manipulation vs. insertAdjacentHTML()"></a>4.6. innerHTML vs. DOM manipulation vs. insertAdjacentHTML()</h4><table>
+<thead>
+<tr>
+<th>장단점</th>
+<th>innerHTML</th>
+<th>DOM manipulation</th>
+<th>insertAdjacentHTML()</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>장점</td>
+<td>DOM 조작 방식에 비해 빠르고 간편하다.<br>간편하게 문자열로 정의한 여러 요소를 DOM에 추가할 수 있다.<br>콘텐츠를 취득할 수 있다.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>단점</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-style-Property"><a href="#5-style-Property" class="headerlink" title="5. style Property"></a>5. style Property</h2><p>stype 프로퍼티를 사용하면 inline style 선언을 생성</p>
+
         </div>
         
         
@@ -364,7 +435,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        118
+                        119
                     </p>
                 </div>
             </div>
@@ -589,7 +660,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">54</span>
+                <span class="level-item tag">55</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -611,6 +682,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/27/190527-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190527-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-27T09:37:55.000Z">2019-05-27</time></div>
+                    <a href="/2019/05/27/190527-TIL/" class="has-link-black-ter is-size-6">190527-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -688,25 +778,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/22/30-Event/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="30. Event">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-22T12:01:02.000Z">2019-05-22</time></div>
-                    <a href="/2019/05/22/30-Event/" class="has-link-black-ter is-size-6">30. Event</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -725,7 +796,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">45</span>
+                    <span class="level-item tag">46</span>
                 </span>
             </a>
         </li>
@@ -1125,7 +1196,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">54</span>
+                        <span class="tag is-grey">55</span>
                     </a>
                 </div>
                 
@@ -1354,7 +1425,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">54</span>
+                <span class="level-item tag">55</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1376,6 +1447,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/27/190527-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190527-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-27T09:37:55.000Z">2019-05-27</time></div>
+                    <a href="/2019/05/27/190527-TIL/" class="has-link-black-ter is-size-6">190527-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1453,25 +1543,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/22/30-Event/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="30. Event">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-22T12:01:02.000Z">2019-05-22</time></div>
-                    <a href="/2019/05/22/30-Event/" class="has-link-black-ter is-size-6">30. Event</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1490,7 +1561,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">45</span>
+                    <span class="level-item tag">46</span>
                 </span>
             </a>
         </li>
@@ -1890,7 +1961,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">54</span>
+                        <span class="tag is-grey">55</span>
                     </a>
                 </div>
                 
