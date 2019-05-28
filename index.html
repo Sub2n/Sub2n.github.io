@@ -763,7 +763,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    22 minutes read (About 3340 words)
+                    23 minutes read (About 3401 words)
                 </span>
                 
                 
@@ -1022,6 +1022,8 @@
 <p>결론적으로 Text를 추가하거나 변경할 때는 textContent, 새로운 element를 추가하거나 삭제할 때는 DOM manipulation 방식(createElement() 등)을 사용한다.</p>
 <h2 id="5-style-Property"><a href="#5-style-Property" class="headerlink" title="5. style Property"></a>5. style Property</h2><p>style 프로퍼티를 사용하면 inline style 선언을 생성한다. 특정 element에 inline style을 지정할 때 사용한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> $four = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'four'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// inline 스타일 선언을 생성</span></span><br><span class="line">$four.style.color = <span class="hljs-string">'blue'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// font-size와 같이 '-'으로 구분되는 프로퍼티는 카멜케이스로 변환해 사용한다.</span></span><br><span class="line">$four.style.fontSize = <span class="hljs-string">'2em'</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="6-DOM-load-“DOMContentLoaded”-event"><a href="#6-DOM-load-“DOMContentLoaded”-event" class="headerlink" title="6. DOM load, “DOMContentLoaded” event"></a>6. DOM load, “DOMContentLoaded” event</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getTodos</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">// DOM parsing 되고 resource도 로드됐을 때 발생하는 event</span></span><br><span class="line"><span class="hljs-built_in">window</span>.onload = getTodos;</span><br><span class="line"><span class="hljs-comment">// getTodos에 argument 넘길 수 있음</span></span><br><span class="line"><span class="hljs-built_in">window</span>.onload = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    getTodos;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>DOMContentLoaded는 리소스 상관 없이 DOM parsing만 완료되었을 때 발생하는 event</p>
 <hr>
 <p><a href="https://poiemaweb.com/js-dom" target="_blank" rel="noopener">Reference</a></p>
 
