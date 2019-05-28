@@ -2,23 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://sub2n.github.io/2019/05/22/29.%20DOM/</loc>
+    <loc>https://sub2n.github.io/2019/05/27/33-Promise/</loc>
     
-    <lastmod>2019-05-28T05:11:53.418Z</lastmod>
+    <lastmod>2019-05-28T12:38:28.551Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://sub2n.github.io/2019/05/15/20-this/</loc>
+    <loc>https://sub2n.github.io/2019/05/27/32-REST-API/</loc>
     
-    <lastmod>2019-05-28T02:28:30.697Z</lastmod>
+    <lastmod>2019-05-28T11:33:20.562Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://sub2n.github.io/2019/05/26/31-Ajax/</loc>
     
-    <lastmod>2019-05-28T01:59:10.779Z</lastmod>
+    <lastmod>2019-05-28T11:20:49.688Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/05/15/20-this/</loc>
+    
+    <lastmod>2019-05-28T10:42:29.880Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/05/22/29.%20DOM/</loc>
+    
+    <lastmod>2019-05-28T05:11:53.418Z</lastmod>
     
   </url>
   
@@ -33,20 +47,6 @@
     <loc>https://sub2n.github.io/2019/05/27/190527-TIL/</loc>
     
     <lastmod>2019-05-27T09:47:27.806Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sub2n.github.io/2019/05/27/33-Promise/</loc>
-    
-    <lastmod>2019-05-27T03:54:38.065Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sub2n.github.io/2019/05/27/32-REST-API/</loc>
-    
-    <lastmod>2019-05-27T03:54:03.634Z</lastmod>
     
   </url>
   

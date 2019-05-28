@@ -16,7 +16,7 @@
 <meta property="og:description" content="1. this Keywordthis는 객체가 자신의 프로퍼티나 메소드를 참조하기 위한 자기 참조 변수(Self-referencing variable)이다. 함수 호출시 arguments 객체와 this가 암묵적으로 함수 내부에 전달된다. arguments 객체와 this는 함수 내부에서 지역 변수처럼 사용할 수 있다. this가 가리키는 값은 함수 호출 방">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
-<meta property="og:updated_time" content="2019-05-28T02:28:30.697Z">
+<meta property="og:updated_time" content="2019-05-28T10:42:29.880Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="20. this">
 <meta name="twitter:description" content="1. this Keywordthis는 객체가 자신의 프로퍼티나 메소드를 참조하기 위한 자기 참조 변수(Self-referencing variable)이다. 함수 호출시 arguments 객체와 this가 암묵적으로 함수 내부에 전달된다. arguments 객체와 this는 함수 내부에서 지역 변수처럼 사용할 수 있다. this가 가리키는 값은 함수 호출 방">
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    14 minutes read (About 2045 words)
+                    14 minutes read (About 2069 words)
                 </span>
                 
                 
@@ -266,6 +266,7 @@
 </table>
 <h2 id="3-this-in-Arrow-Function"><a href="#3-this-in-Arrow-Function" class="headerlink" title="3. this in Arrow Function"></a>3. this in Arrow Function</h2><p>일반 함수는 함수를 선언할 때 this에 바인딩할 객체가 정적으로 결정되는 것이 아니고, 함수를 호출할 때 함수가 어떻게 호출되었는지에 따라 this에 바인딩할 객체가 동적으로 결정된다.</p>
 <p>화살표 함수는 <strong>함수를 선언할 때 this에 바인딩할 객체가 정적으로 결정</strong>된다. 동적으로 결정되는 일반 함수와는 달리 <strong>화살표 함수의 this 언제나 상위 스코프의 this를 가리킨다.</strong> 이를 <strong>Lexical this</strong>라 한다. </p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$completedAll.addEventListener(<span class="hljs-string">'click'</span>, (e) =&gt; &#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>); <span class="hljs-comment">// window</span></span><br><span class="line">    completeAllTodos(e.target);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$completedAll.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>); <span class="hljs-comment">// $completedAll</span></span><br><span class="line">    completeAllTodos(e.target);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
 
         </div>
         

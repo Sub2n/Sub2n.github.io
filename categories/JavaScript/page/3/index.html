@@ -326,7 +326,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    14 minutes read (About 2045 words)
+                    14 minutes read (About 2069 words)
                 </span>
                 
                 
@@ -422,6 +422,7 @@
 </table>
 <h2 id="3-this-in-Arrow-Function"><a href="#3-this-in-Arrow-Function" class="headerlink" title="3. this in Arrow Function"></a>3. this in Arrow Function</h2><p>일반 함수는 함수를 선언할 때 this에 바인딩할 객체가 정적으로 결정되는 것이 아니고, 함수를 호출할 때 함수가 어떻게 호출되었는지에 따라 this에 바인딩할 객체가 동적으로 결정된다.</p>
 <p>화살표 함수는 <strong>함수를 선언할 때 this에 바인딩할 객체가 정적으로 결정</strong>된다. 동적으로 결정되는 일반 함수와는 달리 <strong>화살표 함수의 this 언제나 상위 스코프의 this를 가리킨다.</strong> 이를 <strong>Lexical this</strong>라 한다. </p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$completedAll.addEventListener(<span class="hljs-string">'click'</span>, (e) =&gt; &#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>); <span class="hljs-comment">// window</span></span><br><span class="line">    completeAllTodos(e.target);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$completedAll.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>); <span class="hljs-comment">// $completedAll</span></span><br><span class="line">    completeAllTodos(e.target);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
 
         </div>
         
