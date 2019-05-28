@@ -16,7 +16,7 @@
 <meta property="og:description" content="1. DOM (Document Object Model) DOM : DOM Tree + DOM API  브라우저의 렌더링 엔진이 웹 문서를 파싱해서 메모리에 저장한 결과물  즉, DOM이란 모든  element와 element의 attribute, text를 각각의 객체로 만들고 이 객체들을 부모-자식 관계를 나타낼 수 있는 트리 구조로 구성한 것  DOM은">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
-<meta property="og:updated_time" content="2019-05-27T04:45:33.774Z">
+<meta property="og:updated_time" content="2019-05-28T01:36:31.063Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="29. DOM">
 <meta name="twitter:description" content="1. DOM (Document Object Model) DOM : DOM Tree + DOM API  브라우저의 렌더링 엔진이 웹 문서를 파싱해서 메모리에 저장한 결과물  즉, DOM이란 모든  element와 element의 attribute, text를 각각의 객체로 만들고 이 객체들을 부모-자식 관계를 나타낼 수 있는 트리 구조로 구성한 것  DOM은">
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    15 minutes read (About 2314 words)
+                    22 minutes read (About 3340 words)
                 </span>
                 
                 
@@ -294,25 +294,46 @@
 <li>firstChild 프로퍼티로 Text Node를 탐색한다.</li>
 <li>Text Node의 프로퍼티 <code>nodeValue</code>를 이용해서 텍스트에 접근하고 수정한다.</li>
 </ol>
-<h3 id="2-Attribute-Node-Access-and-Manipulation"><a href="#2-Attribute-Node-Access-and-Manipulation" class="headerlink" title="2. Attribute Node Access and Manipulation"></a>2. Attribute Node Access and Manipulation</h3><h4 id="hasAttribute-attribute"><a href="#hasAttribute-attribute" class="headerlink" title="hasAttribute(attribute)"></a>hasAttribute(attribute)</h4><ul>
-<li>지정한 어트리뷰트를 가지고 있는지 검사한다.</li>
+<blockquote>
+<h4 id="nodeValue"><a href="#nodeValue" class="headerlink" title="nodeValue"></a>nodeValue</h4><ul>
+<li>노드의 값을 반환</li>
+<li>Return: 텍스트 노드의 경우는 문자열, 요소 노드의 경우 null 반환</li>
+<li>IE6 이상의 브라우저에서 동작</li>
+</ul>
+</blockquote>
+<h3 id="2-Attribute-Node-Access-and-Manipulation"><a href="#2-Attribute-Node-Access-and-Manipulation" class="headerlink" title="2. Attribute Node Access and Manipulation"></a>2. Attribute Node Access and Manipulation</h3><p>Attribute Node 조작을 위해서 다음 프로퍼티 또는 메소드를 사용할 수 있다.</p>
+<h4 id="className"><a href="#className" class="headerlink" title="className"></a>className</h4><ul>
+<li>class attribute 값에 접근하고 할당할 수 있다. class attribute가 없는데 className을 할당하면 class atrribute를 생성하고 설정한다. className이 여러개일 경우 <code>&#39; &#39;</code>(공백)으로 구분된  string이 반환되므로 String.split(‘ ‘)를 사용해서 변경한다.</li>
+<li>모든 브라우저에서 동작</li>
+</ul>
+<h4 id="classList"><a href="#classList" class="headerlink" title="classList"></a>classList</h4><ul>
+<li>add, remove, item, toggle, contains, replace method 제공</li>
+<li>어떤 element의 class attribute를 추가, 삭제, 검사할 때 유용하다.</li>
+<li>IE10 이상 브라우저에서 동작한다.</li>
+</ul>
+<h4 id="id"><a href="#id" class="headerlink" title="id"></a>id</h4><ul>
+<li>id attribute의 값에 접근하고 변경할 수 있다. className과 마찬가지로 없는데 할당시 생성하고 설정한다.</li>
+<li>모든 브라우저에서 동작</li>
+</ul>
+<h4 id="hasAttribute-attribute"><a href="#hasAttribute-attribute" class="headerlink" title="hasAttribute(attribute)"></a>hasAttribute(attribute)</h4><ul>
+<li>지정한 어트리뷰트를 가지고 있는지 검사.</li>
 <li>Return : Boolean</li>
-<li>IE8 이상의 브라우저에서 동작한다.</li>
+<li>IE8 이상의 브라우저에서 동작.</li>
 </ul>
 <h4 id="getAttribute-attribute"><a href="#getAttribute-attribute" class="headerlink" title="getAttribute(attribute)"></a>getAttribute(attribute)</h4><ul>
-<li>어트리뷰트의 값을 취득한다.</li>
+<li>어트리뷰트의 값을 취득.</li>
 <li>Return : 문자열</li>
-<li>모든 브라우저에서 동작한다.</li>
+<li>모든 브라우저에서 동작.</li>
 </ul>
 <h4 id="setAttribute-attribute-value"><a href="#setAttribute-attribute-value" class="headerlink" title="setAttribute(attribute, value)"></a>setAttribute(attribute, value)</h4><ul>
-<li>어트리뷰트와 어트리뷰트 값을 설정한다.</li>
+<li>어트리뷰트와 어트리뷰트 값을 설정.</li>
 <li>Return : undefined</li>
-<li>모든 브라우저에서 동작한다.</li>
+<li>모든 브라우저에서 동작.</li>
 </ul>
 <h4 id="removeAttribute-attribute"><a href="#removeAttribute-attribute" class="headerlink" title="removeAttribute(attribute)"></a>removeAttribute(attribute)</h4><ul>
-<li>지정한 어트리뷰트를 제거한다.</li>
+<li>지정한 어트리뷰트를 제거.</li>
 <li>Return : undefined</li>
-<li>모든 브라우저에서 동작한다.</li>
+<li>모든 브라우저에서 동작.</li>
 </ul>
 <blockquote>
 <h3 id="Difference-between-Attribute-and-Property"><a href="#Difference-between-Attribute-and-Property" class="headerlink" title="Difference between Attribute and Property"></a>Difference between Attribute and Property</h3><p>checkbox input element의 상태를 변경하는 방법 2가지 attribute이용, property 이용</p>
@@ -327,7 +348,47 @@
 </li>
 </ol>
 </blockquote>
-<h3 id="4-3-HTML-Contents-Manipulation"><a href="#4-3-HTML-Contents-Manipulation" class="headerlink" title="4.3.  HTML Contents Manipulation"></a>4.3.  HTML Contents Manipulation</h3><h4 id="textContent"><a href="#textContent" class="headerlink" title="textContent"></a>textContent</h4><h4 id="innerText"><a href="#innerText" class="headerlink" title="innerText"></a>innerText</h4><h4 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h4><h3 id="4-4-DOM-Manipulation-Method"><a href="#4-4-DOM-Manipulation-Method" class="headerlink" title="4.4 DOM Manipulation Method"></a>4.4 DOM Manipulation Method</h3><h4 id="createElement-tagName"><a href="#createElement-tagName" class="headerlink" title="createElement(tagName)"></a>createElement(tagName)</h4><h4 id="createTextNode-text"><a href="#createTextNode-text" class="headerlink" title="createTextNode(text)"></a>createTextNode(text)</h4><h4 id="appendChild-Node"><a href="#appendChild-Node" class="headerlink" title="appendChild(Node)"></a>appendChild(Node)</h4><h4 id="removeChild-Node"><a href="#removeChild-Node" class="headerlink" title="removeChild(Node)"></a>removeChild(Node)</h4><h3 id="4-5-insertAdjacentHTML"><a href="#4-5-insertAdjacentHTML" class="headerlink" title="4.5 insertAdjacentHTML()"></a>4.5 insertAdjacentHTML()</h3><h4 id="insertAdjacentHTML-position-string"><a href="#insertAdjacentHTML-position-string" class="headerlink" title="insertAdjacentHTML(position, string)"></a>insertAdjacentHTML(position, string)</h4><ul>
+<h3 id="4-3-HTML-Contents-Manipulation"><a href="#4-3-HTML-Contents-Manipulation" class="headerlink" title="4.3.  HTML Contents Manipulation"></a>4.3.  HTML Contents Manipulation</h3><p>HTML contents를 조작하기 위해 아래와 같은 프로퍼티와 메소드를 사용할 수 있으나 Markup이 포함된 content를 추가하는 것은 XSS(Cross-Site Scripting Attacks)에 취약하므로 조심해야 한다.</p>
+<h4 id="textContent"><a href="#textContent" class="headerlink" title="textContent"></a>textContent</h4><ul>
+<li>Element의 text content에 접근하고 변경할 수 있다. 이 때 입력 문자열에 Markup이 포함되더라도 그냥 텍스트로 출력된다.</li>
+<li>IE9 이상 브라우저에서 동작</li>
+</ul>
+<h4 id="innerText"><a href="#innerText" class="headerlink" title="innerText"></a>innerText</h4><ul>
+<li>textContent와 같이 element의 text content에만 접근할 수 있지만 비표준이며 CSS를 고려한다.</li>
+<li>사용하지 않는 것이 좋음</li>
+</ul>
+<h4 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h4><ul>
+<li>해당 element 내부의 모든 html contents를 하나의 string으로 취득하고 변경할 수 있다.</li>
+<li>Markup을 포함한다.</li>
+<li>그러나 Markup이 포함된 contents를 추가하는 것은 Cross-Site Scripting Attack에 취약하다.</li>
+</ul>
+<h3 id="4-4-DOM-Manipulation-Method"><a href="#4-4-DOM-Manipulation-Method" class="headerlink" title="4.4 DOM Manipulation Method"></a>4.4 DOM Manipulation Method</h3><p>보안상 취약한 innerHTML 프로퍼티를 사용하지 않고 새로운 content를 추가할 수 있는 방법은 DOM을 직접 조작하는 것이다. 주로 하나의 element를 추가하는 경우 사용한다.</p>
+<ol>
+<li>createElement() method로 새로운 Element Node를 생성. Argument로 tag이름 전달.</li>
+<li>createTextNode() method로 새로운 Text Node를 생성. 1에서 만든 Element Node에 TextNode를 추가하지 않으면 content가 비어있는 element가 된다.</li>
+<li>appendChild() method로 생성된 element를 DOM에 추가한다. removeChild() method로는 DOM tree에서  node를 삭제할 수 있다.</li>
+</ol>
+<h4 id="createElement-tagName"><a href="#createElement-tagName" class="headerlink" title="createElement(tagName)"></a>createElement(tagName)</h4><ul>
+<li>노드의 값을 리턴</li>
+<li>Return: 텍스트 노드의 경우는 문자열, 요소 노드의 경우 null 리턴</li>
+<li>IE6 이상의 브라우저에서 동작</li>
+</ul>
+<h4 id="createTextNode-text"><a href="#createTextNode-text" class="headerlink" title="createTextNode(text)"></a>createTextNode(text)</h4><ul>
+<li>텍스트를 인자로 전달하여 텍스트 노드를 생성</li>
+<li>Return: Text 객체</li>
+<li>모든 브라우저에서 동작</li>
+</ul>
+<h4 id="appendChild-Node"><a href="#appendChild-Node" class="headerlink" title="appendChild(Node)"></a>appendChild(Node)</h4><ul>
+<li>argument로 전달한 노드를 마지막 자식 요소로 DOM 트리에 추가</li>
+<li>Return: 추가한 노드</li>
+<li>모든 브라우저에서 동작</li>
+</ul>
+<h4 id="removeChild-Node"><a href="#removeChild-Node" class="headerlink" title="removeChild(Node)"></a>removeChild(Node)</h4><ul>
+<li>argument로 전달한 노드를 DOM 트리에 제거</li>
+<li>Return: 추가한 노드</li>
+<li>모든 브라우저에서 동작</li>
+</ul>
+<h3 id="4-5-insertAdjacentHTML"><a href="#4-5-insertAdjacentHTML" class="headerlink" title="4.5 insertAdjacentHTML()"></a>4.5 insertAdjacentHTML()</h3><h4 id="insertAdjacentHTML-position-string"><a href="#insertAdjacentHTML-position-string" class="headerlink" title="insertAdjacentHTML(position, string)"></a>insertAdjacentHTML(position, string)</h4><ul>
 <li>인자로 전달한 텍스트를 HTML로 파싱하고 그 결과로 생성된 노드를 DOM 트리의 지정된 위치에 삽입한다.</li>
 <li>position : insert position<ul>
 <li>‘beforebegin’</li>
@@ -353,18 +414,23 @@
 <tbody>
 <tr>
 <td>장점</td>
-<td>DOM 조작 방식에 비해 빠르고 간편하다.<br>간편하게 문자열로 정의한 여러 요소를 DOM에 추가할 수 있다.<br>콘텐츠를 취득할 수 있다.</td>
-<td></td>
-<td></td>
+<td>DOM 조작 방식에 비해 빠르고 간편<br>간편하게 문자열로 정의한 여러 요소를 DOM에 추가할 수 있음<br>콘텐츠를 취득할 수 있음</td>
+<td>특정 노드 한 개(노드, 텍스트, 데이터 등)를 DOM에 추가할 때 적합</td>
+<td>간편하게 문자열로 정의된 여러 요소를 DOM에 추가할 수 있음<br>요소가 삽입되는 위치를 선정할 수 있음</td>
 </tr>
 <tr>
 <td>단점</td>
-<td></td>
-<td></td>
+<td>XSS공격에 취약점이 있기 때문에 사용자로 부터 입력받은 콘텐츠(untrusted data: 댓글, 사용자 이름 등)를 추가할 때 주의해야 함<br>해당 요소의 내용을 덮어 쓴다. 즉, HTML을 다시 파싱한다. 비효율적</td>
+<td>innerHTML보다 느리고 더 많은 코드가 필요</td>
+<td>XSS공격에 취약점이 있기 때문에 사용자로 부터 입력받은 콘텐츠(untrusted data: 댓글, 사용자 이름 등)를 추가할 때 주의해야 함</td>
 </tr>
 </tbody>
 </table>
-<h2 id="5-style-Property"><a href="#5-style-Property" class="headerlink" title="5. style Property"></a>5. style Property</h2><p>stype 프로퍼티를 사용하면 inline style 선언을 생성</p>
+<p>결론적으로 Text를 추가하거나 변경할 때는 textContent, 새로운 element를 추가하거나 삭제할 때는 DOM manipulation 방식(createElement() 등)을 사용한다.</p>
+<h2 id="5-style-Property"><a href="#5-style-Property" class="headerlink" title="5. style Property"></a>5. style Property</h2><p>style 프로퍼티를 사용하면 inline style 선언을 생성한다. 특정 element에 inline style을 지정할 때 사용한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> $four = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'four'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// inline 스타일 선언을 생성</span></span><br><span class="line">$four.style.color = <span class="hljs-string">'blue'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// font-size와 같이 '-'으로 구분되는 프로퍼티는 카멜케이스로 변환해 사용한다.</span></span><br><span class="line">$four.style.fontSize = <span class="hljs-string">'2em'</span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><a href="https://poiemaweb.com/js-dom" target="_blank" rel="noopener">Reference</a></p>
 
         </div>
         

@@ -535,7 +535,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    11 minutes read (About 1591 words)
+                    16 minutes read (About 2337 words)
                 </span>
                 
                 
@@ -606,16 +606,17 @@
 </ol>
 <p>IE9 이상에서 동작하므로 IE8 이하에서는 attachEvent 메소드를 사용한다.</p>
 <h3 id="5-this-in-Event-Handler"><a href="#5-this-in-Event-Handler" class="headerlink" title="5. this in Event Handler"></a>5. this in Event Handler</h3><ol>
-<li><p>인라인 이벤트 핸들러 방식</p>
-<p>이벤트 핸들러가 일반 함수로 호출되므로 내부의 this는 전역 객체 window이다.</p>
+<li><p><strong>Inline Event Handler</strong></p>
+<p>이벤트 핸들러가 일반 함수로 호출되므로 내부의 this는 <strong>전역 객체 window</strong>이다.</p>
 </li>
-<li><p>이벤트 핸들러 프로퍼티</p>
-<p>이벤트 핸들러가 메소드이므로 내부의 this는 이벤트에 바인딩된 element를 가리킨다. event 객체의 currentTarget 프로퍼티 값과 같다.</p>
+<li><p><strong>Event Handler Property</strong></p>
+<p>이벤트 핸들러가 메소드이므로 내부의 this는 <strong>이벤트에 바인딩된 element</strong>를 가리킨다. event 객체의 currentTarget 프로퍼티 값과 같다.</p>
 </li>
-<li><p>addEventListener 메소드</p>
-<p>이벤트 핸들러 내의 this는 addEventListener 메소드를 호출한 element, 즉 이벤트 리스너에 바인딩된 element를 가리킨다. event 객체의 currentTarget 프로퍼티 값과 같다.</p>
+<li><p><strong>addEventListener Method</strong></p>
+<p>이벤트 핸들러 내의 this는 addEventListener 메소드를 호출한 element, 즉 <strong>이벤트 리스너에 바인딩된 element</strong>를 가리킨다. <strong>event 객체의 currentTarget 프로퍼티 값</strong>과 같다.</p>
 </li>
 </ol>
+<p>이벤트 핸들러 property와 addEventListener method로 등록한 이벤트 핸들러 내부의 this = 이벤트 리스너에 <strong>바인딩된 element</strong> = event.currentTarget</p>
 <h3 id="6-Event-Flow"><a href="#6-Event-Flow" class="headerlink" title="6. Event Flow"></a>6. Event Flow</h3><h4 id="Event-Propagation"><a href="#Event-Propagation" class="headerlink" title="Event Propagation"></a>Event Propagation</h4><p>HTML element에 이벤트가 발생할 경우 속한 계층을 따라서 이벤트가 전파(Event Propagation)된다.</p>
 <ul>
 <li>Event Capturing : child element에서 발생한 이벤트가 parent element부터 시작해서 이벤트를 발생시킨 child element까지 도달하는 것</li>
@@ -627,7 +628,49 @@
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">eventHandler</span>(<span class="hljs-params">e</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(e.clientX, e.clientY);</span><br><span class="line">&#125;</span><br><span class="line">addEventListener(<span class="hljs-string">'click'</span>, eventHandler);</span><br></pre></td></tr></table></figure>
 <h4 id="Event-target"><a href="#Event-target" class="headerlink" title="Event.target"></a>Event.target</h4><p>e.target은 <strong>실제로 이벤트를 발생시킨 element</strong>를 가리킨다. Event.target은 this와 반드시 일치하지 않는다.</p>
 <h4 id="Event-currentTarget"><a href="#Event-currentTarget" class="headerlink" title="Event.currentTarget"></a>Event.currentTarget</h4><p><strong>이벤트에 바인딩된 DOM element</strong>를 가리킨다. addEventListener로 지정한 이벤트 핸들러 내부의 this와 일치한다.</p>
+<h4 id="Event-type"><a href="#Event-type" class="headerlink" title="Event.type"></a>Event.type</h4><p>발생한 이벤트의 종류를 나타내는 문자열을 리턴한다.</p>
+<h4 id="Event-cancelable"><a href="#Event-cancelable" class="headerlink" title="Event.cancelable"></a>Event.cancelable</h4><p>element의 기본 동작을 취소시킬 수 있는지를 나타낸다. =&gt; Boolean</p>
+<h4 id="Event-eventPhase"><a href="#Event-eventPhase" class="headerlink" title="Event.eventPhase"></a>Event.eventPhase</h4><p>이벤트가 event flow 상에서 어떤 event phase에 있는지 리턴한다.</p>
+<table>
+<thead>
+<tr>
+<th>Return</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>No Event</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Capturing Phase</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Target</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Bubbling Phase</td>
+</tr>
+</tbody>
+</table>
 <h3 id="8-Event-Elegation"><a href="#8-Event-Elegation" class="headerlink" title="8. Event Elegation"></a>8. Event Elegation</h3><p>여러 child element의 이벤트를 캐치하고 싶을 때 이벤트 위임을 이용해서 parent element에 이벤트 핸들러를 바인딩한다. </p>
+<p>또한 어떤 ul element에 동적으로 child li element들이 추가되는 경우, 동적으로 추가되는 element는 DOM에 아직 존재하지 않으므로 이벤트 핸들러를 바인딩할 수 없다. 이런 경우에도 parent element인 ul에 이벤트 핸들러를 바인딩해 event elegation을 사용한다.</p>
+<p>이벤트 위임(Event Delegation)은 다수의 자식 요소에 각각 이벤트 핸들러를 바인딩하는 대신 하나의 부모 요소에 이벤트 핸들러를 바인딩하는 방법이다.</p>
+<p>Event Delegation은 이벤트가 Event flow에 의해서 bubbling이 되기 때문에 가능한 것이다.</p>
+<p>실제로 이벤트를 발생시킨 element는 event.target으로 찾는다.</p>
+<h3 id="9-Change-Default-Operation"><a href="#9-Change-Default-Operation" class="headerlink" title="9. Change Default Operation"></a>9. Change Default Operation</h3><p>Event object는 element의 default 동작을 가지며 element의 parent element들이 이벤트에 대응하는 방법을 변경할 수 있도록하는 메소드를 가진다.</p>
+<h4 id="Event-preventDefault"><a href="#Event-preventDefault" class="headerlink" title="Event.preventDefault()"></a>Event.preventDefault()</h4><p>form을 submit하거나 link를 클릭하면 default로 다른 페이지로 이동하는데, 이처럼 element가 가진 default 동작을 막는 메소드가 preventDefault()이다.</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://www.google.com"</span>&gt;</span>go<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-javascript">  <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'a'</span>).addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="hljs-javascript">    <span class="hljs-built_in">console</span>.log(e.target, e.target.nodeName);</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">    <span class="hljs-comment">// a 요소의 기본 동작을 중단한다.</span></span></span><br><span class="line"><span class="hljs-undefined">    e.preventDefault();</span></span><br><span class="line"><span class="hljs-undefined">  &#125;);</span></span><br><span class="line"><span class="hljs-undefined">  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="Event-stopPropagation"><a href="#Event-stopPropagation" class="headerlink" title="Event.stopPropagation()"></a>Event.stopPropagation()</h4><p>Event flow 상의 어떤 한 element에서 이벤트를 처리한 후에,  더이상 이벤트가 전파되는 것을 중단하게끔 하는 메소드이다. 주로 child와 parent에 동일한 event에 대한 핸들러가 각각 다르게 등록되어있는 경우에 사용한다. child에서 일어난 event에서 op1을 동작해야 하는데 parent로 이벤트가 전파되어 op2가 동작되면 안되기 때문이다.</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-css">    <span class="hljs-selector-tag">html</span>, <span class="hljs-selector-tag">body</span> &#123; <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;&#125;</span></span><br><span class="line"><span class="hljs-undefined">  </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>버튼을 클릭하면 이벤트 전파를 중단한다. <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>버튼<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-javascript">    <span class="hljs-keyword">const</span> body = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'body'</span>);</span></span><br><span class="line"><span class="hljs-javascript">    <span class="hljs-keyword">const</span> para = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'p'</span>);</span></span><br><span class="line"><span class="hljs-javascript">    <span class="hljs-keyword">const</span> button = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'button'</span>);</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">    <span class="hljs-comment">// default: 버블링</span></span></span><br><span class="line"><span class="hljs-actionscript">    body.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;</span></span><br><span class="line"><span class="hljs-javascript">      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Handler for body.'</span>);</span></span><br><span class="line"><span class="hljs-undefined">    &#125;);</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">    <span class="hljs-comment">// default: 버블링</span></span></span><br><span class="line"><span class="hljs-actionscript">    para.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;</span></span><br><span class="line"><span class="hljs-javascript">      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Handler for paragraph.'</span>);</span></span><br><span class="line"><span class="hljs-undefined">    &#125;);</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">    <span class="hljs-comment">// default: 버블링</span></span></span><br><span class="line"><span class="hljs-actionscript">    button.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(event)</span> </span>&#123;</span></span><br><span class="line"><span class="hljs-javascript">      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Handler for button.'</span>);</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">      <span class="hljs-comment">// 이벤트 전파를 중단</span></span></span><br><span class="line"><span class="hljs-undefined">      event.stopPropagation();</span></span><br><span class="line"><span class="hljs-undefined">    &#125;);</span></span><br><span class="line"><span class="hljs-undefined">  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="preventDefault-amp-stopPropagation"><a href="#preventDefault-amp-stopPropagation" class="headerlink" title="preventDefault &amp; stopPropagation"></a>preventDefault &amp; stopPropagation</h3><p>default 동작과 bubbling/capturing을 동시에 중단시킬 수 있는 방법이 있다.</p>
+<p>이벤트 핸들러 내에서 <code>return false;</code>를 하면 되는데, 이 방법은 jQuery를 사용하거나 inline event handler로 이벤트 핸들러를 return할 때만 동작한다.</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://www.google.com"</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">'return handleEvent()'</span>&gt;</span>go<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleEvent</span><span class="hljs-params">()</span> </span>&#123;</span></span><br><span class="line"><span class="hljs-actionscript">    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</span></span><br><span class="line"><span class="hljs-undefined">  &#125;</span></span><br><span class="line"><span class="hljs-undefined">  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://www.google.com"</span>&gt;</span>go<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">  <span class="hljs-comment">// within jQuery</span></span></span><br><span class="line"><span class="hljs-javascript">  $(<span class="hljs-string">'a'</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="hljs-actionscript">    e.preventDefault(); <span class="hljs-comment">// OK</span></span></span><br><span class="line"><span class="hljs-undefined">  &#125;);</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-javascript">  $(<span class="hljs-string">'a'</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span></span><br><span class="line"><span class="hljs-actionscript">    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>; <span class="hljs-comment">// OK --&gt; e.preventDefault() &amp; e.stopPropagation().</span></span></span><br><span class="line"><span class="hljs-undefined">  &#125;);</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">  <span class="hljs-comment">// pure js</span></span></span><br><span class="line"><span class="hljs-javascript">  <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'a'</span>).addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="hljs-actionscript">    <span class="hljs-comment">// e.preventDefault(); // OK</span></span></span><br><span class="line"><span class="hljs-actionscript">    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;       <span class="hljs-comment">// NG!!!!!</span></span></span><br><span class="line"><span class="hljs-undefined">  &#125;);</span></span><br><span class="line"><span class="hljs-undefined">  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -720,7 +763,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    15 minutes read (About 2314 words)
+                    22 minutes read (About 3340 words)
                 </span>
                 
                 
@@ -844,25 +887,46 @@
 <li>firstChild 프로퍼티로 Text Node를 탐색한다.</li>
 <li>Text Node의 프로퍼티 <code>nodeValue</code>를 이용해서 텍스트에 접근하고 수정한다.</li>
 </ol>
-<h3 id="2-Attribute-Node-Access-and-Manipulation"><a href="#2-Attribute-Node-Access-and-Manipulation" class="headerlink" title="2. Attribute Node Access and Manipulation"></a>2. Attribute Node Access and Manipulation</h3><h4 id="hasAttribute-attribute"><a href="#hasAttribute-attribute" class="headerlink" title="hasAttribute(attribute)"></a>hasAttribute(attribute)</h4><ul>
-<li>지정한 어트리뷰트를 가지고 있는지 검사한다.</li>
+<blockquote>
+<h4 id="nodeValue"><a href="#nodeValue" class="headerlink" title="nodeValue"></a>nodeValue</h4><ul>
+<li>노드의 값을 반환</li>
+<li>Return: 텍스트 노드의 경우는 문자열, 요소 노드의 경우 null 반환</li>
+<li>IE6 이상의 브라우저에서 동작</li>
+</ul>
+</blockquote>
+<h3 id="2-Attribute-Node-Access-and-Manipulation"><a href="#2-Attribute-Node-Access-and-Manipulation" class="headerlink" title="2. Attribute Node Access and Manipulation"></a>2. Attribute Node Access and Manipulation</h3><p>Attribute Node 조작을 위해서 다음 프로퍼티 또는 메소드를 사용할 수 있다.</p>
+<h4 id="className"><a href="#className" class="headerlink" title="className"></a>className</h4><ul>
+<li>class attribute 값에 접근하고 할당할 수 있다. class attribute가 없는데 className을 할당하면 class atrribute를 생성하고 설정한다. className이 여러개일 경우 <code>&#39; &#39;</code>(공백)으로 구분된  string이 반환되므로 String.split(‘ ‘)를 사용해서 변경한다.</li>
+<li>모든 브라우저에서 동작</li>
+</ul>
+<h4 id="classList"><a href="#classList" class="headerlink" title="classList"></a>classList</h4><ul>
+<li>add, remove, item, toggle, contains, replace method 제공</li>
+<li>어떤 element의 class attribute를 추가, 삭제, 검사할 때 유용하다.</li>
+<li>IE10 이상 브라우저에서 동작한다.</li>
+</ul>
+<h4 id="id"><a href="#id" class="headerlink" title="id"></a>id</h4><ul>
+<li>id attribute의 값에 접근하고 변경할 수 있다. className과 마찬가지로 없는데 할당시 생성하고 설정한다.</li>
+<li>모든 브라우저에서 동작</li>
+</ul>
+<h4 id="hasAttribute-attribute"><a href="#hasAttribute-attribute" class="headerlink" title="hasAttribute(attribute)"></a>hasAttribute(attribute)</h4><ul>
+<li>지정한 어트리뷰트를 가지고 있는지 검사.</li>
 <li>Return : Boolean</li>
-<li>IE8 이상의 브라우저에서 동작한다.</li>
+<li>IE8 이상의 브라우저에서 동작.</li>
 </ul>
 <h4 id="getAttribute-attribute"><a href="#getAttribute-attribute" class="headerlink" title="getAttribute(attribute)"></a>getAttribute(attribute)</h4><ul>
-<li>어트리뷰트의 값을 취득한다.</li>
+<li>어트리뷰트의 값을 취득.</li>
 <li>Return : 문자열</li>
-<li>모든 브라우저에서 동작한다.</li>
+<li>모든 브라우저에서 동작.</li>
 </ul>
 <h4 id="setAttribute-attribute-value"><a href="#setAttribute-attribute-value" class="headerlink" title="setAttribute(attribute, value)"></a>setAttribute(attribute, value)</h4><ul>
-<li>어트리뷰트와 어트리뷰트 값을 설정한다.</li>
+<li>어트리뷰트와 어트리뷰트 값을 설정.</li>
 <li>Return : undefined</li>
-<li>모든 브라우저에서 동작한다.</li>
+<li>모든 브라우저에서 동작.</li>
 </ul>
 <h4 id="removeAttribute-attribute"><a href="#removeAttribute-attribute" class="headerlink" title="removeAttribute(attribute)"></a>removeAttribute(attribute)</h4><ul>
-<li>지정한 어트리뷰트를 제거한다.</li>
+<li>지정한 어트리뷰트를 제거.</li>
 <li>Return : undefined</li>
-<li>모든 브라우저에서 동작한다.</li>
+<li>모든 브라우저에서 동작.</li>
 </ul>
 <blockquote>
 <h3 id="Difference-between-Attribute-and-Property"><a href="#Difference-between-Attribute-and-Property" class="headerlink" title="Difference between Attribute and Property"></a>Difference between Attribute and Property</h3><p>checkbox input element의 상태를 변경하는 방법 2가지 attribute이용, property 이용</p>
@@ -877,7 +941,47 @@
 </li>
 </ol>
 </blockquote>
-<h3 id="4-3-HTML-Contents-Manipulation"><a href="#4-3-HTML-Contents-Manipulation" class="headerlink" title="4.3.  HTML Contents Manipulation"></a>4.3.  HTML Contents Manipulation</h3><h4 id="textContent"><a href="#textContent" class="headerlink" title="textContent"></a>textContent</h4><h4 id="innerText"><a href="#innerText" class="headerlink" title="innerText"></a>innerText</h4><h4 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h4><h3 id="4-4-DOM-Manipulation-Method"><a href="#4-4-DOM-Manipulation-Method" class="headerlink" title="4.4 DOM Manipulation Method"></a>4.4 DOM Manipulation Method</h3><h4 id="createElement-tagName"><a href="#createElement-tagName" class="headerlink" title="createElement(tagName)"></a>createElement(tagName)</h4><h4 id="createTextNode-text"><a href="#createTextNode-text" class="headerlink" title="createTextNode(text)"></a>createTextNode(text)</h4><h4 id="appendChild-Node"><a href="#appendChild-Node" class="headerlink" title="appendChild(Node)"></a>appendChild(Node)</h4><h4 id="removeChild-Node"><a href="#removeChild-Node" class="headerlink" title="removeChild(Node)"></a>removeChild(Node)</h4><h3 id="4-5-insertAdjacentHTML"><a href="#4-5-insertAdjacentHTML" class="headerlink" title="4.5 insertAdjacentHTML()"></a>4.5 insertAdjacentHTML()</h3><h4 id="insertAdjacentHTML-position-string"><a href="#insertAdjacentHTML-position-string" class="headerlink" title="insertAdjacentHTML(position, string)"></a>insertAdjacentHTML(position, string)</h4><ul>
+<h3 id="4-3-HTML-Contents-Manipulation"><a href="#4-3-HTML-Contents-Manipulation" class="headerlink" title="4.3.  HTML Contents Manipulation"></a>4.3.  HTML Contents Manipulation</h3><p>HTML contents를 조작하기 위해 아래와 같은 프로퍼티와 메소드를 사용할 수 있으나 Markup이 포함된 content를 추가하는 것은 XSS(Cross-Site Scripting Attacks)에 취약하므로 조심해야 한다.</p>
+<h4 id="textContent"><a href="#textContent" class="headerlink" title="textContent"></a>textContent</h4><ul>
+<li>Element의 text content에 접근하고 변경할 수 있다. 이 때 입력 문자열에 Markup이 포함되더라도 그냥 텍스트로 출력된다.</li>
+<li>IE9 이상 브라우저에서 동작</li>
+</ul>
+<h4 id="innerText"><a href="#innerText" class="headerlink" title="innerText"></a>innerText</h4><ul>
+<li>textContent와 같이 element의 text content에만 접근할 수 있지만 비표준이며 CSS를 고려한다.</li>
+<li>사용하지 않는 것이 좋음</li>
+</ul>
+<h4 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h4><ul>
+<li>해당 element 내부의 모든 html contents를 하나의 string으로 취득하고 변경할 수 있다.</li>
+<li>Markup을 포함한다.</li>
+<li>그러나 Markup이 포함된 contents를 추가하는 것은 Cross-Site Scripting Attack에 취약하다.</li>
+</ul>
+<h3 id="4-4-DOM-Manipulation-Method"><a href="#4-4-DOM-Manipulation-Method" class="headerlink" title="4.4 DOM Manipulation Method"></a>4.4 DOM Manipulation Method</h3><p>보안상 취약한 innerHTML 프로퍼티를 사용하지 않고 새로운 content를 추가할 수 있는 방법은 DOM을 직접 조작하는 것이다. 주로 하나의 element를 추가하는 경우 사용한다.</p>
+<ol>
+<li>createElement() method로 새로운 Element Node를 생성. Argument로 tag이름 전달.</li>
+<li>createTextNode() method로 새로운 Text Node를 생성. 1에서 만든 Element Node에 TextNode를 추가하지 않으면 content가 비어있는 element가 된다.</li>
+<li>appendChild() method로 생성된 element를 DOM에 추가한다. removeChild() method로는 DOM tree에서  node를 삭제할 수 있다.</li>
+</ol>
+<h4 id="createElement-tagName"><a href="#createElement-tagName" class="headerlink" title="createElement(tagName)"></a>createElement(tagName)</h4><ul>
+<li>노드의 값을 리턴</li>
+<li>Return: 텍스트 노드의 경우는 문자열, 요소 노드의 경우 null 리턴</li>
+<li>IE6 이상의 브라우저에서 동작</li>
+</ul>
+<h4 id="createTextNode-text"><a href="#createTextNode-text" class="headerlink" title="createTextNode(text)"></a>createTextNode(text)</h4><ul>
+<li>텍스트를 인자로 전달하여 텍스트 노드를 생성</li>
+<li>Return: Text 객체</li>
+<li>모든 브라우저에서 동작</li>
+</ul>
+<h4 id="appendChild-Node"><a href="#appendChild-Node" class="headerlink" title="appendChild(Node)"></a>appendChild(Node)</h4><ul>
+<li>argument로 전달한 노드를 마지막 자식 요소로 DOM 트리에 추가</li>
+<li>Return: 추가한 노드</li>
+<li>모든 브라우저에서 동작</li>
+</ul>
+<h4 id="removeChild-Node"><a href="#removeChild-Node" class="headerlink" title="removeChild(Node)"></a>removeChild(Node)</h4><ul>
+<li>argument로 전달한 노드를 DOM 트리에 제거</li>
+<li>Return: 추가한 노드</li>
+<li>모든 브라우저에서 동작</li>
+</ul>
+<h3 id="4-5-insertAdjacentHTML"><a href="#4-5-insertAdjacentHTML" class="headerlink" title="4.5 insertAdjacentHTML()"></a>4.5 insertAdjacentHTML()</h3><h4 id="insertAdjacentHTML-position-string"><a href="#insertAdjacentHTML-position-string" class="headerlink" title="insertAdjacentHTML(position, string)"></a>insertAdjacentHTML(position, string)</h4><ul>
 <li>인자로 전달한 텍스트를 HTML로 파싱하고 그 결과로 생성된 노드를 DOM 트리의 지정된 위치에 삽입한다.</li>
 <li>position : insert position<ul>
 <li>‘beforebegin’</li>
@@ -903,18 +1007,23 @@
 <tbody>
 <tr>
 <td>장점</td>
-<td>DOM 조작 방식에 비해 빠르고 간편하다.<br>간편하게 문자열로 정의한 여러 요소를 DOM에 추가할 수 있다.<br>콘텐츠를 취득할 수 있다.</td>
-<td></td>
-<td></td>
+<td>DOM 조작 방식에 비해 빠르고 간편<br>간편하게 문자열로 정의한 여러 요소를 DOM에 추가할 수 있음<br>콘텐츠를 취득할 수 있음</td>
+<td>특정 노드 한 개(노드, 텍스트, 데이터 등)를 DOM에 추가할 때 적합</td>
+<td>간편하게 문자열로 정의된 여러 요소를 DOM에 추가할 수 있음<br>요소가 삽입되는 위치를 선정할 수 있음</td>
 </tr>
 <tr>
 <td>단점</td>
-<td></td>
-<td></td>
+<td>XSS공격에 취약점이 있기 때문에 사용자로 부터 입력받은 콘텐츠(untrusted data: 댓글, 사용자 이름 등)를 추가할 때 주의해야 함<br>해당 요소의 내용을 덮어 쓴다. 즉, HTML을 다시 파싱한다. 비효율적</td>
+<td>innerHTML보다 느리고 더 많은 코드가 필요</td>
+<td>XSS공격에 취약점이 있기 때문에 사용자로 부터 입력받은 콘텐츠(untrusted data: 댓글, 사용자 이름 등)를 추가할 때 주의해야 함</td>
 </tr>
 </tbody>
 </table>
-<h2 id="5-style-Property"><a href="#5-style-Property" class="headerlink" title="5. style Property"></a>5. style Property</h2><p>stype 프로퍼티를 사용하면 inline style 선언을 생성</p>
+<p>결론적으로 Text를 추가하거나 변경할 때는 textContent, 새로운 element를 추가하거나 삭제할 때는 DOM manipulation 방식(createElement() 등)을 사용한다.</p>
+<h2 id="5-style-Property"><a href="#5-style-Property" class="headerlink" title="5. style Property"></a>5. style Property</h2><p>style 프로퍼티를 사용하면 inline style 선언을 생성한다. 특정 element에 inline style을 지정할 때 사용한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> $four = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'four'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// inline 스타일 선언을 생성</span></span><br><span class="line">$four.style.color = <span class="hljs-string">'blue'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// font-size와 같이 '-'으로 구분되는 프로퍼티는 카멜케이스로 변환해 사용한다.</span></span><br><span class="line">$four.style.fontSize = <span class="hljs-string">'2em'</span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><a href="https://poiemaweb.com/js-dom" target="_blank" rel="noopener">Reference</a></p>
 
         </div>
         

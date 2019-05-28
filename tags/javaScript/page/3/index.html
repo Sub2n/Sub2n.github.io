@@ -180,7 +180,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    13 minutes read (About 1893 words)
+                    14 minutes read (About 2045 words)
                 </span>
                 
                 
@@ -209,7 +209,7 @@
 <li>일반 함수 호출 : this는 window</li>
 <li>메소드 호출 : this는 메소드를 호출한 객체</li>
 <li>생성자 함수 호출 : this는 생성할 instance</li>
-<li>Function.prototype.apply/call/bind 메소드에 의한 간접 호출 (??)</li>
+<li>Function.prototype.apply/call/bind 메소드에 의한 간접 호출</li>
 </ol>
 <h2 id="2-1-General-Function-Call"><a href="#2-1-General-Function-Call" class="headerlink" title="2.1. General Function Call"></a>2.1. General Function Call</h2><p><strong>일반 함수로 호출된 함수 내부의 this</strong>에는 <strong>전역 객체(Global Object)</strong>가 바인딩된다.</p>
 <p>전역 함수는 물론 <strong>중첩 함수를 일반 함수로 호출했을 때에도 함수 내부의 this에는 전역 객체가 바인딩</strong>된다. 일반 함수에서는 this로 객체의 프로퍼티나 메소드를 참조할 일이 없으므로 this에 의미가 없다.</p>
@@ -274,6 +274,8 @@
 </tr>
 </tbody>
 </table>
+<h2 id="3-this-in-Arrow-Function"><a href="#3-this-in-Arrow-Function" class="headerlink" title="3. this in Arrow Function"></a>3. this in Arrow Function</h2><p>일반 함수는 함수를 선언할 때 this에 바인딩할 객체가 정적으로 결정되는 것이 아니고, 함수를 호출할 때 함수가 어떻게 호출되었는지에 따라 this에 바인딩할 객체가 동적으로 결정된다.</p>
+<p>화살표 함수는 <strong>함수를 선언할 때 this에 바인딩할 객체가 정적으로 결정</strong>된다. 동적으로 결정되는 일반 함수와는 달리 <strong>화살표 함수의 this 언제나 상위 스코프의 this를 가리킨다.</strong> 이를 <strong>Lexical this</strong>라 한다. </p>
 
         </div>
         
