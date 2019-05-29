@@ -3381,7 +3381,47 @@ document.addEventListener('DOMContentLoaded', function () {
 <link rel="stylesheet" href="/css/insight.css">
     
 </body>
-</html>span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> $four = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'four'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// inline 스타일 선언을 생성</span></span><br><span class="line">$four.style.color = <span class="hljs-string">'blue'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// font-size와 같이 '-'으로 구분되는 프로퍼티는 카멜케이스로 변환해 사용한다.</span></span><br><span class="line">$four.style.fontSize = <span class="hljs-string">'2em'</span>;</span><br></pre></td></tr></table></figure>
+</html>="#4-5-insertAdjacentHTML" class="headerlink" title="4.5 insertAdjacentHTML()"></a>4.5 insertAdjacentHTML()</h3><h4 id="insertAdjacentHTML-position-string"><a href="#insertAdjacentHTML-position-string" class="headerlink" title="insertAdjacentHTML(position, string)"></a>insertAdjacentHTML(position, string)</h4><ul>
+<li>인자로 전달한 텍스트를 HTML로 파싱하고 그 결과로 생성된 노드를 DOM 트리의 지정된 위치에 삽입한다.</li>
+<li>position : insert position<ul>
+<li>‘beforebegin’</li>
+<li>‘afterbegin’</li>
+<li>‘beforeend’</li>
+<li>‘afterend’</li>
+</ul>
+</li>
+<li>string: 삽입할 element string</li>
+</ul>
+<ul>
+<li>모든 브라우저에서 동작</li>
+</ul>
+<h4 id="4-6-innerHTML-vs-DOM-manipulation-vs-insertAdjacentHTML"><a href="#4-6-innerHTML-vs-DOM-manipulation-vs-insertAdjacentHTML" class="headerlink" title="4.6. innerHTML vs. DOM manipulation vs. insertAdjacentHTML()"></a>4.6. innerHTML vs. DOM manipulation vs. insertAdjacentHTML()</h4><table>
+<thead>
+<tr>
+<th>장단점</th>
+<th>innerHTML</th>
+<th>DOM manipulation</th>
+<th>insertAdjacentHTML()</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>장점</td>
+<td>DOM 조작 방식에 비해 빠르고 간편<br>간편하게 문자열로 정의한 여러 요소를 DOM에 추가할 수 있음<br>콘텐츠를 취득할 수 있음</td>
+<td>특정 노드 한 개(노드, 텍스트, 데이터 등)를 DOM에 추가할 때 적합</td>
+<td>간편하게 문자열로 정의된 여러 요소를 DOM에 추가할 수 있음<br>요소가 삽입되는 위치를 선정할 수 있음</td>
+</tr>
+<tr>
+<td>단점</td>
+<td>XSS공격에 취약점이 있기 때문에 사용자로 부터 입력받은 콘텐츠(untrusted data: 댓글, 사용자 이름 등)를 추가할 때 주의해야 함<br>해당 요소의 내용을 덮어 쓴다. 즉, HTML을 다시 파싱한다. 비효율적</td>
+<td>innerHTML보다 느리고 더 많은 코드가 필요</td>
+<td>XSS공격에 취약점이 있기 때문에 사용자로 부터 입력받은 콘텐츠(untrusted data: 댓글, 사용자 이름 등)를 추가할 때 주의해야 함</td>
+</tr>
+</tbody>
+</table>
+<p>결론적으로 Text를 추가하거나 변경할 때는 textContent, 새로운 element를 추가하거나 삭제할 때는 DOM manipulation 방식(createElement() 등)을 사용한다.</p>
+<h2 id="5-style-Property"><a href="#5-style-Property" class="headerlink" title="5. style Property"></a>5. style Property</h2><p>style 프로퍼티를 사용하면 inline style 선언을 생성한다. 특정 element에 inline style을 지정할 때 사용한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> $four = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'four'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// inline 스타일 선언을 생성</span></span><br><span class="line">$four.style.color = <span class="hljs-string">'blue'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// font-size와 같이 '-'으로 구분되는 프로퍼티는 카멜케이스로 변환해 사용한다.</span></span><br><span class="line">$four.style.fontSize = <span class="hljs-string">'2em'</span>;</span><br></pre></td></tr></table></figure>
 <h3 id="6-DOM-load-“DOMContentLoaded”-event"><a href="#6-DOM-load-“DOMContentLoaded”-event" class="headerlink" title="6. DOM load, “DOMContentLoaded” event"></a>6. DOM load, “DOMContentLoaded” event</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getTodos</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">// DOM parsing 되고 resource도 로드됐을 때 발생하는 event</span></span><br><span class="line"><span class="hljs-built_in">window</span>.onload = getTodos;</span><br><span class="line"><span class="hljs-comment">// getTodos에 argument 넘길 수 있음</span></span><br><span class="line"><span class="hljs-built_in">window</span>.onload = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    getTodos;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>DOMContentLoaded는 리소스 상관 없이 DOM parsing만 완료되었을 때 발생하는 event</p>
 <hr>
