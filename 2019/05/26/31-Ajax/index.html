@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="1. Ajax (Asynchronous JavaScript and XML)브라우저에서 웹페이지를 요청하거나 링크를 클릭하면 서버에서 요청받은 페이지(HTML)을 반환한다. 이 때 HTML에서 로드하는 CSS나 JavaScript 파일도 함께 반환한다. 서버에서 웹페이지를 받으면 브라우저는 파일을 렌더링해서 화면에 표시한다. Ajax(Asynchronous">
+    <meta name="description" content="1. Ajax (Asynchronous JavaScript and XML)브라우저에서 웹페이지를 요청하거나 링크를 클릭하면 서버에서 요청받은 페이지(HTML)을 반환한다. 이 때 HTML에서 로드하는 CSS나 JavaScript 파일도 함께 반환한다. 서버에서 웹페이지를 받으면 브라우저는 파일을 렌더링해서 화면에 표시한다. URI이 바뀌면 전체 화면 렌더링">
 <meta name="keywords" content="JavaScript,Ajax">
 <meta property="og:type" content="article">
 <meta property="og:title" content="31. Ajax">
 <meta property="og:url" content="https://sub2n.github.io/2019/05/26/31-Ajax/index.html">
 <meta property="og:site_name" content="수빈 개발블로그">
-<meta property="og:description" content="1. Ajax (Asynchronous JavaScript and XML)브라우저에서 웹페이지를 요청하거나 링크를 클릭하면 서버에서 요청받은 페이지(HTML)을 반환한다. 이 때 HTML에서 로드하는 CSS나 JavaScript 파일도 함께 반환한다. 서버에서 웹페이지를 받으면 브라우저는 파일을 렌더링해서 화면에 표시한다. Ajax(Asynchronous">
+<meta property="og:description" content="1. Ajax (Asynchronous JavaScript and XML)브라우저에서 웹페이지를 요청하거나 링크를 클릭하면 서버에서 요청받은 페이지(HTML)을 반환한다. 이 때 HTML에서 로드하는 CSS나 JavaScript 파일도 함께 반환한다. 서버에서 웹페이지를 받으면 브라우저는 파일을 렌더링해서 화면에 표시한다. URI이 바뀌면 전체 화면 렌더링">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
-<meta property="og:updated_time" content="2019-05-28T11:20:49.688Z">
+<meta property="og:updated_time" content="2019-05-29T05:27:51.227Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="31. Ajax">
-<meta name="twitter:description" content="1. Ajax (Asynchronous JavaScript and XML)브라우저에서 웹페이지를 요청하거나 링크를 클릭하면 서버에서 요청받은 페이지(HTML)을 반환한다. 이 때 HTML에서 로드하는 CSS나 JavaScript 파일도 함께 반환한다. 서버에서 웹페이지를 받으면 브라우저는 파일을 렌더링해서 화면에 표시한다. Ajax(Asynchronous">
+<meta name="twitter:description" content="1. Ajax (Asynchronous JavaScript and XML)브라우저에서 웹페이지를 요청하거나 링크를 클릭하면 서버에서 요청받은 페이지(HTML)을 반환한다. 이 때 HTML에서 로드하는 CSS나 JavaScript 파일도 함께 반환한다. 서버에서 웹페이지를 받으면 브라우저는 파일을 렌더링해서 화면에 표시한다. URI이 바뀌면 전체 화면 렌더링">
 <meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
 
 
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    13 minutes read (About 1983 words)
+                    14 minutes read (About 2087 words)
                 </span>
                 
                 
@@ -183,15 +183,18 @@
             
         </h1>
         <div class="content">
-            <h3 id="1-Ajax-Asynchronous-JavaScript-and-XML"><a href="#1-Ajax-Asynchronous-JavaScript-and-XML" class="headerlink" title="1. Ajax (Asynchronous JavaScript and XML)"></a>1. Ajax (Asynchronous JavaScript and XML)</h3><p>브라우저에서 웹페이지를 요청하거나 링크를 클릭하면 서버에서 요청받은 페이지(HTML)을 반환한다. 이 때 HTML에서 로드하는 CSS나 JavaScript 파일도 함께 반환한다. 서버에서 웹페이지를 받으면 브라우저는 파일을 렌더링해서 화면에 표시한다.</p>
-<h4 id="Ajax-Asynchronous-JavaScript-and-XML"><a href="#Ajax-Asynchronous-JavaScript-and-XML" class="headerlink" title="Ajax(Asynchronous JavaScript and XML)"></a>Ajax(Asynchronous JavaScript and XML)</h4><p>자바스크립트를 이용해서 Asynchronous하게 서버와 브라우저가 데이터를 교환할 수 있는 통신 방식</p>
-<p>Ajax는 서버로부터 웹페이지를 받아서 화면 전체를 다시 그리는 것이 아니라, 페이지 일부만 갱신할 수 있게 한다.</p>
+            <h3 id="1-Ajax-Asynchronous-JavaScript-and-XML"><a href="#1-Ajax-Asynchronous-JavaScript-and-XML" class="headerlink" title="1. Ajax (Asynchronous JavaScript and XML)"></a>1. Ajax (Asynchronous JavaScript and XML)</h3><p>브라우저에서 웹페이지를 요청하거나 링크를 클릭하면 서버에서 요청받은 페이지(HTML)을 반환한다. 이 때 HTML에서 로드하는 CSS나 JavaScript 파일도 함께 반환한다. 서버에서 웹페이지를 받으면 브라우저는 파일을 렌더링해서 화면에 표시한다. <strong>URI이 바뀌면 전체 화면 렌더링을 다시해야해</strong>서 화면이 깜빡하는 문제가 있다.</p>
+<h4 id="Ajax-Asynchronous-JavaScript-and-XML"><a href="#Ajax-Asynchronous-JavaScript-and-XML" class="headerlink" title="Ajax(Asynchronous JavaScript and XML)"></a>Ajax(Asynchronous JavaScript and XML)</h4><ul>
+<li>XML : JSON이 나오기 이전에 서버와 Data를 주고받기 위해 사용됨</li>
+</ul>
+<p>자바스크립트를 이용해서 Asynchronous하게 서버와 브라우저가 데이터를 교환할 수 있는 통신 방식</p>
+<p>Ajax는 서버로부터 웹페이지를 받아서 <strong>화면 전체를 다시 그리는 것이 아니라, 페이지 일부만 갱신</strong>할 수 있게 한다.</p>
 <p>페이지 전체를 로드해서 렌더링할 필요가 없으므로 퍼포먼스가 빨라지고 화면 표시 효과가 부드러워진다.</p>
 <h3 id="2-JSON-JavaScript-Object-Notation"><a href="#2-JSON-JavaScript-Object-Notation" class="headerlink" title="2. JSON (JavaScript Object Notation)"></a>2. JSON (JavaScript Object Notation)</h3><p><strong>JSON</strong>은 클라이언트와 서버 간 데이터 교환을 위한 규칙. 즉, <strong>데이터 포맷</strong>이다.</p>
 <p>JSON은 일반 텍스트 포맷보다 효과적으로 데이터를 구조화할 수 있다.</p>
 <p>XML 포맷보다 가볍고 사용하기 간편하고 가독성이 우수하다.</p>
-<p>자바스크립트의 객체 리터럴과 비슷하지만 JSON은 순수한 텍스트로 구성된 규칙이 있는 Data Structure이다.</p>
-<figure class="highlight json hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="hljs-attr">"id"</span> : <span class="hljs-number">1</span>,</span><br><span class="line">    <span class="hljs-attr">"name"</span> : <span class="hljs-string">"Park"</span>,</span><br><span class="line">    <span class="hljs-attr">"checked"</span> : <span class="hljs-literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>자바스크립트의 객체 리터럴과 비슷하지만 <strong>JSON은 순수한 텍스트</strong>로 구성된 규칙이 있는 Data Structure이다. JSON은 String이다.</p>
+<figure class="highlight json hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,</span><br><span class="line">    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Park"</span>,</span><br><span class="line">    <span class="hljs-attr">"checked"</span>: <span class="hljs-literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>JSON에서 Key는 반드시 <code>&quot; &quot;</code>로 둘러싸야 한다.</strong> (‘ ‘ 사용 불가)</p>
 <h4 id="2-1-JSON-stiringify"><a href="#2-1-JSON-stiringify" class="headerlink" title="2.1. JSON.stiringify"></a>2.1. JSON.stiringify</h4><p>JSON.stringify 메소드는 객체를 JSON 형식 string으로 변환한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">const</span> hospitalKey = <span class="hljs-string">'hospital'</span>;</span><br><span class="line">  <span class="hljs-keyword">const</span> partskey = <span class="hljs-string">'parts'</span>;</span><br><span class="line">    ...</span><br><span class="line">  localStorage.setItem(hospitalkey,<span class="hljs-built_in">JSON</span>.stringify(hospital));</span><br><span class="line">  localStorage.setItem(partskey, <span class="hljs-built_in">JSON</span>.stringify(parts));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -199,7 +202,7 @@
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkSelectedPart</span>(<span class="hljs-params">part</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">const</span> parts = <span class="hljs-built_in">JSON</span>.parse(localStorage.getItem(partskey));</span><br><span class="line">    <span class="hljs-keyword">let</span> checkedPart;</span><br><span class="line">    parts.forEach(<span class="hljs-function"><span class="hljs-params">element</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (element.id === part) &#123;</span><br><span class="line">            element.checked = <span class="hljs-literal">true</span>;</span><br><span class="line">            checkedPart = element;</span><br><span class="line">        &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">            element.checked = <span class="hljs-literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    localStorage.setItem(partskey, <span class="hljs-built_in">JSON</span>.stringify(parts));</span><br><span class="line">    showParts(checkedPart);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>서버에서 브라우저로 전송하는 JSON 데이터는 모두 string이다. 이 string을 자바스크립트의 객체로 사용하기 위해서는 Internal Object인 JSON의 static 메소드 JSON.parse를 사용한다.</p>
 <p>JSON.stringify가 encoding / serialization이면 JSON.parse는 decoding / deserialization이다.</p>
-<h3 id="3-XMLHttpRequest"><a href="#3-XMLHttpRequest" class="headerlink" title="3. XMLHttpRequest"></a>3. XMLHttpRequest</h3><p>브라우저는 XMLHttpRequest 객체를 이용해 Ajax Request를 생성하고 전송한다. 서버가 브라우저의 Request에 Response하면 Ajax Request를 생성했던 XMLHttpRequest 객체가 결과를 처리한다.</p>
+<h3 id="3-XMLHttpRequest"><a href="#3-XMLHttpRequest" class="headerlink" title="3. XMLHttpRequest"></a>3. XMLHttpRequest</h3><p>브라우저는 <strong>XMLHttpRequest 객체를 이용해 Ajax Request를 생성하고 전송</strong>한다. 서버가 브라우저의 Request에 Response하면 Ajax Request를 생성했던 XMLHttpRequest 객체가 결과를 처리한다.</p>
 <h3 id="3-1-Ajax-Request"><a href="#3-1-Ajax-Request" class="headerlink" title="3.1. Ajax Request"></a>3.1. Ajax Request</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// XMLHttpRequest 객체의 생성</span></span><br><span class="line"><span class="hljs-keyword">var</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();</span><br><span class="line"><span class="hljs-comment">// 비동기 방식으로 Request를 오픈한다</span></span><br><span class="line">xhr.open(<span class="hljs-string">'GET'</span>, <span class="hljs-string">'/users'</span>);</span><br><span class="line"><span class="hljs-comment">// Request를 전송한다</span></span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure>
 <h4 id="XMLHttpRequest-open"><a href="#XMLHttpRequest-open" class="headerlink" title="XMLHttpRequest.open"></a>XMLHttpRequest.open</h4><p>new 연산자로 XMLHttpRequest 객체의 인스턴스를 생성 후, XMLHttpRequest.open 메소드를 사용해서 서버로 보낼 Request를 오픈한다.</p>
 <p><strong>XMLHttpRequest.open(method, url[, async])</strong></p>
@@ -300,7 +303,11 @@
 </tbody>
 </table>
 <p>XMLHttpRequest.status로 Response를 분석할 수 있다.</p>
-<h3 id="4-Web-Server"><a href="#4-Web-Server" class="headerlink" title="4.  Web Server"></a>4.  Web Server</h3><p>웹서버(Web Server)는 브라우저와 같은 클라이언트로부터 HTTP 요청을 받아들이고 HTML 문서와 같은 웹 페이지를 반환하는 컴퓨터 프로그램이다.</p>
+<h3 id="4-Web-Server"><a href="#4-Web-Server" class="headerlink" title="4.  Web Server"></a>4.  Web Server</h3><blockquote>
+<h4 id="Web-Server"><a href="#Web-Server" class="headerlink" title="Web Server"></a>Web Server</h4><p>HTML, CSS, JavaScript, img, XML 등 client가 요청하는 Static file(resource)를 제공</p>
+<h4 id="Application-Server"><a href="#Application-Server" class="headerlink" title="Application Server"></a>Application Server</h4><p>Static resource를 제공할 수 있는 기능은 물론 REST API를 처리할 수 있다.</p>
+</blockquote>
+<p>웹서버(Web Server)는 브라우저와 같은 클라이언트로부터 HTTP 요청을 받아들이고 HTML 문서와 같은 웹 페이지를 반환하는 컴퓨터 프로그램이다.</p>
 <p>Node.js로 간단한 웹서버를 생성해서 Ajax 실습을 해보자.</p>
 <p><img src="https://user-images.githubusercontent.com/48080762/58472479-4a5ec580-8181-11e9-81b9-ec94d9c68ccd.png" alt="Express Server"></p>
 <p><a href="http://localhost:3000/" target="_blank" rel="noopener">http://localhost:3000</a>에서 Hello World!를 표시하면 성공</p>

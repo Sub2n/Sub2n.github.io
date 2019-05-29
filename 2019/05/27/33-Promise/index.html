@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="What is Promise?자바스크립트는 비동기 처리를 위해서 callback 함수 패턴을 사용한다. 그러나 callback 패턴은 가독성이 나쁘고 에러의 예외 처리가 곤란하다. ES6에서 Asynchronous processing을 위한 패턴으로 Promise를 도입했다.  1. Disadvantages of Callback Pattern1.1. Cal">
+    <meta name="description" content="What is Promise?자바스크립트는 비동기 처리를 위해서 callback 함수 패턴을 사용한다. 그러나 callback 패턴은 가독성이 나쁘고 에러의 예외 처리가 곤란하다. ES6에서 Asynchronous processing을 위한 패턴으로 Promise를 도입했다.  Promise는 비동기 처리를 하고 Response가 오면 해야할 일을 약속하는">
 <meta name="keywords" content="JavaScript,Promise">
 <meta property="og:type" content="article">
 <meta property="og:title" content="33. Promise">
 <meta property="og:url" content="https://sub2n.github.io/2019/05/27/33-Promise/index.html">
 <meta property="og:site_name" content="수빈 개발블로그">
-<meta property="og:description" content="What is Promise?자바스크립트는 비동기 처리를 위해서 callback 함수 패턴을 사용한다. 그러나 callback 패턴은 가독성이 나쁘고 에러의 예외 처리가 곤란하다. ES6에서 Asynchronous processing을 위한 패턴으로 Promise를 도입했다.  1. Disadvantages of Callback Pattern1.1. Cal">
+<meta property="og:description" content="What is Promise?자바스크립트는 비동기 처리를 위해서 callback 함수 패턴을 사용한다. 그러나 callback 패턴은 가독성이 나쁘고 에러의 예외 처리가 곤란하다. ES6에서 Asynchronous processing을 위한 패턴으로 Promise를 도입했다.  Promise는 비동기 처리를 하고 Response가 오면 해야할 일을 약속하는">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
-<meta property="og:updated_time" content="2019-05-28T12:38:28.551Z">
+<meta property="og:updated_time" content="2019-05-29T04:17:47.378Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="33. Promise">
-<meta name="twitter:description" content="What is Promise?자바스크립트는 비동기 처리를 위해서 callback 함수 패턴을 사용한다. 그러나 callback 패턴은 가독성이 나쁘고 에러의 예외 처리가 곤란하다. ES6에서 Asynchronous processing을 위한 패턴으로 Promise를 도입했다.  1. Disadvantages of Callback Pattern1.1. Cal">
+<meta name="twitter:description" content="What is Promise?자바스크립트는 비동기 처리를 위해서 callback 함수 패턴을 사용한다. 그러나 callback 패턴은 가독성이 나쁘고 에러의 예외 처리가 곤란하다. ES6에서 Asynchronous processing을 위한 패턴으로 Promise를 도입했다.  Promise는 비동기 처리를 하고 Response가 오면 해야할 일을 약속하는">
 <meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
 
 
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    11 minutes read (About 1584 words)
+                    11 minutes read (About 1610 words)
                 </span>
                 
                 
@@ -184,6 +184,7 @@
         </h1>
         <div class="content">
             <h2 id="What-is-Promise"><a href="#What-is-Promise" class="headerlink" title="What is Promise?"></a>What is Promise?</h2><p>자바스크립트는 비동기 처리를 위해서 callback 함수 패턴을 사용한다. 그러나 callback 패턴은 가독성이 나쁘고 <strong>에러의 예외 처리가 곤란</strong>하다. ES6에서 Asynchronous processing을 위한 패턴으로 Promise를 도입했다. </p>
+<p>Promise는 비동기 처리를 하고 Response가 오면 해야할 일을 약속하는 것이다.</p>
 <h2 id="1-Disadvantages-of-Callback-Pattern"><a href="#1-Disadvantages-of-Callback-Pattern" class="headerlink" title="1. Disadvantages of Callback Pattern"></a>1. Disadvantages of Callback Pattern</h2><h3 id="1-1-Callback-Hell"><a href="#1-1-Callback-Hell" class="headerlink" title="1.1. Callback Hell"></a>1.1. Callback Hell</h3><p>자바스크립트의 Asynchronous Processing Model(non-blocking)은 task를 parallel 처리해서 다른 task가 blocking되지 않는다는 장점이 있다.</p>
 <p>그러나 callback 패턴을 사용하면 processing 순서를 위해서 여러 개의 callback 함수가 nesting되어 프로그래밍의 복잡도가 높아진다. 그래서 Callback Hell이 발생한다.</p>
 <p>비동기 함수(asynchronous function)의 경우 언제 Request에 대한 Response가 올지 알 수 없으므로 비동기 함수의 처리 결과를 가지고 무언가를 해야할 경우 해당 함수의 callback 함수 내에서 처리해야한다. 이로 인해서 중첩이 계속되어 callback hell이 발생한다.</p>
