@@ -197,7 +197,7 @@
 <h3 id="1-REST-API-중심-규칙"><a href="#1-REST-API-중심-규칙" class="headerlink" title="1. REST API 중심 규칙"></a>1. REST API 중심 규칙</h3><h4 id="1-URI는-정보의-자원을-표현해야-한다"><a href="#1-URI는-정보의-자원을-표현해야-한다" class="headerlink" title="1) URI는 정보의 자원을 표현해야 한다."></a>1) URI는 정보의 자원을 표현해야 한다.</h4><p>리소스명으로 동사보다는 명사를 사용</p>
 <p>URI는 자원을 표현하는 데 중점 두어야 함</p>
 <h4 id="2-자원에-대한-행위는-HTTP-Method-GET-POST-PUT-DELETE-등-로-표현한다"><a href="#2-자원에-대한-행위는-HTTP-Method-GET-POST-PUT-DELETE-등-로-표현한다" class="headerlink" title="2) 자원에 대한 행위는 HTTP Method(GET, POST, PUT, DELETE 등)로 표현한다."></a>2) 자원에 대한 행위는 HTTP Method(GET, POST, PUT, DELETE 등)로 표현한다.</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># bad</span><br><span class="line">GET /books/delete/1</span><br><span class="line"></span><br><span class="line"># good</span><br><span class="line">DELETE /books/1</span><br></pre></td></tr></table></figure>
-<h3 id="2-HTTP-Method"><a href="#2-HTTP-Method" class="headerlink" title="2. HTTP Method"></a>2. HTTP Method</h3><p>주로 5자리 Method를 사용해서 CRUD (Create, Read, Update, Delete) 구현</p>
+<h3 id="2-HTTP-Method"><a href="#2-HTTP-Method" class="headerlink" title="2. HTTP Method"></a>2. HTTP Method</h3><p>주로 5자리 Method를 사용해서 <strong>CRUD</strong> (Create, Read, Update, Delete) 구현</p>
 <table>
 <thead>
 <tr>
