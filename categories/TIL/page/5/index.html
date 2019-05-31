@@ -162,6 +162,65 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/04/18/190418-TIL/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="190418-TIL">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-18T11:47:31.000Z">2019-04-18</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 182 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/18/190418-TIL/">190418-TIL</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><h2 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h2><ul>
+<li><p>Epsilon, Number Digit 등 컴퓨터에서 실수를 표현하는 방식과 상대오차에 대해서 깊게 배웠다.</p>
+</li>
+<li><p>실수형의 논리비교를 위한 is_equal 함수를 만들었다.</p>
+  <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">is_equal</span>(<span class="hljs-params">x, y, allowed=<span class="hljs-number">0</span></span>)</span>&#123;</span><br><span class="line">	<span class="hljs-comment">// 둘 중 큰 수의 다음 숫자와의 오차의 allowed 배 정도 되는 범위 안에 있으면 같다고 판단한다.</span></span><br><span class="line">	<span class="hljs-keyword">return</span> (<span class="hljs-built_in">Math</span>.abs(x-y) &lt;= <span class="hljs-built_in">Math</span>.max(<span class="hljs-built_in">Math</span>.abs(x), <span class="hljs-built_in">Math</span>.abs(y))*<span class="hljs-built_in">Number</span>.EPSILON*<span class="hljs-built_in">Math</span>.pow(<span class="hljs-number">2</span>, allowed));</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">	<span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>;</span><br><span class="line">	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i =<span class="hljs-number">0</span>; i&lt; <span class="hljs-number">100</span>; i++)&#123;</span><br><span class="line">		sum += <span class="hljs-number">0.01</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-keyword">if</span>(is_equal(sum, <span class="hljs-number">1.0</span>, <span class="hljs-number">2</span>))&#123;</span><br><span class="line">		<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"THE SAME"</span>);</span><br><span class="line">	&#125; <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">		<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"NOT THE SAME"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Python을 배우는데 너무 재미있다. 익숙하지 않아 찾아보는 것이 번거롭지만 문법이나 기능이 흥미롭다.</p>
+</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/04/17/190417-TIL/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/light.png" alt="190417-TIL">
         </a>
@@ -444,92 +503,6 @@
 <li><p>HEXO 테마를 바꿨다. 이제 정말 마지막이다!</p>
 </li>
 </ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/11/190411-TIL/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/tullip.png" alt="190411-TIL">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-11T09:22:17.000Z">2019-04-11</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 632 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/11/190411-TIL/">190411-TIL</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><h3 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h3><ul>
-<li>Web Cafe의 새소식 영역을 <code>&lt;section&gt;</code>과 <code>&lt;article&gt;</code>을 이용해 Markup 했다.</li>
-</ul>
-<figure><br>  <img src="https://user-images.githubusercontent.com/48080762/55950492-06c30180-5c90-11e9-929d-0bc80b3c8f8a.jpg" alt="새소식" width="400px"><br>  <figcaption>[Web Cafe 새소식 영역]</figcaption><br></figure>
-
-
-<figure><br>  <img src="https://user-images.githubusercontent.com/48080762/55950705-79cc7800-5c90-11e9-806e-0d8d3fa840bf.jpg" alt="디자인" width="600px"><br>  <figcaption>[Markup Design]</figcaption><br></figure>
-
-
-<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">&lt;!-- news section HTML Code --&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"news"</span>&gt;</span></span><br><span class="line">	<span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"news-heading"</span>&gt;</span>새소식<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span></span><br><span class="line">	<span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"news-item"</span>&gt;</span></span><br><span class="line">		<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span></span><br><span class="line">			<span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"news-item-subject"</span>&gt;</span>W3C 사이트가 리뉴얼 되었습니다.<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span></span><br><span class="line">			<span class="hljs-tag">&lt;<span class="hljs-name">time</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"news-item-date"</span> <span class="hljs-attr">datetime</span>=<span class="hljs-string">"2019-04-11T11:19:37"</span>&gt;</span>2019.04.11<span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span></span><br><span class="line">			<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"news-item-brief"</span>&gt;</span></span><br><span class="line">				디자인 및 다양한 view 환경을 고려하여 구성되어 있으며, 기존보다 최신 정보 및 개발자를 위한 기술 가이드도 찾기 쉽도록 구성되어 있습니다. </span><br><span class="line">			<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="line">			<span class="hljs-tag">&lt;<span class="hljs-name">figure</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"news-item-thumbnail"</span>&gt;</span></span><br><span class="line">				<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/news.gif"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span></span><br><span class="line">				<span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span>&gt;</span>W3C 리뉴얼<span class="hljs-tag">&lt;/<span class="hljs-name">figcaption</span>&gt;</span></span><br><span class="line">			<span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span></span><br><span class="line">		<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><br><span class="line">	<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></span><br><span class="line">	<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"news-more icon-plus"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span>더보기<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>: 처음으로 <code>&lt;article&gt;</code>과 <code>&lt;figure&gt;</code> tag를 써봤다. </p>
-<p><code>&lt;section&gt;</code> 내에 <code>&lt;article&gt;</code>을 nesting하는 것은 신문의 스포츠 섹션에 단일 기사를 싣는 것과 같다는 글을 읽어 이해가 쉬웠다.</p>
-<p>Semantic HTML을 접하고 처음 <code>&lt;div&gt;</code> 범벅이던 코드를 만났을 때보다 훨씬 이해가 쉽고 직관적으로 구조를 짤 수 있게 된 기분이 든다.</p>
-<blockquote>
-<p>HTML5부터 inline인 <code>&lt;a&gt;</code> 안에 block 요소등을 넣을 수 있게 됐다. 그러나 focus를 받을 때 다음과 같은 문제가 생길 수 있다.</p>
-</blockquote>
-  <figure><br>    <img src="https://user-images.githubusercontent.com/48080762/55951195-9e751f80-5c91-11e9-819a-d4b266881b50.png" alt width="400px"><br>    <figcaption>‘2019.04.11’이 inline인 time tag라서 그 부분이 들어간 모습</figcaption><br>  </figure>
-
-<p>  이는 <code>&lt;a&gt;</code>의 display를 block으로 바꿔주면 해결할 수 있다.</p>
-<ul>
-<li>Image Replacing and Sprite</li>
-</ul>
-<p>웹 기초 수업 때 instagram 등 Social Media의 로고로 실습을 했던 Image Sprite 기법을 다시 한 번 적용해 Web Cafe 예제를 진행했다.</p>
-<figure><br>  <img src="https://user-images.githubusercontent.com/48080762/55952063-a03fe280-5c93-11e9-816c-d909930a2baf.png" alt="Markup Design" width="570px"><br>  <figcaption>[신규 이벤트 &amp; 관련 사이트 영역]</figcaption><br></figure>
-
-
-<figure><br>  <img src="https://user-images.githubusercontent.com/48080762/55951683-c9ac3e80-5c92-11e9-9f97-8095d0bc2fe5.jpg" alt="Markup Design" width="600px"><br>  <figcaption>[신규 이벤트 &amp; 관련 사이트 Design]</figcaption><br></figure>
-
-<h4 id="Image-Replacement"><a href="#Image-Replacement" class="headerlink" title="Image Replacement"></a>Image Replacement</h4><p>:  image가 들어갈 영역의 크기를 지정해놓고, 해당 높이나 너비만큼 padding을 주고 overflow: hidden 처리를 한 후 image를 sprite로 처리한다.</p>
-<h4 id="Image-Sprite"><a href="#Image-Sprite" class="headerlink" title="Image Sprite"></a>Image Sprite</h4><p>: server가 제공하는 image 최소화하기위해 한 image만 준비하고 background 위치 조정해서 보여주는 것</p>
-<p>: 단점으로 <code>&lt;button&gt;</code>에 focus시 outline이 안 보이는 문제가 있었는데, ARIA를 사용해 role을 주고 button의 textnode를 삭제해 해결했다.</p>
-<figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-class">.btn-event</span>&#123;</span><br><span class="line">	<span class="hljs-attribute">position</span>: absolute;</span><br><span class="line">	<span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;</span><br><span class="line">	<span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;</span><br><span class="line">	<span class="hljs-attribute">height</span>: <span class="hljs-number">18px</span>;</span><br><span class="line">	<span class="hljs-attribute">padding</span>: <span class="hljs-number">2px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-selector-class">.btn-event-prev</span>, <span class="hljs-selector-class">.btn-event-next</span> &#123;</span><br><span class="line">	<span class="hljs-attribute">width</span>: <span class="hljs-number">19px</span>;</span><br><span class="line">	<span class="hljs-attribute">height</span>: <span class="hljs-number">18px</span>;</span><br><span class="line">	<span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;</span><br><span class="line">	<span class="hljs-attribute">border</span>: none;</span><br><span class="line">	<span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(images/back_forward.png);</span><br><span class="line">	<span class="hljs-attribute">background-position</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-selector-class">.btn-event-next</span>&#123;</span><br><span class="line">	<span class="hljs-attribute">background-position</span>: <span class="hljs-number">100%</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="하루를-마무리-하며"><a href="#하루를-마무리-하며" class="headerlink" title="하루를 마무리 하며"></a>하루를 마무리 하며</h4><p>오늘 Semantic HTML과 tag의 효율성 등을 알아보다가 좋은 사이트를 알게 되었다. 많은 도움이 될 것으로 보여 기분이 좋다. 밑에 첨부한다.</p>
-<p>HEXO 테마를 바꾸고 싶은데 마땅히 마음에 드는 게 없어 만들어볼까 생각중이다. 이번 주말을 활용해 알아봐야겠다.</p>
-<hr>
-<p>😊 <a href="https://internetingishard.com/html-and-css/semantic-html" target="_blank" rel="noopener">INTERNETING IS HARD</a> 😊</p>
 
         </div>
         
@@ -869,6 +842,25 @@
         
         <article class="media">
             
+            <a href="/2019/05/29/190529-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/cherry.png" alt="190529-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T09:32:29.000Z">2019-05-29</time></div>
+                    <a href="/2019/05/29/190529-TIL/" class="has-link-black-ter is-size-6">190529-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/05/27/190527-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190527-TIL">
@@ -943,25 +935,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/24/190524-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/teamDoctor.png" alt="190524-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-24T12:23:39.000Z">2019-05-24</time></div>
-                    <a href="/2019/05/24/190524-TIL/" class="has-link-black-ter is-size-6">190524-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -980,7 +953,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">46</span>
+                    <span class="level-item tag">47</span>
                 </span>
             </a>
         </li>
@@ -1002,7 +975,7 @@
                     <span class="level-item">March 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">15</span>
                 </span>
             </a>
         </li>
@@ -1380,7 +1353,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">55</span>
+                        <span class="tag is-grey">56</span>
                     </a>
                 </div>
                 
@@ -1634,6 +1607,25 @@
         
         <article class="media">
             
+            <a href="/2019/05/29/190529-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/cherry.png" alt="190529-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T09:32:29.000Z">2019-05-29</time></div>
+                    <a href="/2019/05/29/190529-TIL/" class="has-link-black-ter is-size-6">190529-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/05/27/190527-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190527-TIL">
@@ -1708,25 +1700,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/24/190524-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/teamDoctor.png" alt="190524-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-24T12:23:39.000Z">2019-05-24</time></div>
-                    <a href="/2019/05/24/190524-TIL/" class="has-link-black-ter is-size-6">190524-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1745,7 +1718,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">46</span>
+                    <span class="level-item tag">47</span>
                 </span>
             </a>
         </li>
@@ -1767,7 +1740,7 @@
                     <span class="level-item">March 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">15</span>
                 </span>
             </a>
         </li>
@@ -2145,7 +2118,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">55</span>
+                        <span class="tag is-grey">56</span>
                     </a>
                 </div>
                 

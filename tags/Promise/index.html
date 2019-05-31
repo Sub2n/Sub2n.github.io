@@ -180,7 +180,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    11 minutes read (About 1724 words)
+                    11 minutes read (About 1675 words)
                 </span>
                 
                 
@@ -201,7 +201,7 @@
 <h3 id="1-2-Error-Handling-Limits"><a href="#1-2-Error-Handling-Limits" class="headerlink" title="1.2. Error Handling Limits"></a>1.2. Error Handling Limits</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">try</span> &#123;</span><br><span class="line">  setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123; <span class="hljs-keyword">throw</span> <span class="hljs-string">'Error!'</span>; &#125;, <span class="hljs-number">1000</span>);</span><br><span class="line">&#125; <span class="hljs-keyword">catch</span> (e) &#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'에러를 캐치하지 못한다..'</span>);</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>setTimeout의 argument로 넘겨주는 callback 함수는 setTimeout이 아닌 다른 곳에서 실행된다. setTimeout은 비동기 함수이므로 호출되는 즉시 종료되어 Call Stack에서 제거된다.</p>
 <p>Exception(예외)는 Caller 방향으로 전파되는데, setTimeout의 callback 함수의 Caller는 setTimeout 함수가 아니므로  catch block에서 exception이 캐치되지 않는다.</p>
-<p>이러한 문제를 보완하기 위해서 ES6에서 Promise를 도입했다. IE를 제외한 대부분의 브라우저가 지원한다.</p>
+<p>이러한 문제를 보완하기 위해서 ES6에서 Promise를 도입했다. IE를 제외한 대부분의 브라우저가 Promise를 지원한다.</p>
 <h2 id="2-Creation-of-Promise"><a href="#2-Creation-of-Promise" class="headerlink" title="2. Creation of Promise"></a>2. Creation of Promise</h2><p>Promise constructor function은 비동기 작업을 수행할 callback 함수를 argument로 전달받는다. 이 callback 함수는 resolve, reject 함수를 argument로 전달받는다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> promise = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="hljs-comment">// Asynchronous process</span></span><br><span class="line">	<span class="hljs-keyword">if</span> (<span class="hljs-comment">/* Asynchronous process Fulilled */</span>) &#123;</span><br><span class="line">        resolve(<span class="hljs-string">'result'</span>);</span><br><span class="line">    &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">        <span class="hljs-comment">/* Asynchronous process Rejected */</span></span><br><span class="line">        reject(<span class="hljs-string">'failure reason'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>Promise는 비동기 처리의 state 정보를 가진다.</p>
@@ -243,9 +243,9 @@
 </blockquote>
 <blockquote>
 <p><code>onFulfilled</code></p>
-<p>​    Promise가 성공했을 때 호출되는 function. <strong>Fulfillment value</strong> (수행 결과) 하나를 argument로 받는다. Promise를 리턴한다.</p>
+<p>​    Promise가 성공했을 때 호출되는 function. <strong>Fulfillment value</strong> (수행 결과)  (Promise의  resolve argument에 넘겨준 response) 하나를 argument로 받는다. Promise를 리턴한다.</p>
 <p><code>onRejected</code></p>
-<p>​    Promise가 거부되었을 때 호출되는 function. <strong>Rejected reason</strong> (에러 이유) 하나를 argument로 받는다. Promise를 리턴한다.</p>
+<p>​    Promise가 거부되었을 때 호출되는 function. <strong>Rejected reason</strong> (에러 이유) (Promise의  regect argument에 넘겨준 error mesagge) 하나를 argument로 받는다. Promise를 리턴한다.</p>
 </blockquote>
 <blockquote>
 <h4 id="catch"><a href="#catch" class="headerlink" title="catch"></a>catch</h4><p><strong>예외(비동기 처리에서 발생한 에러와 then 메소드에서 발생한 에러)가 발생하면 호출</strong>된다.</p>
@@ -255,12 +255,18 @@
 <p><code>onRejected</code></p>
 <p>​    Promise가 거부되었을 때 호출되는 function. Rejected reason을 argument로 받는다.</p>
 </blockquote>
-<h3 id="5-Error-Handling-of-Promise"><a href="#5-Error-Handling-of-Promise" class="headerlink" title="5. Error Handling of Promise"></a>5. Error Handling of Promise</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 비동기 함수 get</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">get</span>(<span class="hljs-params">url</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// Promise 객체의 생성과 반환</span></span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="hljs-comment">// XMLHttpRequest 객체 생성</span></span><br><span class="line">        <span class="hljs-keyword">const</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();</span><br><span class="line"></span><br><span class="line">        <span class="hljs-comment">// 서버 응답 시 호출될 이벤트 핸들러</span></span><br><span class="line">        xhr.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">            <span class="hljs-comment">// 서버 응답 완료</span></span><br><span class="line">            <span class="hljs-keyword">if</span> (xhr.readyState === XMLHttpRequest.DONE) &#123;</span><br><span class="line">                <span class="hljs-keyword">if</span> (xhr.status === <span class="hljs-number">200</span>) &#123; <span class="hljs-comment">// 정상 응답</span></span><br><span class="line">                    <span class="hljs-comment">// resolve 메소드에 처리 결과를 전달</span></span><br><span class="line">                    resolve(xhr.response);</span><br><span class="line">                &#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">// 비정상 응답</span></span><br><span class="line">                    <span class="hljs-comment">// reject 메소드에 에러 메시지를 전달</span></span><br><span class="line">                    reject(<span class="hljs-string">'Error: '</span> + xhr.status);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-comment">// 비동기 방식으로 Request를 오픈한다</span></span><br><span class="line">        xhr.open(<span class="hljs-string">'GET'</span>, url);</span><br><span class="line">        <span class="hljs-comment">// Request를 전송한다</span></span><br><span class="line">        xhr.send();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> url = <span class="hljs-string">'http://jsonplaceholder.typicode.com/posts/1'</span>;</span><br><span class="line"><span class="hljs-keyword">get</span>(url)</span><br><span class="line">  .then(result =&gt; document.getElementById('result').innerHTML = result)</span><br><span class="line">  .catch(error =&gt; console.log(error));</span><br></pre></td></tr></table></figure>
-<p>비동기 함수 get 내부의 비동기 처리시 발생한 에러 메시지는 get이 리턴하는 Promise object의 then 메소드의 두번째 argument callback 함수나 catch 메소드로 처리한다.</p>
+<h3 id="5-Error-Handling-of-Promise"><a href="#5-Error-Handling-of-Promise" class="headerlink" title="5. Error Handling of Promise"></a>5. Error Handling of Promise</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> $result = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.result'</span>);</span><br><span class="line"><span class="hljs-keyword">const</span> render = <span class="hljs-function"><span class="hljs-params">content</span> =&gt;</span> &#123; $result.innerHTML = <span class="hljs-built_in">JSON</span>.stringify(content, <span class="hljs-literal">null</span>, <span class="hljs-number">2</span>) &#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> promiseAjax = <span class="hljs-function">(<span class="hljs-params">method, url, callback, payload</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">const</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();</span><br><span class="line">        xhr.open(method, url);</span><br><span class="line">        xhr.setRequestHeader(<span class="hljs-string">'Content-type'</span>, <span class="hljs-string">'application/json'</span>);</span><br><span class="line">        xhr.send(<span class="hljs-built_in">JSON</span>.stringify(payload));  <span class="hljs-comment">// undefined를 strungify하면 undefined (string 아님)</span></span><br><span class="line">        xhr.onreadystatechange = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span> (xhr.readyState !== XMLHttpRequest.DONE) <span class="hljs-keyword">return</span>;</span><br><span class="line">            <span class="hljs-keyword">if</span> (xhr.status &gt;= <span class="hljs-number">200</span> &amp;&amp; xhr.status &lt; <span class="hljs-number">400</span>) &#123; <span class="hljs-comment">// 200: GET ok, 201: POST ok</span></span><br><span class="line">                <span class="hljs-comment">// 성공 =&gt; resolve</span></span><br><span class="line">                resolve(<span class="hljs-built_in">JSON</span>.parse(xhr.response));</span><br><span class="line">            &#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">// 실패 =&gt; reject</span></span><br><span class="line">                reject(<span class="hljs-string">`<span class="hljs-subst">$&#123;xhr.status&#125;</span> <span class="hljs-subst">$&#123;xhr.statusText&#125;</span>`</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">promiseAjax(<span class="hljs-string">'GET'</span>, <span class="hljs-string">'http://localhost:3000/todos'</span>)</span><br><span class="line">      .then(render)</span><br><span class="line">      .catch(<span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`ERROR!: <span class="hljs-subst">$&#123;error&#125;</span>`</span>));</span><br></pre></td></tr></table></figure>
+<p>비동기 함수 promiseAjax 내부의 비동기 처리시 발생한 에러 메시지는 promiseAjax이 리턴하는 Promise object의 then 메소드의 두번째 argument callback 함수나 catch 메소드로 처리한다.</p>
 <p>catch 메소드는 then의 두번째 argument callback 함수와 똑같이 에러를 처리하지만, then 뒤에 호출되어 then 내부에서 발생한 에러도 캐치할 수 있다. 따라서 <strong>에러 처리는 catch 메소드를 사용하는 게 효율적</strong>이다.</p>
+<blockquote>
+<h4 id="Async-amp-Await-이용"><a href="#Async-amp-Await-이용" class="headerlink" title="Async &amp; Await 이용"></a>Async &amp; Await 이용</h4><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">&gt;     <span class="hljs-keyword">try</span> &#123;</span><br><span class="line">&gt;         <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> promiseAjax(<span class="hljs-string">'GET'</span>, <span class="hljs-string">'http://localhost:3000/todos'</span>);</span><br><span class="line">&gt;         render(res);</span><br><span class="line">&gt;     &#125; <span class="hljs-keyword">catch</span>(e) &#123;</span><br><span class="line">&gt;         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`ERROR!: <span class="hljs-subst">$&#123;e&#125;</span>`</span>);</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt; &#125;());</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>Promise에 async와 await를 이용하면 try, catch로 에러처리를 할 수 있다.</p>
+</blockquote>
 <h2 id="6-Promise-Chaining"><a href="#6-Promise-Chaining" class="headerlink" title="6. Promise Chaining"></a>6. Promise Chaining</h2><p>Promise는 후속 처리 메소드를 Chainning해서 여러 개의 Promise를 연결하여 사용할 수 있다.  Callback Hell을 해결한다.</p>
 <p>여러 개의 Promise를 연결한다는 것은, Promise object의 후속 처리 메소드인 then이나 catch가 또 다른 Promise object를 리턴하도록 하는 것이다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 포스트 id가 1인 포스트를 검색하고 프로미스를 반환한다.</span></span><br><span class="line"><span class="hljs-keyword">get</span>(`$&#123;url&#125;/<span class="hljs-number">1</span><span class="hljs-string">`)</span></span><br><span class="line"><span class="hljs-string">   // 포스트 id가 1인 포스트를 작성한 사용자의 아이디로 작성된 모든 포스트를 검색하고 프로미스를 반환한다.</span></span><br><span class="line"><span class="hljs-string">   .then(result1 =&gt; get(`</span>$&#123;url&#125;?userId=$&#123;<span class="hljs-built_in">JSON</span>.parse(result1).userId&#125;<span class="hljs-string">`))</span></span><br><span class="line"><span class="hljs-string">   // 포스트 검색 결과를 DOM에 반영한다.</span></span><br><span class="line"><span class="hljs-string">   .then(result2 =&gt; document.getElementById('result').innerHTML = result2)</span></span><br><span class="line"><span class="hljs-string">   .catch(error =&gt; console.log(error));</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// promiseAjax 함수가 리턴하는 Promise callback에서 JSON.parse 안 하고 리턴할 경우</span></span><br><span class="line">promiseAjax(<span class="hljs-string">'GET'</span>, <span class="hljs-string">'http://localhost:3000/todos'</span>)</span><br><span class="line">    .then(<span class="hljs-built_in">JSON</span>.parse)</span><br><span class="line">	.then(render)</span><br><span class="line">    .catch(<span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> <span class="hljs-built_in">console</span>.error(<span class="hljs-string">`ERROR!: <span class="hljs-subst">$&#123;error&#125;</span>`</span>));</span><br></pre></td></tr></table></figure>
 <h3 id="7-Static-Methods-of-Promise"><a href="#7-Static-Methods-of-Promise" class="headerlink" title="7. Static Methods of Promise"></a>7. Static Methods of Promise</h3><p>Promise는 주로 생성자로 사용되지만 4가지 Static method를 갖는다.</p>
 <h3 id="7-1-Promise-resolve-Promise-reject"><a href="#7-1-Promise-resolve-Promise-reject" class="headerlink" title="7.1. Promise.resolve / Promise.reject"></a>7.1. Promise.resolve / Promise.reject</h3><p>Promise.resolve와 Promise.reject 메소드는 존재하는 값을 <strong>Promise로 wrapping</strong>하기 위해 사용</p>
 <p>Static method resolve는 argument로 전달된 값을 resolve하는 Promise를 생성</p>
@@ -580,6 +586,25 @@
         
         <article class="media">
             
+            <a href="/2019/05/29/190529-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/cherry.png" alt="190529-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T09:32:29.000Z">2019-05-29</time></div>
+                    <a href="/2019/05/29/190529-TIL/" class="has-link-black-ter is-size-6">190529-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/05/27/190527-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190527-TIL">
@@ -654,25 +679,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/24/190524-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/teamDoctor.png" alt="190524-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-24T12:23:39.000Z">2019-05-24</time></div>
-                    <a href="/2019/05/24/190524-TIL/" class="has-link-black-ter is-size-6">190524-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -691,7 +697,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">46</span>
+                    <span class="level-item tag">47</span>
                 </span>
             </a>
         </li>
@@ -713,7 +719,7 @@
                     <span class="level-item">March 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">15</span>
                 </span>
             </a>
         </li>
@@ -1091,7 +1097,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">55</span>
+                        <span class="tag is-grey">56</span>
                     </a>
                 </div>
                 
@@ -1345,6 +1351,25 @@
         
         <article class="media">
             
+            <a href="/2019/05/29/190529-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/cherry.png" alt="190529-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T09:32:29.000Z">2019-05-29</time></div>
+                    <a href="/2019/05/29/190529-TIL/" class="has-link-black-ter is-size-6">190529-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/05/27/190527-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190527-TIL">
@@ -1419,25 +1444,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/24/190524-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/teamDoctor.png" alt="190524-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-24T12:23:39.000Z">2019-05-24</time></div>
-                    <a href="/2019/05/24/190524-TIL/" class="has-link-black-ter is-size-6">190524-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1456,7 +1462,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">46</span>
+                    <span class="level-item tag">47</span>
                 </span>
             </a>
         </li>
@@ -1478,7 +1484,7 @@
                     <span class="level-item">March 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">15</span>
                 </span>
             </a>
         </li>
@@ -1856,7 +1862,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">55</span>
+                        <span class="tag is-grey">56</span>
                     </a>
                 </div>
                 

@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://sub2n.github.io/2019/05/27/32-REST-API/</loc>
+    <loc>https://sub2n.github.io/2019/05/29/190529-TIL/</loc>
     
-    <lastmod>2019-05-29T09:00:29.733Z</lastmod>
+    <lastmod>2019-05-31T06:40:40.238Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://sub2n.github.io/2019/05/27/33-Promise/</loc>
     
-    <lastmod>2019-05-29T07:49:28.655Z</lastmod>
+    <lastmod>2019-05-31T06:39:20.217Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/05/27/32-REST-API/</loc>
+    
+    <lastmod>2019-05-30T01:41:17.882Z</lastmod>
     
   </url>
   
@@ -817,13 +824,6 @@
     <loc>https://sub2n.github.io/2019/04/15/190415-TIL/</loc>
     
     <lastmod>2019-04-15T12:21:58.749Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sub2n.github.io/2019/03/13/Hello%20hexo/</loc>
-    
-    <lastmod>2019-04-15T11:05:13.586Z</lastmod>
     
   </url>
   

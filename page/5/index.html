@@ -151,6 +151,125 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/05/04/8-Type-Coercion-and-Short-Circuit-Evaluation/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="8. Type Coercion and Short-Circuit Evaluation">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-04T11:16:16.000Z">2019-05-04</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 484 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/04/8-Type-Coercion-and-Short-Circuit-Evaluation/">8. Type Coercion and Short-Circuit Evaluation</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="What-is-Type-coercion"><a href="#What-is-Type-coercion" class="headerlink" title="What is Type coercion?"></a>What is Type coercion?</h1><ul>
+<li><p>Explicit coercion / Type casting: developer intentionally converting value types</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> str = x.toString();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Implicit coercion / Type coercion: Type automatically converted by the JavaScript engine regardless of developer intent.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> str = x + <span class="hljs-string">''</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// x = Number 10, str = Sring 10</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<h3 id="Does-reassignment-occur-when-type-coercion-occur"><a href="#Does-reassignment-occur-when-type-coercion-occur" class="headerlink" title="Does reassignment occur when type coercion occur?"></a>Does reassignment occur when type coercion occur?</h3><p>No. It only takes a moment to type when evaluating expressions.</p>
+</blockquote>
+</li>
+</ul>
+<p>The developer can use implicit type conversion intentionally.</p>
+<h1 id="Implicit-type-coercion"><a href="#Implicit-type-coercion" class="headerlink" title="Implicit type coercion"></a>Implicit type coercion</h1><p>The JavaScript engine performs implicit type coercion when evaluating expressions, taking into account the context of the code.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-string">'10'</span> + <span class="hljs-number">2</span>  <span class="hljs-comment">// '102'</span></span><br><span class="line"><span class="hljs-number">5</span> * <span class="hljs-string">'10'</span>  <span class="hljs-comment">// 50</span></span><br><span class="line">!<span class="hljs-number">0</span>         <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-keyword">if</span>(<span class="hljs-number">1</span>) &#123;&#125;   <span class="hljs-comment">// if(true)</span></span><br></pre></td></tr></table></figure>
+<p>When an implicit type coercion occurs, it automatically converts the type to one of the primitive types such as string, number, or boolean.</p>
+<h2 id="Coercion-to-String-type"><a href="#Coercion-to-String-type" class="headerlink" title="Coercion to String type"></a>Coercion to String type</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Number type</span></span><br><span class="line"><span class="hljs-number">0</span> + <span class="hljs-string">''</span>              <span class="hljs-comment">// "0"</span></span><br><span class="line"><span class="hljs-number">-0</span> + <span class="hljs-string">''</span>             <span class="hljs-comment">// "0"</span></span><br><span class="line"><span class="hljs-number">1</span> + <span class="hljs-string">''</span>              <span class="hljs-comment">// "1"</span></span><br><span class="line"><span class="hljs-number">-1</span> + <span class="hljs-string">''</span>             <span class="hljs-comment">// "-1"</span></span><br><span class="line"><span class="hljs-literal">NaN</span> + <span class="hljs-string">''</span>            <span class="hljs-comment">// "NaN"</span></span><br><span class="line"><span class="hljs-literal">Infinity</span> + <span class="hljs-string">''</span>       <span class="hljs-comment">// "Infinity"</span></span><br><span class="line">-<span class="hljs-literal">Infinity</span> + <span class="hljs-string">''</span>      <span class="hljs-comment">// "-Infinity"</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Boolean type</span></span><br><span class="line"><span class="hljs-literal">true</span> + <span class="hljs-string">''</span>           <span class="hljs-comment">// "true"</span></span><br><span class="line"><span class="hljs-literal">false</span> + <span class="hljs-string">''</span>          <span class="hljs-comment">// "false"</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// null type</span></span><br><span class="line"><span class="hljs-literal">null</span> + <span class="hljs-string">''</span>           <span class="hljs-comment">// "null"</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// undefined type</span></span><br><span class="line"><span class="hljs-literal">undefined</span> + <span class="hljs-string">''</span>      <span class="hljs-comment">// "undefined"</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Symbol type</span></span><br><span class="line">(<span class="hljs-built_in">Symbol</span>()) + <span class="hljs-string">''</span>     <span class="hljs-comment">// TypeError: Cannot convert a Symbol value to a string</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// onject type</span></span><br><span class="line">(&#123;&#125;) + <span class="hljs-string">''</span>           <span class="hljs-comment">// "[object Object]"</span></span><br><span class="line"><span class="hljs-built_in">Math</span> + <span class="hljs-string">''</span>           <span class="hljs-comment">// "[object Math]"</span></span><br><span class="line">[] + <span class="hljs-string">''</span>             <span class="hljs-comment">// ""</span></span><br><span class="line">[<span class="hljs-number">10</span>, <span class="hljs-number">20</span>] + <span class="hljs-string">''</span>       <span class="hljs-comment">// "10,20"</span></span><br><span class="line">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;&#125;) + <span class="hljs-string">''</span> <span class="hljs-comment">// "function()&#123;&#125;"</span></span><br><span class="line"><span class="hljs-built_in">Array</span> + <span class="hljs-string">''</span>          <span class="hljs-comment">// "function Array() &#123; [native code] &#125;"</span></span><br></pre></td></tr></table></figure>
+<h2 id="Coercion-to-Number-type"><a href="#Coercion-to-Number-type" class="headerlink" title="Coercion to Number type"></a>Coercion to Number type</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// String type</span></span><br><span class="line">+<span class="hljs-string">''</span>             <span class="hljs-comment">// 0</span></span><br><span class="line">+<span class="hljs-string">'0'</span>            <span class="hljs-comment">// 0</span></span><br><span class="line">+<span class="hljs-string">'1'</span>            <span class="hljs-comment">// 1</span></span><br><span class="line">+<span class="hljs-string">'string'</span>       <span class="hljs-comment">// NaN</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Boolean type</span></span><br><span class="line">+<span class="hljs-literal">true</span>           <span class="hljs-comment">// 1</span></span><br><span class="line">+<span class="hljs-literal">false</span>          <span class="hljs-comment">// 0</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// null type</span></span><br><span class="line">+<span class="hljs-literal">null</span>           <span class="hljs-comment">// 0</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// undefined type</span></span><br><span class="line">+<span class="hljs-literal">undefined</span>      <span class="hljs-comment">// NaN</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Symbol type</span></span><br><span class="line">+<span class="hljs-built_in">Symbol</span>()       <span class="hljs-comment">// TypeError: Cannot convert a Symbol value to a number</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// object type</span></span><br><span class="line">+&#123;&#125;             <span class="hljs-comment">// NaN</span></span><br><span class="line">+[]             <span class="hljs-comment">// 0</span></span><br><span class="line">+[<span class="hljs-number">10</span>, <span class="hljs-number">20</span>]       <span class="hljs-comment">// NaN</span></span><br><span class="line">+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;&#125;) <span class="hljs-comment">// NaN</span></span><br></pre></td></tr></table></figure>
+<h2 id="Coercion-to-Boolean-type"><a href="#Coercion-to-Boolean-type" class="headerlink" title="Coercion to Boolean type"></a>Coercion to Boolean type</h2><p>When evaluating a non-boolean value with a boolean, there are only 6 values that evaluate to false.</p>
+<ul>
+<li>Falsy value<ul>
+<li>false</li>
+<li>undefined</li>
+<li>null</li>
+<li>0, -0</li>
+<li>NaN</li>
+<li>‘’ (empty string)</li>
+</ul>
+</li>
+<li>Truthy value<ul>
+<li>non-falsy values</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// The following conditional statements all execute code blocks.</span></span><br><span class="line"><span class="hljs-keyword">if</span> (!<span class="hljs-literal">false</span>)     <span class="hljs-built_in">console</span>.log(<span class="hljs-literal">false</span> + <span class="hljs-string">' is falsy value'</span>);</span><br><span class="line"><span class="hljs-keyword">if</span> (!<span class="hljs-literal">undefined</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-literal">undefined</span> + <span class="hljs-string">' is falsy value'</span>);</span><br><span class="line"><span class="hljs-keyword">if</span> (!<span class="hljs-literal">null</span>)      <span class="hljs-built_in">console</span>.log(<span class="hljs-literal">null</span> + <span class="hljs-string">' is falsy value'</span>);</span><br><span class="line"><span class="hljs-keyword">if</span> (!<span class="hljs-number">0</span>)         <span class="hljs-built_in">console</span>.log(<span class="hljs-number">0</span> + <span class="hljs-string">' is falsy value'</span>);</span><br><span class="line"><span class="hljs-keyword">if</span> (!<span class="hljs-literal">NaN</span>)       <span class="hljs-built_in">console</span>.log(<span class="hljs-literal">NaN</span> + <span class="hljs-string">' is falsy value'</span>);</span><br><span class="line"><span class="hljs-keyword">if</span> (!<span class="hljs-string">''</span>)        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">''</span> + <span class="hljs-string">' is falsy value'</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="Explicit-type-coercion"><a href="#Explicit-type-coercion" class="headerlink" title="Explicit type coercion"></a>Explicit type coercion</h1><ul>
+<li><p>Call the wrapper object constructor used to create the Wrapper object without new</p>
+  <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">String</span>(<span class="hljs-number">1</span>);		<span class="hljs-comment">// '1'</span></span><br><span class="line"><span class="hljs-built_in">Number</span>(<span class="hljs-string">'1'</span>);	<span class="hljs-comment">// 1</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>Using the built-in method provided by JavaScript</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="hljs-number">1</span>).toString();	<span class="hljs-comment">// '1'</span></span><br><span class="line"><span class="hljs-built_in">parseInt</span>(<span class="hljs-string">'-1'</span>);	<span class="hljs-comment">// -1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Using implicit type coercion</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">1</span> + <span class="hljs-string">''</span>;			<span class="hljs-comment">// '1'</span></span><br><span class="line">+ <span class="hljs-string">'-1'</span>;			<span class="hljs-comment">// -1</span></span><br><span class="line"><span class="hljs-string">'-1'</span> * <span class="hljs-number">1</span>;		<span class="hljs-comment">// -1</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="Short-Circuit-Evaluation"><a href="#Short-Circuit-Evaluation" class="headerlink" title="Short-Circuit Evaluation"></a>Short-Circuit Evaluation</h1><p>The logical AND operator <code>&amp;&amp;</code> and the logical OR operator <code>||</code> return the operand that determined the logical evaluation. This is called <strong>short-circuit evaluation</strong>.</p>
+<ul>
+<li><p>Logical OR operator <code>||</code></p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-string">'Cat'</span> || <span class="hljs-string">'Dog'</span>	<span class="hljs-comment">// 'Cat'</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>The logical OR operator <code>||</code> returns true even if only one of the two operands evaluates to true.</li>
+<li>The OR operator <code>||</code> returns the first operand that determines the result of the logical operation, that is, the string ‘Cat’.</li>
+</ul>
+</li>
+<li><p>Logical AND operator <code>&amp;&amp;</code></p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-string">'Cat'</span> &amp;&amp; <span class="hljs-string">'Dog'</span>	<span class="hljs-comment">// 'Dog'</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>The AND operator <code>&amp;&amp;</code> returns <code>true</code> when both operands evaluate to true.</li>
+<li>The logical AND operator <code>&amp;&amp;</code> returns the second operand that determined the result of the logical operation, the string ‘Dog’.</li>
+</ul>
+</li>
+<li><p>Short evaluation means that <code>&amp;&amp;</code> and <code>||</code> return the operand that determined the logical evaluation.</p>
+</li>
+<li><p>Used to reduce TypeErrors</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> elem = <span class="hljs-literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(elem.value);              <span class="hljs-comment">// TypeError: Cannot read property 'value' of null</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(elem &amp;&amp; elem.value); <span class="hljs-comment">// null</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">if</span> (elem) <span class="hljs-built_in">console</span>.log(elem.value);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/05/03/7-Control-Flow-Statement/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="7. Control Flow Statement">
         </a>
@@ -1124,130 +1243,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/30/3-JavaScript-Develop-Environment-and-Execute/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="3. JavaScript Develop Environment and Execute">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-30T02:53:43.000Z">2019-04-30</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    7 minutes read (About 1071 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/30/3-JavaScript-Develop-Environment-and-Execute/">3. JavaScript Develop Environment and Execute</a>
-            
-        </h1>
-        <div class="content">
-            <h1 id="Before-this-chapter-What-is-Web-API"><a href="#Before-this-chapter-What-is-Web-API" class="headerlink" title="Before this chapter, What is Web API?"></a>Before this chapter, What is Web API?</h1><p>While the most common scripting language ECMAscript (more widely known as JavaScript) is developed by Ecma, a great many of the APIs made available in browsers have been defined at W3C.</p>
-<h2 id="What-is-scripting"><a href="#What-is-scripting" class="headerlink" title="What is scripting?"></a>What is scripting?</h2><p>A script is program code that doesn’t need pre-processing(e.g. compiling) before being run. </p>
-<p>In the context of Web browser, scripting usually refers to program code written in <strong>JavaScript</strong> that is <strong>executed by browser when a page is downloaded</strong>, or in response to an <strong>event triggered</strong> by the user.</p>
-<p>Scripting can make Web pages more dynamic.<br>For Example, without reloading a new version of a page it may</p>
-<ul>
-<li>allow modifications to the content of that page : DHTML(Dynamic HTML)</li>
-<li>allow content to be added to or sent from that page : AJAX(Asyncronous JavaScript and XML)</li>
-</ul>
-<h2 id="What-scripting-interfaces-are-available"><a href="#What-scripting-interfaces-are-available" class="headerlink" title="What scripting interfaces are available ?"></a>What scripting interfaces are available ?</h2><p>The most basic scripting interface developed by W3C is the <strong>DOM</strong>, the Document Object Model which allows programs and scripts to dynamically access and update the content, structure and stype of documents. DOM specifications form the core of DHTML.</p>
-<p>Modifications of the content using the DOM by the user and by scripts trigger events that developers can make use of to build rich user interface.</p>
-<p>A number of more advanced interfaces are being standardized, for instance:</p>
-<ul>
-<li><strong>XMLHttpRequest</strong> makes it possible to load additional content from the Web without loading a new document, a core component of AJAX,</li>
-<li><strong>the Geolocation API</strong> makes the user’s current location available to browser-based applications,</li>
-<li>several APIs make the integration of Web applications with the local file system and storage seamless.</li>
-</ul>
-<h1 id="Execution-Environment-of-JavaScript"><a href="#Execution-Environment-of-JavaScript" class="headerlink" title="Execution Environment of JavaScript"></a>Execution Environment of JavaScript</h1><p>All browsers have JavaScript engine that can inpterpreter and execute JavaScript. Not only browser but also Node.js has JavaScript engine. So JavaScript can operate in both browser and Node.js environment. Basically code that operate in browser also operate in Node.js environment too.</p>
-<p>But the browser and Node.js have different purpose. The main purpose of browser is execute HTML, CSS, JavaScript to rendering web page on screen, but the other one is provide server development envorinment. So both of browser and Node.js can operate ECMAScript(core of JavaScript) but additional features provided by Node.js and browser and ECMAScript are incompatible.</p>
-<ol>
-<li>Node.js environment<ul>
-<li>ES + Node.js API (file control)</li>
-</ul>
-</li>
-<li>Browser<ul>
-<li>Rendering HTML, CSS</li>
-<li>JavaScript : ES + Web API (created by browser vendors and managed by W3C) (DOM API, event) only browser can execute </li>
-</ul>
-</li>
-</ol>
-<p>As such, the browser supports ECMAScript and client side Web APIs such as DOM, BOM, Canvas, XMLHttpRequest, Fetch, requestAnimationFrame, SVG, Web Storage, Web Component, and Web worker. Node.js does not support client side Web APIs and supports ECMAScript and Node.js-specific APIs.</p>
-<h1 id="Web-Browser"><a href="#Web-Browser" class="headerlink" title="Web Browser"></a>Web Browser</h1><h2 id="How-does-a-Web-Browser-work"><a href="#How-does-a-Web-Browser-work" class="headerlink" title="How does a Web Browser work?"></a>How does a Web Browser work?</h2><p>Most programming languages run on Operating System, but JavaScript in Web application runs with HTML and CSS in a browser. So efficient JavaScript programming is available when considering Web browser environment.</p>
-<p>Core function of Web browser is that request the Web page user want and represent the response from server in browser.</p>
-<ol>
-<li>Web browser receives HTML, CSS, JavaScript, and image files from the server.</li>
-<li>HTML and CSS files are parsed by the rendering enginde’s HTML parser and CSS parser, </li>
-<li>converted into DOM tree and CSSOM tree, </li>
-<li>and combined into a Render Tree. Browser represent Web pages by this Render tree.</li>
-</ol>
-<p>JavaScript is processed by JavaScript engine, not the Rendering engine. </p>
-<ol>
-<li>HTML parser stops DOM construction process when meet the script tag, and passes control to the JavaScript engine to execute JavaScript code.</li>
-<li>Control passed JavaScript engine loads, parses and executes the JavaScript code in script tag or JavaScript file defined in script tag’s src attribute.</li>
-<li>Interpreter that used in most modern Web browser doesn’t compile like typical compiler language but compiles and executes a part of source code in complex way.</li>
-</ol>
-<h2 id="Interperter"><a href="#Interperter" class="headerlink" title="Interperter"></a>Interperter</h2><ul>
-<li>Translates program one statement at a time.</li>
-<li>It takes less amount of time to analyze the source code but the overall execution time is slower.</li>
-<li>No intermediate object code is generated, hence are memory efficient.</li>
-<li>Continues translating the program until the first error is met, in which case it stops. Hence debugging is easy.</li>
-<li>Programming language like Python, Ruby use interpreters.</li>
-</ul>
-<h2 id="Compiler"><a href="#Compiler" class="headerlink" title="Compiler"></a>Compiler</h2><ul>
-<li>Scans the entire program and translates it as a whole into machine code.</li>
-<li>It takes large amount of time to analyze the source code but the overall execution time is comparatively faster.</li>
-<li>It takes large amount of time to analyze the source code but the overall execution time is comparatively faster.</li>
-<li>It generates the error message only after scanning the whole program. Hence debugging is comparatively hard.</li>
-<li>Programming language like C, C++ use compilers.</li>
-</ul>
-<p>Source code is composed of simple strings. So interpret string codes to make the <strong>AST(Abstrack Syntax Tree)</strong> that has syntax and semantics.</p>
-<ul>
-<li>Tokenizing<br>Separate the source code into tokens, the smallest unit of meaning, by lexical analysis. </li>
-<li>Parsing<br>Syntactically analysis the set of tokens to create AST.</li>
-<li>Execute code<br>Created AST is converted to byte code or optimized machine code and run by interpreter.</li>
-</ul>
-<p>If execution of JavaScript is finished, pass control to HTML parser and resume DOM creation from the time when browser stopped.</p>
-<p>As such, browsers process HTML, CSS, and JavaScript <strong>synchronously</strong>. This means creation of DOM can be delayed by blocking from script tag. So the position of script tag has important meaning.</p>
-<p>You should put script code at bottom of HTML file. It prevent error that can be occured when JavaScript touch DOM before DOM creation completed.</p>
-<h1 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h1><p>A client side, or simple web application that works on a web browser, can be developed with just a browser. However, as the project grows in size, it is necessary to introduce external libraries such as React and jQuery, or to use several tools such as Babel, Webpack, ESLint, etc. Node.js and npm are required.</p>
-<h2 id="Node-js-and-npm"><a href="#Node-js-and-npm" class="headerlink" title="Node.js and npm"></a>Node.js and npm</h2><p>Node.js, announced by Ryan Dahl in 2009 is a JavaScript runtime environment built with Chrome V8 JavaScript engine. Simply, Node.js is JavaScript execution environment that enable JavaScript to run in addition to browser.</p>
-<p>npm(node package manager) is JavaScript package manager. Itself a repository include packaged modules available in Node.js and provide CLI to install and management.</p>
-<hr>
-<p>Reference</p>
-<p><a href="https://www.w3.org/standards/webdesign/script" target="_blank" rel="noopener">JavaScript Web API</a></p>
-<p><a href="https://poiemaweb.com/js-hello-world" target="_blank" rel="noopener">Hello world</a></p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -1572,6 +1567,25 @@
         
         <article class="media">
             
+            <a href="/2019/05/29/190529-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/cherry.png" alt="190529-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T09:32:29.000Z">2019-05-29</time></div>
+                    <a href="/2019/05/29/190529-TIL/" class="has-link-black-ter is-size-6">190529-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/05/27/190527-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190527-TIL">
@@ -1646,25 +1660,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/24/190524-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/teamDoctor.png" alt="190524-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-24T12:23:39.000Z">2019-05-24</time></div>
-                    <a href="/2019/05/24/190524-TIL/" class="has-link-black-ter is-size-6">190524-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1683,7 +1678,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">46</span>
+                    <span class="level-item tag">47</span>
                 </span>
             </a>
         </li>
@@ -1705,7 +1700,7 @@
                     <span class="level-item">March 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">15</span>
                 </span>
             </a>
         </li>
@@ -2083,7 +2078,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">55</span>
+                        <span class="tag is-grey">56</span>
                     </a>
                 </div>
                 
@@ -2337,6 +2332,25 @@
         
         <article class="media">
             
+            <a href="/2019/05/29/190529-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/cherry.png" alt="190529-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T09:32:29.000Z">2019-05-29</time></div>
+                    <a href="/2019/05/29/190529-TIL/" class="has-link-black-ter is-size-6">190529-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/05/27/190527-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190527-TIL">
@@ -2411,25 +2425,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/24/190524-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/teamDoctor.png" alt="190524-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-24T12:23:39.000Z">2019-05-24</time></div>
-                    <a href="/2019/05/24/190524-TIL/" class="has-link-black-ter is-size-6">190524-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2448,7 +2443,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">46</span>
+                    <span class="level-item tag">47</span>
                 </span>
             </a>
         </li>
@@ -2470,7 +2465,7 @@
                     <span class="level-item">March 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">15</span>
                 </span>
             </a>
         </li>
@@ -2848,7 +2843,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">55</span>
+                        <span class="tag is-grey">56</span>
                     </a>
                 </div>
                 
