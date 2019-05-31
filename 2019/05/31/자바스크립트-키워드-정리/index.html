@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="Data typeLiteralExpressionPrimitive type vs. Object typeFunction DefinitionScopeLexical Scope전역 변수의 문제점var 키워드로 선언한 변수의 문제점Constructor FunctionthisDOM브라우저 동작Event DelegationEvent Capturing vs. Event B">
+    <meta name="description" content="Data TypeData type은 값의 종류를 말한다. 대부분의 프로그래밍 언어는 데이터 타입을 지원한다. 왜일까? 값을 구분할 필요가 있기 때문이다. 메모리 공간은 연속된 메모리 주소로 구분한다. 값을 메모리에 저장할 때는 데이터의 형태가 다르더라도 모두 2진수로 저장된다.  값을 저장할 때 확보해야하는 메모리 공간의 크기를 결정하기 위해서, 메모리에">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="자바스크립트 키워드 정리">
 <meta property="og:url" content="https://sub2n.github.io/2019/05/31/자바스크립트-키워드-정리/index.html">
 <meta property="og:site_name" content="수빈 개발블로그">
-<meta property="og:description" content="Data typeLiteralExpressionPrimitive type vs. Object typeFunction DefinitionScopeLexical Scope전역 변수의 문제점var 키워드로 선언한 변수의 문제점Constructor FunctionthisDOM브라우저 동작Event DelegationEvent Capturing vs. Event B">
+<meta property="og:description" content="Data TypeData type은 값의 종류를 말한다. 대부분의 프로그래밍 언어는 데이터 타입을 지원한다. 왜일까? 값을 구분할 필요가 있기 때문이다. 메모리 공간은 연속된 메모리 주소로 구분한다. 값을 메모리에 저장할 때는 데이터의 형태가 다르더라도 모두 2진수로 저장된다.  값을 저장할 때 확보해야하는 메모리 공간의 크기를 결정하기 위해서, 메모리에">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/html.png">
-<meta property="og:updated_time" content="2019-05-31T08:46:04.875Z">
+<meta property="og:updated_time" content="2019-05-31T08:57:08.167Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="자바스크립트 키워드 정리">
-<meta name="twitter:description" content="Data typeLiteralExpressionPrimitive type vs. Object typeFunction DefinitionScopeLexical Scope전역 변수의 문제점var 키워드로 선언한 변수의 문제점Constructor FunctionthisDOM브라우저 동작Event DelegationEvent Capturing vs. Event B">
+<meta name="twitter:description" content="Data TypeData type은 값의 종류를 말한다. 대부분의 프로그래밍 언어는 데이터 타입을 지원한다. 왜일까? 값을 구분할 필요가 있기 때문이다. 메모리 공간은 연속된 메모리 주소로 구분한다. 값을 메모리에 저장할 때는 데이터의 형태가 다르더라도 모두 2진수로 저장된다.  값을 저장할 때 확보해야하는 메모리 공간의 크기를 결정하기 위해서, 메모리에">
 <meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/html.png">
 
 
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 73 words)
+                    3 minutes read (About 395 words)
                 </span>
                 
                 
@@ -183,7 +183,24 @@
             
         </h1>
         <div class="content">
-            <h2 id="Data-type"><a href="#Data-type" class="headerlink" title="Data type"></a>Data type</h2><h2 id="Literal"><a href="#Literal" class="headerlink" title="Literal"></a>Literal</h2><h2 id="Expression"><a href="#Expression" class="headerlink" title="Expression"></a>Expression</h2><h2 id="Primitive-type-vs-Object-type"><a href="#Primitive-type-vs-Object-type" class="headerlink" title="Primitive type vs. Object type"></a>Primitive type vs. Object type</h2><h2 id="Function-Definition"><a href="#Function-Definition" class="headerlink" title="Function Definition"></a>Function Definition</h2><h2 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h2><h2 id="Lexical-Scope"><a href="#Lexical-Scope" class="headerlink" title="Lexical Scope"></a>Lexical Scope</h2><h2 id="전역-변수의-문제점"><a href="#전역-변수의-문제점" class="headerlink" title="전역 변수의 문제점"></a>전역 변수의 문제점</h2><h2 id="var-키워드로-선언한-변수의-문제점"><a href="#var-키워드로-선언한-변수의-문제점" class="headerlink" title="var 키워드로 선언한 변수의 문제점"></a>var 키워드로 선언한 변수의 문제점</h2><h2 id="Constructor-Function"><a href="#Constructor-Function" class="headerlink" title="Constructor Function"></a>Constructor Function</h2><h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><h2 id="브라우저-동작"><a href="#브라우저-동작" class="headerlink" title="브라우저 동작"></a>브라우저 동작</h2><h2 id="Event-Delegation"><a href="#Event-Delegation" class="headerlink" title="Event Delegation"></a>Event Delegation</h2><h2 id="Event-Capturing-vs-Event-Bubbling"><a href="#Event-Capturing-vs-Event-Bubbling" class="headerlink" title="Event Capturing vs. Event Bubbling"></a>Event Capturing vs. Event Bubbling</h2><h2 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h2><h2 id="super"><a href="#super" class="headerlink" title="super"></a>super</h2><h2 id="Prototype"><a href="#Prototype" class="headerlink" title="Prototype"></a>Prototype</h2><h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><h2 id="동기식-처리-모델-vs-비동기식-처리-모델"><a href="#동기식-처리-모델-vs-비동기식-처리-모델" class="headerlink" title="동기식 처리 모델 vs. 비동기식 처리 모델"></a>동기식 처리 모델 vs. 비동기식 처리 모델</h2>
+            <h2 id="Data-Type"><a href="#Data-Type" class="headerlink" title="Data Type"></a>Data Type</h2><p>Data type은 값의 종류를 말한다. 대부분의 프로그래밍 언어는 데이터 타입을 지원한다. 왜일까? 값을 구분할 필요가 있기 때문이다. 메모리 공간은 연속된 메모리 주소로 구분한다. 값을 메모리에 저장할 때는 데이터의 형태가 다르더라도 모두 2진수로 저장된다.</p>
+<ol>
+<li>값을 저장할 때 확보해야하는 메모리 공간의 크기를 결정하기 위해서,</li>
+<li>메모리에 저장해둔 값을 참조할 때 한 번에 읽어들일 메모리 공간의 크기를 결정하기 위해서,</li>
+<li>메모리에서 읽어들인 2진수를 어떻게 변환할 지 결정하기 위해서 데이터 타입이 필요하다.</li>
+</ol>
+<p>자바스크립트의 데이터 타입은 크게 원시 타입(Primitive Type)과 객체 타입(Object Type)으로 나뉜다. 원시 타입을 제외한 데이터는 모두 객체 타입이다. 그러므로 원시 타입을 우선 살펴보겠다. </p>
+<h3 id="Primitive-Type"><a href="#Primitive-Type" class="headerlink" title="Primitive Type"></a>Primitive Type</h3><p>자바스크립트의 원시 타입은 6종류가 있다.</p>
+<ol>
+<li>Number</li>
+<li>String</li>
+<li>Boolean</li>
+<li>undefined</li>
+<li>null</li>
+<li>Symbol</li>
+</ol>
+<h3 id="Object-Reference-Type"><a href="#Object-Reference-Type" class="headerlink" title="Object (Reference) Type"></a>Object (Reference) Type</h3><p>객체, 함수, 배열 등 원시타입을 제외한 모든 것이 객체이다.</p>
+<h2 id="Literal"><a href="#Literal" class="headerlink" title="Literal"></a>Literal</h2><h2 id="Expression"><a href="#Expression" class="headerlink" title="Expression"></a>Expression</h2><h2 id="Primitive-type-vs-Object-type"><a href="#Primitive-type-vs-Object-type" class="headerlink" title="Primitive type vs. Object type"></a>Primitive type vs. Object type</h2><h2 id="Function-Definition"><a href="#Function-Definition" class="headerlink" title="Function Definition"></a>Function Definition</h2><h2 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h2><h2 id="Lexical-Scope"><a href="#Lexical-Scope" class="headerlink" title="Lexical Scope"></a>Lexical Scope</h2><h2 id="전역-변수의-문제점"><a href="#전역-변수의-문제점" class="headerlink" title="전역 변수의 문제점"></a>전역 변수의 문제점</h2><h2 id="var-키워드로-선언한-변수의-문제점"><a href="#var-키워드로-선언한-변수의-문제점" class="headerlink" title="var 키워드로 선언한 변수의 문제점"></a>var 키워드로 선언한 변수의 문제점</h2><h2 id="Constructor-Function"><a href="#Constructor-Function" class="headerlink" title="Constructor Function"></a>Constructor Function</h2><h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><h2 id="브라우저-동작"><a href="#브라우저-동작" class="headerlink" title="브라우저 동작"></a>브라우저 동작</h2><h2 id="Event-Delegation"><a href="#Event-Delegation" class="headerlink" title="Event Delegation"></a>Event Delegation</h2><h2 id="Event-Capturing-vs-Event-Bubbling"><a href="#Event-Capturing-vs-Event-Bubbling" class="headerlink" title="Event Capturing vs. Event Bubbling"></a>Event Capturing vs. Event Bubbling</h2><h2 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h2><h2 id="super"><a href="#super" class="headerlink" title="super"></a>super</h2><h2 id="Prototype"><a href="#Prototype" class="headerlink" title="Prototype"></a>Prototype</h2><h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><h2 id="동기식-처리-모델-vs-비동기식-처리-모델"><a href="#동기식-처리-모델-vs-비동기식-처리-모델" class="headerlink" title="동기식 처리 모델 vs. 비동기식 처리 모델"></a>동기식 처리 모델 vs. 비동기식 처리 모델</h2>
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -206,6 +223,13 @@
 
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/05/31/190531-TIL/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">190531-TIL</span>
+            </a>
+        </div>
         
         
         <div class="level-end">
@@ -264,7 +288,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        120
+                        121
                     </p>
                 </div>
             </div>
@@ -489,7 +513,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">55</span>
+                <span class="level-item tag">56</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -511,6 +535,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/31/190531-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/pink.png" alt="190531-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-31T09:35:26.000Z">2019-05-31</time></div>
+                    <a href="/2019/05/31/190531-TIL/" class="has-link-black-ter is-size-6">190531-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -588,25 +631,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/27/32-REST-API/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="32. REST API">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-27T02:20:18.000Z">2019-05-27</time></div>
-                    <a href="/2019/05/27/32-REST-API/" class="has-link-black-ter is-size-6">32. REST API</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -625,7 +649,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">48</span>
+                    <span class="level-item tag">49</span>
                 </span>
             </a>
         </li>
@@ -1025,7 +1049,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">56</span>
+                        <span class="tag is-grey">57</span>
                     </a>
                 </div>
                 
@@ -1254,7 +1278,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">55</span>
+                <span class="level-item tag">56</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1276,6 +1300,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/31/190531-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/pink.png" alt="190531-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-31T09:35:26.000Z">2019-05-31</time></div>
+                    <a href="/2019/05/31/190531-TIL/" class="has-link-black-ter is-size-6">190531-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1353,25 +1396,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/27/32-REST-API/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="32. REST API">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-27T02:20:18.000Z">2019-05-27</time></div>
-                    <a href="/2019/05/27/32-REST-API/" class="has-link-black-ter is-size-6">32. REST API</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1390,7 +1414,7 @@
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">48</span>
+                    <span class="level-item tag">49</span>
                 </span>
             </a>
         </li>
@@ -1790,7 +1814,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">56</span>
+                        <span class="tag is-grey">57</span>
                     </a>
                 </div>
                 

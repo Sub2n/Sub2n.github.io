@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sub2n.github.io/"/>
-  <updated>2019-05-31T08:46:04.875Z</updated>
+  <updated>2019-05-31T09:39:31.496Z</updated>
   <id>https://sub2n.github.io/</id>
   
   <author>
@@ -17,19 +17,45 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>자바스크립트 키워드 정리</title>
-    <link href="https://sub2n.github.io/2019/05/31/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%ED%82%A4%EC%9B%8C%EB%93%9C-%EC%A0%95%EB%A6%AC/"/>
-    <id>https://sub2n.github.io/2019/05/31/자바스크립트-키워드-정리/</id>
-    <published>2019-05-31T08:44:37.000Z</published>
-    <updated>2019-05-31T08:46:04.875Z</updated>
+    <title>190531-TIL</title>
+    <link href="https://sub2n.github.io/2019/05/31/190531-TIL/"/>
+    <id>https://sub2n.github.io/2019/05/31/190531-TIL/</id>
+    <published>2019-05-31T09:35:26.000Z</published>
+    <updated>2019-05-31T09:39:31.496Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Data-type"><a href="#Data-type" class="headerlink" title="Data type"></a>Data type</h2><h2 id="Literal"><a href="#Literal" class="headerlink" title="Literal"></a>Literal</h2><h2 id="Expression"><a href="#Expression" class="headerlink" title="Expression"></a>Expression</h2><h2 id="Primitive-type-vs-Object-type"><a href="#Primitive-type-vs-Object-type" class="headerlink" title="Primitive type vs. Object type"></a>Primitive type vs. Object type</h2><h2 id="Function-Definition"><a href="#Function-Definition" class="headerlink" title="Function Definition"></a>Function Definition</h2><h2 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h2><h2 id="Lexical-Scope"><a href="#Lexical-Scope" class="headerlink" title="Lexical Scope"></a>Lexical Scope</h2><h2 id="전역-변수의-문제점"><a href="#전역-변수의-문제점" class="headerlink" title="전역 변수의 문제점"></a>전역 변수의 문제점</h2><h2 id="var-키워드로-선언한-변수의-문제점"><a href="#var-키워드로-선언한-변수의-문제점" class="headerlink" title="var 키워드로 선언한 변수의 문제점"></a>var 키워드로 선언한 변수의 문제점</h2><h2 id="Constructor-Function"><a href="#Constructor-Function" class="headerlink" title="Constructor Function"></a>Constructor Function</h2><h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><h2 id="브라우저-동작"><a href="#브라우저-동작" class="headerlink" title="브라우저 동작"></a>브라우저 동작</h2><h2 id="Event-Delegation"><a href="#Event-Delegation" class="headerlink" title="Event Delegation"></a>Event Delegation</h2><h2 id="Event-Capturing-vs-Event-Bubbling"><a href="#Event-Capturing-vs-Event-Bubbling" class="headerlink" title="Event Capturing vs. Event Bubbling"></a>Event Capturing vs. Event Bubbling</h2><h2 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h2><h2 id="super"><a href="#super" class="headerlink" title="super"></a>super</h2><h2 id="Prototype"><a href="#Prototype" class="headerlink" title="Prototype"></a>Prototype</h2><h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><h2 id="동기식-처리-모델-vs-비동기식-처리-모델"><a href="#동기식-처리-모델-vs-비동기식-처리-모델" class="headerlink" title="동기식 처리 모델 vs. 비동기식 처리 모델"></a>동기식 처리 모델 vs. 비동기식 처리 모델</h2>]]></content>
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li>Ajax, Promise로 CRUD 구현</li><li>fetch, async 와 await도 사용해봤다</li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;Data-type&quot;&gt;&lt;a href=&quot;#Data-type&quot; class=&quot;headerlink&quot; title=&quot;Data type&quot;&gt;&lt;/a&gt;Data type&lt;/h2&gt;&lt;h2 id=&quot;Literal&quot;&gt;&lt;a href=&quot;#Literal&quot; class=&quot;he
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Ajax, Promis
+      
+    
+    </summary>
+    
+      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
+    
+    
+      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>자바스크립트 키워드 정리</title>
+    <link href="https://sub2n.github.io/2019/05/31/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%ED%82%A4%EC%9B%8C%EB%93%9C-%EC%A0%95%EB%A6%AC/"/>
+    <id>https://sub2n.github.io/2019/05/31/자바스크립트-키워드-정리/</id>
+    <published>2019-05-31T08:44:37.000Z</published>
+    <updated>2019-05-31T08:57:08.167Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Data-Type"><a href="#Data-Type" class="headerlink" title="Data Type"></a>Data Type</h2><p>Data type은 값의 종류를 말한다. 대부분의 프로그래밍 언어는 데이터 타입을 지원한다. 왜일까? 값을 구분할 필요가 있기 때문이다. 메모리 공간은 연속된 메모리 주소로 구분한다. 값을 메모리에 저장할 때는 데이터의 형태가 다르더라도 모두 2진수로 저장된다.</p><ol><li>값을 저장할 때 확보해야하는 메모리 공간의 크기를 결정하기 위해서,</li><li>메모리에 저장해둔 값을 참조할 때 한 번에 읽어들일 메모리 공간의 크기를 결정하기 위해서,</li><li>메모리에서 읽어들인 2진수를 어떻게 변환할 지 결정하기 위해서 데이터 타입이 필요하다.</li></ol><p>자바스크립트의 데이터 타입은 크게 원시 타입(Primitive Type)과 객체 타입(Object Type)으로 나뉜다. 원시 타입을 제외한 데이터는 모두 객체 타입이다. 그러므로 원시 타입을 우선 살펴보겠다. </p><h3 id="Primitive-Type"><a href="#Primitive-Type" class="headerlink" title="Primitive Type"></a>Primitive Type</h3><p>자바스크립트의 원시 타입은 6종류가 있다.</p><ol><li>Number</li><li>String</li><li>Boolean</li><li>undefined</li><li>null</li><li>Symbol</li></ol><h3 id="Object-Reference-Type"><a href="#Object-Reference-Type" class="headerlink" title="Object (Reference) Type"></a>Object (Reference) Type</h3><p>객체, 함수, 배열 등 원시타입을 제외한 모든 것이 객체이다.</p><h2 id="Literal"><a href="#Literal" class="headerlink" title="Literal"></a>Literal</h2><h2 id="Expression"><a href="#Expression" class="headerlink" title="Expression"></a>Expression</h2><h2 id="Primitive-type-vs-Object-type"><a href="#Primitive-type-vs-Object-type" class="headerlink" title="Primitive type vs. Object type"></a>Primitive type vs. Object type</h2><h2 id="Function-Definition"><a href="#Function-Definition" class="headerlink" title="Function Definition"></a>Function Definition</h2><h2 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h2><h2 id="Lexical-Scope"><a href="#Lexical-Scope" class="headerlink" title="Lexical Scope"></a>Lexical Scope</h2><h2 id="전역-변수의-문제점"><a href="#전역-변수의-문제점" class="headerlink" title="전역 변수의 문제점"></a>전역 변수의 문제점</h2><h2 id="var-키워드로-선언한-변수의-문제점"><a href="#var-키워드로-선언한-변수의-문제점" class="headerlink" title="var 키워드로 선언한 변수의 문제점"></a>var 키워드로 선언한 변수의 문제점</h2><h2 id="Constructor-Function"><a href="#Constructor-Function" class="headerlink" title="Constructor Function"></a>Constructor Function</h2><h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><h2 id="브라우저-동작"><a href="#브라우저-동작" class="headerlink" title="브라우저 동작"></a>브라우저 동작</h2><h2 id="Event-Delegation"><a href="#Event-Delegation" class="headerlink" title="Event Delegation"></a>Event Delegation</h2><h2 id="Event-Capturing-vs-Event-Bubbling"><a href="#Event-Capturing-vs-Event-Bubbling" class="headerlink" title="Event Capturing vs. Event Bubbling"></a>Event Capturing vs. Event Bubbling</h2><h2 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h2><h2 id="super"><a href="#super" class="headerlink" title="super"></a>super</h2><h2 id="Prototype"><a href="#Prototype" class="headerlink" title="Prototype"></a>Prototype</h2><h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><h2 id="동기식-처리-모델-vs-비동기식-처리-모델"><a href="#동기식-처리-모델-vs-비동기식-처리-모델" class="headerlink" title="동기식 처리 모델 vs. 비동기식 처리 모델"></a>동기식 처리 모델 vs. 비동기식 처리 모델</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Data-Type&quot;&gt;&lt;a href=&quot;#Data-Type&quot; class=&quot;headerlink&quot; title=&quot;Data Type&quot;&gt;&lt;/a&gt;Data Type&lt;/h2&gt;&lt;p&gt;Data type은 값의 종류를 말한다. 대부분의 프로그래밍 언어는 데이터 
       
     
     </summary>
@@ -46,7 +72,7 @@
     <link href="https://sub2n.github.io/2019/05/29/190529-TIL/"/>
     <id>https://sub2n.github.io/2019/05/29/190529-TIL/</id>
     <published>2019-05-29T09:32:29.000Z</published>
-    <updated>2019-05-31T06:40:40.238Z</updated>
+    <updated>2019-05-31T09:36:55.620Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li>JavaScript Ajax, RESPful API, Promise에 대해서 배웠다.</li><li>알고리즘 문제 해결 전략 책을 샀다. 틈틈히 알고리즘 공부를 해야겠다.</li></ul>]]></content>
     
@@ -524,32 +550,6 @@
       <category term="JavaScript" scheme="https://sub2n.github.io/tags/JavaScript/"/>
     
       <category term="RegExp" scheme="https://sub2n.github.io/tags/RegExp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>190517-TIL</title>
-    <link href="https://sub2n.github.io/2019/05/17/190517-TIL/"/>
-    <id>https://sub2n.github.io/2019/05/17/190517-TIL/</id>
-    <published>2019-05-17T07:46:21.000Z</published>
-    <updated>2019-05-17T08:19:02.037Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h4><ul><li><p>this가 바인딩되는 방식에 대해서 팀원들과 토론했다.</p><p>💛<a href="https://github.com/Sub2n/JavaScript-Study/blob/master/190517-brain-stretching.md" target="_blank" rel="noopener">190517 Brain Stretching</a> </p></li><li><p>Math, String, Number 객체의 메소드를 응용한 알고리즘 연습 문제를 풀었다.</p><p>💛 <a href="https://github.com/Sub2n/FDS12-Algorithm/blob/master/190517.js" target="_blank" rel="noopener">풀이 보러가기</a></p></li><li><p>자바스크립트 Array에 대해서 배웠다.</p></li></ul><hr><h4 id="주말에-할-일"><a href="#주말에-할-일" class="headerlink" title="주말에 할 일"></a>주말에 할 일</h4><ul><li>자바스크립트 String 자주 쓰이는 method 정리하기</li><li>자바스크립트  Array 정리하기</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;this가 바인딩
-      
-    
-    </summary>
-    
-      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
-    
-    
-      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
     
   </entry>
   
