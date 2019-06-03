@@ -16,7 +16,7 @@
 <meta property="og:description" content="1. Data TypeData type은 값의 종류를 말한다. 대부분의 프로그래밍 언어는 데이터 타입을 지원한다. 왜일까? 값을 구분할 필요가 있기 때문이다. 메모리 공간은 연속된 메모리 주소로 구분한다. 값을 메모리에 저장할 때는 데이터의 형태가 다르더라도 모두 2진수로 저장된다.  값을 저장할 때 확보해야하는 메모리 공간의 크기를 결정하기 위해서, 메모">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/html.png">
-<meta property="og:updated_time" content="2019-06-02T09:37:57.430Z">
+<meta property="og:updated_time" content="2019-06-03T04:34:39.077Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="자바스크립트 키워드 정리">
 <meta name="twitter:description" content="1. Data TypeData type은 값의 종류를 말한다. 대부분의 프로그래밍 언어는 데이터 타입을 지원한다. 왜일까? 값을 구분할 필요가 있기 때문이다. 메모리 공간은 연속된 메모리 주소로 구분한다. 값을 메모리에 저장할 때는 데이터의 형태가 다르더라도 모두 2진수로 저장된다.  값을 저장할 때 확보해야하는 메모리 공간의 크기를 결정하기 위해서, 메모">
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    an hour read (About 9218 words)
+                    an hour read (About 9351 words)
                 </span>
                 
                 
@@ -205,7 +205,7 @@
 <p>C나 Java와 달리 자바스크립트의 문자열은 원시타입이고 immutable value다. 한 번 생성된 문자열은 재할당하지 않고서는 변경할 수 없다.</p>
 <ul>
 <li><p>Template Literal</p>
-<p>템플릿 리터럴은 backtick(<code></code>)을 사용하며 다음과 같은 특징을 가진다.</p>
+<p>템플릿 리터럴은 backtick(``)을 사용하며 다음과 같은 특징을 가진다.</p>
 <ul>
 <li>Template literal 내의 모든 공백은 그대로 적용된다. (줄바꿈 포함)</li>
 <li>String interpolation을 사용해서 간단하게 새로운 문자열을 삽입할 수 있다. <code>${ expression }</code>으로 표현식을 감싸면 표현식의 평과 결과가 문자열로 강제 타입 변환 된다.</li>
@@ -230,7 +230,7 @@
 <h3 id="Object-Reference-Type"><a href="#Object-Reference-Type" class="headerlink" title="Object (Reference) Type"></a>Object (Reference) Type</h3><p>객체, 함수, 배열 등 원시타입을 제외한 모든 것이 객체이다.</p>
 <p>typeof undefined는 undefined인데 typeof null은 object임</p>
 <p>자바스크립트는 동적 타입(Dynamic Type) 언어로, 선언할 때가 아니라 할당할 때 타입이 결정된다. 그러므로 재할당에 의해서 변수의 타입이 동적으로 변한다.</p>
-<h2 id="2-Literal"><a href="#2-Literal" class="headerlink" title="2. Literal"></a>2. Literal</h2><p>Literal은 소스 코드 안에서 직접 만들어낸 고정된 값 그 자체를 말한다. 리터럴은 자바스크립트 엔진에 의해서 해석되어 값으로 평가된다. Literal은 Literal Notation으로 생성한다.</p>
+<h2 id="2-Literal"><a href="#2-Literal" class="headerlink" title="2. Literal"></a>2. Literal</h2><p>Literal은 <strong>소스 코드 안에서 직접 만들어낸 고정된 값 그 자체</strong>를 말한다. 리터럴은 자바스크립트 엔진에 의해 해석되어 값으로 평가된다. Literal은 Literal Notation으로 생성한다.</p>
 <h3 id="Literal-Notation"><a href="#Literal-Notation" class="headerlink" title="Literal Notation"></a>Literal Notation</h3><p>리터럴 표기법은 값을 생성하는 방법. 리터럴은 사람이 이해할 수 있는 표기법으로 자바스크립트 엔진에게 값의 생성을 명령하는 것이다.</p>
 <p>리터럴 표기법으로 작성한 리터럴은 자바스크립트 엔진에 의해 해석되어 값으로 평가된다. 리터럴은 결국 값이 되므로 리터럴을 값 자체라고 할 때가 많다. 리터럴은 그 자체로 표현식이며 표현식의 일부로 다른 값을 생성할 때 사용된다.</p>
 <ul>
@@ -265,22 +265,22 @@
 <li>함수 호출 </li>
 </ul>
 <p>등의 조합을 말한다. 표현식은 평가되어 하나의 값을 만든다.</p>
-<p>표현식은 하나의 값으로 평가될 수 있는 문(statement)이다. 표현식은 리터럴 표현식, 식별자 표현식, 연산자 표현식, 함수/메소드 호출 표현식으로 나뉜다.</p>
+<p><strong>표현식은 하나의 값으로 평가될 수 있는 문(statement)</strong>이다. 표현식은 리터럴 표현식, 식별자 표현식, 연산자 표현식, 함수/메소드 호출 표현식으로 나뉜다.</p>
 <p><strong>문(statement)은 하나 이상의 표현식과 키워드의 조합으로 구성된 자바스크립트 엔진에게 내리는 명령</strong>이다. 문의 집합으로 이루어진 게 프로그램이다. 문은 선언문, 표현식 문, 조건문, 반복문으로 구분한다.</p>
 <p>표현식인 문과 표현식이 아닌 문을 구분하기 위해서는 변수에 할당하는 것이 가장 빠른 방법이다. 아니면 크롬 개발자 도구에 찍어볼 수도 있다.</p>
 <p><img src="https://user-images.githubusercontent.com/48080762/58757742-806ac380-854c-11e9-855f-158deaf88968.png" alt="Completed Value"></p>
 <blockquote>
 <h3 id="Completion-Value"><a href="#Completion-Value" class="headerlink" title="Completion Value"></a>Completion Value</h3><p>크롬 개발자 도구에서 표현식이 아닌 문은 언제나 undefined를 출력한다. 이를 완료 값(Completion value)이라고 한다.</p>
 </blockquote>
-<h2 id="4-Primitive-type-vs-Object-type"><a href="#4-Primitive-type-vs-Object-type" class="headerlink" title="4. Primitive type vs. Object type"></a>4. Primitive type vs. Object type</h2><p>데이터 타입을 원시 타입과 객체 타입으로 구분하듯이 둘은 다른 성질을 가진다.</p>
+<h2 id="4-Primitive-type-vs-Object-type"><a href="#4-Primitive-type-vs-Object-type" class="headerlink" title="4. Primitive type vs. Object type"></a>4. Primitive type vs. Object type</h2><p>자바스크립트에서는 데이터 타입을 원시 타입과 객체 타입으로 구분한다. 둘은 그만큼 구분되는 성질을 가진다.</p>
 <ol>
 <li>원시 타입 값은 immutable value이고 객체 타입 값은 mutable value이다.</li>
 <li>원시 값을 변수에 할당하면 변수의 메모리 공간에는 실제 값이 저장되고 객체를 변수에 할당하면 메모리 공간에 참조 값이 저장된다.</li>
 <li>Pass by value 원시 값을 가지는 변수를 다른 변수에 할당하면 원본 원시 값이 복사되어 전달된다. Pass by reference 객체를 가리키는 변수를 다른 변수에 할당하면 원본 참조 값이 복사되어 전달된다.</li>
 </ol>
-<p>그렇다면 immutable value란 무엇일까? 변경 불가능한 값. 즉, read only한 값이다. 값을 변경할 수 없다는 것은 메모리 공간에 있는 2진수를 수정해서 값을 직접 변경할 수 없다는 것을 의미한다. 재할당을 하는 것과는 다른 개념으로, 변수에 원시 값을 재할당하면 원래 참조하던 메모리 공간에 값을 뒤집어 쓰는게 아니라 새로운 메모리 공간에 새로운 값을 저장하고 변수가 그 메모리를 참조하도록 한다.</p>
-<p>변경할 수 없다는 말 때문에 immutable value와 const로 선언한 변수를 혼동했었는데, const는 그저 선언과 동시에 할당한 값을 재할당할 수 없을 뿐이고, const에 저장되는 값의 종류가 immutable과 mutable인 것이다. 둘은 개념이 다르다.</p>
-<p>Pass by value란 값에 의한 전달이다. 변수에 변수를 할당했을 때, 변수가 원시 값을 참조하고 있다면 저장되어있는 값 자체가 전달되고 객체 값을 참조하고 있다면 참조값이 전달된다. 이를 참조값이 전달되는 것을 Pass by reference라고 한다.</p>
+<p>그렇다면 immutable value란 무엇일까? 변경 불가능한 값. 즉, read only한 값이다. 값을 변경할 수 없다는 것은 변수가 참조하는 메모리 공간에 저장된 값을 수정할 수 없음을 의미한다. 원시 값이 저장된 변수의 값을 바꾸기 위해서는 새로운 원시 값을 재할당하는 수밖에 없다. 원시 값을 재할당하면 원래 참조하던 메모리 공간에 새로운 원시 값을 뒤집어 쓰는게 아니라 새로운 메모리 공간에 새로운 값을 저장하고 변수가 그 메모리를 참조하게 된다.</p>
+<p>나는 처음 immutable 개념을 공부할 때 변경할 수 없다는 말 때문에 immutable value와 const로 선언한 변수(constant 상수)를 혼동했었는데, constant는 그저 선언과 동시에 할당한 값을 재할당할 수 없는 변수일 뿐이고, constant에 저장되는 값의 종류가 immutable과 mutable인 것이다. 그러므로 그 둘은 개념이 다르다.</p>
+<p>Pass by value란 값에 의한 전달이다. 변수에 변수를 할당했을 때, 변수가 원시 값을 참조하고 있다면 저장되어있는 <strong>값 자체가 복사되어 전달</strong>된다. 반면 변수가 객체 값을 참조하고 있다면 저장된 참조값이 복사되어 <strong>전달된다</strong>. 이처럼 참조값이 전달되는 것을 Pass by reference라고 한다.</p>
 <p><img src="https://user-images.githubusercontent.com/48080762/57297341-57e8d880-710a-11e9-9007-36ec715ebcf7.png" alt="Pass by Value"></p>
 <p><img src="https://user-images.githubusercontent.com/48080762/57299971-d34d8880-7110-11e9-8fc7-1ee9d64a5f13.png" alt="Pass by Reference"></p>
 <h2 id="5-Function-Definition"><a href="#5-Function-Definition" class="headerlink" title="5. Function Definition"></a>5. Function Definition</h2><p>함수 정의를 통해서 함수를 생성할 수 있다. 자바스크립트에서 함수는</p>
@@ -290,20 +290,20 @@
 <li>Function 생성자 함수</li>
 <li>화살표 함수</li>
 </ul>
-<p>로 정의할 수 있다.</p>
+<p>로 정의할 수 있다.  그러나 Function 생성자 함수를 통한 함수 정의는 잘 하지 않는다.</p>
 <ol>
 <li><p>함수 선언문</p>
-<p>함수 선언문은 표현식이아닌 문으로 해석된다. 함수 선언문은 실행되어 함수 객체를 생성한다. 함수 선언문을 작성할 때는 함수의 이름을 생략할 수가 없는데, 자바스크립트 엔진이 선언문을 실행해서 함수 객체를 생성할 때 함수 객체를 저장할 변수를 함수명과 동일한 이름으로 선언하기 때문이다. 우리가 선언한 함수를 호출할 때 부르는 함수명은 함수 객체를 참조하는 변수명이다. 함수명은 함수 내부에서만 참조할 수 있다. 주로 재귀함수에서 사용한다.</p>
+<p>함수 선언문은 <strong>표현식이아닌 문</strong>으로 해석된다. 함수 선언문은 실행되어 함수 객체를 생성한다. 함수 선언문을 작성할 때는 함수의 이름을 생략할 수가 없다. 자바스크립트 엔진이 선언문을 실행해서 함수 객체를 생성할 때 함수 객체를 저장할 변수를 암묵적으로 함수명과 동일한 이름으로 선언하기 때문이다. 결국 우리가 선언한 함수를 호출할 때 부르는 함수명은 함수 객체를 참조하는 변수명이다. 실제 함수명은 함수 내부에서만 참조할 수 있는 식별자이다. 주로 재귀함수에서 사용한다.</p>
 </li>
 <li><p>함수 표현식</p>
-<p>함수는 일급 객체이므로 함수 리터럴로 생성한 함수 객체를 변수에 할당할 수 있다. 이렇게 변수에 함수를 할당하는 함수 정의 방식을 함수 표현식이라고 한다. 함수 선언문으로 정의한 함수와 함수 표현식으로 정의한 함수는 호이스팅할 때 다르게 동작한다. <strong>함수 선언문</strong>은 선언문이므로 자바스크립트 엔진이 <strong>런타임 이전에 먼저 실행</strong>시켜 함수 객체를 생성하지만, <strong>함수 표현식</strong>은 런타임 도중에 <strong>할당문이 실행되는 시점</strong>에 평가되어 함수 객체가 생성된다. 즉, 함수 표현식으로 생성한 함수는 호이스팅 되지 않는다.</p>
+<p>함수는 일급 객체이므로 함수 리터럴로 생성한 함수 객체를 변수에 할당할 수 있다. 이렇게 변수에 함수를 할당하는 함수 정의 방식을 함수 표현식이라고 한다. 주의해야할 점은, 함수 선언문으로 정의한 함수와 함수 표현식으로 정의한 함수는 호이스팅할 때 다르게 동작한다는 것이다. <strong>함수 선언문</strong>은 선언문이므로 자바스크립트 엔진이 <strong>런타임 이전에 먼저 실행</strong>시켜 함수 객체를 생성하지만, <strong>함수 표현식</strong>은 런타임 도중에 <strong>할당문이 실행되는 시점</strong>에 평가되어 함수 객체가 생성된다. 즉, 함수 표현식으로 생성한 함수는 호이스팅 되지 않는다.</p>
 </li>
 <li><p>화살표 함수</p>
-<p>ES6에서 도입되었으나 모든 함수를 대체하기 위한 것은 아니다. 기존 함수와 다르게 선언될 때 상위 lexical scope의 this와 바인딩되고, prototype 프로퍼티가 없고 argument 객체를 생성하지 않는다.</p>
+<p>ES6에서 도입되었으나 모든 함수를 대체하기 위한 것은 아니다. 기존 함수와 다르게 호출 시점이 아니라 선언될 때 상위 lexical scope의 this와 바인딩되고, prototype 프로퍼티가 없고 argument 객체를 생성하지 않는다.</p>
 </li>
 </ol>
-<h2 id="6-Scope"><a href="#6-Scope" class="headerlink" title="6. Scope"></a>6. Scope</h2><p>변수의 유효 범위를 scope라고 한다. 변수는 자신이 선언된 위치에 의해서 scope가 결정된다. 유효 범위, <strong>scope란 다른 코드가 변수 자신을 참조할 수 있는 범위를 말한다.</strong></p>
-<p>scope는 전역과 지역으로 나눌 수 있는데, 함수 가장 바깥을 전역이라고 하고 전역에서 선언된 변수를 전역 변수라고 한다. 전역 변수는 코드 상 어디에서나 참조할 수 있다. 지역은 함수 몸체 내부를 의미하며 지역 스코프에서 선언된 변수를 지역 변수라고 한다. 지역 변수는 자신의 지역 스코프와 하위 지역 스코프에서 유효하다.</p>
+<h2 id="6-Scope"><a href="#6-Scope" class="headerlink" title="6. Scope"></a>6. Scope</h2><p>변수의 유효 범위를 scope라고 한다. 변수는 자신이 <strong>선언된 위치</strong>에 의해서 scope가 결정된다. 유효 범위, <strong>scope란 다른 코드가 변수 자신을 참조할 수 있는 범위를 말한다.</strong></p>
+<p>scope는 전역과 지역으로 나눌 수 있는데, 함수 가장 바깥을 전역이라고 하고 전역에서 선언된 변수를 전역 변수라고 한다. 전역 변수는 코드 상 어디에서나 참조할 수 있다. 지역은 함수 몸체 내부(또는 블록 내부)를 의미하며 지역 스코프에서 선언된 변수를 지역 변수라고 한다. 지역 변수는 자신의 지역 스코프와 그 하위 지역 스코프에서 유효하다.</p>
 <p>scope는 중첩될 수 있으며 scope는 중첩 관계를 바탕으로 scope chain을 만든다. scope는 자바스크립트 엔진이 참조할 변수를 검색할 때 사용되는 규칙이라고 할 수 있다.</p>
 <p>변수를 참조할 때 자바스크립트 엔진은 변수를 참조하는 코드의 스코프에서 시작해서 상위 스코프 방향으로 이동하면서 변수를 검색한다. 스코프 체인은 실행 컨텍스트의 렉시컬 환경을 연결한 것으로, 함수의 렉시컬 환경은 함수가 호출되며 생성된다.</p>
 <p>스코프 체인 내의 식별자 검색은 상위 방향으로만 이루어지므로 하위 스코프의 식별자를 상위 스코프에서 참조할 수 없다.</p>
@@ -523,8 +523,8 @@
 <li>동일한 프로퍼티 구조를 갖는 객체를 여러개 만들 때 모든 인스턴스가 동일한 메소드를 중복 소유하는 것은 <strong>메모리적 관점에서 비효율적</strong>이기 때문이다. 상속을 사용하면 하나의 프로토타입을 생성해 모든 인스턴스가 공유할 수 있다.</li>
 <li>인스턴스를 생성할 때마다 메소드를 생성하므로 <strong>퍼포먼스적으로 비효율적</strong>이다. 상속은 코드의 재사용이란 관점에서 유용하다. 공통적으로 사용할 프로퍼티나 메소드를 프로토타입에 미리 구현해놓으면 생성되는 인스턴스는 메소드 생성 없이 미리 구현된 프로토타입의 프로퍼티를 사용할 수 있다.</li>
 </ol>
-<h4 id="proto-amp-prototype-property"><a href="#proto-amp-prototype-property" class="headerlink" title="__proto__ &amp; prototype property"></a>__proto__ &amp; prototype property</h4><p>모든 객체는 <code>[[Prototype]]</code> 내부슬롯에 자신의 프로토타입을 가지고, 접근하기 위해서 <strong> proto </strong> 접근자 프로퍼티를 사용한다. </p>
-<p>함수 객체는 <strong> proto </strong> 접근자 프로퍼티 외에 prorotype 프로퍼티도 소유하는데, 이 둘을 헷갈리면 안된다.</p>
+<h4 id="proto-amp-prototype-property"><a href="#proto-amp-prototype-property" class="headerlink" title="__proto__ &amp; prototype property"></a>__proto__ &amp; prototype property</h4><p>모든 객체는 <code>[[Prototype]]</code> 내부슬롯에 자신의 프로토타입을 가지고, 접근하기 위해서 __proto__ 접근자 프로퍼티를 사용한다. </p>
+<p>함수 객체는 __proto__ 접근자 프로퍼티 외에 prorotype 프로퍼티도 소유하는데, 이 둘을 헷갈리면 안된다.</p>
 <p>__proto__는 모든 객체가 가지는 자신의 프로토타입 접근자 프로퍼티이고, prototype 프로퍼티는 함수 객체가 자신이 생성할 인스턴스에 할당하는 프로토타입이다.</p>
 <table>
 <thead>
