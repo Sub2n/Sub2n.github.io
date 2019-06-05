@@ -162,6 +162,179 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/05/22/30-Event/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="30. Event">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-22T12:01:02.000Z">2019-05-22</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    16 minutes read (About 2337 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/22/30-Event/">30. Event</a>
+            
+        </h1>
+        <div class="content">
+            <h3 id="1-Event"><a href="#1-Event" class="headerlink" title="1. Event"></a>1. Event</h3><p>브라우저의 이벤트는 사용자의 동작에 따라 어느 시점에 발생할 지 미리 알 수 없고 순서 또한 예측할 수 없다. 브라우저에서는 이벤트를 감지할 수 있고 이벤트 발생 시 통지를 해서 사용자와 웹 페이지의 Interaction이 가능케 한다.</p>
+<p>이벤트 발생시 실행될 함수를 등록할 수 있다. 이벤트와 함수를 연결하면 함수는 이벤트 발생 전에는 실행되지 않닥 이벤트가 발생하면 실행된다. 이런 함수를 Event Handler 또는 Event Listener라고 한다.</p>
+<blockquote>
+<h4 id="Synchronous-amp-Asynchronous-Processing-Model"><a href="#Synchronous-amp-Asynchronous-Processing-Model" class="headerlink" title="Synchronous &amp; Asynchronous Processing Model"></a>Synchronous &amp; Asynchronous Processing Model</h4><ul>
+<li>Synchronous<ul>
+<li>프로세스가 직렬적, 즉 순차적으로 task를 처리하는 처리 모델</li>
+<li>따라서 중간에 시간이 오래 걸리는 작업이 있으면 다음 작업은 대기한다.</li>
+<li>서버에서 데이터를 요청받아야할 I/O 작업이 실행될 경우에 이후의 작업들은 Block되어 대기한다. 이를 I/O Blocking이라고 한다.</li>
+</ul>
+</li>
+<li>Asynchronous<ul>
+<li>Non-Blocking Process Model이라고도 하는 Asyncoronous 처리 모델</li>
+<li>어떤 task가 종료되지 않은 상태라고 해도 대기하지 않고(Non-Blocking) 즉시 다음 task로 넘어간다.</li>
+<li>대부분의 Event를 Asncronous하게 처리한다.</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="2-Event-Loop-and-Concurrency"><a href="#2-Event-Loop-and-Concurrency" class="headerlink" title="2. Event Loop and Concurrency"></a>2. Event Loop and Concurrency</h3><p>브라우저는 Single-thread에서 Event-driven 방식으로 동작한다.</p>
+<h4 id="Single-thread"><a href="#Single-thread" class="headerlink" title="Single-thread"></a>Single-thread</h4><p>Single thread는 하나의 thread만을 사용하기 때문에 어느 한 순간에 하나의  task만을 처리할 수 있다는 것을 의미한다. 그러나 브라우저를 사용하는 사용자는 동시에 여러 웹 애플리케이션을 실행하고 있는 것처럼 느낄 것이다. <strong>Event Loop</strong>가 자바스크립트의 동시성(Concurrency)을 지원하기 때문이다.</p>
+<h4 id="Call-Stack"><a href="#Call-Stack" class="headerlink" title="Call Stack"></a>Call Stack</h4><p>스택은 LIFO(Last In First Out)으로 마지막에 들어온 task가 먼저 실행된다. 자바스크립트는 하나의 Call Stack을 사용한다. 이는 어떤 task가 종료하기 전에 다른 task는 수행될 수 없음을 의미한다.</p>
+<h4 id="Heap"><a href="#Heap" class="headerlink" title="Heap"></a>Heap</h4><p>Dynamic하게 생성된 Object Instance가 할당되는 영역</p>
+<h4 id="Event-Queue-Task-Queue"><a href="#Event-Queue-Task-Queue" class="headerlink" title="Event Queue(Task Queue)"></a>Event Queue(Task Queue)</h4><p>Asynchronous process function의 callback 함수, asynchronous event handler, Timer 함수의 callback 함수가 보관되는 영역.</p>
+<p>Event Loop에 의해 Call Stack이 비었을 때 순차적으로 Call Stack으로 이동해서 실행된다. </p>
+<p>이벤트 발생시 이벤트 핸들러는 Event Queue에 들어갔다가 Call Stack이 비면 Event Loop에 의해서 Call Stack에 진입해 실행된다.</p>
+<h4 id="Event-Loop"><a href="#Event-Loop" class="headerlink" title="Event Loop"></a>Event Loop</h4><p>Event Loop는 Call Stack의 task와 Event Queue의 task를 주기적으로 확인한다. Call Stack이 비어있는 시점에 Event Queue 내의 Task를 Call Stcak으로 이동시켜 실행하게 한다. </p>
+<p>Event Loop가 빠르게 돌며 task를 순간순간 전환하기 때문에 사용자는 여러개의 task를 동시에 실행하고 있다고 느끼는 것이다. 이렇게 한 번에 하나의 task을 처리하면서 마치 동시에 처리하는 것처럼 동작시키는 방법을 Pseudo Parallel이라고 한다.</p>
+<h3 id="3-Type-of-Events"><a href="#3-Type-of-Events" class="headerlink" title="3. Type of Events"></a>3. Type of Events</h3><p><a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank" rel="noopener">Event Reference</a></p>
+<h3 id="4-Register-Event-Handler"><a href="#4-Register-Event-Handler" class="headerlink" title="4. Register Event Handler"></a>4. Register Event Handler</h3><ul>
+<li>인라인 이벤트 핸들러</li>
+<li>이벤트 팬들러 프로퍼티</li>
+<li>addEventListener 메소드</li>
+</ul>
+<h4 id="4-1-Inline-Event-Handler"><a href="#4-1-Inline-Event-Handler" class="headerlink" title="4.1. Inline Event Handler"></a>4.1. Inline Event Handler</h4><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn"</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"foo()"</span>&gt;</span>Click me!<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-javascript">  <span class="hljs-keyword">const</span> $button = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.btn'</span>);</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span><span class="hljs-params">()</span> </span>&#123;</span></span><br><span class="line"><span class="hljs-javascript">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Clicked!'</span>);</span></span><br><span class="line"><span class="hljs-undefined">  &#125;</span></span><br><span class="line"><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>HTML element의 이벤트 핸들러 attribute에 inline으로 핸들러를 등록</p>
+<h4 id="4-2-Event-Handler-Property"><a href="#4-2-Event-Handler-Property" class="headerlink" title="4.2. Event Handler Property"></a>4.2. Event Handler Property</h4><p><img src="https://user-images.githubusercontent.com/48080762/58231568-4c381b80-7d72-11e9-8e07-7d111af4fe39.png" alt="EventHandler Property"></p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn"</span>&gt;</span>Click me!<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-javascript">  <span class="hljs-keyword">const</span> $button = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.btn'</span>);</span></span><br><span class="line"><span class="hljs-actionscript">  $button.onclick = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;</span></span><br><span class="line"><span class="hljs-javascript">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Clicked!'</span>);</span></span><br><span class="line"><span class="hljs-undefined">  &#125;;</span></span><br><span class="line"><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>HTML과 JavaScript 코드가 섞이지 않지만 한 개의 Event Handler 프로퍼티에 하나의 Event Handler만을 바인딩할 수 있다.</p>
+<h4 id="4-3-addEventListener-Method"><a href="#4-3-addEventListener-Method" class="headerlink" title="4.3. addEventListener Method"></a>4.3. addEventListener Method</h4><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn"</span>&gt;</span>Click me!<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-javascript">  <span class="hljs-keyword">const</span> $button = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.btn'</span>);</span></span><br><span class="line"><span class="hljs-actionscript">  $button.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>&#123;</span></span><br><span class="line"><span class="hljs-javascript">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Clicked!'</span>);</span></span><br><span class="line"><span class="hljs-undefined">  &#125;);</span></span><br><span class="line"><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>EventTarget.addEventListener(eventType, functionName[, useCapture])</p>
+<ul>
+<li>EventTarget : 대상 element</li>
+<li><code>eventTarget</code>: 대상 element에 바인딩될 이벤트 (String)</li>
+<li><code>fuinctionName</code>: 이벤트 발생 시 호출될 함수 명, 또는 함수 정의</li>
+<li><code>useCapture</code>(option): capture 사용 여부<ul>
+<li>Dafault: false (Bubbling)</li>
+<li>true: capturing</li>
+</ul>
+</li>
+</ul>
+<p>addEventListener의 장점</p>
+<ol>
+<li>하나의 이벤트에 여러 개의 이벤트 핸들러를 추가할 수 있다.</li>
+<li>캡처링을 사용할 수 있다.</li>
+<li>HTML element 뿐만 아니라 DOM 요소(HTML, XML, SVG)에도 동작한다.</li>
+</ol>
+<p>IE9 이상에서 동작하므로 IE8 이하에서는 attachEvent 메소드를 사용한다.</p>
+<h3 id="5-this-in-Event-Handler"><a href="#5-this-in-Event-Handler" class="headerlink" title="5. this in Event Handler"></a>5. <code>this</code> in Event Handler</h3><ol>
+<li><p><strong>Inline Event Handler</strong></p>
+<p>이벤트 핸들러가 일반 함수로 호출되므로 내부의 this는 <strong>전역 객체 window</strong>이다.</p>
+</li>
+<li><p><strong>Event Handler Property</strong></p>
+<p>이벤트 핸들러가 메소드이므로 내부의 this는 <strong>이벤트에 바인딩된 element</strong>를 가리킨다. event 객체의 currentTarget 프로퍼티 값과 같다.</p>
+</li>
+<li><p><strong>addEventListener Method</strong></p>
+<p>이벤트 핸들러 내의 this는 addEventListener 메소드를 호출한 element, 즉 <strong>이벤트 리스너에 바인딩된 element</strong>를 가리킨다. <strong>event 객체의 currentTarget 프로퍼티 값</strong>과 같다.</p>
+</li>
+</ol>
+<p>이벤트 핸들러 property와 addEventListener method로 등록한 이벤트 핸들러 내부의 this = 이벤트 리스너에 <strong>바인딩된 element</strong> = event.currentTarget</p>
+<h3 id="6-Event-Flow"><a href="#6-Event-Flow" class="headerlink" title="6. Event Flow"></a>6. Event Flow</h3><h4 id="Event-Propagation"><a href="#Event-Propagation" class="headerlink" title="Event Propagation"></a>Event Propagation</h4><p>HTML element에 이벤트가 발생할 경우 속한 계층을 따라서 이벤트가 전파(Event Propagation)된다.</p>
+<ul>
+<li>Event Capturing : child element에서 발생한 이벤트가 parent element부터 시작해서 이벤트를 발생시킨 child element까지 도달하는 것</li>
+<li>Event Bubbling : child element에서 발생한 이벤트가 parent element까지 전이되는 것</li>
+</ul>
+<p>버블링과 캡처링은 둘 중 하나만 발생하는 것이 아니라 <strong>캡처링으로 시작해 버블링으로 끝난다.</strong></p>
+<p>addEventListener 메소드의 세번째 argument를 true로 주면 캡처링으로 이동하는 이벤트를 캐치하고, flase 또는 주지 않으면 default로 버블링으로 이동하는 이벤트를 캐치한다.</p>
+<h3 id="7-Event-Object"><a href="#7-Event-Object" class="headerlink" title="7. Event Object"></a>7. Event Object</h3><p>이벤트 발생시 event 객체가 동적으로 생성되어 이벤트를 처리할 핸들러에 argument로 전달된다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">eventHandler</span>(<span class="hljs-params">e</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(e.clientX, e.clientY);</span><br><span class="line">&#125;</span><br><span class="line">addEventListener(<span class="hljs-string">'click'</span>, eventHandler);</span><br></pre></td></tr></table></figure>
+<h4 id="Event-target"><a href="#Event-target" class="headerlink" title="Event.target"></a>Event.target</h4><p>e.target은 <strong>실제로 이벤트를 발생시킨 element</strong>를 가리킨다. Event.target은 this와 반드시 일치하지 않는다.</p>
+<h4 id="Event-currentTarget"><a href="#Event-currentTarget" class="headerlink" title="Event.currentTarget"></a>Event.currentTarget</h4><p><strong>이벤트에 바인딩된 DOM element</strong>를 가리킨다. addEventListener로 지정한 이벤트 핸들러 내부의 this와 일치한다.</p>
+<h4 id="Event-type"><a href="#Event-type" class="headerlink" title="Event.type"></a>Event.type</h4><p>발생한 이벤트의 종류를 나타내는 문자열을 리턴한다.</p>
+<h4 id="Event-cancelable"><a href="#Event-cancelable" class="headerlink" title="Event.cancelable"></a>Event.cancelable</h4><p>element의 기본 동작을 취소시킬 수 있는지를 나타낸다. =&gt; Boolean</p>
+<h4 id="Event-eventPhase"><a href="#Event-eventPhase" class="headerlink" title="Event.eventPhase"></a>Event.eventPhase</h4><p>이벤트가 event flow 상에서 어떤 event phase에 있는지 리턴한다.</p>
+<table>
+<thead>
+<tr>
+<th>Return</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>No Event</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Capturing Phase</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Target</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Bubbling Phase</td>
+</tr>
+</tbody>
+</table>
+<h3 id="8-Event-Elegation"><a href="#8-Event-Elegation" class="headerlink" title="8. Event Elegation"></a>8. Event Elegation</h3><p>여러 child element의 이벤트를 캐치하고 싶을 때 이벤트 위임을 이용해서 parent element에 이벤트 핸들러를 바인딩한다. </p>
+<p>또한 어떤 ul element에 동적으로 child li element들이 추가되는 경우, 동적으로 추가되는 element는 DOM에 아직 존재하지 않으므로 이벤트 핸들러를 바인딩할 수 없다. 이런 경우에도 parent element인 ul에 이벤트 핸들러를 바인딩해 event elegation을 사용한다.</p>
+<p>이벤트 위임(Event Delegation)은 다수의 자식 요소에 각각 이벤트 핸들러를 바인딩하는 대신 하나의 부모 요소에 이벤트 핸들러를 바인딩하는 방법이다.</p>
+<p>Event Delegation은 이벤트가 Event flow에 의해서 bubbling이 되기 때문에 가능한 것이다.</p>
+<p>실제로 이벤트를 발생시킨 element는 event.target으로 찾는다.</p>
+<h3 id="9-Change-Default-Operation"><a href="#9-Change-Default-Operation" class="headerlink" title="9. Change Default Operation"></a>9. Change Default Operation</h3><p>Event object는 element의 default 동작을 가지며 element의 parent element들이 이벤트에 대응하는 방법을 변경할 수 있도록하는 메소드를 가진다.</p>
+<h4 id="Event-preventDefault"><a href="#Event-preventDefault" class="headerlink" title="Event.preventDefault()"></a>Event.preventDefault()</h4><p>form을 submit하거나 link를 클릭하면 default로 다른 페이지로 이동하는데, 이처럼 element가 가진 default 동작을 막는 메소드가 preventDefault()이다.</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://www.google.com"</span>&gt;</span>go<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-javascript">  <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'a'</span>).addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="hljs-javascript">    <span class="hljs-built_in">console</span>.log(e.target, e.target.nodeName);</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">    <span class="hljs-comment">// a 요소의 기본 동작을 중단한다.</span></span></span><br><span class="line"><span class="hljs-undefined">    e.preventDefault();</span></span><br><span class="line"><span class="hljs-undefined">  &#125;);</span></span><br><span class="line"><span class="hljs-undefined">  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="Event-stopPropagation"><a href="#Event-stopPropagation" class="headerlink" title="Event.stopPropagation()"></a>Event.stopPropagation()</h4><p>Event flow 상의 어떤 한 element에서 이벤트를 처리한 후에,  더이상 이벤트가 전파되는 것을 중단하게끔 하는 메소드이다. 주로 child와 parent에 동일한 event에 대한 핸들러가 각각 다르게 등록되어있는 경우에 사용한다. child에서 일어난 event에서 op1을 동작해야 하는데 parent로 이벤트가 전파되어 op2가 동작되면 안되기 때문이다.</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-css">    <span class="hljs-selector-tag">html</span>, <span class="hljs-selector-tag">body</span> &#123; <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;&#125;</span></span><br><span class="line"><span class="hljs-undefined">  </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>버튼을 클릭하면 이벤트 전파를 중단한다. <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>버튼<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-javascript">    <span class="hljs-keyword">const</span> body = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'body'</span>);</span></span><br><span class="line"><span class="hljs-javascript">    <span class="hljs-keyword">const</span> para = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'p'</span>);</span></span><br><span class="line"><span class="hljs-javascript">    <span class="hljs-keyword">const</span> button = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'button'</span>);</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">    <span class="hljs-comment">// default: 버블링</span></span></span><br><span class="line"><span class="hljs-actionscript">    body.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;</span></span><br><span class="line"><span class="hljs-javascript">      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Handler for body.'</span>);</span></span><br><span class="line"><span class="hljs-undefined">    &#125;);</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">    <span class="hljs-comment">// default: 버블링</span></span></span><br><span class="line"><span class="hljs-actionscript">    para.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;</span></span><br><span class="line"><span class="hljs-javascript">      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Handler for paragraph.'</span>);</span></span><br><span class="line"><span class="hljs-undefined">    &#125;);</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">    <span class="hljs-comment">// default: 버블링</span></span></span><br><span class="line"><span class="hljs-actionscript">    button.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(event)</span> </span>&#123;</span></span><br><span class="line"><span class="hljs-javascript">      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Handler for button.'</span>);</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">      <span class="hljs-comment">// 이벤트 전파를 중단</span></span></span><br><span class="line"><span class="hljs-undefined">      event.stopPropagation();</span></span><br><span class="line"><span class="hljs-undefined">    &#125;);</span></span><br><span class="line"><span class="hljs-undefined">  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="preventDefault-amp-stopPropagation"><a href="#preventDefault-amp-stopPropagation" class="headerlink" title="preventDefault &amp; stopPropagation"></a>preventDefault &amp; stopPropagation</h3><p>default 동작과 bubbling/capturing을 동시에 중단시킬 수 있는 방법이 있다.</p>
+<p>이벤트 핸들러 내에서 <code>return false;</code>를 하면 되는데, 이 방법은 jQuery를 사용하거나 inline event handler로 이벤트 핸들러를 return할 때만 동작한다.</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://www.google.com"</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">'return handleEvent()'</span>&gt;</span>go<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleEvent</span><span class="hljs-params">()</span> </span>&#123;</span></span><br><span class="line"><span class="hljs-actionscript">    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</span></span><br><span class="line"><span class="hljs-undefined">  &#125;</span></span><br><span class="line"><span class="hljs-undefined">  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://www.google.com"</span>&gt;</span>go<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">  <span class="hljs-comment">// within jQuery</span></span></span><br><span class="line"><span class="hljs-javascript">  $(<span class="hljs-string">'a'</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="hljs-actionscript">    e.preventDefault(); <span class="hljs-comment">// OK</span></span></span><br><span class="line"><span class="hljs-undefined">  &#125;);</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-javascript">  $(<span class="hljs-string">'a'</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span></span><br><span class="line"><span class="hljs-actionscript">    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>; <span class="hljs-comment">// OK --&gt; e.preventDefault() &amp; e.stopPropagation().</span></span></span><br><span class="line"><span class="hljs-undefined">  &#125;);</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">  <span class="hljs-comment">// pure js</span></span></span><br><span class="line"><span class="hljs-javascript">  <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'a'</span>).addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="hljs-actionscript">    <span class="hljs-comment">// e.preventDefault(); // OK</span></span></span><br><span class="line"><span class="hljs-actionscript">    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;       <span class="hljs-comment">// NG!!!!!</span></span></span><br><span class="line"><span class="hljs-undefined">  &#125;);</span></span><br><span class="line"><span class="hljs-undefined">  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/05/22/29. DOM/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="29. DOM">
         </a>
@@ -785,159 +958,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/05/20/24-Higher-Order-Function/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="24. Higher Order Function">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-20T01:21:56.000Z">2019-05-20</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    12 minutes read (About 1746 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/20/24-Higher-Order-Function/">24. Higher Order Function</a>
-            
-        </h1>
-        <div class="content">
-            <h4 id="고차-함수-Higher-order-function"><a href="#고차-함수-Higher-order-function" class="headerlink" title="고차 함수(Higher order function)"></a>고차 함수(Higher order function)</h4><p>함수를 인자(paremeter)로 전달받거나 함수를 결과로 반환하는 함수.</p>
-<p>고차 함수는 parameter로 받은 함수를 필요한 시점에 호출하거나 <strong>클로저</strong>를 생성해서 리턴한다. 자바스크립트에서 함수는 FIrst-class object이므로 값처럼 parameter 로 전달하고 리턴할 수 있다. </p>
-<p>고차 함수는 외부에서 전달되는 보조 함수(Helper function)에 따라서 다른 동작을 수행할 수 있다. 함수는 선언된 위치의 스코프를 기억하므로 고차 함수가 클로저를 리턴하고 끝나도 클로저에 의해 참조되고 있는 고차 함수 내부의 변수는 소멸하지 않는다. 이렇게 클로저가 참조하고 있어 스코프가 유지되는 변수를 자유 변수(Free variable)라고 한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeAdder</span>(<span class="hljs-params">x</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">var</span> y = <span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">z</span>) </span>&#123;</span><br><span class="line">    y = <span class="hljs-number">100</span>;</span><br><span class="line">    <span class="hljs-keyword">return</span> x + y + z;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> add5 = makeAdder(<span class="hljs-number">5</span>);</span><br><span class="line"><span class="hljs-keyword">const</span> add10 = makeAdder(<span class="hljs-number">10</span>);</span><br></pre></td></tr></table></figure>
-<h4 id="함수형-프로그래밍"><a href="#함수형-프로그래밍" class="headerlink" title="함수형 프로그래밍"></a>함수형 프로그래밍</h4><ul>
-<li>불변성(Immutability)  지향 : 외부 상태 변경이나 가변(mutable) 데이터를 피함</li>
-<li>순수 함수(Pure function) 사용 : 외부 상태를 변경하지 않는 순수 함수를 통해서 side effect를 최대한 억제</li>
-</ul>
-<p>고차 함수는 순수 함수와 보조 함수의 조합을 통해 프로그램의 안정성을 높이는 함수형 프로그래밍에 기반을 두고 있다.</p>
-<h2 id="1-Array-prototype-sort"><a href="#1-Array-prototype-sort" class="headerlink" title="1. Array.prototype.sort()"></a>1. Array.prototype.sort()</h2><p>숫자 배열 정렬</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> points = [<span class="hljs-number">40</span>, <span class="hljs-number">100</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">25</span>, <span class="hljs-number">10</span>];</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 숫자 배열 오름차순 정렬</span></span><br><span class="line"><span class="hljs-comment">// 비교 함수의 반환값이 0보다 작은 경우, a를 우선하여 정렬한다.</span></span><br><span class="line">points.sort(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">a, b</span>) </span>&#123; <span class="hljs-keyword">return</span> a - b; &#125;);</span><br><span class="line"><span class="hljs-comment">// ES6 화살표 함수</span></span><br><span class="line"><span class="hljs-comment">// points.sort((a, b) =&gt; a - b);</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(points); <span class="hljs-comment">// [ 1, 2, 5, 10, 25, 40, 100 ]</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 숫자 배열에서 최소값 취득</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(points[<span class="hljs-number">0</span>]); <span class="hljs-comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 숫자 배열 내림차순 정렬</span></span><br><span class="line"><span class="hljs-comment">// 비교 함수의 반환값이 0보다 큰 경우, b를 우선하여 정렬한다.</span></span><br><span class="line">points.sort(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">a, b</span>) </span>&#123; <span class="hljs-keyword">return</span> b - a; &#125;);</span><br><span class="line"><span class="hljs-comment">// ES6 화살표 함수</span></span><br><span class="line"><span class="hljs-comment">// points.sort((a, b) =&gt; b - a);</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(points); <span class="hljs-comment">// [ 100, 40, 25, 10, 5, 2, 1 ]</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 숫자 배열에서 최대값 취득</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(points[<span class="hljs-number">0</span>]); <span class="hljs-comment">// 100</span></span><br></pre></td></tr></table></figure>
-<p>객체 배열 정렬</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> todos = [</span><br><span class="line">  &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">4</span>, <span class="hljs-attr">content</span>: <span class="hljs-string">'JavaScript'</span> &#125;,</span><br><span class="line">  &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">content</span>: <span class="hljs-string">'HTML'</span> &#125;,</span><br><span class="line">  &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">content</span>: <span class="hljs-string">'CSS'</span> &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 비교 함수</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">compare</span>(<span class="hljs-params">key</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// 프로퍼티 값이 문자열인 경우, - 산술 연산으로 비교하면 NaN이 나오므로 비교 연산을 사용한다.</span></span><br><span class="line">    <span class="hljs-keyword">return</span> a[key] &gt; b[key] ? <span class="hljs-number">1</span> : (a[key] &lt; b[key] ? <span class="hljs-number">-1</span> : <span class="hljs-number">0</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// id를 기준으로 정렬</span></span><br><span class="line">todos.sort(compare(<span class="hljs-string">'id'</span>));</span><br><span class="line"><span class="hljs-built_in">console</span>.log(todos);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// content를 기준으로 정렬</span></span><br><span class="line">todos.sort(compare(<span class="hljs-string">'content'</span>));</span><br><span class="line"><span class="hljs-built_in">console</span>.log(todos);</span><br></pre></td></tr></table></figure>
-<h2 id="2-Array-prototype-forEach-callback-currentValue-index-array-thisArg"><a href="#2-Array-prototype-forEach-callback-currentValue-index-array-thisArg" class="headerlink" title="2. Array.prototype.forEach(callback(currentValue[, index[, array]])[, thisArg])"></a>2. Array.prototype.forEach(callback(currentValue[, index[, array]])[, thisArg])</h2><blockquote>
-<h3 id="Parameter"><a href="#Parameter" class="headerlink" title="Parameter"></a>Parameter</h3><p><strong><code>callback</code>(currentValue[, index, array])</strong></p>
-<ul>
-<li><code>currentValue</code> : 현재 처리할 요소 값</li>
-<li><code>index</code>(option) : 현재 처리할 요소의 인덱스</li>
-<li><code>array</code>(option) : forEach()를 호출한 배열</li>
-</ul>
-<p><strong><code>thisArg</code> (option)</strong></p>
-<p>​    <code>callback</code>이 실행될 때 <code>this</code>로 사용할 값</p>
-<h3 id="Return-Value"><a href="#Return-Value" class="headerlink" title="Return Value"></a>Return Value</h3><p><code>undefined</code></p>
-</blockquote>
-<ul>
-<li>forEach 메소드는  for 문 대신 사용 가능</li>
-<li>for 문보다 성능이 좋지는 않지만 가독성이 좋으므로 사용이 권장된다.</li>
-<li>break 문을 사용할 수 없어 중단 없이 배열의 모든 요소를 순회한다.</li>
-<li>IE 9 이상에서 정상 동작</li>
-</ul>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];</span><br><span class="line"><span class="hljs-keyword">let</span> pows = [];</span><br><span class="line"></span><br><span class="line">numbers.forEach(<span class="hljs-function">(<span class="hljs-params">item</span>) =&gt;</span> pows.push(item ** <span class="hljs-number">2</span>));</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(pows);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>forEach 메소드는 this를 수정할 수 없지만 callback 함수는 세 번째 인자로 넘겨받은 원본 배열과 forEach 메소드의 두번째 인자로 넘겨받은 this를 수정할 수 있다.</li>
-</ul>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Square</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">this</span>.array = [];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Square.prototype.multiply = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>); <span class="hljs-comment">// multiply가 메소드로 호출되었으므로 this는 square 객체 : Square &#123; array: [] &#125;</span></span><br><span class="line">  arr.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item, index, array2</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>);	<span class="hljs-comment">// Square &#123; array: [] &#125; (1.에서 바인딩된 this)</span></span><br><span class="line">    <span class="hljs-built_in">console</span>.log(array2); <span class="hljs-comment">// [1, 2, 3]</span></span><br><span class="line">    <span class="hljs-keyword">this</span>.array.push(item * item);</span><br><span class="line">  &#125;, <span class="hljs-keyword">this</span>);	<span class="hljs-comment">// 1. this를 callback의 this로 바인딩</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> square = <span class="hljs-keyword">new</span> Square(); <span class="hljs-comment">// Square &#123; array: [] &#125;</span></span><br><span class="line">square.multiply([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(square.array); <span class="hljs-comment">// [ 1, 4, 9 ]</span></span><br></pre></td></tr></table></figure>
-<h2 id="3-Array-prototype-map-callback-currentValue-index-array-thisArg"><a href="#3-Array-prototype-map-callback-currentValue-index-array-thisArg" class="headerlink" title="3. Array.prototype.map(callback(currentValue[, index[, array]])[, thisArg])"></a>3. Array.prototype.map(callback(currentValue[, index[, array]])[, thisArg])</h2><blockquote>
-<h3 id="Parameter-1"><a href="#Parameter-1" class="headerlink" title="Parameter"></a>Parameter</h3><p><strong><code>callback</code>(currentValue[, index, array])</strong></p>
-<ul>
-<li><code>currentValue</code> : 현재 처리할 요소 값</li>
-<li><code>index</code>(option) : 현재 처리할 요소의 인덱스</li>
-<li><code>array</code>(option) : forEach()를 호출한 배열</li>
-</ul>
-<p><strong><code>thisArg</code> (option)</strong></p>
-<p>​    <code>callback</code>이 실행될 때 <code>this</code>로 사용할 값</p>
-<h3 id="Return-Value-1"><a href="#Return-Value-1" class="headerlink" title="Return Value"></a>Return Value</h3><p>배열의 각 요소에 대해 실행한  callback의 <strong>리턴 값</strong>(리턴 필수)으로 이루어진 새로운 배열</p>
-</blockquote>
-<h2 id="4-Array-prototype-filter-callback-currentValue-index-array-thisArg"><a href="#4-Array-prototype-filter-callback-currentValue-index-array-thisArg" class="headerlink" title="4. Array.prototype.filter(callback(currentValue[, index[, array]])[, thisArg])"></a>4. Array.prototype.filter(callback(currentValue[, index[, array]])[, thisArg])</h2><blockquote>
-<h3 id="Parameter-2"><a href="#Parameter-2" class="headerlink" title="Parameter"></a>Parameter</h3><p><strong><code>callback</code>(currentValue[, index, array])</strong></p>
-<ul>
-<li><code>currentValue</code> : 현재 처리할 요소 값</li>
-<li><code>index</code>(option) : 현재 처리할 요소의 인덱스</li>
-<li><code>array</code>(option) : forEach()를 호출한 배열</li>
-</ul>
-<p><strong><code>thisArg</code> (option)</strong></p>
-<p>​    <code>callback</code>이 실행될 때 <code>this</code>로 사용할 값</p>
-<h3 id="Return-Value-2"><a href="#Return-Value-2" class="headerlink" title="Return Value"></a>Return Value</h3><p><code>callback</code> 테스트를 통과한 요소로 이루어진 새로운 배열. 조건에 부합하지 않아 리턴된 요소가 없으면 빈 배열을 리턴</p>
-</blockquote>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> result = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>].filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item, index, self</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`[<span class="hljs-subst">$&#123;index&#125;</span>] = <span class="hljs-subst">$&#123;item&#125;</span>`</span>);</span><br><span class="line">  <span class="hljs-keyword">return</span> item % <span class="hljs-number">2</span>; <span class="hljs-comment">// return true인 item만 새로운 배열에 추가한다.</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// [ 1, 3, 5 ]</span></span><br></pre></td></tr></table></figure>
-<h2 id="5-Array-prototype-reduce-callback-initialValue"><a href="#5-Array-prototype-reduce-callback-initialValue" class="headerlink" title="5.  Array.prototype.reduce(callback[, initialValue])"></a>5.  Array.prototype.reduce(callback[, initialValue])</h2><blockquote>
-<h3 id="Parameter-3"><a href="#Parameter-3" class="headerlink" title="Parameter"></a>Parameter</h3><p><code>callback</code></p>
-<ul>
-<li><code>accumulator</code> : accumulator(누산기)는 callback의 리턴값을 누적한다. imitialValue가 제공된 경우에는 initialValue로 초기화되어 시작하고, 아닌 경우 callback의 이전 리턴값이다.</li>
-<li><code>currentValue</code> : 현재 처리할 요소 값</li>
-<li><code>currentIndex</code>(option) : 현재 처리할 요소의 인덱스. initialValue가 제공된 경우 0. 아니면 1부터 시작</li>
-<li><code>array</code>(option) : reduce()를 호출한 배열</li>
-</ul>
-<p><code>initialValue</code>(option)</p>
-<p>​    <code>callback</code>의 최초 호출에서 첫번째 argument에 제공하는 초기값. 초기값을 제공하지 않을 경우 배열의 첫번쨰 요소를 사용. (빈 배열에서 초기값 없이 reduce() 호출시 에러)</p>
-<h3 id="Return-Value-3"><a href="#Return-Value-3" class="headerlink" title="Return Value"></a>Return Value</h3><p>누적 계산 결과 값</p>
-</blockquote>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment">previousValue: 이전 콜백의 반환값</span></span><br><span class="line"><span class="hljs-comment">currentValue : 현재 처리할 배열 요소의 값</span></span><br><span class="line"><span class="hljs-comment">currentIndex : 현재 처리할 배열 요소의 인덱스</span></span><br><span class="line"><span class="hljs-comment">array        : 메소드를 호출한 배열</span></span><br><span class="line"><span class="hljs-comment">*/</span></span><br><span class="line"><span class="hljs-keyword">const</span> sum = arr.reduce(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">previousValue, currentValue, currentIndex, array</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(previousValue + <span class="hljs-string">'+'</span> + currentValue + <span class="hljs-string">'='</span> + (previousValue + currentValue));</span><br><span class="line">  <span class="hljs-keyword">return</span> previousValue + currentValue; <span class="hljs-comment">// 결과는 다음 콜백의 첫번째 인자로 전달된다</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment">1+2=3</span></span><br><span class="line"><span class="hljs-comment">3+3=6</span></span><br><span class="line"><span class="hljs-comment">6+4=10</span></span><br><span class="line"><span class="hljs-comment">10+5=15</span></span><br><span class="line"><span class="hljs-comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(sum); <span class="hljs-comment">// 15: 1~5까지의 합</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> max = arr.reduce(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">prev, cur</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> prev &gt; cur ? prev : cur;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(max); <span class="hljs-comment">// 5: 최대값</span></span><br></pre></td></tr></table></figure>
-<h2 id="6-Array-prototype-some-callback-thisArg-boolean"><a href="#6-Array-prototype-some-callback-thisArg-boolean" class="headerlink" title="6. Array.prototype.some(callback [, thisArg]): boolean"></a>6. Array.prototype.some(callback [, thisArg]): boolean</h2><p>배열 내 <strong>일부 요소</strong>가 콜백 함수의 테스트를 통과하는지 확인해서 결과를 boolean으로 반환한다.</p>
-<h2 id="7-Array-prototype-every-callback-thisArg-boolean"><a href="#7-Array-prototype-every-callback-thisArg-boolean" class="headerlink" title="7. Array.prototype. every(callback [, thisArg]): boolean"></a>7. Array.prototype. every(callback [, thisArg]): boolean</h2><p>배열 내 <strong>모든 요소</strong>가 콜백 함수의 테스트를 통과하는지 확인해서 결과를 boolean으로 반환한다.</p>
-<h2 id="8-Array-prototype-find-callback-thisArg"><a href="#8-Array-prototype-find-callback-thisArg" class="headerlink" title="8. Array.prototype.find(callback[, thisArg])"></a>8. Array.prototype.find(callback[, thisArg])</h2><blockquote>
-<h3 id="Parameter-4"><a href="#Parameter-4" class="headerlink" title="Parameter"></a>Parameter</h3><p><strong><code>callback</code></strong></p>
-<ul>
-<li><code>element</code> : 현재 처리할 요소</li>
-<li><code>index</code>(option) : 현재 처리할 요소의 인덱스</li>
-<li><code>array</code>(option) : find()를 호출한 배열</li>
-</ul>
-<p><strong><code>thisArg</code> (option)</strong></p>
-<p>​    <code>callback</code>이 실행될 때 <code>this</code>로 사용할 객체</p>
-<h3 id="Return-Value-4"><a href="#Return-Value-4" class="headerlink" title="Return Value"></a>Return Value</h3><p><code>callback</code> 테스트를 통과한 첫번째 요소의 값. 못 찾으면 <code>undefined</code></p>
-</blockquote>
-<hr>
-<h2 id="Object-assign-target-…sources"><a href="#Object-assign-target-…sources" class="headerlink" title="Object.assign(target, …sources)"></a>Object.assign(target, …sources)</h2><blockquote>
-<h3 id="Parameter-5"><a href="#Parameter-5" class="headerlink" title="Parameter"></a>Parameter</h3><p><code>target</code> : 대상 객체</p>
-<p><code>sources</code> : 하나 이상의  source 객체</p>
-<h3 id="Return-Value-5"><a href="#Return-Value-5" class="headerlink" title="Return Value"></a>Return Value</h3><p> target(대상 객체)</p>
-</blockquote>
-<p>동일한 키가 존재할 경우 target 객체의 프로퍼티는 source 객체의 프로퍼티로 덮어쓰여진다.</p>
-<p>Object.assign() 메소드는 enumarable한 source 객체의 프로퍼티만  target 객체의 프로퍼티로 덮어쓴다. source 객체의 프로퍼티가 <code>null</code>이나 <code>undefined</code>이어도 에러를 내지 않는다.</p>
-<blockquote>
-<h3 id="Parameter-6"><a href="#Parameter-6" class="headerlink" title="Parameter"></a>Parameter</h3><p><strong><code>callback</code>(currentValue[, index, array])</strong></p>
-<ul>
-<li><code>currentValue</code> : 현재 처리할 요소 값</li>
-<li><code>index</code> : 현재 처리할 요소의 인덱스</li>
-<li><code>array</code> : forEach()를 호출한 배열</li>
-</ul>
-<p><strong><code>thisArg</code> (option)</strong></p>
-<p><code>callback</code>이 실행될 때 <code>this</code>로 사용할 값</p>
-<h3 id="Return-Value-6"><a href="#Return-Value-6" class="headerlink" title="Return Value"></a>Return Value</h3><p><code>undefined</code></p>
-</blockquote>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -1008,7 +1028,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        124
+                        125
                     </p>
                 </div>
             </div>
@@ -1028,7 +1048,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        70
+                        71
                     </p>
                 </div>
             </div>
@@ -1121,7 +1141,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Babel/" style="font-size: 10px;">Babel</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 10px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 10px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 18.33px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 11.67px;">Javascript</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 11.67px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a>
+        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Babel/" style="font-size: 10px;">Babel</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 10px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 10px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/JavaScript/" style="font-size: 18.33px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 11.67px;">Javascript</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 11.67px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/실행-컨텍스트/" style="font-size: 10px;">실행 컨텍스트</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a>
     </div>
 </div>
 
@@ -1217,7 +1237,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">35</span>
+                <span class="level-item tag">36</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1255,6 +1275,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/05/34-Execution-Context/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="34. Execution Context">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-05T01:43:07.000Z">2019-06-05</time></div>
+                    <a href="/2019/06/05/34-Execution-Context/" class="has-link-black-ter is-size-6">34. Execution Context</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1332,25 +1371,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/31/190531-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/pink.png" alt="190531-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-31T09:35:26.000Z">2019-05-31</time></div>
-                    <a href="/2019/05/31/190531-TIL/" class="has-link-black-ter is-size-6">190531-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1369,7 +1389,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -1626,7 +1646,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">29</span>
+                        <span class="tag is-grey">30</span>
                     </a>
                 </div>
                 
@@ -1899,6 +1919,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/window/">
                         <span class="tag">window</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/실행-컨텍스트/">
+                        <span class="tag">실행 컨텍스트</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -2014,7 +2041,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">35</span>
+                <span class="level-item tag">36</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -2052,6 +2079,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/05/34-Execution-Context/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="34. Execution Context">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-05T01:43:07.000Z">2019-06-05</time></div>
+                    <a href="/2019/06/05/34-Execution-Context/" class="has-link-black-ter is-size-6">34. Execution Context</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -2129,25 +2175,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/31/190531-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/pink.png" alt="190531-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-31T09:35:26.000Z">2019-05-31</time></div>
-                    <a href="/2019/05/31/190531-TIL/" class="has-link-black-ter is-size-6">190531-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2166,7 +2193,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -2423,7 +2450,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">29</span>
+                        <span class="tag is-grey">30</span>
                     </a>
                 </div>
                 
@@ -2696,6 +2723,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/window/">
                         <span class="tag">window</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/실행-컨텍스트/">
+                        <span class="tag">실행 컨텍스트</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

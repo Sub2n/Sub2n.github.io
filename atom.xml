@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sub2n.github.io/"/>
-  <updated>2019-03-13T06:32:43.607Z</updated>
+  <updated>2019-06-05T01:44:18.354Z</updated>
   <id>https://sub2n.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>34. Execution Context</title>
+    <link href="https://sub2n.github.io/2019/06/05/34-Execution-Context/"/>
+    <id>https://sub2n.github.io/2019/06/05/34-Execution-Context/</id>
+    <published>2019-06-05T01:43:07.000Z</published>
+    <updated>2019-06-05T01:44:18.354Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/tags/JavaScript/"/>
+    
+      <category term="실행 컨텍스트" scheme="https://sub2n.github.io/tags/%EC%8B%A4%ED%96%89-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
@@ -42,9 +62,9 @@
     <link href="https://sub2n.github.io/2019/06/04/190604-TIL/"/>
     <id>https://sub2n.github.io/2019/06/04/190604-TIL/</id>
     <published>2019-06-04T04:11:33.000Z</published>
-    <updated>2019-06-04T07:22:03.630Z</updated>
+    <updated>2019-06-04T07:51:44.936Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><h3 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h3><p>MongoDB는 Document-Oriented NoSQL Database이다. RDBMS의 Table을 Collection, Tuple를 Document라고 부른다.<br>RDBMS처럼 고정된 Schema가 존재하지 않고 하나의 Collection 내의 DOcument가 각각 다른 Schema를 가질 수 있다.</p><ul><li>Todos version 3을 만들었다.</li><li>MongoDB 서버를 연동</li><li>복습하는 겸 네트워크 공부를 조금 했다.</li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><h3 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h3><p>MongoDB는 Document-Oriented NoSQL Database이다. RDBMS의 Table을 Collection, Tuple를 Document라고 부른다.<br>RDBMS처럼 고정된 Schema가 존재하지 않고 하나의 Collection 내의 DOcument가 각각 다른 Schema를 가질 수 있다.</p><h3 id="SASS"><a href="#SASS" class="headerlink" title="SASS"></a>SASS</h3><p>Sass(Syntactically Awesome StyleSheets)는 CSS pre-processor로 CSS의 단점을 보완하고 코드 재사용에 유리한 CSS를 생성하기 위한 CSS의 extension이다.</p><ul><li>변수의 사용</li><li>조건문과 반복문</li><li>Import</li><li>Nesting</li><li>Mixin</li><li>Extend/Inheritance</li></ul><p>등의 도구들을 제공한다.</p><h3 id="한-일"><a href="#한-일" class="headerlink" title="한 일"></a>한 일</h3><ul><li>Todos version 3을 만들었다.</li><li>MongoDB 서버를 연동</li><li>복습하는 겸 네트워크 공부를 조금 했다.</li></ul>]]></content>
     
     <summary type="html">
     
@@ -519,32 +539,6 @@
       <category term="JavaScript" scheme="https://sub2n.github.io/tags/JavaScript/"/>
     
       <category term="ES6" scheme="https://sub2n.github.io/tags/ES6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>190521-TIL</title>
-    <link href="https://sub2n.github.io/2019/05/21/190521-TIL/"/>
-    <id>https://sub2n.github.io/2019/05/21/190521-TIL/</id>
-    <published>2019-05-21T04:18:01.000Z</published>
-    <updated>2019-05-22T04:56:50.942Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h4><ul><li>해커톤 웹 애플리케이션에 사용할 자료를 조사하고 분류하는 작업을 했다.</li><li>자바스크립트의 클래스, 디스트럭처링, 객체 프로퍼티 등을 공부했다.</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;해커톤 웹 애플리케이션
-      
-    
-    </summary>
-    
-      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
-    
-    
-      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
     
   </entry>
   
