@@ -16,7 +16,7 @@
 <meta property="og:description" content="실행 컨텍스트(Execution Context)는 실행 가능한 코드를 평가하고 실행하기 위해 필요한 환경을 제공하고 코드의 실행 결과를 실제로 관리하는 영역이다. Context는 문맥, 맥락이라는 뜻이다. 프로그램에도 맥락이 있다. 예를 들면 식별자가 어느 스코프에서 사용되었는지에 따라서 다른 값을 참조한다.">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
-<meta property="og:updated_time" content="2019-06-07T07:26:41.415Z">
+<meta property="og:updated_time" content="2019-06-07T09:11:21.472Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="34. Execution Context">
 <meta name="twitter:description" content="실행 컨텍스트(Execution Context)는 실행 가능한 코드를 평가하고 실행하기 위해 필요한 환경을 제공하고 코드의 실행 결과를 실제로 관리하는 영역이다. Context는 문맥, 맥락이라는 뜻이다. 프로그램에도 맥락이 있다. 예를 들면 식별자가 어느 스코프에서 사용되었는지에 따라서 다른 값을 참조한다.">
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    32 minutes read (About 4860 words)
+                    36 minutes read (About 5340 words)
                 </span>
                 
                 
@@ -272,7 +272,8 @@
 <h5 id="2-3-this-바인딩"><a href="#2-3-this-바인딩" class="headerlink" title="2-3. this 바인딩"></a>2-3. this 바인딩</h5><p>일반적으로 this는 호출되는 방식에 따라서 다르게 바인딩된다.</p>
 <p>this를 참조하는 순간 추상 연산 ResolveThisBinding 메소드가 도는데, 화살표 함수의 경우 선언된 코드가 실행중인 실행 컨텍스트의 Lexical Environment의 this, 즉 Lexical this를 자신의 this로 바인딩한다.</p>
 <h4 id="5-함수-코드-실행"><a href="#5-함수-코드-실행" class="headerlink" title="5. 함수 코드 실행"></a>5. 함수 코드 실행</h4><h2 id="7-Execution-Context-and-Block-level-Scope"><a href="#7-Execution-Context-and-Block-level-Scope" class="headerlink" title="7. Execution Context and Block-level Scope"></a>7. Execution Context and Block-level Scope</h2><p><a href="http://tc39.es/ecma262/#sec-block-runtime-semantics-evaluation" target="_blank" rel="noopener">ECMAScript block spec</a></p>
-<p>스코프는 렉시컬 환경으로 구현된다. 즉, 블록 레벨 스코프를 만들기 위해서는 Block 렉시컬 환경을 만들어야한다. 그러나 실행 컨텍스트는 4가지 실행 가능한 코드(Executable Code)만이 생성할 수 있다. Block: { Statement }가 평가될 때 일어나는 일은 다음과 같다.</p>
+<p>스코프는 렉시컬 환경으로 구현된다. 즉, 블록 레벨 스코프를 만들기 위해서는 Block 렉시컬 환경을 만들어야한다. 그러나 실행 컨텍스트는 4가지 실행 가능한 코드(Executable Code)만이 생성할 수 있다. 그러므로 블록문이 평가될 때는 실행 컨텍스트가 아닌 Lexical Environment만 생성한다.</p>
+<p>Block: { Statement }가 평가될 때 일어나는 일은 다음과 같다.</p>
 <ol>
 <li><p>변수 oldEnv에 running execution context의 LexicalEnvironment를 담는다.</p>
 </li>
@@ -287,15 +288,35 @@
 <li>env의 OuterLexicalEnvironmentReference = E</li>
 <li>env를 리턴</li>
 </ol>
+<p>즉 현재 실행중인 실행 컨텍스트의 Lexical Environment를 OuterLexicalEnvironment로 하는 새로운 Block Lexical Environment를 생성해 blockEnv에 담는다. 이 Lexical Environment의 Environment Record 컴포넌트로 Declarative Environment Record를 가진다.</p>
 </li>
-<li></li>
+<li><p>BlockDeclarationInstantiation(StatementList, blockEnv) 수행</p>
+<p>Block 또는 CaseBlock이 평가되면 새로운 Declarative Environment Record가 생성되고 블록에서 선언 된 각 block scoped 변수, 상수, 함수 또는 클래스에 대한 바인딩이 환경 레코드에서 인스턴스화된다.</p>
+<ul>
+<li>BlockDeclarationInstantiation ( code, env )<ol>
+<li>envRec = env의 EnvironmentRecord (Deciarative)</li>
+<li>code에서 각 선언문 평가하며 식별자와 값을 바인딩해서 envRec에 추가한다.</li>
 </ol>
+</li>
+</ul>
+</li>
+<li><p>running execution context의 LexicalEnvironment를 새로 생성한 blockEnv로 지정한다. (blockEnv에는 내부 코드가 평가되어 식별자가 등록된 상태)</p>
+</li>
+<li><p>StatementList(block 문 내부의 문들)을 평가하고 결과를 blockValue에 넣는다.</p>
+</li>
+<li><p>running execution context의 LexicalEnvironment를 oldEnv (blockEnv의 상위 Env)로 다시 돌려놓는다.</p>
+</li>
+<li><p>block 문의 실행 결과인 blockValue를 리턴한다.</p>
+</li>
+</ol>
+<p>쉽게 말하면 블록 문을 실행하면 현재 실행 컨텍스트는 변화하지 않는다. 대신 새로운 Block LexicalEnvironment를 생성해서 현재 실행중인 실행 컨텍스트의 LexicalEnvironment로 잠시 대체한다. 원래의 LexicalEnvironment는 oldEnv에 저장해놓는다. 새로 생성한 blovkEnv는 oldEnv를 상위 스코프로 삼는다. blockEnv를 LexicalEnvironment로 참조하는 상태에서 블록 문을 실행한 후에 현재 실행중인 실행 컨텍스트의 LexicalEnvironment를 다시 oldEnv, 즉 블록문을 실행하기 전의 LexicalEnvironment로 돌려놓는다.</p>
 <h2 id="Before-Closure"><a href="#Before-Closure" class="headerlink" title="Before Closure"></a>Before Closure</h2><p>클로저를 이해하기 위해서는 실행 컨텍스트에 대한 선행 지식이 요구된다. 실행 컨텍스트와 스코프 체인, 프로토 타입을 이해하고 있어야 풀 수 있는 아래 문제를 먼저 풀고 넘어가자. foo 함수의 호출 결과는 무엇일까?</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">Object</span>.prototype.x = <span class="hljs-number">1</span>;</span><br><span class="line"></span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
-<p><img src="https://user-images.githubusercontent.com/48080762/59080999-cd70e000-8926-11e9-906a-e7f5e7fec911.png" alt="window object inherits Object.prototype"></p>
+<h4 id="Object-prototype에-x-프로퍼티-추가"><a href="#Object-prototype에-x-프로퍼티-추가" class="headerlink" title="Object.prototype에 x 프로퍼티 추가"></a>Object.prototype에 x 프로퍼티 추가</h4><p><img src="https://user-images.githubusercontent.com/48080762/59080999-cd70e000-8926-11e9-906a-e7f5e7fec911.png" alt="window object inherits Object.prototype"></p>
 <p>전역 객체 window 또한 객체(object)이므로 Object.prototype을 상속받는다.</p>
 <p><img src="https://user-images.githubusercontent.com/48080762/59081249-107f8300-8928-11e9-82e8-68316f16c4c3.png" alt="and Object is window&#39;s builtin object property"></p>
 <p>자바스크립트 엔진은 객체의 프로퍼티에 접근할 때 <code>[[Get]]</code> 내부 메소드를 호출한다. <code>[[Get]]</code> 내부 메소드는 프로토타입 체인에서 프로퍼티를 검색하고 값을 리턴한다. 객체의 프로퍼티에 접근해서 값을 할당할 때는 <code>[[Set]]</code> 내부 메소드를 호출하는데, 똑같이 프로토타입 체인에서 프로퍼티를 검색한다. 그러나 <code>[[Set]]</code> 내부 메소드는 검색한 프로퍼티가 없으면 프로퍼티를 추가하고 할당하는 역할까지 한다.</p>
+<p>Object.prototype에 x라는 프로퍼티가 없었으므로 <code>[[Set]]</code> 내부 메소드가 Object.prototype에 x 프로퍼티를 추가하고 1을 할당한다.</p>
 <h4 id="foo-함수-실행"><a href="#foo-함수-실행" class="headerlink" title="foo 함수 실행"></a>foo 함수 실행</h4><p>식별자 x를 찾기 위해서는 스코프 체인에서 검색을 한다. 따라서 <strong>우선 실행 컨텍스트 스택의 top인 실행중인 실행 컨텍스트(running execution context)의 환경 레코드에서 x를 검색</strong>한다. foo 함수의 실행 컨텍스트에는 식별자 x가 존재하지 않으므로 foo 함수의 OuterLexicalEnvironmentReference로 참조하는, 즉 상위 스코프인 Global Lexical Environment의 환경 레코드로 이동해서 검색을 시작한다. Global(전역)의 경우 환경 레코드가 Object, Declarative 2개의 컴포넌트로 구성된다. Declarative Environment Record에도 x가 없으므로 Object Environment Record에 바인딩된 <strong>window 객체의 프로퍼티 중에 x가 있는지 검색</strong>한다. 이 때 <strong>x는 프로퍼티로 검색되는 것이므로 프로토타입 체인에서 검색</strong>된다. window 객체는 Object.prototype을 상속한다고 했다. 그러므로 1이 할당된 x가 검색되는 것이다.</p>
 <p>여기서 알아야할 것은 스코프 체인과 프로토타입 체인은 별개가 아니라 서로 협력하는 관계라는 것이다.</p>
 

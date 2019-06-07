@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sub2n.github.io/2019/06/05/34-Execution-Context/</loc>
+    
+    <lastmod>2019-06-07T09:11:21.472Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sub2n.github.io/2019/06/07/35-Closure/</loc>
     
-    <lastmod>2019-06-07T07:37:47.548Z</lastmod>
+    <lastmod>2019-06-07T07:39:21.234Z</lastmod>
     
   </url>
   
@@ -19,13 +26,6 @@
     <loc>https://sub2n.github.io/2019/05/27/33-Promise/</loc>
     
     <lastmod>2019-06-07T07:26:48.858Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sub2n.github.io/2019/06/05/34-Execution-Context/</loc>
-    
-    <lastmod>2019-06-07T07:26:41.415Z</lastmod>
     
   </url>
   
