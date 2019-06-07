@@ -162,6 +162,100 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/05/03/7-Control-Flow-Statement/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="7. Control Flow Statement">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-03T10:53:14.000Z">2019-05-03</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes read (About 532 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/03/7-Control-Flow-Statement/">7. Control Flow Statement</a>
+            
+        </h1>
+        <div class="content">
+            <ul>
+<li><p>Controls the flow of code that runs sequentially from top to bottom.</p>
+</li>
+<li><p>Control statements make the flow of code difficult to understand, which detracts from readability.</p>
+</li>
+<li>Should suppress the use of control statements with using high order functions (map, filter, reduce, forEach)</li>
+</ul>
+<h1 id="Block-Statement-Compound-Statement"><a href="#Block-Statement-Compound-Statement" class="headerlink" title="Block Statement / Compound Statement"></a>Block Statement / Compound Statement</h1><ul>
+<li>0 or more statements enclosed in curly braces <code>{}</code></li>
+<li>In other languages, a block creates a scope, but JavaScript creates a function-level scope. Therefore, variables created in block are global variables.</li>
+<li>Block statements (code blocks) are treated as one execution unit.</li>
+<li><p>A semicolon (;) is usually appended to the end of the statement, but no semicolon at the end of the block statement.</p>
+<h1 id="Conditional-Statement"><a href="#Conditional-Statement" class="headerlink" title="Conditional Statement"></a>Conditional Statement</h1></li>
+<li><p>Determine whether to execute a code block based on the evaluation result of a given conditional expression.</p>
+<blockquote>
+<h3 id="Conditional-expression"><a href="#Conditional-expression" class="headerlink" title="Conditional expression"></a>Conditional expression</h3><p>Expression that can be evaluated as boolean value</p>
+</blockquote>
+</li>
+<li><p>JavaScript provides 2 conditional statements as if..else statements and switch statement</p>
+</li>
+</ul>
+<h3 id="if-…-else-Statement"><a href="#if-…-else-Statement" class="headerlink" title="if … else Statement"></a>if … else Statement</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span> (Conditional expression) &#123;</span><br><span class="line">  <span class="hljs-comment">// This code block is executed if the conditional expression is true.</span></span><br><span class="line">&#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">  <span class="hljs-comment">// This code block is executed if the conditional expression is false.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Most if … else statement can be replaced with the ternary conditional operator discussed in <a href="https://sub2n.github.io/2019/05/01/6-Operator/1">6. Operators</a>.</p>
+<h3 id="switch-Statement"><a href="#switch-Statement" class="headerlink" title="switch Statement"></a>switch Statement</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">switch</span> (Expression) &#123;</span><br><span class="line">  <span class="hljs-keyword">case</span> Expression1:</span><br><span class="line">   	<span class="hljs-comment">// The statement to be executed if the expression in the switch statement matches expression 1;</span></span><br><span class="line">    <span class="hljs-keyword">break</span>;</span><br><span class="line">  <span class="hljs-keyword">case</span> Expression2:</span><br><span class="line">    <span class="hljs-comment">// The statement to be executed if the expression in the switch statement matches expression 2;</span></span><br><span class="line">    <span class="hljs-keyword">break</span>;</span><br><span class="line">  <span class="hljs-keyword">default</span>:</span><br><span class="line">    <span class="hljs-comment">// The statement to be executed when there is no case statement with an expression that matches the expression in the switch statement;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>If the code can be represented by if…else, the use of the switch should be avoided whenever possible.</li>
+<li>Evaluates a given conditional expression and moves the execution order to a case statement with an expression that matches the value.</li>
+<li>Used when there are more cases than if…else statements.</li>
+<li>If do not use a break statement in a case, all the cases are checked sequentially to the default due to the <strong>fall through</strong> property of the switch.</li>
+</ul>
+<h1 id="Loop-Statement"><a href="#Loop-Statement" class="headerlink" title="Loop Statement"></a>Loop Statement</h1><p>Loop statement executes the code block repeatedly until the conditional expression is false.</p>
+<h2 id="for-Statement"><a href="#for-Statement" class="headerlink" title="for Statement"></a>for Statement</h2><p>The for statement executes the code block repeatedly until the conditional expression is determined to be false.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span> (declaration statement or assignment statement; conditional expression; Increase / decrease expression)&#123;</span><br><span class="line">	<span class="hljs-comment">// Statements that will be executed when conditional expression return true;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">2</span>; i++) &#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="while-Statement"><a href="#while-Statement" class="headerlink" title="while Statement"></a>while Statement</h2><p>The while statement repeatedly executes the code block repeatedly if the evaluation result of the given conditional expression is true.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">while</span> (conditional expression)&#123;</span><br><span class="line">    <span class="hljs-comment">// Escape condition is needed</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="do-while-Statement"><a href="#do-while-Statement" class="headerlink" title="do while Statement"></a>do while Statement</h2><p>It’s the same as while, but once it runs and checks the conditional</p>
+<h1 id="break-Statement"><a href="#break-Statement" class="headerlink" title="break Statement"></a>break Statement</h1><p>The break statement exits the code block. </p>
+<p>Actually it escapes the label statement, the for loop (for, for … in, for … of, while, do … while) or the code block of the switch statement. </p>
+<p>If a break statement is used in addition to the label statement, the loop statement, or the code block of the switch statement, SyntaxError occurs.</p>
+<h1 id="continue-Statement"><a href="#continue-Statement" class="headerlink" title="continue Statement"></a>continue Statement</h1><ul>
+<li>If continue is encountered, the code will stop running and move to the increment or decrement statement of the loop</li>
+<li>The statements under continue are not executed.</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/05/01/6-Operator/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="6. Operator">
         </a>
@@ -1022,70 +1116,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/29/1-What-is-Programming/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="1. What is Programming?">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-29T09:10:24.000Z">2019-04-29</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 538 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/29/1-What-is-Programming/">1. What is Programming?</a>
-            
-        </h1>
-        <div class="content">
-            <h1 id="1-Computational-Thinking"><a href="#1-Computational-Thinking" class="headerlink" title="1. Computational Thinking"></a>1. Computational Thinking</h1><p>Programming is communication that sends commands to be performed to the computer. In order to define the “command to be performed,” the resolution task (problem/requirements) must be clearly understood, the complexity must be simply desconstructed, the data organized and sorted by modeling, and the actions arranged in sequence.</p>
-<p>In other words, clear understanding of reguirements and proper definitaion of solution are needed before programming. What is required at this time is the problem-solving skill. Some people tend to equate problem-solving abilities with algorithms, but it does not. Of course studying algorithm is very helpful to get problem-solving skill, but problem-solving skill is more higher level of ability.</p>
-<p>Programming is just a means of expression to produce the final result of solving a problem. Programming itself doesn’t solve the problem. Considering the solution of the problem, you should look at preoblem from a computer’s point of view. Computational thinking is required this kind of time. You should do computational thinking with solving problems.</p>
-<p>This requires logical and mathematical thinking, and all concepts that will be used within the programming should be defined as assessable, breaking down and patterning the resolution tasks into smaller units.</p>
-<h1 id="2-Programming-Language"><a href="#2-Programming-Language" class="headerlink" title="2. Programming Language"></a>2. Programming Language</h1><p>As above, solution defined based on problem-solving skill should be communicated to computer. At this point, computer do perform the commands. So the command should be communicated by machine code, not a natural language. But it is very difficult that human to understand machine code. It is even described in bits.</p>
-<p>The most useful alternative to delivering commands in direct mechanical language is to use a kind of translator to write a program using “programming language” consisting of promised phrases (Syntax) that humans can understand and then convert it into machine language that computers can understand. This kind of translator is called complier or interpreter.</p>
-<p>Programming is a kind of communication that sends commands to the computer that you want to perform using the programming language. The programming language is expressed as a combination of Syntax and Semantics.</p>
-<h1 id="3-Syntax-amp-Semantics"><a href="#3-Syntax-amp-Semantics" class="headerlink" title="3. Syntax &amp; Semantics"></a>3. Syntax &amp; Semantics</h1><p>Understanding both syntax and semantics properly is important to use language well. In the end, solutions created through problem-solving ability are expressed through the syntax of programming languages. The code is a specific implementation of the solution. This is only archeive semantics when the requirements are fulfilled(problem solved).</p>
-<p>Most of programming languages provide syntax such as variables and values, keywords, operators, expressions, flow control by conditional and loop statements, statements, functions(set of statements), and data structures such as objects and arrays. </p>
-<p>What a programmer needs to do is find a solution for problem and implement it in a code that has correct syntax. Implemented code should act as expected and solve the problem. It should be predictable and explainable how the code work inside the computer and what it will give back.</p>
-<p>To do this, it is important to have an accurate understanding of the basic concepts and operating principles of programming language. If you just copy &amp; paste code without understand basic concept and principle, that code is not reliable. And problem-solving skills will not grow anymore.</p>
-<hr>
-<p>Reference</p>
-<p><a href="https://poiemaweb.com/coding" target="_blank" rel="noopener">프로그래밍이란?</a></p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -1093,7 +1123,7 @@
         <div class="pagination-previous">
             <a class="is-flex-grow has-text-black-ter" href="/categories/JavaScript/page/5/">Previous</a>
         </div>
-        <div class="pagination-next is-invisible is-hidden-mobile">
+        <div class="pagination-next">
             <a class="is-flex-grow has-text-black-ter" href="/categories/JavaScript/page/7/">Next</a>
         </div>
         <ul class="pagination-list is-hidden-mobile">
@@ -1105,6 +1135,8 @@
             <li><a class="pagination-link has-text-black-ter" href="/categories/JavaScript/page/5/">5</a></li>
             
             <li><a class="pagination-link is-current" href="/categories/JavaScript/page/6/">6</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/categories/JavaScript/page/7/">7</a></li>
             
         </ul>
     </nav>
@@ -1154,7 +1186,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        126
+                        127
                     </p>
                 </div>
             </div>
@@ -1363,7 +1395,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">36</span>
+                <span class="level-item tag">37</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1401,6 +1433,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/07/35-Closure/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="35. Closure">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-07T03:59:09.000Z">2019-06-07</time></div>
+                    <a href="/2019/06/07/35-Closure/" class="has-link-black-ter is-size-6">35. Closure</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1478,25 +1529,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/03/190603-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190603-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-03T08:42:08.000Z">2019-06-03</time></div>
-                    <a href="/2019/06/03/190603-TIL/" class="has-link-black-ter is-size-6">190603-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1515,7 +1547,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">7</span>
                 </span>
             </a>
         </li>
@@ -1772,7 +1804,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">30</span>
+                        <span class="tag is-grey">31</span>
                     </a>
                 </div>
                 
@@ -2167,7 +2199,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">36</span>
+                <span class="level-item tag">37</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -2205,6 +2237,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/07/35-Closure/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="35. Closure">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-07T03:59:09.000Z">2019-06-07</time></div>
+                    <a href="/2019/06/07/35-Closure/" class="has-link-black-ter is-size-6">35. Closure</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -2282,25 +2333,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/03/190603-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190603-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-03T08:42:08.000Z">2019-06-03</time></div>
-                    <a href="/2019/06/03/190603-TIL/" class="has-link-black-ter is-size-6">190603-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2319,7 +2351,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">7</span>
                 </span>
             </a>
         </li>
@@ -2576,7 +2608,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">30</span>
+                        <span class="tag is-grey">31</span>
                     </a>
                 </div>
                 

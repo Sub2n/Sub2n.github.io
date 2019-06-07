@@ -16,7 +16,7 @@
 <meta property="og:description" content="실행 컨텍스트(Execution Context)는 실행 가능한 코드를 평가하고 실행하기 위해 필요한 환경을 제공하고 코드의 실행 결과를 실제로 관리하는 영역이다. Context는 문맥, 맥락이라는 뜻이다. 프로그램에도 맥락이 있다. 예를 들면 식별자가 어느 스코프에서 사용되었는지에 따라서 다른 값을 참조한다. 1. Executable Code실행 가능한 코">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
-<meta property="og:updated_time" content="2019-06-06T04:55:08.868Z">
+<meta property="og:updated_time" content="2019-06-07T05:45:53.968Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="34. Execution Context">
 <meta name="twitter:description" content="실행 컨텍스트(Execution Context)는 실행 가능한 코드를 평가하고 실행하기 위해 필요한 환경을 제공하고 코드의 실행 결과를 실제로 관리하는 영역이다. Context는 문맥, 맥락이라는 뜻이다. 프로그램에도 맥락이 있다. 예를 들면 식별자가 어느 스코프에서 사용되었는지에 따라서 다른 값을 참조한다. 1. Executable Code실행 가능한 코">
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    27 minutes read (About 4076 words)
+                    32 minutes read (About 4859 words)
                 </span>
                 
                 
@@ -265,11 +265,39 @@
 <h6 id="변수-호이스팅과-함수-호이스팅"><a href="#변수-호이스팅과-함수-호이스팅" class="headerlink" title="변수 호이스팅과 함수 호이스팅"></a>변수 호이스팅과 함수 호이스팅</h6><p><code>var</code> 키워드로 선언한 변수는 Object Environment Record에 바인딩된 bindingObject에 변수 식별자를 등록(1. 선언 단계)한 다음, 암묵적으로 undefined로 초기화(2. 초기화 단계)한다.</p>
 <p>함수 선언문으로 정의한 함수는 평가되면 함수명과 동일한 이름의 식별자를 Object Environment Record에 등록하고, 함수 객체를 생성해서 즉시 할당한다. 그래서 함수 선언문으로 정의한 함수는 함수 선언문 이전에 호출할 수 있는 것이다.</p>
 <h6 id="2-1-2-선언적-환경-레코드-생성-Declarative-Environment-Record"><a href="#2-1-2-선언적-환경-레코드-생성-Declarative-Environment-Record" class="headerlink" title="2.1.2. 선언적 환경 레코드 생성 Declarative Environment Record"></a>2.1.2. 선언적 환경 레코드 생성 Declarative Environment Record</h6><p><code>let</code>, <code>const</code> 키워드로 선언된전역 변수는 Declarative Environment Record에 등록되고 관리된다. <code>let</code>, <code>const</code> 키워드로 선언한 변수는 1. 선언 단계와 2. 초기화 단계가 분리되어 진행된다. 평가 단계에서는 선언 단계만 진행되어 식별자가 등록이 되고, 초기화 단계는 실행 시간에 선언문을 실행할 때 진행되므로 선언문 실행 이전까지를 TDZ(Temporal Dead Zone)라고 한다. 이들은 전역 객체의 프로퍼티가 아니라 Global Lexical Environment의 Declarative Environment Record에 등록되어 관리된다.</p>
-<h5 id="2-2-외부-렉시컬-환경에-대한-참조-할당-Outer-Lexical-Envronment-Reference"><a href="#2-2-외부-렉시컬-환경에-대한-참조-할당-Outer-Lexical-Envronment-Reference" class="headerlink" title="2.2. 외부 렉시컬 환경에 대한 참조 할당 Outer Lexical Envronment Reference"></a>2.2. 외부 렉시컬 환경에 대한 참조 할당 Outer Lexical Envronment Reference</h5><h5 id="2-3-this-바인딩-ThisBinding"><a href="#2-3-this-바인딩-ThisBinding" class="headerlink" title="2.3. this 바인딩 ThisBinding"></a>2.3. this 바인딩 ThisBinding</h5><h4 id="3-전역-코드-실행"><a href="#3-전역-코드-실행" class="headerlink" title="3. 전역 코드 실행"></a>3. 전역 코드 실행</h4><h4 id="4-함수-코드-평가"><a href="#4-함수-코드-평가" class="headerlink" title="4. 함수 코드 평가"></a>4. 함수 코드 평가</h4><h5 id="1-함수-실행-컨텍스트-생성"><a href="#1-함수-실행-컨텍스트-생성" class="headerlink" title="1. 함수 실행 컨텍스트 생성"></a>1. 함수 실행 컨텍스트 생성</h5><h5 id="2-함수-Lexical-Environment-생성"><a href="#2-함수-Lexical-Environment-생성" class="headerlink" title="2. 함수 Lexical Environment 생성"></a>2. 함수 Lexical Environment 생성</h5><h5 id="2-1-함수-Environment-Record-생성"><a href="#2-1-함수-Environment-Record-생성" class="headerlink" title="2-1. 함수 Environment Record 생성"></a>2-1. 함수 Environment Record 생성</h5><h5 id="2-1-Outer-Lexical-Environment-Reference-할당"><a href="#2-1-Outer-Lexical-Environment-Reference-할당" class="headerlink" title="2-1. Outer Lexical Environment Reference 할당"></a>2-1. Outer Lexical Environment Reference 할당</h5><p>함수는 함수 정의가 평가되어 함수 객체가 생성될 때, 현재 실행 중인 실행 컨텍스트의 Lexical Environment를 함수 객체의 내부 슬롯 <code>[[Environment]]</code>에 저장한다. </p>
+<h5 id="2-2-외부-렉시컬-환경에-대한-참조-할당-Outer-Lexical-Envronment-Reference"><a href="#2-2-외부-렉시컬-환경에-대한-참조-할당-Outer-Lexical-Envronment-Reference" class="headerlink" title="2.2. 외부 렉시컬 환경에 대한 참조 할당 Outer Lexical Envronment Reference"></a>2.2. 외부 렉시컬 환경에 대한 참조 할당 Outer Lexical Envronment Reference</h5><p>전역(Global)은 코드의 가장 외부이므로 Global Lexical Environment</p>
+<h5 id="2-3-this-바인딩-ThisBinding"><a href="#2-3-this-바인딩-ThisBinding" class="headerlink" title="2.3. this 바인딩 ThisBinding"></a>2.3. this 바인딩 ThisBinding</h5><h4 id="3-전역-코드-실행"><a href="#3-전역-코드-실행" class="headerlink" title="3. 전역 코드 실행"></a>3. 전역 코드 실행</h4><h4 id="4-함수-코드-평가"><a href="#4-함수-코드-평가" class="headerlink" title="4. 함수 코드 평가"></a>4. 함수 코드 평가</h4><h5 id="1-함수-실행-컨텍스트-생성"><a href="#1-함수-실행-컨텍스트-생성" class="headerlink" title="1. 함수 실행 컨텍스트 생성"></a>1. 함수 실행 컨텍스트 생성</h5><h5 id="2-함수-Lexical-Environment-생성"><a href="#2-함수-Lexical-Environment-생성" class="headerlink" title="2. 함수 Lexical Environment 생성"></a>2. 함수 Lexical Environment 생성</h5><h5 id="2-1-함수-Environment-Record-생성"><a href="#2-1-함수-Environment-Record-생성" class="headerlink" title="2-1. 함수 Environment Record 생성"></a>2-1. 함수 Environment Record 생성</h5><h5 id="2-1-Outer-Lexical-Environment-Reference-할당"><a href="#2-1-Outer-Lexical-Environment-Reference-할당" class="headerlink" title="2-1. Outer Lexical Environment Reference 할당"></a>2-1. Outer Lexical Environment Reference 할당</h5><p>함수는 함수 정의가 평가되어 함수 객체가 생성될 때, 현재 실행 중인 실행 컨텍스트의 Lexical Environment를 함수 객체의 내부 슬롯 <code>[[Environment]]</code>에 저장한다. </p>
 <p>즉, 생성된 함수 객체가 호출되어 평가될 때 생성되는 함수 실행 컨텍스트의 Lexical Environment의 OuterLexicalEnvironmentReference 컴포넌트의 참조는 해당 함수 객체의 내부 슬롯 <code>[[Environment]]</code>에 저장된 Lexical Environment와 같다.</p>
 <h5 id="2-3-this-바인딩"><a href="#2-3-this-바인딩" class="headerlink" title="2-3. this 바인딩"></a>2-3. this 바인딩</h5><p>일반적으로 this는 호출되는 방식에 따라서 다르게 바인딩된다.</p>
 <p>this를 참조하는 순간 추상 연산 ResolveThisBinding 메소드가 도는데, 화살표 함수의 경우 선언된 코드가 실행중인 실행 컨텍스트의 Lexical Environment의 this, 즉 Lexical this를 자신의 this로 바인딩한다.</p>
-<h4 id="5-함수-코드-실행"><a href="#5-함수-코드-실행" class="headerlink" title="5. 함수 코드 실행"></a>5. 함수 코드 실행</h4>
+<h4 id="5-함수-코드-실행"><a href="#5-함수-코드-실행" class="headerlink" title="5. 함수 코드 실행"></a>5. 함수 코드 실행</h4><h2 id="7-Execution-Context-and-Block-level-Scope"><a href="#7-Execution-Context-and-Block-level-Scope" class="headerlink" title="7. Execution Context and Block-level Scope"></a>7. Execution Context and Block-level Scope</h2><p><a href="http://tc39.es/ecma262/#sec-block-runtime-semantics-evaluation" target="_blank" rel="noopener">ECMAScript block spec</a></p>
+<p>스코프는 렉시컬 환경으로 구현된다. 즉, 블록 레벨 스코프를 만들기 위해서는 Block 렉시컬 환경을 만들어야한다. 그러나 실행 컨텍스트는 4가지 실행 가능한 코드(Executable Code)만이 생성할 수 있다. Block: { Statement }가 평가될 때 일어나는 일은 다음과 같다.</p>
+<ol>
+<li><p>변수 oldEnv에 running execution context의 LexicalEnvironment를 담는다.</p>
+</li>
+<li><p>변수 blockEnv = NewDeclarativeEnvironment(oldEnv)</p>
+<ul>
+<li>NewDeclarativeEnvironment(E)</li>
+</ul>
+<ol>
+<li>env = new LexicalEnvironment</li>
+<li>envRec = 바인딩 안 된 new declarative Environment Record</li>
+<li>env의 EnvironmentRecord = envRec</li>
+<li>env의 OuterLexicalEnvironmentReference = E</li>
+<li>env를 리턴</li>
+</ol>
+</li>
+<li></li>
+</ol>
+<h2 id="Before-Closure"><a href="#Before-Closure" class="headerlink" title="Before Closure"></a>Before Closure</h2><p>클로저를 이해하기 위해서는 실행 컨텍스트에 대한 선행 지식이 요구된다. 실행 컨텍스트와 스코프 체인, 프로토 타입을 이해하고 있어야 풀 수 있는 아래 문제를 먼저 풀고 넘어가자. foo 함수의 호출 결과는 무엇일까?</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">Object</span>.prototype.x = <span class="hljs-number">1</span>;</span><br><span class="line"></span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/48080762/59080999-cd70e000-8926-11e9-906a-e7f5e7fec911.png" alt="window object inherits Object.prototype"></p>
+<p>전역 객체 window 또한 객체(object)이므로 Object.prototype을 상속받는다.</p>
+<p><img src="https://user-images.githubusercontent.com/48080762/59081249-107f8300-8928-11e9-82e8-68316f16c4c3.png" alt="and Object is window&#39;s builtin object property"></p>
+<p>자바스크립트 엔진은 객체의 프로퍼티에 접근할 때 <code>[[Get]]</code> 내부 메소드를 호출한다. <code>[[Get]]</code> 내부 메소드는 프로토타입 체인에서 프로퍼티를 검색하고 값을 리턴한다. 객체의 프로퍼티에 접근해서 값을 할당할 때는 <code>[[Set]]</code> 내부 메소드를 호출하는데, 똑같이 프로토타입 체인에서 프로퍼티를 검색한다. 그러나 <code>[[Set]]</code> 내부 메소드는 검색한 프로퍼티가 없으면 프로퍼티를 추가하고 할당하는 역할까지 한다.</p>
+<h4 id="foo-함수-실행"><a href="#foo-함수-실행" class="headerlink" title="foo 함수 실행"></a>foo 함수 실행</h4><p>식별자 x를 찾기 위해서는 스코프 체인에서 검색을 한다. 따라서 우선 실행 컨텍스트 스택의 top인 실행중인 실행 컨텍스트(running execution context)의 환경 레코드에서 x를 검색한다. foo 함수의 실행 컨텍스트에는 식별자 x가 존재하지 않으므로 foo 함수의 OuterLexicalEnvironmentReference로 참조하는, 즉 상위 스코프인 Global Lexical Environment의 환경 레코드로 이동해서 검색을 시작한다. Global(전역)의 경우 환경 레코드가 Object, Declarative 2개의 컴포넌트로 구성된다. Declarative Environment Record에도 x가 없으므로 Object Environment Record에 바인딩된 window 객체의 프로퍼티 중에 x가 있는지 검색한다. 이 때 x는 프로퍼티로 검색되는 것이므로 프로토타입 체인에서 검색된다. window 객체는 Object.prototype을 상속한다고 했다. 그러므로 1이 할당된 x가 검색되는 것이다.</p>
+<p>여기서 알아야할 것은 스코프 체인과 프로토타입 체인은 별개가 아니라 서로 협력하는 관계라는 것이다.</p>
+
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -357,7 +385,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        126
+                        127
                     </p>
                 </div>
             </div>
@@ -566,7 +594,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">36</span>
+                <span class="level-item tag">37</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -604,6 +632,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/07/35-Closure/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="35. Closure">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-07T03:59:09.000Z">2019-06-07</time></div>
+                    <a href="/2019/06/07/35-Closure/" class="has-link-black-ter is-size-6">35. Closure</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -681,25 +728,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/03/190603-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190603-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-03T08:42:08.000Z">2019-06-03</time></div>
-                    <a href="/2019/06/03/190603-TIL/" class="has-link-black-ter is-size-6">190603-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -718,7 +746,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">7</span>
                 </span>
             </a>
         </li>
@@ -975,7 +1003,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">30</span>
+                        <span class="tag is-grey">31</span>
                     </a>
                 </div>
                 
@@ -1370,7 +1398,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">36</span>
+                <span class="level-item tag">37</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1408,6 +1436,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/07/35-Closure/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="35. Closure">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-07T03:59:09.000Z">2019-06-07</time></div>
+                    <a href="/2019/06/07/35-Closure/" class="has-link-black-ter is-size-6">35. Closure</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1485,25 +1532,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/03/190603-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190603-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-03T08:42:08.000Z">2019-06-03</time></div>
-                    <a href="/2019/06/03/190603-TIL/" class="has-link-black-ter is-size-6">190603-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1522,7 +1550,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">7</span>
                 </span>
             </a>
         </li>
@@ -1779,7 +1807,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">30</span>
+                        <span class="tag is-grey">31</span>
                     </a>
                 </div>
                 

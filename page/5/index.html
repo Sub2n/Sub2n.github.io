@@ -151,6 +151,106 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/05/09/14-let-const-and-a-Block-level-Scope/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="14. let, const and a Block-level Scope">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-09T04:58:23.000Z">2019-05-09</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    12 minutes read (About 1836 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/09/14-let-const-and-a-Block-level-Scope/">14. let, const and a Block-level Scope</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="1-Problems-with-Variables-declared-with-the-var-keyword"><a href="#1-Problems-with-Variables-declared-with-the-var-keyword" class="headerlink" title="1. Problems with Variables declared with the var keyword"></a>1. Problems with Variables declared with the <code>var</code> keyword</h1><p>ES5까지 변수를 선언할 수 있는 유일한 키워드는 <code>var</code> 하나였다. <code>var</code> 키워드로 선언된 변수는 다른 언어와는 구별되는 특징을 가진다.</p>
+<h2 id="1-1-Allow-Duplicate-Variable-Declaration"><a href="#1-1-Allow-Duplicate-Variable-Declaration" class="headerlink" title="1.1. Allow Duplicate Variable Declaration"></a>1.1. Allow Duplicate Variable Declaration</h2><p><code>var</code> 키워드로 선언한 변수는 중복 선언이 가능하다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>;</span><br><span class="line"><span class="hljs-comment">// No Error</span></span><br><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">10</span>;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(x); <span class="hljs-comment">//10</span></span><br></pre></td></tr></table></figure>
+<p>같은 스코프 내에서 변수를 중복 선언하면 나중에 선언된 변수는 선언문이 아닌 할당문처럼 동작한다. 이 때 에러가 발생하지 않기 때문에 중복 선언을 인지하기 힘들다. 이로 인해 의도치 않게 변수값이 변경될 수 있다.</p>
+<h2 id="1-2-Function-level-Scope"><a href="#1-2-Function-level-Scope" class="headerlink" title="1.2. Function-level Scope"></a>1.2. Function-level Scope</h2><p><code>var</code> 키워드로 선언한 변수는 오로지 함수의 코드 블록만을 지역 스코프로 인정한다. 따라서, if문이나 for문 등에서 선언한 <code>var</code> 변수는 모두 전역 변수가 된다.</p>
+<p>대부분의 프로그래밍 언어는 block-level scope이기 때문에 function-level scope를 이용하는 것은 전역 변수를 남발할 가능성을 높인다.</p>
+<h2 id="1-3-Variable-Hoisting"><a href="#1-3-Variable-Hoisting" class="headerlink" title="1.3. Variable Hoisting"></a>1.3. Variable Hoisting</h2><p><code>var</code>키워드로 선언한 변수는 변수 호이스팅에 의해 변수 선언문이 스코프의 가장 위로 끌어 올려진 것처럼 동작한다. 즉, 선언 이전에 <code>var</code> 변수를 참조해도 에러가 나지 않는다. 이는 프로그램의 흐름을 해치고 가독성을 떨어뜨린다.</p>
+<h1 id="2-let-keyword"><a href="#2-let-keyword" class="headerlink" title="2. let keyword"></a>2. <code>let</code> keyword</h1><p><code>var</code> 키워드의 단점들을 보완하기 위해 ES6에서 <code>var</code>와 <code>const</code> 키워드가 추가되었다. 이들은 <code>var</code> 키워드와 같이 변수를 선언할 때 사용된다.</p>
+<h2 id="2-1-Ban-Duplicate-Variable-Declaration"><a href="#2-1-Ban-Duplicate-Variable-Declaration" class="headerlink" title="2.1. Ban Duplicate Variable Declaration"></a>2.1. Ban Duplicate Variable Declaration</h2><p><code>let</code> 키워드로 선언한 변수를 중복 선언하면 <code>var</code>와 달리 SyntaxError가 발생한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> x = <span class="hljs-number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">let</span> x = <span class="hljs-number">10</span>;	<span class="hljs-comment">// SyntaxError: Identifier 'x' has already been declared</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-2-Block-level-Scope"><a href="#2-2-Block-level-Scope" class="headerlink" title="2.2. Block-level Scope"></a>2.2. Block-level Scope</h2><p><code>var</code> 키워드로 선언한 변수는 함수의 코드 블록만을 지역 스코프로 인정하는 함수 레벨 스코프를 따른다. 그러나 <code>let</code> 키워드로 선언한 변수는 모든 코드 블록 <code>{}</code>을 지역 스코프로 인정하는 블록 레벨 스코프를 따른다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> foo = <span class="hljs-number">1</span>;	<span class="hljs-comment">// global variable</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> foo = <span class="hljs-number">3</span>;	<span class="hljs-comment">// local variable</span></span><br><span class="line">    <span class="hljs-keyword">let</span> bar = <span class="hljs-number">4</span>;	<span class="hljs-comment">// local variable</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-built_in">console</span>.log(foo); 	<span class="hljs-comment">// 3</span></span><br><span class="line">	<span class="hljs-built_in">console</span>.log(bar);	<span class="hljs-comment">// 4</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(foo); 	<span class="hljs-comment">// 1</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(bar);	<span class="hljs-comment">// ReferenceError: bar is not defined</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-3-Variable-Hoisting"><a href="#2-3-Variable-Hoisting" class="headerlink" title="2.3. Variable Hoisting"></a>2.3. Variable Hoisting</h2><p><code>let</code> 키워드로 선언한 변수는 변수 호이스팅이 발생하지 않는 것처럼 동작한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(foo);	<span class="hljs-comment">// ReferenceError: foo is not defined</span></span><br><span class="line"><span class="hljs-keyword">let</span> foo;</span><br></pre></td></tr></table></figure>
+<p>그렇다면 <code>let</code> 키워드로 선언한 선언문은는 런타임 이전에 실행되지 않는 것일까? </p>
+<p>일반적으로 <code>var</code> 키워드로 선언한 변수는 런타임 이전에 자바스크립트 엔진에 의해 암묵적으로 declaration phase와 initialization phase가 <strong>한 번에</strong> 진행된다.</p>
+<p><img src="https://user-images.githubusercontent.com/48080762/57504827-02424500-7331-11e9-960b-75e673a99ae3.png" alt="var declaration"></p>
+<ol>
+<li>Declaration phase : Execution context의 lexical environment에 있는 스코프에 변수 식별자를 등록하여 변수의 존재를 알린다.</li>
+<li>Initialization phase : declaration phase가 끝나는 즉시 값을 저장하기 위한 메모리 공간을 확보하고 암묵적으로 undefined로 변수를 할당해 초기화한다.</li>
+</ol>
+<p><code>let</code> 키워드로 선언한 변수는 “Declaration phase”와 “Initialization Phase”가 <strong>분리되어 진행</strong>된다.  즉, 런타임 이전에 암묵적으로 declaration phase가 먼저 실행되지만 <strong>initialization phase는 런타임에 변수 선언문에 도달했을 때 실행</strong>된다.</p>
+<p><img src="https://user-images.githubusercontent.com/48080762/57430144-acef3080-7269-11e9-987d-75b1881b029a.png" alt="let declaration"></p>
+<p>initialization phase가 실행되기 이전에 변수에 접근하려고 하면 reference error가 발생한다. 아직 변수를 위한 메모리 공간이 확보되지 않았기 때문이다. 따라서 스코프의 시작 지점부터 <strong>변수 선언문을 만나서</strong> initialization phase가 시작되기 전까지는 변수를 참조할 수 없다.</p>
+<blockquote>
+<h3 id="TDZ-Temporal-Dead-Zone"><a href="#TDZ-Temporal-Dead-Zone" class="headerlink" title="TDZ (Temporal Dead Zone)"></a>TDZ (Temporal Dead Zone)</h3><p>스코프의 시작 지점부터 Initialization phase 시작 지점까지의 구간 </p>
+</blockquote>
+<p><code>let</code> 키워드로 선언한 변수는 hoisting이 되지 않는 게 아니라, 선언문을 만났을 때 initialization phase를 진행하는 것이다.</p>
+<h2 id="2-4-Global-Object-and-let"><a href="#2-4-Global-Object-and-let" class="headerlink" title="2.4. Global Object and let"></a>2.4. Global Object and <code>let</code></h2><p><strong>전역 객체(Global Object)</strong>는 모든 객체의 유일한 최상위 객체를 의미하며 일반적으로 브라우저 환경에서는 window 객체, Node.js 환경에서는 global 객체를 말한다.</p>
+<p><strong><code>var</code> 키워드로 선언한 전역 변수와, 키워드 없이 선언하고 값을 할당한 암묵적 전역변수, 그리고 전역 함수는 전역 객체의 프로퍼티가 된다.</strong></p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>;</span><br><span class="line">y = <span class="hljs-number">2</span>;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.x === x);		<span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.y === y);		<span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.foo === foo);	<span class="hljs-comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>전역 객체의 프로퍼티는 전역 변수처럼 사용할 수 있다. 전역 객체의 프로퍼티를 참조할 때 window를 생략할 수 있다.</p>
+<p>그러나 <code>let</code> 키워드로 선언한 전역 변수는 전역 객체 window의 프로퍼티가 아니다. <code>let</code> 전역 변수는 전역 렉시컬 환경의 선언적 환경 레코드 내에 존재하게 된다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> x = <span class="hljs-number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.x);	<span class="hljs-comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<h1 id="3-const-Keyword"><a href="#3-const-Keyword" class="headerlink" title="3. const Keyword"></a>3. <code>const</code> Keyword</h1><p><code>const</code> 키워드는 상수(변하지 않는 고정된 값)를 선언하기 위해 사용한다. <code>let</code> 과 <code>const</code> 는 동일한 특징이 많다. 차이점을 살펴보자.</p>
+<h2 id="3-1-Declaration-and-Initialization"><a href="#3-1-Declaration-and-Initialization" class="headerlink" title="3.1. Declaration and Initialization"></a>3.1. Declaration and Initialization</h2><p><code>let</code> 키워드로 선언한 변수와 달리 <code>const</code> 키워드로 선언한 변수는 재할당이 금지된다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> PI = <span class="hljs-number">3.14</span>;</span><br><span class="line"></span><br><span class="line">PI = <span class="hljs-number">3.141492</span>;	<span class="hljs-comment">// TypeError: Assignment to constant variable.</span></span><br></pre></td></tr></table></figure>
+<p><code>const</code> 키워드로 선언한 변수는 반드시 선언과 할당이 동시에 이루어져야 한다. 이후로는 재할당을 할 수 없다.</p>
+<p><code>const</code> 키워드로 선언한 변수 또한 block-level scope를 갖는다.</p>
+<h2 id="3-2-Constant"><a href="#3-2-Constant" class="headerlink" title="3.2. Constant"></a>3.2. Constant</h2><p>변수를 만들고 재할당을 하지 않을 거라면 상수를 적극적으로 쓰는 게 좋다. 고정된 값을 상수로 만들어 쓰면 코드의 가독성을 높일 수 있다. 상수는 프로그램 전체에서 사용하므로, 유지보수에 효율적이다.</p>
+<h2 id="3-3-const-Keyword-and-Object"><a href="#3-3-const-Keyword-and-Object" class="headerlink" title="3.3. const Keyword and Object"></a>3.3. <code>const</code> Keyword and Object</h2><p><code>const</code> 키워드로 선언한 변수에 primitive value를 할당한 경우, primitive value는 immutable value이고 재할당이 금지되므로 할당된 값을 변경할 수 있는 방법이 없다.</p>
+<p><code>const</code> 키워드로 선언한 변수에 객체를 할당한 경우, 재할당이 금지되는 것은 마찬가지이다. 그러나 객체는 mutable value이므로 <code>const</code> 키워드로 선언된 변수에 할당된 객체는 변경이 가능하다.</p>
+<p>즉, <code>const</code> 키워드는 재할당을 금지할 뿐 immutable을 의미하지 않는다. immutable과 mutable은 상수와 변수의 개념이 아닌, 값의 변경에 대한 개념이다.</p>
+<h1 id="4-var-vs-let-vs-const"><a href="#4-var-vs-let-vs-const" class="headerlink" title="4. var vs. let vs. const"></a>4. <code>var</code> vs. <code>let</code> vs. <code>const</code></h1><p>변수 선언에는 기본적으로 <code>const</code>를 사용하고 <code>let</code>은 재할당이 필요한 경우에 사용하는 것이 좋다. </p>
+<ul>
+<li>ES6 사용시 <code>var</code> 키워드 사용하지 않는다.</li>
+<li>재할당이 필요한 경우에만 <code>let</code> 키워드를 사용하고, 변수의 스코프를 최소화 한다.</li>
+<li>객체와 변경을 하지 않을 원시 값에는 <code>const</code> 키워드를 사용한다.</li>
+<li><code>var</code> 와 <code>let</code>/<code>const</code>를 함께 쓰지 않는다.</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/05/09/13-Problems-with-global-variables/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="13. Problems with Global Variables">
         </a>
@@ -1129,100 +1229,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/05/03/7-Control-Flow-Statement/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="7. Control Flow Statement">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-03T10:53:14.000Z">2019-05-03</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 532 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/03/7-Control-Flow-Statement/">7. Control Flow Statement</a>
-            
-        </h1>
-        <div class="content">
-            <ul>
-<li><p>Controls the flow of code that runs sequentially from top to bottom.</p>
-</li>
-<li><p>Control statements make the flow of code difficult to understand, which detracts from readability.</p>
-</li>
-<li>Should suppress the use of control statements with using high order functions (map, filter, reduce, forEach)</li>
-</ul>
-<h1 id="Block-Statement-Compound-Statement"><a href="#Block-Statement-Compound-Statement" class="headerlink" title="Block Statement / Compound Statement"></a>Block Statement / Compound Statement</h1><ul>
-<li>0 or more statements enclosed in curly braces <code>{}</code></li>
-<li>In other languages, a block creates a scope, but JavaScript creates a function-level scope. Therefore, variables created in block are global variables.</li>
-<li>Block statements (code blocks) are treated as one execution unit.</li>
-<li><p>A semicolon (;) is usually appended to the end of the statement, but no semicolon at the end of the block statement.</p>
-<h1 id="Conditional-Statement"><a href="#Conditional-Statement" class="headerlink" title="Conditional Statement"></a>Conditional Statement</h1></li>
-<li><p>Determine whether to execute a code block based on the evaluation result of a given conditional expression.</p>
-<blockquote>
-<h3 id="Conditional-expression"><a href="#Conditional-expression" class="headerlink" title="Conditional expression"></a>Conditional expression</h3><p>Expression that can be evaluated as boolean value</p>
-</blockquote>
-</li>
-<li><p>JavaScript provides 2 conditional statements as if..else statements and switch statement</p>
-</li>
-</ul>
-<h3 id="if-…-else-Statement"><a href="#if-…-else-Statement" class="headerlink" title="if … else Statement"></a>if … else Statement</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span> (Conditional expression) &#123;</span><br><span class="line">  <span class="hljs-comment">// This code block is executed if the conditional expression is true.</span></span><br><span class="line">&#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">  <span class="hljs-comment">// This code block is executed if the conditional expression is false.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Most if … else statement can be replaced with the ternary conditional operator discussed in <a href="https://sub2n.github.io/2019/05/01/6-Operator/1">6. Operators</a>.</p>
-<h3 id="switch-Statement"><a href="#switch-Statement" class="headerlink" title="switch Statement"></a>switch Statement</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">switch</span> (Expression) &#123;</span><br><span class="line">  <span class="hljs-keyword">case</span> Expression1:</span><br><span class="line">   	<span class="hljs-comment">// The statement to be executed if the expression in the switch statement matches expression 1;</span></span><br><span class="line">    <span class="hljs-keyword">break</span>;</span><br><span class="line">  <span class="hljs-keyword">case</span> Expression2:</span><br><span class="line">    <span class="hljs-comment">// The statement to be executed if the expression in the switch statement matches expression 2;</span></span><br><span class="line">    <span class="hljs-keyword">break</span>;</span><br><span class="line">  <span class="hljs-keyword">default</span>:</span><br><span class="line">    <span class="hljs-comment">// The statement to be executed when there is no case statement with an expression that matches the expression in the switch statement;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>If the code can be represented by if…else, the use of the switch should be avoided whenever possible.</li>
-<li>Evaluates a given conditional expression and moves the execution order to a case statement with an expression that matches the value.</li>
-<li>Used when there are more cases than if…else statements.</li>
-<li>If do not use a break statement in a case, all the cases are checked sequentially to the default due to the <strong>fall through</strong> property of the switch.</li>
-</ul>
-<h1 id="Loop-Statement"><a href="#Loop-Statement" class="headerlink" title="Loop Statement"></a>Loop Statement</h1><p>Loop statement executes the code block repeatedly until the conditional expression is false.</p>
-<h2 id="for-Statement"><a href="#for-Statement" class="headerlink" title="for Statement"></a>for Statement</h2><p>The for statement executes the code block repeatedly until the conditional expression is determined to be false.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span> (declaration statement or assignment statement; conditional expression; Increase / decrease expression)&#123;</span><br><span class="line">	<span class="hljs-comment">// Statements that will be executed when conditional expression return true;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">2</span>; i++) &#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="while-Statement"><a href="#while-Statement" class="headerlink" title="while Statement"></a>while Statement</h2><p>The while statement repeatedly executes the code block repeatedly if the evaluation result of the given conditional expression is true.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">while</span> (conditional expression)&#123;</span><br><span class="line">    <span class="hljs-comment">// Escape condition is needed</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="do-while-Statement"><a href="#do-while-Statement" class="headerlink" title="do while Statement"></a>do while Statement</h2><p>It’s the same as while, but once it runs and checks the conditional</p>
-<h1 id="break-Statement"><a href="#break-Statement" class="headerlink" title="break Statement"></a>break Statement</h1><p>The break statement exits the code block. </p>
-<p>Actually it escapes the label statement, the for loop (for, for … in, for … of, while, do … while) or the code block of the switch statement. </p>
-<p>If a break statement is used in addition to the label statement, the loop statement, or the code block of the switch statement, SyntaxError occurs.</p>
-<h1 id="continue-Statement"><a href="#continue-Statement" class="headerlink" title="continue Statement"></a>continue Statement</h1><ul>
-<li>If continue is encountered, the code will stop running and move to the increment or decrement statement of the loop</li>
-<li>The statements under continue are not executed.</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -1297,7 +1303,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        126
+                        127
                     </p>
                 </div>
             </div>
@@ -1506,7 +1512,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">36</span>
+                <span class="level-item tag">37</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1544,6 +1550,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/07/35-Closure/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="35. Closure">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-07T03:59:09.000Z">2019-06-07</time></div>
+                    <a href="/2019/06/07/35-Closure/" class="has-link-black-ter is-size-6">35. Closure</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1621,25 +1646,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/03/190603-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190603-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-03T08:42:08.000Z">2019-06-03</time></div>
-                    <a href="/2019/06/03/190603-TIL/" class="has-link-black-ter is-size-6">190603-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1658,7 +1664,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">7</span>
                 </span>
             </a>
         </li>
@@ -1915,7 +1921,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">30</span>
+                        <span class="tag is-grey">31</span>
                     </a>
                 </div>
                 
@@ -2310,7 +2316,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">36</span>
+                <span class="level-item tag">37</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -2348,6 +2354,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/07/35-Closure/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="35. Closure">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-07T03:59:09.000Z">2019-06-07</time></div>
+                    <a href="/2019/06/07/35-Closure/" class="has-link-black-ter is-size-6">35. Closure</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -2425,25 +2450,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/03/190603-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190603-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-03T08:42:08.000Z">2019-06-03</time></div>
-                    <a href="/2019/06/03/190603-TIL/" class="has-link-black-ter is-size-6">190603-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2462,7 +2468,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">7</span>
                 </span>
             </a>
         </li>
@@ -2719,7 +2725,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">30</span>
+                        <span class="tag is-grey">31</span>
                     </a>
                 </div>
                 
