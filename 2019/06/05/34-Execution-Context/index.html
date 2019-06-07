@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="실행 컨텍스트(Execution Context)는 실행 가능한 코드를 평가하고 실행하기 위해 필요한 환경을 제공하고 코드의 실행 결과를 실제로 관리하는 영역이다. Context는 문맥, 맥락이라는 뜻이다. 프로그램에도 맥락이 있다. 예를 들면 식별자가 어느 스코프에서 사용되었는지에 따라서 다른 값을 참조한다. 1. Executable Code실행 가능한 코">
+    <meta name="description" content="실행 컨텍스트(Execution Context)는 실행 가능한 코드를 평가하고 실행하기 위해 필요한 환경을 제공하고 코드의 실행 결과를 실제로 관리하는 영역이다. Context는 문맥, 맥락이라는 뜻이다. 프로그램에도 맥락이 있다. 예를 들면 식별자가 어느 스코프에서 사용되었는지에 따라서 다른 값을 참조한다.">
 <meta name="keywords" content="JavaScript,실행 컨텍스트">
 <meta property="og:type" content="article">
 <meta property="og:title" content="34. Execution Context">
 <meta property="og:url" content="https://sub2n.github.io/2019/06/05/34-Execution-Context/index.html">
 <meta property="og:site_name" content="수빈 개발블로그">
-<meta property="og:description" content="실행 컨텍스트(Execution Context)는 실행 가능한 코드를 평가하고 실행하기 위해 필요한 환경을 제공하고 코드의 실행 결과를 실제로 관리하는 영역이다. Context는 문맥, 맥락이라는 뜻이다. 프로그램에도 맥락이 있다. 예를 들면 식별자가 어느 스코프에서 사용되었는지에 따라서 다른 값을 참조한다. 1. Executable Code실행 가능한 코">
+<meta property="og:description" content="실행 컨텍스트(Execution Context)는 실행 가능한 코드를 평가하고 실행하기 위해 필요한 환경을 제공하고 코드의 실행 결과를 실제로 관리하는 영역이다. Context는 문맥, 맥락이라는 뜻이다. 프로그램에도 맥락이 있다. 예를 들면 식별자가 어느 스코프에서 사용되었는지에 따라서 다른 값을 참조한다.">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
-<meta property="og:updated_time" content="2019-06-07T06:25:42.980Z">
+<meta property="og:updated_time" content="2019-06-07T07:26:41.415Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="34. Execution Context">
-<meta name="twitter:description" content="실행 컨텍스트(Execution Context)는 실행 가능한 코드를 평가하고 실행하기 위해 필요한 환경을 제공하고 코드의 실행 결과를 실제로 관리하는 영역이다. Context는 문맥, 맥락이라는 뜻이다. 프로그램에도 맥락이 있다. 예를 들면 식별자가 어느 스코프에서 사용되었는지에 따라서 다른 값을 참조한다. 1. Executable Code실행 가능한 코">
+<meta name="twitter:description" content="실행 컨텍스트(Execution Context)는 실행 가능한 코드를 평가하고 실행하기 위해 필요한 환경을 제공하고 코드의 실행 결과를 실제로 관리하는 영역이다. Context는 문맥, 맥락이라는 뜻이다. 프로그램에도 맥락이 있다. 예를 들면 식별자가 어느 스코프에서 사용되었는지에 따라서 다른 값을 참조한다.">
 <meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
 
 
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    32 minutes read (About 4859 words)
+                    32 minutes read (About 4860 words)
                 </span>
                 
                 
@@ -185,6 +185,7 @@
         <div class="content">
             <p><strong>실행 컨텍스트(Execution Context)</strong>는 <strong>실행 가능한 코드를 평가</strong>하고 <strong>실행하기 위해 필요한 환경을 제공</strong>하고 <strong>코드의 실행 결과를 실제로 관리</strong>하는 영역이다.</p>
 <p>Context는 문맥, 맥락이라는 뜻이다. 프로그램에도 맥락이 있다. 예를 들면 식별자가 어느 스코프에서 사용되었는지에 따라서 다른 값을 참조한다.</p>
+<a id="more"></a>
 <h2 id="1-Executable-Code"><a href="#1-Executable-Code" class="headerlink" title="1. Executable Code"></a>1. Executable Code</h2><p>실행 가능한 코드(Executable Code)를 4가지 유형으로 구분한다.</p>
 <table>
 <thead>
