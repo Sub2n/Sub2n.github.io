@@ -151,6 +151,164 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/04/30/5-Data-Type/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="5. Data Type">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-30T11:22:12.000Z">2019-04-30</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    14 minutes read (About 2101 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/30/5-Data-Type/">5. Data Type</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="What-is-Data-Type"><a href="#What-is-Data-Type" class="headerlink" title="What is Data Type?"></a>What is Data Type?</h1><p><strong>Data Type is type of values</strong>. All of the data in JavaScript have data type.</p>
+<h2 id="Allocatation-of-memory-space-by-Data-Type"><a href="#Allocatation-of-memory-space-by-Data-Type" class="headerlink" title="Allocatation of memory space by Data Type"></a>Allocatation of memory space by Data Type</h2><p>All of values used in programming language can be stored in memory and referenced. To store values in memory, computer need to know the size of memory space it need. Because size of memory depends on data type.</p>
+<p>JavaScript uses a double-precision 64-bit floating-point format when creating numeric binary values.</p>
+<h2 id="Access-memory-by-Data-Type"><a href="#Access-memory-by-Data-Type" class="headerlink" title="Access memory by Data Type"></a>Access memory by Data Type</h2><p>When refer to memory space by identifier, computer need to know the size of memory it need to read once. If variable <code>soup</code> is Number type, computer should access memory by only 8 byte. Data Type provides that informations to computer and human.</p>
+<p>Here’s reasons why Data Type need:</p>
+<ol>
+<li>To determine the size of <strong>memory space</strong> that must be free when storing values</li>
+<li>To determine how much <strong>memory space</strong> should be read at once when referring to a value</li>
+<li>To determine <strong>how to interpret the binary</strong> be read from memory. (To Number, String etc.)</li>
+</ol>
+<h1 id="Value"><a href="#Value" class="headerlink" title="Value"></a>Value</h1><p><strong>Value is one of expression that can not be evaluated any more</strong>. The expression is statement that makes value. In other words, expression make value by being evaluated.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 1 + 2 is an expression. And this expression evaluated and make a value 3.</span></span><br><span class="line"><span class="hljs-number">1</span> + <span class="hljs-number">2</span></span><br></pre></td></tr></table></figure>
+<p>1 + 2 is an expression. It is made up of value 1, 2 and operator +. The expression is evaluated by the JavaScript engine to produce a new value of 3. In other words, expression 1 + 2 is equivalent with value 3. The newly created value of 3 can not be evaluated anymore. When you evaluate 3, it is always 3.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// The variable is assigned the value 3, which is the evaluated value of expression 1 + 2.</span></span><br><span class="line"><span class="hljs-keyword">var</span> sum = <span class="hljs-number">1</span> + <span class="hljs-number">2</span>;</span><br></pre></td></tr></table></figure>
+<p>After the assignment operator =, value must be located. The expression creates value. So the expression can be located after operator =.</p>
+<p>Function in JavaScript is an object. And an object is a value. So function also can be evaluated to a value.</p>
+<h1 id="Creation-of-Value"><a href="#Creation-of-Value" class="headerlink" title="Creation of Value"></a>Creation of Value</h1><p>Value can created by many expressions. <strong>The most basic method</strong> to create value is using <strong>literal notation</strong>. The expression is more comprehensive concept that includes literal notation, identifier expression, etc.</p>
+<h2 id="Literal"><a href="#Literal" class="headerlink" title="Literal"></a>Literal</h2><p><strong>A literal is a fixed value itself created directly in the source code.</strong> More specifically, literal values are evaluated by the JavaScript engine.</p>
+<p><strong>Literal notation creates literal.</strong></p>
+<p><strong>Literal notation</strong> is method that make literal. The literal notation allows the generation of various types of values (Number, String, Boolean, null, undefined, object, array, function, regular expression, etc.) available in JavaScript. When JavaScript engines meet codes written in literal notation, they interpret the literal at the time the code is executed (runtime) and generate values.</p>
+<p>Literal is the most basic method to generates value.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Integer literal</span></span><br><span class="line"><span class="hljs-number">10</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Floating point literal</span></span><br><span class="line"><span class="hljs-number">10.2</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Binary literal</span></span><br><span class="line"><span class="hljs-number">0b011010101</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Octal literal</span></span><br><span class="line"><span class="hljs-number">0o010101</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Hexa literal</span></span><br><span class="line"><span class="hljs-number">0xd100ff</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// String literal</span></span><br><span class="line"><span class="hljs-string">'Hello'</span></span><br><span class="line"><span class="hljs-string">"Subin"</span></span><br><span class="line"><span class="hljs-string">``</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Boolean literal</span></span><br><span class="line"><span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// null literal</span></span><br><span class="line"><span class="hljs-literal">null</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// undefined literal</span></span><br><span class="line"><span class="hljs-literal">undefined</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Object literal</span></span><br><span class="line">&#123; <span class="hljs-attr">name</span>: <span class="hljs-string">'Park'</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">'yellow'</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Array literal</span></span><br><span class="line">[ <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Function literal</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Regular expression literal</span></span><br><span class="line">/ab+c/</span><br></pre></td></tr></table></figure>
+<p>Literal notation can be understood as a promise between the JavaScript engine and the developer. The JavaScript engine can interpret literal notation. For example, if you want to generate a numeric value, the developer uses the numeric literal notation to ask the JavaScript engine to generate a numeric value. The JavaScript engine responds to the developer’s request to interpret numeric literals and generate numeric values.</p>
+<h2 id="Relation-of-Value-and-Literal"><a href="#Relation-of-Value-and-Literal" class="headerlink" title="Relation of Value and Literal"></a>Relation of Value and Literal</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> soup = <span class="hljs-number">100</span>;</span><br></pre></td></tr></table></figure>
+<p>At the right side, 100 is directly created literal by literal notation. This literal is <strong>both literal and value</strong> at the same time because it cannot be evaluated any more and can be assigned to variable.</p>
+<p>Another example,</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> soup = <span class="hljs-number">50</span> + <span class="hljs-number">50</span>;</span><br></pre></td></tr></table></figure>
+<p>At the right side, 50 made by literal notation and + operator was used to sum. This expression create a new value 100. As such, statement that generates value in program called <strong>expression</strong>. The right side of this code is expression and generates a new value 100.</p>
+<p>So 50 is literal but created value 100 is not a literal, a value.</p>
+<p>A literal can be a value in itself, but <strong>not all values are literal</strong>.</p>
+<h2 id="Expressions"><a href="#Expressions" class="headerlink" title="Expressions"></a>Expressions</h2><p>A value can be generated by various methods. Various methods are expressions.</p>
+<p>The expression refers to <strong>combination of literal, identifier(variable name, function name), operator and function calls</strong>. The expression generate one value as a result of evaluation.</p>
+<p>In the other words, <strong>the expression is a statement that can be evaluated to one value.</strong></p>
+<p>Everything that produces a value is an expression.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// literal notation</span></span><br><span class="line"><span class="hljs-number">10</span></span><br><span class="line"><span class="hljs-string">'Hello'</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// identifier expression(Assuming that a declaration already exists)</span></span><br><span class="line">sum</span><br><span class="line">person.name</span><br><span class="line">arr[<span class="hljs-number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// operator expression</span></span><br><span class="line"><span class="hljs-number">10</span> + <span class="hljs-number">20</span></span><br><span class="line">sum = <span class="hljs-number">10</span>	<span class="hljs-comment">//assignment statement</span></span><br><span class="line">sum !== <span class="hljs-number">10</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// function/method call expression(Assuming that a declaration already exists)</span></span><br><span class="line">square()</span><br><span class="line">person.getName()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>The assignment statement is evaluated as a assigned value.</li>
+</ul>
+<h1 id="Classification-of-Data-types"><a href="#Classification-of-Data-types" class="headerlink" title="Classification of Data types"></a>Classification of Data types</h1><p>All of the values in JavaScript have a data type. JavaScript provides 7 data types. 7 data types can be classified into primitive types and object(reference) types.</p>
+<h2 id="Primitive-type"><a href="#Primitive-type" class="headerlink" title="Primitive type"></a>Primitive type</h2><ul>
+<li>Number type : Number(Integer and Real number)</li>
+<li>String type : Strings</li>
+<li>Boolean type : logical <code>true</code> and <code>false</code></li>
+<li><code>undefined</code> type : The implicitly assigned value that declared but not explicitly assigned</li>
+<li><code>null</code> type : The value used to indicate intentionally that there is no value.</li>
+<li>Symbol type : Seventh type that newly introduced in ES6</li>
+</ul>
+<h2 id="Object-reference-type"><a href="#Object-reference-type" class="headerlink" title="Object /reference type"></a>Object /reference type</h2><ul>
+<li>Object, funtcions, array etc.</li>
+</ul>
+<p>For example, Number 1 and String ‘1’ are look similar but completely different values. Size of memory space that needs to be occupied is different, binary digits that are stored in memory is different, and method of reading and interpreting is different.</p>
+<p>Also the purpose of value is different. Number type values are for arithmetic operation and String type values are for printing out text to screen. As such, developers will create values by distinguishing between types with clear intentions and JavaScript engines will treat values by distinguishing between types.</p>
+<h1 id="Number-Type"><a href="#Number-Type" class="headerlink" title="Number Type"></a>Number Type</h1><p>In C and Java, they distinguish integer and real number so there are various number types like <code>int</code>, <code>long</code>, <code>float</code>, <code>double</code>. But JavaScript has only one Number type.</p>
+<p>As ECMAScript specification, Number type follows double-precision 64-bit floating-point format(numbers between -(2<sup>53</sup> -1) ~ 2<sup>53</sup> -1 ).</p>
+<p>JavaScript treats all of the Numbers as real number, has no integer type.</p>
+<h2 id="Special-number-types"><a href="#Special-number-types" class="headerlink" title="Special number types"></a>Special number types</h2><ul>
+<li>Infinity : positive infinity</li>
+<li>-Infinity : negative infinity</li>
+<li>NaN : no arithmetic operation(not-a-number)</li>
+</ul>
+<p>Infinity is not a mathematical term, but a number that goes beyond what JavaScript can express.</p>
+<p>JavaScript is case-sensitive so NaN != nan, NAN, naN, Nan.</p>
+<h1 id="String-Type"><a href="#String-Type" class="headerlink" title="String Type"></a>String Type</h1><p>The String type is used to refer text data. String is a collection of more than 0 16 bit Unicode characters (UTF-16) that can represent most of the world’s characters.</p>
+<h2 id="How-to-know-the-size-of-String"><a href="#How-to-know-the-size-of-String" class="headerlink" title="How to know the size of String?"></a>How to know the size of String?</h2><p>The purpose of Data Type is to determine the size of <strong>memory space</strong> that must be free when storing values and to determine how much <strong>memory space</strong> should be read at once when referring to a value.</p>
+<p>String can be generated by ‘’, “”, <code></code>. The most general expression is using ‘’.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// String Type</span></span><br><span class="line"><span class="hljs-keyword">var</span> string;</span><br><span class="line">string = <span class="hljs-string">"문자열"</span>; <span class="hljs-comment">// double quotes</span></span><br><span class="line">string = <span class="hljs-string">'문자열'</span>; <span class="hljs-comment">// single quotes</span></span><br><span class="line">string = <span class="hljs-string">`문자열`</span>; <span class="hljs-comment">// backtick</span></span><br><span class="line"></span><br><span class="line">string = <span class="hljs-string">"A 'single quote' in a string enclosed in double quotes is recognized as a string."</span>;</span><br><span class="line">string = <span class="hljs-string">'The "double quotes" in strings enclosed in single quotes are recognized as strings.'</span>;</span><br></pre></td></tr></table></figure>
+<p>Unlike languages such as C and Java, JavaScript strings are primitive types and are <strong>immutable values</strong>. Immutable means that once a string is generated, it cannot be changed.</p>
+<h2 id="Template-literal"><a href="#Template-literal" class="headerlink" title="Template literal"></a>Template literal</h2><p>ES6 introduced new string expression, called template literal. Template literal seems like general string, it uses backtick (`).</p>
+<p>In a typical string, the line is not allowed and in order to represent a white space, an escape sequence beginning with a backslash () must be used.</p>
+<p>Unlike a typical string, ES6 template literal can write strings across multiple lines, and all spaces within the template literal apply as they are.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> template = <span class="hljs-string">`&lt;ul class="nav-items"&gt;</span></span><br><span class="line"><span class="hljs-string">  &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="hljs-string">  &lt;li&gt;&lt;a href="#news"&gt;News&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="hljs-string">  &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="hljs-string">  &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="hljs-string">&lt;/ul&gt;`</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(template);</span><br></pre></td></tr></table></figure>
+<p>And Strings can be concatenated using the + string operator. The + operator concatenate operands if at least one of the operand is a String.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> first = <span class="hljs-string">'Subin'</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> last = <span class="hljs-string">'Park'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// ES5: String Concatenation</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'My name is '</span> + first + <span class="hljs-string">' '</span> + last + <span class="hljs-string">'.'</span>);</span><br></pre></td></tr></table></figure>
+<p>Template literal provides String Interpolation to insert new string without using + string operator.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> first = <span class="hljs-string">'Subin'</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> last = <span class="hljs-string">'Park'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// ES6: String Interpolation</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">`My name is <span class="hljs-subst">$&#123;first&#125;</span> <span class="hljs-subst">$&#123;last&#125;</span>.`</span>);</span><br></pre></td></tr></table></figure>
+<p>String Interpolation wraps expression with ${ extension}. The evaluation results of the expression are then forced to type into a string.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">`1 + 1 = <span class="hljs-subst">$&#123;<span class="hljs-number">1</span> + <span class="hljs-number">1</span>&#125;</span>`</span>);</span><br></pre></td></tr></table></figure>
+<p>The sequence is that Number 1 + 1 evaluated to Number 2, and be type casted to String 2.</p>
+<h1 id="Boolean-Type"><a href="#Boolean-Type" class="headerlink" title="Boolean Type"></a>Boolean Type</h1><p>The boolean type values are only <code>true</code> and <code>false</code>. It is used to condition statement as a flow control.</p>
+<h1 id="undefined-Type"><a href="#undefined-Type" class="headerlink" title="undefined Type"></a>undefined Type</h1><p>The value of undefined type is unique, a <code>undefined</code>. The implicitly assigned value that declared but not explicitly assigned.</p>
+<p>If the value of variable is <code>undefined</code>, it means that the variable only be declared but not be assigned yet.</p>
+<blockquote>
+<h2 id="Declaration-and-Definition"><a href="#Declaration-and-Definition" class="headerlink" title="Declaration and Definition"></a>Declaration and Definition</h2><p><code>undefined</code> means not defined. The definition refers to clarifying the substance of a variable by assigning a value to the variable.</p>
+<p>In C, definition of variable is important because if the variable only declared but not assigned, it can be contain a garbage value. But JavaScript assign <code>undefined</code> when at the time a variable is declared. In JavaScript, the boundaries between declarations and definitions are ambiguous and do not distinguish between them.</p>
+</blockquote>
+<h1 id="null-Type"><a href="#null-Type" class="headerlink" title="null Type"></a>null Type</h1><p>The value of null type is unique, a <code>null</code>. JavaScript is case-sensitive so null != Null, NULL.</p>
+<p>In programming language, null is used to represent intentional absence. However, assigning <code>null</code> to a variable is not used very well. </p>
+<p>If the function can not return a valid value, it may explicitly return <code>null</code>. </p>
+<p>For example, <code>Document.getElementById(id)</code> return <code>null</code> if given id is not exist in document.</p>
+<h1 id="Object-Type"><a href="#Object-Type" class="headerlink" title="Object Type"></a>Object Type</h1><p>All of the JavaScript data type excepts primitive types are object type.</p>
+<h1 id="Dynamic-Typing"><a href="#Dynamic-Typing" class="headerlink" title="Dynamic Typing"></a>Dynamic Typing</h1><h2 id="Static-type-language"><a href="#Static-type-language" class="headerlink" title="Static type language"></a>Static type language</h2><p>Static / Strong type languages ​​such as C or Java must declare a data type in advance. This is called an explicit type declaration. The following is an example of declaring an integer type variable in C.</p>
+<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 4 byte integer type</span></span><br><span class="line"><span class="hljs-keyword">int</span> num;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 1 byte integer type</span></span><br><span class="line"><span class="hljs-keyword">char</span> c;</span><br></pre></td></tr></table></figure>
+<p>Static type language can not change a type of value and only can assign values that match the type declared in the variable. Representative static type languages are C, C++, Java, Kotlin, Go, Hashell, Rust, Scala etc.</p>
+<h2 id="Dynamic-type-language"><a href="#Dynamic-type-language" class="headerlink" title="Dynamic type language"></a>Dynamic type language</h2><p>JavaScript does not declare the type of variable when declaration. But only use the keywords such as <code>var</code>, <code>let</code>, <code>const</code> to declare a variable. JavaScript can assign any type of values.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> foo;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> foo);  <span class="hljs-comment">// undefined</span></span><br><span class="line"></span><br><span class="line">foo = <span class="hljs-number">3</span>;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> foo);  <span class="hljs-comment">// number</span></span><br><span class="line"></span><br><span class="line">foo = <span class="hljs-string">'Hello'</span>;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> foo);  <span class="hljs-comment">// string</span></span><br><span class="line"></span><br><span class="line">foo = <span class="hljs-literal">true</span>;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> foo);  <span class="hljs-comment">// boolean</span></span><br><span class="line"></span><br><span class="line">foo = <span class="hljs-literal">null</span>;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> foo);  <span class="hljs-comment">// object</span></span><br><span class="line"></span><br><span class="line">foo = <span class="hljs-built_in">Symbol</span>(); <span class="hljs-comment">// symbol</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> foo);  <span class="hljs-comment">// symbol</span></span><br><span class="line"></span><br><span class="line">foo = &#123;&#125;; <span class="hljs-comment">// object</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> foo);  <span class="hljs-comment">// object</span></span><br><span class="line"></span><br><span class="line">foo = []; <span class="hljs-comment">// array</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> foo);  <span class="hljs-comment">// object</span></span><br><span class="line"></span><br><span class="line">foo = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;&#125;; <span class="hljs-comment">// 함수</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> foo);  <span class="hljs-comment">// function</span></span><br></pre></td></tr></table></figure>
+<p>A static type language determines the type of a variable <strong>at the time of variable declaration</strong> and can not change the type of a variable. JavaScript can dynamically determine the type of the variable <strong>at the time of assigning the value</strong> and change the type of the variable at any time.</p>
+<p>In other words, JavaScript variables are type-determined by assignments rather than declarations. And the type of variable can be changed by reassignment at any time. This feature is called <strong>Dynamic Typing</strong>, and JavaScript is called a Dynamic / weak type language to distinguish it from Static type languages. Typical dynamic type languages ​​are JavaScript, Python, PHP, Ruby, Lisp, and Perl.</p>
+<h2 id="Parameter-and-Argument"><a href="#Parameter-and-Argument" class="headerlink" title="Parameter and Argument"></a>Parameter and Argument</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// x, y: parameter</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x, y</span>)</span>&#123;</span><br><span class="line">    <span class="hljs-comment">// type check is needed</span></span><br><span class="line">    <span class="hljs-keyword">return</span> x, y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 1, 2: argument</span></span><br><span class="line">add(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)</span><br></pre></td></tr></table></figure>
+<p>A <strong>parameter</strong> is a variable in a method definition. When a method is called, the <strong>arguments</strong> are the data you pass into the method’s <strong>parameters</strong>. <strong>Parameter</strong> is variable in the declaration of function. <strong>Argument</strong> is the actual value of this variable that gets passed to function.</p>
+<h2 id="Things-to-keep-in-mind-when-using-variables"><a href="#Things-to-keep-in-mind-when-using-variables" class="headerlink" title="Things to keep in mind when using variables"></a>Things to keep in mind when using variables</h2><ul>
+<li>Actively reduce the use of variables. The greater the number of variables, the higher the probability of error occurrence.</li>
+<li>Do not use global variables. Make the life cycle of the variable as short as possible.</li>
+<li>Use a constant rather than a variable to suppress the change of value. Use <code>const</code> instead <code>let</code> if a variable is never reassigned.</li>
+<li>The variable name is named so that the reason for the existence of the variable can be grasped.</li>
+</ul>
+<hr>
+<p>Reference</p>
+<p><a href="https://poiemaweb.com/js-data-type-variable" target="_blank" rel="noopener">Data type &amp; Variable</a></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/04/30/4-Variable/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="4. Variable">
         </a>
@@ -881,64 +1039,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/26/CodeWars-6kyu-Take-a-Number-And-Sum-Its-Digits-Raised-To-The-Consecutive-Powers-And-¡Eurekals/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="CodeWars 6kyu. Take a Number And Sum Its Digits Raised To The Consecutive Powers And ...">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-26T00:56:47.000Z">2019-04-26</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/CodeWars/">CodeWars</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 233 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/26/CodeWars-6kyu-Take-a-Number-And-Sum-Its-Digits-Raised-To-The-Consecutive-Powers-And-¡Eurekals/">CodeWars 6kyu. Take a Number And Sum Its Digits Raised To The Consecutive Powers And ...</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="CodeWars-6kyu-Take-a-Number-And-Sum-Its-Digits-Raised-To-The-Consecutive-Powers-And-…-¡Eurekal"><a href="#CodeWars-6kyu-Take-a-Number-And-Sum-Its-Digits-Raised-To-The-Consecutive-Powers-And-…-¡Eurekal" class="headerlink" title="CodeWars 6kyu. Take a Number And Sum Its Digits Raised To The Consecutive Powers And ….¡Eurekal!!"></a><a href="https://www.codewars.com/kata/5626b561280a42ecc50000d1" target="_blank" rel="noopener">CodeWars 6kyu. Take a Number And Sum Its Digits Raised To The Consecutive Powers And ….¡Eurekal!!</a></h2><p>Return a number that sum of each digit powered of its own number of digit.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/26/CodeWars-6kyu-Take-a-Number-And-Sum-Its-Digits-Raised-To-The-Consecutive-Powers-And-¡Eurekals/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -1013,7 +1113,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        129
+                        130
                     </p>
                 </div>
             </div>
@@ -1238,7 +1338,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">60</span>
+                <span class="level-item tag">61</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1260,6 +1360,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/11/190611-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/cherry.png" alt="190611-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-11T08:18:05.000Z">2019-06-11</time></div>
+                    <a href="/2019/06/11/190611-TIL/" class="has-link-black-ter is-size-6">190611-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1337,25 +1456,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/05/34-Execution-Context/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="34. Execution Context">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-05T01:43:07.000Z">2019-06-05</time></div>
-                    <a href="/2019/06/05/34-Execution-Context/" class="has-link-black-ter is-size-6">34. Execution Context</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1374,7 +1474,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">9</span>
+                    <span class="level-item tag">10</span>
                 </span>
             </a>
         </li>
@@ -1813,7 +1913,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">61</span>
+                        <span class="tag is-grey">62</span>
                     </a>
                 </div>
                 
@@ -2070,7 +2170,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">60</span>
+                <span class="level-item tag">61</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -2092,6 +2192,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/11/190611-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/cherry.png" alt="190611-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-11T08:18:05.000Z">2019-06-11</time></div>
+                    <a href="/2019/06/11/190611-TIL/" class="has-link-black-ter is-size-6">190611-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -2169,25 +2288,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/05/34-Execution-Context/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="34. Execution Context">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-05T01:43:07.000Z">2019-06-05</time></div>
-                    <a href="/2019/06/05/34-Execution-Context/" class="has-link-black-ter is-size-6">34. Execution Context</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2206,7 +2306,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">9</span>
+                    <span class="level-item tag">10</span>
                 </span>
             </a>
         </li>
@@ -2645,7 +2745,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">61</span>
+                        <span class="tag is-grey">62</span>
                     </a>
                 </div>
                 
