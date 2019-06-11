@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sub2n.github.io/about/index.html</loc>
+    
+    <lastmod>2019-06-11T07:05:22.806Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/06/07/35-Closure/</loc>
+    
+    <lastmod>2019-06-11T07:00:47.744Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/06/10/36-SPA/</loc>
+    
+    <lastmod>2019-06-11T06:16:28.716Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sub2n.github.io/2019/06/10/190610-TIL/</loc>
     
     <lastmod>2019-06-11T04:11:44.253Z</lastmod>
@@ -9,23 +30,9 @@
   </url>
   
   <url>
-    <loc>https://sub2n.github.io/2019/06/10/36-SPA/</loc>
-    
-    <lastmod>2019-06-11T04:11:08.596Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://sub2n.github.io/2019/06/05/34-Execution-Context/</loc>
     
     <lastmod>2019-06-07T09:11:21.472Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sub2n.github.io/2019/06/07/35-Closure/</loc>
-    
-    <lastmod>2019-06-07T07:39:21.234Z</lastmod>
     
   </url>
   
@@ -40,13 +47,6 @@
     <loc>https://sub2n.github.io/2019/05/27/33-Promise/</loc>
     
     <lastmod>2019-06-07T07:26:48.858Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sub2n.github.io/about/index.html</loc>
-    
-    <lastmod>2019-06-07T02:10:53.607Z</lastmod>
     
   </url>
   
