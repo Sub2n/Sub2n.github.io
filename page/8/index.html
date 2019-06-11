@@ -151,6 +151,64 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/04/25/CodeWars-5kyu-Maximum-subarray-sum/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="CodeWars 5kyu Maximum subarray sum">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-25T11:50:45.000Z">2019-04-25</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/CodeWars/">CodeWars</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes read (About 621 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/25/CodeWars-5kyu-Maximum-subarray-sum/">CodeWars 5kyu Maximum subarray sum</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="CodeWars-5kyu-Maximum-subarray-sum"><a href="#CodeWars-5kyu-Maximum-subarray-sum" class="headerlink" title="CodeWars 5kyu. Maximum subarray sum"></a><a href="https://www.codewars.com/kata/maximum-subarray-sum/train/javascript" target="_blank" rel="noopener">CodeWars 5kyu. Maximum subarray sum</a></h2><p>Return maximum sum of subarrays</p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/25/CodeWars-5kyu-Maximum-subarray-sum/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/04/25/190425-TIL/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/flower2.png" alt="190425-TIL">
         </a>
@@ -819,119 +877,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/22/Call-by-Value-Call-by-Reference-and-Call-by-Object-Reference/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="Call by Value, Call by Reference and Call by Object Reference">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-22T11:28:15.000Z">2019-04-22</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    7 minutes read (About 1021 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/22/Call-by-Value-Call-by-Reference-and-Call-by-Object-Reference/">Call by Value, Call by Reference and Call by Object Reference</a>
-            
-        </h1>
-        <div class="content">
-            <p>우선 Parameter와 Argument의 차이를 짚고 가도록 한다.</p>
-<h2 id="Parameter"><a href="#Parameter" class="headerlink" title="Parameter"></a>Parameter</h2><p>The names given in the function definition are called Parameters.</p>
-<h2 id="Argument"><a href="#Argument" class="headerlink" title="Argument"></a>Argument</h2><p>The values supplied in the function call are called Arguments.</p>
-<h1 id="Call-by-Value"><a href="#Call-by-Value" class="headerlink" title="Call by Value"></a>Call by Value</h1><ul>
-<li><p>함수를 호출할 때, 변수의 값을 복사하여 argument로 넘기는 것</p>
-<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">change_value</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">  x = val;</span><br><span class="line">  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"x : %d in change_value \n"</span>, *x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">int</span> x = <span class="hljs-number">10</span>;</span><br><span class="line">  change_value(x, <span class="hljs-number">20</span>);</span><br><span class="line">  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"x : %d in main \n"</span>, x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://user-images.githubusercontent.com/48080762/56498729-04895e80-653e-11e9-9fcc-11c71a94318b.png" alt="Call by Value"></p>
-<ul>
-<li>위 코드에서는 단순히 x에 10이라는 값이 복사되어 들어가기 때문에, change_value(x, 20)에서 x를 변경하더라도 main 함수에서의 x에 영향을 미치지 못한다.</li>
-</ul>
-</li>
-</ul>
-<h1 id="Call-by-Reference"><a href="#Call-by-Reference" class="headerlink" title="Call by Reference"></a>Call by Reference</h1><ul>
-<li>함수를 호출할 때 변수의 값을 넘기는 것이 아니라, 변수의 주소(변수의 위치)를 복사하여 함수에 넘긴다.</li>
-<li><p>넘겨받은 주소로 실제 변수에 접근하고 값을 변경할 수 있다.</p>
-<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">change_value</span><span class="hljs-params">(<span class="hljs-keyword">int</span> * x, <span class="hljs-keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">  *x = val;</span><br><span class="line">  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"x : %d in change_value \n"</span>, *x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">int</span> x = <span class="hljs-number">10</span>;</span><br><span class="line">  change_value(&amp;x, <span class="hljs-number">20</span>);</span><br><span class="line">  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"x : %d in main \n"</span>, x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://user-images.githubusercontent.com/48080762/56498618-76ad7380-653d-11e9-9dce-3b56346565ce.png" alt="Call by Reference"></p>
-</li>
-<li><p>주소값을 전달 (참조값을 전달) : 주소값을 알고 있으면 해당 memory 주소에 저장되어있는 값을 참조할 수 있다.</p>
-</li>
-<li><p>*x가 x를 참조하고 있다 : 가리키고 있다.</p>
-<p>이를 이해하기 위해서는 pointer에 대한 이해가 필요하다.</p>
-</li>
-<li><p>Pointer </p>
-<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> *pnum;</span><br><span class="line"><span class="hljs-keyword">int</span> num = <span class="hljs-number">12345</span>;</span><br><span class="line">pnum = &amp;num <span class="hljs-comment">//num의 주소값을 return하여 pnum에 저장</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>변수를 만들 때 변수 이름 앞에 *를 붙이면 pointer 변수 됨</li>
-<li>&amp;연산자: &amp;오른쪽에 오는 피연산자의 주소값을 반환</li>
-<li>*연산자: 포인터가 가리키는 메모리 공간에 접근할 때 사용되는 연산자. 포인터 변수를 이용해 포인터 변수가 가리키는 변수의 값을 바꿀 수도 있다.</li>
-</ul>
-</li>
-</ul>
-<h1 id="Call-by-Assignment-Call-by-Object-Reference"><a href="#Call-by-Assignment-Call-by-Object-Reference" class="headerlink" title="Call by Assignment (Call by Object Reference)"></a>Call by Assignment (Call by Object Reference)</h1><blockquote>
-<p>The actual parameters (arguments) to a function call are introduced in the local symbol table of the called function when it is called; thus, arguments are passed using call by value (where the value is always an object reference, not the value of the object). [1] When a function calls another function, a new local symbol table is created for that call.</p>
-</blockquote>
-<p>이 문장이 나를 얼마나 헷갈리게 했는지 모른다. 그러니까 Python에서는 function의 argument가 call by value로 넘어오는데, 그 value는 언제나 object의 값이 아닌 object의 reference라는 것이다.</p>
-<blockquote>
-<p>Actually, call by object reference would be a better description, since if a mutable object is passed, the caller will see any changes the callee makes to it (items inserted into a list).</p>
-</blockquote>
-<p>정확하게는 call by object reference라는 설명이 더 맞다. 왜냐면 mutable 객체가 넘어올 때에는 call by reference처럼 원본 값을 변경할 수 있기 때문이다.</p>
-<ul>
-<li>파이썬은 모든 것이 object이고, Object에는 두 종류가 있다.</li>
-</ul>
-<ol>
-<li>Immutable object<ul>
-<li>int, float, str, tuple</li>
-<li>Immtable 객체가 함수의 인자로 전달되면, 처음에는 call by reference로 받지만 값이 변경되면 call by value로 동작한다.</li>
-<li>즉, 함수 내에서 formal parameter 값이 바뀌어도 actual parameter에는 영향이 없다.</li>
-<li>함수 내부에서 값을 변경할 수 없다!</li>
-<li>그래서 tuple은 변경하려면 함수에서 element와 tuple 인자로 넘겨 아예 새로 할당해줘야 함</li>
-</ul>
-</li>
-<li>Mutable object<ul>
-<li>list, dict, set</li>
-<li>Mutable 객체가 함수의 인자로 넘어가면 call by reference도 동작한다. 즉, object referene가 전달되어 actual parameter의 값에 영향을 미칠 수도 있다.</li>
-<li>새로운 객체를 할당하는 게 아니라면, 함수 내부에서 값을 변경할 수 있다!</li>
-</ul>
-</li>
-</ol>
-<h2 id="정리"><a href="#정리" class="headerlink" title="정리"></a>정리</h2><ul>
-<li>Python은 함수를 실행할때 Call by reference같은 느낌으로 reference를 넘겨준다. 하지만 이때 넘겨주는 것은 변수(Variable)의 reference가 아니라 변수가 담고 있는 자료(Data)의 reference이다. </li>
-<li>자료가 mutable하다면 변경해도 reference가 보존되므로 결과적으로 Call by reference처럼 보일 것이고, 자료가 immutable하다면 결과적으로 Call by value처럼 보일 것이다.</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -1006,7 +951,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        128
+                        129
                     </p>
                 </div>
             </div>
@@ -1231,7 +1176,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">59</span>
+                <span class="level-item tag">60</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1253,6 +1198,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/11/190610-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190610-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-11T02:15:08.000Z">2019-06-11</time></div>
+                    <a href="/2019/06/11/190610-TIL/" class="has-link-black-ter is-size-6">190610-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1330,25 +1294,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/04/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-04T04:55:03.028Z">2019-06-04</time></div>
-                    <a href="/2019/06/04/hello-world/" class="has-link-black-ter is-size-6">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1367,7 +1312,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">9</span>
                 </span>
             </a>
         </li>
@@ -1806,7 +1751,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">60</span>
+                        <span class="tag is-grey">61</span>
                     </a>
                 </div>
                 
@@ -2063,7 +2008,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">59</span>
+                <span class="level-item tag">60</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -2085,6 +2030,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/11/190610-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190610-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-11T02:15:08.000Z">2019-06-11</time></div>
+                    <a href="/2019/06/11/190610-TIL/" class="has-link-black-ter is-size-6">190610-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -2162,25 +2126,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/04/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-04T04:55:03.028Z">2019-06-04</time></div>
-                    <a href="/2019/06/04/hello-world/" class="has-link-black-ter is-size-6">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2199,7 +2144,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">9</span>
                 </span>
             </a>
         </li>
@@ -2638,7 +2583,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">60</span>
+                        <span class="tag is-grey">61</span>
                     </a>
                 </div>
                 

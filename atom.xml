@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sub2n.github.io/"/>
-  <updated>2019-06-10T02:12:47.098Z</updated>
+  <updated>2019-06-11T02:36:01.565Z</updated>
   <id>https://sub2n.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>190610-TIL</title>
+    <link href="https://sub2n.github.io/2019/06/11/190610-TIL/"/>
+    <id>https://sub2n.github.io/2019/06/11/190610-TIL/</id>
+    <published>2019-06-11T02:15:08.000Z</published>
+    <updated>2019-06-11T02:36:01.565Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li>Tab UI를 만들었다.</li><li>Accordian UI를 만들었다.</li><li>Range Slider UI를 만들었다.</li><li>셋을 합쳤다.</li><li>jQuery로 구현된 코드를 Vanilla JavaScript로 고쳤다.</li></ul><p><a href="https://github.com/Sub2n/JavaScript-Exercise/blob/master/README.md#ui-exercise" target="_blank" rel="noopener">✨UI Exercise</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Tab UI를 만들었다
+      
+    
+    </summary>
+    
+      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
+    
+    
+      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>36. SPA</title>
     <link href="https://sub2n.github.io/2019/06/10/36-SPA/"/>
     <id>https://sub2n.github.io/2019/06/10/36-SPA/</id>
     <published>2019-06-10T01:46:03.000Z</published>
-    <updated>2019-06-10T02:12:47.098Z</updated>
+    <updated>2019-06-10T02:18:00.210Z</updated>
     
     <content type="html"><![CDATA[<h2 id="SPA-Single-Page-Application"><a href="#SPA-Single-Page-Application" class="headerlink" title="SPA (Single Page Application)"></a>SPA (Single Page Application)</h2><p>Single Page Application은 모던 웹 패러다임으로, 기본적으로 하나의 페이지로 구성된다. 기존의 Sever-side 렌더링과 비교할 때 배포가 간단하고 Native application과 유사한 UX를 제공할 수 있다는 장점이 있다.</p><p>전통적인 웹 방식은 link tag를 사용해서 새로운 페이지를 요청한다. 새로운 페이지(html)를 요청할 때마다 필요한 static resource가 다운로드되고 전체 페이지를 다시 렌더링해야하므로 새로고침이 발생된다.</p><p>SPA는 기본적으로 Web Application에 필요한 모든 static resource를 처음 한 번에 다운로드한다. 이후에 새로운 페이지를 요청하면 갱신에 필요한 데이터만 전달받고 변경이 필요한 부분만 렌더링하므로 트래픽이 감소하고 Native application과 유사한 UX를 제공한다.</p><p>그러나 모든 Software Architecture에는 trade-off가 존재하므로 SPA 또한 구조적인 단점을 갖는다.</p><h4 id="초기-구동-속도가-느리다"><a href="#초기-구동-속도가-느리다" class="headerlink" title="초기 구동 속도가 느리다."></a>초기 구동 속도가 느리다.</h4><p>SPA는 Web Application에 필요한 모든 static resource를 한 번에 다운로드 하므로 초기 구동 속도가 상대적으로 느리다.</p><h4 id="SEO-Search-Engine-Optimization-문제"><a href="#SEO-Search-Engine-Optimization-문제" class="headerlink" title="SEO(Search Engine Optimization) 문제"></a>SEO(Search Engine Optimization) 문제</h4><p>SPA는 Server Rendering 방식이 아닌, 자바스크립트 기반 비동기 모델(Client Rendering 방식)이다. 따라서 SEO가 단점으로 꼽힌다. 그러나 Angular 또는 React 등의 SPA 프레임워크는 Server Rendering을 지원하는 SEO 대응 기술이 존재하고 있다.</p><h2 id="Routing"><a href="#Routing" class="headerlink" title="Routing"></a>Routing</h2><p>Routing은 source에서 destination까지의 경로를 결정하는 기능이다. <strong>Application의 routing</strong>은 사용자가 task를 수행하기 위해서 어떤 화면(view)에서 다른 화면으로 화면을 전환하는 Navigation을 관리하기 위한 기능을 의미한다.</p><p>일반적으로 사용자가 요청한 URL 또는 Event를 해석하고 새로운 페이지로 전환하기 위한 데이터를 얻기 위해서 서버에 필요한 데이터를 요청하고 화면을 전환하는 행위를 말한다.</p><p>브라우저가 화면을 전환하는 경우</p><ol><li>브라우저 주소창에 URL을 입력해서 해당 페이지로 이동</li><li>웹 페이지의 링크를 클릭해서 해당 페이지로 이동</li><li>브라우저의 뒤로가기, 앞으로가기 버튼으로 사용자가 방문한 웹페이지 history의 뒤, 앞으로 이동</li></ol>]]></content>
     
@@ -508,33 +534,6 @@
       <category term="JavaScript" scheme="https://sub2n.github.io/tags/JavaScript/"/>
     
       <category term="DOM" scheme="https://sub2n.github.io/tags/DOM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>28. Module</title>
-    <link href="https://sub2n.github.io/2019/05/22/28-Module/"/>
-    <id>https://sub2n.github.io/2019/05/22/28-Module/</id>
-    <published>2019-05-22T07:16:28.000Z</published>
-    <updated>2019-05-22T07:44:31.664Z</updated>
-    
-    <content type="html"><![CDATA[<p>원래 모듈화를 하거나 파일을 분리하면 각 모듈, 파일 별로 개별적인 스코프를 가져야하는데 자바스크립트는 파일을 분리해서 함께 사용할 때 하나의 전역 스코프만을 가진다. 즉, 여러 개의 js 파일에서 식별자 명이 겹칠 경우 의도한 바와 다르게 동작할 수 있다.</p><p>이전에는 각 파일을 IIFE(Imediately Invoked Function Expression)로 감쌌으나 근본적인 해결책은 아니다. 특정 클래스나 함수를 외부에 노출시키고 싶지 않을 때는 클로저를 사용해서 선택적으로 노출했다.</p><p>ES6에서 클라이언트 사이드 자바스크립트에서도 동작하는 모듈 기능이 추가되었다. script tag에 <code>type=&quot;module&quot;</code> 어트리뷰트 추가시 해당 자바스크립트 파일은 모듈로 동작하며 파일 스코프를 가진다. 모듈화된 자바스크립트 파일을 사용할 때는 확장자 명을 <code>.mjs</code>라고 한다.</p><p>그러나 아직까지 문법이 엄격하고 구형 브라우저(IE 등)에서는 ES6 모듈을 지원하지 않는 문제가 있다. 그러니까 아직은 바벨 / 웹팩 등을 사용해서 개발해야한다.</p><blockquote><p>바벨: ES6 이상의 문법을 사용해서 코딩하더라도 ES5의 문법으로 다운그레이드해서 구형 브라우저에서 돌아갈 수 있게 함</p><p>웹팩: 여러 파일을 import하면 하나의 파일로 압축해줌</p></blockquote><h3 id="1-File-Scope"><a href="#1-File-Scope" class="headerlink" title="1. File Scope"></a>1. File Scope</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// lib.js</span></span><br><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">10</span>;</span><br></pre></td></tr></table></figure><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// app.js</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(x);</span><br></pre></td></tr></table></figure><p>모듈을 사용하지 않을 경우 정상적으로 코드가 돌아가지만 <code>type=&quot;module&quot;</code> 사용시 각 파일마다 스코프가 분리되어 app.js에서 lib.js의 x에 접근할 수 없다.</p><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">&lt;!-- index.html --&gt;</span></span><br><span class="line"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"ie=edge"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./lib.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./app.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="2-export-Keyword"><a href="#2-export-Keyword" class="headerlink" title="2. export Keyword"></a>2. export Keyword</h3><p>ES6의 모듈을 쓰면 각각 파일이 파일 스코프를 가지기 때문에 다른 파일에 공개할 변수나 함수, 클래스 앞에 <code>export</code> 키워드를 붙여서 선택적으로 노출할 수 있다.</p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// lib.js</span></span><br><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> x = <span class="hljs-number">10</span>;</span><br></pre></td></tr></table></figure><h3 id="3-import-Keyword"><a href="#3-import-Keyword" class="headerlink" title="3. import Keyword"></a>3. import Keyword</h3><p>다른 파일에서 <code>export</code> 키워드로 노출한 변수, 함수, 클래스 등을 <code>import</code> 키워드를 사용함으로써 사용할 수 있다.</p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// app.js</span></span><br><span class="line"><span class="hljs-keyword">import</span> &#123; x &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'./lib.js'</span>;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(x);</span><br></pre></td></tr></table></figure><p>모듈에서 하나만 export할 때는 default 키워드를 사용할 수 있음</p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// lib.js</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">x</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span>;</span><br></pre></td></tr></table></figure><p>default 키워드로 export한 모듈은 import할 때 {} 없이 받아올 수 있다.</p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// app.js</span></span><br><span class="line"><span class="hljs-keyword">import</span> y <span class="hljs-keyword">from</span> <span class="hljs-string">'./lib.js'</span>;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;원래 모듈화를 하거나 파일을 분리하면 각 모듈, 파일 별로 개별적인 스코프를 가져야하는데 자바스크립트는 파일을 분리해서 함께 사용할 때 하나의 전역 스코프만을 가진다. 즉, 여러 개의 js 파일에서 식별자 명이 겹칠 경우 의도한 바와 다르게 동작
-      
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
-    
-    
-      <category term="JavaScript" scheme="https://sub2n.github.io/tags/JavaScript/"/>
-    
-      <category term="Modlue" scheme="https://sub2n.github.io/tags/Modlue/"/>
     
   </entry>
   
