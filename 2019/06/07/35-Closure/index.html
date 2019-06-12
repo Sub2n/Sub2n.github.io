@@ -185,6 +185,7 @@
         <div class="content">
             <h2 id="Purpose-of-Closure-Maintain-Status"><a href="#Purpose-of-Closure-Maintain-Status" class="headerlink" title="Purpose of Closure: Maintain Status"></a>Purpose of Closure: Maintain Status</h2><p>클로저의 주된 목적은 <strong>안전한</strong> 상태 유지를 하는 것이다. 다른 객체지향 프로그래밍 언어의 경우 private, public, protect 등의 접근 제한자(Access Specifier)를 제공하지만 자바스크립트에는 그런 기능이 없다. (ES6의 Class에 private이 도입된다고 하지만 아직 완벽하게 적용되지 않음) 자바스크립트의 클로저를 사용하면 상태를 안전하게 유지할 수 있다.</p>
 <a id="more"></a>
+
 <h2 id="What-is-Closure"><a href="#What-is-Closure" class="headerlink" title="What is Closure?"></a>What is Closure?</h2><blockquote>
 <p>“A closure is the combination of a function and the lexical environment within which that function was declared.”</p>
 <p> 클로저는 함수와 그 함수가 선언된 Lexical Environment의 조합이다.</p>
@@ -195,6 +196,7 @@
 <p>그리고 함수가 호출되어 평가될 때 생성되는 실행 컨텍스트의 OuterLexicalEnvironmentReference로 <code>[[Environment]]</code> 내부 슬롯에 저장해놓은 Lexical Environment를 바인딩해 스코프 체인을 구성한다.</p>
 <h2 id="Closure-and-Lexical-Environment"><a href="#Closure-and-Lexical-Environment" class="headerlink" title="Closure and Lexical Environment"></a>Closure and Lexical Environment</h2><p>자바스크립트에서 함수는 1급 객체(First-class Object)이므로 값처럼 취급된다. 따라서 함수에서 함수 객체를 argument로 받거나 리턴하는 것이 가능하다. 함수를 argument로 받거나 리턴하는 함수를 고차 함수(Higher Order Function)라고 한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> x = <span class="hljs-number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// ①</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">outer</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">const</span> x = <span class="hljs-number">10</span>;</span><br><span class="line">  <span class="hljs-keyword">const</span> inner = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123; <span class="hljs-built_in">console</span>.log(x); &#125;; <span class="hljs-comment">// ②</span></span><br><span class="line">  <span class="hljs-keyword">return</span> inner;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 함수 outer를 호출하면 중첩 함수 inner를 반환한다.</span></span><br><span class="line"><span class="hljs-comment">// 그리고 함수 outer의 실행 컨텍스트는 실행 컨텍스트 스택에서 pop된다. (life cycle 마감)</span></span><br><span class="line"><span class="hljs-keyword">const</span> innerFunc = outer(); <span class="hljs-comment">// ③</span></span><br><span class="line">innerFunc(); <span class="hljs-comment">// ④ 10</span></span><br></pre></td></tr></table></figure>
+
 <p>③에서 outer 함수는 중첩 함수 inner를 리턴하고 종료한다. 함수가 종료하면 실행 컨텍스트가 실행 컨텍스트 스택에서 pop된다. 소멸되는 것이다. 일반적인 함수의 경우 실행 컨텍스트가 소멸할 때 Lexical Environment도 같이 소멸한다. </p>
 <p>그러나 위의 outer 함수처럼 <strong>자신의 중첩 함수를 리턴하며 종료하는 경우</strong>, outer의 실행 컨텍스트는 소멸하더라도 중첩 함수 inner가 내부 슬롯 <code>[[Environment]]</code>로 outer의 Lexical Environment를 참조하고 있으므로 Reference Count가 남아있는 <strong>outer의 Lexical Environment는 소멸하지 않는다</strong>. </p>
 <p>따라서 inner 함수가 호출되어 inner 실행 컨텍스트를 생성할 때마다 outer의 Lexical Environment를 자신의 상위 스코프로 삼고 outer의 변수를 참조할 수 있는 것이다. outer의 x와 같은 변수를 자유 변수(free variable)라고 한다.</p>
@@ -203,19 +205,25 @@
 <h2 id="Usage-of-Closure"><a href="#Usage-of-Closure" class="headerlink" title="Usage of Closure"></a>Usage of Closure</h2><p>클로저는 상태를 안전하게 유지하기 위해서 사용한다. 즉, 상태가 의도치 않게 변경되지 않도록 정보 은닉(Information hiding)을 통해 캡슐화(Encapsulation) 하는 것이다.</p>
 <p>어떤 상태를 안전하게 유지하기 위해서는 그 상태에 접근할 수 있는 방법을 제한해야한다. 즉, 상태 변경을 위해서 사용하는 메소드를 제외한 다른 외부로부터 상태를 숨겨야 한다.</p>
 <figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"increase"</span>&gt;</span>+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"counter"</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"decrease"</span>&gt;</span>-<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-javascript">    <span class="hljs-keyword">const</span> $counter = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.counter'</span>);</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">    <span class="hljs-keyword">const</span> counter = (<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;</span></span><br><span class="line"><span class="hljs-actionscript">      <span class="hljs-comment">// 카운트 상태를 유지하기 위한 자유 변수</span></span></span><br><span class="line"><span class="hljs-javascript">      <span class="hljs-keyword">let</span> num = <span class="hljs-number">0</span>;</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">      <span class="hljs-comment">// 클로저를 메소드로 갖는 객체를 반환한다.</span></span></span><br><span class="line"><span class="hljs-actionscript">      <span class="hljs-comment">// 객체 리터럴은 스코프를 만들지 않는다.</span></span></span><br><span class="line"><span class="hljs-actionscript">      <span class="hljs-comment">// 따라서 아래 메소드들의 상위 스코프는 즉시 실행 함수의 스코프이다.</span></span></span><br><span class="line"><span class="hljs-actionscript">      <span class="hljs-keyword">return</span> &#123;</span></span><br><span class="line"><span class="hljs-actionscript">        <span class="hljs-comment">// num: 0, // 프로퍼티는 public이므로 정보 은닉이 되지 않는다.</span></span></span><br><span class="line"><span class="hljs-undefined">        increase() &#123;</span></span><br><span class="line"><span class="hljs-actionscript">          $counter.textContent = ++num; <span class="hljs-comment">// 상태 변경</span></span></span><br><span class="line"><span class="hljs-undefined">        &#125;,</span></span><br><span class="line"><span class="hljs-undefined">        decrease() &#123;</span></span><br><span class="line"><span class="hljs-actionscript">          <span class="hljs-keyword">if</span> (num &lt;= <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span>;</span></span><br><span class="line"><span class="hljs-actionscript">          $counter.textContent = --num; <span class="hljs-comment">// 상태 변경</span></span></span><br><span class="line"><span class="hljs-undefined">        &#125;</span></span><br><span class="line"><span class="hljs-undefined">      &#125;;</span></span><br><span class="line"><span class="hljs-undefined">    &#125;());</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-javascript">    <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.increase'</span>).onclick = counter.increase;</span></span><br><span class="line"><span class="hljs-javascript">    <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.decrease'</span>).onclick = counter.decrease;</span></span><br><span class="line"><span class="hljs-undefined">  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>위의 스크립트가 실행되면 IIFE(즉시 실행 함수)가 호출되고 <strong>리턴문이 실행될 때 리턴하는 객체가 생성된다</strong>. <strong>객체가 생성될 때 객체의 메소드인 increase와 decrease 함수 객체 또한 생성된다</strong>. 이 때 increase와 decrease 함수는 자신이 정의될 때의 running execution context인 IIFE 실행 컨텍스트의 Lexical Environment를 <code>[[Environment]]</code>에 기억한다. 그러므로 IIFE는 한 번 호출되고 종료했지만 리턴되어 counter 변수에 저장된 객체의 메소드로서 increase, decrease 함수가 호출될 때마다 IIFE의 Lexical Environment에 등록된 num에 접근하고 상태를 변경할 수 있는 것이다. 다시 말하면 increase, decrease 함수 외에는 num에 접근할 방법이 없으므로 num의 상태가 안전하게 유지된다.</p>
 <p>이를 생성자 함수로 바꾸면 객체의 프로퍼티는 public이므로 다음과 같이 구현해야 한다. </p>
 <figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"increase"</span>&gt;</span>+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"counter"</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"decrease"</span>&gt;</span>-<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-javascript">    <span class="hljs-keyword">const</span> $counter = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.counter'</span>);</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">    <span class="hljs-keyword">const</span> Counter = (<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;</span></span><br><span class="line"><span class="hljs-actionscript">      <span class="hljs-comment">// ① 카운트 상태를 유지하기 위한 자유 변수</span></span></span><br><span class="line"><span class="hljs-javascript">      <span class="hljs-keyword">let</span> num = <span class="hljs-number">0</span>;</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Counter</span><span class="hljs-params">()</span> </span>&#123;</span></span><br><span class="line"><span class="hljs-actionscript">        <span class="hljs-comment">// this.num = 0; // ② 프로퍼티는 public이므로 정보 은닉이 되지 않는다.</span></span></span><br><span class="line"><span class="hljs-undefined">      &#125;</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">      Counter.prototype.increase = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;</span></span><br><span class="line"><span class="hljs-undefined">        $counter.textContent = ++num;</span></span><br><span class="line"><span class="hljs-undefined">      &#125;;</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">      Counter.prototype.decrease = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;</span></span><br><span class="line"><span class="hljs-actionscript">        <span class="hljs-keyword">if</span> (num &lt;= <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span>;</span></span><br><span class="line"><span class="hljs-undefined">        $counter.textContent = --num;</span></span><br><span class="line"><span class="hljs-undefined">      &#125;;</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">      <span class="hljs-keyword">return</span> Counter; <span class="hljs-comment">// Counter.prototype에 method 정의했으므로 Counter 함수 객체만 리턴</span></span></span><br><span class="line"><span class="hljs-undefined">    &#125;());</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">    <span class="hljs-keyword">const</span> counter = <span class="hljs-keyword">new</span> Counter();</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-javascript">    <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.increase'</span>).onclick = counter.increase;</span></span><br><span class="line"><span class="hljs-javascript">    <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.decrease'</span>).onclick = counter.decrease;</span></span><br><span class="line"><span class="hljs-undefined">  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>생성자 함수의 프로퍼티가 아니라 자유 변수로 상태를 안전하게 유지한다. Counter.prototype의 메소드는 IIFE에서 정의되었으므로 IIFE의 변수 num에 접근할 수 있다.</p>
 <h4 id="함수형-프로그래밍"><a href="#함수형-프로그래밍" class="headerlink" title="함수형 프로그래밍"></a>함수형 프로그래밍</h4><p>변수의 사용을 가급적 자제하고, 상태 변화를 최소화 시키는 방법으로 프로그래밍 한다. mutable data를 피하고 <strong>immutable을 지향</strong>하는 함수형 프로그래밍에서 프로그래밍의 안정성을 높이기 위해 클로저는 적극적으로 사용된다. mutable value는 참조값이 전달되므로(Pass by reference) shared data가 되어 상태 변화의 위험성이 높아진다. 또한 외부 상태가 아니라 자신의 지역변수만을 변경시키는 pure function (순수 함수)의 사용을 지향한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 함수를 인자로 전달받고 함수를 반환하는 고차 함수</span></span><br><span class="line"><span class="hljs-comment">// 이 함수가 반환하는 함수는 클로저로서 카운트 상태를 유지하기 위한 자유 변수 counter을 기억한다.</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeCounter</span>(<span class="hljs-params">predicate</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-comment">// 카운트 상태를 유지하기 위한 자유 변수</span></span><br><span class="line">  <span class="hljs-keyword">let</span> counter = <span class="hljs-number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-comment">// 클로저를 반환</span></span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// 인자로 전달 받은 보조 함수에 상태 변경을 위임한다.</span></span><br><span class="line">    counter = predicate(counter);</span><br><span class="line">    <span class="hljs-keyword">return</span> counter;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 보조 함수</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increase</span>(<span class="hljs-params">n</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> ++n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 보조 함수</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decrease</span>(<span class="hljs-params">n</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> --n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 함수로 함수를 생성한다.</span></span><br><span class="line"><span class="hljs-comment">// makeCounter 함수는 보조 함수를 인자로 전달받아 함수를 반환한다</span></span><br><span class="line"><span class="hljs-keyword">const</span> increaser = makeCounter(increase); <span class="hljs-comment">// ①</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(increaser()); <span class="hljs-comment">// 1</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(increaser()); <span class="hljs-comment">// 2</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// increaser 함수와는 별개의 독립된 렉시컬 환경을 갖기 때문에 카운터 상태가 연동하지 않는다.</span></span><br><span class="line"><span class="hljs-keyword">const</span> decreaser = makeCounter(decrease); <span class="hljs-comment">// ②</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(decreaser()); <span class="hljs-comment">// -1</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="Closure-Mistake"><a href="#Closure-Mistake" class="headerlink" title="Closure Mistake"></a>Closure Mistake</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> arr = [];</span><br><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) &#123;</span><br><span class="line">    arr[i] = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> j = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; j++) &#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(arr[j]()); <span class="hljs-comment">// 5 5 5 5 5</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>위 예제의 실행 결과는 5 5 5 5 5이다. 이유는 <code>var</code> 키워드로 선언한 i는 block-level scope를 지원하지 않기 때문이다. 즉, for문의 block이 scope를 만들지 않아서 arr의 element에 저장된 함수 객체들이 자신의 상위 스코프로 전역 렉시컬 환경을 기억한다.</p>
 <p>이는 for 문 내부의 선언문에 <code>let</code> 키워드를 사용함으로써 보완할 수 있다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> arr = [];</span><br><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) &#123;</span><br><span class="line">    arr[i] = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> i;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(arr[i]()); <span class="hljs-comment">// 0 1 2 3 4</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>for 문은 자바스크립트 엔진에 의해 평가될 때 내부 선언문이 <code>let</code>인지, <code>var</code>인지, expression인지에 따라서 다르게 동작한다. <code>let</code> 키워드로 선언된 선언문일 경우 block-level scope를 만들어야하므로 LOOP Lexical Environment를 우선 생성하고 i를 환경 레코드에 등록한다. 그리고 나서 for문의 body를 평가하고 실행하는데 한 반복 당 하나의 per Iteration Lexical Environment를 생성하고, i의 값이 유효한지 검사하고, statement를 실행한 후 다음 반복을 위한 per Iteration Lexical Environment를 생성하고 increment를 진행한다. 이를 반복한다. 따라서 각 Iteration에서 생성된 함수는 각각 다른 Lexical Environment를 자신의 <code>[[Environment]]</code>로 참조하고 있기 때문에 원하는 결과를 얻을 수 있는 것이다.</p>
 <p>비슷하게 Iterable에 사용할 수 있는 for of 문, 객체의 프로퍼티 순회에 사용할 수 있는 for in  문 내부의 선언문에 <code>const</code> 키워드를 사용할 수 있다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> o = &#123; <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">2</span> &#125;;</span><br><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> key <span class="hljs-keyword">in</span> o) &#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(o[key]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> arr = [ <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span> ];</span><br><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> item <span class="hljs-keyword">of</span> arr) &#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(item);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>이는 for of, for in 문의 선언부의 선언문은 for문 body 가장 상단에서 실행되는 것과 같이 동작하기 때문이다. 즉, 반복하는 횟수만큼 선언된다.</p>
 
         </div>
@@ -305,7 +313,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        130
+                        131
                     </p>
                 </div>
             </div>
@@ -418,7 +426,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Babel/" style="font-size: 10px;">Babel</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 10px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 10px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 11.67px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Routing/" style="font-size: 10px;">Routing</a> <a href="/tags/SPA/" style="font-size: 10px;">SPA</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Single-Page-Application/" style="font-size: 10px;">Single Page Application</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/TypeSCript/" style="font-size: 10px;">TypeSCript</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/실행-컨텍스트/" style="font-size: 10px;">실행 컨텍스트</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a> <a href="/tags/자바스크립트/" style="font-size: 18.33px;">자바스크립트</a>
+        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Babel/" style="font-size: 10px;">Babel</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 10px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 10px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 11.67px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Routing/" style="font-size: 10px;">Routing</a> <a href="/tags/SPA/" style="font-size: 10px;">SPA</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Single-Page-Application/" style="font-size: 10px;">Single Page Application</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/TypeScript/" style="font-size: 11.67px;">TypeScript</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/실행-컨텍스트/" style="font-size: 10px;">실행 컨텍스트</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a> <a href="/tags/자바스크립트/" style="font-size: 18.33px;">자바스크립트</a>
     </div>
 </div>
 
@@ -538,7 +546,7 @@
                 <span class="level-item">TypeScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -563,16 +571,35 @@
         
         <article class="media">
             
-            <a href="/2019/06/12/TypeScript-1/" class="media-left">
+            <a href="/2019/06/12/typeScript-2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript(1)">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (2)">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T03:59:33.000Z">2019-06-12</time></div>
-                    <a href="/2019/06/12/TypeScript-1/" class="has-link-black-ter is-size-6">TypeScript(1)</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:16:03.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-2/" class="has-link-black-ter is-size-6">TypeScript (2)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/typeScript-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (1)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:15:55.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-1/" class="has-link-black-ter is-size-6">TypeScript (1)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
                     </p>
@@ -637,25 +664,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/07/35-Closure/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="35. Closure">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-07T03:59:09.000Z">2019-06-07</time></div>
-                    <a href="/2019/06/07/35-Closure/" class="has-link-black-ter is-size-6">35. Closure</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -674,7 +682,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -1111,9 +1119,9 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/TypeSCript/">
-                        <span class="tag">TypeSCript</span>
-                        <span class="tag is-grey">1</span>
+                    <a class="tags has-addons" href="/tags/TypeScript/">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1378,7 +1386,7 @@
                 <span class="level-item">TypeScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1403,16 +1411,35 @@
         
         <article class="media">
             
-            <a href="/2019/06/12/TypeScript-1/" class="media-left">
+            <a href="/2019/06/12/typeScript-2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript(1)">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (2)">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T03:59:33.000Z">2019-06-12</time></div>
-                    <a href="/2019/06/12/TypeScript-1/" class="has-link-black-ter is-size-6">TypeScript(1)</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:16:03.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-2/" class="has-link-black-ter is-size-6">TypeScript (2)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/typeScript-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (1)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:15:55.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-1/" class="has-link-black-ter is-size-6">TypeScript (1)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
                     </p>
@@ -1477,25 +1504,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/07/35-Closure/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="35. Closure">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-07T03:59:09.000Z">2019-06-07</time></div>
-                    <a href="/2019/06/07/35-Closure/" class="has-link-black-ter is-size-6">35. Closure</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1514,7 +1522,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -1951,9 +1959,9 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/TypeSCript/">
-                        <span class="tag">TypeSCript</span>
-                        <span class="tag is-grey">1</span>
+                    <a class="tags has-addons" href="/tags/TypeScript/">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 

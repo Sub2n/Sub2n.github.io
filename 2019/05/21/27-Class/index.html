@@ -187,9 +187,11 @@
 <p>대부분의 객체 지향 언어가 클래스 기반인 점을 고려하여 ES6에서 클래스를 도입했다. 그러나 그 <strong>클래스도 사실은 함수</strong>이고 기존의 프로토타입 기반 객체지향 패턴으로 동작한다.</p>
 <h3 id="1-Calss-Definition"><a href="#1-Calss-Definition" class="headerlink" title="1. Calss Definition"></a>1. Calss Definition</h3><p>ES6 클래스는 다른 언어들과 같이 class 키워드를 사용해 정의한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// constructor</span></span><br><span class="line">    <span class="hljs-keyword">constructor</span>(name) &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>._name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-comment">// default method definition: class's prototype method</span></span><br><span class="line">    sayHello() &#123;</span><br><span class="line">        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Hi! <span class="hljs-subst">$&#123;<span class="hljs-keyword">this</span>._name&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> mimi = <span class="hljs-keyword">new</span> Student(<span class="hljs-string">'Mimi'</span>);</span><br><span class="line">mimi.sayHello(); <span class="hljs-comment">// Hi! Mimi</span></span><br></pre></td></tr></table></figure>
+
 <p>표현식으로도 클래스를 정의할 수 있으나 일반적이지 않다. 클래스 표현식에서 사용한 클래스 이름은 외부 코드에서 접근할 수 없기 때문이다. 클래스가 함수처럼 동작하는 것은 사실 클래스도 함수이기 때문이다.</p>
 <h3 id="2-Creation-of-Instance"><a href="#2-Creation-of-Instance" class="headerlink" title="2. Creation of Instance"></a>2. Creation of Instance</h3><p>Class의 instance를 생성하기 위해서는 new 연산자와 함께 constuctor를 호출한다. 클래스 선언식으로 정의한 클래스의 이름은 constructor와 동일하다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> foo = <span class="hljs-keyword">new</span> Foo();</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(Foo === Foo.prototype.constructor); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(Foo === <span class="hljs-built_in">Object</span>.getPrototypeOf(foo).constructor); <span class="hljs-comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> foo2 = Foo(); <span class="hljs-comment">// TypeError: Class constructor Foo cannot be invoked without 'new'</span></span><br></pre></td></tr></table></figure>
+
 <p>new 연산자를 사용하지 않고 constructor를 호출하면 TypeError가 발생한다. 즉, <strong>클래스의 constructor는 new 연산자 없이 호출할 수 없다.</strong> new 연산자 없이 호출시 오류 없이 생성자 대신 일반 함수로 호출되던 생성자 함수와 다른 점이다.</p>
 <h3 id="3-Constructor"><a href="#3-Constructor" class="headerlink" title="3. Constructor"></a>3. Constructor</h3><p>constructor는 인스턴스를 생성하고 클래스 필드를 초기화하는 특수한 메소드이다.</p>
 <blockquote>
@@ -202,6 +204,7 @@
 <li>constructor는 인스턴스의 생성과 동시에 클래스 필드의 생성과 초기화를 실행한다.</li>
 </ul>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> </span>&#123;&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bar</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">constructor</span>(num) &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.num = num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> foo = <span class="hljs-keyword">new</span> Foo();</span><br><span class="line"><span class="hljs-built_in">console</span>.log(foo); <span class="hljs-comment">// Foo &#123;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> bar = <span class="hljs-keyword">new</span> Bar(<span class="hljs-number">200</span>);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(bar); <span class="hljs-comment">// Bar &#123;num: 200&#125;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="4-Class-Field"><a href="#4-Class-Field" class="headerlink" title="4. Class  Field"></a>4. Class  Field</h3><p>클래스 내부에는 메소드만 선언할 수 있다. 모든 프로퍼티(인스턴스의  멤버 변수)는 <strong>반드시 constructor 내부에 선언</strong>해야 한다.</p>
 <blockquote>
 <h4 id="Class-Field-Declarations-Proposal"><a href="#Class-Field-Declarations-Proposal" class="headerlink" title="Class Field Declarations Proposal"></a>Class Field Declarations Proposal</h4><p>아직 표준은 아니지만 stage3 단계에 Class FIeld 선언 관련된 표준안이 있다.</p>
@@ -213,6 +216,7 @@
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> </span>&#123;</span><br><span class="line">&gt;   x = <span class="hljs-number">1</span>; <span class="hljs-comment">// 생성자 함수 밖에서도 field 선언 가능</span></span><br><span class="line">&gt;   #p = 2; // private field</span><br><span class="line">&gt;   <span class="hljs-keyword">static</span> y = <span class="hljs-number">3</span>; <span class="hljs-comment">// Static puplic field</span></span><br><span class="line">&gt;   <span class="hljs-comment">// 현재 field declaration만 chrome에 구현됨</span></span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// default 값 설정</span></span><br><span class="line">    <span class="hljs-keyword">constructor</span>(name = '') &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>._name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    sayHello() &#123;</span><br><span class="line">        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Hi! <span class="hljs-subst">$&#123;<span class="hljs-keyword">this</span>._name&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>constructor 내부의 this는 클래스가 생성할 인스턴스이다. constructor는 this, 즉 생성할 인스턴스에 선언한 프로퍼티를 바인딩한다. 이런 방식으로  constructor는 클래스가 생성할 인스턴스와 인스턴스의 프로퍼티를 생성하고 초기화한다. </p>
 <p>클래스 프로퍼티는 언제나 <code>public</code>이다. 생성된 인스턴스를 통해서 클래스 외부에서도 클래스 내부의 프로퍼티에 접근할 수 있다.</p>
 <p>ES6의 클래스는 다른 객체지향 언어처럼 private, public, protect 등의 Access Modifier(접근 제한자)를 지원하지 않는다.</p>
@@ -239,26 +243,34 @@
 <h4 id="6-1-getter"><a href="#6-1-getter" class="headerlink" title="6.1. getter"></a>6.1. getter</h4><p>getter는 클래스 프로퍼티에 접근할 때 사용한다. getter는 메소드 이름 앞에 <code>get</code> 키워드를 사용해서 정의한다. 이 때 메소드 이름은 클래스 프로퍼티 키처럼 사용된다. 즉, getter는 호출하는 것이 아니라 <strong>프로퍼티처럼 참조하는 것이고, 참조할 때 메소드가 호출</strong>된다. getter는 데이터를 얻기위해(get) 사용하므로 반드시 무언가를 리턴해야 한다.</p>
 <h4 id="6-2-setter"><a href="#6-2-setter" class="headerlink" title="6.2. setter"></a>6.2. setter</h4><p>setter는 클래스 프로퍼티에 값을 할당할 때 사용한다. setter는 메소드 이름 앞에 <code>set</code> 키워드를 사용해서 정의한다. get 메소드와 마찬가지로 메소드 이름은 클래스 <strong>프로퍼티 키로 사용되어 참조되는 형식으로 메소드를 호출</strong>한다. setter는 데이터를 할당하기 위해서 호출하는 것이므로 메소드를 사용해서 할당할 때 set 메소드가 호출된다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// default 값 설정</span></span><br><span class="line">    <span class="hljs-keyword">constructor</span>(firstname = '', lastname = '') &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.firstname = firstname;</span><br><span class="line">        <span class="hljs-keyword">this</span>.lastname = lastname;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">get</span> fullName() &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">$&#123;<span class="hljs-keyword">this</span>.firstname&#125;</span> <span class="hljs-subst">$&#123;<span class="hljs-keyword">this</span>.lastname&#125;</span>`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">set</span> fullName(fullname) &#123;</span><br><span class="line">        [<span class="hljs-keyword">this</span>.firstname, <span class="hljs-keyword">this</span>.lastname] = fullname.split(<span class="hljs-string">' '</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> mimi = <span class="hljs-keyword">new</span> Student(<span class="hljs-string">'Mimi'</span>, <span class="hljs-string">'Kim'</span>); </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 메소드를 직접 호출하는 것이 아니라 프로퍼티에 접근하는 방식으로 getter, setter를 내부적으로 호출한다.</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(mimi.fullName); <span class="hljs-comment">// Mimi Kim (getter)</span></span><br><span class="line"></span><br><span class="line">mimi.fullName = <span class="hljs-string">'Mimi Park'</span>;	<span class="hljs-comment">// setter</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(mimi.fullName); <span class="hljs-comment">// Mimi Park (getter)</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="7-Static-Method"><a href="#7-Static-Method" class="headerlink" title="7. Static Method"></a>7. Static Method</h3><p>Class는 static 메소드를 정의할 때 <code>static</code> 키워드를 사용한다. 정적 메소드는 인스턴스가 아니라 클래스 이름으로 호출하는 메소드이다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">constructor</span>(prop) &#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.prop = prop;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">static</span> staticMethod() &#123;</span><br><span class="line">    <span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment">    정적 메소드는 this를 사용할 수 없다.</span></span><br><span class="line"><span class="hljs-comment">    정적 메소드 내부에서 this는 클래스의 인스턴스가 아닌 클래스 자신을 가리킨다.</span></span><br><span class="line"><span class="hljs-comment">    */</span></span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-string">'staticMethod'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  prototypeMethod() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.prop;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(Foo.staticMethod()); <span class="hljs-comment">// staticMethod</span></span><br></pre></td></tr></table></figure>
+
 <p>정적 메소드는 클래스의 인스턴스 생성 없이 클래스 이름으로 호출하며 클래스의 인스턴스로는 호출할 수 없다.</p>
 <h3 id="8-Class-Inheritance"><a href="#8-Class-Inheritance" class="headerlink" title="8. Class Inheritance"></a>8. Class Inheritance</h3><h4 id="8-1-extends-Keyword"><a href="#8-1-extends-Keyword" class="headerlink" title="8.1. extends Keyword"></a>8.1. <code>extends</code> Keyword</h4><p><code>extends</code> 키워드는 parent 클래스를 생속받는 child 클래스를 정의할 때 사용한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// parent class</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Circle</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">constructor</span>(radius) &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.radius = radius;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    getDiameter() &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-number">2</span> * <span class="hljs-keyword">this</span>.radius;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    getArea() &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.PI * (<span class="hljs-keyword">this</span>.radius ** <span class="hljs-number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// child class</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cylinder</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Circle</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">constructor</span>(radius, height) &#123;</span><br><span class="line">    <span class="hljs-keyword">super</span>(radius);</span><br><span class="line">    <span class="hljs-keyword">this</span>.height = height;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-comment">// parent class Circle의 getArea overriding</span></span><br><span class="line">  getArea() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> (<span class="hljs-keyword">this</span>.height * <span class="hljs-keyword">super</span>.getPerimeter()) + (<span class="hljs-number">2</span> * <span class="hljs-keyword">super</span>.getArea());</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-comment">// 자신의 메소드 정의</span></span><br><span class="line">  getVolume() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.getArea() * <span class="hljs-keyword">this</span>.height;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Cylinder class는 Circle class를 상속한다.</span></span><br><span class="line">Cylinder.__proto__ === Circle <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-comment">// Cylinder의 prototype은 Circle의 prototype을 상속한다.</span></span><br><span class="line">Cylinder.prototype.__proto__ === Circle.prototype</span><br></pre></td></tr></table></figure>
+
 <h4 id="8-2-super-Keyword"><a href="#8-2-super-Keyword" class="headerlink" title="8.2. super Keyword"></a>8.2. <code>super</code> Keyword</h4><p><code>super</code> 키워드는 <strong>parent 클래스를 참조</strong>하거나  <strong>parent 클래스의 constructor를 호출</strong>할 때 사용한다.</p>
 <ol>
 <li><p>super 클래스가 메소드로 사용될 때는 parent 클래스의 constructor를 호출한다. <strong>child 클래스의 constructor에서 super()를 호출하지 않으면 this에 대한 ReferenceError가 발생한다.</strong></p>
 <p>child 클래스의 인스턴스를 만들 때 parent 클래스의 인스턴스를 우선 만들고 상속한다. </p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// parent 클래스의 constructor를 호출한다.</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cylinder</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Circle</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">constructor</span>(radius, height) &#123;</span><br><span class="line">    <span class="hljs-comment">// super가 parent class의 constructor처럼 사용됨</span></span><br><span class="line">    <span class="hljs-keyword">super</span>(radius);</span><br><span class="line">    <span class="hljs-keyword">this</span>.height = height;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
 <p><img src="https://user-images.githubusercontent.com/48080762/58225537-6c111480-7d5d-11e9-9cbb-45fc8d66a2ff.png" alt="super"></p>
 <p>ECMAScript의 스펙을 살펴보면 super가 argument를 전달받으며 호출될 때는 내부적으로 자신의 parent 클래스의 constructor를 호출하여 constructor가 리턴한 this 객체를 child 클래스 constructor의 this(child 클래스가 생성할 인스턴스)에 바인딩한다.</p>
 </li>
 <li><p>super 클래스가 객체로 사용될 때는 parent 클래스를 참조한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// super가 parent class Circle처럼 사용됨</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// parent class Circle의 getArea overriding</span></span><br><span class="line">  getArea() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> (<span class="hljs-keyword">this</span>.height * <span class="hljs-keyword">super</span>.getPerimeter()) + (<span class="hljs-number">2</span> * <span class="hljs-keyword">super</span>.getArea());</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-comment">// 자신의 메소드 정의</span></span><br><span class="line">  getVolume() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.getArea() * <span class="hljs-keyword">this</span>.height;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 </li>
 </ol>
 <h4 id="8-3-Inheritance-of-Static-Method-and-Prototype-Method"><a href="#8-3-Inheritance-of-Static-Method-and-Prototype-Method" class="headerlink" title="8.3. Inheritance of Static Method and Prototype Method"></a>8.3. Inheritance of Static Method and Prototype Method</h4><p>Child 클래스의 static 메소드 내부에서 super 키워드를 사용하면 parent 클래스의 static 메소드를 호출할 수 있다. child 클래스는 프로토타입 체인에서 parent 클래스의 정적 메소드를 참조할 수 있기 때문이다.</p>
 <p>그러나 child 클래스의 일반 메소드(prototype  메소드) 내부에서는 super 키워드를 사용해서 parent 클래스의 static 메소드를 호출할 수 없다. 이는 child 클래스의 <strong>인스턴스</strong>는 프로토타입 체인에 의해 parent 클래스의 static 메소드를 참조할 수 없기 때문이다. child 클래스의 인스턴스는 프로토타입 체인 상에 parent 클래스가 아니라 parent 클래스의 prototype만 가지고 있다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">constructor</span>(prop) &#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.prop = prop;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">static</span> staticMethod() &#123;</span><br><span class="line">    <span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment">    정적 메소드는 this를 사용할 수 없다.</span></span><br><span class="line"><span class="hljs-comment">    정적 메소드 내부에서 this는 클래스의 인스턴스가 아닌 클래스 자신을 가리킨다.</span></span><br><span class="line"><span class="hljs-comment">    */</span></span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-string">'staticMethod'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  prototypeMethod() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.prop;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bar</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Foo</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">static</span> staticMethod2() &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.staticMethod();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    prototypeMethod() &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.staticMethod();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(Bar.staticMethod2()); <span class="hljs-comment">// staticMethod</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> bar = <span class="hljs-keyword">new</span> Bar();</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(bar.prototypeMethod()); <span class="hljs-comment">// TypeError: (intermediate value).staticMethod is not a function</span></span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -347,7 +359,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        130
+                        131
                     </p>
                 </div>
             </div>
@@ -460,7 +472,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Babel/" style="font-size: 10px;">Babel</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 10px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 10px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 11.67px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Routing/" style="font-size: 10px;">Routing</a> <a href="/tags/SPA/" style="font-size: 10px;">SPA</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Single-Page-Application/" style="font-size: 10px;">Single Page Application</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/TypeSCript/" style="font-size: 10px;">TypeSCript</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/실행-컨텍스트/" style="font-size: 10px;">실행 컨텍스트</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a> <a href="/tags/자바스크립트/" style="font-size: 18.33px;">자바스크립트</a>
+        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Babel/" style="font-size: 10px;">Babel</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 10px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 10px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 11.67px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Routing/" style="font-size: 10px;">Routing</a> <a href="/tags/SPA/" style="font-size: 10px;">SPA</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Single-Page-Application/" style="font-size: 10px;">Single Page Application</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/TypeScript/" style="font-size: 11.67px;">TypeScript</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/실행-컨텍스트/" style="font-size: 10px;">실행 컨텍스트</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a> <a href="/tags/자바스크립트/" style="font-size: 18.33px;">자바스크립트</a>
     </div>
 </div>
 
@@ -580,7 +592,7 @@
                 <span class="level-item">TypeScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -605,16 +617,35 @@
         
         <article class="media">
             
-            <a href="/2019/06/12/TypeScript-1/" class="media-left">
+            <a href="/2019/06/12/typeScript-2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript(1)">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (2)">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T03:59:33.000Z">2019-06-12</time></div>
-                    <a href="/2019/06/12/TypeScript-1/" class="has-link-black-ter is-size-6">TypeScript(1)</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:16:03.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-2/" class="has-link-black-ter is-size-6">TypeScript (2)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/typeScript-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (1)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:15:55.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-1/" class="has-link-black-ter is-size-6">TypeScript (1)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
                     </p>
@@ -679,25 +710,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/07/35-Closure/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="35. Closure">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-07T03:59:09.000Z">2019-06-07</time></div>
-                    <a href="/2019/06/07/35-Closure/" class="has-link-black-ter is-size-6">35. Closure</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -716,7 +728,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -1153,9 +1165,9 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/TypeSCript/">
-                        <span class="tag">TypeSCript</span>
-                        <span class="tag is-grey">1</span>
+                    <a class="tags has-addons" href="/tags/TypeScript/">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1420,7 +1432,7 @@
                 <span class="level-item">TypeScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1445,16 +1457,35 @@
         
         <article class="media">
             
-            <a href="/2019/06/12/TypeScript-1/" class="media-left">
+            <a href="/2019/06/12/typeScript-2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript(1)">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (2)">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T03:59:33.000Z">2019-06-12</time></div>
-                    <a href="/2019/06/12/TypeScript-1/" class="has-link-black-ter is-size-6">TypeScript(1)</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:16:03.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-2/" class="has-link-black-ter is-size-6">TypeScript (2)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/typeScript-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (1)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:15:55.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-1/" class="has-link-black-ter is-size-6">TypeScript (1)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
                     </p>
@@ -1519,25 +1550,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/07/35-Closure/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="35. Closure">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-07T03:59:09.000Z">2019-06-07</time></div>
-                    <a href="/2019/06/07/35-Closure/" class="has-link-black-ter is-size-6">35. Closure</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1556,7 +1568,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -1993,9 +2005,9 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/TypeSCript/">
-                        <span class="tag">TypeSCript</span>
-                        <span class="tag is-grey">1</span>
+                    <a class="tags has-addons" href="/tags/TypeScript/">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 

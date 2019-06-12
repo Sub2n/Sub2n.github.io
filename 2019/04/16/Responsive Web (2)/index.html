@@ -184,6 +184,7 @@
         </h1>
         <div class="content">
             <h2 id="Responsive-Web"><a href="#Responsive-Web" class="headerlink" title="Responsive Web"></a>Responsive Web</h2><a id="more"></a>
+
 <h3 id="lt-picture-gt-element"><a href="#lt-picture-gt-element" class="headerlink" title="&lt;picture&gt; element"></a><code>&lt;picture&gt;</code> element</h3><ul>
 <li><p>Can I Use <code>&lt;picture&gt;</code>?</p>
 <blockquote>
@@ -194,18 +195,20 @@
 <ul>
 <li><p><code>&lt;img&gt;</code>를 fallback으로 첨부해야한다. <code>&lt;picture&gt;</code> 는 <code>&lt;img&gt;</code> tag가 없으면 인식되지 않는다!</p>
 <figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-tag">img</span> &#123;<span class="hljs-attribute">display</span>: block; <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto;&#125;</span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 </li>
 </ul>
-<pre><code><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">picture</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(min-width: 650px)"</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">"images/kitten-stretching.png"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(min-width: 465px)"</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">"images/kitten-sitting.png"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/kitten-curled.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"a cute kitten"</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">picture</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</code></pre><h3 id="Pixel-density-descriptor"><a href="#Pixel-density-descriptor" class="headerlink" title="Pixel density descriptor"></a>Pixel density descriptor</h3><ul>
+<pre><code><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">picture</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(min-width: 650px)"</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">"images/kitten-stretching.png"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(min-width: 465px)"</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">"images/kitten-sitting.png"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/kitten-curled.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"a cute kitten"</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">picture</span>&gt;</span></span><br></pre></td></tr></table></figure></code></pre><h3 id="Pixel-density-descriptor"><a href="#Pixel-density-descriptor" class="headerlink" title="Pixel density descriptor"></a>Pixel density descriptor</h3><ul>
 <li>1x, 1.5x, 2x 그리고 3x와 같은 픽셀 밀도 서술자(Pixel density descriptor)들을 사용하여 고해상도 디스플레이 지원을 추가합니다.</li>
 <li>새로 추가된 srcset 속성은 <code>&lt;img&gt;</code>와 <code>&lt;source&gt;</code> 엘리먼트 모두에 적용됩니다.</li>
 <li>letina부터는 2x 나오고 Android는 1.5x 등 정수가 아니고 소숫점으로 증가</li>
 </ul>
 <h3 id="Image-반응형으로-만들기"><a href="#Image-반응형으로-만들기" class="headerlink" title="Image 반응형으로 만들기"></a>Image 반응형으로 만들기</h3><ol>
-<li>wrapper를 만들고, 그 안에 <code>&lt;img&gt;</code> max-width: 100%;</li>
+<li><p>wrapper를 만들고, 그 안에 <code>&lt;img&gt;</code> max-width: 100%;</p>
+</li>
 <li><p>height: auto;</p>
 <figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-css"> <span class="hljs-selector-class">.rwd-wrapper</span>&#123;</span></span><br><span class="line"><span class="hljs-undefined">   width: 30%;</span></span><br><span class="line"><span class="hljs-undefined">   border: 5px solid blueviolet;</span></span><br><span class="line"><span class="hljs-undefined"> &#125;</span></span><br><span class="line"><span class="hljs-css"> <span class="hljs-selector-class">.rwd-wrapper</span> <span class="hljs-selector-tag">img</span>&#123;</span></span><br><span class="line"><span class="hljs-undefined">   max-width: 100%;</span></span><br><span class="line"><span class="hljs-undefined">   height: auto;</span></span><br><span class="line"><span class="hljs-undefined"> &#125;</span></span><br><span class="line"><span class="hljs-undefined"> </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span><br><span class="line"> <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span><br><span class="line"> <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rwd-wrapper"</span>&gt;</span></span><br><span class="line">     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/image-src.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span></span><br><span class="line">   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -221,8 +224,10 @@
 </li>
 </ul>
   <figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">picture</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(max-width: 650px)"</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">"images/small.jpg"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(min-width: 651px) and (max-width: 999px)"</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">"images/media.jpg"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(min-width: 1000px)"</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">"images/large.jpg"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rwd-img"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/normal.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">picture</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="Background-image를-반응형으로-만들기"><a href="#Background-image를-반응형으로-만들기" class="headerlink" title="Background image를 반응형으로 만들기"></a>Background image를 반응형으로 만들기</h3><ol>
-<li>image 원본 size를 알아내야한다. &gt; 가로, 세로 비율을 계산해야함</li>
+<li><p>image 원본 size를 알아내야한다. &gt; 가로, 세로 비율을 계산해야함</p>
+</li>
 <li><p>height를 0으로 하고, padding을 세로로 원본 image의 비율에 맞게 준다.</p>
 <figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-class">.rwd-bg</span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;</span><br><span class="line">  <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span> <span class="hljs-meta">!important</span>;</span><br><span class="line">  <span class="hljs-attribute">padding-top</span>: <span class="hljs-built_in">calc</span>(3280 / 4928 * 100%);</span><br><span class="line">  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">"images/light.jpg"</span>) no-repeat;</span><br><span class="line">  <span class="hljs-attribute">background-size</span>: <span class="hljs-number">100%</span> <span class="hljs-number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -230,7 +235,9 @@
 </li>
 </ol>
 <figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-class">.wrapper</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">width</span>: <span class="hljs-number">50%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-selector-class">.rwd-bg</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;</span><br><span class="line">  <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span> <span class="hljs-meta">!important</span>;</span><br><span class="line">  <span class="hljs-attribute">padding-top</span>: <span class="hljs-built_in">calc</span>(3280 / 4928 * 100%);</span><br><span class="line">  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">"images/light.jpg"</span>) no-repeat;</span><br><span class="line">  <span class="hljs-attribute">background-size</span>: <span class="hljs-number">100%</span> <span class="hljs-number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
   <figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"wrapper"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rwd-bg"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>.rwd-bg는 parent인 wrapper의 width 100%만큼 차지하므로 wrapper의 크기가 줄어들면 같이 줄어든다.</li>
 </ul>
@@ -332,7 +339,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        130
+                        131
                     </p>
                 </div>
             </div>
@@ -445,7 +452,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Babel/" style="font-size: 10px;">Babel</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 10px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 10px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 11.67px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Routing/" style="font-size: 10px;">Routing</a> <a href="/tags/SPA/" style="font-size: 10px;">SPA</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Single-Page-Application/" style="font-size: 10px;">Single Page Application</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/TypeSCript/" style="font-size: 10px;">TypeSCript</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/실행-컨텍스트/" style="font-size: 10px;">실행 컨텍스트</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a> <a href="/tags/자바스크립트/" style="font-size: 18.33px;">자바스크립트</a>
+        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Babel/" style="font-size: 10px;">Babel</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 10px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 10px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 11.67px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Routing/" style="font-size: 10px;">Routing</a> <a href="/tags/SPA/" style="font-size: 10px;">SPA</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Single-Page-Application/" style="font-size: 10px;">Single Page Application</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/TypeScript/" style="font-size: 11.67px;">TypeScript</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/실행-컨텍스트/" style="font-size: 10px;">실행 컨텍스트</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a> <a href="/tags/자바스크립트/" style="font-size: 18.33px;">자바스크립트</a>
     </div>
 </div>
 
@@ -565,7 +572,7 @@
                 <span class="level-item">TypeScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -590,16 +597,35 @@
         
         <article class="media">
             
-            <a href="/2019/06/12/TypeScript-1/" class="media-left">
+            <a href="/2019/06/12/typeScript-2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript(1)">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (2)">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T03:59:33.000Z">2019-06-12</time></div>
-                    <a href="/2019/06/12/TypeScript-1/" class="has-link-black-ter is-size-6">TypeScript(1)</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:16:03.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-2/" class="has-link-black-ter is-size-6">TypeScript (2)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/typeScript-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (1)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:15:55.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-1/" class="has-link-black-ter is-size-6">TypeScript (1)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
                     </p>
@@ -664,25 +690,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/07/35-Closure/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="35. Closure">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-07T03:59:09.000Z">2019-06-07</time></div>
-                    <a href="/2019/06/07/35-Closure/" class="has-link-black-ter is-size-6">35. Closure</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -701,7 +708,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -1138,9 +1145,9 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/TypeSCript/">
-                        <span class="tag">TypeSCript</span>
-                        <span class="tag is-grey">1</span>
+                    <a class="tags has-addons" href="/tags/TypeScript/">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1405,7 +1412,7 @@
                 <span class="level-item">TypeScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1430,16 +1437,35 @@
         
         <article class="media">
             
-            <a href="/2019/06/12/TypeScript-1/" class="media-left">
+            <a href="/2019/06/12/typeScript-2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript(1)">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (2)">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T03:59:33.000Z">2019-06-12</time></div>
-                    <a href="/2019/06/12/TypeScript-1/" class="has-link-black-ter is-size-6">TypeScript(1)</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:16:03.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-2/" class="has-link-black-ter is-size-6">TypeScript (2)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/typeScript-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (1)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:15:55.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-1/" class="has-link-black-ter is-size-6">TypeScript (1)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
                     </p>
@@ -1504,25 +1530,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/07/35-Closure/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="35. Closure">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-07T03:59:09.000Z">2019-06-07</time></div>
-                    <a href="/2019/06/07/35-Closure/" class="has-link-black-ter is-size-6">35. Closure</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1541,7 +1548,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -1978,9 +1985,9 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/TypeSCript/">
-                        <span class="tag">TypeSCript</span>
-                        <span class="tag is-grey">1</span>
+                    <a class="tags has-addons" href="/tags/TypeScript/">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 

@@ -185,6 +185,7 @@
         <div class="content">
             <h2 id="CodeWars-5kyu-Maximum-subarray-sum"><a href="#CodeWars-5kyu-Maximum-subarray-sum" class="headerlink" title="CodeWars 5kyu. Maximum subarray sum"></a><a href="https://www.codewars.com/kata/maximum-subarray-sum/train/javascript" target="_blank" rel="noopener">CodeWars 5kyu. Maximum subarray sum</a></h2><p>Return maximum sum of subarrays</p>
 <a id="more"></a>
+
 <blockquote>
 <p>The maximum sum subarray problem consists in finding the maximum sum of a contiguous subsequence in an array or list of integers:</p>
 </blockquote>
@@ -224,6 +225,7 @@
 </ol>
 <h2 id="javaScript-Solution"><a href="#javaScript-Solution" class="headerlink" title="javaScript Solution"></a>javaScript Solution</h2><p><img src="https://user-images.githubusercontent.com/48080762/56734293-5f6cc100-679d-11e9-8f72-280c1b4514ae.png" alt="Submit"></p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> maxSequence = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">arr</span>)</span>&#123;</span><br><span class="line">  <span class="hljs-keyword">var</span> positive_index = []</span><br><span class="line"> </span><br><span class="line">  arr.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">positive_check</span>(<span class="hljs-params">element, index</span>)</span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(element&gt;<span class="hljs-number">0</span>)&#123;</span><br><span class="line">      positive_index.push(index);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-keyword">if</span> (positive_index.length == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-keyword">var</span> sum = <span class="hljs-built_in">Array</span>(positive_index.length).fill(<span class="hljs-literal">null</span>).map(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">Array</span>(positive_index.length));</span><br><span class="line">  <span class="hljs-keyword">var</span> max = <span class="hljs-built_in">Number</span>.MIN_SAFE_INTEGER;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>; i&lt;positive_index.length; i++)&#123;</span><br><span class="line">    sum[i][i] = arr[positive_index[i]];</span><br><span class="line">    <span class="hljs-keyword">if</span>(max &lt; sum[i][i])&#123;</span><br><span class="line">        max = sum[i][i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">if</span>(i+<span class="hljs-number">1</span>&lt;positive_index.length)&#123;</span><br><span class="line">      sum[i][i+<span class="hljs-number">1</span>] = arr.slice(positive_index[i], positive_index[i+<span class="hljs-number">1</span>]+<span class="hljs-number">1</span>).reduce(<span class="hljs-function">(<span class="hljs-params">a,b</span>)=&gt;</span>a+b);</span><br><span class="line">      <span class="hljs-keyword">if</span>(max &lt; sum[i][i+<span class="hljs-number">1</span>])&#123;</span><br><span class="line">        max = sum[i][i+<span class="hljs-number">1</span>];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>; i&lt; positive_index.length; i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> j=i+<span class="hljs-number">2</span>; j&lt; positive_index.length; j++)&#123;</span><br><span class="line">      sum[i][j] = sum[i][j<span class="hljs-number">-1</span>] + sum[j<span class="hljs-number">-1</span>][j] - arr[positive_index[j<span class="hljs-number">-1</span>]];</span><br><span class="line">      <span class="hljs-keyword">if</span>(max &lt; sum[i][j])&#123;</span><br><span class="line">        max = sum[i][j];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="PPT-slides"><a href="#PPT-slides" class="headerlink" title="PPT slides"></a>PPT slides</h2><p>Made presentations for my algorithm study group</p>
 <p><img src="https://user-images.githubusercontent.com/48080762/56733714-e7ea6200-679b-11e9-8020-a289b67f909b.PNG" alt="슬라이드1"><br><img src="https://user-images.githubusercontent.com/48080762/56733777-06e8f400-679c-11e9-80d9-9800ff74138e.PNG" alt="슬라이드2"><br><img src="https://user-images.githubusercontent.com/48080762/56733780-08b2b780-679c-11e9-867b-ebac97ab6a38.PNG" alt="슬라이드3"><br><img src="https://user-images.githubusercontent.com/48080762/56733783-0a7c7b00-679c-11e9-9204-664edfe5be0b.PNG" alt="슬라이드4"><br><img src="https://user-images.githubusercontent.com/48080762/56733711-e3be4480-679b-11e9-89f3-c1c7631adb50.PNG" alt="슬라이드5"><br><img src="https://user-images.githubusercontent.com/48080762/56733728-ee78d980-679b-11e9-9439-f0a9e7189cfe.PNG" alt="슬라이드6"><br><img src="https://user-images.githubusercontent.com/48080762/56733730-f173ca00-679b-11e9-9faf-89258b8786a4.PNG" alt="슬라이드7"><br><img src="https://user-images.githubusercontent.com/48080762/56733737-f59fe780-679b-11e9-8932-9983e4cd734a.PNG" alt="슬라이드8"><br><img src="https://user-images.githubusercontent.com/48080762/56733740-f769ab00-679b-11e9-883e-bc4b2a41275c.PNG" alt="슬라이드9"><br><img src="https://user-images.githubusercontent.com/48080762/56733742-f9cc0500-679b-11e9-948e-0cf731d6700c.PNG" alt="슬라이드10"><br><img src="https://user-images.githubusercontent.com/48080762/56733745-fafd3200-679b-11e9-9a82-5883417827df.PNG" alt="슬라이드11"><br><img src="https://user-images.githubusercontent.com/48080762/56733757-fcc6f580-679b-11e9-9674-1f630f832fb5.PNG" alt="슬라이드12"><br><img src="https://user-images.githubusercontent.com/48080762/56733765-fe90b900-679b-11e9-9d97-3b839add0674.PNG" alt="슬라이드13"><br><img src="https://user-images.githubusercontent.com/48080762/56733770-005a7c80-679c-11e9-9fd8-253cac494e0c.PNG" alt="슬라이드14"><br><img src="https://user-images.githubusercontent.com/48080762/56733774-02bcd680-679c-11e9-8d56-627fb0df85a4.PNG" alt="슬라이드15"></p>
 
@@ -314,7 +316,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        130
+                        131
                     </p>
                 </div>
             </div>
@@ -427,7 +429,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Babel/" style="font-size: 10px;">Babel</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 10px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 10px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 11.67px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Routing/" style="font-size: 10px;">Routing</a> <a href="/tags/SPA/" style="font-size: 10px;">SPA</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Single-Page-Application/" style="font-size: 10px;">Single Page Application</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/TypeSCript/" style="font-size: 10px;">TypeSCript</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/실행-컨텍스트/" style="font-size: 10px;">실행 컨텍스트</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a> <a href="/tags/자바스크립트/" style="font-size: 18.33px;">자바스크립트</a>
+        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Babel/" style="font-size: 10px;">Babel</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 10px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 10px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 11.67px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Routing/" style="font-size: 10px;">Routing</a> <a href="/tags/SPA/" style="font-size: 10px;">SPA</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Single-Page-Application/" style="font-size: 10px;">Single Page Application</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/TypeScript/" style="font-size: 11.67px;">TypeScript</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/실행-컨텍스트/" style="font-size: 10px;">실행 컨텍스트</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a> <a href="/tags/자바스크립트/" style="font-size: 18.33px;">자바스크립트</a>
     </div>
 </div>
 
@@ -547,7 +549,7 @@
                 <span class="level-item">TypeScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -572,16 +574,35 @@
         
         <article class="media">
             
-            <a href="/2019/06/12/TypeScript-1/" class="media-left">
+            <a href="/2019/06/12/typeScript-2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript(1)">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (2)">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T03:59:33.000Z">2019-06-12</time></div>
-                    <a href="/2019/06/12/TypeScript-1/" class="has-link-black-ter is-size-6">TypeScript(1)</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:16:03.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-2/" class="has-link-black-ter is-size-6">TypeScript (2)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/typeScript-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (1)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:15:55.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-1/" class="has-link-black-ter is-size-6">TypeScript (1)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
                     </p>
@@ -646,25 +667,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/07/35-Closure/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="35. Closure">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-07T03:59:09.000Z">2019-06-07</time></div>
-                    <a href="/2019/06/07/35-Closure/" class="has-link-black-ter is-size-6">35. Closure</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -683,7 +685,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -1120,9 +1122,9 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/TypeSCript/">
-                        <span class="tag">TypeSCript</span>
-                        <span class="tag is-grey">1</span>
+                    <a class="tags has-addons" href="/tags/TypeScript/">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1387,7 +1389,7 @@
                 <span class="level-item">TypeScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1412,16 +1414,35 @@
         
         <article class="media">
             
-            <a href="/2019/06/12/TypeScript-1/" class="media-left">
+            <a href="/2019/06/12/typeScript-2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript(1)">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (2)">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T03:59:33.000Z">2019-06-12</time></div>
-                    <a href="/2019/06/12/TypeScript-1/" class="has-link-black-ter is-size-6">TypeScript(1)</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:16:03.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-2/" class="has-link-black-ter is-size-6">TypeScript (2)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/typeScript-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (1)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:15:55.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-1/" class="has-link-black-ter is-size-6">TypeScript (1)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
                     </p>
@@ -1486,25 +1507,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/07/35-Closure/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="35. Closure">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-07T03:59:09.000Z">2019-06-07</time></div>
-                    <a href="/2019/06/07/35-Closure/" class="has-link-black-ter is-size-6">35. Closure</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1523,7 +1525,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -1960,9 +1962,9 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/TypeSCript/">
-                        <span class="tag">TypeSCript</span>
-                        <span class="tag is-grey">1</span>
+                    <a class="tags has-addons" href="/tags/TypeScript/">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 

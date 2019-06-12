@@ -205,15 +205,19 @@
 <p>XML 포맷보다 가볍고 사용하기 간편하고 가독성이 우수하다.</p>
 <p>자바스크립트의 객체 리터럴과 비슷하지만 <strong>JSON은 순수한 텍스트</strong>로 구성된 규칙이 있는 Data Structure이다. JSON은 String이다.</p>
 <figure class="highlight json hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,</span><br><span class="line">    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Park"</span>,</span><br><span class="line">    <span class="hljs-attr">"checked"</span>: <span class="hljs-literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><strong>JSON에서 Key는 반드시 <code>&quot; &quot;</code>로 둘러싸야 한다.</strong> (‘ ‘ 사용 불가)</p>
 <h4 id="2-1-JSON-stiringify"><a href="#2-1-JSON-stiringify" class="headerlink" title="2.1. JSON.stiringify"></a>2.1. JSON.stiringify</h4><p>JSON.stringify 메소드는 객체를 JSON 형식 string으로 변환한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">const</span> hospitalKey = <span class="hljs-string">'hospital'</span>;</span><br><span class="line">  <span class="hljs-keyword">const</span> partskey = <span class="hljs-string">'parts'</span>;</span><br><span class="line">    ...</span><br><span class="line">  localStorage.setItem(hospitalkey,<span class="hljs-built_in">JSON</span>.stringify(hospital));</span><br><span class="line">  localStorage.setItem(partskey, <span class="hljs-built_in">JSON</span>.stringify(parts));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="2-1-JSON-parse"><a href="#2-1-JSON-parse" class="headerlink" title="2.1. JSON.parse"></a>2.1. JSON.parse</h4><p>JSON.parse 메소드는 JSON 형식 data string을 객체로 변환한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkSelectedPart</span>(<span class="hljs-params">part</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">const</span> parts = <span class="hljs-built_in">JSON</span>.parse(localStorage.getItem(partskey));</span><br><span class="line">    <span class="hljs-keyword">let</span> checkedPart;</span><br><span class="line">    parts.forEach(<span class="hljs-function"><span class="hljs-params">element</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (element.id === part) &#123;</span><br><span class="line">            element.checked = <span class="hljs-literal">true</span>;</span><br><span class="line">            checkedPart = element;</span><br><span class="line">        &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">            element.checked = <span class="hljs-literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    localStorage.setItem(partskey, <span class="hljs-built_in">JSON</span>.stringify(parts));</span><br><span class="line">    showParts(checkedPart);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>서버에서 브라우저로 전송하는 JSON 데이터는 모두 string이다. 이 string을 자바스크립트의 객체로 사용하기 위해서는 Internal Object인 JSON의 static 메소드 JSON.parse를 사용한다.</p>
 <p>JSON.stringify가 encoding / serialization이면 JSON.parse는 decoding / deserialization이다.</p>
 <h3 id="3-XMLHttpRequest"><a href="#3-XMLHttpRequest" class="headerlink" title="3. XMLHttpRequest"></a>3. XMLHttpRequest</h3><p>브라우저는 <strong>XMLHttpRequest 객체를 이용해 Ajax Request를 생성하고 전송</strong>한다. 서버가 브라우저의 Request에 Response하면 Ajax Request를 생성했던 XMLHttpRequest 객체가 결과를 처리한다.</p>
 <h3 id="3-1-Ajax-Request"><a href="#3-1-Ajax-Request" class="headerlink" title="3.1. Ajax Request"></a>3.1. Ajax Request</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// XMLHttpRequest 객체의 생성</span></span><br><span class="line"><span class="hljs-keyword">var</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();</span><br><span class="line"><span class="hljs-comment">// 비동기 방식으로 Request를 open. open하며 method와 action 지정</span></span><br><span class="line"><span class="hljs-comment">// 상대주소는 html 출처 server 기준. 다른 출처로 요청하면 동일출처원칙에 어긋담</span></span><br><span class="line">xhr.open(<span class="hljs-string">'GET'</span>, <span class="hljs-string">'/users'</span>);</span><br><span class="line"><span class="hljs-comment">// Request를 전송한다</span></span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure>
+
 <h4 id="XMLHttpRequest-open"><a href="#XMLHttpRequest-open" class="headerlink" title="XMLHttpRequest.open"></a>XMLHttpRequest.open</h4><p>new 연산자로 XMLHttpRequest 객체의 인스턴스를 생성 후, XMLHttpRequest.open 메소드를 사용해서 서버로 보낼 Request를 오픈한다.</p>
 <p><strong>XMLHttpRequest.open(method, url[, async])</strong></p>
 <ul>
@@ -240,6 +244,7 @@
 </ul>
 <p>XMLHttpRequest.send 메소드에는 Request Body에 담아서 서버로 전송할 arguments를 전달할 수 있다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">xhr.send(<span class="hljs-literal">null</span>);</span><br><span class="line"><span class="hljs-comment">// xhr.send('string');</span></span><br><span class="line"><span class="hljs-comment">// xhr.send(new Blob()); // file 등 binary contents 보내는 방법</span></span><br><span class="line"><span class="hljs-comment">// xhr.send(&#123; form: 'data' &#125;);</span></span><br><span class="line"><span class="hljs-comment">// xhr.send(document);</span></span><br></pre></td></tr></table></figure>
+
 <p>Request Method가 POST가 아니라 GET일 때는 send 메소드의 argument는 무시되고 request body는 null로 설정됨</p>
 <h4 id="XMLHttpRequest-setRequestHeader"><a href="#XMLHttpRequest-setRequestHeader" class="headerlink" title="XMLHttpRequest.setRequestHeader"></a>XMLHttpRequest.setRequestHeader</h4><p>XMLHttpRequest.setRequestHeader 메소드는 HTTP Request Header의 값을 설정한다. 헤더 설정 전에 <strong>반드시 XMLHttpRequest.open 메소드로 Request를 오픈</strong>한 상태여야 한다.</p>
 <h4 id="Content-type"><a href="#Content-type" class="headerlink" title="Content-type"></a>Content-type</h4><p>Request Body에 담아 전송할 데이터의  MIME-type 정보 표현 (contents type)</p>
@@ -250,68 +255,67 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:center">Type</th>
-<th style="text-align:center">Subtype</th>
+<th align="center">Type</th>
+<th align="center">Subtype</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">text Type</td>
-<td style="text-align:center">text/plain, text/html, text/css, text/javascript</td>
+<tbody><tr>
+<td align="center">text Type</td>
+<td align="center">text/plain, text/html, text/css, text/javascript</td>
 </tr>
 <tr>
-<td style="text-align:center">Application Type</td>
-<td style="text-align:center">application/json, application/x-www-form-urlencode</td>
+<td align="center">Application Type</td>
+<td align="center">application/json, application/x-www-form-urlencode</td>
 </tr>
 <tr>
-<td style="text-align:center">Type to upload a File</td>
-<td style="text-align:center">multipart/formed-data</td>
+<td align="center">Type to upload a File</td>
+<td align="center">multipart/formed-data</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// json으로 전송</span></span><br><span class="line">xhr.open(<span class="hljs-string">'POST'</span>, <span class="hljs-string">'/users'</span>);</span><br><span class="line"><span class="hljs-comment">// 서버로 전송할 데이터의 MIME-type 지정</span></span><br><span class="line">xhr.setRequestHeader(<span class="hljs-string">'Content-type'</span>, <span class="hljs-string">'application/json'</span>);</span><br></pre></td></tr></table></figure>
+
 <h4 id="Accept"><a href="#Accept" class="headerlink" title="Accept"></a>Accept</h4><p>HTTP 클라이언트가 서버에 요청할 때 서버로부터 <strong>받을 데이터의  MIME-type을 Accept로 지정</strong> 가능.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 클라이언트가 Request시 서버가 Send back할 데이터의 MIME-type 지정</span></span><br><span class="line">xhr.setRequestHeader(<span class="hljs-string">'Accept'</span>, <span class="hljs-string">'application/json'</span>);</span><br></pre></td></tr></table></figure>
+
 <h3 id="3-2-Ajax-Response"><a href="#3-2-Ajax-Response" class="headerlink" title="3.2. Ajax Response"></a>3.2. Ajax Response</h3><p>XMLHttpRequest.onreadystatechange는 요청한 Request에 대해서 서버가 보낸 Response를 감지하고 callback 함수를 실행한다. XHLHttpRequest.readyState 프로퍼티가 변경될 때마다 onreadystatechange 이벤트 핸들러가 호출된다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// XMLHttpRequest 객체 생성</span></span><br><span class="line"><span class="hljs-keyword">const</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();</span><br><span class="line"><span class="hljs-comment">// Asynchronous Request open</span></span><br><span class="line">xhr.open(<span class="hljs-string">'GET'</span>, <span class="hljs-string">'data/test.json'</span>);</span><br><span class="line"><span class="hljs-comment">// send Request</span></span><br><span class="line">xhr.send();</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// XMLHttpRequest.readyState 프로퍼티가 변경(이벤트 발생)될 때마다 이벤트 핸들러 호출</span></span><br><span class="line">xhr.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-comment">// 이 함수는 Response가 클라이언트에 도달하면 호출된다.</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 <p><strong>XMLHttpRequest.readyState</strong>로 서버가 보낸 Response가 클라이언트에 도착했는지 알 수 있다. </p>
 <p>XMLHttpRequest.readyState의 값은 아래와 같다.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">Value</th>
-<th style="text-align:center">State</th>
-<th style="text-align:center">Description</th>
+<th align="center">Value</th>
+<th align="center">State</th>
+<th align="center">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">UNSENT</td>
-<td style="text-align:center">XMLHttpRequest.open() 메소드 호출 이전</td>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">UNSENT</td>
+<td align="center">XMLHttpRequest.open() 메소드 호출 이전</td>
 </tr>
 <tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">OPENED</td>
-<td style="text-align:center">XMLHttpRequest.open() 메소드 호출 완료</td>
+<td align="center">1</td>
+<td align="center">OPENED</td>
+<td align="center">XMLHttpRequest.open() 메소드 호출 완료</td>
 </tr>
 <tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">HEADERS_RECEIVED</td>
-<td style="text-align:center">XMLHttpRequest.send() 메소드 호출 완료</td>
+<td align="center">2</td>
+<td align="center">HEADERS_RECEIVED</td>
+<td align="center">XMLHttpRequest.send() 메소드 호출 완료</td>
 </tr>
 <tr>
-<td style="text-align:center">3</td>
-<td style="text-align:center">LOADING</td>
-<td style="text-align:center">서버 응답 중(XMLHttpRequest.responseText 미완성 상태)</td>
+<td align="center">3</td>
+<td align="center">LOADING</td>
+<td align="center">서버 응답 중(XMLHttpRequest.responseText 미완성 상태)</td>
 </tr>
 <tr>
-<td style="text-align:center">4</td>
-<td style="text-align:center">DONE</td>
-<td style="text-align:center">서버 응답 완료</td>
+<td align="center">4</td>
+<td align="center">DONE</td>
+<td align="center">서버 응답 완료</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p><strong>XMLHttpRequest.status</strong>로 Response를 분석할 수 있다.</p>
 <h3 id="4-Web-Server"><a href="#4-Web-Server" class="headerlink" title="4.  Web Server"></a>4.  Web Server</h3><blockquote>
 <h4 id="Web-Server"><a href="#Web-Server" class="headerlink" title="Web Server"></a>Web Server</h4><p>HTML, CSS, JavaScript, img, XML 등 client가 요청하는 Static file(resource)를 제공</p>
@@ -323,12 +327,14 @@
 <p><a href="http://localhost:3000/" target="_blank" rel="noopener">http://localhost:3000</a>에서 Hello World!를 표시하면 성공</p>
 <h3 id="5-Ajax-Example"><a href="#5-Ajax-Example" class="headerlink" title="5. Ajax Example"></a>5. Ajax Example</h3><h4 id="5-1-Load-HTML"><a href="#5-1-Load-HTML" class="headerlink" title="5.1. Load HTML"></a>5.1. Load HTML</h4><p>위에서 만든 webserver-express의 루트인 public 폴더에 data/data.html 파일을 준비한 후, 아래 html 파일을 만들고 실행해본다.</p>
 <figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://poiemaweb.com/assets/css/ajax.css"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"content"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">      <span class="hljs-comment">// XMLHttpRequest 객체의 생성</span></span></span><br><span class="line"><span class="hljs-actionscript">      <span class="hljs-keyword">const</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">      <span class="hljs-comment">// 비동기 방식으로 Request를 오픈</span></span></span><br><span class="line"><span class="hljs-actionscript">      xhr.open(<span class="hljs-string">'GET'</span>, <span class="hljs-string">'data/data.html'</span>);</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">      <span class="hljs-comment">// Request를 전송한다</span></span></span><br><span class="line"><span class="hljs-undefined">      xhr.send();</span></span><br><span class="line"><span class="hljs-javascript">      <span class="hljs-built_in">console</span>.dir(xhr);</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">      <span class="hljs-comment">// Event Handler</span></span></span><br><span class="line"><span class="hljs-actionscript">      xhr.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;</span></span><br><span class="line"><span class="hljs-actionscript">        <span class="hljs-comment">// 서버 응답 완료</span></span></span><br><span class="line"><span class="hljs-actionscript">        <span class="hljs-keyword">if</span> (xhr.readyState === XMLHttpRequest.DONE) &#123;</span></span><br><span class="line"><span class="hljs-actionscript">          <span class="hljs-comment">// 정상 응답</span></span></span><br><span class="line"><span class="hljs-actionscript">          <span class="hljs-keyword">if</span> (xhr.status === <span class="hljs-number">200</span>) &#123;</span></span><br><span class="line"><span class="hljs-javascript">            <span class="hljs-built_in">console</span>.log(xhr.responseText);</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-javascript">            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'content'</span>).innerHTML = xhr.responseText;</span></span><br><span class="line"><span class="hljs-actionscript">          &#125; <span class="hljs-keyword">else</span> &#123;</span></span><br><span class="line"><span class="hljs-javascript">            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`[<span class="hljs-subst">$&#123;xhr.status&#125;</span>] : <span class="hljs-subst">$&#123;xhr.statusText&#125;</span>`</span>);</span></span><br><span class="line"><span class="hljs-undefined">          &#125;</span></span><br><span class="line"><span class="hljs-undefined">        &#125;</span></span><br><span class="line"><span class="hljs-undefined">      &#125;;</span></span><br><span class="line"><span class="hljs-undefined">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>정상 실행 되었을 때의 log이다. 서버에 요청해서 응답받은 data/data.html을 xhr.responseText로 취득한다.</p>
 <p><img src="https://user-images.githubusercontent.com/48080762/58473668-251f8680-8184-11e9-9c0a-59110cbc12af.png" alt="Success"></p>
 <p>xhr.open(‘GET’, ‘data/data2.html’)로 코드를 수정해서 없는 file을 요청하면 Request의 status는 404, statusText는 Not Found이다.</p>
 <p><img src="https://user-images.githubusercontent.com/48080762/58473745-5b5d0600-8184-11e9-90c6-354839bec8e9.png" alt="Fail"></p>
 <h4 id="5-2-Load-JSON"><a href="#5-2-Load-JSON" class="headerlink" title="5.2. Load JSON"></a>5.2. Load JSON</h4><p>다음은 위에서처럼 html을 통째로 받아오는 것이 아니라 JSON 객체를 전달받아 parsing하고 필요한 정보를 뽑아서 렌더링하는 예제이다.</p>
 <figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://poiemaweb.com/assets/css/ajax.css"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"content"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">      <span class="hljs-comment">// XMLHttpRequest 객체의 생성</span></span></span><br><span class="line"><span class="hljs-actionscript">      <span class="hljs-keyword">var</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">      <span class="hljs-comment">// 비동기 방식으로 Request를 오픈</span></span></span><br><span class="line"><span class="hljs-actionscript">      xhr.open(<span class="hljs-string">'GET'</span>, <span class="hljs-string">'data/data.json'</span>);</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">      <span class="hljs-comment">// Request를 전송</span></span></span><br><span class="line"><span class="hljs-undefined">      xhr.send();</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">      xhr.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;</span></span><br><span class="line"><span class="hljs-actionscript">        <span class="hljs-comment">// 서버 응답 완료</span></span></span><br><span class="line"><span class="hljs-actionscript">        <span class="hljs-keyword">if</span> (xhr.readyState === XMLHttpRequest.DONE) &#123;</span></span><br><span class="line"><span class="hljs-actionscript">          <span class="hljs-comment">// 정상 응답</span></span></span><br><span class="line"><span class="hljs-actionscript">          <span class="hljs-keyword">if</span> (xhr.status === <span class="hljs-number">200</span>) &#123;</span></span><br><span class="line"><span class="hljs-javascript">            <span class="hljs-built_in">console</span>.log(xhr.responseText);</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">            <span class="hljs-comment">// Deserializing (String → Object)</span></span></span><br><span class="line"><span class="hljs-javascript">            responseObject = <span class="hljs-built_in">JSON</span>.parse(xhr.responseText);</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-actionscript">            <span class="hljs-comment">// JSON → HTML String</span></span></span><br><span class="line"><span class="hljs-handlebars"><span class="hljs-xml">            let newContent = '<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tours"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Guided Tours<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>';</span></span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-javascript">            responseObject.tours.forEach(<span class="hljs-function"><span class="hljs-params">tour</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="hljs-actionscript">              newContent += `&lt;li <span class="hljs-class"><span class="hljs-keyword">class</span>="$</span>&#123;tour.region&#125; tour<span class="hljs-string">"&gt;</span></span></span><br><span class="line"><span class="hljs-handlebars"><span class="hljs-xml">                  <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>$&#123;tour.location&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span></span></span></span><br><span class="line"><span class="hljs-javascript">                  &lt;span <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"details"</span>&gt;$&#123;tour.details&#125;&lt;<span class="hljs-regexp">/span&gt;</span></span></span><br><span class="line"><span class="hljs-javascript">                  &lt;button <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"book"</span>&gt;Book Now&lt;<span class="hljs-regexp">/button&gt;</span></span></span><br><span class="line"><span class="hljs-handlebars"><span class="hljs-xml">                <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>`;</span></span></span><br><span class="line"><span class="hljs-undefined">            &#125;);</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-handlebars"><span class="hljs-xml">            newContent += '<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>';</span></span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-javascript">            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'content'</span>).innerHTML = newContent;</span></span><br><span class="line"><span class="hljs-actionscript">          &#125; <span class="hljs-keyword">else</span> &#123;</span></span><br><span class="line"><span class="hljs-javascript">            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`[<span class="hljs-subst">$&#123;xhr.status&#125;</span>] : <span class="hljs-subst">$&#123;xhr.statusText&#125;</span>`</span>);</span></span><br><span class="line"><span class="hljs-undefined">          &#125;</span></span><br><span class="line"><span class="hljs-undefined">        &#125;</span></span><br><span class="line"><span class="hljs-undefined">      &#125;;</span></span><br><span class="line"><span class="hljs-undefined">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="5-3-Load-JSONP"><a href="#5-3-Load-JSONP" class="headerlink" title="5.3. Load JSONP"></a>5.3. Load JSONP</h4><blockquote>
 <h4 id="Same-origin-Policy-동일출처원칙"><a href="#Same-origin-Policy-동일출처원칙" class="headerlink" title="Same-origin Policy (동일출처원칙)"></a>Same-origin Policy (동일출처원칙)</h4><p>보안상의 이유로 다른 도메인(http, https / 다른 port)로 요청하는 Cross-domain Request는 제한된다.</p>
 </blockquote>
@@ -403,7 +409,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        130
+                        131
                     </p>
                 </div>
             </div>
@@ -516,7 +522,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Babel/" style="font-size: 10px;">Babel</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 10px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 10px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 11.67px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Routing/" style="font-size: 10px;">Routing</a> <a href="/tags/SPA/" style="font-size: 10px;">SPA</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Single-Page-Application/" style="font-size: 10px;">Single Page Application</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/TypeSCript/" style="font-size: 10px;">TypeSCript</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/실행-컨텍스트/" style="font-size: 10px;">실행 컨텍스트</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a> <a href="/tags/자바스크립트/" style="font-size: 18.33px;">자바스크립트</a>
+        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Babel/" style="font-size: 10px;">Babel</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 10px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 10px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 11.67px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Routing/" style="font-size: 10px;">Routing</a> <a href="/tags/SPA/" style="font-size: 10px;">SPA</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Single-Page-Application/" style="font-size: 10px;">Single Page Application</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/TypeScript/" style="font-size: 11.67px;">TypeScript</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/실행-컨텍스트/" style="font-size: 10px;">실행 컨텍스트</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a> <a href="/tags/자바스크립트/" style="font-size: 18.33px;">자바스크립트</a>
     </div>
 </div>
 
@@ -636,7 +642,7 @@
                 <span class="level-item">TypeScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -661,16 +667,35 @@
         
         <article class="media">
             
-            <a href="/2019/06/12/TypeScript-1/" class="media-left">
+            <a href="/2019/06/12/typeScript-2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript(1)">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (2)">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T03:59:33.000Z">2019-06-12</time></div>
-                    <a href="/2019/06/12/TypeScript-1/" class="has-link-black-ter is-size-6">TypeScript(1)</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:16:03.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-2/" class="has-link-black-ter is-size-6">TypeScript (2)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/typeScript-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (1)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:15:55.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-1/" class="has-link-black-ter is-size-6">TypeScript (1)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
                     </p>
@@ -735,25 +760,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/07/35-Closure/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="35. Closure">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-07T03:59:09.000Z">2019-06-07</time></div>
-                    <a href="/2019/06/07/35-Closure/" class="has-link-black-ter is-size-6">35. Closure</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -772,7 +778,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -1209,9 +1215,9 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/TypeSCript/">
-                        <span class="tag">TypeSCript</span>
-                        <span class="tag is-grey">1</span>
+                    <a class="tags has-addons" href="/tags/TypeScript/">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1476,7 +1482,7 @@
                 <span class="level-item">TypeScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1501,16 +1507,35 @@
         
         <article class="media">
             
-            <a href="/2019/06/12/TypeScript-1/" class="media-left">
+            <a href="/2019/06/12/typeScript-2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript(1)">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (2)">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T03:59:33.000Z">2019-06-12</time></div>
-                    <a href="/2019/06/12/TypeScript-1/" class="has-link-black-ter is-size-6">TypeScript(1)</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:16:03.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-2/" class="has-link-black-ter is-size-6">TypeScript (2)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/typeScript-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (1)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:15:55.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-1/" class="has-link-black-ter is-size-6">TypeScript (1)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
                     </p>
@@ -1575,25 +1600,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/07/35-Closure/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="35. Closure">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-07T03:59:09.000Z">2019-06-07</time></div>
-                    <a href="/2019/06/07/35-Closure/" class="has-link-black-ter is-size-6">35. Closure</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1612,7 +1618,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -2049,9 +2055,9 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/TypeSCript/">
-                        <span class="tag">TypeSCript</span>
-                        <span class="tag is-grey">1</span>
+                    <a class="tags has-addons" href="/tags/TypeScript/">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 

@@ -190,8 +190,10 @@
 </li>
 <li><p>즉, DOM이란 모든  element와 element의 attribute, text를 각각의 객체로 만들고 이 객체들을 부모-자식 관계를 나타낼 수 있는 트리 구조로 구성한 것</p>
 </li>
-<li>DOM은 자바스크립트를 통해 동적으로 변경할 수 있고 변경된 DOM은 브라우저 렌더링에 반영된다.</li>
-<li>DOM API(Application Programming Interface) : 웹 문서의 동적 변경을 위해서 DOM에 접근할 수 있도록 제공하는 자바스크립트 객체의 프로퍼티와 메소드의 집합. DOM API를 통해서 DOM에 접근하고 변경해서 웹 페이지를 동적으로 변경할 수 있다.</li>
+<li><p>DOM은 자바스크립트를 통해 동적으로 변경할 수 있고 변경된 DOM은 브라우저 렌더링에 반영된다.</p>
+</li>
+<li><p>DOM API(Application Programming Interface) : 웹 문서의 동적 변경을 위해서 DOM에 접근할 수 있도록 제공하는 자바스크립트 객체의 프로퍼티와 메소드의 집합. DOM API를 통해서 DOM에 접근하고 변경해서 웹 페이지를 동적으로 변경할 수 있다.</p>
+</li>
 </ul>
 <blockquote>
 <h4 id="DOM-tree-HTML-문서에-대한-모델-구성"><a href="#DOM-tree-HTML-문서에-대한-모델-구성" class="headerlink" title="DOM tree | HTML 문서에 대한 모델 구성"></a>DOM tree | HTML 문서에 대한 모델 구성</h4><p>브라우저가 HTML 문서를 로드한 후 해당 문서에 대한 모델을 트리 구조로 메모리에 생성한 것</p>
@@ -238,6 +240,9 @@
 </li>
 <li><p>모든 브라우저에서 동작한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">      .red  &#123; <span class="hljs-attr">color</span>: red; &#125;</span><br><span class="line">      .blue &#123; <span class="hljs-attr">color</span>: blue; &#125;</span><br><span class="line">      .yellow &#123; <span class="hljs-attr">color</span>: yellow; &#125;</span><br><span class="line">    &lt;<span class="hljs-regexp">/style&gt;</span></span><br><span class="line"><span class="hljs-regexp">  &lt;/</span>head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;Cities&lt;<span class="hljs-regexp">/h1&gt;</span></span><br><span class="line"><span class="hljs-regexp">      &lt;ul&gt;</span></span><br><span class="line"><span class="hljs-regexp">        &lt;li id="one" class="red"&gt;Seoul&lt;/</span>li&gt;</span><br><span class="line">        &lt;li id=<span class="hljs-string">"two"</span> <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"blue"</span>&gt;London&lt;<span class="hljs-regexp">/li&gt;</span></span><br><span class="line"><span class="hljs-regexp">        &lt;li id="three" class="red"&gt;Newyork&lt;/</span>li&gt;</span><br><span class="line">        &lt;li id=<span class="hljs-string">"four"</span>&gt;Tokyo&lt;<span class="hljs-regexp">/li&gt;</span></span><br><span class="line"><span class="hljs-regexp">      &lt;/u</span>l&gt;</span><br><span class="line">    &lt;<span class="hljs-regexp">/div&gt;</span></span><br><span class="line"><span class="hljs-regexp">    &lt;script type="text/</span>javascript<span class="hljs-string">"&gt;</span></span><br><span class="line"><span class="hljs-string">      const elem = document.getElementById('one');</span></span><br><span class="line"><span class="hljs-string">      elem.className = 'yellow';</span></span><br><span class="line"><span class="hljs-string">      </span></span><br><span class="line"><span class="hljs-string">console.log(elem); // &lt;li id="</span>one<span class="hljs-string">" class="</span>blue<span class="hljs-string">"&gt;Seoul&lt;/li&gt;</span></span><br><span class="line"><span class="hljs-string">console.log(elem.__proto__);           // HTMLLIElement</span></span><br><span class="line"><span class="hljs-string">console.log(elem.__proto__.__proto__); // HTMLElement</span></span><br><span class="line"><span class="hljs-string">console.log(elem.__proto__.__proto__.__proto__);           // Element</span></span><br><span class="line"><span class="hljs-string">console.log(elem.__proto__.__proto__.__proto__.__proto__); // Node</span></span><br><span class="line"><span class="hljs-string">    &lt;/script&gt;</span></span><br><span class="line"><span class="hljs-string">  &lt;/body&gt;</span></span><br><span class="line"><span class="hljs-string">&lt;/html&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
 </li>
 </ul>
 <p>  <img src="https://user-images.githubusercontent.com/48080762/58170933-c19ee000-7ccf-11e9-8b2b-f1f05fbd35c3.png" alt="Proto Chain"></p>
@@ -253,6 +258,7 @@
 </li>
 <li><p>Return: (live)HTMLCollection</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;Cities&lt;<span class="hljs-regexp">/h1&gt;</span></span><br><span class="line"><span class="hljs-regexp">    &lt;ul&gt;</span></span><br><span class="line"><span class="hljs-regexp">      &lt;li id="one" class="red"&gt;Seoul&lt;/</span>li&gt;</span><br><span class="line">      &lt;li id=<span class="hljs-string">"two"</span> <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"red"</span>&gt;London&lt;<span class="hljs-regexp">/li&gt;</span></span><br><span class="line"><span class="hljs-regexp">      &lt;li id="three" class="red"&gt;Newyork&lt;/</span>li&gt;</span><br><span class="line">      &lt;li id=<span class="hljs-string">"four"</span>&gt;Tokyo&lt;<span class="hljs-regexp">/li&gt;</span></span><br><span class="line"><span class="hljs-regexp">    &lt;/u</span>l&gt;</span><br><span class="line">  &lt;<span class="hljs-regexp">/div&gt;</span></span><br><span class="line"><span class="hljs-regexp">  &lt;script type="text/</span>javascript<span class="hljs-string">"&gt;</span></span><br><span class="line"><span class="hljs-string">   const elems = document.getElementsByClassName('red');</span></span><br><span class="line"><span class="hljs-string">   console.log(elems);</span></span><br><span class="line"><span class="hljs-string">   for (let i = 0; i &lt; elems.length; i++) &#123;</span></span><br><span class="line"><span class="hljs-string">     elems[i].className = 'yellow';</span></span><br><span class="line"><span class="hljs-string">   &#125;</span></span><br><span class="line"><span class="hljs-string">  &lt;/script&gt;</span></span><br><span class="line"><span class="hljs-string">&lt;/body&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>HTMLCollection이란, 배열이 아닌 유사배열 객체(array-like object)이다. HTMLCollection은 실시간으로 Node의 상태가 변경될 때마다 Collection에 반영하기 때문에 liveHTMLCollection이라고도 한다.</p>
 <p><img src="https://user-images.githubusercontent.com/48080762/58171787-ba78d180-7cd1-11e9-8a92-e9a745831533.png" alt="Result Page"></p>
 <p>위 코드의 실행 결과로 두번째와 네번째 Element의 색이 바뀌지 않은 것은  elems가 참조하는 HTMLCollection이 실시간으로 변경되어 누락되었기 때문이다.</p>
@@ -268,6 +274,7 @@
 </li>
 </ul>
 <h4 id="document-getElementsByTagName-tagName"><a href="#document-getElementsByTagName-tagName" class="headerlink" title="document.getElementsByTagName(tagName)"></a>document.getElementsByTagName(tagName)</h4><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> &lt;script type=<span class="hljs-string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="hljs-keyword">const</span> elems = <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">'li'</span>);</span><br><span class="line">	<span class="hljs-built_in">console</span>.log(elems); <span class="hljs-comment">// HTMLCollection(4) [li#one.red, li#two.red, li#three.red, li#four, one: li#one.red, two: li#two.red, three: li#three.red, four: li#four]</span></span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; elems.length; i++) &#123;</span><br><span class="line">        elems[i].className = <span class="hljs-string">'blue'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="hljs-regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p><code>getElementsByTagName</code> 메소드도 HTMLCollection을 리턴한다고 명세에 써있으나 Webkit에서는 NodeList를 리턴한다. 크롬에서는 NodeList를 리턴한다.</p>
 <p><img src="https://user-images.githubusercontent.com/48080762/58172154-b5685200-7cd2-11e9-9bc1-802293274981.png" alt="Result Page"></p>
 <h3 id="document-querySelectorAll-selector"><a href="#document-querySelectorAll-selector" class="headerlink" title="document.querySelectorAll(selector)"></a>document.querySelectorAll(selector)</h3><ul>
@@ -279,8 +286,10 @@
 </ul>
 <h4 id="element-className"><a href="#element-className" class="headerlink" title="element.className"></a>element.className</h4><p><code>class=&quot;red blue&quot;</code>에서 ‘red blue’를 의미. class를 한 번에 전부 수정하는 데에 좋다. 하나를 추가하고 싶을 때는 아래와 같이 쓴다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> elem = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#one'</span>);</span><br><span class="line">elem.className += <span class="hljs-string">'yellow'</span>;</span><br></pre></td></tr></table></figure>
+
 <p>추가나 삭제에는 classList의 method를 사용하는 것이 편리하다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> elem = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#one'</span>);</span><br><span class="line">elem.classList.add(<span class="hljs-string">'blue'</span>);</span><br><span class="line">elem.classList.remove(<span class="hljs-string">'blue'</span>);</span><br></pre></td></tr></table></figure>
+
 <h3 id="DOM-Traversal"><a href="#DOM-Traversal" class="headerlink" title="DOM Traversal"></a>DOM Traversal</h3><h3 id="parentNode"><a href="#parentNode" class="headerlink" title="parentNode"></a>parentNode</h3><p>자신의 parent 노드를 탐색. HTMLElement를 상속받은 객체를 리턴하며 모든 브라우저에서 동작한다.</p>
 <h4 id="firstChild-lastChild"><a href="#firstChild-lastChild" class="headerlink" title="firstChild, lastChild"></a>firstChild, lastChild</h4><p>자신의 첫번째 child, 마지막 child 노드를 탐색. HTMLELement를 상속받은 객체를 리턴하며 IE9 이상의 브라우저에서 동작한다.</p>
 <p>IE를 제외한 대부분의 브라우저에서는 element 사이의 공백과 줄바꿈을 Text Node로 취급하기 때문에 주의해야 한다.</p>
@@ -411,8 +420,7 @@
 <th>insertAdjacentHTML()</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>장점</td>
 <td>DOM 조작 방식에 비해 빠르고 간편<br>간편하게 문자열로 정의한 여러 요소를 DOM에 추가할 수 있음<br>콘텐츠를 취득할 수 있음</td>
 <td>특정 노드 한 개(노드, 텍스트, 데이터 등)를 DOM에 추가할 때 적합</td>
@@ -424,12 +432,13 @@
 <td>innerHTML보다 느리고 더 많은 코드가 필요</td>
 <td>XSS공격에 취약점이 있기 때문에 사용자로 부터 입력받은 콘텐츠(untrusted data: 댓글, 사용자 이름 등)를 추가할 때 주의해야 함</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>결론적으로 Text를 추가하거나 변경할 때는 textContent, 새로운 element를 추가하거나 삭제할 때는 DOM manipulation 방식(createElement() 등)을 사용한다.</p>
 <h2 id="5-style-Property"><a href="#5-style-Property" class="headerlink" title="5. style Property"></a>5. style Property</h2><p>style 프로퍼티를 사용하면 inline style 선언을 생성한다. 특정 element에 inline style을 지정할 때 사용한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> $four = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'four'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// inline 스타일 선언을 생성</span></span><br><span class="line">$four.style.color = <span class="hljs-string">'blue'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// font-size와 같이 '-'으로 구분되는 프로퍼티는 카멜케이스로 변환해 사용한다.</span></span><br><span class="line">$four.style.fontSize = <span class="hljs-string">'2em'</span>;</span><br></pre></td></tr></table></figure>
+
 <h3 id="6-DOM-load-“DOMContentLoaded”-event"><a href="#6-DOM-load-“DOMContentLoaded”-event" class="headerlink" title="6. DOM load, “DOMContentLoaded” event"></a>6. DOM load, “DOMContentLoaded” event</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getTodos</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">// DOM parsing 되고 resource도 로드됐을 때 발생하는 event</span></span><br><span class="line"><span class="hljs-built_in">window</span>.onload = getTodos;</span><br><span class="line"><span class="hljs-comment">// getTodos에 argument 넘길 수 있음</span></span><br><span class="line"><span class="hljs-built_in">window</span>.onload = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    getTodos;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 <p>DOMContentLoaded는 리소스 상관 없이 DOM parsing만 완료되었을 때 발생하는 event</p>
 <hr>
 <p><a href="https://poiemaweb.com/js-dom" target="_blank" rel="noopener">Reference</a></p>
@@ -521,7 +530,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        130
+                        131
                     </p>
                 </div>
             </div>
@@ -634,7 +643,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Babel/" style="font-size: 10px;">Babel</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 10px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 10px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 11.67px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Routing/" style="font-size: 10px;">Routing</a> <a href="/tags/SPA/" style="font-size: 10px;">SPA</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Single-Page-Application/" style="font-size: 10px;">Single Page Application</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/TypeSCript/" style="font-size: 10px;">TypeSCript</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/실행-컨텍스트/" style="font-size: 10px;">실행 컨텍스트</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a> <a href="/tags/자바스크립트/" style="font-size: 18.33px;">자바스크립트</a>
+        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Babel/" style="font-size: 10px;">Babel</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 10px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 10px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 11.67px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Routing/" style="font-size: 10px;">Routing</a> <a href="/tags/SPA/" style="font-size: 10px;">SPA</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Single-Page-Application/" style="font-size: 10px;">Single Page Application</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/TypeScript/" style="font-size: 11.67px;">TypeScript</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/실행-컨텍스트/" style="font-size: 10px;">실행 컨텍스트</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a> <a href="/tags/자바스크립트/" style="font-size: 18.33px;">자바스크립트</a>
     </div>
 </div>
 
@@ -754,7 +763,7 @@
                 <span class="level-item">TypeScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -779,16 +788,35 @@
         
         <article class="media">
             
-            <a href="/2019/06/12/TypeScript-1/" class="media-left">
+            <a href="/2019/06/12/typeScript-2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript(1)">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (2)">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T03:59:33.000Z">2019-06-12</time></div>
-                    <a href="/2019/06/12/TypeScript-1/" class="has-link-black-ter is-size-6">TypeScript(1)</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:16:03.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-2/" class="has-link-black-ter is-size-6">TypeScript (2)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/typeScript-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (1)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:15:55.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-1/" class="has-link-black-ter is-size-6">TypeScript (1)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
                     </p>
@@ -853,25 +881,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/07/35-Closure/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="35. Closure">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-07T03:59:09.000Z">2019-06-07</time></div>
-                    <a href="/2019/06/07/35-Closure/" class="has-link-black-ter is-size-6">35. Closure</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -890,7 +899,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -1327,9 +1336,9 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/TypeSCript/">
-                        <span class="tag">TypeSCript</span>
-                        <span class="tag is-grey">1</span>
+                    <a class="tags has-addons" href="/tags/TypeScript/">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1594,7 +1603,7 @@
                 <span class="level-item">TypeScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1619,16 +1628,35 @@
         
         <article class="media">
             
-            <a href="/2019/06/12/TypeScript-1/" class="media-left">
+            <a href="/2019/06/12/typeScript-2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript(1)">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (2)">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T03:59:33.000Z">2019-06-12</time></div>
-                    <a href="/2019/06/12/TypeScript-1/" class="has-link-black-ter is-size-6">TypeScript(1)</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:16:03.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-2/" class="has-link-black-ter is-size-6">TypeScript (2)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/typeScript-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (1)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:15:55.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-1/" class="has-link-black-ter is-size-6">TypeScript (1)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
                     </p>
@@ -1693,25 +1721,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/07/35-Closure/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="35. Closure">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-07T03:59:09.000Z">2019-06-07</time></div>
-                    <a href="/2019/06/07/35-Closure/" class="has-link-black-ter is-size-6">35. Closure</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1730,7 +1739,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -2167,9 +2176,9 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/TypeSCript/">
-                        <span class="tag">TypeSCript</span>
-                        <span class="tag is-grey">1</span>
+                    <a class="tags has-addons" href="/tags/TypeScript/">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 

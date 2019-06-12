@@ -186,6 +186,7 @@
             <h1 id="1-Problems-with-Variables-declared-with-the-var-keyword"><a href="#1-Problems-with-Variables-declared-with-the-var-keyword" class="headerlink" title="1. Problems with Variables declared with the var keyword"></a>1. Problems with Variables declared with the <code>var</code> keyword</h1><p>ES5까지 변수를 선언할 수 있는 유일한 키워드는 <code>var</code> 하나였다. <code>var</code> 키워드로 선언된 변수는 다른 언어와는 구별되는 특징을 가진다.</p>
 <h2 id="1-1-Allow-Duplicate-Variable-Declaration"><a href="#1-1-Allow-Duplicate-Variable-Declaration" class="headerlink" title="1.1. Allow Duplicate Variable Declaration"></a>1.1. Allow Duplicate Variable Declaration</h2><p><code>var</code> 키워드로 선언한 변수는 중복 선언이 가능하다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>;</span><br><span class="line"><span class="hljs-comment">// No Error</span></span><br><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">10</span>;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(x); <span class="hljs-comment">//10</span></span><br></pre></td></tr></table></figure>
+
 <p>같은 스코프 내에서 변수를 중복 선언하면 나중에 선언된 변수는 선언문이 아닌 할당문처럼 동작한다. 이 때 에러가 발생하지 않기 때문에 중복 선언을 인지하기 힘들다. 이로 인해 의도치 않게 변수값이 변경될 수 있다.</p>
 <h2 id="1-2-Function-level-Scope"><a href="#1-2-Function-level-Scope" class="headerlink" title="1.2. Function-level Scope"></a>1.2. Function-level Scope</h2><p><code>var</code> 키워드로 선언한 변수는 오로지 함수의 코드 블록만을 지역 스코프로 인정한다. 따라서, if문이나 for문 등에서 선언한 <code>var</code> 변수는 모두 전역 변수가 된다.</p>
 <p>대부분의 프로그래밍 언어는 block-level scope이기 때문에 function-level scope를 이용하는 것은 전역 변수를 남발할 가능성을 높인다.</p>
@@ -193,10 +194,13 @@
 <h1 id="2-let-keyword"><a href="#2-let-keyword" class="headerlink" title="2. let keyword"></a>2. <code>let</code> keyword</h1><p><code>var</code> 키워드의 단점들을 보완하기 위해 ES6에서 <code>var</code>와 <code>const</code> 키워드가 추가되었다. 이들은 <code>var</code> 키워드와 같이 변수를 선언할 때 사용된다.</p>
 <h2 id="2-1-Ban-Duplicate-Variable-Declaration"><a href="#2-1-Ban-Duplicate-Variable-Declaration" class="headerlink" title="2.1. Ban Duplicate Variable Declaration"></a>2.1. Ban Duplicate Variable Declaration</h2><p><code>let</code> 키워드로 선언한 변수를 중복 선언하면 <code>var</code>와 달리 SyntaxError가 발생한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> x = <span class="hljs-number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">let</span> x = <span class="hljs-number">10</span>;	<span class="hljs-comment">// SyntaxError: Identifier 'x' has already been declared</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="2-2-Block-level-Scope"><a href="#2-2-Block-level-Scope" class="headerlink" title="2.2. Block-level Scope"></a>2.2. Block-level Scope</h2><p><code>var</code> 키워드로 선언한 변수는 함수의 코드 블록만을 지역 스코프로 인정하는 함수 레벨 스코프를 따른다. 그러나 <code>let</code> 키워드로 선언한 변수는 모든 코드 블록 <code>{}</code>을 지역 스코프로 인정하는 블록 레벨 스코프를 따른다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> foo = <span class="hljs-number">1</span>;	<span class="hljs-comment">// global variable</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> foo = <span class="hljs-number">3</span>;	<span class="hljs-comment">// local variable</span></span><br><span class="line">    <span class="hljs-keyword">let</span> bar = <span class="hljs-number">4</span>;	<span class="hljs-comment">// local variable</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-built_in">console</span>.log(foo); 	<span class="hljs-comment">// 3</span></span><br><span class="line">	<span class="hljs-built_in">console</span>.log(bar);	<span class="hljs-comment">// 4</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(foo); 	<span class="hljs-comment">// 1</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(bar);	<span class="hljs-comment">// ReferenceError: bar is not defined</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="2-3-Variable-Hoisting"><a href="#2-3-Variable-Hoisting" class="headerlink" title="2.3. Variable Hoisting"></a>2.3. Variable Hoisting</h2><p><code>let</code> 키워드로 선언한 변수는 변수 호이스팅이 발생하지 않는 것처럼 동작한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(foo);	<span class="hljs-comment">// ReferenceError: foo is not defined</span></span><br><span class="line"><span class="hljs-keyword">let</span> foo;</span><br></pre></td></tr></table></figure>
+
 <p>그렇다면 <code>let</code> 키워드로 선언한 선언문은는 런타임 이전에 실행되지 않는 것일까? </p>
 <p>일반적으로 <code>var</code> 키워드로 선언한 변수는 런타임 이전에 자바스크립트 엔진에 의해 암묵적으로 declaration phase와 initialization phase가 <strong>한 번에</strong> 진행된다.</p>
 <p><img src="https://user-images.githubusercontent.com/48080762/57504827-02424500-7331-11e9-960b-75e673a99ae3.png" alt="var declaration"></p>
@@ -214,12 +218,15 @@
 <h2 id="2-4-Global-Object-and-let"><a href="#2-4-Global-Object-and-let" class="headerlink" title="2.4. Global Object and let"></a>2.4. Global Object and <code>let</code></h2><p><strong>전역 객체(Global Object)</strong>는 모든 객체의 유일한 최상위 객체를 의미하며 일반적으로 브라우저 환경에서는 window 객체, Node.js 환경에서는 global 객체를 말한다.</p>
 <p><strong><code>var</code> 키워드로 선언한 전역 변수와, 키워드 없이 선언하고 값을 할당한 암묵적 전역변수, 그리고 전역 함수는 전역 객체의 프로퍼티가 된다.</strong></p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>;</span><br><span class="line">y = <span class="hljs-number">2</span>;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.x === x);		<span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.y === y);		<span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.foo === foo);	<span class="hljs-comment">// true</span></span><br></pre></td></tr></table></figure>
+
 <p>전역 객체의 프로퍼티는 전역 변수처럼 사용할 수 있다. 전역 객체의 프로퍼티를 참조할 때 window를 생략할 수 있다.</p>
 <p>그러나 <code>let</code> 키워드로 선언한 전역 변수는 전역 객체 window의 프로퍼티가 아니다. <code>let</code> 전역 변수는 전역 렉시컬 환경의 선언적 환경 레코드 내에 존재하게 된다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> x = <span class="hljs-number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.x);	<span class="hljs-comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
 <h1 id="3-const-Keyword"><a href="#3-const-Keyword" class="headerlink" title="3. const Keyword"></a>3. <code>const</code> Keyword</h1><p><code>const</code> 키워드는 상수(변하지 않는 고정된 값)를 선언하기 위해 사용한다. <code>let</code> 과 <code>const</code> 는 동일한 특징이 많다. 차이점을 살펴보자.</p>
 <h2 id="3-1-Declaration-and-Initialization"><a href="#3-1-Declaration-and-Initialization" class="headerlink" title="3.1. Declaration and Initialization"></a>3.1. Declaration and Initialization</h2><p><code>let</code> 키워드로 선언한 변수와 달리 <code>const</code> 키워드로 선언한 변수는 재할당이 금지된다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> PI = <span class="hljs-number">3.14</span>;</span><br><span class="line"></span><br><span class="line">PI = <span class="hljs-number">3.141492</span>;	<span class="hljs-comment">// TypeError: Assignment to constant variable.</span></span><br></pre></td></tr></table></figure>
+
 <p><code>const</code> 키워드로 선언한 변수는 반드시 선언과 할당이 동시에 이루어져야 한다. 이후로는 재할당을 할 수 없다.</p>
 <p><code>const</code> 키워드로 선언한 변수 또한 block-level scope를 갖는다.</p>
 <h2 id="3-2-Constant"><a href="#3-2-Constant" class="headerlink" title="3.2. Constant"></a>3.2. Constant</h2><p>변수를 만들고 재할당을 하지 않을 거라면 상수를 적극적으로 쓰는 게 좋다. 고정된 값을 상수로 만들어 쓰면 코드의 가독성을 높일 수 있다. 상수는 프로그램 전체에서 사용하므로, 유지보수에 효율적이다.</p>
@@ -321,7 +328,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        130
+                        131
                     </p>
                 </div>
             </div>
@@ -434,7 +441,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Babel/" style="font-size: 10px;">Babel</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 10px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 10px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 11.67px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Routing/" style="font-size: 10px;">Routing</a> <a href="/tags/SPA/" style="font-size: 10px;">SPA</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Single-Page-Application/" style="font-size: 10px;">Single Page Application</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/TypeSCript/" style="font-size: 10px;">TypeSCript</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/실행-컨텍스트/" style="font-size: 10px;">실행 컨텍스트</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a> <a href="/tags/자바스크립트/" style="font-size: 18.33px;">자바스크립트</a>
+        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Babel/" style="font-size: 10px;">Babel</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 10px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 10px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 11.67px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Routing/" style="font-size: 10px;">Routing</a> <a href="/tags/SPA/" style="font-size: 10px;">SPA</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Single-Page-Application/" style="font-size: 10px;">Single Page Application</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/TypeScript/" style="font-size: 11.67px;">TypeScript</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/실행-컨텍스트/" style="font-size: 10px;">실행 컨텍스트</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a> <a href="/tags/자바스크립트/" style="font-size: 18.33px;">자바스크립트</a>
     </div>
 </div>
 
@@ -554,7 +561,7 @@
                 <span class="level-item">TypeScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -579,16 +586,35 @@
         
         <article class="media">
             
-            <a href="/2019/06/12/TypeScript-1/" class="media-left">
+            <a href="/2019/06/12/typeScript-2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript(1)">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (2)">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T03:59:33.000Z">2019-06-12</time></div>
-                    <a href="/2019/06/12/TypeScript-1/" class="has-link-black-ter is-size-6">TypeScript(1)</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:16:03.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-2/" class="has-link-black-ter is-size-6">TypeScript (2)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/typeScript-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (1)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:15:55.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-1/" class="has-link-black-ter is-size-6">TypeScript (1)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
                     </p>
@@ -653,25 +679,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/07/35-Closure/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="35. Closure">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-07T03:59:09.000Z">2019-06-07</time></div>
-                    <a href="/2019/06/07/35-Closure/" class="has-link-black-ter is-size-6">35. Closure</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -690,7 +697,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -1127,9 +1134,9 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/TypeSCript/">
-                        <span class="tag">TypeSCript</span>
-                        <span class="tag is-grey">1</span>
+                    <a class="tags has-addons" href="/tags/TypeScript/">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1394,7 +1401,7 @@
                 <span class="level-item">TypeScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1419,16 +1426,35 @@
         
         <article class="media">
             
-            <a href="/2019/06/12/TypeScript-1/" class="media-left">
+            <a href="/2019/06/12/typeScript-2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript(1)">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (2)">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T03:59:33.000Z">2019-06-12</time></div>
-                    <a href="/2019/06/12/TypeScript-1/" class="has-link-black-ter is-size-6">TypeScript(1)</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:16:03.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-2/" class="has-link-black-ter is-size-6">TypeScript (2)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/typeScript-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (1)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:15:55.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-1/" class="has-link-black-ter is-size-6">TypeScript (1)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
                     </p>
@@ -1493,25 +1519,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/07/35-Closure/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="35. Closure">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-07T03:59:09.000Z">2019-06-07</time></div>
-                    <a href="/2019/06/07/35-Closure/" class="has-link-black-ter is-size-6">35. Closure</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1530,7 +1537,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -1967,9 +1974,9 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/TypeSCript/">
-                        <span class="tag">TypeSCript</span>
-                        <span class="tag is-grey">1</span>
+                    <a class="tags has-addons" href="/tags/TypeScript/">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 

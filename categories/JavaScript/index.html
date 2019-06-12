@@ -504,6 +504,7 @@
 </li>
 <li><p>정규표현식 리터럴 표기법</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 정규표현식 리터럴</span></span><br><span class="line">/ab+c/</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <p>등을 사용해서 리터럴을 생성하고, 리터럴은 평가되어 값이 된다.</p>
@@ -561,6 +562,7 @@
 <h2 id="7-Lexical-Scope"><a href="#7-Lexical-Scope" class="headerlink" title="7. Lexical Scope"></a>7. Lexical Scope</h2><p>자바스크립트의 스코프는 Lexical Scope (Static Scope)로 함수를 어디서 정의했는지에 따라서 함수의 상위 스코프를 결정한다고 했다. 함수가 호출된 위치에 따라서 스코프가 결정되는 것은 Dynamic Scope이다.</p>
 <p>자바스크립트는 렉시컬 스코프를 따르므로 모든 함수 정의가 평가되어 함수 객체를 생성할 때, 자신이 정의된 스코프를 기억한다. 함수가 기억하는 것은 Lexical Enviromnent인데, 함수 객체의 내부 슬롯 <code>[[Environment]]</code>에 저장한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">var</span> x = <span class="hljs-number">10</span>;</span><br><span class="line">  bar();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(); <span class="hljs-comment">// 1</span></span><br><span class="line">bar(); <span class="hljs-comment">// 1</span></span><br></pre></td></tr></table></figure>
+
 <p>bar() 함수는 foo() 함수 내부에서 호출되었으나, 전역에서 선언되었기 때문에 전역 스코프의 x =1을 우선 찾는다.</p>
 <h2 id="8-전역-변수의-문제점"><a href="#8-전역-변수의-문제점" class="headerlink" title="8. 전역 변수의 문제점"></a>8. 전역 변수의 문제점</h2><ul>
 <li><p><strong>암묵적 결합</strong></p>
@@ -619,6 +621,7 @@
 <li>생성자 함수의 역할은 프로퍼티 구조가 동일한 인스턴스를 생성하기 위한 템플릿(클래스)으로서 동작하여 <strong>인스턴스를 생성</strong> 하는 것과 <strong>생성된 인스턴스의 프로퍼티 값을 초기화</strong>하는 것이다.</li>
 </ul>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Circle</span>(<span class="hljs-params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-comment">// 1. 암묵적으로 빈 객체가 생성되고 this에 바인딩된다.</span></span><br><span class="line"></span><br><span class="line">  <span class="hljs-comment">// 2. 생성된 빈 객체를 가리키는 this를 사용하여 프로퍼티나 메소드를 추가하고 초기화한다.</span></span><br><span class="line">  <span class="hljs-keyword">this</span>.radius = radius;</span><br><span class="line">  <span class="hljs-keyword">this</span>.getDiameter = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">2</span> * <span class="hljs-keyword">this</span>.radius;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-comment">// 3. 암묵적으로 this를 반환한다.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 인스턴스 생성. Circle 생성자 함수는 암묵적으로 this를 반환한다.</span></span><br><span class="line"><span class="hljs-keyword">const</span> circle = <span class="hljs-keyword">new</span> Circle(<span class="hljs-number">1</span>);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(circle); <span class="hljs-comment">// Circle &#123;radius: 1, getDiameter: ƒ&#125;</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>생성자 함수 내부에서 명시적으로 this가 아닌 다른 값을 반환하는 것은 생성자 함수의 기본 동작을 훼손한다. 따라서 <strong>생성자 함수 내부에서 return 문을 반드시 생략해야 한다.</strong></li>
 </ul>
@@ -631,8 +634,7 @@
 <th>this가 가리키는 객체</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>일반 함수로서 호출</td>
 <td>전역 객체</td>
 </tr>
@@ -644,8 +646,7 @@
 <td>생성자 함수로서 호출</td>
 <td>생성자 함수가(미래에) 생성할 인스턴스</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <ul>
 <li><p>화살표 함수의 this는 언제나 상위 스코프의 this를 가리킨다. </p>
 </li>
@@ -740,6 +741,7 @@
 <p>클래스는 상속을 빼놓고 말할 수 없다. 상속이란 객체지향의 핵심적인 기능으로, 클래스는 상속을 지원한다.</p>
 <p>클래스의 기본적인 문법은 아래와 같다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// constructor</span></span><br><span class="line">    <span class="hljs-keyword">constructor</span>(name) &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>._name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-comment">// default method definition: class's prototype method</span></span><br><span class="line">    sayHello() &#123;</span><br><span class="line">        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Hi! <span class="hljs-subst">$&#123;<span class="hljs-keyword">this</span>._name&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> mimi = <span class="hljs-keyword">new</span> Student(<span class="hljs-string">'Mimi'</span>);</span><br><span class="line">mimi.sayHello(); <span class="hljs-comment">// Hi! Mimi</span></span><br></pre></td></tr></table></figure>
+
 <p>클래스 정의 내부에는 최대 한 개의 constructor가 필요하며 constructor를 생략할 경우에 default connstructir() {}가 실행되어 인스턴스 생성시 빈 객체가 생성된다. constructor는 인스턴스를 생성하고 클래스 필드를 초기화하는 특수한 메소드이다.</p>
 <h4 id="Class-Field"><a href="#Class-Field" class="headerlink" title="Class Field"></a>Class Field</h4><p>클래스 내부에는 메소드만 선언한다. 모든 프로퍼티(인스턴스의 멤버 변수)는 constructor 내부에 선언한다. contstructor는 생성자 함수와 같이 this로 빈 객체를 생성해서 프로퍼티를 추가하고 this를 리턴한다.</p>
 <h4 id="Class-Hoisting"><a href="#Class-Hoisting" class="headerlink" title="Class Hoisting"></a>Class Hoisting</h4><p>Class는 <code>let</code>이나 <code>const</code>와 같이 <strong>호이스팅 되지 않는 것처럼</strong> 동작한다. 선언 이전에 참조하면 ReferenceError가 발생한다.</p>
@@ -755,6 +757,7 @@
 <li><p>super 클래스가 메소드로 사용될 때는 parent 클래스의 constructor를 호출한다. <strong>child 클래스의 constructor에서 super()를 호출하지 않으면 this에 대한 ReferenceError가 발생한다.</strong></p>
 <p>child 클래스의 인스턴스를 만들 때 parent 클래스의 인스턴스를 우선 만들고 상속한다. </p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// parent 클래스의 constructor를 호출한다.</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cylinder</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Circle</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">constructor</span>(radius, height) &#123;</span><br><span class="line">    <span class="hljs-comment">// super가 parent class의 constructor처럼 사용됨</span></span><br><span class="line">    <span class="hljs-keyword">super</span>(radius);</span><br><span class="line">    <span class="hljs-keyword">this</span>.height = height;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
 <p><img src="https://user-images.githubusercontent.com/48080762/58225537-6c111480-7d5d-11e9-9cbb-45fc8d66a2ff.png" alt="super"></p>
 <p>ECMAScript의 스펙을 살펴보면 super가 argument를 전달받으며 호출될 때</p>
 <ol>
@@ -764,6 +767,9 @@
 </li>
 <li><p>super 클래스가 객체로 사용될 때는 parent 클래스를 참조한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// super가 parent class Circle처럼 사용됨</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// parent class Circle의 getArea overriding</span></span><br><span class="line">  getArea() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> (<span class="hljs-keyword">this</span>.height * <span class="hljs-keyword">super</span>.getPerimeter()) + (<span class="hljs-number">2</span> * <span class="hljs-keyword">super</span>.getArea());</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-comment">// 자신의 메소드 정의</span></span><br><span class="line">  getVolume() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.getArea() * <span class="hljs-keyword">this</span>.height;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 </li>
 </ol>
 <h2 id="18-Prototype"><a href="#18-Prototype" class="headerlink" title="18. Prototype"></a>18. Prototype</h2><p><strong>상속 (inheritance)</strong> : 객체지향 프로그래밍의 핵심 개념으로 부모 객체의 프로퍼티를 자식 개체가 상속받아 그대로 사용할 수 있는 것을 말한다.</p>
@@ -773,43 +779,41 @@
 <li>동일한 프로퍼티 구조를 갖는 객체를 여러개 만들 때 모든 인스턴스가 동일한 메소드를 중복 소유하는 것은 <strong>메모리적 관점에서 비효율적</strong>이기 때문이다. 상속을 사용하면 하나의 프로토타입을 생성해 모든 인스턴스가 공유할 수 있다.</li>
 <li>인스턴스를 생성할 때마다 메소드를 생성하므로 <strong>퍼포먼스적으로 비효율적</strong>이다. 상속은 코드의 재사용이란 관점에서 유용하다. 공통적으로 사용할 프로퍼티나 메소드를 프로토타입에 미리 구현해놓으면 생성되는 인스턴스는 메소드 생성 없이 미리 구현된 프로토타입의 프로퍼티를 사용할 수 있다.</li>
 </ol>
-<h4 id="proto-amp-prototype-property"><a href="#proto-amp-prototype-property" class="headerlink" title="__proto__ &amp; prototype property"></a>__proto__ &amp; prototype property</h4><p>모든 객체는 <code>[[Prototype]]</code> 내부슬롯에 자신의 프로토타입을 가지고, 접근하기 위해서 __proto__ 접근자 프로퍼티를 사용한다. </p>
-<p>함수 객체는 __proto__ 접근자 프로퍼티 외에 prorotype 프로퍼티도 소유하는데, 이 둘을 헷갈리면 안된다.</p>
+<h4 id="proto-amp-prototype-property"><a href="#proto-amp-prototype-property" class="headerlink" title="_proto_ &amp; prototype property"></a>_<em>proto_</em> &amp; prototype property</h4><p>모든 객체는 <code>[[Prototype]]</code> 내부슬롯에 자신의 프로토타입을 가지고, 접근하기 위해서 _<em>proto_</em> 접근자 프로퍼티를 사용한다. </p>
+<p>함수 객체는 _<em>proto_</em> 접근자 프로퍼티 외에 prorotype 프로퍼티도 소유하는데, 이 둘을 헷갈리면 안된다.</p>
 <p>__proto__는 모든 객체가 가지는 자신의 프로토타입 접근자 프로퍼티이고, prototype 프로퍼티는 함수 객체가 자신이 생성할 인스턴스에 할당하는 프로토타입이다.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">구분</th>
-<th style="text-align:center">prototype 프로퍼티</th>
-<th style="text-align:center">__proto__ 접근자 프로퍼티</th>
+<th align="center">구분</th>
+<th align="center">prototype 프로퍼티</th>
+<th align="center">_<em>proto_</em> 접근자 프로퍼티</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">소유</td>
-<td style="text-align:center">함수 객체</td>
-<td style="text-align:center">모든 객체</td>
+<tbody><tr>
+<td align="center">소유</td>
+<td align="center">함수 객체</td>
+<td align="center">모든 객체</td>
 </tr>
 <tr>
-<td style="text-align:center">값</td>
-<td style="text-align:center">프로토타입의 참조값</td>
-<td style="text-align:center">프로토타입의 참조값</td>
+<td align="center">값</td>
+<td align="center">프로토타입의 참조값</td>
+<td align="center">프로토타입의 참조값</td>
 </tr>
 <tr>
-<td style="text-align:center">사용 주체</td>
-<td style="text-align:center">생성자 함수</td>
-<td style="text-align:center">모든 객체</td>
+<td align="center">사용 주체</td>
+<td align="center">생성자 함수</td>
+<td align="center">모든 객체</td>
 </tr>
 <tr>
-<td style="text-align:center">사용 목적</td>
-<td style="text-align:center">자신이 생성할 객체의 프로토타입을 할당하기 위해 사용</td>
-<td style="text-align:center">자신의 프로토타입에 접근하기 위해서 사용</td>
+<td align="center">사용 목적</td>
+<td align="center">자신이 생성할 객체의 프로토타입을 할당하기 위해 사용</td>
+<td align="center">자신의 프로토타입에 접근하기 위해서 사용</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>프로토타입은 생성자 함수가 생성되는 시점에 함께 생성된다.</p>
 <h4 id="Prototype-Chain"><a href="#Prototype-Chain" class="headerlink" title="Prototype Chain"></a>Prototype Chain</h4><p><img src="https://user-images.githubusercontent.com/48080762/57827738-7f633380-77e3-11e9-92b8-ccf1ba0c77ab.png" alt="Prototype Chain"></p>
-<p>자바스크립트 엔진은 객체의 프로퍼티에 접근하려고 할 때 해당 객체에서 우선 프로퍼티를 검색하고, 없으면 __proto__ 접근자 프로퍼티가 가리키는 프로토타입 객체의 프로퍼티를 순차적으로 검색한다. </p>
+<p>자바스크립트 엔진은 객체의 프로퍼티에 접근하려고 할 때 해당 객체에서 우선 프로퍼티를 검색하고, 없으면 _<em>proto_</em> 접근자 프로퍼티가 가리키는 프로토타입 객체의 프로퍼티를 순차적으로 검색한다. </p>
 <p>이렇게 연결된 프로토타입들을 프로토타입 체인이라고 한다. <strong>프로토타입 체인은 자바스크립트가 객체 지향 프로그래밍의 상속을 구현하는 메커니즘</strong>이다.</p>
 <p>프로토타입 체인의 최상위에 위치하는 객체는 언제나 Object.prototype이다. Object.prototype을 프로토 타입 체인의 종점(End ofprototype chain)이라고 한다. </p>
 <p>프로퍼티 체인의 끝까지 올라가 검색했는데도 프로퍼티를 찾지 못 할 경우 에러가 아니라 <code>undefined</code>를 리턴한다.</p>
@@ -826,6 +830,7 @@
 </ol>
 <p>이러한 콜백의 단점을 보완하기 위해서 ES6에서 Promise를 도입했다.</p>
 <h4 id="Promise-생성"><a href="#Promise-생성" class="headerlink" title="Promise 생성"></a>Promise 생성</h4><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> promise = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="hljs-comment">// Asynchronous process</span></span><br><span class="line">	<span class="hljs-keyword">if</span> (<span class="hljs-comment">/* Asynchronous process Fulilled */</span>) &#123;</span><br><span class="line">        resolve(<span class="hljs-string">'result'</span>);</span><br><span class="line">    &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">        <span class="hljs-comment">/* Asynchronous process Rejected */</span></span><br><span class="line">        reject(<span class="hljs-string">'failure reason'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>Promise constructor function은 비동기 작업을 수행할 callback 함수를 argument로 전달받는다. 이 callback 함수는 resolve, reject 함수를 argument로 전달받는다.</p>
 <p>resolve 함수는 argument로 실행 결과를 전달하며 호출, reject 함수는 argument로 에러 메시지를 전달하며 호출한다.</p>
 <h4 id="Promise-후속-처리"><a href="#Promise-후속-처리" class="headerlink" title="Promise 후속 처리"></a>Promise 후속 처리</h4><p>비동기 함수는 Promise 객체를 리턴해야 한다. 그러면 Promise 객체의 메소드인 then과 catch를 사용해서 후속 처리를 한다.</p>
@@ -994,7 +999,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        130
+                        131
                     </p>
                 </div>
             </div>
@@ -1107,7 +1112,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Babel/" style="font-size: 10px;">Babel</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 10px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 10px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 11.67px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Routing/" style="font-size: 10px;">Routing</a> <a href="/tags/SPA/" style="font-size: 10px;">SPA</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Single-Page-Application/" style="font-size: 10px;">Single Page Application</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/TypeSCript/" style="font-size: 10px;">TypeSCript</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/실행-컨텍스트/" style="font-size: 10px;">실행 컨텍스트</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a> <a href="/tags/자바스크립트/" style="font-size: 18.33px;">자바스크립트</a>
+        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.67px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Babel/" style="font-size: 10px;">Babel</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.67px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 10px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 10px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 11.67px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Routing/" style="font-size: 10px;">Routing</a> <a href="/tags/SPA/" style="font-size: 10px;">SPA</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Single-Page-Application/" style="font-size: 10px;">Single Page Application</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/TypeScript/" style="font-size: 11.67px;">TypeScript</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.67px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/실행-컨텍스트/" style="font-size: 10px;">실행 컨텍스트</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a> <a href="/tags/자바스크립트/" style="font-size: 18.33px;">자바스크립트</a>
     </div>
 </div>
 
@@ -1227,7 +1232,7 @@
                 <span class="level-item">TypeScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -1252,16 +1257,35 @@
         
         <article class="media">
             
-            <a href="/2019/06/12/TypeScript-1/" class="media-left">
+            <a href="/2019/06/12/typeScript-2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript(1)">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (2)">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T03:59:33.000Z">2019-06-12</time></div>
-                    <a href="/2019/06/12/TypeScript-1/" class="has-link-black-ter is-size-6">TypeScript(1)</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:16:03.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-2/" class="has-link-black-ter is-size-6">TypeScript (2)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/typeScript-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (1)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:15:55.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-1/" class="has-link-black-ter is-size-6">TypeScript (1)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
                     </p>
@@ -1326,25 +1350,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/07/35-Closure/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="35. Closure">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-07T03:59:09.000Z">2019-06-07</time></div>
-                    <a href="/2019/06/07/35-Closure/" class="has-link-black-ter is-size-6">35. Closure</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1363,7 +1368,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -1800,9 +1805,9 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/TypeSCript/">
-                        <span class="tag">TypeSCript</span>
-                        <span class="tag is-grey">1</span>
+                    <a class="tags has-addons" href="/tags/TypeScript/">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -2067,7 +2072,7 @@
                 <span class="level-item">TypeScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/git/">
@@ -2092,16 +2097,35 @@
         
         <article class="media">
             
-            <a href="/2019/06/12/TypeScript-1/" class="media-left">
+            <a href="/2019/06/12/typeScript-2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript(1)">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (2)">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T03:59:33.000Z">2019-06-12</time></div>
-                    <a href="/2019/06/12/TypeScript-1/" class="has-link-black-ter is-size-6">TypeScript(1)</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:16:03.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-2/" class="has-link-black-ter is-size-6">TypeScript (2)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/typeScript-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/typescript.png" alt="TypeScript (1)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T09:15:55.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/typeScript-1/" class="has-link-black-ter is-size-6">TypeScript (1)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
                     </p>
@@ -2166,25 +2190,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/07/35-Closure/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="35. Closure">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-07T03:59:09.000Z">2019-06-07</time></div>
-                    <a href="/2019/06/07/35-Closure/" class="has-link-black-ter is-size-6">35. Closure</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2203,7 +2208,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -2640,9 +2645,9 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/TypeSCript/">
-                        <span class="tag">TypeSCript</span>
-                        <span class="tag is-grey">1</span>
+                    <a class="tags has-addons" href="/tags/TypeScript/">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
