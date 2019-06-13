@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="TypeScript의 주요 기능 타입 선언 Class Interface">
+    <meta name="description" content="TypeScript의 주요 기능 타입 선언 Class Interface Generic">
 <meta name="keywords" content="TypeScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TypeScript (2)">
 <meta property="og:url" content="https://sub2n.github.io/2019/06/12/TypeScript-2/index.html">
 <meta property="og:site_name" content="수빈 개발블로그">
-<meta property="og:description" content="TypeScript의 주요 기능 타입 선언 Class Interface">
+<meta property="og:description" content="TypeScript의 주요 기능 타입 선언 Class Interface Generic">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/typescript.png">
-<meta property="og:updated_time" content="2019-06-13T05:29:14.450Z">
+<meta property="og:updated_time" content="2019-06-13T05:52:54.353Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TypeScript (2)">
-<meta name="twitter:description" content="TypeScript의 주요 기능 타입 선언 Class Interface">
+<meta name="twitter:description" content="TypeScript의 주요 기능 타입 선언 Class Interface Generic">
 <meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/typescript.png">
 
 
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    9 minutes read (About 1318 words)
+                    11 minutes read (About 1664 words)
                 </span>
                 
                 
@@ -187,6 +187,7 @@
 <li><a href="https://sub2n.github.io/2019/06/12/TypeScript-2/#Type-Declaration">타입 선언</a></li>
 <li><a href="https://sub2n.github.io/2019/06/12/TypeScript-2/#Class">Class</a></li>
 <li><a href="https://sub2n.github.io/2019/06/12/TypeScript-2/#Interface">Interface</a></li>
+<li><a href="https://sub2n.github.io/2019/06/12/TypeScript-2/#Generic">Generic</a></li>
 </ol>
 <a id="more"></a>
 
@@ -246,6 +247,15 @@
 <h3 id="5-Optional-Property-in-Interface"><a href="#5-Optional-Property-in-Interface" class="headerlink" title="5. Optional Property in Interface"></a>5. Optional Property in Interface</h3><p>Interface 내부에서 <code>?</code>가 붙은 property는 구현을 생략해도 된다.</p>
 <figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">interface</span> StudentInfo &#123;</span><br><span class="line">	name: <span class="hljs-built_in">string</span>;</span><br><span class="line">	<span class="hljs-built_in">number</span>: <span class="hljs-built_in">string</span>;</span><br><span class="line">	age? : <span class="hljs-built_in">number</span>;</span><br><span class="line">	address? : <span class="hljs-built_in">string</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="Generic"><a href="#Generic" class="headerlink" title="Generic"></a>Generic</h2><p>C나 C++ 등 정적 타입 언어에서는 함수 또는 클래스를 정의할 때 parameter나 return 값의 타입을 선언해야 한다. TypeScript도 정적 타입 언어이므로 정의 시점에 타입을 선언해야하는데, 함수 또는 클래스를 정의할 때 parameter나 return type을 선언하기 어려운 경우가 있다.</p>
+<p>TypeScript는 선언시 타입을 지정하지 않으면 any타입이 되어 type check를 할 수 없게 된다. Stack이나 Queue를 구현하는 경우 배열에 어떤 type을 담을 것인지 정의할 때 확정짓기 어렵다. 이런 경우에 Generic을 사용한다.</p>
+<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">class</span> Stack&lt;T&gt; &#123;</span><br><span class="line">  <span class="hljs-keyword">protected</span> data: <span class="hljs-built_in">Array</span>&lt;T&gt; = [];</span><br><span class="line">  push(item: T) &#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.data.push(item);</span><br><span class="line">  &#125;</span><br><span class="line">  pop(): T &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.data.pop();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>위의 class Stack을 정의할 때 타입을 따로 지정하지 않고 <code>&lt;T&gt;</code>를 사용했다. <code>&lt;T&gt;</code>는 Type Paremeter이며 Type의 약자이다. 어느 type이던 사용할 수 있음을 의미한다. </p>
+<p>Generic은 선언 시점이 아니라 생성 시점에 타이블 명시해서 다양항 타입을 사용할 수 있도록 하는 기법이다. </p>
+<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sort</span>&lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">items: T[]</span>): <span class="hljs-title">T</span>[] </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> items.sort();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>위는 함수에서 Generic을 사용한 것이다. 어떤 type으로 이루어지는지는 모르지만 배열을 parameter로 받아서 sorting한 배열을 리턴한다.</p>
 
         </div>
         
