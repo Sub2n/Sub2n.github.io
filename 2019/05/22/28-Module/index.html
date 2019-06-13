@@ -16,7 +16,7 @@
 <meta property="og:description" content="원래 모듈화를 하거나 파일을 분리하면 각 모듈, 파일 별로 개별적인 스코프를 가져야하는데 자바스크립트는 파일을 분리해서 함께 사용할 때 하나의 전역 스코프만을 가진다. 즉, 여러 개의 js 파일에서 식별자 명이 겹칠 경우 의도한 바와 다르게 동작할 수 있다. 이전에는 각 파일을 IIFE(Imediately Invoked Function Expression)">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
-<meta property="og:updated_time" content="2019-06-11T08:26:48.463Z">
+<meta property="og:updated_time" content="2019-06-13T01:51:59.980Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="28. Module">
 <meta name="twitter:description" content="원래 모듈화를 하거나 파일을 분리하면 각 모듈, 파일 별로 개별적인 스코프를 가져야하는데 자바스크립트는 파일을 분리해서 함께 사용할 때 하나의 전역 스코프만을 가진다. 즉, 여러 개의 js 파일에서 식별자 명이 겹칠 경우 의도한 바와 다르게 동작할 수 있다. 이전에는 각 파일을 IIFE(Imediately Invoked Function Expression)">
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 663 words)
+                    4 minutes read (About 664 words)
                 </span>
                 
                 
@@ -187,6 +187,8 @@
 <p>이전에는 각 파일을 IIFE(Imediately Invoked Function Expression)로 감쌌으나 근본적인 해결책은 아니다. 특정 클래스나 함수를 외부에 노출시키고 싶지 않을 때는 클로저를 사용해서 선택적으로 노출했다.</p>
 <p>ES6에서 클라이언트 사이드 자바스크립트에서도 동작하는 모듈 기능이 추가되었다. script tag에 <code>type=&quot;module&quot;</code> 어트리뷰트 추가시 해당 자바스크립트 파일은 모듈로 동작하며 파일 스코프를 가진다. 모듈화된 자바스크립트 파일을 사용할 때는 확장자 명을 <code>.mjs</code>라고 한다.</p>
 <p>그러나 아직까지 문법이 엄격하고 구형 브라우저(IE 등)에서는 ES6 모듈을 지원하지 않는 문제가 있다. 그러니까 아직은 바벨 / 웹팩 등을 사용해서 개발해야한다.</p>
+<a id="more"></a>
+
 <blockquote>
 <p>바벨: ES6 이상의 문법을 사용해서 코딩하더라도 ES5의 문법으로 다운그레이드해서 구형 브라우저에서 돌아갈 수 있게 함</p>
 <p>웹팩: 여러 파일을 import하면 하나의 파일로 압축해줌</p>
@@ -298,7 +300,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        131
+                        132
                     </p>
                 </div>
             </div>
@@ -523,7 +525,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">61</span>
+                <span class="level-item tag">62</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -553,6 +555,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/190612-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/rose.png" alt="190612-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T10:34:40.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/190612-TIL/" class="has-link-black-ter is-size-6">190612-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -630,25 +651,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/10/36-SPA/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="36. SPA">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-10T01:46:03.000Z">2019-06-10</time></div>
-                    <a href="/2019/06/10/36-SPA/" class="has-link-black-ter is-size-6">36. SPA</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -667,7 +669,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">12</span>
                 </span>
             </a>
         </li>
@@ -1099,7 +1101,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">62</span>
+                        <span class="tag is-grey">63</span>
                     </a>
                 </div>
                 
@@ -1363,7 +1365,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">61</span>
+                <span class="level-item tag">62</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -1393,6 +1395,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/190612-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/rose.png" alt="190612-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T10:34:40.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/190612-TIL/" class="has-link-black-ter is-size-6">190612-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1470,25 +1491,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/10/36-SPA/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="36. SPA">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-10T01:46:03.000Z">2019-06-10</time></div>
-                    <a href="/2019/06/10/36-SPA/" class="has-link-black-ter is-size-6">36. SPA</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1507,7 +1509,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">12</span>
                 </span>
             </a>
         </li>
@@ -1939,7 +1941,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">62</span>
+                        <span class="tag is-grey">63</span>
                     </a>
                 </div>
                 

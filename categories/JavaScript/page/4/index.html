@@ -181,7 +181,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    14 minutes read (About 2069 words)
+                    14 minutes read (About 2070 words)
                 </span>
                 
                 
@@ -196,100 +196,16 @@
         <div class="content">
             <h1 id="1-this-Keyword"><a href="#1-this-Keyword" class="headerlink" title="1. this Keyword"></a>1. this Keyword</h1><p>this는 객체가 자신의 프로퍼티나 메소드를 참조하기 위한 자기 참조 변수(Self-referencing variable)이다. 함수 호출시 arguments 객체와 this가 암묵적으로 함수 내부에 전달된다. arguments 객체와 this는 함수 내부에서 지역 변수처럼 사용할 수 있다. this가 가리키는 값은 <strong>함수 호출 방식에 의해 동적으로 결정</strong>된다.</p>
 <p>C++, Java와 같은 클래스 기반 언어에서 this는 항상 클래스로부터 생성되는 인스턴스를 가리킨다. 그러나 자바스크립트의 this는 함수가 호출되는 방식에 따라서 this에 바인딩될 객체가 동적으로 결정된다.</p>
-<blockquote>
-<h4 id="Binding"><a href="#Binding" class="headerlink" title="Binding"></a>Binding</h4><p>바인딩이란 식별자와 값을 연결하는 과정을 의미한다.</p>
-</blockquote>
-<p>객체 리터럴은 할당 단계에 평가되므로 객체의 식별자를 this 대신 사용할 수 있지만, 일반적이지 않다. 생성자를 이용해서 객체를 생성할 때는 인스턴트를 가리킬 식별자를 미리 알 수 없기 때문이다.</p>
-<p>this는 객체의 프로퍼티나 메소드를 참조하기 위한 변수이므로 객체의 메소드 또는 생성자 함수에서만 의미가 있다. strict mode가 적용된 일반 함수 내부의 this에는 undefined가 바인딩 된다. 적용되지 않을 경우 일반 함수 내부에서 this는 전역 객체 window를 가리킨다.</p>
-<blockquote>
-<h4 id="strict-mode"><a href="#strict-mode" class="headerlink" title="strict mode"></a>strict mode</h4><p>‘use strict’;  strict mode는 자바스크립트 언어의 문법을 보다 엄격히 적용하여 기존에는 무시되던 오류를 발생시킬 가능성이 높거나 자바스크립트 엔진의 최적화 작업에 문제를 일으킬 수 있는 코드에 대해 명시적인 에러를 발생시킨다.</p>
-</blockquote>
-<h1 id="2-Function-call-types-and-this-Binding"><a href="#2-Function-call-types-and-this-Binding" class="headerlink" title="2. Function call types and this Binding"></a>2. Function call types and this Binding</h1><p><strong>스코프</strong>의 경우 렉시컬 스코프(Lexical Scope)는 <strong>함수 정의가 평가되어 함수 객체가 생성되는 시점</strong>에 상위 스코프가 결정된다. <strong>this</strong>에 바인딩될 객체는 <strong>함수 호출 시점</strong>에 결정된다.</p>
-<p>함수 호출 방식은 다음과 같다.</p>
-<ol>
-<li>일반 함수 호출 : this는 window</li>
-<li>메소드 호출 : this는 메소드를 호출한 객체</li>
-<li>생성자 함수 호출 : this는 생성할 instance</li>
-<li>Function.prototype.apply/call/bind 메소드에 의한 간접 호출</li>
-</ol>
-<h2 id="2-1-General-Function-Call"><a href="#2-1-General-Function-Call" class="headerlink" title="2.1. General Function Call"></a>2.1. General Function Call</h2><p><strong>일반 함수로 호출된 함수 내부의 this</strong>에는 <strong>전역 객체(Global Object)</strong>가 바인딩된다.</p>
-<p>전역 함수는 물론 <strong>중첩 함수를 일반 함수로 호출했을 때에도 함수 내부의 this에는 전역 객체가 바인딩</strong>된다. 일반 함수에서는 this로 객체의 프로퍼티나 메소드를 참조할 일이 없으므로 this에 의미가 없다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'foo this: '</span>, <span class="hljs-keyword">this</span>);	<span class="hljs-comment">// window</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'bar this: '</span>, <span class="hljs-keyword">this</span>);	<span class="hljs-comment">// window</span></span><br><span class="line">    &#125;</span><br><span class="line">    bar();</span><br><span class="line">&#125;</span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
-
-<p>메소드 내에서 정의한 중첩 함수일지라도 <strong>일반 함수로 호출되면 중첩 함수의 this는 전역 객체</strong>이다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> obj = &#123;</span><br><span class="line">  foo() &#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'foo this: '</span>, <span class="hljs-keyword">this</span>);	<span class="hljs-comment">// &#123;foo: f&#125;</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'bar this: '</span>, <span class="hljs-keyword">this</span>);	<span class="hljs-comment">// window</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-comment">// 메소드 내부에서 정의한 중첩 함수라도 일반 함수로 호출하면 this에 전역 객체가 바인딩된다.</span></span><br><span class="line">    bar();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.foo();</span><br></pre></td></tr></table></figure>
-
-<p>마찬가지로 콜백 함수 내부의 this에도 전역 객체가 바인딩된다. 정리하면 일반 함수로 호출된 모든 함수(중첩 함수, 콜백 함수 포함) 내부의 this에는 전역 객체가 바인딩된다.</p>
-<p>메소드 내부의 중첩 함수나 콜백 함수의 this 바인딩을 메소드의 this 바인딩과 일치시키기 위한 방법은 다음과 같다.</p>
-<ol>
-<li><p>this를 변수에 저장하고 콜백 함수의 this를 변수로 대체 </p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> obj = &#123;</span><br><span class="line">  value: <span class="hljs-number">100</span>,</span><br><span class="line">  foo() &#123;</span><br><span class="line">    cosnt that = <span class="hljs-keyword">this</span>;</span><br><span class="line">    setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">        <span class="hljs-built_in">console</span>.log(that.value); <span class="hljs-comment">// 100</span></span><br><span class="line">    &#125;, <span class="hljs-number">100</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="2">
-<li><p>Function.prototype.apply, Function.prototype.call, Function.prototype.bind 메소드 이용</p>
- <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> obj = &#123;</span><br><span class="line">  value: <span class="hljs-number">100</span>,</span><br><span class="line">  foo() &#123;</span><br><span class="line">    <span class="hljs-comment">// bind method의 argument를 콜백 함수의 this로 바인딩한다.</span></span><br><span class="line">    setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.value); <span class="hljs-comment">// 100</span></span><br><span class="line">    &#125;.bind(<span class="hljs-keyword">this</span>), <span class="hljs-number">100</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h2 id="2-2-Method-Call"><a href="#2-2-Method-Call" class="headerlink" title="2.2. Method Call"></a>2.2. Method Call</h2><p><strong>메소드 내부의 this는 메소드를 호출한 객체</strong>, 즉 메소드 호출시 (.) 연산자 앞에 오는 객체에 바인딩된다.</p>
-<p>메소드를 소유한 객체가 아닌, 메소드를 호출한 객체에 바인딩된다는 것을 주의해야 한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.getName = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.name;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> me = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">'Park'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> you = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Kim'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">you.getName = me.getName;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(me.getName()); <span class="hljs-comment">// "Park"</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(you.getName()); <span class="hljs-comment">// "Kim"</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="2-3-Constructor-Function-Call"><a href="#2-3-Constructor-Function-Call" class="headerlink" title="2.3. Constructor Function Call"></a>2.3. Constructor Function Call</h2><p>생성자 함수 내부의 this에는 생성자 함수가 생성할 instance가 바인딩된다.</p>
-<p>생성자 함수는 객체(instance)를 생성하는 함수로, new 연산자와 함께 호출되면 빈 객체를 만들고 this에 바인딩한다. 연산을 하며 this 객체를 완성시킨 후 this를 리턴한다.</p>
-<p>함수가 new 연산자와 함께 호출되지 않아 일반 함수로 동작할 경우 this는 전역 객체를 가리킨다.</p>
-<h2 id="2-4-Indirect-Call-by-Function-prototype-apply-call-bind-method"><a href="#2-4-Indirect-Call-by-Function-prototype-apply-call-bind-method" class="headerlink" title="2.4. Indirect Call by Function.prototype.apply / call / bind method"></a>2.4. Indirect Call by Function.prototype.apply / call / bind method</h2><h3 id="apply-call"><a href="#apply-call" class="headerlink" title="apply, call"></a>apply, call</h3><p>Function.prototype의 메소드 apply와 call은 argument로 this와 arguments list를 전달받아 함수를 호출한다. Function 생성자 함수를 constructor 프로퍼티로 가리키는 모든 함수가 Function.prototype.apply와 call을 상속받아 사용할 수 있다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 주어진 this 바인딩과 인수 리스트 배열을 사용하여 함수를 호출한다.</span></span><br><span class="line"><span class="hljs-comment"> * @param thisArg - this로 사용될 객체</span></span><br><span class="line"><span class="hljs-comment"> * @param argsArray - 함수에게 전달할 인수 리스트 배열</span></span><br><span class="line"><span class="hljs-comment"> * @returns 호출된 함수의 반환값</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-built_in">Function</span>.prototype.apply(thisArg, [argsArray]))</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 주어진 this 바인딩과 인수 리스트를 사용하여 함수를 호출한다.</span></span><br><span class="line"><span class="hljs-comment"> * @param thisArg - this로 사용될 객체</span></span><br><span class="line"><span class="hljs-comment"> * @param arg1, arg2, ... - 함수에게 전달할 인수 리스트</span></span><br><span class="line"><span class="hljs-comment"> * @returns 호출된 함수의 반환값</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-built_in">Function</span>.prototype.call(thisArg, arg1, arg2, ...))</span><br></pre></td></tr></table></figure>
-
-<p>두 메소드의 차이는,</p>
-<ul>
-<li>apply 메소드는 호출할 함수의 arguments를 배열로 묶어 전달한다.</li>
-<li>call 메소드는 호출할 함수의 arguments를 쉼표로 구분한 리스트 형식으로 전달한다.</li>
-</ul>
-<p>apply와 call은 호출할 함수에 argument를 전달하는 방식만 다를 뿐, this로 사용할 객체와 argument를 전달하며 함수를 호출한다.</p>
-<h4 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h4><p>bind 메소드는 메소드의 this와, 메소드 내부의 중첩함수 또는 콜백 함수의 this가 불일치하는 문제를 해결할 때 사용된다. 콜백 함수 foo는 외부 함수 callName을 돕는 헬퍼 함수(보조 함수)의 역할을 해야하기 때문에 외부 함수 내부의 this와 콜백함수 내부의 this가 다르면 문제가 발생한다.</p>
-<p>이 때 bind 메소드를 사용해서 this를 일치시킨다. apply와 call 메소드 또한 사용할 수 있다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.callName = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">callback</span>) </span>&#123;</span><br><span class="line">    callback.bind(<span class="hljs-keyword">this</span>)();</span><br><span class="line">    <span class="hljs-comment">// callback.apply(this);</span></span><br><span class="line">    <span class="hljs-comment">// callback.apply(this);</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>bind로 this를 전달한 callback을 실행할 수도 있고, apply나 call로 this를 전달하며 동시에 호출할 수도 있다.</p>
-<p>정리하면 this 바인딩은 다음과 같이 실행된다.</p>
-<table>
-<thead>
-<tr>
-<th align="center">함수 호출 방식</th>
-<th align="center">this 바인딩</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">일반 함수 호출</td>
-<td align="center">전역 객체</td>
-</tr>
-<tr>
-<td align="center">메소드 호출</td>
-<td align="center">메소드를 호출한 객체</td>
-</tr>
-<tr>
-<td align="center">생성자 함수 호출</td>
-<td align="center">생성자 함수가 생성할 instance</td>
-</tr>
-<tr>
-<td align="center">Function.prototype.apply/call/bind 메소드에 의한 간접 호출</td>
-<td align="center">Function.prototype.apply/call/bind 메소드에 argument로 전달한 객체</td>
-</tr>
-</tbody></table>
-<h2 id="3-this-in-Arrow-Function"><a href="#3-this-in-Arrow-Function" class="headerlink" title="3. this in Arrow Function"></a>3. this in Arrow Function</h2><p>일반 함수는 함수를 선언할 때 this에 바인딩할 객체가 정적으로 결정되는 것이 아니고, 함수를 호출할 때 함수가 어떻게 호출되었는지에 따라 this에 바인딩할 객체가 동적으로 결정된다.</p>
-<p>화살표 함수는 <strong>함수를 선언할 때 this에 바인딩할 객체가 정적으로 결정</strong>된다. 동적으로 결정되는 일반 함수와는 달리 <strong>화살표 함수의 this 언제나 상위 스코프의 this를 가리킨다.</strong> 이를 <strong>Lexical this</strong>라 한다. </p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$completedAll.addEventListener(<span class="hljs-string">'click'</span>, (e) =&gt; &#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>); <span class="hljs-comment">// window</span></span><br><span class="line">    completeAllTodos(e.target);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$completedAll.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>); <span class="hljs-comment">// $completedAll</span></span><br><span class="line">    completeAllTodos(e.target);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
-
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/05/15/20-this/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -324,7 +240,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6 minutes read (About 949 words)
+                    6 minutes read (About 950 words)
                 </span>
                 
                 
@@ -344,55 +260,16 @@
 <li><p>server side 환경에서는 global 객체</p>
 </li>
 </ul>
-<p>전역 객체는</p>
-<ul>
-<li>개발자가 의도적으로 생성할 수 없다.</li>
-<li>전역 객체의 프로퍼티를 참조할 때 window를 생략할 수 있다.</li>
-<li>전역 객체는 Object, String, Number,Boolean, Function, Array RegExp, Date, Math, Promise 등 모든 built-in 객체를 프로퍼티로 가지고 있다.</li>
-<li>브라우저의 window 객체는 DOM, BOM, Canvas, XMLHttpRequest, Fetch, SVG, Web Storage 등 Client side Web API를 프로퍼티로 소유한다.</li>
-<li>var 키워드로 선언한 전역 변수와 암묵적 전역 변수, 전역 함수는 전역 객체의 프로퍼티가 된다. (단, let이나 const 키워드로 선언한 전역 변수는 전역 객체  window의 프로퍼티가 아니다.)</li>
-<li>전역 객체의 프로퍼티와 메소드는 window를 생략하고 참조/호출 할 수 있으므로 전역 함수처럼 사용할 수 있다.</li>
-</ul>
-<h1 id="1-Global-Property"><a href="#1-Global-Property" class="headerlink" title="1. Global Property"></a>1. Global Property</h1><p>전역 프로퍼티는 전역 객체의 프로퍼티이다.</p>
-<h2 id="1-1-Infinity"><a href="#1-1-Infinity" class="headerlink" title="1.1. Infinity"></a>1.1. Infinity</h2><p>Infinity 프로퍼티는 양/음의 무한대를 나타내는 Number Infinity를 갖는다. 숫자를 0으로 나누면 NaN이 될 것 같지만 무한대를 나타낸다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">4</span>/<span class="hljs-number">0</span>);	<span class="hljs-comment">// Infinity</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">4</span>/<span class="hljs-number">-0</span>);	<span class="hljs-comment">// -Infinity</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-literal">Infinity</span>);	<span class="hljs-comment">// number</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="1-2-NaN"><a href="#1-2-NaN" class="headerlink" title="1.2. NaN"></a>1.2. NaN</h2><p>NaN(Not-a-Number) 프로퍼티는 숫자가 아님을 나타내는 Number NaN을 갖는다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Number</span>(<span class="hljs-string">'string'</span>));	<span class="hljs-comment">// NaN</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> * <span class="hljs-string">'string'</span>); <span class="hljs-comment">// NaN</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-literal">NaN</span>);	<span class="hljs-comment">// number</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="1-3-undefined"><a href="#1-3-undefined" class="headerlink" title="1.3. undefined"></a>1.3. undefined</h2><p>undefined 프로퍼티는 primitive type undefined를 값으로 갖는다.</p>
-<h1 id="2-Global-Function"><a href="#2-Global-Function" class="headerlink" title="2. Global Function"></a>2. Global Function</h1><p>전역 함수는 전역 객체의 메소드이다. 애플리케이션 전역에서 호출할 수 있다.</p>
-<h2 id="2-1-eval"><a href="#2-1-eval" class="headerlink" title="2.1. eval"></a>2.1. eval</h2><p>문자열로 코드를 주면 그 코드를 실행하는데, 평가시 자신의 스코프를 만들고 상위 스코프로 변형시켜 비용이 많이 든다.</p>
-<h2 id="2-2-isFinite"><a href="#2-2-isFinite" class="headerlink" title="2.2. isFinite"></a>2.2. isFinite</h2><p>parameter에 전달된 값이 정상적인 유한수인지 검사해서 Boolean을 리턴한다. 숫자가 아닌 값 전달받으면 숫자 타입으로 변환 후 검사를 수행한다.</p>
-<h2 id="2-3-isNaN"><a href="#2-3-isNaN" class="headerlink" title="2.3. isNaN"></a>2.3. isNaN</h2><p>parameter에 전달된 값이 NaN인지 검사해서 Boolean을 리턴한다. 숫자가 아닌 값 전달받으면 숫자 타입으로 변환 후 검사를 수행한다.</p>
-<h2 id="2-4-parseFloat"><a href="#2-4-parseFloat" class="headerlink" title="2.4. parseFloat"></a>2.4. parseFloat</h2><p>parameter에 전달된 <strong>String을 부동소숫점 숫자(floating point number)로</strong> 변환하여 반환한다.</p>
-<h2 id="2-5-parseInt"><a href="#2-5-parseInt" class="headerlink" title="2.5. parseInt"></a>2.5. parseInt</h2><p>parameter에 전달된 <strong>String을 정수형 숫자(Integer)로</strong> parsing하여 리턴한다. 리턴값은 10진수이다.</p>
-<p>10진수 숫자를 10진수가 아닌 수의 문자열로 변환하고 싶을 때는 Number.prototype.toString 메소드를 사용한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> x = <span class="hljs-number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(x.toString(<span class="hljs-number">2</span>));	<span class="hljs-comment">// '1010'</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(x.toString(<span class="hljs-number">8</span>));	<span class="hljs-comment">// '12'</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(x.toString(<span class="hljs-number">16</span>));	<span class="hljs-comment">// 'a'</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(x.toString());	<span class="hljs-comment">// '10'</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="2-6-encodeURI-decodeURI"><a href="#2-6-encodeURI-decodeURI" class="headerlink" title="2.6. encodeURI / decodeURI"></a>2.6. encodeURI / decodeURI</h2><p>encodeURI 함수는 paremeter로 전달된 URI(Uniform Resource Identifier)를 인코딩한다.</p>
-<blockquote>
-<h4 id="URI-Uniform-Resource-Identifier"><a href="#URI-Uniform-Resource-Identifier" class="headerlink" title="URI (Uniform Resource Identifier)"></a>URI (Uniform Resource Identifier)</h4><p>인터넷에 있는 자원을 나타내는 유일한 주소. URI의 하위 개념으로 URL, URN이 있다.</p>
-<ul>
-<li>Scheme(protocol) : 통신 방식</li>
-<li>Host : 찾아갈 server의 주소<ul>
-<li>localhost : 컴퓨터 한 대에서 client와 server를 동시에 돌릴 때 server를 의미. Port 번호로 server에 고유 번호를 매김</li>
-</ul>
-</li>
-<li>Port : port 번호</li>
-<li>Path : file 경로<ul>
-<li>REST API : 서버와 통신시 메소드 호출방식처럼 사용</li>
-</ul>
-</li>
-<li>Query Parameter : ?key=value&amp;key=value&amp;key=value</li>
-<li>Fragment : # page 내 이동에서 씀</li>
-</ul>
-</blockquote>
-<p>인코딩이랑 URI의 문자들을 Escape 처리 하는 것을 의미한다. Escape 처리는 네트워크를 통해 정보를 공유할 때 ASCII Character-set으로 변환하는 것이다. 한글은 %EC%9E%90 등과 같이 인코딩 된다.</p>
-<p>decodeURI 함수는 paremeter로 전달된 encoded URI을 전달받아 escape 처리 되기 전으로 디코딩한다.</p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/05/15/19-Global-Object/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -427,7 +304,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    35 minutes read (About 5300 words)
+                    35 minutes read (About 5301 words)
                 </span>
                 
                 
@@ -449,199 +326,16 @@
 <p>을 지원하는 멀티 패러다임 프로그래밍 언어.</p>
 <p>프로토타입은 자바스크립트가 객체지향 프로그래밍의 상속을 구현하는 방식이다.</p>
 <p>자바스크립트는 객체 기반 프로그래밍 언어로, 자바스크립트를 이루고 있는 거의 모든 것이 객체이다.</p>
-<h1 id="1-Object-Oriented-Programming"><a href="#1-Object-Oriented-Programming" class="headerlink" title="1. Object-Oriented Programming"></a>1. Object-Oriented Programming</h1><p>이전에 포스팅한 객체 지향 프로그래밍 포스팅을 참고</p>
-<p><a href="https://sub2n.github.io/2019/04/24/4-Fundamental-of-Object-Oriented-Programming/">4 Fundamental of Object Oriented Programming</a></p>
-<p>객체지향 프로그래밍은 프로그래밍을 명령어 또는 함수의 목록으로 보는 명령형 프로그래밍의 절차지향적 관점에서 벗어나 <strong>프로그램을 여러개의 독립적 객체들의 집합으로 표현</strong>하려는 프로그래밍 패러다임을 말한다.</p>
-<p>객체지향 프로그래밍에는 몇 가지 원칙이 있다.</p>
-<ul>
-<li>추상화 (abstraction) : 다양한 속성 중에서 프로그램에 필요한 속성만을 간추려내어 표현하는 것을 추상화라고 한다. 불필요한 정보는 숨기고 필요한 정보만을 표현함으로써 공토</li>
-<li>캡슐화 (encapsulation) : 모든 객체가 자신의 상태(state, private variavles)를 클래스 내부에 private으로 보유함으로써 지켜진다. 내부 상태를 내부 메소드로만 접근할 수 있게 한다.</li>
-<li><strong>상속 (inheritance)</strong> : 객체지향 프로그래밍의 핵심 개념으로 부모 객체의 프로퍼티를 자식 개체가 상속받아 그대로 사용할 수 있는 것을 말한다.</li>
-<li>다형성 (polymorpism) : 부모 객체가 선언한 interface 메소드를 자식 객체가 재정의(overiding) 함으로써 하나의 interface로 상황에 따라 기능을 달리 하는 것을 말한다.</li>
-</ul>
-<h1 id="2-Inheritance-and-Prototype"><a href="#2-Inheritance-and-Prototype" class="headerlink" title="2. Inheritance and Prototype"></a>2. Inheritance and Prototype</h1><p>자바스크립트의 상속은 프로토타입(prototype)을 기반으로 구현된다.</p>
-<p>상속을 사용해야 하는 이유는,</p>
-<ol>
-<li>동일한 프로퍼티 구조를 갖는 객체를 여러개 만들 때 모든 인스턴스가 동일한 메소드를 중복 소유하는 것은 메모리적 관점에서 비효율적이기 때문이다. 상속을 사용하면 하나의 프로토타입을 생성해 모든 인스턴스가 공유할 수 있다.</li>
-<li>인스턴스를 생성할 때마다 메소드를 생성하므로 퍼포먼스적으로도 비효율적이다. 상속은 코드의 재사용이란 관점에서 유용하다. 공통적으로 사용할 프로퍼티나 메소드를 프로토타입에 미리 구현해놓으면 생성되는 인스턴스는 메소드 생성 없이 미리 구현된 프로토타입의 프로퍼티를 사용할 수 있다.</li>
-</ol>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Circle</span>(<span class="hljs-params">radius</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.radius = radius;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Add getGeometer method to Circle's prototype object(prototype).</span></span><br><span class="line"><span class="hljs-comment">// The prototype is bound to the prototype property of the Circle constructor function.</span></span><br><span class="line">Circle.prototype.getGeometer = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">2</span> * <span class="hljs-keyword">this</span>.radius;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> circle1 = <span class="hljs-keyword">new</span> Circle(<span class="hljs-number">2</span>);</span><br><span class="line"><span class="hljs-keyword">const</span> circle2 = <span class="hljs-keyword">new</span> Circle(<span class="hljs-number">5</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// All instances of Circle constuctor have same prototype(Circle constuctor function's prototype proeprety).</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.getPrototypeOf(circle1) === <span class="hljs-built_in">Object</span>.getPrototypeOf(circle2)) <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.getPrototypeOf(circle1) === Circle.prototype) <span class="hljs-comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="3-prototype-Object"><a href="#3-prototype-Object" class="headerlink" title="3. prototype Object"></a>3. prototype Object</h1><p><strong>Prototype Object(prototype)는 Object간의 상속을 구현하기 위해 사용된다</strong>. 프로토타입은 어떤 object의 Parent obect 역할을 하는 객체로, 다른 객체에 Shared property를 제공한다.  Prototype을 상속받은 Child object는 Parent object의 프로퍼티를 자신의 프로퍼티처럼 사용할 수 있다.</p>
-<p>모든 객체는 <code>[[Prototype]]</code> 내부 슬롯을 가지며, 내부 슬롯의 값으로 프로토타입 객체의 참조를 저장한다. 프로토타입은 객체의 생성 방식에 의해 결정된다.</p>
-<p>객체 리터럴로 생성된 객체의 프로토타입은 <strong>Object.prototype</strong>이고, 생성자 함수에 의해 생성된 객체의 프로토타입은 <strong>자신을 생성한 함수의 prototype 프로퍼티</strong>이다.</p>
-<p><strong>모든 객체는 하나의 프로토타입을 가지며 모든 프로토타입은 생성자 함수와 연결되어 있다.</strong> 이는 객체와 프로토타입, 생성자 사이를 연결한다.</p>
-<p><img src="https://user-images.githubusercontent.com/48080762/57820069-2042f600-77c6-11e9-8292-68c91244925a.png" alt="Prototype Connection"></p>
-<ul>
-<li>Constructor Function : prototype property가 prototype object를 가리킴</li>
-<li>Constructor Function.prototype Object : constructor property가 constructor function를 가리킴</li>
-<li>Obejct : __ proto __ Accessor property로 자신을 생성한 함수의 prototype Obect에 접근할 수 있음 (내부 슬롯 <code>[[Prototype]]</code>이 가리키고 있음)</li>
-</ul>
-<h2 id="3-1-Object’s-proto-Accessor-Property"><a href="#3-1-Object’s-proto-Accessor-Property" class="headerlink" title="3.1. Object’s _proto_ Accessor Property"></a>3.1. Object’s _<em>proto_</em> Accessor Property</h2><p>모든 객체는 __ proto __ 접근자 프로퍼티를 통해 자신의 프로토타입 (<code>[[Prototype]]</code> 내부 슬롯)에 접근할 수 있다.</p>
-<h4 id="proto-is-an-Accessor-Property"><a href="#proto-is-an-Accessor-Property" class="headerlink" title="_proto_ is an Accessor Property"></a>_<em>proto_</em> is an Accessor Property</h4><p>내부 슬롯은 프로퍼티가 아니므로 직접 접근할 수 없고 제공하는 접근자 프로퍼티를 통해서 접근할 수 있다. 접근자 프로퍼티는 접근자 함수로 구성된 프로터티다. <a href="https://sub2n.github.io/2019/05/09/15-Property-Definition/">프로퍼티 정의 포스팅 참고</a></p>
-<p><img src="https://user-images.githubusercontent.com/48080762/57598149-05397180-758d-11e9-88f0-6b24cffc4ef4.png" alt="__proto__"></p>
-<p>Object.prototype의 _<em>proto_</em> 접근자 프로퍼티는 자신의 getter, settter 함수(get <code>__proto__</code>, set <code>__proto__</code>)를 통해 <code>[[Prototype]]</code> 내부 슬롯의 값, 즉 프로토타입을 가져오거나 저장한다. </p>
-<blockquote>
-<h4 id="Internal-Method-GetPrototypeOf-amp-SetPrototypeOf"><a href="#Internal-Method-GetPrototypeOf-amp-SetPrototypeOf" class="headerlink" title="Internal Method [[GetPrototypeOf]] &amp; [[SetPrototypeOf]]"></a>Internal Method [[GetPrototypeOf]] &amp; [[SetPrototypeOf]]</h4><p>get __ proto __는 자신의 프로토타입 취득시 [[GetPrototypeOf]] 내부 메소드를 호출</p>
-<p>set __ proto __는 새로운 프로토타입 할당시 [[SetPrototypeOf]] 내부 메소드를 호출</p>
-</blockquote>
-<h4 id="코드-내에서-proto-접근자-프로퍼티-직접-사용-자제"><a href="#코드-내에서-proto-접근자-프로퍼티-직접-사용-자제" class="headerlink" title="코드 내에서 _proto_ 접근자 프로퍼티 직접 사용 자제"></a>코드 내에서 _<em>proto_</em> 접근자 프로퍼티 직접 사용 자제</h4><p>코드 내에서 _<em>proto_</em> 직접 사용하는 것 대신 Object.getPrototypeOf, Object.setPrototypeOf 메소드를 사용하는 것을 권장한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name</span>) </span>&#123;</span><br><span class="line">	<span class="hljs-keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.getPrototypeOf(Person) === Person.__proto__);	<span class="hljs-comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="proto-접근자-프로퍼티는-상속을-통해-사용됨"><a href="#proto-접근자-프로퍼티는-상속을-통해-사용됨" class="headerlink" title="_proto_ 접근자 프로퍼티는 상속을 통해 사용됨"></a>_<em>proto_</em> 접근자 프로퍼티는 상속을 통해 사용됨</h4><p>_<em>proto_</em> 접근자 프로퍼티는 객체가 직접 소유하는 프로퍼티가 아닌, Object.prototype으로부터 상속받은 프로퍼티이다. 모든 객체는 상속을 통해서 Object.prototype.__ proto __ 접근자 프로퍼티를 사용할 수 있다.</p>
-<p><img src="https://user-images.githubusercontent.com/48080762/57592782-75d39480-7573-11e9-887c-c49eef672893.png" alt="Object.prototype"></p>
-<blockquote>
-<h4 id="Prototype-Chain"><a href="#Prototype-Chain" class="headerlink" title="Prototype Chain"></a>Prototype Chain</h4><p>모든 객체는 프로토타입 계층 구조인 프로토타입 체인에 묶여있다. 자바스크립트는 객체의 프로퍼티(메소드 포함)에 접근하려고 할 때 _<em>proto_</em> 접근자 프로퍼티가 가리키는 링크를 따라서 부모 프로토타입의 프로퍼티를 검색한다. 프로토타입 체인의 최상위 객체는 Object.prototype이다. 모든 객체는 Object.prototype 객체를 상속하므로 Object.prototype의 프로퍼티를 사용할 수 있다.</p>
-</blockquote>
-<h4 id="proto-접근자-프로퍼티를-통해서-프로토타입에-접근하는-이유"><a href="#proto-접근자-프로퍼티를-통해서-프로토타입에-접근하는-이유" class="headerlink" title="_proto_ 접근자 프로퍼티를 통해서 프로토타입에 접근하는 이유"></a>_<em>proto_</em> 접근자 프로퍼티를 통해서 프로토타입에 접근하는 이유</h4><p>_<em>proto_</em> 접근자 프로퍼티를 통해서 프로토타입에 접근하면 객체들이 서로가 자신의 프로토타입이 되어 순환 참조적 프로토타입 체인이 만들어지지 않도록 에러를 발생시킨다. 프로토타입 체인이 cyclic하게 되면 프로퍼티 검색시 무한 루프에 빠진다.</p>
-<p>즉, Object.prototype의 set _<em>proto_</em>() (setter function)이 객체가 프로토타입을 상호참조할 때 에러를 발생시킨다.</p>
-<h2 id="3-2-Function-Object’s-prototype-Property"><a href="#3-2-Function-Object’s-prototype-Property" class="headerlink" title="3.2. Function Object’s prototype Property"></a>3.2. Function Object’s prototype Property</h2><p>함수 객체는 _<em>proto_</em> 접근자 프로퍼티 외에 prototype 프로퍼티도 소유한다.</p>
-<p>__proto__는 모든 객체가 가지는 자신의 프로토타입 접근자 프로퍼티이고, prototype 프로퍼티는 함수 객체가 자신이 생성할 인스턴스에 할당하는 프로토타입이다.</p>
-<table>
-<thead>
-<tr>
-<th align="center">구분</th>
-<th align="center">prototype 프로퍼티</th>
-<th align="center">_<em>proto_</em> 접근자 프로퍼티</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">소유</td>
-<td align="center">함수 객체</td>
-<td align="center">모든 객체</td>
-</tr>
-<tr>
-<td align="center">값</td>
-<td align="center">프로토타입의 참조값</td>
-<td align="center">프로토타입의 참조값</td>
-</tr>
-<tr>
-<td align="center">사용 주체</td>
-<td align="center">생성자 함수</td>
-<td align="center">모든 객체</td>
-</tr>
-<tr>
-<td align="center">사용 목적</td>
-<td align="center">자신이 생성할 객체의 프로토타입을 할당하기 위해 사용</td>
-<td align="center">자신의 프로토타입에 접근하기 위해서 사용</td>
-</tr>
-</tbody></table>
-<h2 id="3-3-Prototype’s-constructor-Property-and-the-Constructor-Function"><a href="#3-3-Prototype’s-constructor-Property-and-the-Constructor-Function" class="headerlink" title="3.3. Prototype’s constructor Property and the Constructor Function"></a>3.3. Prototype’s constructor Property and the Constructor Function</h2><p>함수 객체가 소유한 prototype 프로퍼티는 상속할 프로토타입을 가리킨다. 모든 프로토타입은 constructor 프로퍼티를 갖는다. constructor 프로퍼티는 prototype 프로퍼티로 자신을 참조하고 있는 생성자 함수를 가리킨다. </p>
-<p><img src="https://user-images.githubusercontent.com/48080762/57821160-75810680-77ca-11e9-8aad-04f7dbfc2800.png" alt="constructor Property &amp; prototype Property"></p>
-<p><strong>생성자 함수가 생성될 때 암묵적으로 프로토타입과 생성자 함수 간의 연결이 이루어진다.</strong> </p>
-<h1 id="4-Constructor-Functions-and-Prototypes-of-Objects-Created-by-Literal-Notation"><a href="#4-Constructor-Functions-and-Prototypes-of-Objects-Created-by-Literal-Notation" class="headerlink" title="4. Constructor Functions and Prototypes of Objects Created by Literal Notation"></a>4. Constructor Functions and Prototypes of Objects Created by Literal Notation</h1><p>생성자 함수로 만들지 않은 객체도 Object.prototype을 상속받아야하므로 Object constructor function과도 연결된다.</p>
-<p>프로토타입과 생성자 함수는 언제나 pair로 존재해야 하기 때문에 리터럴 표기법에 의해 생성된 객체는 엄밀히 말하면 생성자 함숭 의해 생성된 객체가 아니지만, 생성자 함수의 프로토타입과 연결된다.</p>
-<table>
-<thead>
-<tr>
-<th align="center">Literal Notation</th>
-<th align="center">Constructor Function</th>
-<th align="center">Prototype</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">Object Literal</td>
-<td align="center">Object</td>
-<td align="center">Object.prototype</td>
-</tr>
-<tr>
-<td align="center">Function Literal</td>
-<td align="center">Function</td>
-<td align="center">Function.prototype</td>
-</tr>
-<tr>
-<td align="center">Array Literal</td>
-<td align="center">Array</td>
-<td align="center">Array.prototype</td>
-</tr>
-<tr>
-<td align="center">RegExp Literal</td>
-<td align="center">RegExp</td>
-<td align="center">RegExp.prototype</td>
-</tr>
-</tbody></table>
-<h1 id="5-When-will-prototypes-be-created"><a href="#5-When-will-prototypes-be-created" class="headerlink" title="5. When will prototypes be created?"></a>5. When will prototypes be created?</h1><p>위에서 리터럴 표기법에 의해서 생성된 객체도 생성자 함수와 연결되는 것을 알아보았다. 생성자 함수는 사용자 정의 생성자 함수와 자바스크립트 built-in 생성자 함수로 구분할 수 있다. <strong>프로토타입은 생성자 함수가 생성되는 시점에 생성된다.</strong></p>
-<h2 id="5-1-User-Defined-Constructor-Function-and-Prototype-Creation"><a href="#5-1-User-Defined-Constructor-Function-and-Prototype-Creation" class="headerlink" title="5.1. User Defined Constructor Function and Prototype Creation"></a>5.1. User Defined Constructor Function and Prototype Creation</h2><p>화살표 함수나 ES6의 메소드 축약 표현으로 정의하지 않고 일반적으로 정의(함수 선언문, 함수 표현식)한 함수는 내부 메소드 <code>[[Constructor]]</code>가 구현되어 new 연산자와 함께 호출하면 생성자 함수로 호출할 수 있다.</p>
-<p>생성자 함수로 호출할 수 있는 constructor는 함수 객체가 생성될 때 프로토타입도 함께 생성된다. 함수 객체는 함수 정의가 평가될 때 생성된다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 함수 정의는 Hoisting되어 런타임 이전에 함수 객체를 생성하므로 Student.prototype도 함께 생성되어있다.</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(Student.prototype);</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Student</span>(<span class="hljs-params">name</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<h4 id="함수의-생성-시점"><a href="#함수의-생성-시점" class="headerlink" title="함수의 생성 시점"></a>함수의 생성 시점</h4><ul>
-<li><p>함수 선언문으로 정의한 함수</p>
-<p>함수 선언문으로 정의한 함수는 자바스크립트 엔진이 런타임 이전에 모든 선언문을 미리 실행할 때 평가되어 함수 객체가 된다. 이 때 생성된 함수 객체는 암묵적으로 함수명과 동일한 이름을 가진 변수에 할당된다.</p>
-</li>
-<li><p>함수 표현식으로 정의한 함수</p>
-<p>함수 표현식으로 정의한 함수는 런타입에 변수에 할당될 때, 즉 런타임에 할당문이 실행되는 시점에 평가되어 함수 객체가 된다.</p>
-</li>
-</ul>
-</blockquote>
-<h2 id="5-2-Built-in-Constructor-Function-and-Prototype-Creation"><a href="#5-2-Built-in-Constructor-Function-and-Prototype-Creation" class="headerlink" title="5.2. Built-in Constructor Function and Prototype Creation"></a>5.2. Built-in Constructor Function and Prototype Creation</h2><p>Object, Function, Number, String, Array, RegExp, Date, Promise 등과 같은 built-in 생성자 함수도 마찬가지로 built-in 생성자 함수가 생성되는 시점에 프로토타입이 같이 생성된다. 모든 built-in 생성자 함수는 전역 객체(window)가 생성되는 시점에 생성된다. 전역 객체는 웹 애플리케이션 실행시 가장 처음으로 생성된다.</p>
-<p>웹 애플리케이션 실행시 전역 객체 window 가 만들어지고, built-in 생성자 함수들이 만들어짐과 동시에 프로토타입 객체도 생성되어 built-in 생성자 함수의 prototype 프로퍼티에 바인딩된다.</p>
-<h1 id="6-How-to-Create-an-Object-and-Determine-its-Prototype"><a href="#6-How-to-Create-an-Object-and-Determine-its-Prototype" class="headerlink" title="6. How to Create an Object and Determine its Prototype"></a>6. How to Create an Object and Determine its Prototype</h1><p>객체는 다양한 방식으로 생성할 수 있다.</p>
-<ul>
-<li>객체 리터럴</li>
-<li>Object 생성자 함수</li>
-<li>생성자 함수</li>
-<li>Object.create 메소드</li>
-<li>클래스 (ES6)</li>
-</ul>
-<p>객체 리터럴로 생성하는 방식이 가장 간단한 객체 생성 방식이다. 객체 생성방식은 여러가지지만 모두 추상 연산 ObjectCreate에 의해 생성된다. </p>
-<p>추상 연산 ObjectCreate는 필수로 자신이 생성할 객체의 프로토타입을 argument로 전달받는다. 추상 연산 ObjectCreate는 객체를 생성한 후 인수로 전달받은 프로토타입을 자신이 생성한 객체의 <code>[[Prototype]]</code> 내부 슬롯에 할당한 후, 생성한 객체를 반환한다.</p>
-<p>ObjectCreate의 proto parameter로 전달될 argument는 객체가 생성되는 시점에, 객체 생성 방식에 따라서 결정된다.</p>
-<h2 id="6-1-Prototype-of-Object-Created-by-Object-Literal"><a href="#6-1-Prototype-of-Object-Created-by-Object-Literal" class="headerlink" title="6.1. Prototype of Object Created by Object Literal"></a>6.1. Prototype of Object Created by Object Literal</h2><p>자바스크립트 엔진은 객체 리터럴을 평가해서 객체를 생성할 때 추상 연산 ObjectCreate를 호출한다. 이 때 ObjectCreate에 전달되는 프로토타입은 Object.prototype이다.</p>
-<p>즉, 객체 리터럴에 의해 생성되는 객체의 프로토타입은 Object.prototype이다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> obj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 객체 리터럴에 의해 생성된 객체의 프로토타입은 Object.prototype이다.</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.getPrototypeOf(obj) === <span class="hljs-built_in">Object</span>.prototype); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-comment">// 객체 리터럴의 생성자 함수는 Object 생성자 함수와 연결된다.</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(obj.constructor === <span class="hljs-built_in">Object</span>); <span class="hljs-comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="6-2-Prototype-of-Object-Created-by-Object-Constructor-Function"><a href="#6-2-Prototype-of-Object-Created-by-Object-Constructor-Function" class="headerlink" title="6.2. Prototype of Object Created by Object Constructor Function"></a>6.2. Prototype of Object Created by Object Constructor Function</h2><p>Object 생성자 함수를 호출하여 객체를 생성하면 빈 객체가 생성된다. Object 생성자 함수를 호출하면 객체 리터럴을 평가할 때와 같이 추상 연산 ObjectCeate를 호출한다.</p>
-<p>이 때 추상 연산 ObjectCreate에 전달되는 프로토타입은 Object.prototype이다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Object 생성자 함수에 의해 생성된 객체의 프로토타입은 Object.prototype이다.</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.getPrototypeOf(obj) === <span class="hljs-built_in">Object</span>.prototype); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(obj.constructor === <span class="hljs-built_in">Object</span>); <span class="hljs-comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="6-3-Prototype-of-Object-Created-by-Constructor-Function"><a href="#6-3-Prototype-of-Object-Created-by-Constructor-Function" class="headerlink" title="6.3. Prototype of Object Created by Constructor Function"></a>6.3. Prototype of Object Created by Constructor Function</h2><p>new 연산자와 함께 생성자 함수를 호출해서 인스턴스를 생성하면 역시나 추상 연산 ObjectCreate를 호출한다.</p>
-<p>이 때 추상 연산 ObjectCreate에 전달되는 프로토타입은 호출된 생성자 함수의 prototype 프로퍼티에 바인딩되어 있는 객체이다.</p>
-<p>즉, 생성자 함수에 의해 생성되는 객체의 프로토타입은 생성자 함수의 prototype 프로퍼티에 바인딩된 객체이다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Student</span>(<span class="hljs-params">name</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> me = <span class="hljs-keyword">new</span> Student(<span class="hljs-string">'Park'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 생성자 함수에 의해 생성되는 객체의 프로토타입은 생성자 함수의 prototype 프로퍼티에 바인딩된 객체이다.</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.getPrototypeOf(me) === Student.prototype); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(me.constructor === Student); <span class="hljs-comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<p>생성자 함수의 prototype 프로퍼티에 바인딩된 프로토타입 객체는 프로퍼티와 메소드를 동적으로 추가할 수 있다.</p>
-<h1 id="7-Prototype-Chain"><a href="#7-Prototype-Chain" class="headerlink" title="7. Prototype Chain"></a>7. Prototype Chain</h1><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Student</span>(<span class="hljs-params">name</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Student.prototype에 메소드 추가</span></span><br><span class="line">Student.prototype.callMyName = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">	<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Hi! I'm <span class="hljs-subst">$&#123;<span class="hljs-keyword">this</span>.name&#125;</span>.`</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> me = <span class="hljs-keyword">new</span> Student(<span class="hljs-string">'Park'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(me.hasOwnProperty(<span class="hljs-string">'name'</span>)); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(me.hasOwnProperty(<span class="hljs-string">'callMyName'</span>)); <span class="hljs-comment">// false</span></span><br></pre></td></tr></table></figure>
-
-<p>위의 예제에서 name 프로퍼티는 Student의 인스턴스인 me의 고유 프로퍼티이지만, callMyName은 me 프로토타입의 프로퍼티이므로 hasOwnProperty가 false를 리턴한다.</p>
-<p><img src="https://user-images.githubusercontent.com/48080762/57827129-17abe900-77e1-11e9-8512-e30fa7dd32ba.png" alt="Object &#39;me&#39;"></p>
-<p>그런데 hasOwnProperty는 어느 객체의 메소드인데 별다른 정의 없이 호출할 수 있는 것일까? hasOwnProperty는 Object.prototype의 메소드로, 모든 객체가 Object.prototype을 상속하므로 호출할 수 있다.</p>
-<p><img src="https://user-images.githubusercontent.com/48080762/57827185-5d68b180-77e1-11e9-92f2-cb18be530e24.png" alt="Prototype Chain of me"></p>
-<p>조금 복잡해보이는 me 객체, me 객체의 prototype, Object.prototype의 관계를 그림으로 표현하면 아래와 같다.</p>
-<p><img src="https://user-images.githubusercontent.com/48080762/57827738-7f633380-77e3-11e9-92b8-ccf1ba0c77ab.png" alt="Prototype Chain"></p>
-<p>자바스크립트 엔진은 객체의 프로퍼티에 접근하려고 할 때 해당 객체에서 우선 프로퍼티를 검색하고, 없으면 _<em>proto_</em> 접근자 프로퍼티가 가리키는 프로토타입 객체의 프로퍼티를 순차적으로 검색한다. 이렇게 연결된 프로토타입들을 프로토타입 체인이라고 한다. <strong>프로토타입 체인은 자바스크립트가 객체 지향 프로그래밍의 상속을 구현하는 메커니즘</strong>이다.</p>
-<p>프로토타입 체인의 최상위에 위치하는 객체는 언제나 Object.prototype이다. Object.prototype을 프로토 타입 체인의 종점(End ofprototype chain)이라고 한다. Object.prototype의 <code>[[Prototype]]</code>에 __proto__로 접근하면 null이다.</p>
-<p>프로퍼티 체인의 끝까지 올라가 검색했는데도 프로퍼티를 찾지 못 할 경우 에러가 아니라 <code>undefined</code>를 리턴한다.</p>
-<p>식별자의 검색은 함수의 중첩 관계로 이루어진 스코프의 계층적인 구조에서 이루어지고, 프로퍼티의 검색은 객체 간의 상속 관계로 이루어진 프로토타입의 계층적인 구조에서 이루어진다.</p>
-<h1 id="8-Static-Property-Method"><a href="#8-Static-Property-Method" class="headerlink" title="8. Static Property/Method"></a>8. Static Property/Method</h1><p>Static 프로퍼티(메소드 포함)는 생성자 함수로 인스턴트를 생성하지 않아도 참조하거나 호출할 수 있는 프로퍼티를 말한다. Static 메소드 내부에는 this를 쓸 필요가 없다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Constructor Function</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Student</span>(<span class="hljs-params">name</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Student.staticProp = <span class="hljs-string">'static property'</span>;</span><br><span class="line"></span><br><span class="line">Student.staticMethod = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'static method'</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Student.staticProp; <span class="hljs-comment">// 'static property'</span></span><br><span class="line">Student.staticMethod(); <span class="hljs-comment">// 'static method'</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> me = <span class="hljs-keyword">new</span> Student(<span class="hljs-string">'Park'</span>);</span><br><span class="line"></span><br><span class="line">me.staticMethod(); <span class="hljs-comment">// Uncaught TypeError: me.staticMethod is not a function</span></span><br></pre></td></tr></table></figure>
-
-<p>Student 생성자 함수는 객체이므로 자신의 프로퍼티와 메소드를 소유할 수 있다. 생성자 함수가 소유한 프로퍼티와 메소드를 정적 프로퍼티, 정적 메소드(Static property, method)라고 부른다. Static 프로퍼티와 메소드는 생성자 함수가 생성한 인스턴스로는 참조하거나 호출할 수 없다.</p>
-<p>이는 프로토타입 체인을 이해하고 있다면 당연한 결과이다. 위 예제에서 인스턴스 객체 me가 프로퍼티를 검색하는 프로토타입 체인에는 Student의 staticProp와 staticMethod()가 없기 때문이다.</p>
-<p>프로토타입 객체에 정의되어있는 메소드를 Prototype Method, 생성자 함수에 정의되어있는 메소드를 Static Method라고 한다.</p>
-<h1 id="8-Property-Existance-Check-in-Operator"><a href="#8-Property-Existance-Check-in-Operator" class="headerlink" title="8. Property Existance Check : in Operator"></a>8. Property Existance Check : <code>in</code> Operator</h1><p>in 연산자는 객체 내에 프로퍼티가 존재하는지 확인해 Boolean 값을 반환한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> student = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span>,</span><br><span class="line">    grade: <span class="hljs-string">'3'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'name'</span> <span class="hljs-keyword">in</span> student); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'grade'</span> <span class="hljs-keyword">in</span> student); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'address'</span> <span class="hljs-keyword">in</span> student); <span class="hljs-comment">// false</span></span><br></pre></td></tr></table></figure>
-
-<p>in 연산자는 확인의 대상이 되는 객체 (student)의 프로퍼티 뿐만 아니라 그 객체가 상속받은 모든 프로토타입의 프로퍼티를 확인한다. 그 객체의 고유 프로퍼티만 검색하고 싶다면 Object.hasOwnProperty(prototype)을 사용한다.</p>
-<h1 id="9-Property-Enumeration"><a href="#9-Property-Enumeration" class="headerlink" title="9. Property Enumeration"></a>9. Property Enumeration</h1><p>객체의 모든 프로퍼티를 순회하려면 for…in 문을 사용한다. for…in 문은 프로퍼티를 열거할 때 순서를 보장하지 않는다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> student = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span>,</span><br><span class="line">    grade: <span class="hljs-string">'3'</span>,</span><br><span class="line">    address: <span class="hljs-string">'Seoul'</span>,</span><br><span class="line">    age: <span class="hljs-number">22</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> prop <span class="hljs-keyword">in</span> student) &#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">$&#123;prop&#125;</span>: <span class="hljs-subst">$&#123;student[prop]&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">// name: Park,</span></span><br><span class="line"><span class="hljs-comment">// grade: 3,</span></span><br><span class="line"><span class="hljs-comment">// address: Seoul,</span></span><br><span class="line"><span class="hljs-comment">// age: 22</span></span><br></pre></td></tr></table></figure>
-
-<p>for…in 문은 객체의 프로퍼티 개수만큼 반복해서 prop에 student의 프로퍼티를 할당한다. in 연산자와 마찬가지로 순회 대상 객체의 프로퍼티 뿐만 아니라 객체가 상속받은 모든 프로토타입의 프로퍼티를 열거한다. 그러나 왜 Object.prototype의 프로퍼티들은 열거되지 않았을까?</p>
-<p>Object.prototype의 프로퍼티들의 프로퍼티 어트리뷰트 <code>[[Enumarable]]</code>의 값이 false로, 열거할 수 없도록 정의된 프로퍼티이기 때문이다.</p>
-<p>배열에는 for…in 문 대신 일반적인 for문이나 for…of, Array.prototype.forEach 메소드를 사용하는 게 좋다.</p>
-<h1 id="10-Disallow-use-of-Object-prototypes-builtins-directly"><a href="#10-Disallow-use-of-Object-prototypes-builtins-directly" class="headerlink" title="10. Disallow use of Object.prototypes builtins directly"></a>10. Disallow use of Object.prototypes builtins directly</h1><p><a href="https://eslint.org/docs/rules/no-prototype-builtins" target="_blank" rel="noopener">ESLint: no-prototype-builtins</a></p>
-<p>ECScript 5.1에서  Object.create가 도입되면서 특정한 <code>[[Prototype]]</code>을 지정하여 객체를 생성할 수 있게 되었다. </p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> parent = &#123; <span class="hljs-attr">a</span>: <span class="hljs-number">1</span> &#125;;</span><br><span class="line"><span class="hljs-comment">// parent 객체를 상속받는 child 객체를 생성한다.</span></span><br><span class="line"><span class="hljs-keyword">const</span> child = <span class="hljs-built_in">Object</span>.create(parent);</span><br></pre></td></tr></table></figure>
-
-<p> 그러나 만약 Object.create()의 argument를 null로 호출할 경우 생성된 객체는 프로토타입 체인에 홀로 존재하게 된다. 즉, Object.prototype의 메소드에 접근할 수 없다. </p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> obj = <span class="hljs-built_in">Object</span>.create(<span class="hljs-literal">null</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.getPrototypeOf(obj)); <span class="hljs-comment">// null</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// obj가 Object.prototype을 상속받지 않았으므로 obj.hasOwnProperty는 undefined이다.</span></span><br><span class="line">obj.hasOwnProperty(<span class="hljs-string">'bar'</span>); <span class="hljs-comment">// TypeError: obj.hasOwnProperty is not a function</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Object.prototype의 static method를 호출하였으므로 정상 호출된다.</span></span><br><span class="line"><span class="hljs-built_in">Object</span>.prototype.hasOwnProperty.call(obj, <span class="hljs-string">'bar'</span>); <span class="hljs-comment">// false</span></span><br></pre></td></tr></table></figure>
-
-<p>게다가 Object.prototype을 상속한 객체라고 할지라도 자신의 고유 메소드로 Object.prototype의 builtin 메소드를 overriding 할 수 있다. 이를 자바스크립트에서는 Property Shadowing이라고 한다. C++에서는 Polymorphism을 구현하는 방식이 상속받은 객체의 overriding이다. </p>
-<p>Object.prototype의 builtin 메소드를 인스턴스에서 재정의한 경우에도 의도치 않은 동작이 발생할 수 있으니, Object.prototype의 builtin 메소드는 Object.prototype의 static 메소드로서 호출하는 것이 좋다.</p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/05/12/18-JavaScript-Prototype/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -676,7 +370,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    12 minutes read (About 1874 words)
+                    13 minutes read (About 1875 words)
                 </span>
                 
                 
@@ -690,84 +384,16 @@
         </h1>
         <div class="content">
             <h1 id="1-First-class-Object"><a href="#1-First-class-Object" class="headerlink" title="1. First-class Object"></a>1. First-class Object</h1><p>자바스크립트에서 함수는 객체이며 값처럼 사용할 수 있다. 값처럼 사용할 수 있는 객체를 일급 객체라고 한다. 자바스크립트의 함수는 일급 객체(first-class object)이다.</p>
-<h3 id="First-class-Object"><a href="#First-class-Object" class="headerlink" title="First-class Object"></a>First-class Object</h3><ul>
-<li>런타임에 무명의 리터럴로 생성할 수 있다.</li>
-<li>변수나 자료구조(객체, 배열 등)에 저장할 수 있다.</li>
-<li>함수의 매개변수로 전달될 수 있다.</li>
-<li>함수의 반환값으로 사용될 수 있다.</li>
-</ul>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 1. 무명의 리터럴로 생성할 수 있다.</span></span><br><span class="line"><span class="hljs-comment">// 2. 변수나 자료 구조에 저장할 수 있다.</span></span><br><span class="line"><span class="hljs-comment">// 런타임(할당 단계)에 함수 리터럴이 평가되어 함수 객체가 생성되고 변수에 할당된다.</span></span><br><span class="line"><span class="hljs-keyword">const</span> increase = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">num</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> ++num;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> decrease = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">num</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> --num;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 함수 객체를 객체에 저장할 수 있다.</span></span><br><span class="line"><span class="hljs-keyword">const</span> predicates = &#123; increase, decrease &#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeCounter</span>(<span class="hljs-params">predicate</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">let</span> num = <span class="hljs-number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-comment">// 4. 함수의 반환값으로 사용할 수 있다.</span></span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    num = predicate(num);</span><br><span class="line">    <span class="hljs-keyword">return</span> num;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 3. 함수의 매개변수에게 전달할 수 있다.</span></span><br><span class="line"><span class="hljs-comment">// makeCounter의 매개변수에게 함수 객체를 전달</span></span><br><span class="line"><span class="hljs-keyword">const</span> increaser = makeCounter(predicates.increase);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(increaser()); <span class="hljs-comment">// 1</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(increaser()); <span class="hljs-comment">// 2</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// makeCounter의 매개변수에게 함수 객체를 전달</span></span><br><span class="line"><span class="hljs-keyword">const</span> decreaser = makeCounter(predicates.decrease);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(decreaser()); <span class="hljs-comment">// -1</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(decreaser()); <span class="hljs-comment">// -2</span></span><br></pre></td></tr></table></figure>
-
-<p>자바스크립트의 함수는 일급객체의 조건을 모두 만족하는 일급 객체이다. 따라서 함수는,</p>
-<ul>
-<li>무명의 리터럴로 생성할 수 있으므로 어디에서나 정의할 수 있다.</li>
-<li>함수를 변수나 자료구조의 값으로 할당할 수 있다.</li>
-<li>함수를 값처럼 매개변수로 전달할 수 있다.</li>
-<li>함수에서 함수를 반환할 수 있다.</li>
-</ul>
-<p>자바스크립트의 함수가 일급 객체이므로 함수형 프로그래밍을 할 수 있다.</p>
-<blockquote>
-<h3 id="Functional-Programming"><a href="#Functional-Programming" class="headerlink" title="Functional Programming"></a>Functional Programming</h3><p>함수형 프로그래밍이랑 Pure function과 보조 함수의 조합을 통해 외부 상태를 변경하는 side-effect를 최소화하여 immutability를 지향하는 프로그래밍 패러다임이다.</p>
-<p>함수형 프로그래밍 패러다임에서 함수를 매개변수에 전달하거나 반환하는 함수를 Hign Order Function이라고 한다.</p>
-</blockquote>
-<p>함수는 객체이지만 일반 객체와 달리 호출할 수 있다. 함수 객체는 일반 객체에는 없는 함수 고유의 프로퍼티를 소유한다.</p>
-<h1 id="2-Property-of-Function-Object"><a href="#2-Property-of-Function-Object" class="headerlink" title="2. Property of Function Object"></a>2. Property of Function Object</h1><p><img src="https://user-images.githubusercontent.com/48080762/57577077-034ab200-74aa-11e9-9242-6def63879626.png" alt="Function Object Properties"></p>
-<p><img src="https://user-images.githubusercontent.com/48080762/57577086-4573f380-74aa-11e9-9a26-734acab4b018.png" alt="Object Property"></p>
-<p>함수 객체와 일반 객체를 각각 콘솔에 찍어보면 함수 객체에는 일반 객체에 없는 프로퍼티들이 있다. 함수 객체 내에는 arguments, caller, length, name, prototype 프로퍼티가 존재한다. __ proto __ 프로퍼티는 함수 객체, 일반 객체에 모두 존재한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params"></span>) </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// function object의 Data property들</span></span><br><span class="line"><span class="hljs-built_in">Object</span>.getOwnPropertyDescriptor(add, <span class="hljs-string">'arguments'</span>);</span><br><span class="line"><span class="hljs-comment">// &#123;value: null, writable: false, enumerable: false, configurable: false&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">Object</span>.getOwnPropertyDescriptor(add, <span class="hljs-string">'caller'</span>);</span><br><span class="line"><span class="hljs-comment">// &#123;value: null, writable: false, enumerable: false, configurable: false&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">Object</span>.getOwnPropertyDescriptor(add, <span class="hljs-string">'length'</span>);</span><br><span class="line"><span class="hljs-comment">// &#123;value: 0, writable: false, enumerable: false, configurable: true&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">Object</span>.getOwnPropertyDescriptor(add, <span class="hljs-string">'name'</span>);</span><br><span class="line"><span class="hljs-comment">// &#123;value: "add", writable: false, enumerable: false, configurable: true&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">Object</span>.getOwnPropertyDescriptor(add, <span class="hljs-string">'prototype'</span>);</span><br><span class="line"><span class="hljs-comment">// &#123;value: &#123;…&#125;, writable: true, enumerable: false, configurable: false&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// __proto__는 function object가 아닌, Object.prototype으로부터 상속받은 Accessor property이다.</span></span><br><span class="line"><span class="hljs-built_in">Object</span>.getOwnPropertyDescriptor(add, <span class="hljs-string">'__proto__'</span>);</span><br><span class="line"><span class="hljs-comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">Object</span>.getOwnPropertyDescriptor(<span class="hljs-built_in">Object</span>.prototype, <span class="hljs-string">'__proto__'</span>);</span><br><span class="line"><span class="hljs-comment">// &#123;get: ƒ, set: ƒ, enumerable: false, configurable: true&#125;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>함수 객체의 데이터 프로퍼티 : argunemts, caller, length, name, prototype </li>
-<li>__ proto __는 접근자 프로퍼티로, Object.prototype객체의 프로퍼티를 상속받은 것.</li>
-</ul>
-<h2 id="2-1-arguments-Property"><a href="#2-1-arguments-Property" class="headerlink" title="2.1 arguments Property"></a>2.1 arguments Property</h2><p>arguments 프로퍼티의 value는 arguments 객체이다. arguments 객체는 함수 호출 시 전달된 argument들의 정보를 담고 있는 iterable array-like object이며, 함수 내부에서만 참조 가능하다.</p>
-<blockquote>
-<h4 id="arguments-Property"><a href="#arguments-Property" class="headerlink" title="arguments Property"></a>arguments Property</h4><p>함수 객체의 arguments property는 일부 브라우저에서 지원하고 있으나 ES3부터 표준에서 페지되었다. arguments 프로퍼티를 통해서가 아니라 함수 내부에서 지역 변수처럼 사용할 수 있는 <strong>arguments 객체를 직접 참조</strong>하는 것이 좋다.</p>
-</blockquote>
-<h4 id="arguments-Object"><a href="#arguments-Object" class="headerlink" title="arguments Object"></a>arguments Object</h4><p><img src="https://user-images.githubusercontent.com/48080762/57577250-ef08b400-74ad-11e9-820a-d6bf77e6ae79.png" alt="arguments object"></p>
-<ul>
-<li>argument들을 value로 가진다. 0, 1, 2 등 key는 argumet의 전달 순서를 나타낸다.</li>
-<li>callee:  호출된 함수, 즉 arguments 객체를 생성한 함수를 가리킨다.</li>
-<li>length: argument의 개수</li>
-<li>Symbol(Symbol.iteraor): arguments object를 순회 가능한 iterable 자료 구조로 만들기 위한 프로퍼티.</li>
-</ul>
-<p>arguments object는 parameter의 개수를 확정할 수 없는 <strong>가변 인자 함수 (Variable Argument Function)</strong>를 구현할 때 유용하게 사용한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> result = <span class="hljs-number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-comment">// arguments 객체는 length property를 가진 array-like object이므로 iterable하다.</span></span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">arguments</span>.length; i++)</span><br><span class="line">        result += <span class="hljs-built_in">arguments</span>[i];</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>Array-like Object</strong>란 length property를 가진 객체로, 실제 배열이 아니지만 for 문 등으로 순회할 수 있는 객체를 말한다. 배열이 아니므로 배열 메소드를 사용하면 에러가 발생한다.</p>
-<p>arguments object에 reduce, for…each 등 고차 함수를 사용하기 위해 배열로 변환한 후 사용하기도 한다.</p>
-<p>ES6에서는 argument를 배열로 사용하기 위해 Rest parameter를 도입했다.</p>
-<h2 id="2-2-caller-Property"><a href="#2-2-caller-Property" class="headerlink" title="2.2. caller Property"></a>2.2. caller Property</h2><p>caller property는 ECMAScript spec에 포함되지 않은 비표준 프로퍼티이다. 함수 객체의 caller property는 함수 자신을 호출한 함수를 가리킨다. </p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">func</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> func();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-string">'caller : '</span> + bar.caller;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 브라우저에서의 실행 결과</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(foo(bar)); <span class="hljs-comment">// caller : function foo(func) &#123;...&#125;</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(bar());    <span class="hljs-comment">// caller : null</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Node.js에서의 실행 결과</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(foo(bar)); <span class="hljs-comment">// caller : function foo(func) &#123;...&#125;</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(bar());    <span class="hljs-comment">// caller : function (exports, require, module, __filename, __dirname) &#123;전역 코드 전체&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="2-3-length-Property"><a href="#2-3-length-Property" class="headerlink" title="2.3 length Property"></a>2.3 length Property</h2><p>함수 객체의 length property는 함수 정의 시 선언한 매개변수의 개수를 가리킨다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">a, b, c</span>) </span>&#123;</span><br><span class="line">	<span class="hljs-keyword">return</span> a + b +c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(add.length)	<span class="hljs-comment">//3</span></span><br></pre></td></tr></table></figure>
-
-<p>arguments Object의 length property와 Function Object의 length property의 값은 다름을 알고 넘어가자.</p>
-<ul>
-<li><p>arguments Object’s length property : 넘겨받은 argument의 개수</p>
-</li>
-<li><p>Function Object’s length property : 함수에 정의된 parameter의 개수</p>
-</li>
-</ul>
-<h2 id="2-4-name-Property"><a href="#2-4-name-Property" class="headerlink" title="2.4. name Property"></a>2.4. name Property</h2><p>함수 객체의 name property는 함수명을 나타낸다. ES6에서 정식 표준이 되었다.</p>
-<p>익명 함수의 경우 ES5에서 name property는 빈 문자열이지만 ES6에서는 함수 객체를 가리키는 변수명을 값으로 갖는다. (함수 선언문일 경우 함수명과 동일한 변수명, 익명 함수 표현식일 경우 함수 표현식을 할당한 변수명)</p>
-<h2 id="2-5-proto-Accessor-Property"><a href="#2-5-proto-Accessor-Property" class="headerlink" title="2.5. _proto_ Accessor Property"></a>2.5. _<em>proto_</em> Accessor Property</h2><p>모든 객체는 <code>[[Prototype]]</code>이라는 내부 슬롯을 갖는다. [[Prototype]] 내부 슬롯은 프로토타입 객체를 가리킨다.</p>
-<p>_<em>proto_</em> property는 [[Prototype]] 내부 슬롯이 가리키는 프로토타입 객체에 접근하기 위해 사용하는 접근자 프로퍼티. </p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> obj = &#123; <span class="hljs-attr">key</span>: <span class="hljs-string">'value'</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(obj.__proto__ === <span class="hljs-built_in">Object</span>.prototype);	<span class="hljs-comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(obj.hasOwnProperty(<span class="hljs-string">'key'</span>));	<span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(obj.hasOwnProperty(<span class="hljs-string">'__proto__'</span>));	<span class="hljs-comment">// false</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="2-6-prototype-Property"><a href="#2-6-prototype-Property" class="headerlink" title="2.6. prototype Property"></a>2.6. prototype Property</h2><p>prototype Property는 함수 객체만이 소유하는 프로퍼티이다.</p>
-<p>prototype Property는 함수가 객체를 생성하는 생성자 함수로 사용될 때 생성자 함수가 생성할 객체의 프로토타입 객체를 가리킨다.</p>
-<p>즉, </p>
-<ul>
-<li><strong>prototype</strong> Data Property는 <strong>함수가 생성자로 동작하여 생성할 instatnce의 prototype 객체</strong>를 가리키고</li>
-<li><strong>_<em>proto_</em></strong> Accessor Property는 <strong>자신을 생성한 생성자 함수의 prototype 객체</strong>, 즉 <strong>자신이 상속받은 prototype 객체</strong>를 가리킨다.</li>
-</ul>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Circle</span>(<span class="hljs-params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">this</span>.radius = radius;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> circle2 = <span class="hljs-keyword">new</span> Circle(<span class="hljs-number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(Circle.prototype === circle2.__proto__); <span class="hljs-comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name</span>) </span>&#123;</span><br><span class="line">	<span class="hljs-keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(Person.__proto__ === Circle.__proto__);	<span class="hljs-comment">// true</span></span><br></pre></td></tr></table></figure>
-
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/05/12/17-Function-and-First-class-Object/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -802,7 +428,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    12 minutes read (About 1730 words)
+                    12 minutes read (About 1731 words)
                 </span>
                 
                 
@@ -817,99 +443,16 @@
         <div class="content">
             <p>객체 리터럴 표기법은 가장 일반적이고 간단한 객체 생성 방법이다. 객체는 객체 리터럴 표기법 외에도 다양한 방법으로 생성할 수 있다. </p>
 <p>객체를 생성하기 위한 용도로 사용되는 함수를 생성자 함수라고 한다.</p>
-<h1 id="1-Object-Constructor-Function"><a href="#1-Object-Constructor-Function" class="headerlink" title="1. Object Constructor Function"></a>1. Object Constructor Function</h1><p>객체 리터럴 표기법은 분명 간단한 방법이지만, 같은 구조를 가진 객체를 <strong>여러 개</strong> 만들어야할 경우가 있다.</p>
-<p>new 연선자와 함께 Object 생성자 함수를 호출하면 빈 객체를 생성하여 반환한다. 생성한 빈 객체에 프로퍼티와 메소드를 추가한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> student = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>();</span><br><span class="line"></span><br><span class="line">student.name = <span class="hljs-string">'Park'</span>;</span><br><span class="line">student.sayHello = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Hi! I am '</span> + <span class="hljs-keyword">this</span>.name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Object 생성자 함수는 함수 <strong>객체</strong>이므로 프로퍼티와 메소드를 갖는다. 앞서 살펴본 <code>Object.getOwnPropertyDescriptor()</code> 또한 Object 생성자 함수의 메소드이다.</p>
-<p>Constructor 함수는 new 연산자와 함께 호출해서 Object(instance)를 생성하는 함수이다. 생성자 함수에 의해 생성된 객체는 instance라고 한다.</p>
-<blockquote>
-<h3 id="Instance"><a href="#Instance" class="headerlink" title="Instance"></a>Instance</h3><p>생성자 함수도 객체이므로 생성자 함수나 클래스가 생성한 객체를 다른 객체와 구분하기 위해 실체라는 의미로 인스턴스라고 한다.</p>
-</blockquote>
-<h2 id="1-1-Built-in-Constructor-Function-Wrapper-Object"><a href="#1-1-Built-in-Constructor-Function-Wrapper-Object" class="headerlink" title="1.1. Built-in Constructor Function (Wrapper Object)"></a>1.1. Built-in Constructor Function (Wrapper Object)</h2><p>자바스크립트는 Object 생성자 함수 이외에도 String, Number, Boolean, Function, Array, Date, RegExp 등의 built-in(intrinsic) 생성자 함수를 제공한다. 이들은 전역객체(window)의 메소드이다. 자바스크립트에서 <strong>함수는 객체</strong>이므로 Built-in 생성자 함수는 객체로서 메소드도 가진다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>(<span class="hljs-string">'str'</span>);	<span class="hljs-comment">//가능하지만 잘 안 씀</span></span><br><span class="line"><span class="hljs-keyword">const</span> strObj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">String</span>(<span class="hljs-string">'str'</span>);</span><br><span class="line"><span class="hljs-keyword">const</span> numObj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Number</span>(<span class="hljs-number">123</span>);</span><br></pre></td></tr></table></figure>
-
-<p>String, Number 생성자 함수로 형변환도 가능하지만 잘 안 쓴다.</p>
-<blockquote>
-<h3 id="Wrapper-Object"><a href="#Wrapper-Object" class="headerlink" title="Wrapper Object"></a>Wrapper Object</h3><p>원시 값을 객체처럼 쓰면 자바스크립트 엔진이 <strong>원시값 타입의 객체로 순간 바꾸고 평가한 후 다시 원시 값으로 되돌린다</strong>. 이 때 원시값 타입의 객체를 wrapper object라고 부른다.</p>
-</blockquote>
-<h1 id="2-Constructor-Function"><a href="#2-Constructor-Function" class="headerlink" title="2. Constructor Function"></a>2. Constructor Function</h1><p>객체 리터럴로 객체를 생성하는 경우 프로퍼티 구조가 동일해도 매번 같은 프로퍼티와 메소드를 작성해야하는 문제가 있다. 객체 리터럴은 한 번 평가되어 값을 만드므로 재사용할 수 없으며 동일한 코드의 중복 또한 문제가 된다.</p>
-<h2 id="2-1-Advantages-of-object-creation-by-constructor-function"><a href="#2-1-Advantages-of-object-creation-by-constructor-function" class="headerlink" title="2.1 Advantages of object creation by constructor function"></a>2.1 Advantages of object creation by constructor function</h2><p>생성자 함수로 객체를 생성하면 프로퍼티 구조가 동일한 객체 여러 개를 간편하게 생성할 수 있다.</p>
-<p>생성자 함수는 일반 함수와 동일한 방법으로 <strong>미리 정의한 후</strong>에, <strong>new 연산자와 함께 호출했을 때만 생성자 함수로 동작한다</strong>.</p>
-<p>생성자 함수는 보통 Pascal case로 naming 한다. (ex. Object, Circle, String 등)</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Constructor Function</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Circle</span>(<span class="hljs-params">radius</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// this indicates the instance that the constructor function will create.</span></span><br><span class="line">    <span class="hljs-keyword">this</span>.radius = radius;</span><br><span class="line">    <span class="hljs-keyword">this</span>.getDiameter = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">      <span class="hljs-keyword">return</span> <span class="hljs-number">2</span> * <span class="hljs-keyword">this</span>.radius;  </span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// instance creation</span></span><br><span class="line"><span class="hljs-keyword">const</span> circle1 = <span class="hljs-keyword">new</span> Circle(<span class="hljs-number">5</span>);</span><br><span class="line"><span class="hljs-keyword">const</span> circle2 = <span class="hljs-keyword">new</span> Circle(<span class="hljs-number">10</span>);</span><br></pre></td></tr></table></figure>
-
-<p>new 연산자 없이 함수를 호출하면, 일반 함수로 호출되는 것이므로 this는 전역 객체(window)가 된다.</p>
-<blockquote>
-<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><p><code>this</code>는 객체 자신의 프로퍼티나 메소드를 참조하기 위한 Self-regerencing variable이다. <code>this</code>가 가리키는 객체는 함수 호출 방식에 따라 동적으로 결정된다.</p>
-<table>
-<thead>
-<tr>
-<th align="center">Function call</th>
-<th align="center">Object <code>this</code> points to</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">As a normal function</td>
-<td align="center">Global object (window)</td>
-</tr>
-<tr>
-<td align="center">As a method</td>
-<td align="center"><strong>Object</strong> that called a method</td>
-</tr>
-<tr>
-<td align="center">As a constructor function</td>
-<td align="center"><strong>Instance</strong> that a constructor function will create in the future.</td>
-</tr>
-</tbody></table>
-</blockquote>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Called as a general function</span></span><br><span class="line">foo ();	<span class="hljs-comment">// window</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Called as a method</span></span><br><span class="line"><span class="hljs-keyword">const</span> obj = &#123; foo &#125;;	<span class="hljs-comment">// ES6 property shorthand</span></span><br><span class="line">obj.foo();	<span class="hljs-comment">// obj</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Called as a constructor function</span></span><br><span class="line"><span class="hljs-keyword">const</span> inst = <span class="hljs-keyword">new</span> foo();	<span class="hljs-comment">// inst</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="2-3-Internal-method-Call-and-Constructor"><a href="#2-3-Internal-method-Call-and-Constructor" class="headerlink" title="2.3. Internal method [[Call]] and [[Constructor]]"></a>2.3. Internal method [[Call]] and [[Constructor]]</h2><p>함수 객체는 일반 객체와 달리 내부 메소드로 [[Call]]과 [[Constructor]]를 가진다.</p>
-<p>내부 메소드 [[Call]]은 함수가 일반 함수로 호출되었을 때 실행되고, 내부 메소드 [[Constructor]]는 함수가 생성자 함수로 호출되었을 때 실행된다.</p>
-<p>내부 메소드 [[Call]]이 구현되어 있는 객체를 callable, [[Constuctor]]가 구현되어 있는 객체는 constructor, [[Constructor]]가 구현되어 있지 않은 객체는 non-constructor라고 부른다.</p>
-<p>단, arrow function은 constructor function으로 생성할 수 없다. ES6의 메소드 축약 표현으로 선언한 메소드 또한 non-constructor이다. 따라서 모든 함수는 callable이지만 모두 constructor인 것은 아니다.</p>
-<h2 id="2-4-constructors-and-non-constructors"><a href="#2-4-constructors-and-non-constructors" class="headerlink" title="2.4. constructors and non-constructors"></a>2.4. constructors and non-constructors</h2><p>자바스크립트 엔진은 함수 생성시 FunctionCreate라는 abstract operation을 사용한다.</p>
-<p>Abstract operation FunctionCreate는 함수 정의가 평가될 때 호출된다. 함수 정의 방식에 따라서 FunctionCreate의 kind parameter에 함수의 종류를 나타내는 문자열이 전달된다.</p>
-<table>
-<thead>
-<tr>
-<th align="center">Kinds</th>
-<th align="center">Strings</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">일반 함수 정의(함수 선언문, 함수 표현식) 평가</td>
-<td align="center">Normal</td>
-</tr>
-<tr>
-<td align="center">화살표 함수 정의 평가</td>
-<td align="center">Arrow</td>
-</tr>
-<tr>
-<td align="center">메소드 정의 평가</td>
-<td align="center">Method</td>
-</tr>
-</tbody></table>
-<p>일반 함수로 정의된 함수만 constructor, Arrow나 Method는 con-constructor이다.</p>
-<p>이 때 주의해야할 점은 ES6의 메소드 축약 표현만을 메소드 정의로 인정한다는 것이다.</p>
-<h2 id="2-5-How-the-Constructor-Function-Works"><a href="#2-5-How-the-Constructor-Function-Works" class="headerlink" title="2.5. How the Constructor Function Works"></a>2.5. How the Constructor Function Works</h2><p>생성자 함수의 역할은 인스턴스를 생성하는 것과 생성된 인스턴스의 프로퍼티 값을 초기화하는 것이다.</p>
-<p>생성자 함수가 호출되면,</p>
-<ol>
-<li>자바스크립트 내부에서 빈 객체를 만들고 <code>this</code>에 할당한다. (this binding)</li>
-<li>내부 코드를 실행한 후 <code>this</code>를 return한다. 즉, <code>this</code>는 생성자 함수로 생성하는 instance가 된다.</li>
-</ol>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// 1. create empty object and bind it to this. this = &#123;&#125;</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-comment">// 2. run internal codes (create property)</span></span><br><span class="line">    <span class="hljs-keyword">this</span>.name = name;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-comment">// 3. return this</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">new</span> Person(<span class="hljs-string">'Park'</span>));	<span class="hljs-comment">// Person &#123;name: 'Park'&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="2-6-new-Operator"><a href="#2-6-new-Operator" class="headerlink" title="2.6. new Operator"></a>2.6. new Operator</h2><p>new 연산자와 함께 constructor인 함수를 호출하면 함수는 생성자 함수로 동작한다. 이 때 함수 객체의 내부 메소드 [[Constructor]]가 호출된다. 함수 내부의 this는 생성자 함수가 생성할 instance를 가리킨다.</p>
-<p>new 연산자 없이 함수를 호출하면 함수 객체의 내부 메소드 [[Call]]이 호출된다. 이 때 함수 내부의 this는 전역 객체 window를 가리킨다.</p>
-<h2 id="2-7-new-target"><a href="#2-7-new-target" class="headerlink" title="2.7. new.target"></a>2.7. new.target</h2><p>new 연산자 없이 생성자 함수를 호출하는 것을 방지하기 위해서 ES6에서 new.target을 지원한다.</p>
-<p>new.target은 함수 내부에서 지역 변수와 같이 사용되는 meta property이다. (IE는 new.target을 지원하지 않음!)</p>
-<p>함수가 new 연산자와 함께 호출되면 new.target은 함수 자신을 가리키고, new 연산자 없이 호출된 함수 내부의 new.target은 undefined이다.</p>
-<p>new 연산자와 함께 호출된 생성자 함수로부터 생성된 instance는 프로토타입에 의해 생성자 함수와 연결된다.</p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/05/10/16-Creating-an-Object-with-a-Constructor-Function/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -944,7 +487,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    14 minutes read (About 2144 words)
+                    14 minutes read (About 2145 words)
                 </span>
                 
                 
@@ -959,135 +502,16 @@
         <div class="content">
             <h1 id="1-What-is-Property-Definition"><a href="#1-What-is-Property-Definition" class="headerlink" title="1. What is Property Definition?"></a>1. What is Property Definition?</h1><p>프로퍼티 정의란 프로퍼티 어트리뷰트의 값을 정의하여 프로퍼티의 상태를 관리하는 것이다. 예를 들면 프로퍼티 값을 갱신 가능하도록 할 것인지(writable), 프로퍼티를 열거 가능하도록 할 것인지(enumarable), 재정의 가능하도록 할 것인지(configurable)를 정의할 수 있다.</p>
 <p>객체 리터럴이 평가되거나 프로퍼티가 동적 생성될 때 프로퍼티가 생성된다. 자바스크립트 엔진은 프로퍼티를 생성할 때 프로퍼티의 상태를 나타내는 프로퍼티 어트리뷰트를 기본값으로 자동 정의한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> obj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//Dynamic creation of properties. The JavaScript engine creates the property and defines the property's attributes as the default.</span></span><br><span class="line">obj.prop = <span class="hljs-number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> descriptor = <span class="hljs-built_in">Object</span>.getOwnPropertyDescriptor(obj, <span class="hljs-string">'prop'</span>);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(descriptor);</span><br><span class="line"><span class="hljs-comment">// &#123;value: 10, writable: true, enumerable: true, configurable: true&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>프로퍼티 동적 생성은 프로퍼티가 존재하지 않을 때 프로퍼티를 생성하여 추가하는 것이다.</p>
-<p>프로퍼티 정의는 프로퍼티 어트리뷰트를 정의하는 것을 말한다. 프로퍼티 어트리뷰트는 프로퍼티의 상태를 나타낸다.</p>
-<p>프로퍼티의 상태란 프로퍼티의,</p>
-<ul>
-<li>value</li>
-<li>writable</li>
-<li>enumerable</li>
-<li>configurable</li>
-</ul>
-<p>프로퍼티 어트리뷰트는 <code>Object.getOwnPropertyDescriptor</code> 메소드를 사용해 참조할 수 있다. 이 메소드는 프로퍼티 어트리뷰트를 객체로 표현한 PropertyDescriptor 객체를 반환한다. 존재하지 않는 프로퍼티나, 상속받은 프로퍼티에 대한 PropertyDescriptor를 요구하면 undefined가 반환된다.</p>
-<p>프로퍼티가 동적 생성될 때 자바스크립트 엔진은 프로퍼티 어트리뷰트를 기본값으로 정의한다. 이미 정의된 프로퍼티 어트리뷰트를 재정의할 수도 있다.</p>
-<h1 id="2-Internal-Slot-Method"><a href="#2-Internal-Slot-Method" class="headerlink" title="2. Internal Slot / Method"></a>2. Internal Slot / Method</h1><p>Internal slot and internal method는 ECMAScript 스펙에서 요구하는 객체 관련 내부 상태와 내부 동작을 정의한 것이다. ECMAScript 스펙에서 <code>[[...]]</code>로 감싼 이름들이 내부 슬롯과 내부 메소드이다.</p>
-<p>Internal slot과 method는 자바스크립트 엔진의 내부 구현 사양을 정의한 것이므로 외부에 노출되지 않는다. </p>
-<p>객체의 프로퍼티 키로 프로퍼티 값에 접근할 때 <code>[[Get]]</code> 내부 메소드가 내부적으로 호출된다. <code>[[Get]]</code> 내부 메소드는 다음과 같이 동작한다.</p>
-<ol>
-<li>프로퍼티 키가 유효한지 확인한다. (문자열 또는 심볼)</li>
-<li>프로토타입 체인에서 프로퍼티를 검색한다.</li>
-</ol>
-<blockquote>
-<h3 id="Prototype-and-Prototype-Chain"><a href="#Prototype-and-Prototype-Chain" class="headerlink" title="Prototype and Prototype Chain"></a>Prototype and Prototype Chain</h3><p>프로토타입은 어떤 객체의 parent 객체 역할을 하는 객체이다. 프로토타입은 Child 객체에게 자신의 프로퍼티와 메소드를 상속한다. Prototype객체의 프로퍼티나 메소드를 상속받은 child 객체는 parent 객체의 프로퍼티나 메소드를 자유롭게 사용한다.</p>
-<p>프로토타입 체인은 프로토타입 객체가 연결되어있는 상속 구조이다. 어떤 객체의 프로퍼티나 메소드에 접근하려고 할 때, 해당 객체에 접근하려는 프로퍼티나 메소드가 없다면 프로토타입 체인을 따라 상위(부모) 객체의 프로퍼티나 메소드를 차례대로 검색한다.</p>
-</blockquote>
-<ol start="3">
-<li>검색된 프로퍼티가 Data property라면 프로퍼티 값(데이터 프로퍼티의 프로퍼티 어트리뷰트 [[Value]])의 값을 그대로 반환한다.</li>
-<li>만약 검색된 프로퍼티가 Accessor property라면 접근자 프로퍼티의 프로퍼티 어트리뷰트 [[Get]]의 값, 즉 getter 함수를 호출하고 그 결과를 반환한다.</li>
-</ol>
-<p>함수 객체에는 [[Call]]이라는 고유한 internal method가 있다. [[Call]]은 함수를 호출하면 내부적으로 호출된다. 이는 일반 객체에는 없는 함수 객체만의 고유한 internal method이다.</p>
-<blockquote>
-<h3 id="Abstract-Operation"><a href="#Abstract-Operation" class="headerlink" title="Abstract Operation"></a>Abstract Operation</h3><p>ECMAScript 스펙에서 Abstract operation으로 구현 방향을 제시한다. ECMAScript의 내부 동작을 이해하기 위해서 읽으면 좋음..</p>
-</blockquote>
-<h1 id="3-Accessor-Property"><a href="#3-Accessor-Property" class="headerlink" title="3. Accessor Property"></a>3. Accessor Property</h1><p>프로퍼티는 Data property와 Accessor property로 구분할 수 있다.</p>
-<ul>
-<li>Data property<ul>
-<li>키와 값으로 구성된 일반 프로퍼티. 지금까지 살펴본 모든 프로퍼티는 데이터 프로퍼티이다.</li>
-</ul>
-</li>
-<li>Accessor property<ul>
-<li>자체적으로는 값을 갖지 않고 다른 data property의 값을 읽거나 저장할 때 사용되는 Accessor function으로 구성된 프로퍼티</li>
-</ul>
-</li>
-</ul>
-<p>Accessor function은 getter / setter 함수라고도 부른다. </p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> student = &#123;</span><br><span class="line">    <span class="hljs-comment">// Data property</span></span><br><span class="line">    name: <span class="hljs-string">'Park'</span>,</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-comment">// Accessor property</span></span><br><span class="line">    <span class="hljs-keyword">get</span> infoName() &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.name;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="hljs-keyword">set</span> infoName(newName) &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.name = newName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// A reference to a property value through a data property.</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(student);	<span class="hljs-comment">// &#123;name: "Park", age: 25&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Setting Property Values with Accessor Properties</span></span><br><span class="line"><span class="hljs-comment">// If store the value in the accessor property infoName, the setter function is called.</span></span><br><span class="line">student.infoName = <span class="hljs-string">'Kim'</span>;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(student);	<span class="hljs-comment">// &#123;name: "Kim", age: 25&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Getting Property Values with Accessor Properties</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(student.infoName);	<span class="hljs-comment">// Kim</span></span><br></pre></td></tr></table></figure>
-
-<p>student 객체의 name은 일반적인 데이터 프로퍼티이다.</p>
-<p>get infoName은 getter 함수, set infoName은 setter 함수이고 함수의 이름인 infoName이 바로 접근자 프로퍼티이다. 접근자 프로터티는 값([[Value]] attribute)을 가지지 않고 데이터 프로퍼티의 값을 읽거나(get) 저장(set)할 때 동작한다.</p>
-<p>Accessor property infoName으로 프로퍼티 값에 접근하면 내부적으로 [[Get]] internal method가 호출되어 다음과 같이 동작한다.</p>
-<ol>
-<li>프로퍼티 키가 유효한지 확인한다. (문자열 또는 숫자인지)</li>
-<li>프로토타입 체인에서 프로퍼티를 검색한다.</li>
-<li>검색된 infoName 프로퍼티가 data property인지 accessor property인지 확인한다. infoName은 Accessor property이다.</li>
-<li>Accessor property infoName의 프로퍼티 어트리뷰트 [[Get]]의 값, 즉 getter 함수를 호출해 결과를 반환한다. 프로퍼티 infoName의 프로퍼티 어트리뷰트 [[Get]]의 값은 Object.getOwnPropertyDescriptor 메소드가 반환하는 프로퍼티 디스크립터(PropertyDescriptor) 객체의 get 프로퍼티 값과 같다.</li>
-</ol>
-<p>Accessor property와 data property의 구별 방법</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// The __proto__ of a generic object is an accessor property.</span></span><br><span class="line"><span class="hljs-built_in">Object</span>.getOwnPropertyDescriptor(<span class="hljs-built_in">Object</span>.prototype, <span class="hljs-string">'__proto__'</span>);</span><br><span class="line"><span class="hljs-comment">// &#123;get: ƒ, set: ƒ, enumerable: false, configurable: true&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// The prototype of a function object is a data property.</span></span><br><span class="line"><span class="hljs-built_in">Object</span>.getOwnPropertyDescriptor(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;&#125;, <span class="hljs-string">'prototype'</span>);</span><br><span class="line"><span class="hljs-comment">// &#123;value: &#123;…&#125;, writable: true, enumerable: false, configurable: false&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>Accessor property와 data property의 property descriptor object의 프로퍼티가 다르다.</p>
-<h1 id="4-Property-Attribute"><a href="#4-Property-Attribute" class="headerlink" title="4. Property Attribute"></a>4. Property Attribute</h1><p>모든 프로퍼티는 자신의 상태와 동작을 정의한 내부 슬롯 / 메소드를 가진다. 이것들을 property attribute라고 한다. Property attribute는 자바스크립트 엔진이 프로퍼티를 생성할 때 default로 자동 정의된다.</p>
-<ul>
-<li><p>Data Property Attributes</p>
-<table>
-<thead>
-<tr>
-<th align="center">Property Attribute</th>
-<th align="center">Description</th>
-<th align="center">Property of Property Descriptor Object</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">[[Value]]</td>
-<td align="center">- 프로퍼티 키로 프로퍼티 값에 접근하면 내부 메소드 [[Get]]에 의해 반환되는 값<br>-    프로퍼티 키로 프로퍼티 값을 저장하면 [[Value]]에 값을 저장한다. 이때 프로퍼티가 없으면 프로퍼티를 생성하고 생성된 프로퍼티의 [[Value]]에 값을 저장한다.</td>
-<td align="center">value</td>
-</tr>
-<tr>
-<td align="center">[[Writable]]</td>
-<td align="center">- 프로퍼티 값의 변경 가능 여부. Boolean<br>- [[Writable]]의 값이 false인 경우, 해당 프로퍼티의 [[Value]]의 값을 변경할 수 없다.</td>
-<td align="center">writable</td>
-</tr>
-<tr>
-<td align="center">[[Enumarable]]</td>
-<td align="center">- 프로퍼티의 열거 가능 여부. Boolean<br>- [[Enumerable]]의 값이 false인 경우, 해당 프로퍼티는 for…in 문이나 Object.keys 메소드 등으로 열거할 수 없다.</td>
-<td align="center">enumerable</td>
-</tr>
-<tr>
-<td align="center">[[Configurable]]</td>
-<td align="center">- 프로퍼티의 재정의 가능 여부. Boolean<br>- [[Configurable]]의 값이 false인 경우, 해당 프로퍼티의 삭제와 프로퍼티 어트리뷰트 값의 변경이 금지된다.<br> - 단, [[Writable]]이 true인 경우, [[Value]]의 변경과 [[Writable]]을 false로 변경하는 것은 허용된다.</td>
-<td align="center">configurable</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-<ul>
-<li><p>Accessor Property Attributes</p>
-<table>
-<thead>
-<tr>
-<th align="center">Property Attribute</th>
-<th align="center">Description</th>
-<th align="center">Property of Property Descriptor Object</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">[[Get]]</td>
-<td align="center">- 접근자 프로퍼티를 통해 데이터 프로퍼티의 값을 읽을 때 호출되는 접근자 함수 <br>- 접근자 프로퍼티 키로 프로퍼티 값에 접근하면 프로퍼티 어트리뷰트 [[Get]]의 값인 getter 함수가 호출되고 그 결과가 프로퍼티 값으로 반환</td>
-<td align="center">get</td>
-</tr>
-<tr>
-<td align="center">[[Set]]</td>
-<td align="center">- 접근자 프로퍼티를 통해 데이터 프로퍼티의 값을 저장할 때 호출되는 접근자 함수 <br>- 접근자 프로퍼티 키로 프로퍼티 값을 저장하면 프로퍼티 어트리뷰트 [[Set]]의 값인 setter 함수가 호출되고 그 결과가 프로퍼티 값으로 반환</td>
-<td align="center">set</td>
-</tr>
-<tr>
-<td align="center">[[Enumerable]]</td>
-<td align="center">Same as Data Property’s [[Enumerable]]</td>
-<td align="center">enumerable</td>
-</tr>
-<tr>
-<td align="center">[[Configurable]]</td>
-<td align="center">Same as Data Property’s [[Configurable]]</td>
-<td align="center">configurable</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/05/09/15-Property-Definition/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -1174,7 +598,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        131
+                        132
                     </p>
                 </div>
             </div>
@@ -1399,7 +823,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">61</span>
+                <span class="level-item tag">62</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -1429,6 +853,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/190612-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/rose.png" alt="190612-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T10:34:40.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/190612-TIL/" class="has-link-black-ter is-size-6">190612-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1506,25 +949,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/10/36-SPA/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="36. SPA">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-10T01:46:03.000Z">2019-06-10</time></div>
-                    <a href="/2019/06/10/36-SPA/" class="has-link-black-ter is-size-6">36. SPA</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1543,7 +967,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">12</span>
                 </span>
             </a>
         </li>
@@ -1975,7 +1399,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">62</span>
+                        <span class="tag is-grey">63</span>
                     </a>
                 </div>
                 
@@ -2239,7 +1663,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">61</span>
+                <span class="level-item tag">62</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -2269,6 +1693,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/190612-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/rose.png" alt="190612-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T10:34:40.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/190612-TIL/" class="has-link-black-ter is-size-6">190612-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -2346,25 +1789,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/10/36-SPA/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="36. SPA">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-10T01:46:03.000Z">2019-06-10</time></div>
-                    <a href="/2019/06/10/36-SPA/" class="has-link-black-ter is-size-6">36. SPA</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2383,7 +1807,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">12</span>
                 </span>
             </a>
         </li>
@@ -2815,7 +2239,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">62</span>
+                        <span class="tag is-grey">63</span>
                     </a>
                 </div>
                 

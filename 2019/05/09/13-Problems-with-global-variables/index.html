@@ -16,7 +16,7 @@
 <meta property="og:description" content="1. Life Cycle of a Variable변수는 선언에 의해 생성되고 할당을 통해 값을 가진다. 생성된 변수는 언젠가는 소멸한다. 변수가 생성되고 소멸되는 주기를 변수의 생명 주기라고 한다. 변수가 생성된다는 것은 메모리 공간을 차지하는 것이고, 소멸됨은 차지하던 메모리가 해제되는 것이다. 조금 더 정확히 말하면 변수가 소멸된다는 것은 등록된 식별자">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
-<meta property="og:updated_time" content="2019-06-11T08:27:54.904Z">
+<meta property="og:updated_time" content="2019-06-13T01:53:46.668Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="13. Problems with Global Variables">
 <meta name="twitter:description" content="1. Life Cycle of a Variable변수는 선언에 의해 생성되고 할당을 통해 값을 가진다. 생성된 변수는 언젠가는 소멸한다. 변수가 생성되고 소멸되는 주기를 변수의 생명 주기라고 한다. 변수가 생성된다는 것은 메모리 공간을 차지하는 것이고, 소멸됨은 차지하던 메모리가 해제되는 것이다. 조금 더 정확히 말하면 변수가 소멸된다는 것은 등록된 식별자">
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    12 minutes read (About 1758 words)
+                    12 minutes read (About 1759 words)
                 </span>
                 
                 
@@ -186,6 +186,8 @@
             <h1 id="1-Life-Cycle-of-a-Variable"><a href="#1-Life-Cycle-of-a-Variable" class="headerlink" title="1. Life Cycle of a Variable"></a>1. Life Cycle of a Variable</h1><p>변수는 선언에 의해 생성되고 할당을 통해 값을 가진다. 생성된 변수는 언젠가는 소멸한다. 변수가 생성되고 소멸되는 주기를 변수의 생명 주기라고 한다.</p>
 <p>변수가 생성된다는 것은 메모리 공간을 차지하는 것이고, 소멸됨은 차지하던 메모리가 해제되는 것이다.</p>
 <p>조금 더 정확히 말하면 변수가 소멸된다는 것은 등록된 식별자가 소멸한다는 것이다. 이때 식별자와 값의 바인딩이 해제된다. 어떤 지역 스코프가 사라질 때 그 스코프에 등록된 식별자들이 소멸된다.</p>
+<a id="more"></a>
+
 <p>함수 내부에서 선언된 지역 변수는 함수가 호출되면 생성되고 함수가 종료하면 소멸한다. 즉, 지역 변수의 생명주기는 함수와 생명 주기와 같다. 그래서 지역 변수의 생명주기는 비교적 짧다. 그러나 전역 변수는 다르다.</p>
 <p>함수는 함수 몸체의 문이 끝나거나, return 문이 실행되면 종료한다. 하지만 전역 코드는 마지막 문이 끝나서 더 이상 실행할 문이 없어도 함수처럼 종료하지 않는다. 전역변수는 브라우저를 종료해서 애플리케이션을 종료할 때까지 유효하다. 즉, 전역 변수의 생명주기는 애플리케이션의 생명 주기와 일치한다. 이는 다음과 같은 문제점을 가진다.</p>
 <h1 id="2-Problem-of-Global-Variable"><a href="#2-Problem-of-Global-Variable" class="headerlink" title="2. Problem of Global Variable"></a>2. Problem of Global Variable</h1><h2 id="2-1-Implicit-Coupling"><a href="#2-1-Implicit-Coupling" class="headerlink" title="2.1. Implicit Coupling"></a>2.1. Implicit Coupling</h2><p>전역 변수는 코드의 전체 영역에서 사용할 수 있다. 이는 <strong>모든 코드에서 전역 변수를 참조하고 변경할 수 있는 암묵적 결합</strong>을 허용한다. 문제는 변수의 유효 범위가 크면 클수록 코드의 가독성이 나빠지고 의도치 않은 상태 변경이 일어난다는 것이다.</p>
@@ -312,7 +314,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        131
+                        132
                     </p>
                 </div>
             </div>
@@ -537,7 +539,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">61</span>
+                <span class="level-item tag">62</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -567,6 +569,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/190612-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/rose.png" alt="190612-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T10:34:40.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/190612-TIL/" class="has-link-black-ter is-size-6">190612-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -644,25 +665,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/10/36-SPA/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="36. SPA">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-10T01:46:03.000Z">2019-06-10</time></div>
-                    <a href="/2019/06/10/36-SPA/" class="has-link-black-ter is-size-6">36. SPA</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -681,7 +683,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">12</span>
                 </span>
             </a>
         </li>
@@ -1113,7 +1115,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">62</span>
+                        <span class="tag is-grey">63</span>
                     </a>
                 </div>
                 
@@ -1377,7 +1379,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">61</span>
+                <span class="level-item tag">62</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -1407,6 +1409,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/190612-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/rose.png" alt="190612-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T10:34:40.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/190612-TIL/" class="has-link-black-ter is-size-6">190612-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1484,25 +1505,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/10/36-SPA/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="36. SPA">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-10T01:46:03.000Z">2019-06-10</time></div>
-                    <a href="/2019/06/10/36-SPA/" class="has-link-black-ter is-size-6">36. SPA</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1521,7 +1523,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">12</span>
                 </span>
             </a>
         </li>
@@ -1953,7 +1955,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">62</span>
+                        <span class="tag is-grey">63</span>
                     </a>
                 </div>
                 

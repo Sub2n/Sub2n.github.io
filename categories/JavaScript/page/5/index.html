@@ -181,7 +181,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    12 minutes read (About 1836 words)
+                    12 minutes read (About 1837 words)
                 </span>
                 
                 
@@ -195,65 +195,16 @@
         </h1>
         <div class="content">
             <h1 id="1-Problems-with-Variables-declared-with-the-var-keyword"><a href="#1-Problems-with-Variables-declared-with-the-var-keyword" class="headerlink" title="1. Problems with Variables declared with the var keyword"></a>1. Problems with Variables declared with the <code>var</code> keyword</h1><p>ES5까지 변수를 선언할 수 있는 유일한 키워드는 <code>var</code> 하나였다. <code>var</code> 키워드로 선언된 변수는 다른 언어와는 구별되는 특징을 가진다.</p>
-<h2 id="1-1-Allow-Duplicate-Variable-Declaration"><a href="#1-1-Allow-Duplicate-Variable-Declaration" class="headerlink" title="1.1. Allow Duplicate Variable Declaration"></a>1.1. Allow Duplicate Variable Declaration</h2><p><code>var</code> 키워드로 선언한 변수는 중복 선언이 가능하다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>;</span><br><span class="line"><span class="hljs-comment">// No Error</span></span><br><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">10</span>;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(x); <span class="hljs-comment">//10</span></span><br></pre></td></tr></table></figure>
-
-<p>같은 스코프 내에서 변수를 중복 선언하면 나중에 선언된 변수는 선언문이 아닌 할당문처럼 동작한다. 이 때 에러가 발생하지 않기 때문에 중복 선언을 인지하기 힘들다. 이로 인해 의도치 않게 변수값이 변경될 수 있다.</p>
-<h2 id="1-2-Function-level-Scope"><a href="#1-2-Function-level-Scope" class="headerlink" title="1.2. Function-level Scope"></a>1.2. Function-level Scope</h2><p><code>var</code> 키워드로 선언한 변수는 오로지 함수의 코드 블록만을 지역 스코프로 인정한다. 따라서, if문이나 for문 등에서 선언한 <code>var</code> 변수는 모두 전역 변수가 된다.</p>
-<p>대부분의 프로그래밍 언어는 block-level scope이기 때문에 function-level scope를 이용하는 것은 전역 변수를 남발할 가능성을 높인다.</p>
-<h2 id="1-3-Variable-Hoisting"><a href="#1-3-Variable-Hoisting" class="headerlink" title="1.3. Variable Hoisting"></a>1.3. Variable Hoisting</h2><p><code>var</code>키워드로 선언한 변수는 변수 호이스팅에 의해 변수 선언문이 스코프의 가장 위로 끌어 올려진 것처럼 동작한다. 즉, 선언 이전에 <code>var</code> 변수를 참조해도 에러가 나지 않는다. 이는 프로그램의 흐름을 해치고 가독성을 떨어뜨린다.</p>
-<h1 id="2-let-keyword"><a href="#2-let-keyword" class="headerlink" title="2. let keyword"></a>2. <code>let</code> keyword</h1><p><code>var</code> 키워드의 단점들을 보완하기 위해 ES6에서 <code>var</code>와 <code>const</code> 키워드가 추가되었다. 이들은 <code>var</code> 키워드와 같이 변수를 선언할 때 사용된다.</p>
-<h2 id="2-1-Ban-Duplicate-Variable-Declaration"><a href="#2-1-Ban-Duplicate-Variable-Declaration" class="headerlink" title="2.1. Ban Duplicate Variable Declaration"></a>2.1. Ban Duplicate Variable Declaration</h2><p><code>let</code> 키워드로 선언한 변수를 중복 선언하면 <code>var</code>와 달리 SyntaxError가 발생한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> x = <span class="hljs-number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">let</span> x = <span class="hljs-number">10</span>;	<span class="hljs-comment">// SyntaxError: Identifier 'x' has already been declared</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="2-2-Block-level-Scope"><a href="#2-2-Block-level-Scope" class="headerlink" title="2.2. Block-level Scope"></a>2.2. Block-level Scope</h2><p><code>var</code> 키워드로 선언한 변수는 함수의 코드 블록만을 지역 스코프로 인정하는 함수 레벨 스코프를 따른다. 그러나 <code>let</code> 키워드로 선언한 변수는 모든 코드 블록 <code>{}</code>을 지역 스코프로 인정하는 블록 레벨 스코프를 따른다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> foo = <span class="hljs-number">1</span>;	<span class="hljs-comment">// global variable</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> foo = <span class="hljs-number">3</span>;	<span class="hljs-comment">// local variable</span></span><br><span class="line">    <span class="hljs-keyword">let</span> bar = <span class="hljs-number">4</span>;	<span class="hljs-comment">// local variable</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-built_in">console</span>.log(foo); 	<span class="hljs-comment">// 3</span></span><br><span class="line">	<span class="hljs-built_in">console</span>.log(bar);	<span class="hljs-comment">// 4</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(foo); 	<span class="hljs-comment">// 1</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(bar);	<span class="hljs-comment">// ReferenceError: bar is not defined</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="2-3-Variable-Hoisting"><a href="#2-3-Variable-Hoisting" class="headerlink" title="2.3. Variable Hoisting"></a>2.3. Variable Hoisting</h2><p><code>let</code> 키워드로 선언한 변수는 변수 호이스팅이 발생하지 않는 것처럼 동작한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(foo);	<span class="hljs-comment">// ReferenceError: foo is not defined</span></span><br><span class="line"><span class="hljs-keyword">let</span> foo;</span><br></pre></td></tr></table></figure>
-
-<p>그렇다면 <code>let</code> 키워드로 선언한 선언문은는 런타임 이전에 실행되지 않는 것일까? </p>
-<p>일반적으로 <code>var</code> 키워드로 선언한 변수는 런타임 이전에 자바스크립트 엔진에 의해 암묵적으로 declaration phase와 initialization phase가 <strong>한 번에</strong> 진행된다.</p>
-<p><img src="https://user-images.githubusercontent.com/48080762/57504827-02424500-7331-11e9-960b-75e673a99ae3.png" alt="var declaration"></p>
-<ol>
-<li>Declaration phase : Execution context의 lexical environment에 있는 스코프에 변수 식별자를 등록하여 변수의 존재를 알린다.</li>
-<li>Initialization phase : declaration phase가 끝나는 즉시 값을 저장하기 위한 메모리 공간을 확보하고 암묵적으로 undefined로 변수를 할당해 초기화한다.</li>
-</ol>
-<p><code>let</code> 키워드로 선언한 변수는 “Declaration phase”와 “Initialization Phase”가 <strong>분리되어 진행</strong>된다.  즉, 런타임 이전에 암묵적으로 declaration phase가 먼저 실행되지만 <strong>initialization phase는 런타임에 변수 선언문에 도달했을 때 실행</strong>된다.</p>
-<p><img src="https://user-images.githubusercontent.com/48080762/57430144-acef3080-7269-11e9-987d-75b1881b029a.png" alt="let declaration"></p>
-<p>initialization phase가 실행되기 이전에 변수에 접근하려고 하면 reference error가 발생한다. 아직 변수를 위한 메모리 공간이 확보되지 않았기 때문이다. 따라서 스코프의 시작 지점부터 <strong>변수 선언문을 만나서</strong> initialization phase가 시작되기 전까지는 변수를 참조할 수 없다.</p>
-<blockquote>
-<h3 id="TDZ-Temporal-Dead-Zone"><a href="#TDZ-Temporal-Dead-Zone" class="headerlink" title="TDZ (Temporal Dead Zone)"></a>TDZ (Temporal Dead Zone)</h3><p>스코프의 시작 지점부터 Initialization phase 시작 지점까지의 구간 </p>
-</blockquote>
-<p><code>let</code> 키워드로 선언한 변수는 hoisting이 되지 않는 게 아니라, 선언문을 만났을 때 initialization phase를 진행하는 것이다.</p>
-<h2 id="2-4-Global-Object-and-let"><a href="#2-4-Global-Object-and-let" class="headerlink" title="2.4. Global Object and let"></a>2.4. Global Object and <code>let</code></h2><p><strong>전역 객체(Global Object)</strong>는 모든 객체의 유일한 최상위 객체를 의미하며 일반적으로 브라우저 환경에서는 window 객체, Node.js 환경에서는 global 객체를 말한다.</p>
-<p><strong><code>var</code> 키워드로 선언한 전역 변수와, 키워드 없이 선언하고 값을 할당한 암묵적 전역변수, 그리고 전역 함수는 전역 객체의 프로퍼티가 된다.</strong></p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>;</span><br><span class="line">y = <span class="hljs-number">2</span>;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.x === x);		<span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.y === y);		<span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.foo === foo);	<span class="hljs-comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<p>전역 객체의 프로퍼티는 전역 변수처럼 사용할 수 있다. 전역 객체의 프로퍼티를 참조할 때 window를 생략할 수 있다.</p>
-<p>그러나 <code>let</code> 키워드로 선언한 전역 변수는 전역 객체 window의 프로퍼티가 아니다. <code>let</code> 전역 변수는 전역 렉시컬 환경의 선언적 환경 레코드 내에 존재하게 된다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> x = <span class="hljs-number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.x);	<span class="hljs-comment">// undefined</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="3-const-Keyword"><a href="#3-const-Keyword" class="headerlink" title="3. const Keyword"></a>3. <code>const</code> Keyword</h1><p><code>const</code> 키워드는 상수(변하지 않는 고정된 값)를 선언하기 위해 사용한다. <code>let</code> 과 <code>const</code> 는 동일한 특징이 많다. 차이점을 살펴보자.</p>
-<h2 id="3-1-Declaration-and-Initialization"><a href="#3-1-Declaration-and-Initialization" class="headerlink" title="3.1. Declaration and Initialization"></a>3.1. Declaration and Initialization</h2><p><code>let</code> 키워드로 선언한 변수와 달리 <code>const</code> 키워드로 선언한 변수는 재할당이 금지된다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> PI = <span class="hljs-number">3.14</span>;</span><br><span class="line"></span><br><span class="line">PI = <span class="hljs-number">3.141492</span>;	<span class="hljs-comment">// TypeError: Assignment to constant variable.</span></span><br></pre></td></tr></table></figure>
-
-<p><code>const</code> 키워드로 선언한 변수는 반드시 선언과 할당이 동시에 이루어져야 한다. 이후로는 재할당을 할 수 없다.</p>
-<p><code>const</code> 키워드로 선언한 변수 또한 block-level scope를 갖는다.</p>
-<h2 id="3-2-Constant"><a href="#3-2-Constant" class="headerlink" title="3.2. Constant"></a>3.2. Constant</h2><p>변수를 만들고 재할당을 하지 않을 거라면 상수를 적극적으로 쓰는 게 좋다. 고정된 값을 상수로 만들어 쓰면 코드의 가독성을 높일 수 있다. 상수는 프로그램 전체에서 사용하므로, 유지보수에 효율적이다.</p>
-<h2 id="3-3-const-Keyword-and-Object"><a href="#3-3-const-Keyword-and-Object" class="headerlink" title="3.3. const Keyword and Object"></a>3.3. <code>const</code> Keyword and Object</h2><p><code>const</code> 키워드로 선언한 변수에 primitive value를 할당한 경우, primitive value는 immutable value이고 재할당이 금지되므로 할당된 값을 변경할 수 있는 방법이 없다.</p>
-<p><code>const</code> 키워드로 선언한 변수에 객체를 할당한 경우, 재할당이 금지되는 것은 마찬가지이다. 그러나 객체는 mutable value이므로 <code>const</code> 키워드로 선언된 변수에 할당된 객체는 변경이 가능하다.</p>
-<p>즉, <code>const</code> 키워드는 재할당을 금지할 뿐 immutable을 의미하지 않는다. immutable과 mutable은 상수와 변수의 개념이 아닌, 값의 변경에 대한 개념이다.</p>
-<h1 id="4-var-vs-let-vs-const"><a href="#4-var-vs-let-vs-const" class="headerlink" title="4. var vs. let vs. const"></a>4. <code>var</code> vs. <code>let</code> vs. <code>const</code></h1><p>변수 선언에는 기본적으로 <code>const</code>를 사용하고 <code>let</code>은 재할당이 필요한 경우에 사용하는 것이 좋다. </p>
-<ul>
-<li>ES6 사용시 <code>var</code> 키워드 사용하지 않는다.</li>
-<li>재할당이 필요한 경우에만 <code>let</code> 키워드를 사용하고, 변수의 스코프를 최소화 한다.</li>
-<li>객체와 변경을 하지 않을 원시 값에는 <code>const</code> 키워드를 사용한다.</li>
-<li><code>var</code> 와 <code>let</code>/<code>const</code>를 함께 쓰지 않는다.</li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/05/09/14-let-const-and-a-Block-level-Scope/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -288,7 +239,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    12 minutes read (About 1758 words)
+                    12 minutes read (About 1759 words)
                 </span>
                 
                 
@@ -304,47 +255,16 @@
             <h1 id="1-Life-Cycle-of-a-Variable"><a href="#1-Life-Cycle-of-a-Variable" class="headerlink" title="1. Life Cycle of a Variable"></a>1. Life Cycle of a Variable</h1><p>변수는 선언에 의해 생성되고 할당을 통해 값을 가진다. 생성된 변수는 언젠가는 소멸한다. 변수가 생성되고 소멸되는 주기를 변수의 생명 주기라고 한다.</p>
 <p>변수가 생성된다는 것은 메모리 공간을 차지하는 것이고, 소멸됨은 차지하던 메모리가 해제되는 것이다.</p>
 <p>조금 더 정확히 말하면 변수가 소멸된다는 것은 등록된 식별자가 소멸한다는 것이다. 이때 식별자와 값의 바인딩이 해제된다. 어떤 지역 스코프가 사라질 때 그 스코프에 등록된 식별자들이 소멸된다.</p>
-<p>함수 내부에서 선언된 지역 변수는 함수가 호출되면 생성되고 함수가 종료하면 소멸한다. 즉, 지역 변수의 생명주기는 함수와 생명 주기와 같다. 그래서 지역 변수의 생명주기는 비교적 짧다. 그러나 전역 변수는 다르다.</p>
-<p>함수는 함수 몸체의 문이 끝나거나, return 문이 실행되면 종료한다. 하지만 전역 코드는 마지막 문이 끝나서 더 이상 실행할 문이 없어도 함수처럼 종료하지 않는다. 전역변수는 브라우저를 종료해서 애플리케이션을 종료할 때까지 유효하다. 즉, 전역 변수의 생명주기는 애플리케이션의 생명 주기와 일치한다. 이는 다음과 같은 문제점을 가진다.</p>
-<h1 id="2-Problem-of-Global-Variable"><a href="#2-Problem-of-Global-Variable" class="headerlink" title="2. Problem of Global Variable"></a>2. Problem of Global Variable</h1><h2 id="2-1-Implicit-Coupling"><a href="#2-1-Implicit-Coupling" class="headerlink" title="2.1. Implicit Coupling"></a>2.1. Implicit Coupling</h2><p>전역 변수는 코드의 전체 영역에서 사용할 수 있다. 이는 <strong>모든 코드에서 전역 변수를 참조하고 변경할 수 있는 암묵적 결합</strong>을 허용한다. 문제는 변수의 유효 범위가 크면 클수록 코드의 가독성이 나빠지고 의도치 않은 상태 변경이 일어난다는 것이다.</p>
-<h2 id="2-2-Long-Life-Cycle"><a href="#2-2-Long-Life-Cycle" class="headerlink" title="2.2. Long Life Cycle"></a>2.2. Long Life Cycle</h2><p>전역 변수는 생명 주기가 길다. 이는 다음과 같이 몇 가지 문제점을 가진다.</p>
-<ul>
-<li>전역 변수의 상태를 변경할 수 있는 시간이 길다.</li>
-<li>모든 함수가 참조할 수 있으므로 상태가 변경될 위험이 크다.</li>
-<li>메모리 리소스를 오랜기간 차지한다.</li>
-<li><code>var</code> 키워드는 변수의 중복 선언을 허용하므로 중간에 변수명이 중복되어 의도치 않은 재할당이 일어날 수 있다.</li>
-</ul>
-<h2 id="2-3-Exist-at-the-End-of-the-Scope-Chain"><a href="#2-3-Exist-at-the-End-of-the-Scope-Chain" class="headerlink" title="2.3. Exist at the End of the Scope Chain"></a>2.3. Exist at the End of the Scope Chain</h2><p>전역 변수의 또다른 문제점은 스코프 체인 가장 상위에 존재한다는 것이다. 이는 자바스크립트 엔진이 전역 변수를 찾을 때 가장 마지막 스코프까지 검색해야함을 의미한다. 즉, 전역 변수의 검색 속도가 가장 느리다.</p>
-<h2 id="2-4-Namespace-Pollution"><a href="#2-4-Namespace-Pollution" class="headerlink" title="2.4. Namespace Pollution"></a>2.4. Namespace Pollution</h2><p>자바스크립트의 특성으로, 분리되어있는 파일을 함께 import할 경우 하나의 전역 스코프를 공유한다. 따라서 다른 파일 내에서 동일한 이름으로 명명한 변수나 함수가 겹칠 경우 예상치 못한 결과를 가져올 수 있다.</p>
-<h1 id="3-How-to-Suppress-Using-Global-Variables"><a href="#3-How-to-Suppress-Using-Global-Variables" class="headerlink" title="3. How to Suppress Using Global Variables"></a>3. How to Suppress Using Global Variables</h1><p>위에서 살펴본 바와 같이 전역 변수의 사용은 위험하다. 반드시 사용해야할 때가 아니라면 지역 변수를 사용해야 한다. </p>
-<h2 id="3-1-Immediately-Invoke-Function-Expression"><a href="#3-1-Immediately-Invoke-Function-Expression" class="headerlink" title="3.1. Immediately Invoke Function Expression"></a>3.1. Immediately Invoke Function Expression</h2><p>즉시 실행 함수는 함수의 정의와 동시에 한 번만 호출되는 함수로, 모든 코드를 즉시 실행 함수로 감싸면 모든 변수는 즉시 실행 함수의 지역 변수가 된다. 함수는 스코프를 만들고, 함수 내에 선언된 변수는 지역 변수가 된다는 것을 이용한 방법이다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> foo = <span class="hljs-number">10</span>;	<span class="hljs-comment">//local variable of IIF</span></span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
-
-<p>가장 간단하고 일반적인 방식이다.</p>
-<h2 id="3-2-Namespace-Object"><a href="#3-2-Namespace-Object" class="headerlink" title="3.2. Namespace Object"></a>3.2. Namespace Object</h2><p>전역 네임 스페이스 역할을 담당할 객체를 생성하고, 전역 변수처럼 사용하고 싶은 변수를 프로퍼티로 추가한다. 즉, 전역 변수를 네임 스페이스 객체의 프로퍼티로 등록하고 사용하는 방법이다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> GLOBAL = &#123;&#125;;	<span class="hljs-comment">// global namespace object</span></span><br><span class="line">GLOBAL.name = <span class="hljs-string">'Lee'</span>;</span><br></pre></td></tr></table></figure>
-
-<p>현재는 잘 안 쓰는 방식.</p>
-<h2 id="3-3-Module-Pattern"><a href="#3-3-Module-Pattern" class="headerlink" title="3.3. Module Pattern"></a>3.3. Module Pattern</h2><p>모듈 패턴은 클래스를 모방하여 관련이 있는 변수와 함수를 모아서 즉시 실행함수로 감싸 하나의 모듈로 만든다. 모듈 패턴은 자바스크립트의 <strong>클로저</strong>를 기반으로 동작한다.</p>
-<p><strong>캡슐화란 보호하고자 하는 내부 구현을 외부로부터 감추는 것</strong>을 말한다. 캡슐화의 목적은 상태 유지로, 외부에서 객체 내부의 상태를 변경하는 것을 제한한다. C++이나 Java의 class는 기본적으로 Access modifier를 제공하여 공개 범위를 한정할 수 있게 한다.</p>
-<p>자바스크립트는 Access modifier를 제공하지 않는다. 모듈 패턴은 전역 네임 스페이스의 오염을 막는 기능에 더해서, 한정적이기는 하지만 캡슐화를 구현하기 위해 사용한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> Account = (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">  <span class="hljs-comment">// private variable</span></span><br><span class="line">  <span class="hljs-keyword">var</span> balance = <span class="hljs-number">0</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-keyword">return</span> &#123;</span><br><span class="line">      deposit(money) &#123;</span><br><span class="line">        balance += money;</span><br><span class="line">          <span class="hljs-keyword">return</span> balance;</span><br><span class="line">      &#125;,</span><br><span class="line">      withdraw(money) &#123;</span><br><span class="line">          balance -= money;</span><br><span class="line">          <span class="hljs-keyword">return</span> balance;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;());</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(Account.balance);        <span class="hljs-comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(Account.deposit(<span class="hljs-number">3000</span>));		<span class="hljs-comment">//3000</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(Account.withdraw(<span class="hljs-number">1000</span>));	<span class="hljs-comment">//2000</span></span><br></pre></td></tr></table></figure>
-
-<p>위 코드의 즉시 실행 함수는 외부에 노출할 메소드를 객체에 담아 반환한다. 이 때 반환되는 객체의 프로퍼티는 외부에 노출되는 퍼블릭 멤버이다. 반환되는 객체에 추가되지 않은 변수나 함수는 모두 외부에서 접근할 수 없는 프라이빗 멤버가 된다.</p>
-<blockquote>
-<h4 id="Closure"><a href="#Closure" class="headerlink" title="Closure?"></a>Closure?</h4><p>그런데 즉시 실행 함수는 선언과 동시에 실행되고 종료되는데 deposit()과 withdraw() 메소드가 어떻게 num을 참조할 수 있을까? </p>
-<p>deposit()과 withdraw()는 즉시 실행 함수의 중첩 함수로, 중첩 함수가 외부 함수보다 더 오래 살아남아 있을 경우 이를 <strong>클로저</strong>라고 부른다. </p>
-<p>자바스크립트의 함수 객체는 생성될 때, 프로퍼티 어트리뷰트로 [[Environment]]라는 내부 슬롯을 가진다. 이 곳에 자신이 생성될 때의 외부 스코프(Lexical scope)를 담는다. 이는 함수 객체가 소멸하기 전까지 유지된다. 위의 num같은 변수를 자유변수라고 한다.</p>
-<p>deposit()과 withdraw()는 같은 lexical scope object를 참조하고 있다. 모던 자바스크립트 프로그래밍에서는 클로저의 사용을 적극 권장한다.</p>
-</blockquote>
-<h2 id="3-4-ES6-Module"><a href="#3-4-ES6-Module" class="headerlink" title="3.4 ES6 Module"></a>3.4 ES6 Module</h2><ul>
-<li>import</li>
-<li>export</li>
-</ul>
-<p>ES6가 구체적인 구현 스펙을 제안하지 않아 대부분의 브라우저가 완전히 지원하지는 않는다. 그러나 Webpack 등의 모듈 번들러를 사용해서 ES6 모듈을 사용할 수 있다.</p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/05/09/13-Problems-with-global-variables/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -379,7 +299,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 630 words)
+                    4 minutes read (About 631 words)
                 </span>
                 
                 
@@ -393,85 +313,16 @@
         </h1>
         <div class="content">
             <p>The scope determines the extent to which the identifier can be referenced. A scope is a data structure that keeps the binding of identifiers and values, and is managed by the JavaScript engine.</p>
-<h1 id="What-is-Scope"><a href="#What-is-Scope" class="headerlink" title="What is Scope?"></a>What is Scope?</h1><p>The range in which the variable is valid. That is, the extent to which other code can refer to the variable itself. The scope is created by the location <strong>where the variable is declared</strong>.</p>
-<p>When there are variables with the same name in different scopes, JavaScript engine must decide which variable to reference at runtime. JavaScript uses the scope to determine which variables to reference. That is, <strong>the scope is the rule that the JavaScript engine uses to search for variables to reference.</strong></p>
-<p>By default, JavaScript supports function-level scopes rather than block-level scopes. Variables declared with <code>var</code> form a function-level scope. However, variables declared with <code>let</code> or <code>const</code> form a block-level scopes.</p>
-<p>If there is no scope, the name of the variable in the program should be unique.</p>
-<blockquote>
-<h4 id="Duplicate-declaration-of-var-keyword-variable"><a href="#Duplicate-declaration-of-var-keyword-variable" class="headerlink" title="Duplicate declaration of var keyword variable"></a>Duplicate declaration of <code>var</code> keyword variable</h4><p>Variables declared with the <code>var</code> keyword allow duplicate declarations within the same scope.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">&gt;     <span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>;	</span><br><span class="line">&gt;     </span><br><span class="line">&gt;     <span class="hljs-comment">// This statement operates like x = 2;</span></span><br><span class="line">&gt;     <span class="hljs-comment">// So reassignment occurs.</span></span><br><span class="line">&gt;     <span class="hljs-keyword">var</span> x = <span class="hljs-number">2</span>;	<span class="hljs-comment">//2</span></span><br><span class="line">&gt;     </span><br><span class="line">&gt;     <span class="hljs-built_in">console</span>.log(x); <span class="hljs-comment">//2</span></span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; foo();</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>Variables declared as <code>let</code> or <code>const</code> do not allow duplicate declarations, so it is better to use them.</p>
-</blockquote>
-<h1 id="Types-of-scope"><a href="#Types-of-scope" class="headerlink" title="Types of scope"></a>Types of scope</h1><p>Code can be distinguished as global and local.</p>
-<table>
-<thead>
-<tr>
-<th align="left"></th>
-<th align="center">Global</th>
-<th align="center">Local</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">Explanation</td>
-<td align="center">Outermost area of code</td>
-<td align="center">Inside of function body</td>
-</tr>
-<tr>
-<td align="left">Scope</td>
-<td align="center">Global scope</td>
-<td align="center">Local scope</td>
-</tr>
-<tr>
-<td align="left">Vaiable</td>
-<td align="center">Global variable</td>
-<td align="center">Local variable</td>
-</tr>
-</tbody></table>
-<p>The variable is determined by its declared location (global or local) to the scope in which it is valid. </p>
-<ul>
-<li>A variable declared in global is a global variable having a global scope</li>
-<li>A variable declared in local is a local variable having a local scope.</li>
-</ul>
-<p>Declaring a variable in global is a global variable with a global scope. Global variables can be referenced anywhere. In other words, global variables are valid in the global scope.</p>
-<p>Local variables can be referenced only in the declared region and sub-region (nested function). In other words, local variables are valid in their local and subregional scopes.</p>
-<h1 id="Scope-Chain"><a href="#Scope-Chain" class="headerlink" title="Scope Chain"></a>Scope Chain</h1><p>Scopes are created by functions. Functions can be nested, so the local scope of a function can also be nested. This means that <strong>the scope has a hierarchical structure by nesting of functions</strong>.</p>
-<p>The local scope of the outer function is the top scope of the nested function.</p>
-<p><strong>The scope chain</strong> refers to a structure in which the scopes from the deepest local scope to the global scope of the overlap are hierarchically connected.</p>
-<p>When referring to a variable, the JavaScript engine starts at the scope of the code that references the variable, moves to the top scope, and searches for the declared variable.</p>
-<h1 id="Function-level-Scope"><a href="#Function-level-Scope" class="headerlink" title="Function-level Scope"></a>Function-level Scope</h1><ul>
-<li>Most programming language like C, Java <ul>
-<li>Block-level scope</li>
-<li>All code blocks (if, for, while, try / catch, etc.), not just the function body, create the local scope.</li>
-</ul>
-</li>
-<li>Variables declared with the <code>var</code> keyword <ul>
-<li><strong>Function-level scope</strong></li>
-<li>Accept only the code block of the <strong>function</strong> as the local scope.</li>
-</ul>
-</li>
-</ul>
-<p>The <code>let</code> and <code>const</code> keywords introduced in ES6 support block level scopes.</p>
-<h1 id="Lexical-Scope"><a href="#Lexical-Scope" class="headerlink" title="Lexical Scope"></a>Lexical Scope</h1><ul>
-<li>Dynamic Scope<ul>
-<li>The function’s top scope is determined by <strong>where the function is called.</strong></li>
-</ul>
-</li>
-<li><strong>Lexical Scope</strong> / Static Scope<ul>
-<li>The function’s top scope is determined by <strong>where the function is defined.</strong></li>
-<li>Most programming languages follow the lexical scope.</li>
-</ul>
-</li>
-</ul>
-<p>JavaScript follows a lexical scope. So it determines the top scope depending on where it is defined.</p>
-<h1 id="Implicit-Global-Variable"><a href="#Implicit-Global-Variable" class="headerlink" title="Implicit Global Variable"></a>Implicit Global Variable</h1><p>If declare a variable without <code>var</code> keyword, it becomes a global variable.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    i = <span class="hljs-number">0</span>;	<span class="hljs-comment">//implicit global variable</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// var i = 0 is a duplicate declaration</span></span><br><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) &#123;</span><br><span class="line">    foo();</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(i);</span><br><span class="line">&#125;	<span class="hljs-comment">// infinite loop</span></span><br></pre></td></tr></table></figure>
-
-<p>Global variables are so dangerous!</p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/05/08/12-Scope/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -506,7 +357,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    16 minutes read (About 2371 words)
+                    16 minutes read (About 2372 words)
                 </span>
                 
                 
@@ -529,181 +380,16 @@
 </ul>
 <p>함수는 식별자로 함수명을 사용한다.</p>
 <p>함수는 함수를 정의함으로써 생성된다. 생성된 함수를 실행시키기 위해서는 함수를 호출해야한다. </p>
-<h1 id="Why-use-a-function"><a href="#Why-use-a-function" class="headerlink" title="Why use a function?"></a>Why use a function?</h1><p>함수를 사용해야 하는 이유는 다음과 같다.</p>
-<ul>
-<li>동일한 작업을 반복적으로 수행할 때 함수를 호출해 <strong>코드를 재사용</strong>하기 위해서 사용</li>
-<li>중복되는 코드를 제가해서 <strong>유지보수의 효율성</strong>을 높이기 위해서 사용</li>
-<li>함수의 이름으로 기능을 명시해 코드의 <strong>가독성을 높일 수 있다</strong>.</li>
-</ul>
-<h1 id="Function-Literal"><a href="#Function-Literal" class="headerlink" title="Function Literal"></a>Function Literal</h1><p>Just as objects are created as object literals, functions can also be created as function literals. Function literal consists of function keyword, function name, list of parameters and function body. A <strong>function literal is evaluated to create a function object</strong>.</p>
-<ul>
-<li>Function name<ul>
-<li>Since the function name is an identifier, it must conform to the identifier naming rules.</li>
-<li>A function name is an identifier that can be referenced <strong>only within a function body</strong>.</li>
-<li>The function name can be omitted. A function with a function name is called a <strong><em>named function</em></strong>, and a function without a function name is called an <strong><em>anonymous function</em></strong>.</li>
-</ul>
-</li>
-<li>List of parameters<ul>
-<li>Wrap 0 or more parameters in parentheses and separate them with commas.</li>
-<li>Parameters are assigned arguments.</li>
-<li>Parameters are treated the same as variables in the function body.</li>
-</ul>
-</li>
-<li>Function body<ul>
-<li>It is a block of code that defines the statements to be executed in batches as a unit of execution when the function is called.</li>
-<li>The function body is executed by a function call.</li>
-</ul>
-</li>
-</ul>
-<p>A function literal is evaluated to produce a value, which is an object. In other words, <strong>the function of JavaScript is an object.</strong></p>
-<p>Unlike regular objects, functions can be called and have unique properties. All function objects have <code>[[Call]]</code>.</p>
-<h1 id="Definition-of-Function"><a href="#Definition-of-Function" class="headerlink" title="Definition of Function"></a>Definition of Function</h1><p>There are 4 ways to define a function.</p>
-<ul>
-<li><p>Function Declaration / Function Statement</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<ul>
-<li><p>Function Expression</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<ul>
-<li><p>Function Constructor</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>(<span class="hljs-string">'x'</span>, <span class="hljs-string">'y'</span>, <span class="hljs-string">'return x + y'</span>);</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<ul>
-<li><p>Arrow Function (ES6)</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-function">(<span class="hljs-params">x, y</span>) =&gt;</span> x + y;</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<p>Each method defines a function, but there is an important difference.</p>
-<h2 id="Function-Declaration"><a href="#Function-Declaration" class="headerlink" title="Function Declaration"></a>Function Declaration</h2><p>The function declaration has the same format as the function literal, but <strong>the function name can not be omitted.</strong> This is because the JavaScript engine needs to create variables with function names.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Function Declaration</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//Function Call</span></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>); <span class="hljs-comment">//5</span></span><br></pre></td></tr></table></figure>
-
-<p>The function name is an identifier that can be referenced only within the function body.</p>
-<p>However, when you call a function outside a function, you use the function name.</p>
-<p>When a function declaration is executed to create a function object, a variable is needed to assign the function object. This is because the function object can not be stored in memory unless it is allocated anywhere. </p>
-<p>Therefore, the JavaScript engine</p>
-<ol>
-<li>Implicitly declares an identifier of the same name as the function name</li>
-<li>Assigns the created function object to the identifier.</li>
-</ol>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// This is the pseudo code when the above function add statement is executed.</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// variable add is an identifier created by the JavaScript engine with the same name as the function name implicitly. </span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
-
-<p>Function name can only be referenced within a function, and implicitly created <strong>variable</strong> name can be referenced <strong>in the scope where the function is defined</strong>.</p>
-<p><img src="https://user-images.githubusercontent.com/48080762/57363047-21b76180-71bb-11e9-9fa1-d67593e265e4.png" alt="Pseudo Code"></p>
-<p>This pseudo code is the following function expression. That is, the JavaScript engine converts function declarations into function expressions to create function objects.</p>
-<h2 id="Function-Expression"><a href="#Function-Expression" class="headerlink" title="Function Expression"></a>Function Expression</h2><h3 id="First-class-object"><a href="#First-class-object" class="headerlink" title="First-class object"></a>First-class object</h3><p>An object that can be assigned to a variable, such as a value, which can be the value of a property or an element of an array.</p>
-<p>Function in JavaScript is a first-class object. It means that a function can be freely used as a value. </p>
-<p>A function object created with a function literal can be assigned to a variable. This way of defining a function is called a <strong>function expression</strong>.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Function Expression</span></span><br><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
-
-<p>Unlike function declarations, function literals can omit function names. It is common to use anonymous functions in function expressions.</p>
-<p>Since a function name is an identifier that can be referenced only by a function body, even if a named function is used, the function must be called with the variable name to which the function object is assigned.</p>
-<h2 id="Function-Creation-time-and-Function-Hoisting"><a href="#Function-Creation-time-and-Function-Hoisting" class="headerlink" title="Function Creation time and Function Hoisting"></a>Function Creation time and Function Hoisting</h2><p>Function declarations and function expressions seem to behave similarly, because the JavaScript engine implicitly declares the variable as a function name in the function declaration statement and allocates the created object.<br>However, function declaration is non-expression statement, and function expression is an expression statement. Therefore, there is an important difference.</p>
-<p>The point at which the function is created is when the JavaScript engine evaluates the function declaration to create the function object.</p>
-<ul>
-<li><p><strong>Function declaration statements are executed before runtime</strong> because they are declarations themselves. </p>
-</li>
-<li><p>However, <strong>function expressions are executed at run-time</strong> because they are assignment statements that assign function literals to variables. </p>
-</li>
-</ul>
-<p>That is, the function created by the function declaration statement and the function generated by the function expression are created at different times.</p>
-<p>Functions created with function declarations are executed and hoisted before runtime, but functions created with function expressions are not hoisted.</p>
-<p>Unlike variable hoisting, in the case of function hoisting, a function object is referenced instead of undefined.</p>
-<h2 id="Function-Constructor"><a href="#Function-Constructor" class="headerlink" title="Function Constructor"></a>Function Constructor</h2><blockquote>
-<h2 id="Constructor-Function"><a href="#Constructor-Function" class="headerlink" title="Constructor Function"></a>Constructor Function</h2><p>A constructor function is a function that creates an object.</p>
-</blockquote>
-<p>The <code>function</code> constructor function, which is a built-in function provided by JavaScript, receives a parameter list and a function body as a string. It is called with the <code>new</code> operator and returns the created function object.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Function Constructor</span></span><br><span class="line"><span class="hljs-keyword">var</span> add = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>(<span class="hljs-string">'x'</span>, <span class="hljs-string">'y'</span>, <span class="hljs-string">'return x + y'</span>);</span><br><span class="line"></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
-
-<p>However, creating a function as a function constructor is not common. These functions behave differently from function declarations or function expressions.</p>
-<p>Do not use it!</p>
-<h2 id="Arrow-Function"><a href="#Arrow-Function" class="headerlink" title="Arrow Function"></a>Arrow Function</h2><p>An arrow function introduced in ES6 can make a function simply without a <code>function</code> keyword. </p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Arrow Function</span></span><br><span class="line"><span class="hljs-keyword">const</span> add = <span class="hljs-function">(<span class="hljs-params">x, y</span>) =&gt;</span> x + y;</span><br><span class="line"></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
-
-<p>The arrow function is not available in all situations.</p>
-<h1 id="Function-Call"><a href="#Function-Call" class="headerlink" title="Function Call"></a>Function Call</h1><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Function Call</span></span><br><span class="line">add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>add</code> : Variable name referring to function object, not function name</li>
-<li><code>( )</code> : Function call operator</li>
-<li><code>2, 3</code> : Arguments to be assigned to the parameter</li>
-</ul>
-<p>Calling a function stops the current execution flow and passes control to the called function. At this point, arguments are assigned to the parameters and the statements in the function body begin to execute.</p>
-<h1 id="Parameter-and-Argument"><a href="#Parameter-and-Argument" class="headerlink" title="Parameter and Argument"></a>Parameter and Argument</h1><ul>
-<li>Parameter<ul>
-<li>Declare when defining a function</li>
-<li>Treated as variables in the function body</li>
-<li>When a function is called, the parameter is implicitly created in the function body, initialized to undefined, and then an argument is assigned.</li>
-<li>The scope of the parameter is inside the function.</li>
-</ul>
-</li>
-<li>Argument<ul>
-<li>If the argument is passed less than the parameter, the missing parameter has the value undefined. (No error)</li>
-<li>If the argument is passed in more than the parameter, the excess argument is ignored and kept in the arguments object.</li>
-</ul>
-</li>
-</ul>
-<h1 id="Argument-Check"><a href="#Argument-Check" class="headerlink" title="Argument Check"></a>Argument Check</h1><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> x !== <span class="hljs-string">'number'</span> || <span class="hljs-keyword">typeof</span> y !== <span class="hljs-string">'number'</span>)</span><br><span class="line">    	<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">TypeError</span>(<span class="hljs-string">'Non-number type value has assigned to parameter.'</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add(<span class="hljs-number">2</span>);			<span class="hljs-comment">// TypeError: Non-number type value has assigned to parameter.</span></span><br><span class="line">add(<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>);	<span class="hljs-comment">// TypeError: Non-number type value has assigned to parameter.</span></span><br></pre></td></tr></table></figure>
-
-<p>It is necessary to check whether the argument is passed properly in the JavaScript function. Because..</p>
-<ul>
-<li>JavaScript functions do not check that the number of parameters and arguments match.</li>
-<li>Because JavaScript is a dynamic type language, functions do not specify the type of parameters in advance.</li>
-</ul>
-<h1 id="Number-of-parameters"><a href="#Number-of-parameters" class="headerlink" title="Number of parameters"></a>Number of parameters</h1><p>The smaller the number of parameters, the better. A function with 0 parameters is ideal. The more parameters, the more things to consider when using the function, which leads to errors.</p>
-<p>Also, if the number or sequence of parameters changes, all the code that calls the function must be modified.</p>
-<p>The ideal function should only do one thing and make it as small as possible. In addition to functions, classes and other functional units must be as clear and small as possible too.</p>
-<h1 id="External-State-Changes-and-Functional-Programming"><a href="#External-State-Changes-and-Functional-Programming" class="headerlink" title="External State Changes and Functional Programming"></a>External State Changes and Functional Programming</h1><p>Since functions are objects, they follow pass by reference. Passing a value to a function’s parameters is called as <strong>Call by value</strong> and <strong>Call by reference</strong>, but the behavior is the same as <strong>Pass by value</strong> and <strong>Pass by reference</strong>.</p>
-<p>As we saw in <a href="https://sub2n.github.io/2019/05/07/10-Comparing-primitive-and-objects/">10. Comparing primitive and objects</a>, there is a side effect in which the original object is changed by reference values passed from inside the function body to outside of the function. This is called change of external state.</p>
-<ul>
-<li>Pure function : functions that do not change any external state (No side effect)</li>
-<li>Impure function : functions that change the external state inside a function (Side effect)</li>
-</ul>
-<p><img src="https://user-images.githubusercontent.com/48080762/57363055-2714ac00-71bb-11e9-9810-7770c44966c8.png" alt="External State Change"></p>
-<p>Functional programming is a programming paradigm that avoids state changes by suppressing the use of variables and solves complexity by eliminating conditional statements and loops in the logic through the combination of pure and auxiliary functions. Variable values can be changed by someone at any time, and conditional statements or loop statements can make the flow of logic difficult to understand, which can impair readability and become a root cause of errors.</p>
-<p>Functional programming is a way to avoid errors and increase the stability of programs by minimizing side effects through pure functions.</p>
-<h2 id="Return-Statement"><a href="#Return-Statement" class="headerlink" title="Return Statement"></a>Return Statement</h2><p>The function returns the execution result through a return statement consisting of the <code>retur</code>n keyword and the return value.</p>
-<p>When the return statement is executed, execution of the function is aborted and the function body is exited.</p>
-<p>If do not write anything after the <code>return</code> keyword or write a return statement, <code>undefined</code> is returned implicitly.</p>
-<h2 id="Types-of-various-Functions"><a href="#Types-of-various-Functions" class="headerlink" title="Types of various Functions"></a>Types of various Functions</h2><h3 id="IIFE-Immediately-Invoke-Function-Expression"><a href="#IIFE-Immediately-Invoke-Function-Expression" class="headerlink" title="IIFE ( Immediately Invoke Function Expression)"></a>IIFE ( Immediately Invoke Function Expression)</h3><p>A function that <em>executes concurrently with the definition</em> of a function. It is common to use anonymous functions and can not be called again once.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Anonymous immediately invoke function</span></span><br><span class="line">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> a = <span class="hljs-number">2</span>;</span><br><span class="line">    <span class="hljs-keyword">var</span> b = <span class="hljs-number">3</span>;</span><br><span class="line">    <span class="hljs-keyword">return</span> a + b;</span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
-
-<p>Even if a named function is used, the function name can not be referenced outside of the function and can not be called again.</p>
-<p>An immediate function must be enclosed in the group operator <code>()</code>. Otherwise, it will not be identified and an error will occur.</p>
-<p>If put the code in the immediate function, collision of the variable name or the function name can be prevented. An immediate execution function is used for this purpose.</p>
-<h3 id="Recursive-Function"><a href="#Recursive-Function" class="headerlink" title="Recursive Function"></a>Recursive Function</h3><p>A recursive call is to call itself. A function that calls itself is called a recursive function.</p>
-<p>When creating a recursive function, a base case with an escape condition must be included. Stack overflow occurs when a function is called without escaping.</p>
-<p>Most of what can be implemented as recursive functions can be implemented as loops.</p>
-<h3 id="Nested-Function-Inner-Function"><a href="#Nested-Function-Inner-Function" class="headerlink" title="Nested Function / Inner Function"></a>Nested Function / Inner Function</h3><p>A function defined inside a function is called a nested function (or inner function). A nested function acts as a helper function of an outer function that contains itself.</p>
-<p>A nested function can access variables of an outer function, but an outer function can not access variables of a nested function. The nesting of functions means the nesting of the scope.</p>
-<h3 id="Callback-Function"><a href="#Callback-Function" class="headerlink" title="Callback Function"></a>Callback Function</h3><p>Because JavaScript functions are first-class objects, can pass functions as arguments to functions.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Function that recieves calback function</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">print</span>(<span class="hljs-params">f</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> string = <span class="hljs-string">'Good'</span>;</span><br><span class="line">    <span class="hljs-comment">// Determine when to call the callback function passed in parameter and call the function</span></span><br><span class="line">    <span class="hljs-keyword">return</span> f(string);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// It calls the print function and passes the callback function</span></span><br><span class="line"><span class="hljs-keyword">var</span> upper = print(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">str</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> str.toUpperCase();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// It calls the print function and passes the callback function</span></span><br><span class="line"><span class="hljs-keyword">var</span> lower = print(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">str</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> str.toLowerCase();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(upper, lower);	<span class="hljs-comment">//GOOD good</span></span><br></pre></td></tr></table></figure>
-
-<p>The function passed to the print function as an argument is called a <strong>callback function</strong>. The callback function calls the function that receives the callback function as an argument by determining the point of call.</p>
-<p>Using a callback function is like pushing a nested function depending on your needs and circumstances.</p>
-<p>Just as a nested function acts as a helper function to help an outer function, the callback function is passed to the function to serve as a helper function. However, since the nested function is fixed and can not be replaced, the callback function can be freely replaced because it is injected as an argument outside the function.</p>
-<p>When you pass a callback function from the outside, you can create a function that performs various actions depending on the callback function.</p>
-<p>That is, it is useful to use the callback function in situations where it is changed instead of being fixed like a nested function.</p>
-<p>Callback functions are mainly used for <strong>event handling</strong>, Ajax communication, and higher-order functions.</p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/05/08/11-Function/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -738,7 +424,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    7 minutes read (About 1118 words)
+                    7 minutes read (About 1119 words)
                 </span>
                 
                 
@@ -771,94 +457,16 @@
 <td align="center">Pass by reference</td>
 </tr>
 </tbody></table>
-<h1 id="Primitive-Value"><a href="#Primitive-Value" class="headerlink" title="Primitive Value"></a>Primitive Value</h1><h2 id="Immutable-Value"><a href="#Immutable-Value" class="headerlink" title="Immutable Value"></a>Immutable Value</h2><ul>
-<li>The value of primitive type is an <strong>immutable value</strong>. (Read only, can not change)</li>
-<li>Can not change value doesn’t mean can not reassign value.</li>
-<li>Variable can be reassigned a new value, but the value can not be changed.</li>
-<li>When reassigning a new value to a variable, instead of changing the value stored in the memory space pointed to by the variable, assign a value to the new memory space and make the variable refer to the new memory space. This is because the primitive value is immutable.</li>
-<li>If the primitive value is a mutable value, the memory address referenced by the variable will not change when reassigning the variable.</li>
-<li>immutability : Since the primitive value is an immutable value, when the value of the variable is changed, the new value is stored in the new memory space, and the memory space is referred to. This property is called the <strong>immutability</strong> of the primitive value.</li>
-</ul>
-<blockquote>
-<h2 id="Immutable-constant"><a href="#Immutable-constant" class="headerlink" title="Immutable? constant?"></a>Immutable? constant?</h2><p>In programming language, variable is a mechanism that store and refer data values. So, constant is also variable but can not assign more than once.</p>
-<p>Variables, and constants are memory spaces that can hold values, and the concept of mutable, immutable is about whether the value can change.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-comment">//Constants declared with the const keyword are not reassigned.</span></span><br><span class="line">&gt; <span class="hljs-keyword">const</span> obj = &#123;&#125;;</span><br><span class="line">&gt; </span><br><span class="line">&gt; obj.a = <span class="hljs-number">1</span>;</span><br><span class="line">&gt; <span class="hljs-built_in">console</span>.log(obj); <span class="hljs-comment">// &#123;a: 1&#125;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>Objects declared as <code>const</code> can be changed. This is because you are not reassigning a new object to <code>const</code>. That is, the constant is only a variable for which reassignment is prohibited.</p>
-</blockquote>
-<h2 id="String-and-Immutability"><a href="#String-and-Immutability" class="headerlink" title="String and Immutability"></a>String and Immutability</h2><ul>
-<li><p>String is immutable because it’s also primitive type of JavaScript.</p>
-</li>
-<li><p>String is an array-like object.</p>
-<blockquote>
-<h3 id="Array-like-Object"><a href="#Array-like-Object" class="headerlink" title="Array-like Object"></a>Array-like Object</h3><p>An array-like object is an object that is not an array, but can be treated like an array. A string can access each character through an index like an array, or it can be traversed by a for statement. This means that the string can be an object with a length property.</p>
-</blockquote>
-</li>
-<li><p>You can not change <code>str[0]</code>, but error doesn’t occur. Just ignore it.</p>
-</li>
-</ul>
-<p><img src="https://user-images.githubusercontent.com/48080762/57296797-dba1c580-7108-11e9-83bd-86e735652c18.png" alt="String is immutable value"></p>
-<ul>
-<li>But, it is of course possible to reassign the new string. Because it is not a change to the existing string but a new assignment of the new string.</li>
-<li>The string gives the confidence that the value does not change without reassignment.</li>
-</ul>
-<h2 id="Pass-by-value"><a href="#Pass-by-value" class="headerlink" title="Pass by value"></a>Pass by value</h2><p>What happens when a variable is assigned to a variable? </p>
-<p>If assigned variable is primitive type, the assigned variable value is copied and passed. It’s <strong>pass by value</strong>.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> score = <span class="hljs-number">80</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> mine = score;</span><br></pre></td></tr></table></figure>
-
-<p>Variable <code>score</code> and <code>mine</code> have a value 80, but it’s a separate value in memory. The value 80 in <code>mine</code> is not same as 80 in <code>score</code>. This is because the memory space of the variables <code>mine</code> and <code>score</code> is different and each contains a value.</p>
-<p><img src="https://user-images.githubusercontent.com/48080762/57297341-57e8d880-710a-11e9-9007-36ec715ebcf7.png" alt="Pass by Value"></p>
-<p>Thus, reassigning another value to the variable <code>score</code> does not affect the value of the variable <code>mine</code>.</p>
-<h1 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h1><ul>
-<li>An object is a collection of properties consisting of key and value. A property whose value is a function is called a method.</li>
-<li>Since the number of properties is not fixed and the object can be added and deleted dynamically, the size of the memory space can not be preset in advance like the primitive value.</li>
-</ul>
-<blockquote>
-<h2 id="How-JavaScript-manages-objects"><a href="#How-JavaScript-manages-objects" class="headerlink" title="How JavaScript manages objects"></a>How JavaScript manages objects</h2><p>Unlike with an class-based object-oriented language, JavaScript can create an object without class and dynamically add a property and method even after an object have been created.</p>
-<p>For this reason, almost modern JavaScript engine uses a function-based dictionary-like structure to score a location of object property in memory.</p>
-<p>This is theoretically more costly and inefficient than object management in class-based object-oriented programming languages such as Java. So V8 JavaScript engine uses hidden class method. A hidden class operates like class in Java.</p>
-</blockquote>
-<h2 id="Mutable-Value"><a href="#Mutable-Value" class="headerlink" title="Mutable Value"></a>Mutable Value</h2><p>The value of an object (reference) type, that is, an object is a mutable value.</p>
-<p>A variable that has been assigned a primitive value has its primitive value as its value. </p>
-<p>But, the variable that the object is assigned has a <strong>reference value</strong> as a value. The reference value is <strong>the address of the memory space</strong> in which the created object is stored, itself.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> student = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://user-images.githubusercontent.com/48080762/57298300-d181c600-710c-11e9-96ba-119ba0ffc866.png" alt="Assignment of an object"></p>
-<ul>
-<li><p><code>student</code> variable has a <strong>address of the memory space</strong> where a created object is stored. This is a <strong>reference value</strong>. A variable can access the object by this reference value.</p>
-</li>
-<li><p>When evaluating a variable that assigns an object, it returns the object by accessing the actual object through the reference value rather than returning the reference value stored in memory.</p>
-</li>
-<li><p>An object pointed by a variable can be added dynamically after it has been created, updated, or deleted. In other words, an object is a <strong>mutable value</strong>.</p>
-</li>
-<li><p>Objects can be very large and change fluidly, so instead of reallocating each time as a primitive value and changing the memory address, it changes the object itself to be referenced directly.</p>
-</li>
-<li><p>In other words, copying an object as a primitive value (a deep copy) is <strong>expensive and inefficient</strong>, so it copies the reference value.</p>
-<blockquote>
-<h3 id="Shallow-copy-and-Deep-copy"><a href="#Shallow-copy-and-Deep-copy" class="headerlink" title="Shallow copy and Deep copy"></a>Shallow copy and Deep copy</h3><ul>
-<li>Shallow copy : copying reference values</li>
-<li>Deep copy : copying and recreating the object itself as a primitive value. The larger the object, the higher the cost.</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li><p>A side effect of storing an object’s reference value is that an object can be referenced by multiple identifiers.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> student = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="hljs-keyword">var</span> teacher = student;</span><br><span class="line"></span><br><span class="line">teacher.age = <span class="hljs-number">35</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(teacher);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(student);</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://user-images.githubusercontent.com/48080762/57299503-b06ea480-710f-11e9-8dd4-19c322cbf727.png" alt="Referenced by multiple identifiers"></p>
-<ul>
-<li>The property is added only to the object of the teacher variable, but the changes are shared because the objects referenced by the student and teacher are the same.</li>
-</ul>
-</li>
-</ul>
-<h2 id="Pass-by-Reference"><a href="#Pass-by-Reference" class="headerlink" title="Pass by Reference"></a>Pass by Reference</h2><p>If you assign a variable that points to an object to another variable, the original reference value is copied and passed. This is called <strong>pass by reference.</strong></p>
-<p><img src="https://user-images.githubusercontent.com/48080762/57299971-d34d8880-7110-11e9-8fc7-1ee9d64a5f13.png" alt="Pass by Reference"></p>
-<p>As shown in the figure above, since the memory address of the same object is referenced, <code>student</code> and <code>teacher</code> refer to the same object and change it.</p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/05/07/10-Comparing-primitive-and-objects/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -893,7 +501,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    5 minutes read (About 787 words)
+                    5 minutes read (About 788 words)
                 </span>
                 
                 
@@ -925,65 +533,16 @@
 </tr>
 </tbody></table>
 <p><strong>Object</strong> is a set of properties that consist of keys and values.</p>
-<p>Any value that is available in JavaScript can be used as the value of the property. Functions in JavaScript are first-class objects, so they can be treated as values.</p>
-<p>JavaScript functions are first-class objects, so they can be used as property values. If the property value is a function, it is called a <strong>method</strong> to distinguish it from a normal function.</p>
-<ul>
-<li>Attributes are refer to additional information of an object. </li>
-<li>Properties are describing the characteristics of an object.</li>
-</ul>
-<p>An object is a set of methods, which means properties that refer to data and behavior that can refer to and manipulate data.</p>
-<h1 id="Create-Object-by-Object-Literal"><a href="#Create-Object-by-Object-Literal" class="headerlink" title="Create Object by Object Literal"></a>Create Object by Object Literal</h1><p>Class-based object-oriented languages such as C ++ and Java pre-define classes and create objects by calling the constructor with the new operator at the point in time. However, JavaScript is a prototype-based object-oriented language that creates objects differently.</p>
-<p>Then how JavaScript creates object?</p>
-<ul>
-<li>Object literal</li>
-<li>Object constructor function</li>
-<li>Constructor function</li>
-<li>Object.create method</li>
-<li>Class (ES6)</li>
-</ul>
-<p>The most basic and general method is using object literal.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// empty object</span></span><br><span class="line"><span class="hljs-keyword">var</span> empty = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// At the time of assignment, the object literal is interpreted and the resulting object is created.</span></span><br><span class="line"><span class="hljs-keyword">var</span> student = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span>,</span><br><span class="line">    hello: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">        Console.log(<span class="hljs-string">'Hello. I'</span>m $&#123;<span class="hljs-keyword">this</span>.name&#125;.<span class="hljs-string">');</span></span><br><span class="line"><span class="hljs-string">	&#125;</span></span><br><span class="line"><span class="hljs-string">&#125;;</span></span><br></pre></td></tr></table></figure>
-
-<p>The <code>{}</code> used to create the object is not a block of code. It is an object literal because it ends with a <code>;</code>.</p>
-<p>You can create a property as soon as you create the object by including the property in an object literal, or you can dynamically add a property after you create the object.</p>
-<h1 id="Property"><a href="#Property" class="headerlink" title="Property"></a>Property</h1><p>An object is a set of properties. A property consists of a key and a value.</p>
-<p>The values that can be used for property key and property values are as follows.</p>
-<ul>
-<li>Property key : all strings include empty string or symbol value</li>
-<li>Property value : all values in JavaScript</li>
-</ul>
-<p>Quotes can be omitted if the property key is a name that conforms to the identifier naming convention, that is, a valid name that can be used in JavaScript.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> student = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Dynamically add property key</span></span><br><span class="line">student[<span class="hljs-string">'age'</span>] = <span class="hljs-number">25</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(student); 	<span class="hljs-comment">// &#123;name: "Park", age: 25&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>Property keys are allowed to be duplicated, and in the event of duplication, the last declared key is valid.</p>
-<h1 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h1><p>If the property value is a function, it is called a method to distinguish it from a normal function. In other words, a method means a function restricted to an object.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> circle = &#123;</span><br><span class="line">  radius: <span class="hljs-number">5</span>, <span class="hljs-comment">// ← property</span></span><br><span class="line">  getDiameter: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123; <span class="hljs-comment">// ← method</span></span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">2</span> * <span class="hljs-keyword">this</span>.radius; <span class="hljs-comment">// this pointing circle</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(circle.getDiameter());  <span class="hljs-comment">// 10</span></span><br></pre></td></tr></table></figure>
-
-<p><code>this</code> is a reference variable that points to the object that called it.</p>
-<h1 id="Access-of-Property"><a href="#Access-of-Property" class="headerlink" title="Access of Property"></a>Access of Property</h1><p>You can access the properties in such a way,</p>
-<ul>
-<li>Dot notation </li>
-<li>Bracket notation</li>
-</ul>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> student = &#123;</span><br><span class="line">	name: <span class="hljs-string">'Park'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(student.name);		<span class="hljs-comment">// Access by dot notaion</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(student[<span class="hljs-string">'name'</span>];	<span class="hljs-comment">// Access by bracket notation</span></span><br></pre></td></tr></table></figure>
-
-<p>If the property key follows the identifier naming convention, 2 notations are both available. If not, only bracket notation is available.</p>
-<p>If the property key is not a name that does conform to the identifier naming convention, that is, not a valid name that can be used in JavaScript,  must use square bracket notation. However, the quotation marks <code>&#39;&#39;</code> can be omitted if the property key is a string of numbers.</p>
-<h1 id="Update-Property-Value"><a href="#Update-Property-Value" class="headerlink" title="Update Property Value"></a>Update Property Value</h1><p>If assign a value to an existing property, the property value is updated.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> student = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">student.name = <span class="hljs-string">'Kim'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(student);	<span class="hljs-comment">// &#123;name: "Kim"&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="Dynamic-property-creation"><a href="#Dynamic-property-creation" class="headerlink" title="Dynamic property creation"></a>Dynamic property creation</h1><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> student = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">student.age = <span class="hljs-string">'22'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(student); <span class="hljs-comment">// &#123;name: "Park", age: "22"&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>Can add, modify, and delete properties after object creation is complete.</p>
-<h1 id="New-ES6-Object-Literal-Functions"><a href="#New-ES6-Object-Literal-Functions" class="headerlink" title="New ES6 Object Literal Functions"></a>New ES6 Object Literal Functions</h1><h2 id="Property-shorthand"><a href="#Property-shorthand" class="headerlink" title="Property shorthand"></a>Property shorthand</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> x = <span class="hljs-number">1</span>, y = <span class="hljs-number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> obj = &#123; x, y &#125;;   <span class="hljs-comment">// &#123; x:1, y: 2 &#125;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Property-key-dynamic-creation"><a href="#Property-key-dynamic-creation" class="headerlink" title="Property key dynamic creation"></a>Property key dynamic creation</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// ES6</span></span><br><span class="line"><span class="hljs-keyword">const</span> prefix = <span class="hljs-string">'prop'</span>;</span><br><span class="line"><span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 객체 리터럴 내부에서 프로퍼티 키 동적 생성</span></span><br><span class="line"><span class="hljs-keyword">var</span> obj = &#123;</span><br><span class="line">    [<span class="hljs-string">`<span class="hljs-subst">$&#123;prefix&#125;</span>-<span class="hljs-subst">$&#123;++i&#125;</span>`</span>]: i,</span><br><span class="line">    [<span class="hljs-string">`<span class="hljs-subst">$&#123;prefix&#125;</span>-<span class="hljs-subst">$&#123;++i&#125;</span>`</span>]: i,</span><br><span class="line">    [<span class="hljs-string">`<span class="hljs-subst">$&#123;prefix&#125;</span>-<span class="hljs-subst">$&#123;++i&#125;</span>`</span>]: i</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(obj); <span class="hljs-comment">// &#123;prop-1: 1, prop-2: 2, prop-3: 3&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Method-shorthand"><a href="#Method-shorthand" class="headerlink" title="Method shorthand"></a>Method shorthand</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// ES6</span></span><br><span class="line"><span class="hljs-keyword">const</span> obj = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span>,</span><br><span class="line">    <span class="hljs-comment">// 메소드 축약 표현</span></span><br><span class="line">    sayHi(other) &#123;</span><br><span class="line">        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Hi, <span class="hljs-subst">$&#123;other&#125;</span>! I'm <span class="hljs-subst">$&#123;<span class="hljs-keyword">this</span>.name&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.sayHi(<span class="hljs-string">'Sam'</span>); <span class="hljs-comment">// Hi, Sam! I'm Park</span></span><br></pre></td></tr></table></figure>
-
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/05/05/9-Object-Literal/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -1068,7 +627,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        131
+                        132
                     </p>
                 </div>
             </div>
@@ -1293,7 +852,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">61</span>
+                <span class="level-item tag">62</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -1323,6 +882,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/190612-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/rose.png" alt="190612-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T10:34:40.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/190612-TIL/" class="has-link-black-ter is-size-6">190612-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1400,25 +978,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/10/36-SPA/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="36. SPA">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-10T01:46:03.000Z">2019-06-10</time></div>
-                    <a href="/2019/06/10/36-SPA/" class="has-link-black-ter is-size-6">36. SPA</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1437,7 +996,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">12</span>
                 </span>
             </a>
         </li>
@@ -1869,7 +1428,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">62</span>
+                        <span class="tag is-grey">63</span>
                     </a>
                 </div>
                 
@@ -2133,7 +1692,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">61</span>
+                <span class="level-item tag">62</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -2163,6 +1722,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/190612-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/rose.png" alt="190612-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T10:34:40.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/190612-TIL/" class="has-link-black-ter is-size-6">190612-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -2240,25 +1818,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/10/36-SPA/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="36. SPA">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-10T01:46:03.000Z">2019-06-10</time></div>
-                    <a href="/2019/06/10/36-SPA/" class="has-link-black-ter is-size-6">36. SPA</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2277,7 +1836,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">12</span>
                 </span>
             </a>
         </li>
@@ -2709,7 +2268,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">62</span>
+                        <span class="tag is-grey">63</span>
                     </a>
                 </div>
                 

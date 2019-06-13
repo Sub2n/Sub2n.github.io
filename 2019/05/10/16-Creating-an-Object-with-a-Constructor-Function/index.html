@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="객체 리터럴 표기법은 가장 일반적이고 간단한 객체 생성 방법이다. 객체는 객체 리터럴 표기법 외에도 다양한 방법으로 생성할 수 있다.  객체를 생성하기 위한 용도로 사용되는 함수를 생성자 함수라고 한다. 1. Object Constructor Function객체 리터럴 표기법은 분명 간단한 방법이지만, 같은 구조를 가진 객체를 여러 개 만들어야할 경우가 있">
+    <meta name="description" content="객체 리터럴 표기법은 가장 일반적이고 간단한 객체 생성 방법이다. 객체는 객체 리터럴 표기법 외에도 다양한 방법으로 생성할 수 있다.  객체를 생성하기 위한 용도로 사용되는 함수를 생성자 함수라고 한다.">
 <meta name="keywords" content="자바스크립트,Object">
 <meta property="og:type" content="article">
 <meta property="og:title" content="16. Creating an Object with a Constructor Function">
 <meta property="og:url" content="https://sub2n.github.io/2019/05/10/16-Creating-an-Object-with-a-Constructor-Function/index.html">
 <meta property="og:site_name" content="수빈 개발블로그">
-<meta property="og:description" content="객체 리터럴 표기법은 가장 일반적이고 간단한 객체 생성 방법이다. 객체는 객체 리터럴 표기법 외에도 다양한 방법으로 생성할 수 있다.  객체를 생성하기 위한 용도로 사용되는 함수를 생성자 함수라고 한다. 1. Object Constructor Function객체 리터럴 표기법은 분명 간단한 방법이지만, 같은 구조를 가진 객체를 여러 개 만들어야할 경우가 있">
+<meta property="og:description" content="객체 리터럴 표기법은 가장 일반적이고 간단한 객체 생성 방법이다. 객체는 객체 리터럴 표기법 외에도 다양한 방법으로 생성할 수 있다.  객체를 생성하기 위한 용도로 사용되는 함수를 생성자 함수라고 한다.">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
-<meta property="og:updated_time" content="2019-06-11T08:27:36.690Z">
+<meta property="og:updated_time" content="2019-06-13T01:53:03.555Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="16. Creating an Object with a Constructor Function">
-<meta name="twitter:description" content="객체 리터럴 표기법은 가장 일반적이고 간단한 객체 생성 방법이다. 객체는 객체 리터럴 표기법 외에도 다양한 방법으로 생성할 수 있다.  객체를 생성하기 위한 용도로 사용되는 함수를 생성자 함수라고 한다. 1. Object Constructor Function객체 리터럴 표기법은 분명 간단한 방법이지만, 같은 구조를 가진 객체를 여러 개 만들어야할 경우가 있">
+<meta name="twitter:description" content="객체 리터럴 표기법은 가장 일반적이고 간단한 객체 생성 방법이다. 객체는 객체 리터럴 표기법 외에도 다양한 방법으로 생성할 수 있다.  객체를 생성하기 위한 용도로 사용되는 함수를 생성자 함수라고 한다.">
 <meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
 
 
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    12 minutes read (About 1730 words)
+                    12 minutes read (About 1731 words)
                 </span>
                 
                 
@@ -185,6 +185,9 @@
         <div class="content">
             <p>객체 리터럴 표기법은 가장 일반적이고 간단한 객체 생성 방법이다. 객체는 객체 리터럴 표기법 외에도 다양한 방법으로 생성할 수 있다. </p>
 <p>객체를 생성하기 위한 용도로 사용되는 함수를 생성자 함수라고 한다.</p>
+<a id="more"></a>
+
+
 <h1 id="1-Object-Constructor-Function"><a href="#1-Object-Constructor-Function" class="headerlink" title="1. Object Constructor Function"></a>1. Object Constructor Function</h1><p>객체 리터럴 표기법은 분명 간단한 방법이지만, 같은 구조를 가진 객체를 <strong>여러 개</strong> 만들어야할 경우가 있다.</p>
 <p>new 연선자와 함께 Object 생성자 함수를 호출하면 빈 객체를 생성하여 반환한다. 생성한 빈 객체에 프로퍼티와 메소드를 추가한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> student = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>();</span><br><span class="line"></span><br><span class="line">student.name = <span class="hljs-string">'Park'</span>;</span><br><span class="line">student.sayHello = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Hi! I am '</span> + <span class="hljs-keyword">this</span>.name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -363,7 +366,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        131
+                        132
                     </p>
                 </div>
             </div>
@@ -588,7 +591,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">61</span>
+                <span class="level-item tag">62</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -618,6 +621,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/190612-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/rose.png" alt="190612-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T10:34:40.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/190612-TIL/" class="has-link-black-ter is-size-6">190612-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -695,25 +717,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/10/36-SPA/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="36. SPA">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-10T01:46:03.000Z">2019-06-10</time></div>
-                    <a href="/2019/06/10/36-SPA/" class="has-link-black-ter is-size-6">36. SPA</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -732,7 +735,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">12</span>
                 </span>
             </a>
         </li>
@@ -1164,7 +1167,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">62</span>
+                        <span class="tag is-grey">63</span>
                     </a>
                 </div>
                 
@@ -1428,7 +1431,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">61</span>
+                <span class="level-item tag">62</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -1458,6 +1461,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/190612-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/rose.png" alt="190612-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T10:34:40.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/190612-TIL/" class="has-link-black-ter is-size-6">190612-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1535,25 +1557,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/10/36-SPA/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="36. SPA">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-10T01:46:03.000Z">2019-06-10</time></div>
-                    <a href="/2019/06/10/36-SPA/" class="has-link-black-ter is-size-6">36. SPA</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1572,7 +1575,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">12</span>
                 </span>
             </a>
         </li>
@@ -2004,7 +2007,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">62</span>
+                        <span class="tag is-grey">63</span>
                     </a>
                 </div>
                 

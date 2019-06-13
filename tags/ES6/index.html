@@ -180,7 +180,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 458 words)
+                    3 minutes read (About 459 words)
                 </span>
                 
                 
@@ -199,23 +199,16 @@
 
 <p>ES6에서는 프로퍼티 값으로 변수를 사용하는 경우에는 프로퍼티 키를 생략할 수 있다. (Property Shorthand) 프로퍼티 키는 변수의 이름으로 자동 생성된다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> x = <span class="hljs-number">1</span>;</span><br><span class="line"><span class="hljs-keyword">let</span> y = <span class="hljs-number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> obj = &#123; x, y &#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(obj); <span class="hljs-comment">// &#123;x: 1, y: 2&#125;</span></span><br><span class="line">obj.x === obj[<span class="hljs-string">'x'</span>] <span class="hljs-comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-Dynamic-Property-Keys"><a href="#2-Dynamic-Property-Keys" class="headerlink" title="2. Dynamic Property Keys"></a>2. Dynamic Property Keys</h3><p>ES5에서는 변수를 사용해서 프로퍼티 키를 생성하기 위해서는 두 단계를 거쳐야했지만 ES6에서는 프로퍼티 키를 동적으로 생성할 수 있다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// ES5</span></span><br><span class="line"><span class="hljs-keyword">var</span> pass = <span class="hljs-string">'pw'</span></span><br><span class="line"><span class="hljs-keyword">var</span> obj = &#123;</span><br><span class="line">    id: <span class="hljs-number">1</span></span><br><span class="line">&#125;;</span><br><span class="line">obj[pass] = <span class="hljs-string">'1234'</span>;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// ES6</span></span><br><span class="line"><span class="hljs-keyword">const</span> pass = <span class="hljs-string">'pw'</span></span><br><span class="line"><span class="hljs-keyword">const</span> obj = &#123;</span><br><span class="line">    id: <span class="hljs-number">1</span>,</span><br><span class="line">    [pass]: <span class="hljs-string">'1234'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-Object-Method-Shorthand"><a href="#3-Object-Method-Shorthand" class="headerlink" title="3. Object Method Shorthand"></a>3. Object Method Shorthand</h3><p>ES5와 다르게 ES6에서는 메소드를 선언할 때 function 키워드를 생략하고 메소드 축약 표현을 사용할 수 있다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// ES6</span></span><br><span class="line"><span class="hljs-keyword">const</span> obj = &#123;</span><br><span class="line">    name: <span class="hljs-string">'Park'</span>,</span><br><span class="line">    getName() &#123;</span><br><span class="line">        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.getName(); <span class="hljs-comment">// Park</span></span><br></pre></td></tr></table></figure>
-
-<p>ES6의 화살표 함수(Arrow Function)와 메소드 축약 표현으로 생성된 함수는 constructor를 가지지 않는 non-constructor이다.</p>
-<h3 id="4-Inheritance-by-proto-Property"><a href="#4-Inheritance-by-proto-Property" class="headerlink" title="4. Inheritance by _proto_ Property"></a>4. Inheritance by _<em>proto_</em> Property</h3><p>ES5에서 어떤 객체를 상속받기 위해서는 Object.create() 함수를 사용한다. Object.create의 argument로 전달하는 객체를 생성되는 객체의 프로토타입으로 지정하는 것이다. 이를 프로토타입 패턴 상속이라고 한다.</p>
-<p>ES6에서는 객체 리터럴 내부에서 _<em>proto_</em> 프로퍼티를 직접 바인딩해서 상속을 표현할 수 있다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> parent = &#123;</span><br><span class="line">    name: <span class="hljs-string">'parent'</span>,</span><br><span class="line">    getName() &#123;</span><br><span class="line">    	<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.name);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> child = &#123;</span><br><span class="line">    __proto__: parent,</span><br><span class="line">    name: <span class="hljs-string">'child'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">parent.getName(); <span class="hljs-comment">// parent</span></span><br><span class="line">child.getName(); <span class="hljs-comment">// child</span></span><br></pre></td></tr></table></figure>
-
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/05/21/25-Enhanced-Object-property/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -273,7 +266,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        131
+                        132
                     </p>
                 </div>
             </div>
@@ -498,7 +491,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">61</span>
+                <span class="level-item tag">62</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -528,6 +521,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/190612-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/rose.png" alt="190612-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T10:34:40.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/190612-TIL/" class="has-link-black-ter is-size-6">190612-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -605,25 +617,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/10/36-SPA/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="36. SPA">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-10T01:46:03.000Z">2019-06-10</time></div>
-                    <a href="/2019/06/10/36-SPA/" class="has-link-black-ter is-size-6">36. SPA</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -642,7 +635,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">12</span>
                 </span>
             </a>
         </li>
@@ -1074,7 +1067,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">62</span>
+                        <span class="tag is-grey">63</span>
                     </a>
                 </div>
                 
@@ -1338,7 +1331,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">61</span>
+                <span class="level-item tag">62</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -1368,6 +1361,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/190612-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/rose.png" alt="190612-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T10:34:40.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/190612-TIL/" class="has-link-black-ter is-size-6">190612-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1445,25 +1457,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/10/36-SPA/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="36. SPA">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-10T01:46:03.000Z">2019-06-10</time></div>
-                    <a href="/2019/06/10/36-SPA/" class="has-link-black-ter is-size-6">36. SPA</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1482,7 +1475,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">12</span>
                 </span>
             </a>
         </li>
@@ -1914,7 +1907,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">62</span>
+                        <span class="tag is-grey">63</span>
                     </a>
                 </div>
                 

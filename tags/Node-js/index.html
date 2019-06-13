@@ -244,7 +244,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    7 minutes read (About 1071 words)
+                    7 minutes read (About 1072 words)
                 </span>
                 
                 
@@ -258,82 +258,16 @@
         </h1>
         <div class="content">
             <h1 id="Before-this-chapter-What-is-Web-API"><a href="#Before-this-chapter-What-is-Web-API" class="headerlink" title="Before this chapter, What is Web API?"></a>Before this chapter, What is Web API?</h1><p>While the most common scripting language ECMAscript (more widely known as JavaScript) is developed by Ecma, a great many of the APIs made available in browsers have been defined at W3C.</p>
-<h2 id="What-is-scripting"><a href="#What-is-scripting" class="headerlink" title="What is scripting?"></a>What is scripting?</h2><p>A script is program code that doesn’t need pre-processing(e.g. compiling) before being run. </p>
-<p>In the context of Web browser, scripting usually refers to program code written in <strong>JavaScript</strong> that is <strong>executed by browser when a page is downloaded</strong>, or in response to an <strong>event triggered</strong> by the user.</p>
-<p>Scripting can make Web pages more dynamic.<br>For Example, without reloading a new version of a page it may</p>
-<ul>
-<li>allow modifications to the content of that page : DHTML(Dynamic HTML)</li>
-<li>allow content to be added to or sent from that page : AJAX(Asyncronous JavaScript and XML)</li>
-</ul>
-<h2 id="What-scripting-interfaces-are-available"><a href="#What-scripting-interfaces-are-available" class="headerlink" title="What scripting interfaces are available ?"></a>What scripting interfaces are available ?</h2><p>The most basic scripting interface developed by W3C is the <strong>DOM</strong>, the Document Object Model which allows programs and scripts to dynamically access and update the content, structure and stype of documents. DOM specifications form the core of DHTML.</p>
-<p>Modifications of the content using the DOM by the user and by scripts trigger events that developers can make use of to build rich user interface.</p>
-<p>A number of more advanced interfaces are being standardized, for instance:</p>
-<ul>
-<li><strong>XMLHttpRequest</strong> makes it possible to load additional content from the Web without loading a new document, a core component of AJAX,</li>
-<li><strong>the Geolocation API</strong> makes the user’s current location available to browser-based applications,</li>
-<li>several APIs make the integration of Web applications with the local file system and storage seamless.</li>
-</ul>
-<h1 id="Execution-Environment-of-JavaScript"><a href="#Execution-Environment-of-JavaScript" class="headerlink" title="Execution Environment of JavaScript"></a>Execution Environment of JavaScript</h1><p>All browsers have JavaScript engine that can inpterpreter and execute JavaScript. Not only browser but also Node.js has JavaScript engine. So JavaScript can operate in both browser and Node.js environment. Basically code that operate in browser also operate in Node.js environment too.</p>
-<p>But the browser and Node.js have different purpose. The main purpose of browser is execute HTML, CSS, JavaScript to rendering web page on screen, but the other one is provide server development envorinment. So both of browser and Node.js can operate ECMAScript(core of JavaScript) but additional features provided by Node.js and browser and ECMAScript are incompatible.</p>
-<ol>
-<li>Node.js environment<ul>
-<li>ES + Node.js API (file control)</li>
-</ul>
-</li>
-<li>Browser<ul>
-<li>Rendering HTML, CSS</li>
-<li>JavaScript : ES + Web API (created by browser vendors and managed by W3C) (DOM API, event) only browser can execute </li>
-</ul>
-</li>
-</ol>
-<p>As such, the browser supports ECMAScript and client side Web APIs such as DOM, BOM, Canvas, XMLHttpRequest, Fetch, requestAnimationFrame, SVG, Web Storage, Web Component, and Web worker. Node.js does not support client side Web APIs and supports ECMAScript and Node.js-specific APIs.</p>
-<h1 id="Web-Browser"><a href="#Web-Browser" class="headerlink" title="Web Browser"></a>Web Browser</h1><h2 id="How-does-a-Web-Browser-work"><a href="#How-does-a-Web-Browser-work" class="headerlink" title="How does a Web Browser work?"></a>How does a Web Browser work?</h2><p>Most programming languages run on Operating System, but JavaScript in Web application runs with HTML and CSS in a browser. So efficient JavaScript programming is available when considering Web browser environment.</p>
-<p>Core function of Web browser is that request the Web page user want and represent the response from server in browser.</p>
-<ol>
-<li>Web browser receives HTML, CSS, JavaScript, and image files from the server.</li>
-<li>HTML and CSS files are parsed by the rendering enginde’s HTML parser and CSS parser, </li>
-<li>converted into DOM tree and CSSOM tree, </li>
-<li>and combined into a Render Tree. Browser represent Web pages by this Render tree.</li>
-</ol>
-<p>JavaScript is processed by JavaScript engine, not the Rendering engine. </p>
-<ol>
-<li>HTML parser stops DOM construction process when meet the script tag, and passes control to the JavaScript engine to execute JavaScript code.</li>
-<li>Control passed JavaScript engine loads, parses and executes the JavaScript code in script tag or JavaScript file defined in script tag’s src attribute.</li>
-<li>Interpreter that used in most modern Web browser doesn’t compile like typical compiler language but compiles and executes a part of source code in complex way.</li>
-</ol>
-<h2 id="Interperter"><a href="#Interperter" class="headerlink" title="Interperter"></a>Interperter</h2><ul>
-<li>Translates program one statement at a time.</li>
-<li>It takes less amount of time to analyze the source code but the overall execution time is slower.</li>
-<li>No intermediate object code is generated, hence are memory efficient.</li>
-<li>Continues translating the program until the first error is met, in which case it stops. Hence debugging is easy.</li>
-<li>Programming language like Python, Ruby use interpreters.</li>
-</ul>
-<h2 id="Compiler"><a href="#Compiler" class="headerlink" title="Compiler"></a>Compiler</h2><ul>
-<li>Scans the entire program and translates it as a whole into machine code.</li>
-<li>It takes large amount of time to analyze the source code but the overall execution time is comparatively faster.</li>
-<li>It takes large amount of time to analyze the source code but the overall execution time is comparatively faster.</li>
-<li>It generates the error message only after scanning the whole program. Hence debugging is comparatively hard.</li>
-<li>Programming language like C, C++ use compilers.</li>
-</ul>
-<p>Source code is composed of simple strings. So interpret string codes to make the <strong>AST(Abstrack Syntax Tree)</strong> that has syntax and semantics.</p>
-<ul>
-<li>Tokenizing<br>Separate the source code into tokens, the smallest unit of meaning, by lexical analysis. </li>
-<li>Parsing<br>Syntactically analysis the set of tokens to create AST.</li>
-<li>Execute code<br>Created AST is converted to byte code or optimized machine code and run by interpreter.</li>
-</ul>
-<p>If execution of JavaScript is finished, pass control to HTML parser and resume DOM creation from the time when browser stopped.</p>
-<p>As such, browsers process HTML, CSS, and JavaScript <strong>synchronously</strong>. This means creation of DOM can be delayed by blocking from script tag. So the position of script tag has important meaning.</p>
-<p>You should put script code at bottom of HTML file. It prevent error that can be occured when JavaScript touch DOM before DOM creation completed.</p>
-<h1 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h1><p>A client side, or simple web application that works on a web browser, can be developed with just a browser. However, as the project grows in size, it is necessary to introduce external libraries such as React and jQuery, or to use several tools such as Babel, Webpack, ESLint, etc. Node.js and npm are required.</p>
-<h2 id="Node-js-and-npm"><a href="#Node-js-and-npm" class="headerlink" title="Node.js and npm"></a>Node.js and npm</h2><p>Node.js, announced by Ryan Dahl in 2009 is a JavaScript runtime environment built with Chrome V8 JavaScript engine. Simply, Node.js is JavaScript execution environment that enable JavaScript to run in addition to browser.</p>
-<p>npm(node package manager) is JavaScript package manager. Itself a repository include packaged modules available in Node.js and provide CLI to install and management.</p>
-<hr>
-<p>Reference</p>
-<p><a href="https://www.w3.org/standards/webdesign/script" target="_blank" rel="noopener">JavaScript Web API</a></p>
-<p><a href="https://poiemaweb.com/js-hello-world" target="_blank" rel="noopener">Hello world</a></p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/30/3-JavaScript-Develop-Environment-and-Execute/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -391,7 +325,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        131
+                        132
                     </p>
                 </div>
             </div>
@@ -616,7 +550,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">61</span>
+                <span class="level-item tag">62</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -646,6 +580,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/190612-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/rose.png" alt="190612-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T10:34:40.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/190612-TIL/" class="has-link-black-ter is-size-6">190612-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -723,25 +676,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/10/36-SPA/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="36. SPA">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-10T01:46:03.000Z">2019-06-10</time></div>
-                    <a href="/2019/06/10/36-SPA/" class="has-link-black-ter is-size-6">36. SPA</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -760,7 +694,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">12</span>
                 </span>
             </a>
         </li>
@@ -1192,7 +1126,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">62</span>
+                        <span class="tag is-grey">63</span>
                     </a>
                 </div>
                 
@@ -1456,7 +1390,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">61</span>
+                <span class="level-item tag">62</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -1486,6 +1420,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/190612-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/rose.png" alt="190612-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T10:34:40.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/190612-TIL/" class="has-link-black-ter is-size-6">190612-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1563,25 +1516,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/10/36-SPA/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="36. SPA">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-10T01:46:03.000Z">2019-06-10</time></div>
-                    <a href="/2019/06/10/36-SPA/" class="has-link-black-ter is-size-6">36. SPA</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1600,7 +1534,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">12</span>
                 </span>
             </a>
         </li>
@@ -2032,7 +1966,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">62</span>
+                        <span class="tag is-grey">63</span>
                     </a>
                 </div>
                 

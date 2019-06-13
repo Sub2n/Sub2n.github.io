@@ -180,7 +180,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6 minutes read (About 891 words)
+                    6 minutes read (About 892 words)
                 </span>
                 
                 
@@ -196,84 +196,16 @@
             <h1 id="1-Creation-of-JavaScript"><a href="#1-Creation-of-JavaScript" class="headerlink" title="1. Creation of JavaScript"></a>1. Creation of JavaScript</h1><p>In 1995, the Netscape Communications decided to introduce a lightweight programming language to dynamically express static HTML. So JavaScript developed by Brendan Eich.</p>
 <p>JavaScript was mounted on Netscape Navigator 2 which is web browser of Netscape Communications, named “Mocha” in March, 1996. In September, renamed to “LiveScript” and finally named as “JavaScript” in December.</p>
 <p>So JavaScript is now the standard programming language for all browsers. But JavaScript has not grown smoothly</p>
-<h1 id="2-Fragmentation-and-Standardization-of-JavaScript"><a href="#2-Fragmentation-and-Standardization-of-JavaScript" class="headerlink" title="2. Fragmentation and Standardization of JavaScript"></a>2. Fragmentation and Standardization of JavaScript</h1><p>In August 1996, Microsoft added a derived version of JavaScript, “JScript”, to Internet Explorer 3.0. But the problem is that JScript and JavaScript are not standardized and are moderately compatible. In other words, they have competitively begun adding features that only work with their browsers to gain market share in their browsers.</p>
-<p>This has led to cross-browsing issues where webpages are not working properly, and it has become extremely difficult to develop webpages that work across all browsers.</p>
-<p>Thus, the need for stadard of JavaScript which works same in all browser has begun to be raised. For this, Netscape Communications requested standardization of JavaScript to ECMA International in November 1996.</p>
-<table>
-<thead>
-<tr>
-<th>Version</th>
-<th>Release</th>
-<th>Specification</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>ES1</td>
-<td>1997</td>
-<td>First version</td>
-</tr>
-<tr>
-<td>ES2</td>
-<td>1998</td>
-<td>Application of the same standards as ISO/IEC 16262 international standards</td>
-</tr>
-<tr>
-<td>ES3</td>
-<td>1999</td>
-<td>Regular Expression, try … catch Exception</td>
-</tr>
-<tr>
-<td>ES5</td>
-<td>2009</td>
-<td>Standard released with HTML5. JSON, strict mode, accessor property(getter, setter), improved array manipulation (forEach, map, filter, reduce, some, every)</td>
-</tr>
-<tr>
-<td>ES6 (ECMAScript 2015)</td>
-<td>2015</td>
-<td>let, const, class, arrow function expression(=&gt;), template literal, destructuring assignment, spread operator, rest parameter, Symbol, Promise, Map/Set, iterator/generator, module import/export</td>
-</tr>
-<tr>
-<td>ES7 (ECMAScript 2016)</td>
-<td>2016</td>
-<td>Exponential operator(**), Array.prototype.includes, String.prototype.includes</td>
-</tr>
-<tr>
-<td>ES8 (ECMAScript 2017)</td>
-<td>2017</td>
-<td>async/await, Object static method(Object.values, Object.getOwnPropertyDescriptors)</td>
-</tr>
-<tr>
-<td>ES9 (ECMAScript 2018)</td>
-<td>2018</td>
-<td>Object Rest/Spread Property</td>
-</tr>
-</tbody></table>
-<h1 id="3-History-of-JavaScript"><a href="#3-History-of-JavaScript" class="headerlink" title="3. History of JavaScript"></a>3. History of JavaScript</h1><p>Early JavaScript was used for limited purposes to perform the supplementary functions of webpages. During this time, most logics were run primarily on Web servers and browsers were simply rendering HTML and CSS delivered from the server.</p>
-<blockquote>
-<h2 id="Rendering"><a href="#Rendering" class="headerlink" title="Rendering?"></a>Rendering?</h2><p>Rendering refers to interpreting data expressed in HTML and CSS and expressing it visually on a browser.</p>
-</blockquote>
-<p>In 1999, Ajax(Asynchronous JavaScript and XML), a communication function that allows server and browser to exchange data asynchronously using JavaScript, has emerger under the name of XMLHttpRequest.</p>
-<p>Previous webpages worked by receiving complete HTML from the server and rendering the entire web page. So when screen switches, it received a new HTML file from server and started rendering a whole web page again from beginning.</p>
-<p>This is a disadvantageous way because unnecessary data communication occurs when receive HTML including unchanged parts from a server and browser should be rendering that whole HTML again including unchanged parts. This causes the screen to flash momentarily when a screen transition occurs, which has been accepted as the limit for web applications.</p>
-<p>The advent of Ajax changed the previous paradigm. In other words, it make possible to do not rendering again the parts unnecessary to change and rendering only the part need to change by receiving only a necessary data from server. This enables fast performance and smooth screen transitions similar to desktop applications in web browsers.</p>
-<p>In 2005, Google Maps, which operates on JavaScript and Ajax in a web browser, has shown performance and smooth screen transitions that are comparable to desktop applications.</p>
-<p>In 2006, the advent of jQuery made it easier to control the rather cumbersome DOM(Document Object Model) and resolved cross-browsing issues to some extent. jQuery quickly secured a large user base. This resulted in the mass production of developers who preferred jQuery, which was easier to learn and more intuitive than JavaScript.</p>
-<p>In 2008, V8 JavaScript Engine from google made more fast performance in web browser. With the advent of the V8 JavaScript engine, JavaScript has become a web application development programming language that can provide a user experience(UX) similar to that of desktop applications.</p>
-<p>In 2009, the Node.js that enable operate JavaScript in an environment other than a browser emerged. JavaScript is now a standard for web programming languages that cover not only front-end but also back-end areas.</p>
-<h1 id="4-JavaScript-and-ECMAScript"><a href="#4-JavaScript-and-ECMAScript" class="headerlink" title="4. JavaScript and ECMAScript"></a>4. JavaScript and ECMAScript</h1><h2 id="ECMAScript"><a href="#ECMAScript" class="headerlink" title="ECMAScript"></a>ECMAScript</h2><p>ECMAScript refers ECMA-262, which standard specification of JavaScript and defines core syntax such as the type, value, objace and property, function, built-in object, etc. Each</p>
-<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p>JavaScript is typically a programming language that encompasses ECMAScript as a core and client side Web API, which is supported separately by the browser.</p>
-<h2 id="Web-API"><a href="#Web-API" class="headerlink" title="Web API"></a>Web API</h2><p>DOM, BOM, Canvas, XMLHttpRequest, Fetch, requestAnimationFrame, SVG, Web Storage, Web Component, Web worker, etc.</p>
-<p>Apart from ECMAScript, the client side Web API is managed as a separate specification by the World Wide Web Consortium (W3C).</p>
-<h1 id="5-Characteristics-of-JavaScript"><a href="#5-Characteristics-of-JavaScript" class="headerlink" title="5. Characteristics of JavaScript"></a>5. Characteristics of JavaScript</h1><p>JavaScript is one of the components that compose the web with HTML and CSS, and is the only programming language that works with a web browser. It use basic syntax from C, prototype-based inheritance from Self, first-class function from Scheme.</p>
-<p>JavaScript is interpreter language that developer not have to do compile work. Almost modern JavaScript engines(V8 by Chrome, Spidermonkey by FireFox, JavaScriptCore by Safari, Chakra by Microsoft Edge) combined advantage of interpreter and compiler to resole disadvantage of slow interpreter.</p>
-<p>Actually JavaScript complie but not make executable file. So JavaScript is interpreter lanuage.</p>
-<p>JavaScript is a multi-paradigm programming language that supports imprerative, functional, and prototype-based object-oriented programming.</p>
-<hr>
-<p>Reference</p>
-<p><a href="https://poiemaweb.com/js-introduction" target="_blank" rel="noopener">자바스크립트란?</a></p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/29/2-What-is-JavaScript/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -308,7 +240,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 538 words)
+                    4 minutes read (About 539 words)
                 </span>
                 
                 
@@ -322,22 +254,16 @@
         </h1>
         <div class="content">
             <h1 id="1-Computational-Thinking"><a href="#1-Computational-Thinking" class="headerlink" title="1. Computational Thinking"></a>1. Computational Thinking</h1><p>Programming is communication that sends commands to be performed to the computer. In order to define the “command to be performed,” the resolution task (problem/requirements) must be clearly understood, the complexity must be simply desconstructed, the data organized and sorted by modeling, and the actions arranged in sequence.</p>
-<p>In other words, clear understanding of reguirements and proper definitaion of solution are needed before programming. What is required at this time is the problem-solving skill. Some people tend to equate problem-solving abilities with algorithms, but it does not. Of course studying algorithm is very helpful to get problem-solving skill, but problem-solving skill is more higher level of ability.</p>
-<p>Programming is just a means of expression to produce the final result of solving a problem. Programming itself doesn’t solve the problem. Considering the solution of the problem, you should look at preoblem from a computer’s point of view. Computational thinking is required this kind of time. You should do computational thinking with solving problems.</p>
-<p>This requires logical and mathematical thinking, and all concepts that will be used within the programming should be defined as assessable, breaking down and patterning the resolution tasks into smaller units.</p>
-<h1 id="2-Programming-Language"><a href="#2-Programming-Language" class="headerlink" title="2. Programming Language"></a>2. Programming Language</h1><p>As above, solution defined based on problem-solving skill should be communicated to computer. At this point, computer do perform the commands. So the command should be communicated by machine code, not a natural language. But it is very difficult that human to understand machine code. It is even described in bits.</p>
-<p>The most useful alternative to delivering commands in direct mechanical language is to use a kind of translator to write a program using “programming language” consisting of promised phrases (Syntax) that humans can understand and then convert it into machine language that computers can understand. This kind of translator is called complier or interpreter.</p>
-<p>Programming is a kind of communication that sends commands to the computer that you want to perform using the programming language. The programming language is expressed as a combination of Syntax and Semantics.</p>
-<h1 id="3-Syntax-amp-Semantics"><a href="#3-Syntax-amp-Semantics" class="headerlink" title="3. Syntax &amp; Semantics"></a>3. Syntax &amp; Semantics</h1><p>Understanding both syntax and semantics properly is important to use language well. In the end, solutions created through problem-solving ability are expressed through the syntax of programming languages. The code is a specific implementation of the solution. This is only archeive semantics when the requirements are fulfilled(problem solved).</p>
-<p>Most of programming languages provide syntax such as variables and values, keywords, operators, expressions, flow control by conditional and loop statements, statements, functions(set of statements), and data structures such as objects and arrays. </p>
-<p>What a programmer needs to do is find a solution for problem and implement it in a code that has correct syntax. Implemented code should act as expected and solve the problem. It should be predictable and explainable how the code work inside the computer and what it will give back.</p>
-<p>To do this, it is important to have an accurate understanding of the basic concepts and operating principles of programming language. If you just copy &amp; paste code without understand basic concept and principle, that code is not reliable. And problem-solving skills will not grow anymore.</p>
-<hr>
-<p>Reference</p>
-<p><a href="https://poiemaweb.com/coding" target="_blank" rel="noopener">프로그래밍이란?</a></p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/29/1-What-is-Programming/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -372,7 +298,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    7 minutes read (About 1054 words)
+                    7 minutes read (About 1055 words)
                 </span>
                 
                 
@@ -393,26 +319,16 @@
 <li><p>함수를 보통 function, routine, procedure 라고 부른다. 이 때, procedure 단위로 추상화를 하고 procdural하게 진행하는 프로그램을 절차 지향 프로그램이라고 한다. 그러나 프로그램이 거대해지고, 코드가 길어지자 프로그램을 객체(object)로 추상화하는 방법론이 나왔고 그걸 적용한 게 객체 지향 프로그램이다.</p>
 </li>
 </ul>
-<h3 id="절차-지향-Procedural-Programming-procedure-단위-추상화"><a href="#절차-지향-Procedural-Programming-procedure-단위-추상화" class="headerlink" title="절차 지향 Procedural Programming : procedure 단위 추상화"></a>절차 지향 Procedural Programming : procedure 단위 추상화</h3><h3 id="객체-지향-Object-Oriented-Programming-Object-단위-추상화"><a href="#객체-지향-Object-Oriented-Programming-Object-단위-추상화" class="headerlink" title="객체 지향 Object Oriented Programming : Object 단위 추상화"></a>객체 지향 Object Oriented Programming : Object 단위 추상화</h3><h2 id="Function-Abstraction"><a href="#Function-Abstraction" class="headerlink" title="Function Abstraction"></a>Function Abstraction</h2><ul>
-<li>Function Signature (Interface) : function name, parameter, return calue</li>
-<li>Implementation : operations</li>
-<li>함수의 명세(Function Signature)와 내부구현(Implementation)을 분리하는 것</li>
-</ul>
-<h1 id="4-Fundamental-of-Object-Oriented-Programming"><a href="#4-Fundamental-of-Object-Oriented-Programming" class="headerlink" title="4 Fundamental of Object Oriented Programming"></a>4 Fundamental of Object Oriented Programming</h1><h2 id="Encapsulation"><a href="#Encapsulation" class="headerlink" title="Encapsulation"></a>Encapsulation</h2><p>Encapsulation은 모든 object가 그 state(private variables)를 class내부에 private으로 보유하고 있을 때 지켜진다. 다른 object들은 그 state에 직접 접근할 필요 없이, 해당 object의 public object(method)를 호출한다. 결과적으로 object는 자신의 state를 method를 통해 관리한다.</p>
-<h2 id="Abstraction"><a href="#Abstraction" class="headerlink" title="Abstraction"></a>Abstraction</h2><p>추상화는 encapsulation을 자연스럽게 확장한 것으로 볼 수 있다.<br>추상화를 적용한다는 것은, 각 object를 사용할 때 오직 high-level machanism만을 공개해야한다는 것이다. 이 mechanism은 내부 implementation을 숨기고, 오직 관련된 객체의 operation으로만 접근할 수 있다. 즉, 사용자는 class의 method가 어떻게 작동하는지 알 필요 없이 제공된 interface(method name, parameter, return value)만 알고 사용할 수 있다.</p>
-<h2 id="Inheritance"><a href="#Inheritance" class="headerlink" title="Inheritance"></a>Inheritance</h2><p>대부분의 object는 비슷하고 공통된 logic을 공유한다. 상속을 통해 중복되는 코드를 최대한 방지하는 것이 inheritance의 핵심이다. Parent class로부터 child class를 만들 수 있으며, child class는 parent class의 모든 영역을 재사용할 수 있는 특권을 가진다. Parent class의 기능에 자신만의 method를 추가하거나 재정의(override)할 수 있다.</p>
-<h2 id="Polymorphism-One-Interface-and-Multiple-Implementations"><a href="#Polymorphism-One-Interface-and-Multiple-Implementations" class="headerlink" title="Polymorphism | One Interface and Multiple Implementations."></a>Polymorphism | One Interface and Multiple Implementations.</h2><p>다형성. 우리가 parent class와 그로부터 상속받은 여러 child class를 가지고 있을 때, 이 모든 class를 collection처럼 한번에 쓰고 싶을 때가 있을 것이다. Polymorphism은 class를 이렇게 사용할 수 있게 하는 방법 제공한다. Parent class에 interface method를 선언하고(implementation은 하지 않는다!) child class에서 그 method의 implementation을 담당하는 것이다.</p>
-<blockquote>
-<p>상속은 많은 형태의 변화를 가능케 한다. Parent class를 상속하는 child class는 parent class로 정의될 수 있다. (ex. Child C = new Parent(); ) </p>
-</blockquote>
-<h2 id="Function-OverLoading-이름은-같지만-signature-parameter-수-data-type-는-다른-method를-중복으로-선언하는-것"><a href="#Function-OverLoading-이름은-같지만-signature-parameter-수-data-type-는-다른-method를-중복으로-선언하는-것" class="headerlink" title="Function OverLoading : 이름은 같지만 signature(parameter 수, data type)는 다른 method를 중복으로 선언하는 것"></a>Function OverLoading : 이름은 같지만 signature(parameter 수, data type)는 다른 method를 중복으로 선언하는 것</h2><p>method 이름은 같아야 한다. Parameter 수는 달라야 하며, 같다면 data type이 달라야 한다.</p>
-<h2 id="Method-OverRiding-부모-클래스의-method-동작-방법을-재정의하여-우선적으로-사용하는-것"><a href="#Method-OverRiding-부모-클래스의-method-동작-방법을-재정의하여-우선적으로-사용하는-것" class="headerlink" title="Method OverRiding : 부모 클래스의 method 동작 방법을 재정의하여 우선적으로 사용하는 것."></a>Method OverRiding : 부모 클래스의 method 동작 방법을 재정의하여 우선적으로 사용하는 것.</h2><p>override 하고자 하는 method가 상위 클래스에 존재해야 한다. Method 이름이 같아야 하며, parameter 개수, data type, return type 등 모든 signature를 동일하게 사용한다. 달라지는 것은 내부 구현 뿐이다.</p>
-<p>부르는 object만 달라질뿐 method 이름을 동일하게 하면 하나의 method로 여러 기능을 실행할 수 있다.</p>
-<hr>
-<p>참고 자료 <a href="https://medium.freecodecamp.org/object-oriented-programming-concepts-21bb035f7260" target="_blank" rel="noopener">How to explain object-oriented programming concepts to a 6-year-old</a></p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/24/4-Fundamental-of-Object-Oriented-Programming/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -493,7 +409,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        131
+                        132
                     </p>
                 </div>
             </div>
@@ -718,7 +634,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">61</span>
+                <span class="level-item tag">62</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -748,6 +664,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/190612-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/rose.png" alt="190612-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T10:34:40.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/190612-TIL/" class="has-link-black-ter is-size-6">190612-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -825,25 +760,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/10/36-SPA/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="36. SPA">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-10T01:46:03.000Z">2019-06-10</time></div>
-                    <a href="/2019/06/10/36-SPA/" class="has-link-black-ter is-size-6">36. SPA</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -862,7 +778,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">12</span>
                 </span>
             </a>
         </li>
@@ -1294,7 +1210,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">62</span>
+                        <span class="tag is-grey">63</span>
                     </a>
                 </div>
                 
@@ -1558,7 +1474,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">61</span>
+                <span class="level-item tag">62</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -1588,6 +1504,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/190612-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/rose.png" alt="190612-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T10:34:40.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/190612-TIL/" class="has-link-black-ter is-size-6">190612-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1665,25 +1600,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/10/36-SPA/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="36. SPA">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-10T01:46:03.000Z">2019-06-10</time></div>
-                    <a href="/2019/06/10/36-SPA/" class="has-link-black-ter is-size-6">36. SPA</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1702,7 +1618,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">12</span>
                 </span>
             </a>
         </li>
@@ -2134,7 +2050,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">62</span>
+                        <span class="tag is-grey">63</span>
                     </a>
                 </div>
                 

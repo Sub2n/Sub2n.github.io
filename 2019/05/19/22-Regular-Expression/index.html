@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="Regular Expression정규 표현식은 문자열에서 특정 내용을 찾거나 바꾸거나 뽑아내는 데에 사용된다. 아이디나 이메일, 비밀번호 등의 유효성 검사에 정규 표현식을 사용할 수 있다. 자주 사용하는 정규 표현식은 간단한 구글 검색으로 찾을 수 있지만, 표현식 구성법에 대해서 우선 정리해볼 것이다. How to make Regular Expression">
+    <meta name="description" content="Regular Expression정규 표현식은 문자열에서 특정 내용을 찾거나 바꾸거나 뽑아내는 데에 사용된다. 아이디나 이메일, 비밀번호 등의 유효성 검사에 정규 표현식을 사용할 수 있다. 자주 사용하는 정규 표현식은 간단한 구글 검색으로 찾을 수 있지만, 표현식 구성법에 대해서 우선 정리해볼 것이다.">
 <meta name="keywords" content="자바스크립트,RegExp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="22. Regular Expression">
 <meta property="og:url" content="https://sub2n.github.io/2019/05/19/22-Regular-Expression/index.html">
 <meta property="og:site_name" content="수빈 개발블로그">
-<meta property="og:description" content="Regular Expression정규 표현식은 문자열에서 특정 내용을 찾거나 바꾸거나 뽑아내는 데에 사용된다. 아이디나 이메일, 비밀번호 등의 유효성 검사에 정규 표현식을 사용할 수 있다. 자주 사용하는 정규 표현식은 간단한 구글 검색으로 찾을 수 있지만, 표현식 구성법에 대해서 우선 정리해볼 것이다. How to make Regular Expression">
+<meta property="og:description" content="Regular Expression정규 표현식은 문자열에서 특정 내용을 찾거나 바꾸거나 뽑아내는 데에 사용된다. 아이디나 이메일, 비밀번호 등의 유효성 검사에 정규 표현식을 사용할 수 있다. 자주 사용하는 정규 표현식은 간단한 구글 검색으로 찾을 수 있지만, 표현식 구성법에 대해서 우선 정리해볼 것이다.">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/yellow.png">
-<meta property="og:updated_time" content="2019-06-11T08:27:08.688Z">
+<meta property="og:updated_time" content="2019-06-13T01:52:31.589Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="22. Regular Expression">
-<meta name="twitter:description" content="Regular Expression정규 표현식은 문자열에서 특정 내용을 찾거나 바꾸거나 뽑아내는 데에 사용된다. 아이디나 이메일, 비밀번호 등의 유효성 검사에 정규 표현식을 사용할 수 있다. 자주 사용하는 정규 표현식은 간단한 구글 검색으로 찾을 수 있지만, 표현식 구성법에 대해서 우선 정리해볼 것이다. How to make Regular Expression">
+<meta name="twitter:description" content="Regular Expression정규 표현식은 문자열에서 특정 내용을 찾거나 바꾸거나 뽑아내는 데에 사용된다. 아이디나 이메일, 비밀번호 등의 유효성 검사에 정규 표현식을 사용할 수 있다. 자주 사용하는 정규 표현식은 간단한 구글 검색으로 찾을 수 있지만, 표현식 구성법에 대해서 우선 정리해볼 것이다.">
 <meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/yellow.png">
 
 
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    5 minutes read (About 747 words)
+                    5 minutes read (About 748 words)
                 </span>
                 
                 
@@ -185,6 +185,8 @@
         <div class="content">
             <h1 id="Regular-Expression"><a href="#Regular-Expression" class="headerlink" title="Regular Expression"></a>Regular Expression</h1><p>정규 표현식은 문자열에서 특정 내용을 찾거나 바꾸거나 뽑아내는 데에 사용된다.</p>
 <p>아이디나 이메일, 비밀번호 등의 유효성 검사에 정규 표현식을 사용할 수 있다. 자주 사용하는 정규 표현식은 간단한 구글 검색으로 찾을 수 있지만, 표현식 구성법에 대해서 우선 정리해볼 것이다.</p>
+<a id="more"></a>
+
 <h2 id="How-to-make-Regular-Expression"><a href="#How-to-make-Regular-Expression" class="headerlink" title="How to make Regular Expression?"></a>How to make Regular Expression?</h2><p>정규 표현식을 생성하는 가장 간단한 방법은 리터럴 표기법이다.</p>
 <p>RegExp.prototype.exec, RegExp.prototype.test, String.prototype.match, String.prototype.replace, String.prototype.search, String.prototype.split 등의 메소드에서 정규 표현식을 사용할 수 있다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// '/(pattern)/(flag: i, g, m)'</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> targetStr = <span class="hljs-string">'I like koala.'</span></span><br><span class="line"><span class="hljs-keyword">const</span> regExp = <span class="hljs-regexp">/k/ig</span>;	<span class="hljs-comment">// 정규 표현식</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// RegExp.prototype methods</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(regExp.exec(targetStr)); <span class="hljs-comment">// ["k", index: 4, input: "I like koala.", groups: undefined]</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(regExp.test(targetStr)); <span class="hljs-comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// String.prototype methods</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(targetStr.match(regExp)); <span class="hljs-comment">// (2) ["k", "k"]</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(targetStr.replace(regExp, <span class="hljs-string">'K'</span>)); <span class="hljs-comment">// I liKe Koala.</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(targetStr.search(regExp)); <span class="hljs-comment">// 4</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(targetStr.splitgExp)); <span class="hljs-comment">// (3) ["I li", "e ", "oala."]</span></span><br></pre></td></tr></table></figure>
@@ -349,7 +351,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        131
+                        132
                     </p>
                 </div>
             </div>
@@ -574,7 +576,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">61</span>
+                <span class="level-item tag">62</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -604,6 +606,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/190612-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/rose.png" alt="190612-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T10:34:40.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/190612-TIL/" class="has-link-black-ter is-size-6">190612-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -681,25 +702,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/10/36-SPA/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="36. SPA">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-10T01:46:03.000Z">2019-06-10</time></div>
-                    <a href="/2019/06/10/36-SPA/" class="has-link-black-ter is-size-6">36. SPA</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -718,7 +720,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">12</span>
                 </span>
             </a>
         </li>
@@ -1150,7 +1152,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">62</span>
+                        <span class="tag is-grey">63</span>
                     </a>
                 </div>
                 
@@ -1414,7 +1416,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">61</span>
+                <span class="level-item tag">62</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -1444,6 +1446,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/12/190612-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/rose.png" alt="190612-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-12T10:34:40.000Z">2019-06-12</time></div>
+                    <a href="/2019/06/12/190612-TIL/" class="has-link-black-ter is-size-6">190612-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1521,25 +1542,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/10/36-SPA/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="36. SPA">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-10T01:46:03.000Z">2019-06-10</time></div>
-                    <a href="/2019/06/10/36-SPA/" class="has-link-black-ter is-size-6">36. SPA</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1558,7 +1560,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">12</span>
                 </span>
             </a>
         </li>
@@ -1990,7 +1992,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">62</span>
+                        <span class="tag is-grey">63</span>
                     </a>
                 </div>
                 
