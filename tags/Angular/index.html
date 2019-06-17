@@ -180,7 +180,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 262 words)
+                    2 minutes read (About 336 words)
                 </span>
                 
                 
@@ -209,9 +209,20 @@
 <h2 id="Class-Binding"><a href="#Class-Binding" class="headerlink" title="Class Binding"></a>Class Binding</h2><p>Class binding은 2가지 방법으로 사용할 수 있다. </p>
 <h5 id="class-className-quot-expression-quot"><a href="#class-className-quot-expression-quot" class="headerlink" title="[class.className] = &quot;expression&quot;"></a><code>[class.className] = &quot;expression&quot;</code></h5><p>expression의 평가 결과가 true일 때는 class를 적용하고, false일 때는 class를 적용하지 않는다. classList.add와 remove를 간단하게 할 수 있다.</p>
 <h5 id="class-quot-className-List-quot"><a href="#class-quot-className-List-quot" class="headerlink" title="[class]=&quot;className List&quot;"></a><code>[class]=&quot;className List&quot;</code></h5><p>class에 className List를 적용한다.</p>
-<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">classNames = <span class="hljs-string">'active red block'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">classNames = <span class="hljs-string">'active red block'</span>;</span><br></pre></td></tr></table></figure>
 
-<h2 id="Event-Binding"><a href="#Event-Binding" class="headerlink" title="Event Binding"></a>Event Binding</h2>
+<p>여러 Class를 조건 별로 다룰 때에는 Angular의 built-in ngClass Directive를 사용하는 것이 좋다.</p>
+<h2 id="Style-Binding"><a href="#Style-Binding" class="headerlink" title="Style Binding"></a>Style Binding</h2><p><code>[style.styleProp]=&quot;expression&quot;</code></p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// style property 이름은 camelExpression과 kebab-expression 모두 사용</span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> [<span class="hljs-attr">style.fontSize.px</span>] = <span class="hljs-string">"'64'"</span>&gt;</span>..<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> [<span class="hljs-attr">style.font-size.px</span>]=<span class="hljs-string">"'64'"</span>&gt;</span>..<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Event-Binding"><a href="#Event-Binding" class="headerlink" title="Event Binding"></a>Event Binding</h2><p><code>(event)=&quot;event handler()&quot;</code></p>
+<p>함수 <strong>호출문</strong>을 써야 한다.</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">"onClick()"</span>&gt;</span>..<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Two-way-Data-Binding"><a href="#Two-way-Data-Binding" class="headerlink" title="Two-way Data Binding"></a>Two-way Data Binding</h2><p>Property와 event binding을 한 번에</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> (<span class="hljs-attr">input</span>)=<span class="hljs-string">"changeVal($event.target)"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
         </div>
         
         
