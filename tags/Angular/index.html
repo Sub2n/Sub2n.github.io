@@ -180,7 +180,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 336 words)
+                    3 minutes read (About 472 words)
                 </span>
                 
                 
@@ -220,8 +220,16 @@
 <figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">"onClick()"</span>&gt;</span>..<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="Two-way-Data-Binding"><a href="#Two-way-Data-Binding" class="headerlink" title="Two-way Data Binding"></a>Two-way Data Binding</h2><p>Property와 event binding을 한 번에</p>
-<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> (<span class="hljs-attr">input</span>)=<span class="hljs-string">"changeVal($event.target)"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> (<span class="hljs-attr">input</span>)=<span class="hljs-string">"changeVal($event.target.value)"</span></span></span><br><span class="line"><span class="hljs-tag">       [<span class="hljs-attr">value</span>]=<span class="hljs-string">"value"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">"remove()"</span>&gt;</span>X<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppComponent &#123;</span><br><span class="line">  value= <span class="hljs-string">''</span>;</span><br><span class="line">  </span><br><span class="line">  changeVal(value: <span class="hljs-built_in">string</span>) &#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.value = value;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  remove() &#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.value = <span class="hljs-string">''</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>input event로 인해서 AppComponent class의 value가 바뀌면 그 바뀐 value에 의해서 또 HTMLInputElement의  value도 영향을 받는다.</p>
+<p>이런 상황을 양방향 데이터 바인딩으로 작성할 수 있다.</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">"value"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>위  와 같이 고치면 input tag에 대해서 input event 발생시 AppCoㅊㅌ      mponent의 value도 변경되고, AppComponent의 value가 변경되면 view에;ㅀ 반영된다.</p>
+<p>ngModel을 사용하기 위해서는 FormsModule을 모듈에 등록해야 한다.</p>
 
         </div>
         
