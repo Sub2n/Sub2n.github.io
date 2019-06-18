@@ -183,7 +183,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 123 words)
+                    a minute read (About 177 words)
                 </span>
                 
                 
@@ -206,10 +206,14 @@
 <h4 id="ngClass"><a href="#ngClass" class="headerlink" title="ngClass"></a>ngClass</h4><p>여러 개의 Class를 추가하고 제거할 때 간편하다. String, Array, Object 형태로 바인딩할 수 있다.</p>
 <figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> [<span class="hljs-attr">ngClass</span>] = <span class="hljs-string">"'active red'"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <span class="hljs-comment">&lt;!-- string --&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> [<span class="hljs-attr">ngClass</span>] = <span class="hljs-string">""</span>['<span class="hljs-attr">active</span>', '<span class="hljs-attr">red</span>']"&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <span class="hljs-comment">&lt;!-- array --&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> [<span class="hljs-attr">ngClass</span>] = <span class="hljs-string">"&#123;'active': true, 'red': false&#125;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <span class="hljs-comment">&lt;!-- object --&gt;</span></span><br></pre></td></tr></table></figure>
 
+<h4 id="ngStyle"><a href="#ngStyle" class="headerlink" title="ngStyle"></a>ngStyle</h4><p>여러 개의 Inline Style을 추가하고 제거한다.</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> [<span class="hljs-attr">ngStyle</span>]=<span class="hljs-string">"&#123; color: 'red', 'width.px': 100 &#125;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <h4 id="Host-Element"><a href="#Host-Element" class="headerlink" title="Host Element"></a>Host Element</h4><p>Attribute가 사용된 Element</p>
 </blockquote>
-<h3 id="Structural-Directives"><a href="#Structural-Directives" class="headerlink" title="Structural Directives"></a>Structural Directives</h3>
+<h3 id="Structural-Directives"><a href="#Structural-Directives" class="headerlink" title="Structural Directives"></a>Structural Directives</h3><p>구조 디렉티브는 DOM 요소를 조건에 따라서 추가/삭제(ngIf, ngSwitch)하거나 반복 생성(ngFor)할 때 사용한다.</p>
+
         </div>
         
         
