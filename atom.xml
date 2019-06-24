@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sub2n.github.io/"/>
-  <updated>2019-06-23T01:15:44.236Z</updated>
+  <updated>2019-06-24T07:14:20.246Z</updated>
   <id>https://sub2n.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Angular Directive</title>
+    <link href="https://sub2n.github.io/2019/06/24/Angular-Directive/"/>
+    <id>https://sub2n.github.io/2019/06/24/Angular-Directive/</id>
+    <published>2019-06-24T06:28:00.000Z</published>
+    <updated>2019-06-24T07:14:20.246Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Directive"><a href="#Directive" class="headerlink" title="Directive"></a>Directive</h2><p>Directive는 DOM의 모양이나 동작 등을 관리하기 위한 명령이다. HTML Element 또는 Attribute 형태로 사용한다.</p><p>Directive를 사용하는 HTML Element를 Directive 내에서 Host element라고 부르며, Directive 내부에서 host element의 event를 처리하거나 style 등을 변경할 수 있다.</p><figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Directive</span>(&#123;</span><br><span class="line">  selector: <span class="hljs-string">'[textBlue]'</span></span><br><span class="line">  &#125;)</span><br><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> TextBlueDirective &#123;</span><br><span class="line">  <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">public</span> el: ElementRef, <span class="hljs-keyword">public</span> renderer: Renderer2</span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-meta">@HostListener</span>(<span class="hljs-string">'mouseenter'</span>) onMouse() &#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.setColor(<span class="hljs-string">'blue'</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-meta">@HostListener</span>(<span class="hljs-string">'mouseleave'</span>) offMouse() &#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.setColor(<span class="hljs-literal">null</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  setColor(color: <span class="hljs-built_in">string</span> | <span class="hljs-literal">null</span>) &#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.renderer.setStyle(<span class="hljs-keyword">this</span>.el.nativeElement, <span class="hljs-string">'color'</span>, color);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Directive class의 constructor에서 주입된 parameter는 class의 class field가 되어 class 전역에서 사용할 수 있다. 이를 constructor에 ElementRef instance가 Dependency Intect(의존성 주입)되었다고 한다.</p><ul><li><p>@Directive : meta data 객체에 Directive에 필요한 정보(selector등)를 입력한다.</p><table><thead><tr><th align="left">selector property</th><th align="left">설명</th></tr></thead><tbody><tr><td align="left">selector: ‘foo’</td><td align="left">foo element에 Directive가 적용된다.</td></tr><tr><td align="left">selector: ‘.foo’</td><td align="left">.foo class가 선언된 element에 Directive가 적용된다.</td></tr><tr><td align="left">selector: [foo]</td><td align="left">foo attribute가 선언된 element에 Directive가 적용된다.</td></tr><tr><td align="left">selector: [foo=bar]</td><td align="left">foo attribute의 값이 bar로 선언된 element에 Directive가 적용된다.</td></tr><tr><td align="left">selector: :not(foo)</td><td align="left">foo element를 제외한 모든 element에 Directive가 적용된다.</td></tr><tr><td align="left">selector: ‘foo, bar’</td><td align="left">foo 또는 bar element에 Directive가 적용된다.</td></tr></tbody></table><p>Directive의 selector는 attribute로 이용하는 것이 일반적이다. Component는 Directive를 상속받은 것으로 selector 규칙이 동일하게 적용된다.</p></li><li><p>ElementRef: host element를 감싼 wrapper object</p></li><li><p>el.nativeElement: host element</p></li><li><p>Renderer2: Angular에서는 el.nativeElement의 style 프로퍼티를 직접 변경하는 것이 아니라 Renderer2를 이용하는 것이 권장된다.</p></li><li><p>@HostListener : host element에서 발생한 event에 대한 event listener를 정의할 때 사용하는 데코레이터.</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Directive&quot;&gt;&lt;a href=&quot;#Directive&quot; class=&quot;headerlink&quot; title=&quot;Directive&quot;&gt;&lt;/a&gt;Directive&lt;/h2&gt;&lt;p&gt;Directive는 DOM의 모양이나 동작 등을 관리하기 위한 명령이다. H
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
+    
+      <category term="Angular" scheme="https://sub2n.github.io/categories/JavaScript/Angular/"/>
+    
+    
+      <category term="Angular" scheme="https://sub2n.github.io/tags/Angular/"/>
+    
+  </entry>
   
   <entry>
     <title>190622-TIL</title>
@@ -551,32 +578,6 @@
       
       
         &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;h3 id=&quot;MongoDB&quot;&gt;&lt;a h
-      
-    
-    </summary>
-    
-      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
-    
-    
-      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>190603-TIL</title>
-    <link href="https://sub2n.github.io/2019/06/03/190603-TIL/"/>
-    <id>https://sub2n.github.io/2019/06/03/190603-TIL/</id>
-    <published>2019-06-03T08:42:08.000Z</published>
-    <updated>2019-06-03T08:46:19.055Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li>오후에 3분간 나가서 자바스크립트 키워드에 대해서 설명하는 시험을 봤다. 자바스크립트 원시타입과 객체타입의 차이에 대해서 발표했다. <a href="https://sub2n.github.io/2019/05/31/자바스크립트-키워드-정리/">💛 키워드 정리</a></li><li>Todo List Server가 있는 환경에서 실습하기 위해서 작업환경을 세팅했다.</li><li>Webpack과 Babel, Sass를 위한 작업 환경을 구성했다.</li><li>호스팅 서비스를 이용해서 MongoDB를 설치했다.</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;오후에 3분간 나가서 
       
     
     </summary>
