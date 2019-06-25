@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://sub2n.github.io/2019/06/25/190624-TIL/</loc>
+    <loc>https://sub2n.github.io/2019/06/25/Angular-RxJS/</loc>
     
-    <lastmod>2019-06-25T04:07:28.804Z</lastmod>
+    <lastmod>2019-06-25T04:33:32.891Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/06/25/Angular-Service-Dependency-Injection/</loc>
+    
+    <lastmod>2019-06-25T04:14:15.293Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://sub2n.github.io/2019/06/24/Angular-Directive/</loc>
     
-    <lastmod>2019-06-24T08:21:30.270Z</lastmod>
+    <lastmod>2019-06-25T04:13:52.504Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sub2n.github.io/2019/06/25/190624-TIL/</loc>
+    
+    <lastmod>2019-06-25T04:07:28.804Z</lastmod>
     
   </url>
   
