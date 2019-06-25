@@ -16,7 +16,7 @@
 <meta property="og:description" content="Angular Application은 component를 중심으로 구성되는만큼 component는 Angular의 핵심 개념이다. Component는 application의 화면을 구성하는 View를 생성하고 관리한다.  Component는 template의 중첩 관계에 의해서 tree 구조를 갖는다. 여러 component 사이의 통신과 상태 관리를 위해">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/html.png">
-<meta property="og:updated_time" content="2019-06-14T07:59:22.647Z">
+<meta property="og:updated_time" content="2019-06-25T05:15:42.467Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular Component">
 <meta name="twitter:description" content="Angular Application은 component를 중심으로 구성되는만큼 component는 Angular의 핵심 개념이다. Component는 application의 화면을 구성하는 View를 생성하고 관리한다.  Component는 template의 중첩 관계에 의해서 tree 구조를 갖는다. 여러 component 사이의 통신과 상태 관리를 위해">
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 482 words)
+                    4 minutes read (About 527 words)
                 </span>
                 
                 
@@ -214,6 +214,12 @@
 <p><code>&lt;app-hello&gt;</code> 내부에서 event greeting의 event handler를 등록하고 class 내부에서 정의한다. $event로 parameter에 argument 값을 받아온다.</p>
 </li>
 </ol>
+<h2 id="Content-Projection"><a href="#Content-Projection" class="headerlink" title="Content Projection"></a>Content Projection</h2><p>Child Component의 selector tag 사이에 HTML content를 넣을 수 있다.</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">&lt;!-- parent --&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">app-child</span>&gt;</span></span><br><span class="line">	<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span></span><br><span class="line">    Content from parent</span><br><span class="line">  <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">app-child</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">&lt;!-- child --&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">ng-content</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ng-content</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Child component의 template에 <code>&lt;ng-content&gt;&lt;/ng-content&gt;</code>가 Parent component에서 전달한 template으로 치환된다.</p>
 
         </div>
         
