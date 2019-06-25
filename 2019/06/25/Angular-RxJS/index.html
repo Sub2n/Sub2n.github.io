@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="Reactive Programming Reactive Programming is programming with asynchronous data streams. You can listen to that stream and react accordingly.  Reactive Programming은 비동기적 데이터 스트림을 처리하는 프로그램이다. Data str">
+    <meta name="description" content="Reactive Programming Reactive Programming is programming with asynchronous data streams. You can listen to that stream and react accordingly.  Reactive Programming은 비동기적 데이터 스트림을 처리하는 프로그래밍 패러다임이다. Da">
 <meta name="keywords" content="Reactive Programming,Observable">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Angular RxJS">
 <meta property="og:url" content="https://sub2n.github.io/2019/06/25/Angular-RxJS/index.html">
 <meta property="og:site_name" content="수빈 개발블로그">
-<meta property="og:description" content="Reactive Programming Reactive Programming is programming with asynchronous data streams. You can listen to that stream and react accordingly.  Reactive Programming은 비동기적 데이터 스트림을 처리하는 프로그램이다. Data str">
+<meta property="og:description" content="Reactive Programming Reactive Programming is programming with asynchronous data streams. You can listen to that stream and react accordingly.  Reactive Programming은 비동기적 데이터 스트림을 처리하는 프로그래밍 패러다임이다. Da">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/html.png">
-<meta property="og:updated_time" content="2019-06-25T05:12:37.938Z">
+<meta property="og:updated_time" content="2019-06-25T06:40:27.683Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular RxJS">
-<meta name="twitter:description" content="Reactive Programming Reactive Programming is programming with asynchronous data streams. You can listen to that stream and react accordingly.  Reactive Programming은 비동기적 데이터 스트림을 처리하는 프로그램이다. Data str">
+<meta name="twitter:description" content="Reactive Programming Reactive Programming is programming with asynchronous data streams. You can listen to that stream and react accordingly.  Reactive Programming은 비동기적 데이터 스트림을 처리하는 프로그래밍 패러다임이다. Da">
 <meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/html.png">
 
 
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 390 words)
+                    4 minutes read (About 554 words)
                 </span>
                 
                 
@@ -186,10 +186,11 @@
             <h2 id="Reactive-Programming"><a href="#Reactive-Programming" class="headerlink" title="Reactive Programming"></a>Reactive Programming</h2><blockquote>
 <p><strong>Reactive Programming is programming with asynchronous data streams.</strong> <strong>You can listen to that stream and react accordingly.</strong></p>
 </blockquote>
-<p>Reactive Programming은 비동기적 데이터 스트림을 처리하는 프로그램이다. Data stream이란 연속적인 데이터의 흐름을 말한다. Reactive Programming은 모든 것을 stream으로 본다. 이벤트, AJAX 요청 등 모든 data stream을 시간 순서에 의해 전달되는 stream으로 처리한다.</p>
+<p><strong>Reactive Programming은 비동기적 데이터 스트림을 처리하는 프로그래밍 패러다임</strong>이다. Data stream이란 연속적인 데이터의 흐름을 말한다. Reactive Programming은 모든 것을 stream으로 본다. Event, AJAX 요청 등 모든 data stream을 시간 순서에 의해 전달되는 stream으로 처리한다.</p>
+<p>최근 참여한 FrontEndgame 컨퍼런스에서 Functional Programming과 Reactive Programming을 융합한 FRP에 대한 발표가 있었는데 이제 Reactive Programming을 공부해본다.</p>
 <a id="more"></a>
 
-
+<p>여태까지는 입력받는 Data가 synchronous한지 asynchronous한지에 따라서 처리하는 방법이 달라진다. 입력이 string일 때와 Promise/event 등일 때는 코딩하는 방법이 달라진다. Reactive Programming은 data를 async, sync로 구분하지 않고 data를 stream으로 보는 것이다. Data consumer는 Data producer가 연속적으로 생성하고 방출하는 data stream의 상태 변화에 반응하는 방식으로 동작한다.</p>
 <h2 id="Observable-amp-Observer"><a href="#Observable-amp-Observer" class="headerlink" title="Observable &amp; Observer"></a>Observable &amp; Observer</h2><blockquote>
 <p><strong>An observer subscribes to an Observable. An Observable emits items or sends notifications to its observers by calling the observers’ methods.</strong></p>
 </blockquote>
