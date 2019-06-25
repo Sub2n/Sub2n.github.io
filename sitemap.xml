@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sub2n.github.io/2019/06/25/Angular-Service-Dependency-Injection/</loc>
+    
+    <lastmod>2019-06-25T06:17:25.109Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sub2n.github.io/2019/06/14/Angular-Component/</loc>
     
     <lastmod>2019-06-25T05:15:42.467Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://sub2n.github.io/2019/06/25/Angular-RxJS/</loc>
     
     <lastmod>2019-06-25T05:12:37.938Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sub2n.github.io/2019/06/25/Angular-Service-Dependency-Injection/</loc>
-    
-    <lastmod>2019-06-25T04:14:15.293Z</lastmod>
     
   </url>
   
