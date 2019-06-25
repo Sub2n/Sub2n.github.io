@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sub2n.github.io/"/>
-  <updated>2019-06-24T07:20:40.339Z</updated>
+  <updated>2019-06-25T04:07:28.804Z</updated>
   <id>https://sub2n.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>190624-TIL</title>
+    <link href="https://sub2n.github.io/2019/06/25/190624-TIL/"/>
+    <id>https://sub2n.github.io/2019/06/25/190624-TIL/</id>
+    <published>2019-06-25T04:06:03.000Z</published>
+    <updated>2019-06-25T04:07:28.804Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li>ToastUI를 JavaScript와 Angular로 구현했다.</li><li>window.pageYOffset은 wiondow.scrollY보다 cross browsing에 적합(IE 9 지원)하므로 pageYOffset을 사용하는 게 좋다.</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;ToastUI를 Jav
+      
+    
+    </summary>
+    
+      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
+    
+    
+      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Angular Directive</title>
     <link href="https://sub2n.github.io/2019/06/24/Angular-Directive/"/>
     <id>https://sub2n.github.io/2019/06/24/Angular-Directive/</id>
     <published>2019-06-24T06:28:00.000Z</published>
-    <updated>2019-06-24T07:20:40.339Z</updated>
+    <updated>2019-06-24T08:21:30.270Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Directive"><a href="#Directive" class="headerlink" title="Directive"></a>Directive</h2><p>Directive는 DOM의 모양이나 동작 등을 관리하기 위한 명령이다. HTML Element 또는 Attribute 형태로 사용한다.</p><p>Directive를 사용하는 HTML Element를 Directive 내에서 Host element라고 부르며, Directive 내부에서 host element의 event를 처리하거나 style 등을 변경할 수 있다.</p><figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Directive</span>(&#123;</span><br><span class="line">  selector: <span class="hljs-string">'[textBlue]'</span></span><br><span class="line">  &#125;)</span><br><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> TextBlueDirective &#123;</span><br><span class="line">  <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">public</span> el: ElementRef, <span class="hljs-keyword">public</span> renderer: Renderer2</span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-meta">@HostListener</span>(<span class="hljs-string">'mouseenter'</span>) onMouse() &#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.setColor(<span class="hljs-string">'blue'</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-meta">@HostListener</span>(<span class="hljs-string">'mouseleave'</span>) offMouse() &#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.setColor(<span class="hljs-literal">null</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  setColor(color: <span class="hljs-built_in">string</span> | <span class="hljs-literal">null</span>) &#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.renderer.setStyle(<span class="hljs-keyword">this</span>.el.nativeElement, <span class="hljs-string">'color'</span>, color);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Directive class의 constructor에서 주입된 parameter는 class의 class field가 되어 class 전역에서 사용할 수 있다. 이를 constructor에 ElementRef instance가 Dependency Intect(의존성 주입)되었다고 한다.</p><ul><li><p>@Directive : meta data 객체에 Directive에 필요한 정보(selector등)를 입력한다.</p><table><thead><tr><th align="left">selector property</th><th align="left">설명</th></tr></thead><tbody><tr><td align="left">selector: ‘foo’</td><td align="left">foo element에 Directive가 적용된다.</td></tr><tr><td align="left">selector: ‘.foo’</td><td align="left">.foo class가 선언된 element에 Directive가 적용된다.</td></tr><tr><td align="left">selector: [foo]</td><td align="left">foo attribute가 선언된 element에 Directive가 적용된다.</td></tr><tr><td align="left">selector: [foo=bar]</td><td align="left">foo attribute의 값이 bar로 선언된 element에 Directive가 적용된다.</td></tr><tr><td align="left">selector: :not(foo)</td><td align="left">foo element를 제외한 모든 element에 Directive가 적용된다.</td></tr><tr><td align="left">selector: ‘foo, bar’</td><td align="left">foo 또는 bar element에 Directive가 적용된다.</td></tr></tbody></table><p>Directive의 selector는 attribute로 이용하는 것이 일반적이다. Component는 Directive를 상속받은 것으로 selector 규칙이 동일하게 적용된다.</p></li><li><p>ElementRef: host element를 감싼 wrapper object</p></li><li><p>el.nativeElement: host element</p></li><li><p>Renderer2: Angular에서는 el.nativeElement의 style 프로퍼티를 직접 변경하는 것이 아니라 Renderer2를 이용하는 것이 권장된다.</p></li><li><p>@HostListener : host element에서 발생한 event에 대한 event listener를 정의할 때 사용하는 데코레이터.</p></li></ul><h3 id="Directive로-data-보내기-property-binding"><a href="#Directive로-data-보내기-property-binding" class="headerlink" title="Directive로 data 보내기 | property binding"></a>Directive로 data 보내기 | property binding</h3><figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// app.component.ts</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="hljs-string">'app-root'</span>,</span><br><span class="line">  template: <span class="hljs-string">`</span></span><br><span class="line"><span class="hljs-string">    &lt;!--The content below is only a placeholder and can be replaced.--&gt;</span></span><br><span class="line"><span class="hljs-string">    &lt;p [color]="color" textColor&gt;Hello&lt;/p&gt;</span></span><br><span class="line"><span class="hljs-string">  `</span>,</span><br><span class="line">  styles: []</span><br><span class="line">  &#125;)</span><br><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppComponent &#123;</span><br><span class="line">  color = <span class="hljs-string">'red'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// text-color.directive.ts</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">@Directive</span>(&#123;</span><br><span class="line">  selector: <span class="hljs-string">'[textColor]'</span></span><br><span class="line">  &#125;)</span><br><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> TextColorDirective &#123;</span><br><span class="line">  <span class="hljs-meta">@Input</span>() color: <span class="hljs-built_in">string</span>;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">public</span> el: ElementRef, <span class="hljs-keyword">public</span> renderer: Renderer2</span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-meta">@HostListener</span>(<span class="hljs-string">'mouseenter'</span>) onMouse() &#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.setColor(<span class="hljs-keyword">this</span>.color);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-meta">@HostListener</span>(<span class="hljs-string">'mouseleave'</span>) offMouse() &#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.setColor(<span class="hljs-literal">null</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  setColor(color: <span class="hljs-built_in">string</span> | <span class="hljs-literal">null</span>) &#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.renderer.setStyle(<span class="hljs-keyword">this</span>.el.nativeElement, <span class="hljs-string">'color'</span>, color);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -561,31 +587,6 @@
       <category term="자바스크립트" scheme="https://sub2n.github.io/tags/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8/"/>
     
       <category term="실행 컨텍스트" scheme="https://sub2n.github.io/tags/%EC%8B%A4%ED%96%89-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>190604-TIL</title>
-    <link href="https://sub2n.github.io/2019/06/04/190604-TIL/"/>
-    <id>https://sub2n.github.io/2019/06/04/190604-TIL/</id>
-    <published>2019-06-04T04:11:33.000Z</published>
-    <updated>2019-06-04T07:51:44.936Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><h3 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h3><p>MongoDB는 Document-Oriented NoSQL Database이다. RDBMS의 Table을 Collection, Tuple를 Document라고 부른다.<br>RDBMS처럼 고정된 Schema가 존재하지 않고 하나의 Collection 내의 DOcument가 각각 다른 Schema를 가질 수 있다.</p><h3 id="SASS"><a href="#SASS" class="headerlink" title="SASS"></a>SASS</h3><p>Sass(Syntactically Awesome StyleSheets)는 CSS pre-processor로 CSS의 단점을 보완하고 코드 재사용에 유리한 CSS를 생성하기 위한 CSS의 extension이다.</p><ul><li>변수의 사용</li><li>조건문과 반복문</li><li>Import</li><li>Nesting</li><li>Mixin</li><li>Extend/Inheritance</li></ul><p>등의 도구들을 제공한다.</p><h3 id="한-일"><a href="#한-일" class="headerlink" title="한 일"></a>한 일</h3><ul><li>Todos version 3을 만들었다.</li><li>MongoDB 서버를 연동</li><li>복습하는 겸 네트워크 공부를 조금 했다.</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;h3 id=&quot;MongoDB&quot;&gt;&lt;a h
-      
-    
-    </summary>
-    
-      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
-    
-    
-      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
     
   </entry>
   
