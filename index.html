@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 174 words)
+                    a minute read (About 214 words)
                 </span>
                 
                 
@@ -189,6 +189,8 @@
 </li>
 <li><p>함수가 아닌 것에 () 붙여 실행하면 TypeError (SyntaxError 아님!!!!!!)</p>
 </li>
+<li><p>undefined 값에 method 실행해도 TypeError</p>
+</li>
 <li><p>typeof 배열은 object</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAge</span>(<span class="hljs-params">...args</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> args);</span><br><span class="line">&#125;</span><br><span class="line">getAge(<span class="hljs-number">20</span>);</span><br></pre></td></tr></table></figure>
 
@@ -202,8 +204,11 @@
 <li><p>‘use strict’</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAge</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line"><span class="hljs-meta">  'use strict'</span>;</span><br><span class="line">  age = <span class="hljs-number">20</span>;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(age);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>‘use strict’ mode가 아닐 때는 키워드 없이 선언한 변수를 암묵적 전역 변수로 등록하지만,  ‘use strict’ mode에서는 식별자를 찾고 없으면 ReferenceError 발생</p>
+<p>‘use strict’ mode가 아닐 때는 키워드 없이 선언한 변수를 암묵적 전역 변수로 등록하지만, ‘use strict’ mode에서는 식별자를 찾고 없으면 ReferenceError 발생</p>
 </li>
+</ul>
+<h2 id="Angular-HttpClient"><a href="#Angular-HttpClient" class="headerlink" title="Angular HttpClient"></a>Angular HttpClient</h2><ul>
+<li>어떤 element의 값으로 일을 하고 그 값을 수정해야할 때 ngModel 양방향 바인딩 사용</li>
 </ul>
 
         </div>
@@ -223,7 +228,7 @@
     <div class="card">
     
     <div class="card-image">
-        <a href="/2019/07/01/190628-TIL/" class="image is-7by1">
+        <a href="/2019/06/28/190628-TIL/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/iwam.png" alt="190628-TIL">
         </a>
     </div>
@@ -232,7 +237,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-07-01T04:07:46.000Z">2019-07-01</time>
+                <time class="level-item has-text-grey" datetime="2019-06-28T14:07:46.000Z">2019-06-28</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
@@ -251,7 +256,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/07/01/190628-TIL/">190628-TIL</a>
+                <a class="has-link-black-ter" href="/2019/06/28/190628-TIL/">190628-TIL</a>
             
         </h1>
         <div class="content">
@@ -295,7 +300,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    5 minutes read (About 736 words)
+                    6 minutes read (About 828 words)
                 </span>
                 
                 
@@ -1166,7 +1171,7 @@
         
         <article class="media">
             
-            <a href="/2019/07/01/190628-TIL/" class="media-left">
+            <a href="/2019/06/28/190628-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/iwam.png" alt="190628-TIL">
                 </p>
@@ -1174,8 +1179,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-01T04:07:46.000Z">2019-07-01</time></div>
-                    <a href="/2019/07/01/190628-TIL/" class="has-link-black-ter is-size-6">190628-TIL</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-28T14:07:46.000Z">2019-06-28</time></div>
+                    <a href="/2019/06/28/190628-TIL/" class="has-link-black-ter is-size-6">190628-TIL</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
@@ -1258,7 +1263,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1269,7 +1274,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">25</span>
+                    <span class="level-item tag">26</span>
                 </span>
             </a>
         </li>
@@ -2067,7 +2072,7 @@
         
         <article class="media">
             
-            <a href="/2019/07/01/190628-TIL/" class="media-left">
+            <a href="/2019/06/28/190628-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/iwam.png" alt="190628-TIL">
                 </p>
@@ -2075,8 +2080,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-01T04:07:46.000Z">2019-07-01</time></div>
-                    <a href="/2019/07/01/190628-TIL/" class="has-link-black-ter is-size-6">190628-TIL</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-28T14:07:46.000Z">2019-06-28</time></div>
+                    <a href="/2019/06/28/190628-TIL/" class="has-link-black-ter is-size-6">190628-TIL</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
@@ -2159,7 +2164,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -2170,7 +2175,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">25</span>
+                    <span class="level-item tag">26</span>
                 </span>
             </a>
         </li>

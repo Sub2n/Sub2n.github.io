@@ -16,7 +16,7 @@
 <meta property="og:description" content="Reactive Programming Reactive Programming is programming with asynchronous data streams. You can listen to that stream and react accordingly.  Reactive Programming은 비동기적 데이터 스트림을 처리하는 프로그래밍 패러다임이다. Da">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/html.png">
-<meta property="og:updated_time" content="2019-06-25T07:32:29.181Z">
+<meta property="og:updated_time" content="2019-07-01T05:40:37.080Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular RxJS">
 <meta name="twitter:description" content="Reactive Programming Reactive Programming is programming with asynchronous data streams. You can listen to that stream and react accordingly.  Reactive Programming은 비동기적 데이터 스트림을 처리하는 프로그래밍 패러다임이다. Da">
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    5 minutes read (About 736 words)
+                    6 minutes read (About 828 words)
                 </span>
                 
                 
@@ -206,8 +206,11 @@
 <blockquote>
 <h4 id="Observer-Pattern"><a href="#Observer-Pattern" class="headerlink" title="Observer Pattern"></a>Observer Pattern</h4><p><img src="https://poiemaweb.com/img/observer-pattern.png" alt="observer-pattern"></p>
 <p>Subject는 data member로 자신을 관찰하고 있는 Observer의 모음인 ObserverCollection을 유지한다. register/unregister로 Observer를 관리한다. 상태가 변화하면 자신의 ObserverCollection에 등록된 Observer들에게 noftify(status)로 상태 변화를 알린다. 상태 변화를 알리는 notify 메소드 내부에서 Observer의 Update(status)로 상태를 갱신한다.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Subject</span> </span>&#123;</span><br><span class="line">&gt; 	ObserverCollection = [];</span><br><span class="line">&gt; </span><br><span class="line">&gt; 	register(Observer) &#123;</span><br><span class="line">&gt;     <span class="hljs-keyword">this</span>.ObserverCollection = [Observer, ...this.ObserverCollection];</span><br><span class="line">&gt;   &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; 	unregister(Observer) &#123;</span><br><span class="line">&gt;     <span class="hljs-keyword">this</span>.ObserverCollection = <span class="hljs-keyword">this</span>.ObserverCollection.filter(<span class="hljs-function"><span class="hljs-params">o</span> =&gt;</span> o !== Observer);</span><br><span class="line">&gt;   &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; 	notify(status) &#123;</span><br><span class="line">&gt;     <span class="hljs-keyword">this</span>.ObserverCollection.forEach(<span class="hljs-function"><span class="hljs-params">o</span> =&gt;</span> o.update(status));</span><br><span class="line">&gt;   &#125;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MySubject</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Subject</span> </span>&#123;</span><br><span class="line">&gt;   <span class="hljs-keyword">constructor</span>() &#123;</span><br><span class="line">&gt;     <span class="hljs-keyword">super</span>();</span><br><span class="line">&gt;     <span class="hljs-keyword">this</span>._state;</span><br><span class="line">&gt;   &#125;</span><br><span class="line">&gt;   </span><br><span class="line">&gt;   <span class="hljs-keyword">set</span> state(status) &#123;</span><br><span class="line">&gt;     <span class="hljs-keyword">this</span>._state = status;</span><br><span class="line">&gt;     <span class="hljs-keyword">this</span>.notify(<span class="hljs-keyword">this</span>.state);</span><br><span class="line">&gt;   &#125;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Observer</span> </span>&#123;</span><br><span class="line">&gt;   <span class="hljs-keyword">constructor</span>() &#123;</span><br><span class="line">&gt;     <span class="hljs-keyword">this</span>.state = <span class="hljs-string">''</span></span><br><span class="line">&gt;   &#125;</span><br><span class="line">&gt;   update(status) &#123;</span><br><span class="line">&gt;     <span class="hljs-keyword">this</span>.state = status;</span><br><span class="line">&gt;     <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.state);</span><br><span class="line">&gt;   &#125;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Subject</span> </span>&#123;</span><br><span class="line">&gt; 	ObserverCollection = [];</span><br><span class="line">&gt; </span><br><span class="line">&gt; 	register(Observer) &#123;</span><br><span class="line">&gt;       <span class="hljs-keyword">this</span>.ObserverCollection = [Observer, ...this.ObserverCollection];</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; 	unregister(Observer) &#123;</span><br><span class="line">&gt;       <span class="hljs-keyword">this</span>.ObserverCollection = <span class="hljs-keyword">this</span>.ObserverCollection.filter(<span class="hljs-function"><span class="hljs-params">o</span> =&gt;</span> o !== Observer);</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; 	notify(status) &#123;</span><br><span class="line">&gt;       <span class="hljs-keyword">this</span>.ObserverCollection.forEach(<span class="hljs-function"><span class="hljs-params">o</span> =&gt;</span> o.update(status));</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MySubject</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Subject</span> </span>&#123;</span><br><span class="line">&gt;     <span class="hljs-keyword">constructor</span>() &#123;</span><br><span class="line">&gt;       <span class="hljs-keyword">super</span>();</span><br><span class="line">&gt;       <span class="hljs-keyword">this</span>._state;</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt;   </span><br><span class="line">&gt;     <span class="hljs-keyword">set</span> state(status) &#123;</span><br><span class="line">&gt;       <span class="hljs-keyword">this</span>._state = status;</span><br><span class="line">&gt;       <span class="hljs-keyword">this</span>.notify(<span class="hljs-keyword">this</span>.state);</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Observer</span> </span>&#123;</span><br><span class="line">&gt;     <span class="hljs-keyword">constructor</span>() &#123;</span><br><span class="line">&gt;       <span class="hljs-keyword">this</span>.state = <span class="hljs-string">''</span></span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt;     update(status) &#123;</span><br><span class="line">&gt;       <span class="hljs-keyword">this</span>.state = status;</span><br><span class="line">&gt;       <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.state);</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
+<h2 id="HttpClient"><a href="#HttpClient" class="headerlink" title="HttpClient"></a>HttpClient</h2><p>HttpClient의 method를 호출하고 subscribe하지 않으면, 즉 Observable에 대한 Observer가 없으면 아무 일도 일어나지 않는다. subscribe method를 통해서 Observer가 Observable을 바라보게해야 get Request 등이 동작하기 시작한다.</p>
+<h4 id="json-server-query"><a href="#json-server-query" class="headerlink" title="json server query"></a>json server query</h4><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// ?_sort=id&amp;_order=desc</span></span><br><span class="line"><span class="hljs-keyword">const</span> params = <span class="hljs-keyword">new</span> HttpParams()</span><br><span class="line">	.set(<span class="hljs-string">'_sort'</span>, <span class="hljs-string">'id'</span>)</span><br><span class="line">	.set(<span class="hljs-string">'_order'</span>, <span class="hljs-string">'desc'</span>);</span><br><span class="line"><span class="hljs-keyword">this</span>.http.get&lt;Todo[]&gt;(apiUrl, &#123; params &#125;)</span><br><span class="line">	.subscribe(<span class="hljs-function"><span class="hljs-params">todos</span> =&gt;</span> <span class="hljs-keyword">this</span>.todos = todos);</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -233,7 +236,7 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/07/01/190628-TIL/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/06/28/190628-TIL/">
                 <i class="level-item fas fa-chevron-left"></i>
                 <span class="level-item">190628-TIL</span>
             </a>
@@ -581,7 +584,7 @@
         
         <article class="media">
             
-            <a href="/2019/07/01/190628-TIL/" class="media-left">
+            <a href="/2019/06/28/190628-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/iwam.png" alt="190628-TIL">
                 </p>
@@ -589,8 +592,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-01T04:07:46.000Z">2019-07-01</time></div>
-                    <a href="/2019/07/01/190628-TIL/" class="has-link-black-ter is-size-6">190628-TIL</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-28T14:07:46.000Z">2019-06-28</time></div>
+                    <a href="/2019/06/28/190628-TIL/" class="has-link-black-ter is-size-6">190628-TIL</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
@@ -673,7 +676,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -684,7 +687,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">25</span>
+                    <span class="level-item tag">26</span>
                 </span>
             </a>
         </li>
@@ -1482,7 +1485,7 @@
         
         <article class="media">
             
-            <a href="/2019/07/01/190628-TIL/" class="media-left">
+            <a href="/2019/06/28/190628-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/iwam.png" alt="190628-TIL">
                 </p>
@@ -1490,8 +1493,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-01T04:07:46.000Z">2019-07-01</time></div>
-                    <a href="/2019/07/01/190628-TIL/" class="has-link-black-ter is-size-6">190628-TIL</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-28T14:07:46.000Z">2019-06-28</time></div>
+                    <a href="/2019/06/28/190628-TIL/" class="has-link-black-ter is-size-6">190628-TIL</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
@@ -1574,7 +1577,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1585,7 +1588,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">25</span>
+                    <span class="level-item tag">26</span>
                 </span>
             </a>
         </li>

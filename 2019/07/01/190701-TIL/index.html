@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="Today Test[오답]  식별자를 검색했을 때 없으면 ReferenceError지만 Property를 검색했을 때 없으면 error가 아니고 undefined를 리턴  함수가 아닌 것에 () 붙여 실행하면 TypeError (SyntaxError 아님!!!!!!)  typeof 배열은 object 1234function getAge(...args) &amp;#">
+    <meta name="description" content="Today Test[오답]  식별자를 검색했을 때 없으면 ReferenceError지만 Property를 검색했을 때 없으면 error가 아니고 undefined를 리턴  함수가 아닌 것에 () 붙여 실행하면 TypeError (SyntaxError 아님!!!!!!)  undefined 값에 method 실행해도 TypeError  typeof 배열은 ob">
 <meta name="keywords" content="TIL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="190701-TIL">
 <meta property="og:url" content="https://sub2n.github.io/2019/07/01/190701-TIL/index.html">
 <meta property="og:site_name" content="수빈 개발블로그">
-<meta property="og:description" content="Today Test[오답]  식별자를 검색했을 때 없으면 ReferenceError지만 Property를 검색했을 때 없으면 error가 아니고 undefined를 리턴  함수가 아닌 것에 () 붙여 실행하면 TypeError (SyntaxError 아님!!!!!!)  typeof 배열은 object 1234function getAge(...args) &amp;#">
+<meta property="og:description" content="Today Test[오답]  식별자를 검색했을 때 없으면 ReferenceError지만 Property를 검색했을 때 없으면 error가 아니고 undefined를 리턴  함수가 아닌 것에 () 붙여 실행하면 TypeError (SyntaxError 아님!!!!!!)  undefined 값에 method 실행해도 TypeError  typeof 배열은 ob">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/cherry.png">
-<meta property="og:updated_time" content="2019-07-01T04:33:11.963Z">
+<meta property="og:updated_time" content="2019-07-01T06:03:37.221Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="190701-TIL">
-<meta name="twitter:description" content="Today Test[오답]  식별자를 검색했을 때 없으면 ReferenceError지만 Property를 검색했을 때 없으면 error가 아니고 undefined를 리턴  함수가 아닌 것에 () 붙여 실행하면 TypeError (SyntaxError 아님!!!!!!)  typeof 배열은 object 1234function getAge(...args) &amp;#">
+<meta name="twitter:description" content="Today Test[오답]  식별자를 검색했을 때 없으면 ReferenceError지만 Property를 검색했을 때 없으면 error가 아니고 undefined를 리턴  함수가 아닌 것에 () 붙여 실행하면 TypeError (SyntaxError 아님!!!!!!)  undefined 값에 method 실행해도 TypeError  typeof 배열은 ob">
 <meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/cherry.png">
 
 
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 174 words)
+                    a minute read (About 214 words)
                 </span>
                 
                 
@@ -189,6 +189,8 @@
 </li>
 <li><p>함수가 아닌 것에 () 붙여 실행하면 TypeError (SyntaxError 아님!!!!!!)</p>
 </li>
+<li><p>undefined 값에 method 실행해도 TypeError</p>
+</li>
 <li><p>typeof 배열은 object</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAge</span>(<span class="hljs-params">...args</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> args);</span><br><span class="line">&#125;</span><br><span class="line">getAge(<span class="hljs-number">20</span>);</span><br></pre></td></tr></table></figure>
 
@@ -202,8 +204,11 @@
 <li><p>‘use strict’</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAge</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line"><span class="hljs-meta">  'use strict'</span>;</span><br><span class="line">  age = <span class="hljs-number">20</span>;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(age);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>‘use strict’ mode가 아닐 때는 키워드 없이 선언한 변수를 암묵적 전역 변수로 등록하지만,  ‘use strict’ mode에서는 식별자를 찾고 없으면 ReferenceError 발생</p>
+<p>‘use strict’ mode가 아닐 때는 키워드 없이 선언한 변수를 암묵적 전역 변수로 등록하지만, ‘use strict’ mode에서는 식별자를 찾고 없으면 ReferenceError 발생</p>
 </li>
+</ul>
+<h2 id="Angular-HttpClient"><a href="#Angular-HttpClient" class="headerlink" title="Angular HttpClient"></a>Angular HttpClient</h2><ul>
+<li>어떤 element의 값으로 일을 하고 그 값을 수정해야할 때 ngModel 양방향 바인딩 사용</li>
 </ul>
 
         </div>
@@ -231,7 +236,7 @@
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/07/01/190628-TIL/">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/06/28/190628-TIL/">
                 <span class="level-item">190628-TIL</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
@@ -571,7 +576,7 @@
         
         <article class="media">
             
-            <a href="/2019/07/01/190628-TIL/" class="media-left">
+            <a href="/2019/06/28/190628-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/iwam.png" alt="190628-TIL">
                 </p>
@@ -579,8 +584,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-01T04:07:46.000Z">2019-07-01</time></div>
-                    <a href="/2019/07/01/190628-TIL/" class="has-link-black-ter is-size-6">190628-TIL</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-28T14:07:46.000Z">2019-06-28</time></div>
+                    <a href="/2019/06/28/190628-TIL/" class="has-link-black-ter is-size-6">190628-TIL</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
@@ -663,7 +668,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -674,7 +679,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">25</span>
+                    <span class="level-item tag">26</span>
                 </span>
             </a>
         </li>
@@ -1472,7 +1477,7 @@
         
         <article class="media">
             
-            <a href="/2019/07/01/190628-TIL/" class="media-left">
+            <a href="/2019/06/28/190628-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/iwam.png" alt="190628-TIL">
                 </p>
@@ -1480,8 +1485,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-01T04:07:46.000Z">2019-07-01</time></div>
-                    <a href="/2019/07/01/190628-TIL/" class="has-link-black-ter is-size-6">190628-TIL</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-28T14:07:46.000Z">2019-06-28</time></div>
+                    <a href="/2019/06/28/190628-TIL/" class="has-link-black-ter is-size-6">190628-TIL</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
                     </p>
@@ -1564,7 +1569,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1575,7 +1580,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">25</span>
+                    <span class="level-item tag">26</span>
                 </span>
             </a>
         </li>
