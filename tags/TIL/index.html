@@ -180,7 +180,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 55 words)
+                    a minute read (About 174 words)
                 </span>
                 
                 
@@ -195,8 +195,25 @@
         <div class="content">
             <h2 id="Today-Test"><a href="#Today-Test" class="headerlink" title="Today Test"></a>Today Test</h2><p>[오답]</p>
 <ul>
-<li>식별자를 검색했을 때 없으면 ReferenceError지만 Property를 검색했을 때 없으면 error가 아니고 undefined를 리턴</li>
-<li>함수가 아닌 것에 () 붙여 실행하면 TypeError (SyntaxError 아님!!!!!!)</li>
+<li><p>식별자를 검색했을 때 없으면 ReferenceError지만 <strong>Property를 검색했을 때 없으면</strong> error가 아니고 <strong>undefined를 리턴</strong></p>
+</li>
+<li><p>함수가 아닌 것에 () 붙여 실행하면 TypeError (SyntaxError 아님!!!!!!)</p>
+</li>
+<li><p>typeof 배열은 object</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAge</span>(<span class="hljs-params">...args</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> args);</span><br><span class="line">&#125;</span><br><span class="line">getAge(<span class="hljs-number">20</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>Spread operator …</strong>가 argument에서 사용되면 Object나 Array를 풀어서 함수의 argument로 전달</p>
+</li>
+<li><p><strong>Rest parameter …</strong> 를 사용하면 풀어진 argument를 하나의 배열로 받음</p>
+</li>
+</ul>
+</li>
+<li><p>‘use strict’</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAge</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line"><span class="hljs-meta">  'use strict'</span>;</span><br><span class="line">  age = <span class="hljs-number">20</span>;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(age);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>‘use strict’ mode가 아닐 때는 키워드 없이 선언한 변수를 암묵적 전역 변수로 등록하지만,  ‘use strict’ mode에서는 식별자를 찾고 없으면 ReferenceError 발생</p>
+</li>
 </ul>
 
         </div>
