@@ -16,7 +16,7 @@
 <meta property="og:description" content="실행 컨텍스트(Execution Context)는 실행 가능한 코드를 평가하고 실행하기 위해 필요한 환경을 제공하고 코드의 실행 결과를 실제로 관리하는 영역이다. Context는 문맥, 맥락이라는 뜻이다. 프로그램에도 맥락이 있다. 예를 들면 식별자가 어느 스코프에서 사용되었는지에 따라서 다른 값을 참조한다.">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/javascript.png">
-<meta property="og:updated_time" content="2019-06-11T08:26:27.934Z">
+<meta property="og:updated_time" content="2019-07-02T05:42:35.810Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="34. Execution Context">
 <meta name="twitter:description" content="실행 컨텍스트(Execution Context)는 실행 가능한 코드를 평가하고 실행하기 위해 필요한 환경을 제공하고 코드의 실행 결과를 실제로 관리하는 영역이다. Context는 문맥, 맥락이라는 뜻이다. 프로그램에도 맥락이 있다. 예를 들면 식별자가 어느 스코프에서 사용되었는지에 따라서 다른 값을 참조한다.">
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    36 minutes read (About 5340 words)
+                    40 minutes read (About 5934 words)
                 </span>
                 
                 
@@ -267,12 +267,27 @@
 <h6 id="변수-호이스팅과-함수-호이스팅"><a href="#변수-호이스팅과-함수-호이스팅" class="headerlink" title="변수 호이스팅과 함수 호이스팅"></a>변수 호이스팅과 함수 호이스팅</h6><p><code>var</code> 키워드로 선언한 변수는 Object Environment Record에 바인딩된 bindingObject에 변수 식별자를 등록(1. 선언 단계)한 다음, 암묵적으로 undefined로 초기화(2. 초기화 단계)한다.</p>
 <p>함수 선언문으로 정의한 함수는 평가되면 함수명과 동일한 이름의 식별자를 Object Environment Record에 등록하고, 함수 객체를 생성해서 즉시 할당한다. 그래서 함수 선언문으로 정의한 함수는 함수 선언문 이전에 호출할 수 있는 것이다.</p>
 <h6 id="2-1-2-선언적-환경-레코드-생성-Declarative-Environment-Record"><a href="#2-1-2-선언적-환경-레코드-생성-Declarative-Environment-Record" class="headerlink" title="2.1.2. 선언적 환경 레코드 생성 Declarative Environment Record"></a>2.1.2. 선언적 환경 레코드 생성 Declarative Environment Record</h6><p><code>let</code>, <code>const</code> 키워드로 선언된전역 변수는 Declarative Environment Record에 등록되고 관리된다. <code>let</code>, <code>const</code> 키워드로 선언한 변수는 1. 선언 단계와 2. 초기화 단계가 분리되어 진행된다. 평가 단계에서는 선언 단계만 진행되어 식별자가 등록이 되고, 초기화 단계는 실행 시간에 선언문을 실행할 때 진행되므로 선언문 실행 이전까지를 TDZ(Temporal Dead Zone)라고 한다. 이들은 전역 객체의 프로퍼티가 아니라 Global Lexical Environment의 Declarative Environment Record에 등록되어 관리된다.</p>
-<h5 id="2-2-외부-렉시컬-환경에-대한-참조-할당-Outer-Lexical-Envronment-Reference"><a href="#2-2-외부-렉시컬-환경에-대한-참조-할당-Outer-Lexical-Envronment-Reference" class="headerlink" title="2.2. 외부 렉시컬 환경에 대한 참조 할당 Outer Lexical Envronment Reference"></a>2.2. 외부 렉시컬 환경에 대한 참조 할당 Outer Lexical Envronment Reference</h5><p>전역(Global)은 코드의 가장 외부이므로 Global Lexical Environment</p>
-<h5 id="2-3-this-바인딩-ThisBinding"><a href="#2-3-this-바인딩-ThisBinding" class="headerlink" title="2.3. this 바인딩 ThisBinding"></a>2.3. this 바인딩 ThisBinding</h5><h4 id="3-전역-코드-실행"><a href="#3-전역-코드-실행" class="headerlink" title="3. 전역 코드 실행"></a>3. 전역 코드 실행</h4><h4 id="4-함수-코드-평가"><a href="#4-함수-코드-평가" class="headerlink" title="4. 함수 코드 평가"></a>4. 함수 코드 평가</h4><h5 id="1-함수-실행-컨텍스트-생성"><a href="#1-함수-실행-컨텍스트-생성" class="headerlink" title="1. 함수 실행 컨텍스트 생성"></a>1. 함수 실행 컨텍스트 생성</h5><h5 id="2-함수-Lexical-Environment-생성"><a href="#2-함수-Lexical-Environment-생성" class="headerlink" title="2. 함수 Lexical Environment 생성"></a>2. 함수 Lexical Environment 생성</h5><h5 id="2-1-함수-Environment-Record-생성"><a href="#2-1-함수-Environment-Record-생성" class="headerlink" title="2-1. 함수 Environment Record 생성"></a>2-1. 함수 Environment Record 생성</h5><h5 id="2-1-Outer-Lexical-Environment-Reference-할당"><a href="#2-1-Outer-Lexical-Environment-Reference-할당" class="headerlink" title="2-1. Outer Lexical Environment Reference 할당"></a>2-1. Outer Lexical Environment Reference 할당</h5><p>함수는 함수 정의가 평가되어 함수 객체가 생성될 때, 현재 실행 중인 실행 컨텍스트의 Lexical Environment를 함수 객체의 내부 슬롯 <code>[[Environment]]</code>에 저장한다. </p>
+<h5 id="2-2-외부-렉시컬-환경에-대한-참조-할당-Outer-Lexical-Envronment-Reference"><a href="#2-2-외부-렉시컬-환경에-대한-참조-할당-Outer-Lexical-Envronment-Reference" class="headerlink" title="2.2. 외부 렉시컬 환경에 대한 참조 할당 Outer Lexical Envronment Reference"></a>2.2. 외부 렉시컬 환경에 대한 참조 할당 Outer Lexical Envronment Reference</h5><p>전역(Global)은 코드의 가장 외부이므로 Global Lexical Environment의 Outer Lexical Environment Reference는 null이다. 즉, Global Lexical Environment은 모든 Scope Chain의 최상위 종점이 된다.</p>
+<h5 id="2-3-this-바인딩-ThisBinding"><a href="#2-3-this-바인딩-ThisBinding" class="headerlink" title="2.3. this 바인딩 ThisBinding"></a>2.3. this 바인딩 ThisBinding</h5><p>Global Environment Record의 this에는 전역 객체(브라우저에서는 window)가 바인딩된다.</p>
+<h4 id="3-전역-코드-실행"><a href="#3-전역-코드-실행" class="headerlink" title="3. 전역 코드 실행"></a>3. 전역 코드 실행</h4><p>평가를 마친 전역 코드는 한 줄씩 순차적으로 실행된다. 선언문을 제외한 할당문 등이 실행되어 전역 변수 x, y에 값이 할당되고 함수 foo가 실행된다. 변수 x, y에 값을 할당하는 과정에서 우선 식별자 검색을 거친다. 현재 running execution context인 Global Execution Context의 Lexical Environment의 Environment Record에서 식별자를 검색한다. <code>var</code> 키워드로 선언된 변수 x는 Object Environment Record에 바인딩된 객체인 window의 프로퍼티로 존재하고 있으며, <code>const</code> 키워드로 선언된 변수 y는 Declarative Environment Record에 등록되어있다. <code>var</code> 키워드로 선언한 변수와 같이 Object Environment Record에 등록된 함수 foo를 검색해 실행한다. 이때 스코프 체인 상에서 식별자를 끝내 찾지 못하면 ReferenceError가 발생한다.</p>
+<blockquote>
+<h4 id="식별자-검색과-프로퍼티-검색"><a href="#식별자-검색과-프로퍼티-검색" class="headerlink" title="식별자 검색과 프로퍼티 검색"></a>식별자 검색과 프로퍼티 검색</h4><p>식별자 검색은 Scope chain 상에 식별자가 없을 때 ReferenceError를 발생시킨다.</p>
+<p>그러나 프로퍼티 검색은 Prototype chain에 찾는 식별자가 없으면 에러 대신 undefined를 리턴한다.</p>
+</blockquote>
+<h4 id="4-함수-코드-평가"><a href="#4-함수-코드-평가" class="headerlink" title="4. 함수 코드 평가"></a>4. 함수 코드 평가</h4><h5 id="1-함수-실행-컨텍스트-생성"><a href="#1-함수-실행-컨텍스트-생성" class="headerlink" title="1. 함수 실행 컨텍스트 생성"></a>1. 함수 실행 컨텍스트 생성</h5><p>foo 함수 호출문이 실행되면 우선 foo 함수 실행 컨택스트가 생성되고 Execution Context Stack에 push된다.</p>
+<h5 id="2-함수-Lexical-Environment-생성"><a href="#2-함수-Lexical-Environment-생성" class="headerlink" title="2. 함수 Lexical Environment 생성"></a>2. 함수 Lexical Environment 생성</h5><p>foo Funtion Lexical Environment를 생성하고 foo 함수 실행 컨텍스트의 LexicalEnvironment 컴포넌트와 VariableEnvironment 컴포넌트에 바인딩한다.</p>
+<p>Lexical Environment는 Environment Record, Outer Lexical Environment Reference, this Binding으로 구성된다.</p>
+<h5 id="2-1-함수-Environment-Record-생성"><a href="#2-1-함수-Environment-Record-생성" class="headerlink" title="2-1. 함수 Environment Record 생성"></a>2-1. 함수 Environment Record 생성</h5><p>Function Environment Record는 함수의 parameter, arguments 객체,  함수 내에 선언된 변수와 함수 등의 식별자를 등록하고 관리한다.</p>
+<h5 id="2-1-Outer-Lexical-Environment-Reference-할당"><a href="#2-1-Outer-Lexical-Environment-Reference-할당" class="headerlink" title="2-1. Outer Lexical Environment Reference 할당"></a>2-1. Outer Lexical Environment Reference 할당</h5><p><strong>함수는 함수 정의가 평가되어 함수 객체가 생성될 때, 현재 실행 중인 실행 컨텍스트의 Lexical Environment를 함수 객체의 내부 슬롯 <code>[[Environment]]</code>에 저장한다.</strong> </p>
 <p>즉, 생성된 함수 객체가 호출되어 평가될 때 생성되는 함수 실행 컨텍스트의 Lexical Environment의 OuterLexicalEnvironmentReference 컴포넌트의 참조는 해당 함수 객체의 내부 슬롯 <code>[[Environment]]</code>에 저장된 Lexical Environment와 같다.</p>
 <h5 id="2-3-this-바인딩"><a href="#2-3-this-바인딩" class="headerlink" title="2-3. this 바인딩"></a>2-3. this 바인딩</h5><p>일반적으로 this는 호출되는 방식에 따라서 다르게 바인딩된다.</p>
-<p>this를 참조하는 순간 추상 연산 ResolveThisBinding 메소드가 도는데, 화살표 함수의 경우 선언된 코드가 실행중인 실행 컨텍스트의 Lexical Environment의 this, 즉 Lexical this를 자신의 this로 바인딩한다.</p>
-<h4 id="5-함수-코드-실행"><a href="#5-함수-코드-실행" class="headerlink" title="5. 함수 코드 실행"></a>5. 함수 코드 실행</h4><h2 id="7-Execution-Context-and-Block-level-Scope"><a href="#7-Execution-Context-and-Block-level-Scope" class="headerlink" title="7. Execution Context and Block-level Scope"></a>7. Execution Context and Block-level Scope</h2><p><a href="http://tc39.es/ecma262/#sec-block-runtime-semantics-evaluation" target="_blank" rel="noopener">ECMAScript block spec</a></p>
+<p>this를 참조하는 순간 추상 연산 ResolveThisBinding 메소드가 도는데, </p>
+<p>화살표 함수의 경우 선언된 코드가 실행중인 <strong>실행 컨텍스트의 Lexical Environment의 this, 즉 Lexical this</strong>를 자신의 this로 바인딩한다.</p>
+<p>일반 함수로 호출되는 함수의 this는 전역 객체</p>
+<p>생성자 함수로 호출되는 함수의 this는 함수가 생성할 instance</p>
+<p>메소드로 호출되는 함수의 this는 메소드를 호출한 객체가 된다.</p>
+<h4 id="5-함수-코드-실행"><a href="#5-함수-코드-실행" class="headerlink" title="5. 함수 코드 실행"></a>5. 함수 코드 실행</h4><p>평가가 끝난 함수는 순차적으로 실행된다. 이 때 식별자는 현재 running execution context의 Environment Record에서 우선 검색하고, 없을 경우 Outer Lexical Environment의 Environment Record로 넘어가며 검색한다.</p>
+<h2 id="7-Execution-Context-and-Block-level-Scope"><a href="#7-Execution-Context-and-Block-level-Scope" class="headerlink" title="7. Execution Context and Block-level Scope"></a>7. Execution Context and Block-level Scope</h2><p><a href="http://tc39.es/ecma262/#sec-block-runtime-semantics-evaluation" target="_blank" rel="noopener">ECMAScript block spec</a></p>
 <p>스코프는 렉시컬 환경으로 구현된다. 즉, 블록 레벨 스코프를 만들기 위해서는 Block 렉시컬 환경을 만들어야한다. 그러나 실행 컨텍스트는 4가지 실행 가능한 코드(Executable Code)만이 생성할 수 있다. 그러므로 블록문이 평가될 때는 실행 컨텍스트가 아닌 Lexical Environment만 생성한다.</p>
 <p>Block: { Statement }가 평가될 때 일어나는 일은 다음과 같다.</p>
 <ol>

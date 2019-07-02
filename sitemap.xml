@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sub2n.github.io/2019/06/05/34-Execution-Context/</loc>
+    
+    <lastmod>2019-07-02T05:42:35.810Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sub2n.github.io/2019/06/25/Angular-RxJS/</loc>
     
-    <lastmod>2019-07-01T06:41:15.316Z</lastmod>
+    <lastmod>2019-07-01T07:36:48.180Z</lastmod>
     
   </url>
   
@@ -383,13 +390,6 @@
     <loc>https://sub2n.github.io/2019/05/27/33-Promise/</loc>
     
     <lastmod>2019-06-11T08:26:31.221Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sub2n.github.io/2019/06/05/34-Execution-Context/</loc>
-    
-    <lastmod>2019-06-11T08:26:27.934Z</lastmod>
     
   </url>
   
