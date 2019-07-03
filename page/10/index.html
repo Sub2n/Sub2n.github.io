@@ -151,6 +151,65 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/04/25/190425-TIL/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/flower2.png" alt="190425-TIL">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-25T07:44:02.000Z">2019-04-25</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 118 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/25/190425-TIL/">190425-TIL</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul>
+<li><p>Fastcampus에서 진행한 졸업생과의 티타임 시간에 졸업한 개발자분을 만나뵙고 경험들을 들었다. 많은 도움이 됐다.</p>
+</li>
+<li><p>Network를 대략적으로 살펴봤다. 나는 학교에서 배웠지만 오래되어 다시 한 번 정리하는 게 필요할 것 같다. </p>
+<p><a href="https://d2.naver.com/helloworld/47667" target="_blank" rel="noopener">TCP/IP 네트워크 스택 이해하기</a></p>
+</li>
+<li><p>Quick Sort의 성능 분석 및 정리해서 posting 했다.</p>
+</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/04/24/Quick-Sort/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="Quick Sort">
         </a>
@@ -883,90 +942,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/22/Local-Variable-and-Global-Variable/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="Local Variable and Global Variable">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-22T10:32:36.000Z">2019-04-22</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 minutes read (About 411 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/22/Local-Variable-and-Global-Variable/">Local Variable and Global Variable</a>
-            
-        </h1>
-        <div class="content">
-            <h1 id="전역변수-global-variable-지역변수-local-variable"><a href="#전역변수-global-variable-지역변수-local-variable" class="headerlink" title="전역변수 (global variable) / 지역변수 (local variable)"></a>전역변수 (global variable) / 지역변수 (local variable)</h1><ol>
-<li>변수의 scope와 lifetime</li>
-</ol>
-<ul>
-<li>변수는 선언하는 순간부터 속한 scope 내에서 lifetime을 가진다. 즉, 특정 범위의 코드가 실행되고 있을 때는 메모리에 존재하지만, 실행이 끝나면 이 변수는 메모리에서 사라진다.</li>
-</ul>
-<ol start="2">
-<li><p>변수의 선언 위치</p>
-<p> a. Block 외부 : block({})으로 감싸진 main 함수와 여러 함수들의 외부 공간에 변수를 선언할 수 있다.</p>
-<p> b. Block 내부 : block 내부에 변수를 선언할 수 있다. C는 block의 최상단에 모든 지역변수를 선언해야한다.</p>
-<p> c. 함수의 parameter : 함수의 매개변수는 그 함수의 block 내에서 선언된 변수와 동일한 효과를 갖는다.</p>
-</li>
-<li><p>전역변수 (a case)</p>
-</li>
-</ol>
-<ul>
-<li><p>Block 외부에 선언되는 변수. 전역 변수는 프로그램이 시작되는 순간부터 종료되는 순간까지 메모리를 차지하고 있으며 사라지지 않는다.</p>
-</li>
-<li><p>C라면 <code>main()</code> 위, <code>#include &lt;stdio.h&gt;</code>와 함수 원형 밑 그 사이에 선언</p>
-</li>
-<li><p>전역변수는 어느 block에서도 언제든지 접근이 가능하다 &gt; sycncrinize 고려</p>
-</li>
-</ul>
-<ol start="4">
-<li>지역변수 (b case, c case)</li>
-</ol>
-<ul>
-<li><p>지역변수는 block 내부에서 선언되는 변수이다. { } 안에 선언되어있다면 무조건 지역변수</p>
-</li>
-<li><p>지역변수는 선언된 block 내부로 scope가 한정되며 그 block의 실행이 끝나면 lifetime 또한 소멸된다.</p>
-</li>
-<li><p>함수의 parameter로서 선언되는 local variable도 이와 같다. 함수 body 내에서 선언되는 것과 똑같다.</p>
-</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -1041,7 +1016,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        147
+                        148
                     </p>
                 </div>
             </div>
@@ -1250,7 +1225,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">46</span>
+                <span class="level-item tag">47</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/JavaScript/Angular/">
@@ -1258,7 +1233,7 @@
                 <span class="level-item">Angular</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">8</span>
+                <span class="level-item tag">9</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1304,6 +1279,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/07/03/Angular-Form/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/html.png" alt="Angular Form">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-03T02:11:08.000Z">2019-07-03</time></div>
+                    <a href="/2019/07/03/Angular-Form/" class="has-link-black-ter is-size-6">Angular Form</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a> / <a class="has-link-grey -link" href="/categories/JavaScript/Angular/">Angular</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1381,25 +1375,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/25/190624-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190624-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-25T04:06:03.000Z">2019-06-25</time></div>
-                    <a href="/2019/06/25/190624-TIL/" class="has-link-black-ter is-size-6">190624-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1418,7 +1393,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -1518,7 +1493,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Angular/">
                         <span class="tag">Angular</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
@@ -2151,7 +2126,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">46</span>
+                <span class="level-item tag">47</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/JavaScript/Angular/">
@@ -2159,7 +2134,7 @@
                 <span class="level-item">Angular</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">8</span>
+                <span class="level-item tag">9</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -2205,6 +2180,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/07/03/Angular-Form/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/html.png" alt="Angular Form">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-03T02:11:08.000Z">2019-07-03</time></div>
+                    <a href="/2019/07/03/Angular-Form/" class="has-link-black-ter is-size-6">Angular Form</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a> / <a class="has-link-grey -link" href="/categories/JavaScript/Angular/">Angular</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -2282,25 +2276,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/25/190624-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190624-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-25T04:06:03.000Z">2019-06-25</time></div>
-                    <a href="/2019/06/25/190624-TIL/" class="has-link-black-ter is-size-6">190624-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2319,7 +2294,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -2419,7 +2394,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Angular/">
                         <span class="tag">Angular</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 

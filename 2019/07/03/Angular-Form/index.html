@@ -2,25 +2,25 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>CodeWars 5kyu Maximum subarray sum - 수빈 개발블로그</title>
+<title>Angular Form - 수빈 개발블로그</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="CodeWars 5kyu. Maximum subarray sumReturn maximum sum of subarrays">
-<meta name="keywords" content="Algorithm">
+    <meta name="description" content="Angular FormAngular Form은 Template-driven Forms와 Ractive Forms를 제공한다.">
+<meta name="keywords" content="Angular">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CodeWars 5kyu Maximum subarray sum">
-<meta property="og:url" content="https://sub2n.github.io/2019/04/25/CodeWars-5kyu-Maximum-subarray-sum/index.html">
+<meta property="og:title" content="Angular Form">
+<meta property="og:url" content="https://sub2n.github.io/2019/07/03/Angular-Form/index.html">
 <meta property="og:site_name" content="수빈 개발블로그">
-<meta property="og:description" content="CodeWars 5kyu. Maximum subarray sumReturn maximum sum of subarrays">
+<meta property="og:description" content="Angular FormAngular Form은 Template-driven Forms와 Ractive Forms를 제공한다.">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/algorithm.png">
-<meta property="og:updated_time" content="2019-04-25T12:13:04.372Z">
+<meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/html.png">
+<meta property="og:updated_time" content="2019-07-03T02:32:21.995Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CodeWars 5kyu Maximum subarray sum">
-<meta name="twitter:description" content="CodeWars 5kyu. Maximum subarray sumReturn maximum sum of subarrays">
-<meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/algorithm.png">
+<meta name="twitter:title" content="Angular Form">
+<meta name="twitter:description" content="Angular FormAngular Form은 Template-driven Forms와 Ractive Forms를 제공한다.">
+<meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/html.png">
 
 
 
@@ -103,7 +103,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="CodeWars 5kyu Maximum subarray sum" height="28">
+                <img src="/images/logo.svg" alt="Angular Form" height="28">
             
             </a>
         </div>
@@ -152,7 +152,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="CodeWars 5kyu Maximum subarray sum">
+            <img class="thumbnail" src="/gallery/thumbnails/html.png" alt="Angular Form">
         </span>
     </div>
     
@@ -160,17 +160,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-25T11:50:45.000Z">2019-04-25</time>
+                <time class="level-item has-text-grey" datetime="2019-07-03T02:11:08.000Z">2019-07-03</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/CodeWars/">CodeWars</a>
+                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/JavaScript/Angular/">Angular</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 621 words)
+                    2 minutes read (About 352 words)
                 </span>
                 
                 
@@ -179,55 +179,51 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                CodeWars 5kyu Maximum subarray sum
+                Angular Form
             
         </h1>
         <div class="content">
-            <h2 id="CodeWars-5kyu-Maximum-subarray-sum"><a href="#CodeWars-5kyu-Maximum-subarray-sum" class="headerlink" title="CodeWars 5kyu. Maximum subarray sum"></a><a href="https://www.codewars.com/kata/maximum-subarray-sum/train/javascript" target="_blank" rel="noopener">CodeWars 5kyu. Maximum subarray sum</a></h2><p>Return maximum sum of subarrays</p>
+            <h2 id="Angular-Form"><a href="#Angular-Form" class="headerlink" title="Angular Form"></a>Angular Form</h2><p>Angular Form은 Template-driven Forms와 Ractive Forms를 제공한다.</p>
 <a id="more"></a>
 
-<blockquote>
-<p>The maximum sum subarray problem consists in finding the maximum sum of a contiguous subsequence in an array or list of integers:</p>
-</blockquote>
-<blockquote>
-<p>maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4])</p>
-<p>// should be 6: [4, -1, 2, 1]</p>
-<p>Easy case is when the list is made up of only positive numbers and the maximum sum is the sum of the whole array. If the list is made up of only negative numbers, return 0 instead.</p>
-</blockquote>
-<blockquote>
-<p>Empty list is considered to have zero greatest sum. Note that the empty list or array is also a valid sublist/subarray.</p>
-</blockquote>
-<h2 id="Requirement"><a href="#Requirement" class="headerlink" title="Requirement"></a>Requirement</h2><ol>
-<li><p>Should return maximum sum of any subarrays including empty list.</p>
-</li>
-<li><p>Return 0 when all of list’s element is negative numbers.</p>
-</li>
-</ol>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>I used Dynamic Programming - Bottom up approach to solve this problem. Because I learned on some online lectures about Dynamic Programming recently.</p>
-<ol>
-<li><p>First I catched that all the start and end element in subarray is positive numbers. So I decided to put all positive numbers’ index in positive_index list.</p>
-</li>
-<li><p>Make a 2 dementional array, sum[][] to keep the sum of subarrays.</p>
-</li>
-<li><p>Drew the recurrance Induction of this problem.</p>
-<ul>
-<li>Basis <ul>
-<li>sum[i][i] = arr[positive_index[i]]</li>
-<li>sum[i][i+1] = arr[positive_index[i]] to arr[positive_index[j]] (i &lt; positive_index.length - 1)</li>
-</ul>
-</li>
-<li>Inductive Step<ul>
-<li>sum[i][j] = sum[i][j-1] + sum[j-1][j] - arr[positive_index[j-1]] </li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="javaScript-Solution"><a href="#javaScript-Solution" class="headerlink" title="javaScript Solution"></a>javaScript Solution</h2><p><img src="https://user-images.githubusercontent.com/48080762/56734293-5f6cc100-679d-11e9-8f72-280c1b4514ae.png" alt="Submit"></p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> maxSequence = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">arr</span>)</span>&#123;</span><br><span class="line">  <span class="hljs-keyword">var</span> positive_index = []</span><br><span class="line"> </span><br><span class="line">  arr.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">positive_check</span>(<span class="hljs-params">element, index</span>)</span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(element&gt;<span class="hljs-number">0</span>)&#123;</span><br><span class="line">      positive_index.push(index);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-keyword">if</span> (positive_index.length == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-keyword">var</span> sum = <span class="hljs-built_in">Array</span>(positive_index.length).fill(<span class="hljs-literal">null</span>).map(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">Array</span>(positive_index.length));</span><br><span class="line">  <span class="hljs-keyword">var</span> max = <span class="hljs-built_in">Number</span>.MIN_SAFE_INTEGER;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>; i&lt;positive_index.length; i++)&#123;</span><br><span class="line">    sum[i][i] = arr[positive_index[i]];</span><br><span class="line">    <span class="hljs-keyword">if</span>(max &lt; sum[i][i])&#123;</span><br><span class="line">        max = sum[i][i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">if</span>(i+<span class="hljs-number">1</span>&lt;positive_index.length)&#123;</span><br><span class="line">      sum[i][i+<span class="hljs-number">1</span>] = arr.slice(positive_index[i], positive_index[i+<span class="hljs-number">1</span>]+<span class="hljs-number">1</span>).reduce(<span class="hljs-function">(<span class="hljs-params">a,b</span>)=&gt;</span>a+b);</span><br><span class="line">      <span class="hljs-keyword">if</span>(max &lt; sum[i][i+<span class="hljs-number">1</span>])&#123;</span><br><span class="line">        max = sum[i][i+<span class="hljs-number">1</span>];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>; i&lt; positive_index.length; i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> j=i+<span class="hljs-number">2</span>; j&lt; positive_index.length; j++)&#123;</span><br><span class="line">      sum[i][j] = sum[i][j<span class="hljs-number">-1</span>] + sum[j<span class="hljs-number">-1</span>][j] - arr[positive_index[j<span class="hljs-number">-1</span>]];</span><br><span class="line">      <span class="hljs-keyword">if</span>(max &lt; sum[i][j])&#123;</span><br><span class="line">        max = sum[i][j];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Template-driven-Forms"><a href="#Template-driven-Forms" class="headerlink" title="Template-driven Forms"></a>Template-driven Forms</h2><ul>
+<li>Template-driven Form은 Component template에서 Directive를 사용해서 Form을 구성하는 방식</li>
+<li>각 field의 형식이나 validation 검증 규칙을 모두 template에서 정의</li>
+<li>Template-driven Form은 NgForm, NgModel, NgModelGroup Directive 중심으로 동작<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// app.module.ts</span></span><br><span class="line"><span class="hljs-keyword">import</span> &#123; FormsModule &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/forms'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">@NgModule</span>(&#123;</span><br><span class="line">  imports: [FormsModule],</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<h2 id="PPT-slides"><a href="#PPT-slides" class="headerlink" title="PPT slides"></a>PPT slides</h2><p>Made presentations for my algorithm study group</p>
-<p><img src="https://user-images.githubusercontent.com/48080762/56733714-e7ea6200-679b-11e9-8020-a289b67f909b.PNG" alt="슬라이드1"><br><img src="https://user-images.githubusercontent.com/48080762/56733777-06e8f400-679c-11e9-80d9-9800ff74138e.PNG" alt="슬라이드2"><br><img src="https://user-images.githubusercontent.com/48080762/56733780-08b2b780-679c-11e9-867b-ebac97ab6a38.PNG" alt="슬라이드3"><br><img src="https://user-images.githubusercontent.com/48080762/56733783-0a7c7b00-679c-11e9-9204-664edfe5be0b.PNG" alt="슬라이드4"><br><img src="https://user-images.githubusercontent.com/48080762/56733711-e3be4480-679b-11e9-89f3-c1c7631adb50.PNG" alt="슬라이드5"><br><img src="https://user-images.githubusercontent.com/48080762/56733728-ee78d980-679b-11e9-9439-f0a9e7189cfe.PNG" alt="슬라이드6"><br><img src="https://user-images.githubusercontent.com/48080762/56733730-f173ca00-679b-11e9-9faf-89258b8786a4.PNG" alt="슬라이드7"><br><img src="https://user-images.githubusercontent.com/48080762/56733737-f59fe780-679b-11e9-8932-9983e4cd734a.PNG" alt="슬라이드8"><br><img src="https://user-images.githubusercontent.com/48080762/56733740-f769ab00-679b-11e9-883e-bc4b2a41275c.PNG" alt="슬라이드9"><br><img src="https://user-images.githubusercontent.com/48080762/56733742-f9cc0500-679b-11e9-948e-0cf731d6700c.PNG" alt="슬라이드10"><br><img src="https://user-images.githubusercontent.com/48080762/56733745-fafd3200-679b-11e9-9a82-5883417827df.PNG" alt="슬라이드11"><br><img src="https://user-images.githubusercontent.com/48080762/56733757-fcc6f580-679b-11e9-9674-1f630f832fb5.PNG" alt="슬라이드12"><br><img src="https://user-images.githubusercontent.com/48080762/56733765-fe90b900-679b-11e9-9d97-3b839add0674.PNG" alt="슬라이드13"><br><img src="https://user-images.githubusercontent.com/48080762/56733770-005a7c80-679c-11e9-9fd8-253cac494e0c.PNG" alt="슬라이드14"><br><img src="https://user-images.githubusercontent.com/48080762/56733774-02bcd680-679c-11e9-8d56-627fb0df85a4.PNG" alt="슬라이드15"></p>
+</li>
+</ul>
+<h3 id="NgForm-Directive"><a href="#NgForm-Directive" class="headerlink" title="NgForm Directive"></a>NgForm Directive</h3><ul>
+<li><p>Template-driven Form 전체를 관리하는 Directive</p>
+</li>
+<li><p>root module에 FormsModule 추가하면 NgForm Directive 선언하지 않아도 모든 form element에 자동으로 적용되어 Template-driven Form으로 동작</p>
+</li>
+<li><p>HTML standard form의 validation을 사용하지 않고 Template-driven Form의 validation을 사용하려면 아래와 같이 form element에 <code>novalidate</code> Attribute를 추가한다.</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">novalidate</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>반대로 NgForm Directive를 사용하지 않고 HTML standard form을 사용하려면 <code>ngNoForm</code>을 추가한다.</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">ngNoForm</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<blockquote>
+<h4 id="HTML-Standard-Form과-Template-driven-Form의-차이"><a href="#HTML-Standard-Form과-Template-driven-Form의-차이" class="headerlink" title="HTML Standard Form과 Template-driven Form의 차이"></a>HTML Standard Form과 Template-driven Form의 차이</h4><ul>
+<li><p>HTML Standard Form은 submit button 클릭시 form data를 서버로 전송하고 페이지를 전환</p>
+</li>
+<li><p>NgForm Directive가 적용된 Template-driven Form은 submit event를 Intercept해서 submit의 기본 동작을 막음</p>
+<ul>
+<li>대신 submit시 ngSubmit event를 사용해서 onSubmit event handler 사용</li>
+</ul>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;   <span class="hljs-tag">&lt;<span class="hljs-name">form</span> #<span class="hljs-attr">f</span>=<span class="hljs-string">"ngForm"</span> (<span class="hljs-attr">ngSubmit</span>)=<span class="hljs-string">"onNgSubmit(f)"</span> <span class="hljs-attr">novalidate</span>&gt;</span></span><br><span class="line">&gt;   <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><code>#f=&quot;ngForm&quot;</code>으로 Native DOM 대신 NgForm Instance를 Template 참조 변수에 할당한다.</li>
+<li>NgForm Directive는 NgForm Instance 생성시 자신이 적용된 Form 요소의 값이나 validation 검증 산태를 추적할 수 있는 FormGroup Instance를 생성한 후 NgForm Instance의  property로 할당한다.</li>
+</ul>
+</blockquote>
 
         </div>
         
@@ -235,7 +231,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Algorithm/">Algorithm</a>
+                    <a class="has-link-grey -link" href="/tags/Angular/">Angular</a>
                 </div>
             </div>
         </div>
@@ -252,17 +248,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/04/26/CodeWars-6kyu-Take-a-Number-And-Sum-Its-Digits-Raised-To-The-Consecutive-Powers-And-¡Eurekals/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">CodeWars 6kyu. Take a Number And Sum Its Digits Raised To The Consecutive Powers And ...</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/04/25/190425-TIL/">
-                <span class="level-item">190425-TIL</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/07/01/190701-TIL/">
+                <span class="level-item">190701-TIL</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -2240,7 +2229,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="CodeWars 5kyu Maximum subarray sum" height="28">
+                    <img src="/images/logo.svg" alt="Angular Form" height="28">
                 
                 </a>
                 <p class="is-size-7">
