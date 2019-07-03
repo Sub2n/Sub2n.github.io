@@ -16,7 +16,7 @@
 <meta property="og:description" content="Angular FormAngular Form은 Template-driven Forms와 Ractive Forms를 제공한다. Template-driven Forms 간단한 form (Form Control 한두개)을 구성할 때 사용  Reactive Forms 복잡한 form을 구성할 때 사용  Form은 Client side에서 중요한 역할을 한다. 사용">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/html.png">
-<meta property="og:updated_time" content="2019-07-03T04:32:22.202Z">
+<meta property="og:updated_time" content="2019-07-03T08:18:39.290Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular Form">
 <meta name="twitter:description" content="Angular FormAngular Form은 Template-driven Forms와 Ractive Forms를 제공한다. Template-driven Forms 간단한 form (Form Control 한두개)을 구성할 때 사용  Reactive Forms 복잡한 form을 구성할 때 사용  Form은 Client side에서 중요한 역할을 한다. 사용">
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 470 words)
+                    3 minutes read (About 491 words)
                 </span>
                 
                 
@@ -205,7 +205,7 @@
 </li>
 <li><p>root module에 FormsModule 추가하면 NgForm Directive 선언하지 않아도 모든 form element에 자동으로 적용되어 Template-driven Form으로 동작</p>
 </li>
-<li><p>HTML standard form의 validation을 사용하지 않고 Template-driven Form의 validation을 사용하려면 아래와 같이 form element에 <code>novalidate</code> Attribute를 추가한다.</p>
+<li><p>HTML standard form의 validation을 사용하지 않고 Template-driven Form의 validation을 사용하려면 아래와 같이 form element에 <code>novalidate</code> Attribute를 추가한다. <strong>최신 Angular는 FormsModule을 import하면 <code>novalidate</code>가 자동으로 추가된다.</strong></p>
 <figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">novalidate</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>반대로 NgForm Directive를 사용하지 않고 HTML standard form을 사용하려면 <code>ngNoForm</code>을 추가한다.</p>
@@ -231,6 +231,8 @@
 <li>NgForm Directive는 NgForm Instance 생성시 자신이 적용된 Form 요소의 값이나 validation 검증 산태를 추적할 수 있는 FormGroup Instance를 생성한 후 NgForm Instance의  property로 할당한다.</li>
 </ul>
 </blockquote>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> #<span class="hljs-attr">f</span>=<span class="hljs-string">"ngForm"</span> (<span class="hljs-attr">ngSubmit</span>)=<span class="hljs-string">"onSubmit(f)"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">input</span></span></span><br><span class="line"><span class="hljs-tag">         <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span></span></span><br><span class="line"><span class="hljs-tag">         <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"email"</span></span></span><br><span class="line"><span class="hljs-tag">         <span class="hljs-attr">name</span>=<span class="hljs-string">"email"</span></span></span><br><span class="line"><span class="hljs-tag">         <span class="hljs-attr">pattern</span>=<span class="hljs-string">"^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]&#123;2,3&#125;$"</span></span></span><br><span class="line"><span class="hljs-tag">         <span class="hljs-attr">ngModel</span></span></span><br><span class="line"><span class="hljs-tag">         <span class="hljs-attr">required</span></span></span><br><span class="line"><span class="hljs-tag">         #<span class="hljs-attr">email</span>=<span class="hljs-string">"ngModel"</span></span></span><br><span class="line"><span class="hljs-tag">         /&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">input</span></span></span><br><span class="line"><span class="hljs-tag">         <span class="hljs-attr">type</span>=<span class="hljs-string">"password"</span></span></span><br><span class="line"><span class="hljs-tag">         <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"password"</span></span></span><br><span class="line"><span class="hljs-tag">         <span class="hljs-attr">name</span>=<span class="hljs-string">"password"</span></span></span><br><span class="line"><span class="hljs-tag">         <span class="hljs-attr">pattern</span>=<span class="hljs-string">"^[a-zA-Z0-9]&#123;4,10&#125;$"</span></span></span><br><span class="line"><span class="hljs-tag">         <span class="hljs-attr">ngModel</span></span></span><br><span class="line"><span class="hljs-tag">         <span class="hljs-attr">required</span></span></span><br><span class="line"><span class="hljs-tag">         #<span class="hljs-attr">password</span>=<span class="hljs-string">"ngModel"</span></span></span><br><span class="line"><span class="hljs-tag">         /&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> [<span class="hljs-attr">disabled</span>]=<span class="hljs-string">"f.invalid"</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 
         </div>
         
