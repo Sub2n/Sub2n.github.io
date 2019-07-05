@@ -16,7 +16,7 @@
 <meta property="og:description" content="Angular FormAngular Form은 Template-driven Forms와 Ractive Forms를 제공한다. Template-driven Forms 간단한 form (Form Control 한두개)을 구성할 때 사용  Reactive Forms 복잡한 form을 구성할 때 사용  Form은 Client side에서 중요한 역할을 한다. 사용">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/html.png">
-<meta property="og:updated_time" content="2019-07-05T06:43:09.913Z">
+<meta property="og:updated_time" content="2019-07-05T06:46:04.809Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular Form">
 <meta name="twitter:description" content="Angular FormAngular Form은 Template-driven Forms와 Ractive Forms를 제공한다. Template-driven Forms 간단한 form (Form Control 한두개)을 구성할 때 사용  Reactive Forms 복잡한 form을 구성할 때 사용  Form은 Client side에서 중요한 역할을 한다. 사용">
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6 minutes read (About 900 words)
+                    6 minutes read (About 946 words)
                 </span>
                 
                 
@@ -281,7 +281,13 @@
 
 
 <ul>
-<li><code>AbstractControl</code> 모든 Control의 조상</li>
+<li><p><code>AbstractControl</code> 모든 Control의 조상</p>
+<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// new FormGroup 대신 FormBuilder 사용 시</span></span><br><span class="line">ngOnInit() &#123;</span><br><span class="line">  <span class="hljs-keyword">this</span>.userForm = <span class="hljs-keyword">this</span>.fb.group(&#123;</span><br><span class="line">      userid: [<span class="hljs-string">''</span>, [Validators.required, Validators.pattern(<span class="hljs-string">'[a-zA-Z]&#123;4,10&#125;'</span>)]],</span><br><span class="line">      passwordGroup: <span class="hljs-keyword">this</span>.fb.group(</span><br><span class="line">        &#123;</span><br><span class="line">          password: [<span class="hljs-string">''</span>, [Validators.required, Validators.pattern(<span class="hljs-string">'[a-zA-Z]&#123;4,10&#125;'</span>)]],</span><br><span class="line">          comfirmPassword: [<span class="hljs-string">''</span>, [Validators.required, Validators.pattern(<span class="hljs-string">'[a-zA-Z]&#123;4,10&#125;'</span>)]]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123; validator: PasswordValidator.match &#125;</span><br><span class="line">      )</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+</li>
 </ul>
 
         </div>
