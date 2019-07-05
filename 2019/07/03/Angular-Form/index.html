@@ -16,7 +16,7 @@
 <meta property="og:description" content="Angular FormAngular Form은 Template-driven Forms와 Ractive Forms를 제공한다. Template-driven Forms 간단한 form (Form Control 한두개)을 구성할 때 사용  Reactive Forms 복잡한 form을 구성할 때 사용  Form은 Client side에서 중요한 역할을 한다. 사용">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/html.png">
-<meta property="og:updated_time" content="2019-07-03T08:18:39.290Z">
+<meta property="og:updated_time" content="2019-07-05T04:14:02.491Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular Form">
 <meta name="twitter:description" content="Angular FormAngular Form은 Template-driven Forms와 Ractive Forms를 제공한다. Template-driven Forms 간단한 form (Form Control 한두개)을 구성할 때 사용  Reactive Forms 복잡한 form을 구성할 때 사용  Form은 Client side에서 중요한 역할을 한다. 사용">
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 491 words)
+                    4 minutes read (About 539 words)
                 </span>
                 
                 
@@ -233,6 +233,10 @@
 </blockquote>
 <figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> #<span class="hljs-attr">f</span>=<span class="hljs-string">"ngForm"</span> (<span class="hljs-attr">ngSubmit</span>)=<span class="hljs-string">"onSubmit(f)"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">input</span></span></span><br><span class="line"><span class="hljs-tag">         <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span></span></span><br><span class="line"><span class="hljs-tag">         <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"email"</span></span></span><br><span class="line"><span class="hljs-tag">         <span class="hljs-attr">name</span>=<span class="hljs-string">"email"</span></span></span><br><span class="line"><span class="hljs-tag">         <span class="hljs-attr">pattern</span>=<span class="hljs-string">"^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]&#123;2,3&#125;$"</span></span></span><br><span class="line"><span class="hljs-tag">         <span class="hljs-attr">ngModel</span></span></span><br><span class="line"><span class="hljs-tag">         <span class="hljs-attr">required</span></span></span><br><span class="line"><span class="hljs-tag">         #<span class="hljs-attr">email</span>=<span class="hljs-string">"ngModel"</span></span></span><br><span class="line"><span class="hljs-tag">         /&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">input</span></span></span><br><span class="line"><span class="hljs-tag">         <span class="hljs-attr">type</span>=<span class="hljs-string">"password"</span></span></span><br><span class="line"><span class="hljs-tag">         <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"password"</span></span></span><br><span class="line"><span class="hljs-tag">         <span class="hljs-attr">name</span>=<span class="hljs-string">"password"</span></span></span><br><span class="line"><span class="hljs-tag">         <span class="hljs-attr">pattern</span>=<span class="hljs-string">"^[a-zA-Z0-9]&#123;4,10&#125;$"</span></span></span><br><span class="line"><span class="hljs-tag">         <span class="hljs-attr">ngModel</span></span></span><br><span class="line"><span class="hljs-tag">         <span class="hljs-attr">required</span></span></span><br><span class="line"><span class="hljs-tag">         #<span class="hljs-attr">password</span>=<span class="hljs-string">"ngModel"</span></span></span><br><span class="line"><span class="hljs-tag">         /&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> [<span class="hljs-attr">disabled</span>]=<span class="hljs-string">"f.invalid"</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="Reactive-Forms-1"><a href="#Reactive-Forms-1" class="headerlink" title="Reactive Forms"></a>Reactive Forms</h2><ul>
+<li>Template이 아닌 Component class에서 form element의 상태를 관리하는 객체인 Form Model을 구성하는 방식</li>
+<li>Template-driven Form 보다 복잡한 form을 구성할 때 사용</li>
+</ul>
 
         </div>
         
