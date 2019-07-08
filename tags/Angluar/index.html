@@ -180,7 +180,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 424 words)
+                    3 minutes read (About 503 words)
                 </span>
                 
                 
@@ -216,9 +216,17 @@
 <h4 id="declarations"><a href="#declarations" class="headerlink" title="declarations"></a>declarations</h4><p>Component, Direcive, Pipe를 선언하면 선언된 구성요소는 Module에서 사용할 수 있다.</p>
 <h4 id="imports"><a href="#imports" class="headerlink" title="imports"></a>imports</h4><p>Module에서 사용하는 다른 Module을 선언한다. Module은 다른 Module를 사용할 수 있다.</p>
 <h4 id="providers"><a href="#providers" class="headerlink" title="providers"></a>providers</h4><p>Injectable object, 즉 Service를 선언한다. Root Module에 선언된 Service는 Application 전역에서 사용할 수 있다.</p>
-<p>최신 버전 Angular에서는 ng generate service로 생성한 service는 알아서 Metadata 들어감</p>
+<p>최신 버전 Angular에서는 ng generate service로 생성한 service는 @Injectable Decorator의 Metadata에 proviededIn: ‘root’로 들어감</p>
 <h4 id="bootstrap"><a href="#bootstrap" class="headerlink" title="bootstrap"></a>bootstrap</h4><p>CSS Bootstrap 아님</p>
 <p><strong>Root Module에서 사용하는 Property</strong>로 Application의 entry point인 Root Component(AppComponent) 선언</p>
+<h2 id="Shared-Module"><a href="#Shared-Module" class="headerlink" title="Shared Module"></a>Shared Module</h2><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ng generate module shared</span><br><span class="line">// ng g m shared</span><br></pre></td></tr></table></figure>
+
+<p>Shared Module은 Application 전역에서 사용되는 Component, Directive, Pipe 등으로 구성된다.</p>
+<h2 id="Core-Module"><a href="#Core-Module" class="headerlink" title="Core Module"></a>Core Module</h2><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng generate module core</span><br></pre></td></tr></table></figure>
+
+<p>Core Module은 Application 전역에서 사용되는 Data Service, Authentication Service, Authentication Guard 등으로 구성된다.</p>
+<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> &#123; CoreModule&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'../core.module.ts'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">@Injectable</span>(&#123;</span><br><span class="line">  providedIn: CoreModule</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
