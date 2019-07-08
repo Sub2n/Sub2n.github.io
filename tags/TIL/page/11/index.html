@@ -161,6 +161,90 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/03/27/190327-TIL/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/tullip.png" alt="190327-TIL">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-03-27T10:12:11.000Z">2019-03-27</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes read (About 603 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/03/27/190327-TIL/">190327-TIL</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul>
+<li><h4 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h4><p>프로젝트</p>
+<ol start="5">
+<li><p>clickSaveButton() -&gt; saveHealth() : 운동 영상의 상세 페이지에서 운동 기록 저장 버튼을 클릭시 해당 운동의 이름이 localStorage에 저장된다.</p>
+</li>
+<li><p>showDiary() : 운동 기록을 저장한 후 반영된 페이지로 이동한다.</p>
+</li>
+<li><p>clickMyHealthButton() -&gt; showMyHealthPop() : 나의 운동 버튼 클릭시 사용자 정의 운동을 입력하고 저장할 수 있는 페이지를 팝업으로 띄운다. </p>
+</li>
+<li><p>clickSaveButton() -&gt; showSavedPage() : 팝업 창에서 운동 이름, youtube 주소, 운동 부위와 종류를 입력하면 기록이 localStorage에 저장된다.</p>
+</li>
+</ol>
+<p>외에도 알고리즘 스터디를 했다. 나는 5개 정도 문제를 미리 풀어놔서 복습하는 개념으로, 다른 사람들의 풀이에서 많은 걸 배우고 있다.</p>
+</li>
+</ul>
+<ul>
+<li><h4 id="배운-것"><a href="#배운-것" class="headerlink" title="배운 것"></a>배운 것</h4></li>
+</ul>
+<p>! 어떤 element를 클릭하고 새로 뜬 창에서 어떤 버튼을 눌렀을 때 맨 처음 element 값 전달하고 싶을 때는 button의 attr에 data-key 같은 식으로 정보를 전달해준다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">    $(<span class="hljs-string">'div.workout'</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">      <span class="hljs-comment">//showWorkoutDetail</span></span><br><span class="line"></span><br><span class="line">      <span class="hljs-keyword">var</span> key = <span class="hljs-keyword">this</span>.id;</span><br><span class="line">      <span class="hljs-keyword">var</span> workout = workouts[key];</span><br><span class="line">      <span class="hljs-keyword">var</span> id = workout[<span class="hljs-string">'YT_id'</span>];</span><br><span class="line">      $(<span class="hljs-string">'#saveHealthButton'</span>).attr(<span class="hljs-string">'data-key'</span>,key);</span><br><span class="line">      $(<span class="hljs-string">'#popModal'</span>).modal(<span class="hljs-string">'show'</span>);</span><br><span class="line">      $(<span class="hljs-string">'#popTitle'</span>).text(workout[<span class="hljs-string">'name'</span>]);</span><br><span class="line">      <span class="hljs-built_in">console</span>.log(id);</span><br><span class="line">      player = <span class="hljs-keyword">new</span> YT.Player(<span class="hljs-string">'player'</span>, &#123;</span><br><span class="line">        height: <span class="hljs-string">'300'</span>,</span><br><span class="line">        width: <span class="hljs-string">'450'</span>,</span><br><span class="line">        videoId: id,</span><br><span class="line">        events: &#123;</span><br><span class="line">          <span class="hljs-string">'onReady'</span>: onPlayerReady,</span><br><span class="line">          <span class="hljs-string">'onStateChange'</span>: onPlayerStateChange</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;); </span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    $(<span class="hljs-string">'#saveHealthButton'</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">      <span class="hljs-built_in">console</span>.log($(<span class="hljs-keyword">this</span>).attr(<span class="hljs-string">'data-key'</span>));</span><br><span class="line"><span class="hljs-comment">//잘 뜸!!</span></span><br><span class="line">      saveWorkout();</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>! 외부 API를 사용하는 것은 어렵다. 조금만 수정하려고 해도 내 마음처럼 되지 않는다. 경험을 늘려야겠다.</p>
+<p>운동 영상 썸네일 클릭시 Modal을 띄워 해당 운동 영상을 보여주려고 했는데, iframe을 사용하지 않고 new YT_player로 player를 만드는 API를 사용했더니 맨 처음 생성된 player만 뜨는 문제가 있었다. </p>
+<p>구글 검색으로 해결했다! </p>
+<blockquote>
+<p>Modal show event마다 내가 원하는 youtube 보여주기!!</p>
+</blockquote>
+<h2 id="How-to-embed-YouTube-video-in-Bootstrap-modal"><a href="#How-to-embed-YouTube-video-in-Bootstrap-modal" class="headerlink" title="How to embed YouTube video in Bootstrap modal"></a>How to embed YouTube video in Bootstrap modal</h2><h3 id="Answer-Insert-YouTube-Code-inside-Modal-Body"><a href="#Answer-Insert-YouTube-Code-inside-Modal-Body" class="headerlink" title="Answer: Insert YouTube Code inside Modal Body"></a>Answer: Insert YouTube Code inside Modal Body</h3><p><a href="https://www.tutorialrepublic.com/faq/how-to-embed-youtube-video-inside-bootstrap-modal.php" target="_blank" rel="noopener">https://www.tutorialrepublic.com/faq/how-to-embed-youtube-video-inside-bootstrap-modal.php</a></p>
+<p>! javaScript에서는 Array.length, String.length로 둘 다 뒤에 ()를 붙이지 않는다. java와 헷갈리지 말자.</p>
+<ul>
+<li><h4 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h4></li>
+</ul>
+<p>프로젝트 기획 때 Use Case와 Communication을 잘 정리하고 나니 그 때 명세한 기능을 구현하기만 돼서 편하다. 순서대로 구현을 하니 딱히 커다란 문제가 생기지 않았다.</p>
+<p>소프트웨어 공학 시간에도 그렇지만 다시 한 번 디자인이 중요하다고 느꼈다.</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/03/26/190326-TIL/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/yellow.png" alt="190326-TIL">
         </a>
@@ -509,89 +593,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/03/19/190319-TIL/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/pink.png" alt="190319-TIL">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-03-19T11:41:14.000Z">2019-03-19</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 305 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/03/19/190319-TIL/">190319-TIL</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul>
-<li><h4 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h4><ul>
-<li>LeetCode Easy 문제 : <a href="https://leetcode.com/problems/roman-to-integer/" target="_blank" rel="noopener">🌟 13. Roman to Integer</a></li>
-</ul>
-<p>if로 I, X, C일 때 경우를 나누어 풀었다. 시간이 짧게 걸린 알고리즘들은 let, const를 썼는데 나는 아직 var로 선언하는 방법밖에 공부하지 않아 더 공부를 해야겠다.</p>
-<ul>
-<li>webStorage 공부</li>
-</ul>
-<p>localStorage, sessionStorage의 차이와 활용방법에 대해서 배웠다.</p>
-<p>localStorage.setItem(storage_key, storage_value), localStorage.getItem(storage_key) 를 사용하여 localHost에서 사용자가 입력한 정보를 유지하는 기능을 다수 추가했다.</p>
-<ul>
-<li>To do List, Signup Page 보완</li>
-</ul>
-<p>locaStorage를 이용해 기존에 만들었던 html에 유지기능을 추가했다.</p>
-<ul>
-<li>Select, Input: radio 등 다양한 input type 학습</li>
-</ul>
-<p>단순히 text type의 input뿐만이 아니라 select.val, option.text 등을 다루는 방법을 공부했다. </p>
-</li>
-</ul>
-<ul>
-<li><h4 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h4><ul>
-<li>localStorage를 이용하는 것 뿐인데 해야할 일이 대폭 많아졌다. 꼼꼼하게 정리해놓고 해당 기능을 사용할 때마다 참고해야겠다.</li>
-</ul>
-<hr>
-<ul>
-<li><p>Upgrade ver. To do List ▶ <a href="https://github.com/Sub2n/week03/blob/master/0319_To_do_list.html" target="_blank" rel="noopener">🌟</a></p>
-</li>
-<li><p>Upgrade ver. Sign Up Page ▶ <a href="https://github.com/Sub2n/week03/blob/master/0319_SIgnup.html" target="_blank" rel="noopener">🌟</a></p>
-</li>
-</ul>
-</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -662,7 +663,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        149
+                        150
                     </p>
                 </div>
             </div>
@@ -895,7 +896,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">70</span>
+                <span class="level-item tag">71</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -925,6 +926,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/07/08/190708-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/pink.png" alt="190708-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-08T02:37:45.000Z">2019-07-08</time></div>
+                    <a href="/2019/07/08/190708-TIL/" class="has-link-black-ter is-size-6">190708-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1002,25 +1022,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/25/Angular-RxJS/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/html.png" alt="Angular RxJS">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-25T04:12:23.000Z">2019-06-25</time></div>
-                    <a href="/2019/06/25/Angular-RxJS/" class="has-link-black-ter is-size-6">Angular RxJS</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a> / <a class="has-link-grey -link" href="/categories/JavaScript/Angular/">Angular</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1039,7 +1040,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1524,7 +1525,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">71</span>
+                        <span class="tag is-grey">72</span>
                     </a>
                 </div>
                 
@@ -1796,7 +1797,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">70</span>
+                <span class="level-item tag">71</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -1826,6 +1827,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/07/08/190708-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/pink.png" alt="190708-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-08T02:37:45.000Z">2019-07-08</time></div>
+                    <a href="/2019/07/08/190708-TIL/" class="has-link-black-ter is-size-6">190708-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1903,25 +1923,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/25/Angular-RxJS/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/html.png" alt="Angular RxJS">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-25T04:12:23.000Z">2019-06-25</time></div>
-                    <a href="/2019/06/25/Angular-RxJS/" class="has-link-black-ter is-size-6">Angular RxJS</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a> / <a class="has-link-grey -link" href="/categories/JavaScript/Angular/">Angular</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1940,7 +1941,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -2425,7 +2426,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">71</span>
+                        <span class="tag is-grey">72</span>
                     </a>
                 </div>
                 
