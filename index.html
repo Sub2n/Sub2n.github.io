@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 155 words)
+                    3 minutes read (About 424 words)
                 </span>
                 
                 
@@ -183,11 +183,32 @@
             
         </h1>
         <div class="content">
-            <h2 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h2><p>Angular의 모듈은 관련이 있는 구성 요소(Component, Directive, Pipe, Service)를 하나의 단위로 묶는 메커니즘</p>
+            <h2 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h2><p><strong>Angular의 모듈</strong>은 <strong>관련이 있는 구성 요소(Component, Directive, Pipe, Service)를 하나의 단위로 묶는 메커니즘</strong></p>
 <p>모듈은 관련이 있는 구성 요소들로 구성된 integrated functional block으로 Application을 구성하는 하나의 단위를 말함</p>
 <p>모듈은 다른 모듈과 결합할 수 있으며 Angular는 여러 모듈을 조합해서 Application을 구성한다.</p>
 <p>초기 속도가 느린 SPA의 단점을 해결하기 위해서 모듈을 분리하고 Lazy Loading하는 방법이 있다.</p>
 <p> Angular는 최소한 하나의 모듈, root Module인 app.module.ts를 갖는다.</p>
+<p>NgModule은 <code>@NgModule</code> Decorator로 장식된 class이다.</p>
+<p><img src="https://poiemaweb.com/img/shared-module.png" alt="Shared module"></p>
+<ul>
+<li><p>Feature Module</p>
+<p>하나의 View 가 하나의 Feature Module</p>
+</li>
+<li><p>Shared Module</p>
+<p>여러 Feature Module에서 import되어 사용되는 Shared Module</p>
+</li>
+<li><p>Core Module</p>
+<p>Application 전체에서 사용하거나 하나의 Feature Module에서 사용하는 Service</p>
+</li>
+</ul>
+<p>Component 하나로만 이루어진 단순한 view여도 view 단위로 모듈을 나누기로 했으면 나눠야함</p>
+<h2 id="NgModule-Decorator"><a href="#NgModule-Decorator" class="headerlink" title="@NgModule Decorator"></a>@NgModule Decorator</h2><h4 id="Metadata"><a href="#Metadata" class="headerlink" title="Metadata"></a>Metadata</h4><p>Decorator에 전달하는 Metadata는 Angular에 Module code를 어떻게 compile하고 실행할지를 설명한다.</p>
+<h4 id="declarations"><a href="#declarations" class="headerlink" title="declarations"></a>declarations</h4><p>Component, Direcive, Pipe를 선언하면 선언된 구성요소는 Module에서 사용할 수 있다.</p>
+<h4 id="imports"><a href="#imports" class="headerlink" title="imports"></a>imports</h4><p>Module에서 사용하는 다른 Module을 선언한다. Module은 다른 Module를 사용할 수 있다.</p>
+<h4 id="providers"><a href="#providers" class="headerlink" title="providers"></a>providers</h4><p>Injectable object, 즉 Service를 선언한다. Root Module에 선언된 Service는 Application 전역에서 사용할 수 있다.</p>
+<p>최신 버전 Angular에서는 ng generate service로 생성한 service는 알아서 Metadata 들어감</p>
+<h4 id="bootstrap"><a href="#bootstrap" class="headerlink" title="bootstrap"></a>bootstrap</h4><p>CSS Bootstrap 아님</p>
+<p><strong>Root Module에서 사용하는 Property</strong>로 Application의 entry point인 Root Component(AppComponent) 선언</p>
 
         </div>
         
