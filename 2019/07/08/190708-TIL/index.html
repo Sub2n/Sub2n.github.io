@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="Today I Learned Call Stack (Running Execution Context) 다시 공부하기  Property Key   Property Key 동적 생성 123456789var obj = &amp;#123;&amp;#125;;var key = &apos;hello&apos;;// ES5: 프로퍼티 키 동적 생성obj[key] = &apos;world&apos;;// ES6: 프로퍼티">
+    <meta name="description" content="Today I Learned Call Stack (Running Execution Context) 다시 공부하기  함수는 호출하지 않으면 Call Stack에 들어가지 않음 함수는 호출을 해야 Excution Context를 생성하고 Execution Context Stack에 올라가서 평가함   Property Key  Property Key 동적 생성">
 <meta name="keywords" content="TIL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="190708-TIL">
 <meta property="og:url" content="https://sub2n.github.io/2019/07/08/190708-TIL/index.html">
 <meta property="og:site_name" content="수빈 개발블로그">
-<meta property="og:description" content="Today I Learned Call Stack (Running Execution Context) 다시 공부하기  Property Key   Property Key 동적 생성 123456789var obj = &amp;#123;&amp;#125;;var key = &apos;hello&apos;;// ES5: 프로퍼티 키 동적 생성obj[key] = &apos;world&apos;;// ES6: 프로퍼티">
+<meta property="og:description" content="Today I Learned Call Stack (Running Execution Context) 다시 공부하기  함수는 호출하지 않으면 Call Stack에 들어가지 않음 함수는 호출을 해야 Excution Context를 생성하고 Execution Context Stack에 올라가서 평가함   Property Key  Property Key 동적 생성">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/pink.png">
-<meta property="og:updated_time" content="2019-07-08T02:46:27.167Z">
+<meta property="og:updated_time" content="2019-07-08T04:09:03.726Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="190708-TIL">
-<meta name="twitter:description" content="Today I Learned Call Stack (Running Execution Context) 다시 공부하기  Property Key   Property Key 동적 생성 123456789var obj = &amp;#123;&amp;#125;;var key = &apos;hello&apos;;// ES5: 프로퍼티 키 동적 생성obj[key] = &apos;world&apos;;// ES6: 프로퍼티">
+<meta name="twitter:description" content="Today I Learned Call Stack (Running Execution Context) 다시 공부하기  함수는 호출하지 않으면 Call Stack에 들어가지 않음 함수는 호출을 해야 Excution Context를 생성하고 Execution Context Stack에 올라가서 평가함   Property Key  Property Key 동적 생성">
 <meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/pink.png">
 
 
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 204 words)
+                    2 minutes read (About 309 words)
                 </span>
                 
                 
@@ -185,18 +185,26 @@
         <div class="content">
             <h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul>
 <li><p>Call Stack (Running Execution Context) 다시 공부하기</p>
-</li>
-<li><p>Property Key </p>
 <ul>
-<li><p>Property Key 동적 생성</p>
+<li>함수는 호출하지 않으면 Call Stack에 들어가지 않음</li>
+<li>함수는 호출을 해야 Excution Context를 생성하고 Execution Context Stack에 올라가서 평가함</li>
+</ul>
+</li>
+<li><p>Property Key</p>
+<ul>
+<li>Property Key 동적 생성</li>
+</ul>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="hljs-keyword">var</span> key = <span class="hljs-string">'hello'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// ES5: 프로퍼티 키 동적 생성</span></span><br><span class="line">obj[key] = <span class="hljs-string">'world'</span>;</span><br><span class="line"><span class="hljs-comment">// ES6: 프로퍼티 키 동적 생성</span></span><br><span class="line"><span class="hljs-comment">// var obj = &#123; [key]: 'world' &#125;;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(obj); <span class="hljs-comment">// &#123;hello: "world"&#125;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Property Key는 문자열이나 symbol 값 이외의 값을 사용하면 암묵적 타입 변환을 통해 문자열이 된다. 예를 들어, 프로퍼티 키로 숫자 리터럴을 사용하면 따옴표는 붙지 않지만 내부적으로는 문자열로 변환된다.</p>
-</li>
-<li><p>Property Key로 객체를 사용해도 error가 나지 않고 들어감. 배열도 마찬가지<br><img src="https://user-images.githubusercontent.com/48080762/60779497-f8dd2980-a175-11e9-81d6-81dcf643e3f1.png" alt="Property Key"></p>
-</li>
-<li><p>Property Key를 중복 선언하면 나중에 선언한 Property가 이전 것을 덮어씀</p>
-</li>
+
+<ul>
+<li>Property Key는 문자열이나 symbol 값 이외의 값을 사용하면 암묵적 타입 변환을 통해 문자열이 된다. 예를 들어, 프로퍼티 키로 숫자 리터럴을 사용하면 따옴표는 붙지 않지만 내부적으로는 문자열로 변환된다.</li>
+<li>Property Key로 객체를 사용해도 error가 나지 않고 들어감. 배열도 마찬가지<br><img src="https://user-images.githubusercontent.com/48080762/60779497-f8dd2980-a175-11e9-81d6-81dcf643e3f1.png" alt="Property Key"></li>
+<li>객체는 <code>[object Object]</code>라는 String으로 변환된다.</li>
+</ul>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> a = &#123;&#125;;</span><br><span class="line"><span class="hljs-keyword">const</span> b = &#123; <span class="hljs-attr">key</span>: <span class="hljs-string">'b'</span> &#125;;</span><br><span class="line"><span class="hljs-keyword">const</span> c = &#123; <span class="hljs-attr">key</span>: <span class="hljs-string">'c'</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 두 객체 모두 Property key로 쓰일 때 문자열 [object Object]로 변환되어 같은 key가 된다.</span></span><br><span class="line">a[b] = <span class="hljs-number">123</span>;</span><br><span class="line">a[c] = <span class="hljs-number">456</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(a[b]);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Property Key를 중복 선언하면 나중에 선언한 Property가 이전 것을 덮어씀</li>
 </ul>
 </li>
 </ul>
