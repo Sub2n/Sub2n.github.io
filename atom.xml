@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sub2n.github.io/"/>
-  <updated>2019-07-08T06:17:53.712Z</updated>
+  <updated>2019-07-09T04:15:22.450Z</updated>
   <id>https://sub2n.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>190709-TIL</title>
+    <link href="https://sub2n.github.io/2019/07/09/190709-TIL/"/>
+    <id>https://sub2n.github.io/2019/07/09/190709-TIL/</id>
+    <published>2019-07-09T04:05:20.000Z</published>
+    <updated>2019-07-09T04:15:22.450Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li>오전에 프로젝트 기능 분석, 컴포넌트 분리에 대해 회의를 진행했다.</li><li>오후에 이력서 특강을 들었다.<h2 id="이력서-특강"><a href="#이력서-특강" class="headerlink" title="이력서 특강"></a>이력서 특강</h2></li></ul><h3 id="이력서에-담을-내용"><a href="#이력서에-담을-내용" class="headerlink" title="이력서에 담을 내용"></a>이력서에 담을 내용</h3><ul><li>개인 정보 (이름, Contact)</li><li>업무적 강점</li><li>Technology Set</li><li>경력사항</li><li><strong>프로젝트경험</strong><ul><li><strong>주제를 명</strong>확히 작성 (프로젝트 목적 명시)</li><li>완벽한 대규모 프로젝트가 아니라도 괜찮음</li></ul></li><li>자격증, 수상 경력</li><li>학력 및 교육 (온오프라인 단기 교육 포함)<ul><li>교육 <strong>수료증</strong> 첨부 !!</li></ul></li><li>기타활동 (컨퍼런스, 해커톤 등)<ul><li>컨퍼런스나 해커톤 인상적이었던 거 적어놓기</li></ul></li><li>취미</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;오전에 프로젝트 기능 
+      
+    
+    </summary>
+    
+      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
+    
+    
+      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
+    
+  </entry>
   
   <entry>
     <title>Angular NgModule</title>
@@ -579,32 +605,6 @@
     
     
       <category term="Angular" scheme="https://sub2n.github.io/tags/Angular/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>190612-TIL</title>
-    <link href="https://sub2n.github.io/2019/06/12/190612-TIL/"/>
-    <id>https://sub2n.github.io/2019/06/12/190612-TIL/</id>
-    <published>2019-06-12T10:34:40.000Z</published>
-    <updated>2019-06-13T01:37:01.370Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li>TypeScript에 대해서 배우고 실습해봤다.</li><li>Angular로 간단한 TodoList 기능을 구현해봤다. 맛보기만 해봤지만 재밌다! 그리고 엄청 편하다.</li><li>TypeScript는 기존에 알고 있던 객체지향개념(Class, Interface 등)이 있어 사용하기 편리할 것 같다. </li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;TypeScript에 
-      
-    
-    </summary>
-    
-      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
-    
-    
-      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
     
   </entry>
   
