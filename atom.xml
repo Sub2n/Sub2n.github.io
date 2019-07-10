@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sub2n.github.io/"/>
-  <updated>2019-07-09T04:33:54.223Z</updated>
+  <updated>2019-07-10T04:19:41.943Z</updated>
   <id>https://sub2n.github.io/</id>
   
   <author>
@@ -17,13 +17,50 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Angular Routing</title>
+    <link href="https://sub2n.github.io/2019/07/10/Angular-Routing/"/>
+    <id>https://sub2n.github.io/2019/07/10/Angular-Routing/</id>
+    <published>2019-07-10T02:27:49.000Z</published>
+    <updated>2019-07-10T04:19:41.943Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="SEO-Search-Engine-Optimization"><a href="#SEO-Search-Engine-Optimization" class="headerlink" title="SEO(Search Engine Optimization)"></a>SEO(Search Engine Optimization)</h2><p>SPA(Single Page Application)의 단점으로 부각되는 SEO 문제를 해결하기 위해서 각 page마다 고유한 URL을 부여하는 Routing 기능이 Angular Framework에도 제공한다. </p><blockquote><h3 id="Angular-Universal"><a href="#Angular-Universal" class="headerlink" title="Angular Universal"></a>Angular Universal</h3><p>SSR(Server Side Rendering)을 할 수 있도록 하는 Angular Module</p></blockquote><h2 id="Angular-Routing"><a href="#Angular-Routing" class="headerlink" title="Angular Routing"></a>Angular Routing</h2><p>Routing은 Source에서 Destination까지의 경로를 결정하는 기능이다.</p><p>Application에서 Routing이란 어떤 View에서 다른 View로 View를 전환하는 Navigation을 관리하는 기능을 의미한다.</p><p>a Element의 href attribute를 이용하면 브라우저의 주소창 URL이 바뀌며 새로운 html 페이지를 렌더링한다. 이 과정에서 화면 깜빡임이 발생한다. 이를 보완하기 위한 AJAX는 브라우저 주소창의 주소가 변경되지 않아 브라우저의 뒤로가기, 앞으로가기 등의 history 관리가 되지 않는다. 하나의 주소로 동작하는 AJAX 방식은 SEO도 되지 않는다.</p><p>Angular는 위의 문제점을 보완한 2가지의 Location strategy를 제공한다.</p><ul><li>PathLocationStrategy : HTML5 History pushState 기반 Navigation Strategy</li><li>HashLocationStrategy : Hasy 기반 Navigation Strategy</li></ul><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;SEO-Search-Engine-Optimization&quot;&gt;&lt;a href=&quot;#SEO-Search-Engine-Optimization&quot; class=&quot;headerlink&quot; title=&quot;SEO(Search Engine Optimization)&quot;&gt;&lt;/a&gt;SEO(Search Engine Optimization)&lt;/h2&gt;&lt;p&gt;SPA(Single Page Application)의 단점으로 부각되는 SEO 문제를 해결하기 위해서 각 page마다 고유한 URL을 부여하는 Routing 기능이 Angular Framework에도 제공한다. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h3 id=&quot;Angular-Universal&quot;&gt;&lt;a href=&quot;#Angular-Universal&quot; class=&quot;headerlink&quot; title=&quot;Angular Universal&quot;&gt;&lt;/a&gt;Angular Universal&lt;/h3&gt;&lt;p&gt;SSR(Server Side Rendering)을 할 수 있도록 하는 Angular Module&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Angular-Routing&quot;&gt;&lt;a href=&quot;#Angular-Routing&quot; class=&quot;headerlink&quot; title=&quot;Angular Routing&quot;&gt;&lt;/a&gt;Angular Routing&lt;/h2&gt;&lt;p&gt;Routing은 Source에서 Destination까지의 경로를 결정하는 기능이다.&lt;/p&gt;
+&lt;p&gt;Application에서 Routing이란 어떤 View에서 다른 View로 View를 전환하는 Navigation을 관리하는 기능을 의미한다.&lt;/p&gt;
+&lt;p&gt;a Element의 href attribute를 이용하면 브라우저의 주소창 URL이 바뀌며 새로운 html 페이지를 렌더링한다. 이 과정에서 화면 깜빡임이 발생한다. 이를 보완하기 위한 AJAX는 브라우저 주소창의 주소가 변경되지 않아 브라우저의 뒤로가기, 앞으로가기 등의 history 관리가 되지 않는다. 하나의 주소로 동작하는 AJAX 방식은 SEO도 되지 않는다.&lt;/p&gt;
+&lt;p&gt;Angular는 위의 문제점을 보완한 2가지의 Location strategy를 제공한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PathLocationStrategy : HTML5 History pushState 기반 Navigation Strategy&lt;/li&gt;
+&lt;li&gt;HashLocationStrategy : Hasy 기반 Navigation Strategy&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
+    
+      <category term="Angular" scheme="https://sub2n.github.io/categories/JavaScript/Angular/"/>
+    
+    
+      <category term="Angular" scheme="https://sub2n.github.io/tags/Angular/"/>
+    
+      <category term="Routing" scheme="https://sub2n.github.io/tags/Routing/"/>
+    
+  </entry>
+  
+  <entry>
     <title>190709-TIL</title>
     <link href="https://sub2n.github.io/2019/07/09/190709-TIL/"/>
     <id>https://sub2n.github.io/2019/07/09/190709-TIL/</id>
     <published>2019-07-09T04:05:20.000Z</published>
-    <updated>2019-07-09T04:33:54.223Z</updated>
+    <updated>2019-07-09T09:26:08.524Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li>오전에 프로젝트 기능 분석, 컴포넌트 분리에 대해 회의를 진행했다.</li><li>오후에 이력서 특강을 들었다.</li></ul><p>✨<a href="[https://sub2n.github.io/2019/07/09/190709-TIL/#%EC%9D%B4%EB%A0%A5%EC%84%9C-%ED%8A%B9%EA%B0%95](https://sub2n.github.io/2019/07/09/190709-TIL/#이력서-특강)">이력서 특강 요약</a>✨</p><a id="more"></a><h2 id="이력서-특강"><a href="#이력서-특강" class="headerlink" title="이력서 특강"></a>이력서 특강</h2><h3 id="이력서에-담을-내용"><a href="#이력서에-담을-내용" class="headerlink" title="이력서에 담을 내용"></a>이력서에 담을 내용</h3><ul><li>개인 정보 (이름, Contact)</li><li>업무적 강점</li><li>Technology Set</li><li>경력사항</li><li><strong>프로젝트경험</strong><ul><li><strong>주제를 명</strong>확히 작성 (프로젝트 목적 명시)</li><li>완벽한 대규모 프로젝트가 아니라도 괜찮음</li></ul></li><li>자격증, 수상 경력</li><li>학력 및 교육 (온오프라인 단기 교육 포함)<ul><li>교육 <strong>수료증</strong> 첨부 !!</li></ul></li><li>기타활동 (컨퍼런스, 해커톤 등)<ul><li>컨퍼런스나 해커톤 인상적이었던 거 적어놓기</li></ul></li><li>취미<ul><li>영화, 책읽기, 운동 등으로 자기 관리 어필</li></ul></li></ul><h3 id="기본"><a href="#기본" class="headerlink" title="기본"></a>기본</h3><ul><li>맞춤법</li><li>전공이나 개발교육 과정 최근순 작성</li><li>일관성 있는 문장</li></ul><h3 id="꼭-적어야-하는-개인-정보"><a href="#꼭-적어야-하는-개인-정보" class="headerlink" title="꼭 적어야 하는 개인 정보"></a>꼭 적어야 하는 개인 정보</h3><ul><li>연락에 필요한 이메일 주소와 전화번호</li><li>GitHub 계정</li><li>기술 블로그</li></ul><h3 id="쓰지-않는-개인-정보"><a href="#쓰지-않는-개인-정보" class="headerlink" title="쓰지 않는 개인 정보"></a>쓰지 않는 개인 정보</h3><ul><li>사진 필수 아님</li><li>생년월일 주민번호 요구할 때만</li><li>주소는 동까지</li><li>사생활 노출되는 개인 SNS</li><li>가족사항 등 업무와 관련되어 있는 정보</li></ul><h3 id="요약"><a href="#요약" class="headerlink" title="요약"></a>요약</h3><ul><li>채용 공고의 키워드 === 내 이력서의 키워드</li><li>지원서에 해당 회사의 에 대한 관심을 표현하고 있는지</li><li>내 강점</li><li>내가 기여할 수 있는 것</li></ul><h2 id="강점"><a href="#강점" class="headerlink" title="강점"></a>강점</h2><ul><li><p>JD에 맞는 인재인가?</p></li><li><p>기여할 수 있는 부분 강조하기</p></li><li><p>업무적 강점을 충분히 설명하고 있나?</p></li><li><p>간략하고 알기 쉽게 표현했나?</p></li><li><p>자신의 개발 성향을 언급했나?</p><ul><li>러닝커브가 짧은 개발자</li><li>테스트코드를 꼼꼼하게 작성하는 개발자</li><li>문서화를 잘하는 개발자</li><li>커뮤니케이션을 잘 하는 개발자</li><li>일정관리를 잘 하는 개발자</li><li>해당 도메인 지식이 많은 개발자</li></ul></li><li><p>개발경력 외의 경력이 있다면 어떻게 활용하면 좋을지?</p></li></ul><hr><p>✨<a href="bit.ly/fast_resume">이력서 특강 자료</a>✨</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li>오전에 프로젝트 기능 분석, 컴포넌트 분리에 대해 회의를 진행했다.</li><li>오후에 이력서 특강을 들었다.</li></ul><p>✨<a href="[https://sub2n.github.io/2019/07/09/190709-TIL/#%EC%9D%B4%EB%A0%A5%EC%84%9C-%ED%8A%B9%EA%B0%95](https://sub2n.github.io/2019/07/09/190709-TIL/#이력서-특강)">이력서 특강 요약</a>✨</p><a id="more"></a><h2 id="이력서-특강"><a href="#이력서-특강" class="headerlink" title="이력서 특강"></a>이력서 특강</h2><h3 id="이력서에-담을-내용"><a href="#이력서에-담을-내용" class="headerlink" title="이력서에 담을 내용"></a>이력서에 담을 내용</h3><ul><li>개인 정보 (이름, Contact)</li><li>업무적 강점</li><li>Technology Set</li><li>경력사항</li><li><strong>프로젝트경험</strong><ul><li><strong>주제를 명</strong>확히 작성 (프로젝트 목적 명시)</li><li>완벽한 대규모 프로젝트가 아니라도 괜찮음</li></ul></li><li>자격증, 수상 경력</li><li>학력 및 교육 (온오프라인 단기 교육 포함)<ul><li>교육 <strong>수료증</strong> 첨부 !!</li></ul></li><li>기타활동 (컨퍼런스, 해커톤 등)<ul><li>컨퍼런스나 해커톤 인상적이었던 거 적어놓기</li></ul></li><li>취미<ul><li>영화, 책읽기, 운동 등으로 자기 관리 어필</li></ul></li></ul><h3 id="기본"><a href="#기본" class="headerlink" title="기본"></a>기본</h3><ul><li>맞춤법</li><li>전공이나 개발교육 과정 최근순 작성</li><li>일관성 있는 문장</li></ul><h3 id="꼭-적어야-하는-개인-정보"><a href="#꼭-적어야-하는-개인-정보" class="headerlink" title="꼭 적어야 하는 개인 정보"></a>꼭 적어야 하는 개인 정보</h3><ul><li>연락에 필요한 이메일 주소와 전화번호</li><li>GitHub 계정</li><li>기술 블로그</li></ul><h3 id="쓰지-않는-개인-정보"><a href="#쓰지-않는-개인-정보" class="headerlink" title="쓰지 않는 개인 정보"></a>쓰지 않는 개인 정보</h3><ul><li>사진 필수 아님</li><li>생년월일 주민번호 요구할 때만</li><li>주소는 동까지</li><li>사생활 노출되는 개인 SNS</li><li>가족사항 등 업무와 관련되어 있는 정보</li></ul><h3 id="요약"><a href="#요약" class="headerlink" title="요약"></a>요약</h3><ul><li>채용 공고의 키워드 === 내 이력서의 키워드</li><li>지원서에 해당 회사의 에 대한 관심을 표현하고 있는지</li><li>내 강점</li><li>내가 기여할 수 있는 것</li></ul><h2 id="강점"><a href="#강점" class="headerlink" title="강점"></a>강점</h2><ul><li><p>JD에 맞는 인재인가?</p></li><li><p>기여할 수 있는 부분 강조하기</p></li><li><p>업무적 강점을 충분히 설명하고 있나?</p></li><li><p>간략하고 알기 쉽게 표현했나?</p></li><li><p>자신의 개발 성향을 언급했나?</p><ul><li>러닝커브가 짧은 개발자</li><li>테스트코드를 꼼꼼하게 작성하는 개발자</li><li>문서화를 잘하는 개발자</li><li>커뮤니케이션을 잘 하는 개발자</li><li>일정관리를 잘 하는 개발자</li><li>해당 도메인 지식이 많은 개발자</li></ul></li><li><p>개발경력 외의 경력이 있다면 어떻게 활용하면 좋을지?</p></li><li><p><strong>버전 관리의 중요성 이해, GitHub 꼮쓰기</strong></p></li></ul><h4 id="Ex"><a href="#Ex" class="headerlink" title="Ex"></a>Ex</h4><p><img src="https://lh4.googleusercontent.com/uHry1B4BVgOBrU_-v-YUhtCy06MmoOVkjd5d_RjRJBvONo05ocUV9BmJ7skGvH_bwcF5jHQT8gFhChrW8oxRV5i3nlDj_9E1yYeE42_M7dKQDzy8rMKxSlaiRnbD9WbddxQrOfKG6PQ" alt="강점 1"></p><p><img src="https://lh6.googleusercontent.com/4sGOVqM-ANKo66X0_pWsK5JEtp5tnbjHC0TlA6RJVkKY-98XFZstjU9FfU7VtUrfNn7PFh9SISPBPs3eMqFqreD87J-RDeZ-LEqJVhz6lyLAT_RlOUTSDrNSERO5ZxIqihZcZ3Ic9Gw" alt="강점 2"></p><h3 id="SKILL-SET"><a href="#SKILL-SET" class="headerlink" title="SKILL SET"></a>SKILL SET</h3><p><img src="https://lh5.googleusercontent.com/X3bL1Y2337XMcwL4w9BqBG-oSv141sKJT7VF-nll7ttgZNsbsSOftB6IfYi72lAIPQ9zRgK5MzTpjFB9iWTLjqom4Ue8Y19nU-g2q_4wzlze7hkwY90jK199AxIDAgsg-B3bgQBrxLw" alt="Skill Set"></p><p><img src="https://lh4.googleusercontent.com/ETOWulWkEVtRZnvRxs1LoF-NF43n3UlbhS9F4VZr-Um8NiUfmIEq5U1kg7Z3a6j-AJGVboNSFii4UgD6k42iQl6rht5yEjpj6Ux09LcX6jKh2ZaX3I0Wy82-n2ZY-eFCUlEEAkb_d5Y" alt="Visualization"></p><p><img src="https://lh4.googleusercontent.com/UHqlLXdl5QKWZ0R5AyDC29QB8DfCUnGUP1W_AT3bUEZaWfLw7Tn_ZfgpDcJ0QyhUIUVLaXGEOAEOw-k7uD_-d1sc8sdm_gEEM_-dgqNk1IvzBebm2XkQKavm5kVK3TzeG4utkOJzAxM" alt="Description"></p><p><img src="https://lh4.googleusercontent.com/NXAIIceb3tR3U3EqI0NoenY85mgxvRymPGDuzrx2FlB7yQm7yvdxa7NtOTRk8oOt6hb5nqKfJLDPVdLebS9i0mukyz1pJGfuTs99Vh9hB_BE7NK_wfV30hGFyjIohvGHBDrWp_MUJX4" alt="Good Example"></p><ul><li>실력이 부족한 것도 다뤄봤다는 것을 알리면 좋음</li></ul><h3 id="영문-이력서-작성"><a href="#영문-이력서-작성" class="headerlink" title="영문 이력서 작성"></a>영문 이력서 작성</h3><ul><li>front-end junior resume 등으로 검색</li></ul><h2 id="취업-플랫폼"><a href="#취업-플랫폼" class="headerlink" title="취업 플랫폼"></a>취업 플랫폼</h2><ul><li>잡플래닛</li><li>원티드</li><li>잡코리아</li><li>크레딧잡 - 연봉</li></ul><hr><p>✨<a href="bit.ly/fast_resume">이력서 특강 자료</a>✨</p>]]></content>
     
     <summary type="html">
     
@@ -566,36 +603,6 @@
       &lt;p&gt;Angular Application은 component를 중심으로 구성되는만큼 component는 Angular의 핵심 개념이다.&lt;/p&gt;
 &lt;p&gt;Component는 application의 화면을 구성하는 View를 생성하고 관리한다. &lt;/p&gt;
 &lt;p&gt;Component는 template의 중첩 관계에 의해서 tree 구조를 갖는다. 여러 component 사이의 통신과 상태 관리를 위해서 Service가 있다.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
-    
-      <category term="Angular" scheme="https://sub2n.github.io/categories/JavaScript/Angular/"/>
-    
-    
-      <category term="Angular" scheme="https://sub2n.github.io/tags/Angular/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Angular Basics</title>
-    <link href="https://sub2n.github.io/2019/06/14/Angular-Basics/"/>
-    <id>https://sub2n.github.io/2019/06/14/Angular-Basics/</id>
-    <published>2019-06-14T03:59:45.000Z</published>
-    <updated>2019-06-14T07:03:39.580Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Angular"><a href="#Angular" class="headerlink" title="Angular"></a>Angular</h2><p>Angular는 SPA(Single Page Application) 개발을 위한 Google의 Open source JavaScript <strong>Framework</strong>.</p><blockquote><h4 id="Framework-and-Library"><a href="#Framework-and-Library" class="headerlink" title="Framework and Library"></a>Framework and Library</h4><p>Library는 관련있는 함수를 모아놓아 개발자가 사용할 수 있는 도구이다. 즉, Library는 개발자에 의해 사용된다.</p><p>Framework는 클래스와 인터페이스의 집합으로 Application의 Flow를 쥐고 있다. 개발자가 Framework 틀 내부에서 작업하는 것이다.</p></blockquote><p>전통적인 웹 개발에서 JavaScript는 HTML/CSS에 의존한다. 의존한다는 것은 HTML/CSS에 접근해서 조작하는 방식으로 JavaScript 코드가 작성되었다는 것을 뜻한다. 이는 HTML/CSS가 변경되면 JavaScript 코드도 영향을 받음을 의미한다.</p><p>Angular는 HTML/CSS가 JavaScript에 의존하도록, 즉 JavaScript 코드의 상태 데이터 (State)에 바인딩해서 상태가 변경될 때마다 Rendering되도록 한다. HTML/CSS를 JavaScript의 Rendering 함수 내부의 문자열로 관리하면 앞서 말한 동작이 가능하다.</p><a id="more"></a><h2 id="Advantages-of-Angular"><a href="#Advantages-of-Angular" class="headerlink" title="Advantages of Angular"></a>Advantages of Angular</h2><ol><li>컴포넌트 기반 개발(CBD: Component Based Development) 로 생산성이 좋다.  Web에서 컴포넌트 기반 개발이 어려운 이유는 CSS가 서로에게 영향을 주기 때문인데,  Component 별로 CSS를 분리해내는 게 중요하다.</li><li>TypeScript 사용으로 정적 타이핑, ES6과 ESNext의 기능을 지원한다.</li><li>Angular는 대부분의 모던 브라우저를 지원한다. IE는 9 이상을 지원한다.</li></ol><h2 id="Angular-Project"><a href="#Angular-Project" class="headerlink" title="Angular Project"></a>Angular Project</h2><h4 id="app-component"><a href="#app-component" class="headerlink" title="app.component"></a>app.component</h4><p>Application의 root Component로, 실행 기본 page. (index.html처럼)</p><p><img src="https://user-images.githubusercontent.com/48080762/59484774-13d9b800-8eae-11e9-9762-ee95824f338f.png" alt="app.component"></p><h5 id="app-component-spec-ts"><a href="#app-component-spec-ts" class="headerlink" title="app.component.spec.ts"></a>app.component.spec.ts</h5><p>test specification</p><h5 id="ng-build-후-map-file"><a href="#ng-build-후-map-file" class="headerlink" title="ng build 후 map file"></a>ng build 후 map file</h5><p>디버깅용</p><h4 id="app-module"><a href="#app-module" class="headerlink" title="app.module"></a>app.module</h4><p>전체 모듈을 관리하므로 component 추가시 module에 추가됨</p><p><img src="https://user-images.githubusercontent.com/48080762/59485300-379dfd80-8eb0-11e9-987c-8154db2b8663.png" alt="app.module"></p><p>Component 생성 후 module file의 declarations에 추가해줘야함</p><h4 id="Generate-Component-Shortcut"><a href="#Generate-Component-Shortcut" class="headerlink" title="Generate Component Shortcut"></a>Generate Component Shortcut</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng g c service -s -t --skip-tests (-S)</span><br></pre></td></tr></table></figure><p><img src="https://user-images.githubusercontent.com/48080762/59485613-78e2dd00-8eb1-11e9-86da-a3d210def751.png" alt="shortcut"></p><h4 id="ng-generate"><a href="#ng-generate" class="headerlink" title="ng generate"></a>ng generate</h4><table><thead><tr><th>component</th><th>UI를 만들기 위해서 존재</th></tr></thead><tbody><tr><td>sercive</td><td>component와 직접적인 연관이 없는 state 관리</td></tr></tbody></table><p>component가 활성화된다 =&gt; component가 메모리에 올라가면 view가 보임</p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">System.out.print(<span class="hljs-string">'이거슨 java'</span>);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'이거슨 JavaScript'</span>);</span><br><span class="line">printf(<span class="hljs-string">'이거슨 C'</span>);</span><br><span class="line">cout&lt;&lt;<span class="hljs-string">'이거슨 c++'</span>;</span><br><span class="line">print(<span class="hljs-string">'이거슨 python'</span>);</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Angular&quot;&gt;&lt;a href=&quot;#Angular&quot; class=&quot;headerlink&quot; title=&quot;Angular&quot;&gt;&lt;/a&gt;Angular&lt;/h2&gt;&lt;p&gt;Angular는 SPA(Single Page Application) 개발을 위한 Google의 Open source JavaScript &lt;strong&gt;Framework&lt;/strong&gt;.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;h4 id=&quot;Framework-and-Library&quot;&gt;&lt;a href=&quot;#Framework-and-Library&quot; class=&quot;headerlink&quot; title=&quot;Framework and Library&quot;&gt;&lt;/a&gt;Framework and Library&lt;/h4&gt;&lt;p&gt;Library는 관련있는 함수를 모아놓아 개발자가 사용할 수 있는 도구이다. 즉, Library는 개발자에 의해 사용된다.&lt;/p&gt;
-&lt;p&gt;Framework는 클래스와 인터페이스의 집합으로 Application의 Flow를 쥐고 있다. 개발자가 Framework 틀 내부에서 작업하는 것이다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;전통적인 웹 개발에서 JavaScript는 HTML/CSS에 의존한다. 의존한다는 것은 HTML/CSS에 접근해서 조작하는 방식으로 JavaScript 코드가 작성되었다는 것을 뜻한다. 이는 HTML/CSS가 변경되면 JavaScript 코드도 영향을 받음을 의미한다.&lt;/p&gt;
-&lt;p&gt;Angular는 HTML/CSS가 JavaScript에 의존하도록, 즉 JavaScript 코드의 상태 데이터 (State)에 바인딩해서 상태가 변경될 때마다 Rendering되도록 한다. HTML/CSS를 JavaScript의 Rendering 함수 내부의 문자열로 관리하면 앞서 말한 동작이 가능하다.&lt;/p&gt;
     
     </summary>
     
