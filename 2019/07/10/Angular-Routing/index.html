@@ -16,7 +16,7 @@
 <meta property="og:description" content="SEO(Search Engine Optimization)SPA(Single Page Application)의 단점으로 부각되는 SEO 문제를 해결하기 위해서 각 page마다 고유한 URL을 부여하는 Routing 기능이 Angular Framework에도 제공한다.   Angular UniversalSSR(Server Side Rendering)을 할 수">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/html.png">
-<meta property="og:updated_time" content="2019-07-10T04:19:41.943Z">
+<meta property="og:updated_time" content="2019-07-10T05:11:56.957Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular Routing">
 <meta name="twitter:description" content="SEO(Search Engine Optimization)SPA(Single Page Application)의 단점으로 부각되는 SEO 문제를 해결하기 위해서 각 page마다 고유한 URL을 부여하는 Routing 기능이 Angular Framework에도 제공한다.   Angular UniversalSSR(Server Side Rendering)을 할 수">
@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 285 words)
+                    3 minutes read (About 499 words)
                 </span>
                 
                 
@@ -189,7 +189,7 @@
 </blockquote>
 <h2 id="Angular-Routing"><a href="#Angular-Routing" class="headerlink" title="Angular Routing"></a>Angular Routing</h2><p>Routing은 Source에서 Destination까지의 경로를 결정하는 기능이다.</p>
 <p>Application에서 Routing이란 어떤 View에서 다른 View로 View를 전환하는 Navigation을 관리하는 기능을 의미한다.</p>
-<p>a Element의 href attribute를 이용하면 브라우저의 주소창 URL이 바뀌며 새로운 html 페이지를 렌더링한다. 이 과정에서 화면 깜빡임이 발생한다. 이를 보완하기 위한 AJAX는 브라우저 주소창의 주소가 변경되지 않아 브라우저의 뒤로가기, 앞으로가기 등의 history 관리가 되지 않는다. 하나의 주소로 동작하는 AJAX 방식은 SEO도 되지 않는다.</p>
+<p>a Element의 <code>href</code> attribute를 이용하면 브라우저의 주소창 URL이 바뀌며 새로운 html 페이지를 렌더링한다. 이 과정에서 화면 깜빡임이 발생한다. 이를 보완하기 위한 AJAX는 브라우저 주소창의 주소가 변경되지 않아 브라우저의 뒤로가기, 앞으로가기 등의 history 관리가 되지 않는다. 하나의 주소로 동작하는 AJAX 방식은 SEO도 되지 않는다.</p>
 <p>Angular는 위의 문제점을 보완한 2가지의 Location strategy를 제공한다.</p>
 <ul>
 <li>PathLocationStrategy : HTML5 History pushState 기반 Navigation Strategy</li>
@@ -197,6 +197,17 @@
 </ul>
 <a id="more"></a>
 
+<h4 id="Type-Alias"><a href="#Type-Alias" class="headerlink" title="Type Alias"></a>Type Alias</h4><figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">declare</span> <span class="hljs-keyword">type</span> Routes = Route[];</span><br></pre></td></tr></table></figure>
+
+<p>Route type 배열을 Routes type으로 선언하는 것처럼 type 이름 짓는 방식</p>
+<h3 id="Routing-Module"><a href="#Routing-Module" class="headerlink" title="Routing Module"></a>Routing Module</h3><figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// app-routing.module.ts</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> &#123; NgModule &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;</span><br><span class="line"><span class="hljs-keyword">import</span> &#123; Routes, RouterModule &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/router'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> &#123;</span><br><span class="line">  IndexComponent,</span><br><span class="line">  ServiceComponent,</span><br><span class="line">  AboutComponent,</span><br><span class="line">  NotFoundComponent</span><br><span class="line">&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'./pages'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> routes: Routes = [</span><br><span class="line">  &#123; path: <span class="hljs-string">''</span>, component: IndexComponent &#125;,</span><br><span class="line">  &#123; path: <span class="hljs-string">'service'</span>, component: ServiceComponent &#125;,</span><br><span class="line">  &#123; path: <span class="hljs-string">'about'</span>, component: AboutComponent &#125;,</span><br><span class="line">  &#123; path: <span class="hljs-string">'**'</span>, component: NotFoundComponent &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">@NgModule</span>(&#123;</span><br><span class="line">  imports: [RouterModule.forRoot(routes)],</span><br><span class="line">  exports: [RouterModule]</span><br><span class="line">  &#125;)</span><br><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppRoutingModule &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Routes type의 routes에 <code>path</code>와 <code>component</code> 프로퍼티를 가진 객체를 배열의 원소로 넣어주면 path가 바뀔 때마다 해당 path에 맞는 component를 보여준다.</p>
+<p>path에 <code>/</code> 는 생략한다.</p>
+<p>path <code>**</code>는 wild card로, 위에 설정된 경로가 아닌 모든 경로로 접근할 경우 이동하는 페이지다. 꼭 맨 마지막에 작성해야한다.</p>
+<h3 id="Navigation"><a href="#Navigation" class="headerlink" title="Navigation"></a>Navigation</h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span></span><br><span class="line">	<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">routerLink</span> = <span class="hljs-string">"/"</span>&gt;</span>Logo<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><br><span class="line">	<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">routerLink</span> = <span class="hljs-string">"/service"</span>&gt;</span>Service<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">routerLink</span> = <span class="hljs-string">"/about"</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>a tag의 <code>href</code> attribute 대신 Angular에서 제공하는 Directive <code>routerLink</code>를 사용해서 path를 지정한다. </p>
 
         </div>
         
