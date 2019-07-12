@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sub2n.github.io/2019/07/12/Angular-JWT/</loc>
+    
+    <lastmod>2019-07-12T08:25:39.592Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sub2n.github.io/2019/07/10/Angular-Routing/</loc>
     
-    <lastmod>2019-07-12T06:29:51.512Z</lastmod>
+    <lastmod>2019-07-12T06:34:47.012Z</lastmod>
     
   </url>
   

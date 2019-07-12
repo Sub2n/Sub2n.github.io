@@ -162,6 +162,64 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/05/09/14-let-const-and-a-Block-level-Scope/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="14. let, const and a Block-level Scope">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-09T04:58:23.000Z">2019-05-09</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    12 minutes read (About 1837 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/09/14-let-const-and-a-Block-level-Scope/">14. let, const and a Block-level Scope</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="1-Problems-with-Variables-declared-with-the-var-keyword"><a href="#1-Problems-with-Variables-declared-with-the-var-keyword" class="headerlink" title="1. Problems with Variables declared with the var keyword"></a>1. Problems with Variables declared with the <code>var</code> keyword</h1><p>ES5까지 변수를 선언할 수 있는 유일한 키워드는 <code>var</code> 하나였다. <code>var</code> 키워드로 선언된 변수는 다른 언어와는 구별되는 특징을 가진다.</p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/05/09/14-let-const-and-a-Block-level-Scope/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/05/09/13-Problems-with-global-variables/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="13. Problems with Global Variables">
         </a>
@@ -497,76 +555,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/05/04/8-Type-Coercion-and-Short-Circuit-Evaluation/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="8. Type Coercion and Short-Circuit Evaluation">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-04T11:16:16.000Z">2019-05-04</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 minutes read (About 485 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/04/8-Type-Coercion-and-Short-Circuit-Evaluation/">8. Type Coercion and Short-Circuit Evaluation</a>
-            
-        </h1>
-        <div class="content">
-            <h1 id="What-is-Type-coercion"><a href="#What-is-Type-coercion" class="headerlink" title="What is Type coercion?"></a>What is Type coercion?</h1><ul>
-<li><p>Explicit coercion / Type casting: developer intentionally converting value types</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> str = x.toString();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Implicit coercion / Type coercion: Type automatically converted by the JavaScript engine regardless of developer intent.</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> str = x + <span class="hljs-string">''</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// x = Number 10, str = Sring 10</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<h3 id="Does-reassignment-occur-when-type-coercion-occur"><a href="#Does-reassignment-occur-when-type-coercion-occur" class="headerlink" title="Does reassignment occur when type coercion occur?"></a>Does reassignment occur when type coercion occur?</h3><p>No. It only takes a moment to type when evaluating expressions.</p>
-</blockquote>
-</li>
-</ul>
-<p>The developer can use implicit type conversion intentionally.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/05/04/8-Type-Coercion-and-Short-Circuit-Evaluation/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -639,7 +627,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        153
+                        154
                     </p>
                 </div>
             </div>
@@ -848,7 +836,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">49</span>
+                <span class="level-item tag">50</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/JavaScript/Angular/">
@@ -856,7 +844,7 @@
                 <span class="level-item">Angular</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">11</span>
+                <span class="level-item tag">12</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -902,6 +890,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/07/12/Angular-JWT/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/html.png" alt="Angular JWT">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-12T08:00:20.000Z">2019-07-12</time></div>
+                    <a href="/2019/07/12/Angular-JWT/" class="has-link-black-ter is-size-6">Angular JWT</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a> / <a class="has-link-grey -link" href="/categories/JavaScript/Angular/">Angular</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -979,25 +986,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/06/190706-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/rose.png" alt="190706-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-06T09:15:10.000Z">2019-07-06</time></div>
-                    <a href="/2019/07/06/190706-TIL/" class="has-link-black-ter is-size-6">190706-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1016,7 +1004,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">7</span>
+                    <span class="level-item tag">8</span>
                 </span>
             </a>
         </li>
@@ -1123,7 +1111,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Angular/">
                         <span class="tag">Angular</span>
-                        <span class="tag is-grey">9</span>
+                        <span class="tag is-grey">10</span>
                     </a>
                 </div>
                 
@@ -1756,7 +1744,7 @@
                 <span class="level-item">JavaScript</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">49</span>
+                <span class="level-item tag">50</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/JavaScript/Angular/">
@@ -1764,7 +1752,7 @@
                 <span class="level-item">Angular</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">11</span>
+                <span class="level-item tag">12</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/Python/">
@@ -1810,6 +1798,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/07/12/Angular-JWT/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/html.png" alt="Angular JWT">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-12T08:00:20.000Z">2019-07-12</time></div>
+                    <a href="/2019/07/12/Angular-JWT/" class="has-link-black-ter is-size-6">Angular JWT</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a> / <a class="has-link-grey -link" href="/categories/JavaScript/Angular/">Angular</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1887,25 +1894,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/06/190706-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/rose.png" alt="190706-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-06T09:15:10.000Z">2019-07-06</time></div>
-                    <a href="/2019/07/06/190706-TIL/" class="has-link-black-ter is-size-6">190706-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1924,7 +1912,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">7</span>
+                    <span class="level-item tag">8</span>
                 </span>
             </a>
         </li>
@@ -2031,7 +2019,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Angular/">
                         <span class="tag">Angular</span>
-                        <span class="tag is-grey">9</span>
+                        <span class="tag is-grey">10</span>
                     </a>
                 </div>
                 
