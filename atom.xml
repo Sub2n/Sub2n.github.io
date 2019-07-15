@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sub2n.github.io/"/>
-  <updated>2019-07-13T04:13:28.283Z</updated>
+  <updated>2019-07-15T06:50:33.130Z</updated>
   <id>https://sub2n.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>190715-TIL</title>
+    <link href="https://sub2n.github.io/2019/07/15/190715-TIL/"/>
+    <id>https://sub2n.github.io/2019/07/15/190715-TIL/</id>
+    <published>2019-07-15T04:18:04.000Z</published>
+    <updated>2019-07-15T06:50:33.130Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><h4 id="오전"><a href="#오전" class="headerlink" title="오전"></a>오전</h4><ul><li>프로젝트 구현을 시작하기 위해서 팀원들과 개발 환경을 세팅했다.</li></ul><h4 id="오후"><a href="#오후" class="headerlink" title="오후"></a>오후</h4><ul><li>모일 시간 등 회의</li><li>Header Component의 Secondary Navigation과 Directive를 이용한 window scroll Fixed header를 구현</li></ul><h2 id="오늘-회의"><a href="#오늘-회의" class="headerlink" title="오늘 회의"></a>오늘 회의</h2><h3 id="1-출퇴근-시간-정하기"><a href="#1-출퇴근-시간-정하기" class="headerlink" title="1. 출퇴근 시간 정하기"></a>1. 출퇴근 시간 정하기</h3><ul><li><p>업무 시간 : 6 ~ 7 시간 (평일: 월 ~ 금 / 주말: 토요일)</p></li><li><p>오전 : 오전 10시 출근 오후 6시 퇴근</p></li><li><p>오후 :  오후 1시 출근 오후 10시 퇴근 (저녁 시간 1 시간 30분)</p></li></ul><h3 id="2-오늘부터-구현할-내용-발표하기"><a href="#2-오늘부터-구현할-내용-발표하기" class="headerlink" title="2. 오늘부터 구현할 내용 발표하기"></a>2. 오늘부터 구현할 내용 발표하기</h3><ul><li>매일 오후 5시 반</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;h4 id=&quot;오전&quot;&gt;&lt;a href=&quot;
+      
+    
+    </summary>
+    
+      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
+    
+    
+      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
+    
+  </entry>
   
   <entry>
     <title>React Basic</title>
@@ -609,32 +634,6 @@
     
     
       <category term="Angular" scheme="https://sub2n.github.io/tags/Angular/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>190617-TIL</title>
-    <link href="https://sub2n.github.io/2019/06/17/190617-TIL/"/>
-    <id>https://sub2n.github.io/2019/06/17/190617-TIL/</id>
-    <published>2019-06-17T08:46:05.000Z</published>
-    <updated>2019-06-17T08:47:36.504Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li>Angular Component의 Data Binding에 대해서 배웠다.</li><li>Angular의 ngFor와 ngIf Directive를 적용해서 TabsUI를 구현해봤다.</li><li>Angular 문법이 아직 익숙하지는 않은데 재미있다. 생각을 전환하기가 쉽지 않다.</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Angular Comp
-      
-    
-    </summary>
-    
-      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
-    
-    
-      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
     
   </entry>
   

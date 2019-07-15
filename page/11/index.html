@@ -151,6 +151,87 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/04/24/Python-Class-and-Access-Modifier/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/python.png" alt="Python Class and Access Modifier">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-24T06:19:56.000Z">2019-04-24</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Python/">Python</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    6 minutes read (About 899 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/24/Python-Class-and-Access-Modifier/">Python Class and Access Modifier</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="Python-Class"><a href="#Python-Class" class="headerlink" title="Python Class"></a>Python Class</h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Account</span>:</span></span><br><span class="line">    <span class="hljs-comment"># constructor</span></span><br><span class="line">    <span class="hljs-comment"># 객체를 생성할 때 "반드시" 한 번 호출한다.</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, cus_name, init_balance)</span>:</span></span><br><span class="line">        <span class="hljs-comment"># instance member</span></span><br><span class="line">        self.name = cus_name</span><br><span class="line">        self.balance = init_balance</span><br><span class="line">        </span><br><span class="line">    <span class="hljs-comment"># descructor</span></span><br><span class="line">    <span class="hljs-comment"># 객체가 소멸될 때 "반드시" 한 번 호출</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__del__</span><span class="hljs-params">(self)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">pass</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-comment"># instance method(operator)</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">deposit</span><span class="hljs-params">(self, money)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> money &lt; <span class="hljs-number">0</span>:</span><br><span class="line">            print(<span class="hljs-string">'0보다 작은 값을 저금할 수 없습니다.'</span>)</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span></span><br><span class="line">        </span><br><span class="line">        self.balance += money        </span><br><span class="line">        print(<span class="hljs-string">f'잔고 <span class="hljs-subst">&#123;self.balance&#125;</span>'</span>)</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">withdraw</span><span class="hljs-params">(self, money)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> money &gt; self.balance:</span><br><span class="line">            print(<span class="hljs-string">'잔고보다 출금하려는 돈이 더 많습니다.'</span>)</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span></span><br><span class="line">        </span><br><span class="line">        self.balance -= money</span><br><span class="line">        print(<span class="hljs-string">f'잔고 <span class="hljs-subst">&#123;self.balance&#125;</span>'</span>)</span><br><span class="line">        <span class="hljs-keyword">return</span> money</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">transfer</span><span class="hljs-params">(self, other, money)</span>:</span></span><br><span class="line">        self.balance -= money</span><br><span class="line">        <span class="hljs-comment"># 다른 object의 member에 바로 접근하지 않는다!! (private없어서 접근 할 수는 있음(뭐임?))</span></span><br><span class="line">        <span class="hljs-comment"># 다른 object의 member는 "반드시" 상대 object의 method를 호출해서 접근해야 한다. - Message Passing</span></span><br><span class="line">        other.deposit(money)</span><br><span class="line">        print(<span class="hljs-string">f'잔고 <span class="hljs-subst">&#123;self.balance&#125;</span>'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Object-abstraction-method-추상화-도구"><a href="#Object-abstraction-method-추상화-도구" class="headerlink" title="Object : abstraction method (추상화 도구)"></a>Object : abstraction method (추상화 도구)</h2><ul>
+<li>관련 있는 변수(member)와 기능(operator, method)를 묶어서 하나의 object로 만든다.</li>
+<li>Operator를 통해서만 member에 접근할 수 있다.</li>
+</ul>
+<h2 id="Class와-Instance-object의-차이"><a href="#Class와-Instance-object의-차이" class="headerlink" title="Class와 Instance, object의 차이"></a>Class와 Instance, object의 차이</h2><ul>
+<li>클래스(class)란 똑같은 무엇인가를 계속해서 만들어낼 수 있는 설계 도면 같은 것이고(과자 틀), 객체(object)란 클래스에 의해서 만들어진 피조물(과자틀에 의해서 만들어진 과자)을 뜻한다.</li>
+<li>class에 의해서 만들어진 Object를 instance라고도 한다. 그렇다면 Object와 Instance의 차이는 무엇일까?<br>이렇게 생각해 보자. a = Cookie() 이렇게 만들어진 a는 Object이다. 그리고 a라는 Object는 Cookie의 Instance이다. </li>
+<li>즉, Instance라는 말은 특정 Object(a)가 어떤 Class(Cookie)의 객체인지를 관계 위주로 설명할 때 사용된다. 즉, “a는 instance” 보다는 “a는 object”라는 표현이 어울리며, “a는 Cookie의 object” 보다는 “a는 Cookie의 instance”라는 표현이 훨씬 잘 어울린다.</li>
+</ul>
+<h2 id="Public-Private-and-Protected-Python-Access-Modifier"><a href="#Public-Private-and-Protected-Python-Access-Modifier" class="headerlink" title="Public, Private and Protected | Python Access Modifier"></a>Public, Private and Protected | Python Access Modifier</h2><p>C++, Java와 같이 클래식한 object-oriented 언어에서는 public, private, protected와 같은 키워드로 class의 member에 대한 접근을 제어한다. Class의 Private member는 class 외부에서 접근이 불가능하며 class 내부에서만 접근될 수 있다.</p>
+<p>Class 내의 Public member는 class 외부에서도 접근할 수 있다. 같은 class의 object는 public method를 호출하도록 요구된다. Private instance variable과 public method를 함께 써야지만 데이터 encapsulation의 원칙에 따르는 것이다.</p>
+<p>Class의 protected member는 오직 해당 class와 그 class를 상속받은 child class만이 접근할 수 있다. 이는 parent class가 child class에게 특정한 리소스를 상속할 수 있게 한다.</p>
+<p>그런데 Python은 instance variable과 method에 대해서 접근 제한을 하는 방식이 따로 없다. Python vaiable이나 method의 이름 앞에 한개 또는 2개의 _(underscore)를 붙여서 protected와 private으로 구분하기로 약속한다.</p>
+<h3 id="Public-Attributes"><a href="#Public-Attributes" class="headerlink" title="Public Attributes"></a>Public Attributes</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Account</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, cus_name, init_balance)</span>:</span></span><br><span class="line">        <span class="hljs-comment"># instance member</span></span><br><span class="line">        self.name = cus_name</span><br><span class="line">        self.balance = init_balance</span><br></pre></td></tr></table></figure>
+
+<h3 id="Protected-Attribute"><a href="#Protected-Attribute" class="headerlink" title="Protected Attribute"></a>Protected Attribute</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Account</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, cus_name, init_balance)</span>:</span></span><br><span class="line">        <span class="hljs-comment"># instance member</span></span><br><span class="line">        self._name = cus_name</span><br><span class="line">        self._balance = init_balance</span><br></pre></td></tr></table></figure>
+
+<h3 id="Private-Attribute"><a href="#Private-Attribute" class="headerlink" title="Private Attribute"></a>Private Attribute</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Account</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, cus_name, init_balance)</span>:</span></span><br><span class="line">        <span class="hljs-comment"># instance member</span></span><br><span class="line">        self.__name = cus_name</span><br><span class="line">        self.__balance = init_balance</span><br></pre></td></tr></table></figure>
+
+<p>그런데 웃긴 건, underscore로 name mangling한 private variable을 class 외부에서 접근이 가능하다는 것이다. 다음의 방법을 사용하면 된다.</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">myAccount = Account(<span class="hljs-string">'subin'</span>, <span class="hljs-number">10000</span>)</span><br><span class="line">myAccount._Account__balance</span><br></pre></td></tr></table></figure>
+
+<p>정말 필요하다면 접근할 수 있지만, Python에서는 접근하지 말 것을 권고하고 있다.</p>
+<hr>
+<p>참고 자료</p>
+<ul>
+<li><a href="https://wikidocs.net/28" target="_blank" rel="noopener">점프 투 파이썬</a></li>
+<li><a href="https://www.tutorialsteacher.com/python/private-and-protected-access-modifiers-in-python" target="_blank" rel="noopener">TutorialsTeacher</a></li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/04/24/190424-TIL/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/flower.png" alt="190424-TIL">
         </a>
@@ -851,58 +932,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/04/21/190421-TIL/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/rose.png" alt="190421-TIL">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-21T11:51:59.000Z">2019-04-21</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 134 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/21/190421-TIL/">190421-TIL</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><h3 id="LeetCode-5-Longest-Palindromic-Substring"><a href="#LeetCode-5-Longest-Palindromic-Substring" class="headerlink" title="LeetCode 5. Longest Palindromic Substring"></a>LeetCode 5. Longest Palindromic Substring</h3><p>금요일부터 오늘까지 내내 나를 괴롭히던 문제를 해결(?) 했다. 시간을 많이 들여도 도저히 답이 나오지 않으면 포기하기보다 다른 사람들의 Solution을 보고 분석하는 것 또한 공부라고 생각한다.</p>
-<p>Python에 익숙해질겸, Dynamic Programming을 재정리할겸 여러 시도를 해보았지만 내가 생각하지 못한 기발한 방법으로 문제를 해결한 사람들이 많았다.</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -977,7 +1006,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        155
+                        156
                     </p>
                 </div>
             </div>
@@ -1218,7 +1247,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">72</span>
+                <span class="level-item tag">73</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -1248,6 +1277,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/07/15/190715-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/summer.png" alt="190715-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-15T04:18:04.000Z">2019-07-15</time></div>
+                    <a href="/2019/07/15/190715-TIL/" class="has-link-black-ter is-size-6">190715-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1325,25 +1373,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/08/Angular-NgModule/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/html.png" alt="Angular NgModule">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-08T05:10:02.000Z">2019-07-08</time></div>
-                    <a href="/2019/07/08/Angular-NgModule/" class="has-link-black-ter is-size-6">Angular NgModule</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a> / <a class="has-link-grey -link" href="/categories/JavaScript/Angular/">Angular</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1362,7 +1391,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">9</span>
+                    <span class="level-item tag">10</span>
                 </span>
             </a>
         </li>
@@ -1861,7 +1890,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">73</span>
+                        <span class="tag is-grey">74</span>
                     </a>
                 </div>
                 
@@ -2141,7 +2170,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">72</span>
+                <span class="level-item tag">73</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -2171,6 +2200,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/07/15/190715-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/summer.png" alt="190715-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-15T04:18:04.000Z">2019-07-15</time></div>
+                    <a href="/2019/07/15/190715-TIL/" class="has-link-black-ter is-size-6">190715-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -2248,25 +2296,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/08/Angular-NgModule/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/html.png" alt="Angular NgModule">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-08T05:10:02.000Z">2019-07-08</time></div>
-                    <a href="/2019/07/08/Angular-NgModule/" class="has-link-black-ter is-size-6">Angular NgModule</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a> / <a class="has-link-grey -link" href="/categories/JavaScript/Angular/">Angular</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2285,7 +2314,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">9</span>
+                    <span class="level-item tag">10</span>
                 </span>
             </a>
         </li>
@@ -2784,7 +2813,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">73</span>
+                        <span class="tag is-grey">74</span>
                     </a>
                 </div>
                 
