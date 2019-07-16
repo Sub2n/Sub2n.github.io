@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sub2n.github.io/"/>
-  <updated>2019-07-15T06:50:33.130Z</updated>
+  <updated>2019-07-16T10:31:16.852Z</updated>
   <id>https://sub2n.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>190716-TIL</title>
+    <link href="https://sub2n.github.io/2019/07/16/190716-TIL/"/>
+    <id>https://sub2n.github.io/2019/07/16/190716-TIL/</id>
+    <published>2019-07-16T10:26:19.000Z</published>
+    <updated>2019-07-16T10:31:16.852Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li><p>Home과 Movie, My List 뷰의 Header와 Footer를 통일하고 Header의 sub menu와 hover transition 등을 마무리 했다.</p></li><li><p>bootstrap 모듈을 하나 가져다 썼다고 내가 적용했던 CSS가 먹통이 되는 일이 있었다.. 개고생 했다.</p></li><li><p>Server에서 받아온 Data를 어떻게 다룰 것인지 고민해봐야한다.</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Home과 Mov
+      
+    
+    </summary>
+    
+      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
+    
+    
+      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
+    
+  </entry>
   
   <entry>
     <title>190715-TIL</title>
@@ -606,34 +632,6 @@
     
     
       <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Angular Built-in Directive</title>
-    <link href="https://sub2n.github.io/2019/06/18/Angular-Built-in-Directive/"/>
-    <id>https://sub2n.github.io/2019/06/18/Angular-Built-in-Directive/</id>
-    <published>2019-06-18T04:24:13.000Z</published>
-    <updated>2019-06-21T06:42:11.408Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="What-is-Directive"><a href="#What-is-Directive" class="headerlink" title="What is Directive?"></a>What is Directive?</h2><p>지시, 명령. View에 관련한 명령을 내리는 모든 것을 directive라고 한다.</p><p>Component의 공통된 기능을 외부로 내보낸다.</p><blockquote><h4 id="Dependency-Injective"><a href="#Dependency-Injective" class="headerlink" title="Dependency Injective"></a>Dependency Injective</h4><p>type 지정하면 Angular가 class Instance를 생성한다.</p></blockquote><a id="more"></a><h3 id="Component-Directive"><a href="#Component-Directive" class="headerlink" title="Component Directive"></a>Component Directive</h3><p>Component의 템플릿 표시를 위한 Directive.  @Component</p><h3 id="Attribute-Directive"><a href="#Attribute-Directive" class="headerlink" title="Attribute Directive"></a>Attribute Directive</h3><p>ngClass, ngStyle 등</p><h4 id="ngClass"><a href="#ngClass" class="headerlink" title="ngClass"></a>ngClass</h4><p>여러 개의 Class를 추가하고 제거할 때 간편하다. String, Array, Object 형태로 바인딩할 수 있다.</p><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> [<span class="hljs-attr">ngClass</span>] = <span class="hljs-string">"'active red'"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <span class="hljs-comment">&lt;!-- string --&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> [<span class="hljs-attr">ngClass</span>] = <span class="hljs-string">""</span>['<span class="hljs-attr">active</span>', '<span class="hljs-attr">red</span>']"&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <span class="hljs-comment">&lt;!-- array --&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> [<span class="hljs-attr">ngClass</span>] = <span class="hljs-string">"&#123;'active': true, 'red': false&#125;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <span class="hljs-comment">&lt;!-- object --&gt;</span></span><br></pre></td></tr></table></figure><h4 id="ngStyle"><a href="#ngStyle" class="headerlink" title="ngStyle"></a>ngStyle</h4><p>여러 개의 Inline Style을 추가하고 제거한다.</p><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> [<span class="hljs-attr">ngStyle</span>]=<span class="hljs-string">"&#123; color: 'red', 'width.px': 100 &#125;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><blockquote><h4 id="Host-Element"><a href="#Host-Element" class="headerlink" title="Host Element"></a>Host Element</h4><p>Attribute가 사용된 Element</p></blockquote><h3 id="Structural-Directives"><a href="#Structural-Directives" class="headerlink" title="Structural Directives"></a>Structural Directives</h3><p>구조 디렉티브는 DOM 요소를 조건에 따라서 추가/삭제(ngIf, ngSwitch)하거나 반복 생성(ngFor)할 때 사용한다.</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;What-is-Directive&quot;&gt;&lt;a href=&quot;#What-is-Directive&quot; class=&quot;headerlink&quot; title=&quot;What is Directive?&quot;&gt;&lt;/a&gt;What is Directive?&lt;/h2&gt;&lt;p&gt;지시, 명령. View에 관련한 명령을 내리는 모든 것을 directive라고 한다.&lt;/p&gt;
-&lt;p&gt;Component의 공통된 기능을 외부로 내보낸다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;h4 id=&quot;Dependency-Injective&quot;&gt;&lt;a href=&quot;#Dependency-Injective&quot; class=&quot;headerlink&quot; title=&quot;Dependency Injective&quot;&gt;&lt;/a&gt;Dependency Injective&lt;/h4&gt;&lt;p&gt;type 지정하면 Angular가 class Instance를 생성한다.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="https://sub2n.github.io/categories/JavaScript/"/>
-    
-      <category term="Angular" scheme="https://sub2n.github.io/categories/JavaScript/Angular/"/>
-    
-    
-      <category term="Angular" scheme="https://sub2n.github.io/tags/Angular/"/>
     
   </entry>
   

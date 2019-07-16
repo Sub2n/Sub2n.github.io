@@ -151,6 +151,83 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/07/01/190701-TIL/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/cherry.png" alt="190701-TIL">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-07-01T04:08:01.000Z">2019-07-01</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 214 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/07/01/190701-TIL/">190701-TIL</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="Today-Test"><a href="#Today-Test" class="headerlink" title="Today Test"></a>Today Test</h2><p>[오답]</p>
+<ul>
+<li><p>식별자를 검색했을 때 없으면 ReferenceError지만 <strong>Property를 검색했을 때 없으면</strong> error가 아니고 <strong>undefined를 리턴</strong></p>
+</li>
+<li><p>함수가 아닌 것에 () 붙여 실행하면 TypeError (SyntaxError 아님!!!!!!)</p>
+</li>
+<li><p>undefined 값에 method 실행해도 TypeError</p>
+</li>
+<li><p>typeof 배열은 object</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAge</span>(<span class="hljs-params">...args</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> args);</span><br><span class="line">&#125;</span><br><span class="line">getAge(<span class="hljs-number">20</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>Spread operator …</strong>가 argument에서 사용되면 Object나 Array를 풀어서 함수의 argument로 전달</p>
+</li>
+<li><p><strong>Rest parameter …</strong> 를 사용하면 풀어진 argument를 하나의 배열로 받음</p>
+</li>
+</ul>
+</li>
+<li><p>‘use strict’</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAge</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line"><span class="hljs-meta">  'use strict'</span>;</span><br><span class="line">  age = <span class="hljs-number">20</span>;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(age);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>‘use strict’ mode가 아닐 때는 키워드 없이 선언한 변수를 암묵적 전역 변수로 등록하지만, ‘use strict’ mode에서는 식별자를 찾고 없으면 ReferenceError 발생</p>
+</li>
+</ul>
+<h2 id="Angular-HttpClient"><a href="#Angular-HttpClient" class="headerlink" title="Angular HttpClient"></a>Angular HttpClient</h2><ul>
+<li>어떤 element의 값으로 일을 하고 그 값을 수정해야할 때 ngModel 양방향 바인딩 사용</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/06/28/190628-TIL/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/iwam.png" alt="190628-TIL">
         </a>
@@ -741,68 +818,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/06/18/Angular-Built-in-Directive/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/html.png" alt="Angular Built-in Directive">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-06-18T04:24:13.000Z">2019-06-18</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/JavaScript/Angular/">Angular</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 178 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/06/18/Angular-Built-in-Directive/">Angular Built-in Directive</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="What-is-Directive"><a href="#What-is-Directive" class="headerlink" title="What is Directive?"></a>What is Directive?</h2><p>지시, 명령. View에 관련한 명령을 내리는 모든 것을 directive라고 한다.</p>
-<p>Component의 공통된 기능을 외부로 내보낸다.</p>
-<blockquote>
-<h4 id="Dependency-Injective"><a href="#Dependency-Injective" class="headerlink" title="Dependency Injective"></a>Dependency Injective</h4><p>type 지정하면 Angular가 class Instance를 생성한다.</p>
-</blockquote>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/06/18/Angular-Built-in-Directive/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -873,7 +888,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        156
+                        157
                     </p>
                 </div>
             </div>
@@ -1114,7 +1129,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">73</span>
+                <span class="level-item tag">74</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -1144,6 +1159,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/07/16/190716-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/summer.png" alt="190716-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-16T10:26:19.000Z">2019-07-16</time></div>
+                    <a href="/2019/07/16/190716-TIL/" class="has-link-black-ter is-size-6">190716-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1221,25 +1255,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/09/190709-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/summer.png" alt="190709-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-09T04:05:20.000Z">2019-07-09</time></div>
-                    <a href="/2019/07/09/190709-TIL/" class="has-link-black-ter is-size-6">190709-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1258,7 +1273,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -1757,7 +1772,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">74</span>
+                        <span class="tag is-grey">75</span>
                     </a>
                 </div>
                 
@@ -2037,7 +2052,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">73</span>
+                <span class="level-item tag">74</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -2067,6 +2082,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/07/16/190716-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/summer.png" alt="190716-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-16T10:26:19.000Z">2019-07-16</time></div>
+                    <a href="/2019/07/16/190716-TIL/" class="has-link-black-ter is-size-6">190716-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -2144,25 +2178,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/09/190709-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/summer.png" alt="190709-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-09T04:05:20.000Z">2019-07-09</time></div>
-                    <a href="/2019/07/09/190709-TIL/" class="has-link-black-ter is-size-6">190709-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2181,7 +2196,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -2680,7 +2695,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">74</span>
+                        <span class="tag is-grey">75</span>
                     </a>
                 </div>
                 
