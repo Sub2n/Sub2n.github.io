@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sub2n.github.io/"/>
-  <updated>2019-07-16T10:31:16.852Z</updated>
+  <updated>2019-07-20T04:22:58.983Z</updated>
   <id>https://sub2n.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>190720-TIL</title>
+    <link href="https://sub2n.github.io/2019/07/20/190720-TIL/"/>
+    <id>https://sub2n.github.io/2019/07/20/190720-TIL/</id>
+    <published>2019-07-20T04:20:13.000Z</published>
+    <updated>2019-07-20T04:22:58.983Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li>백엔드에서 API가 하나씩 완성이 되어 협업을 하다보니까 생각지 못한 변수가 생겼다. 하나를 고치면 새로운 수정 사항이 생기기를 반복하는 식이다.</li><li>step이 4개가 되는 회원가입, 로그인과 관련된 Http 통신을 구현했다. 현재 로그인을 한 후 프로필을 등록하는 단계를 진행 중이다.</li><li>토요일 오늘은 React 특강을 들었다. Angular와는 다른 느낌으로 더 배워보면 재미있을 것 같다.</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;백엔드에서 API가 하
+      
+    
+    </summary>
+    
+      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
+    
+    
+      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
+    
+  </entry>
   
   <entry>
     <title>190716-TIL</title>
@@ -598,32 +624,6 @@
       
         &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Angular 계층적 
-      
-    
-    </summary>
-    
-      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
-    
-    
-      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>190618-TIL</title>
-    <link href="https://sub2n.github.io/2019/06/18/190618-TIL/"/>
-    <id>https://sub2n.github.io/2019/06/18/190618-TIL/</id>
-    <published>2019-06-18T08:47:42.000Z</published>
-    <updated>2019-06-18T08:51:01.799Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li>Angular로 AnalogClock과 StopWatch를 구현했다.</li><li>Angular Built-in Directive에 대해서 배웠다.</li><li>부모-자식 Component간 통신을 이용해서 simpleTodo를 구현했다.</li><li>자식 &gt; 부모 Component로 Data를 보낼 때는 @Output() 에 EventEmmitter의 instance로 event를 발생시킨다. emit()을 호출해야 event가 발생한다.</li><li>부모 &gt; 자식 Compinent로 Data를 보낼 때는 부모 Component에서 자식 Component로 Property binding을 하는 방식으로 Data를 보낸다. 자식 Compinent는 해당 프로퍼티를 @Input()으로 정의하고 값을 받는다.</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Angular로 Ana
       
     
     </summary>
