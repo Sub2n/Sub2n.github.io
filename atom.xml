@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sub2n.github.io/"/>
-  <updated>2019-07-22T05:37:20.517Z</updated>
+  <updated>2019-07-22T05:44:02.280Z</updated>
   <id>https://sub2n.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://sub2n.github.io/2019/07/22/C-Basic/"/>
     <id>https://sub2n.github.io/2019/07/22/C-Basic/</id>
     <published>2019-07-22T05:34:59.000Z</published>
-    <updated>2019-07-22T05:37:20.517Z</updated>
+    <updated>2019-07-22T05:44:02.280Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="C"><a href="#C" class="headerlink" title="C"></a>C</h1><h4 id="Object-oriented-Language"><a href="#Object-oriented-Language" class="headerlink" title="Object-oriented Language"></a>Object-oriented Language</h4><p>다른 객체 지향 언어와 마찬가지로 Class와 Instance Attribute, Method 등의 개념이 존재한다.</p><a id="more"></a>]]></content>
+    <content type="html"><![CDATA[<h1 id="C"><a href="#C" class="headerlink" title="C"></a>C</h1><h4 id="Object-oriented-Language"><a href="#Object-oriented-Language" class="headerlink" title="Object-oriented Language"></a>Object-oriented Language</h4><p>다른 객체 지향 언어와 마찬가지로 Class와 Instance Attribute, Method 등의 개념이 존재한다.</p><a id="more"></a><h4 id="C-Script-생성시-초기-화면"><a href="#C-Script-생성시-초기-화면" class="headerlink" title="C# Script 생성시 초기 화면"></a>C# Script 생성시 초기 화면</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">using System.Collections;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using UnityEngine;</span><br><span class="line"></span><br><span class="line">public class HelloWorld : MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">    // Start is called before the first frame update</span><br><span class="line">    void Start()</span><br><span class="line">    &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // Update is called once per frame</span><br><span class="line">    void Update()</span><br><span class="line">    &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
