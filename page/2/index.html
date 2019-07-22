@@ -151,6 +151,91 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/07/08/190708-TIL/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/pink.png" alt="190708-TIL">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-07-08T02:37:45.000Z">2019-07-08</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 501 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/07/08/190708-TIL/">190708-TIL</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><h4 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h4><ul>
+<li><p>Wrapper Object</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-string">'string'</span>.length; <span class="hljs-comment">// 6</span></span><br><span class="line"><span class="hljs-keyword">const</span> s = <span class="hljs-string">'super'</span></span><br><span class="line"><span class="hljs-built_in">String</span>.prototype.sayHi() = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Hi'</span>) &#125;;</span><br><span class="line">s.sayHi(); <span class="hljs-comment">// 'Hi</span></span><br></pre></td></tr></table></figure>
+
+<p>문자열을 객체처럼 사용할 경우 JavaScript 엔진이 순간 String 생성자 함수로 wrapping 한다.</p>
+</li>
+<li><p>Property Key</p>
+<ul>
+<li>Property Key 동적 생성</li>
+</ul>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="hljs-keyword">var</span> key = <span class="hljs-string">'hello'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// ES5: 프로퍼티 키 동적 생성</span></span><br><span class="line">obj[key] = <span class="hljs-string">'world'</span>;</span><br><span class="line"><span class="hljs-comment">// ES6: 프로퍼티 키 동적 생성</span></span><br><span class="line"><span class="hljs-comment">// var obj = &#123; [key]: 'world' &#125;;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(obj); <span class="hljs-comment">// &#123;hello: "world"&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Property Key는 문자열이나 symbol 값 이외의 값을 사용하면 암묵적 타입 변환을 통해 문자열이 된다. 예를 들어, 프로퍼티 키로 숫자 리터럴을 사용하면 따옴표는 붙지 않지만 내부적으로는 문자열로 변환된다.</li>
+<li>Property Key로 객체를 사용해도 error가 나지 않고 들어감. 배열도 마찬가지<br><img src="https://user-images.githubusercontent.com/48080762/60779497-f8dd2980-a175-11e9-81d6-81dcf643e3f1.png" alt="Property Key"></li>
+<li>객체는 <code>[object Object]</code>라는 String으로 변환된다. obj[string]이 되어야하기 때문에 <code>[]</code> 내부는 문자열로 <strong>강제 형변환</strong>된다.</li>
+</ul>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> a = &#123;&#125;;</span><br><span class="line"><span class="hljs-keyword">const</span> b = &#123; <span class="hljs-attr">key</span>: <span class="hljs-string">'b'</span> &#125;;</span><br><span class="line"><span class="hljs-keyword">const</span> c = &#123; <span class="hljs-attr">key</span>: <span class="hljs-string">'c'</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 두 객체 모두 Property key로 쓰일 때 문자열 [object Object]로 변환되어 같은 key가 된다.</span></span><br><span class="line">a[b] = <span class="hljs-number">123</span>;</span><br><span class="line">a[c] = <span class="hljs-number">456</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(a[b]);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/48080762/60782561-229c4d80-a182-11e9-8ecf-fb17ce339739.png" alt="Object property key"></p>
+<ul>
+<li>Property Key를 중복 선언하면 나중에 선언한 Property가 이전 것을 덮어씀</li>
+</ul>
+</li>
+<li><p>call, apply method는 함수에 this를 전달하고 <strong>호출</strong>하지만 bind는 this를 전달한 <strong>함수를 return</strong>한다.</p>
+</li>
+<li><p>Function literal과 Function declaration statement의 차이</p>
+<ul>
+<li>함수 이름이 있는 함수 선언문은 자바스크립트 엔진이 함수명과 동일한 식별자를 생성하고 생성한 함수 객체를 할당한다.</li>
+<li>함수 이름이 필수가 아닌 함수 리터럴은 그저 평가되어 함수 객체를 생성한다. 이를 괄호로 감싸면 에러 없이 함수 객체가 된다.<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 즉시 실행 함수로 함수 리터럴을 사용하는 경우</span></span><br><span class="line">(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/07/06/190706-TIL/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/rose.png" alt="190706-TIL">
         </a>
@@ -727,108 +812,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/06/21/Angular-Pipe/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/html.png" alt="Angular Pipe">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-06-21T05:16:51.000Z">2019-06-21</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/JavaScript/Angular/">Angular</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 minutes read (About 429 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/06/21/Angular-Pipe/">Angular Pipe</a>
-            
-        </h1>
-        <div class="content">
-            <p>AngularJS에는 60여개의 built-in Pipe가 있었으나 Angular는 9개의 built-in pipe를 지원한다. 나머지 기능은 pipe를 직접 구현하여 사용할 수 있다.</p>
-<table>
-<thead>
-<tr>
-<th align="left">pipe</th>
-<th align="left">meaning</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><a href="https://angular.io/api/common/DatePipe" target="_blank" rel="noopener">date</a></td>
-<td align="left">날짜 형식 변환</td>
-</tr>
-<tr>
-<td align="left"><a href="https://angular.io/api/common/JsonPipe" target="_blank" rel="noopener">json</a></td>
-<td align="left">JSON 형식 변환</td>
-</tr>
-<tr>
-<td align="left"><a href="https://angular.io/api/common/UpperCasePipe" target="_blank" rel="noopener">uppercase</a></td>
-<td align="left">대문자 변환</td>
-</tr>
-<tr>
-<td align="left"><a href="https://angular.io/api/common/LowerCasePipe" target="_blank" rel="noopener">lowercase</a></td>
-<td align="left">소문자 변환</td>
-</tr>
-<tr>
-<td align="left"><a href="https://angular.io/api/common/CurrencyPipe" target="_blank" rel="noopener">currency</a></td>
-<td align="left">통화 형식 변환</td>
-</tr>
-<tr>
-<td align="left"><a href="https://angular.io/api/common/PercentPipe" target="_blank" rel="noopener">percent</a></td>
-<td align="left">퍼센트 형식 변환</td>
-</tr>
-<tr>
-<td align="left"><a href="https://angular.io/api/common/DecimalPipe" target="_blank" rel="noopener">decimal</a></td>
-<td align="left">자리수 형식 변환</td>
-</tr>
-<tr>
-<td align="left"><a href="https://angular.io/api/common/SlicePipe" target="_blank" rel="noopener">slice</a></td>
-<td align="left">문자열 추출</td>
-</tr>
-<tr>
-<td align="left"><a href="https://angular.io/api/common/AsyncPipe" target="_blank" rel="noopener">async</a></td>
-<td align="left">비동기 객체 출력</td>
-</tr>
-</tbody></table>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/06/21/Angular-Pipe/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -899,7 +882,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        159
+                        160
                     </p>
                 </div>
             </div>
@@ -909,7 +892,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        16
+                        17
                     </p>
                 </div>
             </div>
@@ -919,7 +902,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        83
+                        85
                     </p>
                 </div>
             </div>
@@ -1012,7 +995,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.43px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Algorithm/" style="font-size: 17.14px;">Algorithm</a> <a href="/tags/Angluar/" style="font-size: 10px;">Angluar</a> <a href="/tags/Angular/" style="font-size: 15.71px;">Angular</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Babel/" style="font-size: 10px;">Babel</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.43px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Dependency-Injection/" style="font-size: 10px;">Dependency Injection</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.43px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 11.43px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/HTML-CSS/" style="font-size: 14.29px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 11.43px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 11.43px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 12.86px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Observable/" style="font-size: 10px;">Observable</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Pipe/" style="font-size: 10px;">Pipe</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 14.29px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Reactive-Programming/" style="font-size: 10px;">Reactive Programming</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Routing/" style="font-size: 11.43px;">Routing</a> <a href="/tags/SPA/" style="font-size: 10px;">SPA</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Service/" style="font-size: 10px;">Service</a> <a href="/tags/Single-Page-Application/" style="font-size: 10px;">Single Page Application</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/TypeScript/" style="font-size: 11.43px;">TypeScript</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.43px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/실행-컨텍스트/" style="font-size: 10px;">실행 컨텍스트</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a> <a href="/tags/자바스크립트/" style="font-size: 18.57px;">자바스크립트</a>
+        <a href="/tags/ADT/" style="font-size: 10px;">ADT</a> <a href="/tags/Abstraction/" style="font-size: 11.43px;">Abstraction</a> <a href="/tags/Access-Modifier/" style="font-size: 10px;">Access Modifier</a> <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Algorithm/" style="font-size: 17.14px;">Algorithm</a> <a href="/tags/Angluar/" style="font-size: 10px;">Angluar</a> <a href="/tags/Angular/" style="font-size: 15.71px;">Angular</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Babel/" style="font-size: 10px;">Babel</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/Call-by-Object-Reference/" style="font-size: 10px;">Call by Object Reference</a> <a href="/tags/Call-by-Reference/" style="font-size: 10px;">Call by Reference</a> <a href="/tags/Call-by-Value/" style="font-size: 10px;">Call by Value</a> <a href="/tags/Class/" style="font-size: 11.43px;">Class</a> <a href="/tags/Computational-Thinking/" style="font-size: 10px;">Computational Thinking</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Data-Type/" style="font-size: 10px;">Data Type</a> <a href="/tags/Dependency-Injection/" style="font-size: 10px;">Dependency Injection</a> <a href="/tags/Destructuring/" style="font-size: 10px;">Destructuring</a> <a href="/tags/ECMA/" style="font-size: 10px;">ECMA</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Encapsulation/" style="font-size: 11.43px;">Encapsulation</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Expression/" style="font-size: 10px;">Expression</a> <a href="/tags/FDS12/" style="font-size: 11.43px;">FDS12</a> <a href="/tags/First-class-object/" style="font-size: 10px;">First-class object</a> <a href="/tags/Fisrt-class-Function/" style="font-size: 10px;">Fisrt-class Function</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/HTML-CSS/" style="font-size: 14.29px;">HTML, CSS</a> <a href="/tags/Hackaton/" style="font-size: 11.43px;">Hackaton</a> <a href="/tags/Higher-Order-Function/" style="font-size: 10px;">Higher Order Function</a> <a href="/tags/Hoisting/" style="font-size: 10px;">Hoisting</a> <a href="/tags/Inheritance/" style="font-size: 10px;">Inheritance</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Modlue/" style="font-size: 10px;">Modlue</a> <a href="/tags/Node-js/" style="font-size: 11.43px;">Node.js</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OOP/" style="font-size: 12.86px;">OOP</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/Observable/" style="font-size: 10px;">Observable</a> <a href="/tags/Operater/" style="font-size: 10px;">Operater</a> <a href="/tags/Pipe/" style="font-size: 10px;">Pipe</a> <a href="/tags/Polymorphisim/" style="font-size: 10px;">Polymorphisim</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Python/" style="font-size: 14.29px;">Python</a> <a href="/tags/Quick-sort/" style="font-size: 10px;">Quick sort</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Reactive-Programming/" style="font-size: 10px;">Reactive Programming</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Routing/" style="font-size: 11.43px;">Routing</a> <a href="/tags/SPA/" style="font-size: 10px;">SPA</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Service/" style="font-size: 10px;">Service</a> <a href="/tags/Single-Page-Application/" style="font-size: 10px;">Single Page Application</a> <a href="/tags/Statement/" style="font-size: 10px;">Statement</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Subsequence/" style="font-size: 10px;">Subsequence</a> <a href="/tags/Substring/" style="font-size: 10px;">Substring</a> <a href="/tags/TIL/" style="font-size: 20px;">TIL</a> <a href="/tags/TypeScript/" style="font-size: 11.43px;">TypeScript</a> <a href="/tags/Unity/" style="font-size: 10px;">Unity</a> <a href="/tags/Variable/" style="font-size: 10px;">Variable</a> <a href="/tags/Web-Browser/" style="font-size: 10px;">Web Browser</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/Wrapper/" style="font-size: 10px;">Wrapper</a> <a href="/tags/global-variable/" style="font-size: 10px;">global variable</a> <a href="/tags/immutable/" style="font-size: 10px;">immutable</a> <a href="/tags/javaScript/" style="font-size: 11.43px;">javaScript</a> <a href="/tags/local-variavble/" style="font-size: 10px;">local variavble</a> <a href="/tags/mutable/" style="font-size: 10px;">mutable</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/pass-by-reference/" style="font-size: 10px;">pass by reference</a> <a href="/tags/pass-by-value/" style="font-size: 10px;">pass by value</a> <a href="/tags/primitive/" style="font-size: 10px;">primitive</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/window/" style="font-size: 10px;">window</a> <a href="/tags/실행-컨텍스트/" style="font-size: 10px;">실행 컨텍스트</a> <a href="/tags/일급-객체/" style="font-size: 10px;">일급 객체</a> <a href="/tags/자바스크립트/" style="font-size: 18.57px;">자바스크립트</a>
     </div>
 </div>
 
@@ -1068,7 +1051,7 @@
                 <span class="level-item">Computer Engineering</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">8</span>
+                <span class="level-item tag">9</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Computer-Engineering/Algorithm/">
@@ -1082,6 +1065,14 @@
         <a class="level is-marginless" href="/categories/Computer-Engineering/Basic/">
             <span class="level-start">
                 <span class="level-item">Basic</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Computer-Engineering/Computer-Graphics/">
+            <span class="level-start">
+                <span class="level-item">Computer Graphics</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">1</span>
@@ -1173,6 +1164,25 @@
         
         <article class="media">
             
+            <a href="/2019/07/22/C-Basic/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="C# Basic">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-22T05:34:59.000Z">2019-07-22</time></div>
+                    <a href="/2019/07/22/C-Basic/" class="has-link-black-ter is-size-6">C# Basic</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a> / <a class="has-link-grey -link" href="/categories/Computer-Engineering/Computer-Graphics/">Computer Graphics</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/07/22/190722-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190722-TIL">
@@ -1247,25 +1257,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/13/React-Basic/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/html.png" alt="React Basic">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-13T01:17:30.000Z">2019-07-13</time></div>
-                    <a href="/2019/07/13/React-Basic/" class="has-link-black-ter is-size-6">React Basic</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a> / <a class="has-link-grey -link" href="/categories/JavaScript/React/">React</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1284,7 +1275,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">13</span>
+                    <span class="level-item tag">14</span>
                 </span>
             </a>
         </li>
@@ -1412,6 +1403,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/C/">
                         <span class="tag">C</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/C/">
+                        <span class="tag">C#</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1791,6 +1789,13 @@
                     <a class="tags has-addons" href="/tags/TypeScript/">
                         <span class="tag">TypeScript</span>
                         <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Unity/">
+                        <span class="tag">Unity</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1991,7 +1996,7 @@
                 <span class="level-item">Computer Engineering</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">8</span>
+                <span class="level-item tag">9</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Computer-Engineering/Algorithm/">
@@ -2005,6 +2010,14 @@
         <a class="level is-marginless" href="/categories/Computer-Engineering/Basic/">
             <span class="level-start">
                 <span class="level-item">Basic</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Computer-Engineering/Computer-Graphics/">
+            <span class="level-start">
+                <span class="level-item">Computer Graphics</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">1</span>
@@ -2096,6 +2109,25 @@
         
         <article class="media">
             
+            <a href="/2019/07/22/C-Basic/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="C# Basic">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-22T05:34:59.000Z">2019-07-22</time></div>
+                    <a href="/2019/07/22/C-Basic/" class="has-link-black-ter is-size-6">C# Basic</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Computer-Engineering/">Computer Engineering</a> / <a class="has-link-grey -link" href="/categories/Computer-Engineering/Computer-Graphics/">Computer Graphics</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/07/22/190722-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190722-TIL">
@@ -2170,25 +2202,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/13/React-Basic/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/html.png" alt="React Basic">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-13T01:17:30.000Z">2019-07-13</time></div>
-                    <a href="/2019/07/13/React-Basic/" class="has-link-black-ter is-size-6">React Basic</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a> / <a class="has-link-grey -link" href="/categories/JavaScript/React/">React</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2207,7 +2220,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">13</span>
+                    <span class="level-item tag">14</span>
                 </span>
             </a>
         </li>
@@ -2335,6 +2348,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/C/">
                         <span class="tag">C</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/C/">
+                        <span class="tag">C#</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -2714,6 +2734,13 @@
                     <a class="tags has-addons" href="/tags/TypeScript/">
                         <span class="tag">TypeScript</span>
                         <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Unity/">
+                        <span class="tag">Unity</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
