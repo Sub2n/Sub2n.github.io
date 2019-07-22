@@ -4,10 +4,7 @@
     <meta charset="utf-8">
 <title>C# Basic - 수빈 개발블로그</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-
-
-    <meta name="description" content="CObject-oriented Language다른 객체 지향 언어와 마찬가지로 Class와 Instance Attribute, Method 등의 개념이 존재한다.">
+ <link rel="canonical" href="https://sub2n.github.io/2019/07/22/c-basic/">  <meta name="description" content="CObject-oriented Language다른 객체 지향 언어와 마찬가지로 Class와 Instance Attribute, Method 등의 개념이 존재한다.">
 <meta name="keywords" content="C#,Unity">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C# Basic">
@@ -16,56 +13,30 @@
 <meta property="og:description" content="CObject-oriented Language다른 객체 지향 언어와 마찬가지로 Class와 Instance Attribute, Method 등의 개념이 존재한다.">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sub2n.github.io/gallery/thumbnails/computer.png">
-<meta property="og:updated_time" content="2019-07-22T05:44:02.280Z">
+<meta property="og:updated_time" content="2019-07-22T06:04:45.057Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C# Basic">
 <meta name="twitter:description" content="CObject-oriented Language다른 객체 지향 언어와 마찬가지로 Class와 Instance Attribute, Method 등의 개념이 존재한다.">
-<meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/computer.png">
-
-
-
-
-
-
-
+<meta name="twitter:image" content="https://sub2n.github.io/gallery/thumbnails/computer.png">    
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atelier-heath-light.css">
-
-
-    
-    
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css"> <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"> <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atelier-heath-light.css">   
     
     <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
     
-
-    
-    
+  
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
     
-
-    
-    
+  
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
 
-
-    
-    
-    
     
 
 <link rel="stylesheet" href="/css/back-to-top.css">
 
-
-    
-    
+  
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138306273-1"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
@@ -75,27 +46,14 @@
     gtag('config', 'UA-138306273-1');
 </script>
 
-
     
-    
-    
-    
-
-    
-    
+  
 <link rel="stylesheet" href="/css/progressbar.css">
 <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  
+    
+     <link rel="stylesheet" href="/css/style.css">
 
-    
-    
-    
-
-    
-    
-    
-
-
-<link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="is-3-column">
     <nav class="navbar navbar-main is-sticky">
@@ -170,7 +128,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 74 words)
+                    a minute read (About 185 words)
                 </span>
                 
                 
@@ -188,6 +146,15 @@
 
 <h4 id="C-Script-생성시-초기-화면"><a href="#C-Script-생성시-초기-화면" class="headerlink" title="C# Script 생성시 초기 화면"></a>C# Script 생성시 초기 화면</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">using System.Collections;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using UnityEngine;</span><br><span class="line"></span><br><span class="line">public class HelloWorld : MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">    // Start is called before the first frame update</span><br><span class="line">    void Start()</span><br><span class="line">    &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // Update is called once per frame</span><br><span class="line">    void Update()</span><br><span class="line">    &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li>MonoBehaviour : Unity의 기본 Class 😪 <a href="https://docs.unity3d.com/kr/530/ScriptReference/MonoBehaviour.html" target="_blank" rel="noopener">docs.unity</a></li>
+<li>Update method : frame마다 매번 실행됨</li>
+</ul>
+<h4 id="Data-Type"><a href="#Data-Type" class="headerlink" title="Data Type"></a>Data Type</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">using System.Collections;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using UnityEngine;</span><br><span class="line"></span><br><span class="line">public class HelloWorld : MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">    int iValue;</span><br><span class="line">    double dValue;</span><br><span class="line">    float fValue;</span><br><span class="line">    bool bValue;</span><br><span class="line">    string sValue;</span><br><span class="line"></span><br><span class="line">    // Start is called before the first frame update</span><br><span class="line">    void Start()</span><br><span class="line">    &#123;</span><br><span class="line">        iValue = 50;</span><br><span class="line">        dValue = 100.123;</span><br><span class="line">        fValue = 100.23f;</span><br><span class="line">        bValue = true;</span><br><span class="line">        sValue = &quot;Hello World&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // Update is called once per frame</span><br><span class="line">    void Update()</span><br><span class="line">    &#123;</span><br><span class="line">        print(&quot;Integer Value: &quot; + iValue);</span><br><span class="line">        print(&quot;Double Value: &quot; + dValue);</span><br><span class="line">        print(&quot;Float Value: &quot; + fValue);</span><br><span class="line">        print(&quot;Boolean Value: &quot; + bValue);</span><br><span class="line">        print(&quot;String Value: &quot; + sValue);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>float type은 number + f로 써야함</li>
+</ul>
 
         </div>
         
