@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sub2n.github.io/"/>
-  <updated>2019-07-20T04:22:58.983Z</updated>
+  <updated>2019-07-22T01:03:46.292Z</updated>
   <id>https://sub2n.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>190722-TIL</title>
+    <link href="https://sub2n.github.io/2019/07/22/190722-TIL/"/>
+    <id>https://sub2n.github.io/2019/07/22/190722-TIL/</id>
+    <published>2019-07-22T00:58:06.000Z</published>
+    <updated>2019-07-22T01:03:46.292Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><h4 id="오전"><a href="#오전" class="headerlink" title="오전"></a>오전</h4><ul><li>학교에서 유니티를 활용한 VR 콘텐츠 교육을 7월 22일부터 7월 25일까지 수강한다.</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;h4 id=&quot;오전&quot;&gt;&lt;a href=&quot;
+      
+    
+    </summary>
+    
+      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
+    
+    
+      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
+    
+  </entry>
   
   <entry>
     <title>190720-TIL</title>
@@ -606,32 +631,6 @@
       <category term="Angular" scheme="https://sub2n.github.io/tags/Angular/"/>
     
       <category term="Pipe" scheme="https://sub2n.github.io/tags/Pipe/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>190619-TIL</title>
-    <link href="https://sub2n.github.io/2019/06/19/190619-TIL/"/>
-    <id>https://sub2n.github.io/2019/06/19/190619-TIL/</id>
-    <published>2019-06-19T07:34:38.000Z</published>
-    <updated>2019-06-19T07:37:20.484Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li>Angular 계층적 구조를 가진 Component 간의 Data 통신을 Service로 한다는 것을 알았다.</li><li>Angular의 Service는 전체 프로그램에서 하나의 Instance만을 가지는 Singleton이기 때문에 상태 관리가 가능하다.</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Angular 계층적 
-      
-    
-    </summary>
-    
-      <category term="TIL" scheme="https://sub2n.github.io/categories/TIL/"/>
-    
-    
-      <category term="TIL" scheme="https://sub2n.github.io/tags/TIL/"/>
     
   </entry>
   
