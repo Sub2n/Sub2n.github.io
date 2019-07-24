@@ -109,6 +109,59 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/07/23/190723-TIL/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190723-TIL">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-07-23T11:08:20.000Z">2019-07-23</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 168 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/07/23/190723-TIL/">190723-TIL</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><h4 id="오전"><a href="#오전" class="headerlink" title="오전"></a>오전</h4><p>유니티 수업을 들었다. 안드로이드 환경에서 테스트했다.</p>
+<h4 id="오후"><a href="#오후" class="headerlink" title="오후"></a>오후</h4><p>백엔드에서 제공한 API를 이용해서 영화 정보를 가져와 Movie Component에 영화 정보를 표시햇다. </p>
+<p>Movie의 Child Component인 Slider Component에 데이터를 전달하는 방식에 대해서 고민을 많이 했지만 굳이 데이터를 저장하고 있을 필요가 없을 것 같아서 우선은 영화 id를 포함한 정보를 전달하기로 했다. 각 Component에서 상세 정보를 요청할 수 있는 메소드를 만들었다. 아직 동작은 불안정하다.</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/07/22/C-Basic/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="C# Basic">
         </a>
@@ -128,7 +181,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 185 words)
+                    2 minutes read (About 292 words)
                 </span>
                 
                 
@@ -705,90 +758,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/07/08/Angular-NgModule/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/html.png" alt="Angular NgModule">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-07-08T05:10:02.000Z">2019-07-08</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/JavaScript/Angular/">Angular</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 minutes read (About 503 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/07/08/Angular-NgModule/">Angular NgModule</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h2><p><strong>Angular의 모듈</strong>은 <strong>관련이 있는 구성 요소(Component, Directive, Pipe, Service)를 하나의 단위로 묶는 메커니즘</strong></p>
-<p>모듈은 관련이 있는 구성 요소들로 구성된 integrated functional block으로 Application을 구성하는 하나의 단위를 말함</p>
-<p>모듈은 다른 모듈과 결합할 수 있으며 Angular는 여러 모듈을 조합해서 Application을 구성한다.</p>
-<p>초기 속도가 느린 SPA의 단점을 해결하기 위해서 모듈을 분리하고 Lazy Loading하는 방법이 있다.</p>
-<p> Angular는 최소한 하나의 모듈, root Module인 app.module.ts를 갖는다.</p>
-<p>NgModule은 <code>@NgModule</code> Decorator로 장식된 class이다.</p>
-<p><img src="https://poiemaweb.com/img/shared-module.png" alt="Shared module"></p>
-<ul>
-<li><p>Feature Module</p>
-<p>하나의 View 가 하나의 Feature Module</p>
-</li>
-<li><p>Shared Module</p>
-<p>여러 Feature Module에서 import되어 사용되는 Shared Module</p>
-</li>
-<li><p>Core Module</p>
-<p>Application 전체에서 사용하거나 하나의 Feature Module에서 사용하는 Service</p>
-</li>
-</ul>
-<p>Component 하나로만 이루어진 단순한 view여도 view 단위로 모듈을 나누기로 했으면 나눠야함</p>
-<h2 id="NgModule-Decorator"><a href="#NgModule-Decorator" class="headerlink" title="@NgModule Decorator"></a>@NgModule Decorator</h2><h4 id="Metadata"><a href="#Metadata" class="headerlink" title="Metadata"></a>Metadata</h4><p>Decorator에 전달하는 Metadata는 Angular에 Module code를 어떻게 compile하고 실행할지를 설명한다.</p>
-<h4 id="declarations"><a href="#declarations" class="headerlink" title="declarations"></a>declarations</h4><p>Component, Direcive, Pipe를 선언하면 선언된 구성요소는 Module에서 사용할 수 있다.</p>
-<h4 id="imports"><a href="#imports" class="headerlink" title="imports"></a>imports</h4><p>Module에서 사용하는 다른 Module을 선언한다. Module은 다른 Module를 사용할 수 있다.</p>
-<h4 id="providers"><a href="#providers" class="headerlink" title="providers"></a>providers</h4><p>Injectable object, 즉 Service를 선언한다. Root Module에 선언된 Service는 Application 전역에서 사용할 수 있다.</p>
-<p>최신 버전 Angular에서는 ng generate service로 생성한 service는 @Injectable Decorator의 Metadata에 proviededIn: ‘root’로 들어감</p>
-<h4 id="bootstrap"><a href="#bootstrap" class="headerlink" title="bootstrap"></a>bootstrap</h4><p>CSS Bootstrap 아님</p>
-<p><strong>Root Module에서 사용하는 Property</strong>로 Application의 entry point인 Root Component(AppComponent) 선언</p>
-<h2 id="Shared-Module"><a href="#Shared-Module" class="headerlink" title="Shared Module"></a>Shared Module</h2><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ng generate module shared</span><br><span class="line">// ng g m shared</span><br></pre></td></tr></table></figure>
-
-<p>Shared Module은 Application 전역에서 사용되는 Component, Directive, Pipe 등으로 구성된다.</p>
-<h2 id="Core-Module"><a href="#Core-Module" class="headerlink" title="Core Module"></a>Core Module</h2><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng generate module core</span><br></pre></td></tr></table></figure>
-
-<p>Core Module은 Application 전역에서 사용되는 Data Service, Authentication Service, Authentication Guard 등으로 구성된다.</p>
-<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> &#123; CoreModule&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'../core.module.ts'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">@Injectable</span>(&#123;</span><br><span class="line">  providedIn: CoreModule</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -807,7 +776,7 @@
             
             <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
             
-            <li><a class="pagination-link has-text-black-ter" href="/page/16/">16</a></li>
+            <li><a class="pagination-link has-text-black-ter" href="/page/17/">17</a></li>
             
         </ul>
     </nav>
@@ -857,7 +826,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        160
+                        161
                     </p>
                 </div>
             </div>
@@ -1106,7 +1075,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">76</span>
+                <span class="level-item tag">77</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -1136,6 +1105,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/07/23/190723-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190723-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-23T11:08:20.000Z">2019-07-23</time></div>
+                    <a href="/2019/07/23/190723-TIL/" class="has-link-black-ter is-size-6">190723-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1213,25 +1201,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/15/190715-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/summer.png" alt="190715-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-15T04:18:04.000Z">2019-07-15</time></div>
-                    <a href="/2019/07/15/190715-TIL/" class="has-link-black-ter is-size-6">190715-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1250,7 +1219,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">14</span>
+                    <span class="level-item tag">15</span>
                 </span>
             </a>
         </li>
@@ -1756,7 +1725,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">77</span>
+                        <span class="tag is-grey">78</span>
                     </a>
                 </div>
                 
@@ -2051,7 +2020,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">76</span>
+                <span class="level-item tag">77</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -2081,6 +2050,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/07/23/190723-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190723-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-23T11:08:20.000Z">2019-07-23</time></div>
+                    <a href="/2019/07/23/190723-TIL/" class="has-link-black-ter is-size-6">190723-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -2158,25 +2146,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/15/190715-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/summer.png" alt="190715-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-15T04:18:04.000Z">2019-07-15</time></div>
-                    <a href="/2019/07/15/190715-TIL/" class="has-link-black-ter is-size-6">190715-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2195,7 +2164,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">14</span>
+                    <span class="level-item tag">15</span>
                 </span>
             </a>
         </li>
@@ -2701,7 +2670,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">77</span>
+                        <span class="tag is-grey">78</span>
                     </a>
                 </div>
                 
