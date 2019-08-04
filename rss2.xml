@@ -8,8 +8,28 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Post what I studied</description>
-    <pubDate>Tue, 30 Jul 2019 12:22:05 GMT</pubDate>
+    <pubDate>Sun, 04 Aug 2019 12:51:30 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>190804-TIL</title>
+      <link>https://sub2n.github.io/2019/08/04/190804-TIL/</link>
+      <guid>https://sub2n.github.io/2019/08/04/190804-TIL/</guid>
+      <pubDate>Sun, 04 Aug 2019 12:49:39 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;기능 구현이 거의 끝난
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li>기능 구현이 거의 끝난 코드를 주석을 정리하고 잔 오류를 고쳤다.</li><li>내일 마무리를 하고 모듈을 나눌 예정이다.</li><li>기능 구현에 급급해서 오랜 시간 코딩만 하다 보니 사람의 언어를 잃었다..</li></ul>]]></content:encoded>
+      
+      <comments>https://sub2n.github.io/2019/08/04/190804-TIL/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>190730-TIL</title>
@@ -412,26 +432,6 @@
       <content:encoded><![CDATA[<h2 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h2><p>Component는 View를 구성하고 관리하는 역할을 해야한다. 그러나 View를 구성하다보면 필요한 데이터를 가져오기 위해서 서버와 통신을 하는 등의 부가 기능이 필요하게 된다. 이런 기능을 Component에서 하지 않고 Service로 분리한다.</p><p>Component의 관심사와 Application 전역의 관심사를 분리하는 것이다. 이렇게 기능을 분리하면 Application의 복잡도가 낮아지고 서비스를 재사용할 수 있다. 또한 의존도가 낮아져 유지보수성이 좋아진다.</p><a id="more"></a><h2 id="Dependency-Injection"><a href="#Dependency-Injection" class="headerlink" title="Dependency Injection"></a>Dependency Injection</h2><p>Service는 Dependency Injection이 가능한 class이다. @Injectable 데코레이터로 정의한다.</p><p>Dependency Injection이란 말 그대로 의존성(dependency)을 주입(inject)한다는 것이다.</p><p>어떤 Component에서 Service의 method를 사용하는 경우 둘은 <strong>의존 관계(Dependency relationship)</strong>에 있다고 한다. Component 내부에서 Service class의 instance를 생성하는 경우 둘은 <strong>강한 결합(Tight Coupling)</strong>을 하고 있는 것이다. 반면 Component에서 직접 Service를 생성하는 것이 아니라 constructor의 parameter로 선언하여 Angular가 생성한 Service instance를 주입받는 것은 <strong>느슨한 결합(Loose Coupling)</strong>이다.</p><p> Tight Coupling은 많은 문제를 일으킨다. 하나의 Service의 생성 방법 등에 변동이 있을 경우 해당 Service와 의존 관계에 있는 모든 Component가 영향을 받는다. </p><p>재사용과 유지보수가 효율적인 프로그램을 만들기 위해서는 객체 사이의 <strong>의존 관계를 최소화</strong>해야 한다. 필요에 의해 의존 관계가 있을 경우 Tight Coupling은 지양해야 한다.</p><p>Dependency Injection은 Design pattern 중 하나로, tight coupling에서 loose coupling으로 전환하는 방법이다.</p><figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">class</span> A &#123;</span><br><span class="line">  <span class="hljs-comment">// dependency의 instance를 직접 생성하지 않고 외부 환경에 요구</span></span><br><span class="line">  <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> dependency: B</span>) &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  foo() &#123; <span class="hljs-keyword">this</span>.dependency.bar(); &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> B &#123;</span><br><span class="line">  bar() &#123; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'bar'</span>); &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>A class처럼 constructor에서 instance를 parameter로 받는 경우, A class에서는 해당 instance의 생성 방법을 알 필요가 없다.</p><figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// greeting.service.ts</span></span><br><span class="line"><span class="hljs-keyword">import</span> &#123; Injectable &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">@Injectable</span>(&#123;</span><br><span class="line">  providedIn: <span class="hljs-string">'root'</span> <span class="hljs-comment">/* @Injectable 프로바이더 */</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> GreetingService &#123;</span><br><span class="line">  sayHi() &#123; <span class="hljs-keyword">return</span> <span class="hljs-string">'Hi!'</span>; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Angular에서 Dependency Injection을 받기 위해서는 @Injectable 데코레이터에 meta data로 <code>providedIn: &#39;root&#39;</code>를 설정해야 한다. 해당 선언이 된 Service는 전역에서 Injectable하다.</p><p>또는 해당 Service를 주입받을 Component에서 @Compinent 데코레이터에 meta data로 <code>providers: [GreetingService]</code>를 설정해주면 된다. 이 Component를 포함한 Child component 들에서만 Injectable하다.</p>]]></content:encoded>
       
       <comments>https://sub2n.github.io/2019/06/25/Angular-Service-Dependency-Injection/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>190624-TIL</title>
-      <link>https://sub2n.github.io/2019/06/25/190624-TIL/</link>
-      <guid>https://sub2n.github.io/2019/06/25/190624-TIL/</guid>
-      <pubDate>Tue, 25 Jun 2019 04:06:03 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;h2 id=&quot;Today-I-Learned&quot;&gt;&lt;a href=&quot;#Today-I-Learned&quot; class=&quot;headerlink&quot; title=&quot;Today I Learned&quot;&gt;&lt;/a&gt;Today I Learned&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;ToastUI를 Jav
-        
-      
-      </description>
-      
-      <content:encoded><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li>ToastUI를 JavaScript와 Angular로 구현했다.</li><li>window.pageYOffset은 wiondow.scrollY보다 cross browsing에 적합(IE 9 지원)하므로 pageYOffset을 사용하는 게 좋다.</li></ul>]]></content:encoded>
-      
-      <comments>https://sub2n.github.io/2019/06/25/190624-TIL/#disqus_thread</comments>
     </item>
     
   </channel>
