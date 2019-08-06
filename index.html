@@ -109,6 +109,72 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/08/06/190806-TIL/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/summer.png" alt="190806-TIL | User input event 끝날 때까지 기다리기">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-08-06T04:52:30.000Z">2019-08-06</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 355 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/08/06/190806-TIL/">190806-TIL | User input event 끝날 때까지 기다리기</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul>
+<li>오늘은 프로젝트의 잔 오류를 수정했다.</li>
+</ul>
+<h4 id="Wait-for-User-to-Stop-Typing"><a href="#Wait-for-User-to-Stop-Typing" class="headerlink" title="Wait for User to Stop Typing"></a>Wait for User to Stop Typing</h4><ul>
+<li>Netflix는 User가 검색창에 한 글자를 입력할 때마다 검색 결과를 화면에 보여주는데,  약간의 텀이 있어 사용자 경험이 부드러웠다.</li>
+<li>나는 처음에 Keyup Event Handler에서 input value를 가져와 조건에 따라서 검색을 시켰는데, Search component에 쿼리를 붙여서 라우팅 하는 방식으로 구현하다 보니까 검색어가 완성되지 않았을 때 오류가 나며 깜빡이는 이슈가 생겼다.</li>
+<li>User가 원하는 검색어를 입력할 때까지 기다리는 일이 필요했다! <a href="https://schier.co/blog/2014/12/08/wait-for-user-to-stop-typing-using-javascript.html" target="_blank" rel="noopener">!wait for user to stop typing</a> ◀ 이 글을 참고해서 훨씬 부드러운 검색 화면을 구현했다.</li>
+<li>setTimeout을 이렇게 쓸 수 있다니 굉장히 유용한 스킬을 배운 것 같아 기분이 좋다.</li>
+</ul>
+<h4 id="Module-분리"><a href="#Module-분리" class="headerlink" title="Module 분리"></a>Module 분리</h4><p>파이널 프로젝트의 구현이 거의 끝나서 모듈을 분리하는 작업을 할 것이다.</p>
+<p>Feature module, Shared module, Core module로 분리한다.</p>
+<ul>
+<li>Feature module : 기능 모듈. 특정 화면을 구성하는 구성 요소</li>
+<li>Shared module : 공유 모듈. App 전역에서 사용하는 Component, Directive, Pipe 등</li>
+<li>Core Module : 핵심 모듈. App 전역에서 사용하는 Data Service, Authentication Service, Authentication Guard 등</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/08/04/190804-TIL/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/summer.png" alt="190804-TIL">
         </a>
@@ -683,65 +749,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/07/12/Angular-JWT/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/html.png" alt="Angular JWT">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-07-12T08:00:20.000Z">2019-07-12</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/JavaScript/Angular/">Angular</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 minutes read (About 416 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/07/12/Angular-JWT/">Angular JWT</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="Angular-Guard"><a href="#Angular-Guard" class="headerlink" title="Angular Guard"></a>Angular Guard</h2><p>로그인에 성공한 사용자만 접속할 수 있는 페이지를 구현해야할 때가 있다. 이런 때에는 Angular Guard를 이용한 Authentication을 한다.</p>
-<p>Guard는 Service의 일종이다.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/07/12/Angular-JWT/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -810,7 +817,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        163
+                        164
                     </p>
                 </div>
             </div>
@@ -1059,7 +1066,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">79</span>
+                <span class="level-item tag">80</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -1089,6 +1096,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/08/06/190806-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/summer.png" alt="190806-TIL | User input event 끝날 때까지 기다리기">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-06T04:52:30.000Z">2019-08-06</time></div>
+                    <a href="/2019/08/06/190806-TIL/" class="has-link-black-ter is-size-6">190806-TIL | User input event 끝날 때까지 기다리기</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1166,25 +1192,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/22/190722-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190722-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-22T00:58:06.000Z">2019-07-22</time></div>
-                    <a href="/2019/07/22/190722-TIL/" class="has-link-black-ter is-size-6">190722-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1203,7 +1210,7 @@
                     <span class="level-item">August 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -1720,7 +1727,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">80</span>
+                        <span class="tag is-grey">81</span>
                     </a>
                 </div>
                 
@@ -2015,7 +2022,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">79</span>
+                <span class="level-item tag">80</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -2045,6 +2052,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/08/06/190806-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/summer.png" alt="190806-TIL | User input event 끝날 때까지 기다리기">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-06T04:52:30.000Z">2019-08-06</time></div>
+                    <a href="/2019/08/06/190806-TIL/" class="has-link-black-ter is-size-6">190806-TIL | User input event 끝날 때까지 기다리기</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -2122,25 +2148,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/22/190722-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190722-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-22T00:58:06.000Z">2019-07-22</time></div>
-                    <a href="/2019/07/22/190722-TIL/" class="has-link-black-ter is-size-6">190722-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2159,7 +2166,7 @@
                     <span class="level-item">August 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -2676,7 +2683,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">80</span>
+                        <span class="tag is-grey">81</span>
                     </a>
                 </div>
                 
