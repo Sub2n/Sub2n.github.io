@@ -109,6 +109,57 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/05/15/Underscore-each/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/algorithm.png" alt="Underscore: each">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-15T04:08:16.000Z">2019-05-15</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/UnderScore/">UnderScore</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a few seconds read (About 50 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/15/Underscore-each/">Underscore: each</a>
+            
+        </h1>
+        <div class="content">
+            <p><img src="https://user-images.githubusercontent.com/48080762/57747874-59ba2980-7712-11e9-8a09-b7f1825254e4.png" alt="each pass"></p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">_.each = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">collection, iterator</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Array</span>.isArray(collection)) &#123;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> index = <span class="hljs-number">0</span>; index &lt; collection.length; index++) &#123;</span><br><span class="line">      iterator(collection[index], <span class="hljs-built_in">Number</span>(index), collection);</span><br><span class="line">    &#125; </span><br><span class="line">  &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">in</span> collection) &#123;</span><br><span class="line">      <span class="hljs-keyword">if</span> (key !== <span class="hljs-string">'someProperty'</span>)</span><br><span class="line">        iterator(collection[key], key, collection);</span><br><span class="line">    &#125;   </span><br><span class="line">  &#125; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/05/15/20-this/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="20. this">
         </a>
@@ -645,66 +696,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/05/09/13-Problems-with-global-variables/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/javascript.png" alt="13. Problems with Global Variables">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-09T02:26:46.000Z">2019-05-09</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    12 minutes read (About 1759 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/09/13-Problems-with-global-variables/">13. Problems with Global Variables</a>
-            
-        </h1>
-        <div class="content">
-            <h1 id="1-Life-Cycle-of-a-Variable"><a href="#1-Life-Cycle-of-a-Variable" class="headerlink" title="1. Life Cycle of a Variable"></a>1. Life Cycle of a Variable</h1><p>변수는 선언에 의해 생성되고 할당을 통해 값을 가진다. 생성된 변수는 언젠가는 소멸한다. 변수가 생성되고 소멸되는 주기를 변수의 생명 주기라고 한다.</p>
-<p>변수가 생성된다는 것은 메모리 공간을 차지하는 것이고, 소멸됨은 차지하던 메모리가 해제되는 것이다.</p>
-<p>조금 더 정확히 말하면 변수가 소멸된다는 것은 등록된 식별자가 소멸한다는 것이다. 이때 식별자와 값의 바인딩이 해제된다. 어떤 지역 스코프가 사라질 때 그 스코프에 등록된 식별자들이 소멸된다.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/05/09/13-Problems-with-global-variables/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -779,7 +770,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        165
+                        166
                     </p>
                 </div>
             </div>
@@ -1028,7 +1019,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">81</span>
+                <span class="level-item tag">82</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -1058,6 +1049,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/08/08/190808-TIL-취업클리닉/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="190808-TIL 취업클리닉">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-08T00:48:26.000Z">2019-08-08</time></div>
+                    <a href="/2019/08/08/190808-TIL-취업클리닉/" class="has-link-black-ter is-size-6">190808-TIL 취업클리닉</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1135,25 +1145,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/23/190723-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190723-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-23T11:08:20.000Z">2019-07-23</time></div>
-                    <a href="/2019/07/23/190723-TIL/" class="has-link-black-ter is-size-6">190723-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1172,7 +1163,7 @@
                     <span class="level-item">August 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1689,7 +1680,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">82</span>
+                        <span class="tag is-grey">83</span>
                     </a>
                 </div>
                 
@@ -1984,7 +1975,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">81</span>
+                <span class="level-item tag">82</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -2014,6 +2005,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/08/08/190808-TIL-취업클리닉/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="190808-TIL 취업클리닉">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-08T00:48:26.000Z">2019-08-08</time></div>
+                    <a href="/2019/08/08/190808-TIL-취업클리닉/" class="has-link-black-ter is-size-6">190808-TIL 취업클리닉</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -2091,25 +2101,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/23/190723-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190723-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-23T11:08:20.000Z">2019-07-23</time></div>
-                    <a href="/2019/07/23/190723-TIL/" class="has-link-black-ter is-size-6">190723-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2128,7 +2119,7 @@
                     <span class="level-item">August 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -2645,7 +2636,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">82</span>
+                        <span class="tag is-grey">83</span>
                     </a>
                 </div>
                 
