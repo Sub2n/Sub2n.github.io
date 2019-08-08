@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Post what I studied</description>
-    <pubDate>Thu, 08 Aug 2019 00:53:52 GMT</pubDate>
+    <pubDate>Thu, 08 Aug 2019 01:42:00 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -26,7 +26,7 @@
       
       </description>
       
-      <content:encoded><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li>프로젝트를 build 해서 서버에 올렸다. 깔끔한 앱을 보여주기 위해서 테스트 용 log를 제거했다.</li></ul><h2 id="취업-클리닉"><a href="#취업-클리닉" class="headerlink" title="취업 클리닉"></a>취업 클리닉</h2><ul><li>능력은 개인이 가지고 있는 것, <strong>역량은 그 능력으로 성과를 내는 것</strong>이다.</li><li>자기소개서의 <strong>소제목에 성과가 드러나도록</strong> 써야 한다.</li></ul>]]></content:encoded>
+      <content:encoded><![CDATA[<h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><ul><li>프로젝트를 build 해서 서버에 올렸다. 깔끔한 앱을 보여주기 위해서 테스트 용 log를 제거했다.</li></ul><h2 id="취업-클리닉"><a href="#취업-클리닉" class="headerlink" title="취업 클리닉"></a>취업 클리닉</h2><ul><li>능력은 개인이 가지고 있는 것, <strong>역량은 그 능력으로 성과를 내는 것</strong>이다.</li><li>자기소개서의 <strong>소제목에 성과가 드러나도록</strong> 써야 한다.</li></ul><h4 id="기업-정보-조사"><a href="#기업-정보-조사" class="headerlink" title="기업 정보 조사"></a>기업 정보 조사</h4><ul><li>눈<ul><li>관련 인터넷 블로그, 카페, 사이트</li></ul></li><li>발<ul><li>포럼, 학회, 박람회</li><li>동호회, 커뮤니티</li></ul></li><li>사람<ul><li>현직 근무자</li><li>목표 분야 전문가</li></ul></li></ul>]]></content:encoded>
       
       <comments>https://sub2n.github.io/2019/08/08/190808-TIL-%EC%B7%A8%EC%97%85%ED%81%B4%EB%A6%AC%EB%8B%89/#disqus_thread</comments>
     </item>
