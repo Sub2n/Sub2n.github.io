@@ -119,6 +119,102 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/08/14/Fastflix/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/fastflix.png" alt="Fastflix">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-08-14T02:26:38.000Z">2019-08-14</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes read (About 1124 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/08/14/Fastflix/">Fastflix</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="Fastflix"><a href="#Fastflix" class="headerlink" title="Fastflix"></a>Fastflix</h1><p>Web FrontEnd, BackEnd, iOS 세 팀이 협업한 Netflix Clone Project</p>
+<p>패스트캠퍼스 프론트엔드 개발 스쿨의 파이널 프로젝트로 진행했다.</p>
+<h4 id="팀원"><a href="#팀원" class="headerlink" title="팀원"></a>팀원</h4><p><strong>박수빈</strong>, 한현진, 정수영</p>
+<h4 id="역할"><a href="#역할" class="headerlink" title="역할"></a>역할</h4><p>나는 프론트엔드의 팀장을 맡았다.</p>
+<h5 id="팀장으로써의-역할"><a href="#팀장으로써의-역할" class="headerlink" title="팀장으로써의 역할"></a>팀장으로써의 역할</h5><p><img src="https://user-images.githubusercontent.com/48080762/62991049-1befad00-be89-11e9-98be-57a0ea6fd964.png" alt="Fastflix FlowChart"></p>
+<p><img src="https://user-images.githubusercontent.com/48080762/62991052-1c884380-be89-11e9-8e55-79c834a4c913.png" alt="Fastflix WireFrame"></p>
+<p>Netflix를 분석하고 flow chart와 wire frame을 작성했다. 설계 부분에서는 소프트웨어 공학 수업에서 배운 설계 방법이 많은 도움이 됐다. 요구분석을 통해 Requirment List를 도출하고 Requirment List를 바탕으로 팀원 간 역할을 부여했다.</p>
+<p><img src="https://user-images.githubusercontent.com/48080762/62991185-95879b00-be89-11e9-85f7-0aae3e36e318.png" alt="Requirment List"></p>
+<p>한 달 규모의 프로젝트를 리드해본 적이 없었기에 초반에 부담이 컸다. 어떻게 해야 팀원들과 잘 협업해서 좋은 결과물을 낼 수 있을 지가 가장 큰 고민이었다. 고민 끝에 각자의 역량에 맞게 역할을 분담하고 Gantt Chart를 이용해 스케줄을 관리했다.</p>
+<p><img src="https://user-images.githubusercontent.com/48080762/62991782-fd3ee580-be8b-11e9-9d47-d80c7fa315c7.png" alt="Gantt Chart"></p>
+<p>처음에는 4명이 팀이 되어 시작했는데, 그 중 2명은 개발에 자신이 없는 태도를 보여 간단한 Component를 하나씩 맡겼다. 현진이는 핵심 기능이라고 할 수 있는 Netflix의 Slider 구현을 맡았다. Gantt Chart를 이용한 스케줄 관리는 스프린트 미팅 때 강사님께도 칭찬을 들었다.</p>
+<p>남은 내 몫은 팀원들이 맡은 Component를 구현할동안 <strong>다른 모든 것들</strong>을 구현하는 거였다.</p>
+<h5 id="구현에서의-역할"><a href="#구현에서의-역할" class="headerlink" title="구현에서의 역할"></a>구현에서의 역할</h5><p><img src="https://user-images.githubusercontent.com/48080762/62991060-214cf780-be89-11e9-838d-e031083e81d5.png" alt="Components"></p>
+<p>팀원 한 분이 중간에 하차를 해서 Profile에 관련된 구현을 내가 맡았다. 현진이가 모든 Slider를 작업하고, 수영님이 비디오 플레이어의 외관을 꾸몄다. (데이터 바인딩은 내가 했다^^;) </p>
+<p>밑의 작업들을 내가 진행했다.</p>
+<ul>
+<li><p>Component 분리</p>
+</li>
+<li><p>Routing 및 Routing Animation 구현</p>
+</li>
+<li><p>팀원들이 작업할 수 있는 환경을 만들기 위해  Home과 Movie의 HTML/CSS을 우선 작업</p>
+</li>
+<li><p>Authentication Guard로 로그인 하지 않은 유저의 접근 제한</p>
+</li>
+<li><p>로그인을 하지 않은 유저가 보게 될 초기 화면 구현 (초기 페이지에서 회원가입과 로그인이 가능)</p>
+</li>
+<li><p>4단계로 이루어진 회원가입 기능 구현</p>
+</li>
+<li><p>2중 로그인 기능 구현 (1. 계정으로 로그인 2. 프로필로 로그인)</p>
+</li>
+<li><p>Server의 API가 완성됨에 따라 HttpClient 통신을 제공하는 Angular Service 구현</p>
+</li>
+<li><p>검색 기능 구현 (사용자가 검색어를 입력할 때마다 화면에 검색 결과 반영)</p>
+</li>
+<li><p>Slider, Watch Component 등으로의 Data Binding</p>
+</li>
+<li><p>각 유저 별로 영화를 좋아요, 싫어요, 내가 찜 한 목록에 추가하기 기능 구현</p>
+</li>
+<li><p>프로필 생성, 수정, 삭제 기능 구현</p>
+</li>
+</ul>
+<h4 id="역경"><a href="#역경" class="headerlink" title="역경"></a>역경</h4><p>프로젝트는 다사다난했다. 처음에는 구현할 게 많게 느껴져 구현이 어려울 거라고 생각했지만, 모든 문제는 사람이 만들었다. 프로젝트 진행 중반 쯤에 각 팀마다 하차자가 나왔다. FrontEnd에서 한 명, BackEnd에서 한 명이 하차했다. BackEnd에서 하차하는 팀원이 Github Organization 레포지토리를 삭제하는 일이 있었다.</p>
+<p><img src="https://user-images.githubusercontent.com/48080762/62992033-eb117700-be8c-11e9-8206-44dc6e2dafb3.png" alt="충격과공포"></p>
+<p>이 때 2주동안 열심히 심어놓은 잔디들이 날아갔다. 다행히 레포지토리가 복구되어 잔디도 복구했지만 이 경험을 통해서 사람이 가장 무섭고 위험하다는 것을 깨달았다.</p>
+<p>그 외에 힘들었던 것은, 팀원 4명의 역량이 차이가 많이 나서 일의 분배가 균등하지 않았다는 것이다. 나보다 나이가 10살은 많은 팀원을 통제하기도 힘이 들었다. 막바지에 가서는 나와 현진이 2명이서 프로젝트를 완성한 꼴이 되었다. 조별과제 절망편이다. 어쩌면 교수님들은 인생을 배우라는 의미에서 조별과제를 내주시는 걸지도 모른다.</p>
+<h4 id="성과"><a href="#성과" class="headerlink" title="성과"></a>성과</h4><p><img src="https://user-images.githubusercontent.com/48080762/62991472-c1575080-be8a-11e9-8e06-8e93377c4548.png" alt="Home"></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/08/08/190808-TIL-취업클리닉/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/computer.png" alt="190808-TIL 취업클리닉">
         </a>
@@ -421,59 +517,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/07/23/190723-TIL/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190723-TIL">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-07-23T11:08:20.000Z">2019-07-23</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 168 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/07/23/190723-TIL/">190723-TIL</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><h4 id="오전"><a href="#오전" class="headerlink" title="오전"></a>오전</h4><p>유니티 수업을 들었다. 안드로이드 환경에서 테스트했다.</p>
-<h4 id="오후"><a href="#오후" class="headerlink" title="오후"></a>오후</h4><p>백엔드에서 제공한 API를 이용해서 영화 정보를 가져와 Movie Component에 영화 정보를 표시햇다. </p>
-<p>Movie의 Child Component인 Slider Component에 데이터를 전달하는 방식에 대해서 고민을 많이 했지만 굳이 데이터를 저장하고 있을 필요가 없을 것 같아서 우선은 영화 id를 포함한 정보를 전달하기로 했다. 각 Component에서 상세 정보를 요청할 수 있는 메소드를 만들었다. 아직 동작은 불안정하다.</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -542,7 +585,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        166
+                        167
                     </p>
                 </div>
             </div>
@@ -791,7 +834,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">82</span>
+                <span class="level-item tag">83</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -821,6 +864,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/08/14/Fastflix/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/fastflix.png" alt="Fastflix">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-14T02:26:38.000Z">2019-08-14</time></div>
+                    <a href="/2019/08/14/Fastflix/" class="has-link-black-ter is-size-6">Fastflix</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -898,25 +960,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/30/190730-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/summer.png" alt="190730-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-30T12:17:41.000Z">2019-07-30</time></div>
-                    <a href="/2019/07/30/190730-TIL/" class="has-link-black-ter is-size-6">190730-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -935,7 +978,7 @@
                     <span class="level-item">August 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -1452,7 +1495,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">83</span>
+                        <span class="tag is-grey">84</span>
                     </a>
                 </div>
                 
@@ -1747,7 +1790,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">82</span>
+                <span class="level-item tag">83</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -1777,6 +1820,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/08/14/Fastflix/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/fastflix.png" alt="Fastflix">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-14T02:26:38.000Z">2019-08-14</time></div>
+                    <a href="/2019/08/14/Fastflix/" class="has-link-black-ter is-size-6">Fastflix</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1854,25 +1916,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/30/190730-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/summer.png" alt="190730-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-30T12:17:41.000Z">2019-07-30</time></div>
-                    <a href="/2019/07/30/190730-TIL/" class="has-link-black-ter is-size-6">190730-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1891,7 +1934,7 @@
                     <span class="level-item">August 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -2408,7 +2451,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">83</span>
+                        <span class="tag is-grey">84</span>
                     </a>
                 </div>
                 

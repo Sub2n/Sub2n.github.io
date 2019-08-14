@@ -119,6 +119,59 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/07/23/190723-TIL/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/babypink.png" alt="190723-TIL">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-07-23T11:08:20.000Z">2019-07-23</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 168 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/07/23/190723-TIL/">190723-TIL</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><h4 id="오전"><a href="#오전" class="headerlink" title="오전"></a>오전</h4><p>유니티 수업을 들었다. 안드로이드 환경에서 테스트했다.</p>
+<h4 id="오후"><a href="#오후" class="headerlink" title="오후"></a>오후</h4><p>백엔드에서 제공한 API를 이용해서 영화 정보를 가져와 Movie Component에 영화 정보를 표시햇다. </p>
+<p>Movie의 Child Component인 Slider Component에 데이터를 전달하는 방식에 대해서 고민을 많이 했지만 굳이 데이터를 저장하고 있을 필요가 없을 것 같아서 우선은 영화 id를 포함한 정보를 전달하기로 했다. 각 Component에서 상세 정보를 요청할 수 있는 메소드를 만들었다. 아직 동작은 불안정하다.</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/07/22/190722-TIL/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/white.png" alt="190722-TIL">
         </a>
@@ -438,91 +491,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/07/08/190708-TIL/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/pink.png" alt="190708-TIL">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-07-08T02:37:45.000Z">2019-07-08</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 minutes read (About 501 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/07/08/190708-TIL/">190708-TIL</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="Today-I-Learned"><a href="#Today-I-Learned" class="headerlink" title="Today I Learned"></a>Today I Learned</h2><h4 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h4><ul>
-<li><p>Wrapper Object</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-string">'string'</span>.length; <span class="hljs-comment">// 6</span></span><br><span class="line"><span class="hljs-keyword">const</span> s = <span class="hljs-string">'super'</span></span><br><span class="line"><span class="hljs-built_in">String</span>.prototype.sayHi() = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Hi'</span>) &#125;;</span><br><span class="line">s.sayHi(); <span class="hljs-comment">// 'Hi</span></span><br></pre></td></tr></table></figure>
-
-<p>문자열을 객체처럼 사용할 경우 JavaScript 엔진이 순간 String 생성자 함수로 wrapping 한다.</p>
-</li>
-<li><p>Property Key</p>
-<ul>
-<li>Property Key 동적 생성</li>
-</ul>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="hljs-keyword">var</span> key = <span class="hljs-string">'hello'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// ES5: 프로퍼티 키 동적 생성</span></span><br><span class="line">obj[key] = <span class="hljs-string">'world'</span>;</span><br><span class="line"><span class="hljs-comment">// ES6: 프로퍼티 키 동적 생성</span></span><br><span class="line"><span class="hljs-comment">// var obj = &#123; [key]: 'world' &#125;;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(obj); <span class="hljs-comment">// &#123;hello: "world"&#125;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>Property Key는 문자열이나 symbol 값 이외의 값을 사용하면 암묵적 타입 변환을 통해 문자열이 된다. 예를 들어, 프로퍼티 키로 숫자 리터럴을 사용하면 따옴표는 붙지 않지만 내부적으로는 문자열로 변환된다.</li>
-<li>Property Key로 객체를 사용해도 error가 나지 않고 들어감. 배열도 마찬가지<br><img src="https://user-images.githubusercontent.com/48080762/60779497-f8dd2980-a175-11e9-81d6-81dcf643e3f1.png" alt="Property Key"></li>
-<li>객체는 <code>[object Object]</code>라는 String으로 변환된다. obj[string]이 되어야하기 때문에 <code>[]</code> 내부는 문자열로 <strong>강제 형변환</strong>된다.</li>
-</ul>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> a = &#123;&#125;;</span><br><span class="line"><span class="hljs-keyword">const</span> b = &#123; <span class="hljs-attr">key</span>: <span class="hljs-string">'b'</span> &#125;;</span><br><span class="line"><span class="hljs-keyword">const</span> c = &#123; <span class="hljs-attr">key</span>: <span class="hljs-string">'c'</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 두 객체 모두 Property key로 쓰일 때 문자열 [object Object]로 변환되어 같은 key가 된다.</span></span><br><span class="line">a[b] = <span class="hljs-number">123</span>;</span><br><span class="line">a[c] = <span class="hljs-number">456</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(a[b]);</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://user-images.githubusercontent.com/48080762/60782561-229c4d80-a182-11e9-8ecf-fb17ce339739.png" alt="Object property key"></p>
-<ul>
-<li>Property Key를 중복 선언하면 나중에 선언한 Property가 이전 것을 덮어씀</li>
-</ul>
-</li>
-<li><p>call, apply method는 함수에 this를 전달하고 <strong>호출</strong>하지만 bind는 this를 전달한 <strong>함수를 return</strong>한다.</p>
-</li>
-<li><p>Function literal과 Function declaration statement의 차이</p>
-<ul>
-<li>함수 이름이 있는 함수 선언문은 자바스크립트 엔진이 함수명과 동일한 식별자를 생성하고 생성한 함수 객체를 할당한다.</li>
-<li>함수 이름이 필수가 아닌 함수 리터럴은 그저 평가되어 함수 객체를 생성한다. 이를 괄호로 감싸면 에러 없이 함수 객체가 된다.<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 즉시 실행 함수로 함수 리터럴을 사용하는 경우</span></span><br><span class="line">(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -593,7 +561,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        166
+                        167
                     </p>
                 </div>
             </div>
@@ -842,7 +810,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">82</span>
+                <span class="level-item tag">83</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -872,6 +840,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/08/14/Fastflix/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/fastflix.png" alt="Fastflix">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-14T02:26:38.000Z">2019-08-14</time></div>
+                    <a href="/2019/08/14/Fastflix/" class="has-link-black-ter is-size-6">Fastflix</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -949,25 +936,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/30/190730-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/summer.png" alt="190730-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-30T12:17:41.000Z">2019-07-30</time></div>
-                    <a href="/2019/07/30/190730-TIL/" class="has-link-black-ter is-size-6">190730-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -986,7 +954,7 @@
                     <span class="level-item">August 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -1503,7 +1471,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">83</span>
+                        <span class="tag is-grey">84</span>
                     </a>
                 </div>
                 
@@ -1798,7 +1766,7 @@
                 <span class="level-item">TIL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">82</span>
+                <span class="level-item tag">83</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/TypeScript/">
@@ -1828,6 +1796,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/08/14/Fastflix/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/fastflix.png" alt="Fastflix">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-14T02:26:38.000Z">2019-08-14</time></div>
+                    <a href="/2019/08/14/Fastflix/" class="has-link-black-ter is-size-6">Fastflix</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1905,25 +1892,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/30/190730-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/summer.png" alt="190730-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-30T12:17:41.000Z">2019-07-30</time></div>
-                    <a href="/2019/07/30/190730-TIL/" class="has-link-black-ter is-size-6">190730-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL/">TIL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1942,7 +1910,7 @@
                     <span class="level-item">August 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -2459,7 +2427,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TIL/">
                         <span class="tag">TIL</span>
-                        <span class="tag is-grey">83</span>
+                        <span class="tag is-grey">84</span>
                     </a>
                 </div>
                 
