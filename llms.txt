@@ -7,6 +7,7 @@
 
 ## 글
 
+- [블로그 다시 시작](https://sub2n.github.io/posts/2026/blog-reboot-astro.md): 2026-09-18 · astro, blog
 - [190817-TIL](https://sub2n.github.io/2019/08/17/190817-TIL.md): 2019-08-17 · TIL
 - [Fastflix](https://sub2n.github.io/2019/08/14/Fastflix.md): 2019-08-14 · TIL
 - [190808-TIL 취업클리닉](https://sub2n.github.io/2019/08/08/190808-TIL-취업클리닉.md): 2019-08-08 · TIL

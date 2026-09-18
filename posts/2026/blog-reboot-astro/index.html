@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>블로그 다시 시작 · 수빈 개발블로그</title><meta name="description" content="2019년에 멈춘 Hexo 블로그를 Astro로 다시 만들었다. 옛 글 168개는 주소 그대로 살렸다."><link rel="canonical" href="https://sub2n.github.io/posts/2026/blog-reboot-astro/"><meta name="theme-color" content="#f6f7f4" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#14181b" media="(prefers-color-scheme: dark)"><link rel="icon" href="/favicon.png"><link rel="alternate" type="application/rss+xml" title="수빈 개발블로그" href="/rss.xml"><link rel="sitemap" href="/sitemap-index.xml"><meta property="og:site_name" content="수빈 개발블로그"><meta property="og:type" content="article"><meta property="og:title" content="블로그 다시 시작"><meta property="og:description" content="2019년에 멈춘 Hexo 블로그를 Astro로 다시 만들었다. 옛 글 168개는 주소 그대로 살렸다."><meta property="og:url" content="https://sub2n.github.io/posts/2026/blog-reboot-astro/"><meta property="og:image" content="https://sub2n.github.io/images/og_image.png"><meta property="og:locale" content="ko_KR"><meta property="article:published_time" content="2026-09-18T00:00:00.000Z"><meta property="article:tag" content="astro"><meta property="article:tag" content="blog"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="블로그 다시 시작"><meta name="twitter:description" content="2019년에 멈춘 Hexo 블로그를 Astro로 다시 만들었다. 옛 글 168개는 주소 그대로 살렸다."><meta name="twitter:image" content="https://sub2n.github.io/images/og_image.png"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"블로그 다시 시작","description":"2019년에 멈춘 Hexo 블로그를 Astro로 다시 만들었다. 옛 글 168개는 주소 그대로 살렸다.","image":"https://sub2n.github.io/images/og_image.png","datePublished":"2026-09-18T00:00:00.000Z","dateModified":"2026-09-18T00:00:00.000Z","keywords":"astro, blog","inLanguage":"ko","author":{"@type":"Person","name":"Subin Park","url":"https://github.com/Sub2n"},"mainEntityOfPage":"https://sub2n.github.io/posts/2026/blog-reboot-astro/"}</script><script>
+      // 첫 그리기 전에 테마를 적용해 깜빡임을 막는다
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script><link rel="stylesheet" href="/_astro/Base.CsATTOb9.css"></head><body><div class="wrap"><header class="site-header"><a class="brand" href="/">subin.log</a><nav class="site-nav" aria-label="주요 메뉴"><a href="/">글</a><a href="/tags/">태그</a><a href="/about/">소개</a><a href="/search/">검색</a><button class="theme-toggle" type="button" id="theme-toggle" aria-label="테마 전환">◐</button></nav></header><main><article data-pagefind-body><h1 class="post-title">블로그 다시 시작</h1><div class="post-meta"><time datetime="2026-09-18T00:00:00.000Z">2026-09-18</time><span>·</span><span>1분</span><span>·</span><a href="/tags/astro/" data-pagefind-filter="tag">astro</a><a href="/tags/blog/" data-pagefind-filter="tag">blog</a><span>·</span><a href="/posts/2026/blog-reboot-astro.md" title="마크다운 원문">원문 .md</a></div><div class="prose"><p>2019년까지 열심히 하던 블로그 취업 후 7년만에 재정비하다.</p>
+<h2 id="왜-다시-만들었나">왜 다시 만들었나</h2>
+<ul>
+<li>예전 블로그는 Hexo + Icarus 테마였다. 다시 열어보니 사이드바에 위젯이 너무 많고, 무엇보다 Hexo 소스가 남아 있지 않았다. 빌드된 HTML만 GitHub에 있었다.</li>
+<li>요즘은 에이전트가 글을 읽고 쓰는 시대라 아예 Firebase 같은 데에 앱으로 올릴까도 생각했는데, 블로그가 서버에서 할 일이 하나도 없었다. 그냥 정적 사이트로 갔다.</li>
+<li>프레임워크는 Astro. 마크다운을 그대로 쓰고 JS를 거의 안 내보낸다.</li>
+</ul>
+<h2 id="옛-글-살리기">옛 글 살리기</h2>
+<p>마크다운 원본이 없어서 HTML을 다시 마크다운으로 되돌렸다.</p>
+<ul>
+<li>cheerio로 HTML에서 제목, 날짜, 태그, 본문을 뽑고</li>
+<li>turndown으로 마크다운으로 바꿨다.</li>
+<li>Hexo가 코드 블록을 <code>&lt;table&gt;</code>로 렌더링해 놔서 그건 따로 처리했다.</li>
+</ul>
+<p>주소는 <code>/2019/06/25/Angular-RxJS/</code> 형식을 그대로 뒀다. 검색으로 들어오던 글이 죽지 않게 하고 싶었다. 168개 전부 그대로 열린다.</p>
+<h2 id="이번에-붙인-것">이번에 붙인 것</h2>
+<ul>
+<li>글 주소 뒤에 <code>.md</code>를 붙이면 마크다운 원문이 나온다. 에이전트가 HTML 파싱 안 해도 되게.</li>
+<li><code>/llms.txt</code>에 전체 글 목록.</li>
+<li>다크 모드, 검색(Pagefind), RSS.</li>
+<li>Claude Code 스킬 <code>/til</code>, <code>/post</code>. 터미널에서 오늘 배운 거 말하면 frontmatter까지 채워서 파일을 만들어 주도록 했다.</li>
+</ul>
+</div><nav class="post-tags" aria-label="태그"><a href="/tags/astro/">astro</a><a href="/tags/blog/">blog</a></nav></article><nav class="post-nav" aria-label="이전·다음 글"><div><b>이전</b><a href="/2019/08/17/190817-TIL/">190817-TIL</a></div></nav></main><footer class="site-footer"><span>© 2026 Subin Park</span><span><a href="/rss.xml">RSS</a> · <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/Sub2n" rel="me">GitHub</a></span></footer></div><script type="module">document.getElementById(`theme-toggle`)?.addEventListener(`click`,()=>{let e=document.documentElement,t=matchMedia(`(prefers-color-scheme: dark)`).matches,n=(e.dataset.theme?e.dataset.theme===`dark`:t)?`light`:`dark`;e.dataset.theme=n;try{localStorage.setItem(`theme`,n)}catch{}});</script></body></html>
