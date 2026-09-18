@@ -1,0 +1,177 @@
+# 수빈 개발블로그
+
+> 프론트엔드와 에이전트 개발을 하며 배운 것을 짧게 기록합니다. 글은 모두 한국어이며, 각 글은 URL 끝의 슬래시를 `.md`로 바꾸면 마크다운 원문을 받을 수 있습니다.
+
+- 작성자: Subin Park (https://github.com/Sub2n)
+- 피드: https://sub2n.github.io/rss.xml
+
+## 글
+
+- [190817-TIL](https://sub2n.github.io/2019/08/17/190817-TIL.md): 2019-08-17 · TIL
+- [Fastflix](https://sub2n.github.io/2019/08/14/Fastflix.md): 2019-08-14 · TIL
+- [190808-TIL 취업클리닉](https://sub2n.github.io/2019/08/08/190808-TIL-취업클리닉.md): 2019-08-08 · TIL
+- [190807-TIL](https://sub2n.github.io/2019/08/07/190807-TIL.md): 2019-08-07 · TIL
+- [190806-TIL | User input event 끝날 때까지 기다리기](https://sub2n.github.io/2019/08/06/190806-TIL.md): 2019-08-06 · TIL
+- [190804-TIL](https://sub2n.github.io/2019/08/04/190804-TIL.md): 2019-08-04 · TIL
+- [190730-TIL](https://sub2n.github.io/2019/07/30/190730-TIL.md): 2019-07-30 · TIL
+- [190723-TIL](https://sub2n.github.io/2019/07/23/190723-TIL.md): 2019-07-23 · TIL
+- [190722-TIL](https://sub2n.github.io/2019/07/22/190722-TIL.md): 2019-07-22 · TIL
+- [C# Basic](https://sub2n.github.io/2019/07/22/C-Basic.md): 2019-07-22 · C#, Unity
+- [190720-TIL](https://sub2n.github.io/2019/07/20/190720-TIL.md): 2019-07-20 · TIL
+- [190716-TIL](https://sub2n.github.io/2019/07/16/190716-TIL.md): 2019-07-16 · TIL
+- [190715-TIL](https://sub2n.github.io/2019/07/15/190715-TIL.md): 2019-07-15 · TIL
+- [React Basic](https://sub2n.github.io/2019/07/13/React-Basic.md): 2019-07-13 · React
+- [Angular JWT](https://sub2n.github.io/2019/07/12/Angular-JWT.md): 2019-07-12 · Angular
+- [Angular Routing](https://sub2n.github.io/2019/07/10/Angular-Routing.md): 2019-07-10 · Angular, Routing
+- [190709-TIL](https://sub2n.github.io/2019/07/09/190709-TIL.md): 2019-07-09 · TIL
+- [190708-TIL](https://sub2n.github.io/2019/07/08/190708-TIL.md): 2019-07-08 · TIL
+- [Angular NgModule](https://sub2n.github.io/2019/07/08/Angular-NgModule.md): 2019-07-08 · Angluar
+- [190706-TIL](https://sub2n.github.io/2019/07/06/190706-TIL.md): 2019-07-06 · TIL
+- [Angular Form](https://sub2n.github.io/2019/07/03/Angular-Form.md): 2019-07-03 · Angular
+- [190701-TIL](https://sub2n.github.io/2019/07/01/190701-TIL.md): 2019-07-01 · TIL
+- [190628-TIL](https://sub2n.github.io/2019/06/28/190628-TIL.md): 2019-06-28 · FDS12, Hackaton, TIL
+- [190624-TIL](https://sub2n.github.io/2019/06/25/190624-TIL.md): 2019-06-25 · TIL
+- [Angular RxJS](https://sub2n.github.io/2019/06/25/Angular-RxJS.md): 2019-06-25 · Observable, Reactive Programming
+- [Angular Service & Dependency Injection](https://sub2n.github.io/2019/06/25/Angular-Service-Dependency-Injection.md): 2019-06-25 · Angular, Dependency Injection, Service
+- [Angular Directive](https://sub2n.github.io/2019/06/24/Angular-Directive.md): 2019-06-24 · Angular
+- [190622-TIL](https://sub2n.github.io/2019/06/22/190622-TIL.md): 2019-06-22 · TIL
+- [Angular Pipe](https://sub2n.github.io/2019/06/21/Angular-Pipe.md): 2019-06-21 · Angular, Pipe
+- [190619-TIL](https://sub2n.github.io/2019/06/19/190619-TIL.md): 2019-06-19 · TIL
+- [190618-TIL](https://sub2n.github.io/2019/06/18/190618-TIL.md): 2019-06-18 · TIL
+- [Angular Built-in Directive](https://sub2n.github.io/2019/06/18/Angular-Built-in-Directive.md): 2019-06-18 · Angular
+- [190617-TIL](https://sub2n.github.io/2019/06/17/190617-TIL.md): 2019-06-17 · TIL
+- [Angular Data Binding](https://sub2n.github.io/2019/06/17/Angular-Data-Binding.md): 2019-06-17 · Angular
+- [Angular Basics](https://sub2n.github.io/2019/06/14/Angular-Basics.md): 2019-06-14 · Angular
+- [Angular Component](https://sub2n.github.io/2019/06/14/Angular-Component.md): 2019-06-14 · Angular
+- [190612-TIL](https://sub2n.github.io/2019/06/12/190612-TIL.md): 2019-06-12 · TIL
+- [TypeScript (1)](https://sub2n.github.io/2019/06/12/TypeScript-1.md): 2019-06-12 · TypeScript
+- [TypeScript (2)](https://sub2n.github.io/2019/06/12/TypeScript-2.md): 2019-06-12 · TypeScript
+- [190611-TIL](https://sub2n.github.io/2019/06/11/190611-TIL.md): 2019-06-11 · TIL
+- [190610-TIL](https://sub2n.github.io/2019/06/10/190610-TIL.md): 2019-06-10 · TIL
+- [36. SPA](https://sub2n.github.io/2019/06/10/36-SPA.md): 2019-06-10 · Routing, SPA, Single Page Application, 자바스크립트
+- [35. Closure](https://sub2n.github.io/2019/06/07/35-Closure.md): 2019-06-07 · 자바스크립트
+- [190605-TIL](https://sub2n.github.io/2019/06/05/190605-TIL.md): 2019-06-05 · TIL
+- [34. Execution Context](https://sub2n.github.io/2019/06/05/34-Execution-Context.md): 2019-06-05 · 실행 컨텍스트, 자바스크립트
+- [190604-TIL](https://sub2n.github.io/2019/06/04/190604-TIL.md): 2019-06-04 · TIL
+- [190603-TIL](https://sub2n.github.io/2019/06/03/190603-TIL.md): 2019-06-03 · TIL
+- [Development Environment Setting](https://sub2n.github.io/2019/06/03/npm.md): 2019-06-03 · Babel, Node.js, Webpack, npm
+- [190531-TIL](https://sub2n.github.io/2019/05/31/190531-TIL.md): 2019-05-31 · TIL
+- [자바스크립트 키워드 정리](https://sub2n.github.io/2019/05/31/자바스크립트-키워드-정리.md): 2019-05-31 · 자바스크립트
+- [190529-TIL](https://sub2n.github.io/2019/05/29/190529-TIL.md): 2019-05-29 · TIL
+- [190527-TIL](https://sub2n.github.io/2019/05/27/190527-TIL.md): 2019-05-27 · TIL
+- [32. REST API](https://sub2n.github.io/2019/05/27/32-REST-API.md): 2019-05-27 · REST API, 자바스크립트
+- [33. Promise](https://sub2n.github.io/2019/05/27/33-Promise.md): 2019-05-27 · Promise, 자바스크립트
+- [31. Ajax](https://sub2n.github.io/2019/05/26/31-Ajax.md): 2019-05-26 · Ajax, 자바스크립트
+- [190524-TIL](https://sub2n.github.io/2019/05/24/190524-TIL.md): 2019-05-24 · FDS12, Hackaton, TIL
+- [190522-TIL](https://sub2n.github.io/2019/05/22/190522-TIL.md): 2019-05-22 · TIL
+- [28. Module](https://sub2n.github.io/2019/05/22/28-Module.md): 2019-05-22 · Modlue, 자바스크립트
+- [29. DOM](https://sub2n.github.io/2019/05/22/29. DOM.md): 2019-05-22 · DOM, 자바스크립트
+- [30. Event](https://sub2n.github.io/2019/05/22/30-Event.md): 2019-05-22 · Event, 자바스크립트
+- [190521-TIL](https://sub2n.github.io/2019/05/21/190521-TIL.md): 2019-05-21 · TIL
+- [25. Enhanced Object property](https://sub2n.github.io/2019/05/21/25-Enhanced-Object-property.md): 2019-05-21 · ES6, 자바스크립트
+- [26. Destructuring](https://sub2n.github.io/2019/05/21/26-Destructuring.md): 2019-05-21 · Destructuring, 자바스크립트
+- [27. Class](https://sub2n.github.io/2019/05/21/27-Class.md): 2019-05-21 · Class, 자바스크립트
+- [190520-TIL](https://sub2n.github.io/2019/05/20/190520-TIL.md): 2019-05-20 · TIL
+- [24. Higher Order Function](https://sub2n.github.io/2019/05/20/24-Higher-Order-Function.md): 2019-05-20 · Higher Order Function, 자바스크립트
+- [22. Regular Expression](https://sub2n.github.io/2019/05/19/22-Regular-Expression.md): 2019-05-19 · RegExp, 자바스크립트
+- [23. Array](https://sub2n.github.io/2019/05/19/23-Array.md): 2019-05-19 · Array, 자바스크립트
+- [190517-TIL](https://sub2n.github.io/2019/05/17/190517-TIL.md): 2019-05-17 · TIL
+- [190516-TIL](https://sub2n.github.io/2019/05/16/190516-TIL.md): 2019-05-16 · TIL
+- [19. Global Object](https://sub2n.github.io/2019/05/15/19-Global-Object.md): 2019-05-15 · window, 자바스크립트
+- [190515-TIL](https://sub2n.github.io/2019/05/15/190515-TIL.md): 2019-05-15 · TIL
+- [20. this](https://sub2n.github.io/2019/05/15/20-this.md): 2019-05-15 · this, 자바스크립트
+- [21. Number, Math and String Object](https://sub2n.github.io/2019/05/15/21-Number-Math-Date-and-String-Object.md): 2019-05-15 · Math, Number, String, Wrapper, 자바스크립트
+- [Underscore: each](https://sub2n.github.io/2019/05/15/Underscore-each.md): 2019-05-15 · Algorithm, 자바스크립트
+- [17. Function and First-class Object](https://sub2n.github.io/2019/05/12/17-Function-and-First-class-Object.md): 2019-05-12 · First-class object, 일급 객체, 자바스크립트
+- [18. JavaScript Prototype](https://sub2n.github.io/2019/05/12/18-JavaScript-Prototype.md): 2019-05-12 · Prototype, 자바스크립트
+- [16. Creating an Object with a Constructor Function](https://sub2n.github.io/2019/05/10/16-Creating-an-Object-with-a-Constructor-Function.md): 2019-05-10 · Object, 자바스크립트
+- [13. Problems with Global Variables](https://sub2n.github.io/2019/05/09/13-Problems-with-global-variables.md): 2019-05-09 · 자바스크립트
+- [14. let, const and a Block-level Scope](https://sub2n.github.io/2019/05/09/14-let-const-and-a-Block-level-Scope.md): 2019-05-09 · 자바스크립트
+- [15. Property Definition](https://sub2n.github.io/2019/05/09/15-Property-Definition.md): 2019-05-09 · 자바스크립트
+- [190509-TIL](https://sub2n.github.io/2019/05/09/190509-TIL.md): 2019-05-09 · TIL
+- [CodeWars 6kyu. Build a pile of Cubes](https://sub2n.github.io/2019/05/09/CodeWars-6kyu-Build-a-pile-of-Cubes.md): 2019-05-09 · Algorithm
+- [11. Function](https://sub2n.github.io/2019/05/08/11-Function.md): 2019-05-08 · Function, 자바스크립트
+- [12. Scope](https://sub2n.github.io/2019/05/08/12-Scope.md): 2019-05-08 · Scope, 자바스크립트
+- [190508-TIL](https://sub2n.github.io/2019/05/08/190508-TIL.md): 2019-05-08 · TIL
+- [10. Comparing primitive and objects](https://sub2n.github.io/2019/05/07/10-Comparing-primitive-and-objects.md): 2019-05-07 · immutable, mutable, object, pass by reference, pass by value, primitive, 자바스크립트
+- [190507-TIL](https://sub2n.github.io/2019/05/07/190503-TIL.md): 2019-05-07 · TIL
+- [CodeWars 6kyu. Consecutive strings](https://sub2n.github.io/2019/05/07/CodeWars-6kyu-Consecutive-strings.md): 2019-05-07 · Algorithm
+- [9. Object Literal](https://sub2n.github.io/2019/05/05/9-Object-Literal.md): 2019-05-05 · 자바스크립트
+- [8. Type Coercion and Short-Circuit Evaluation](https://sub2n.github.io/2019/05/04/8-Type-Coercion-and-Short-Circuit-Evaluation.md): 2019-05-04 · 자바스크립트
+- [7. Control Flow Statement](https://sub2n.github.io/2019/05/03/7-Control-Flow-Statement.md): 2019-05-03 · 자바스크립트
+- [190502-TIL](https://sub2n.github.io/2019/05/02/190502-TIL.md): 2019-05-02 · TIL
+- [CodeWars 6kyu. Playing with digits](https://sub2n.github.io/2019/05/02/CodeWars-6kyu-Playing-with-digits.md): 2019-05-02 · Algorithm
+- [190501-TIL](https://sub2n.github.io/2019/05/01/190501-TIL.md): 2019-05-01 · TIL
+- [6. Operator](https://sub2n.github.io/2019/05/01/6-Operator.md): 2019-05-01 · Expression, Operater, Statement, 자바스크립트
+- [CodeWars 6kyu. Find The Parity Outlier](https://sub2n.github.io/2019/05/01/CodeWars-6kyu-Find-The-Parity-Outlier.md): 2019-05-01 · Algorithm
+- [190430-TIL](https://sub2n.github.io/2019/04/30/190430-TIL.md): 2019-04-30 · TIL
+- [3. JavaScript Develop Environment and Execute](https://sub2n.github.io/2019/04/30/3-JavaScript-Develop-Environment-and-Execute.md): 2019-04-30 · Node.js, Web Browser, 자바스크립트
+- [4. Variable](https://sub2n.github.io/2019/04/30/4-Variable.md): 2019-04-30 · Hoisting, Variable, 자바스크립트
+- [5. Data Type](https://sub2n.github.io/2019/04/30/5-Data-Type.md): 2019-04-30 · Data Type, 자바스크립트
+- [1. OOP and ADT](https://sub2n.github.io/2019/04/29/1-OOP-and-ADT.md): 2019-04-29 · ADT, Abstraction, Encapsulation, OOP
+- [1. What is Programming?](https://sub2n.github.io/2019/04/29/1-What-is-Programming.md): 2019-04-29 · Computational Thinking, Programming, 자바스크립트
+- [190429-TIL](https://sub2n.github.io/2019/04/29/190429-TIL.md): 2019-04-29 · TIL
+- [2. What is JavaScript?](https://sub2n.github.io/2019/04/29/2-What-is-JavaScript.md): 2019-04-29 · ECMA, 자바스크립트
+- [CodeWars 6kyu. Decode the Morse code](https://sub2n.github.io/2019/04/29/CodeWars-6kyu-Decode-the-Morse-code.md): 2019-04-29 · Algorithm
+- [Difference between Subsequence and Substring](https://sub2n.github.io/2019/04/29/Difference-between-Subsequence-and-Substring.md): 2019-04-29 · Subsequence, Substring
+- [190426-TIL](https://sub2n.github.io/2019/04/26/190426-TIL.md): 2019-04-26 · TIL
+- [CodeWars 6kyu. Take a Number And Sum Its Digits Raised To The Consecutive Powers And ...](https://sub2n.github.io/2019/04/26/CodeWars-6kyu-Take-a-Number-And-Sum-Its-Digits-Raised-To-The-Consecutive-Powers-And-¡Eurekals.md): 2019-04-26 · Algorithm
+- [190425-TIL](https://sub2n.github.io/2019/04/25/190425-TIL.md): 2019-04-25 · TIL
+- [CodeWars 5kyu Maximum subarray sum](https://sub2n.github.io/2019/04/25/CodeWars-5kyu-Maximum-subarray-sum.md): 2019-04-25 · Algorithm
+- [190424-TIL](https://sub2n.github.io/2019/04/24/190424-TIL.md): 2019-04-24 · TIL
+- [4 Fundamental of Object Oriented Programming](https://sub2n.github.io/2019/04/24/4-Fundamental-of-Object-Oriented-Programming.md): 2019-04-24 · Abstraction, Encapsulation, Inheritance, OOP, Polymorphisim, 자바스크립트
+- [Python Class and Access Modifier](https://sub2n.github.io/2019/04/24/Python-Class-and-Access-Modifier.md): 2019-04-24 · Access Modifier, Class, OOP, Python
+- [Quick Sort](https://sub2n.github.io/2019/04/24/Quick-Sort.md): 2019-04-24 · Algorithm, Quick sort
+- [190423-TIL](https://sub2n.github.io/2019/04/23/190423-TIL.md): 2019-04-23 · TIL
+- [Recursion](https://sub2n.github.io/2019/04/23/Recursion.md): 2019-04-23 · Algorithm, Recursion
+- [190422-TIL](https://sub2n.github.io/2019/04/22/190422-TIL.md): 2019-04-22 · TIL
+- [Call by Value, Call by Reference and Call by Object Reference](https://sub2n.github.io/2019/04/22/Call-by-Value-Call-by-Reference-and-Call-by-Object-Reference.md): 2019-04-22 · C, Call by Object Reference, Call by Reference, Call by Value, Python
+- [First-class Function](https://sub2n.github.io/2019/04/22/First-class-Function.md): 2019-04-22 · Fisrt-class Function
+- [LeetCode 5. Longest Palindromic Substring](https://sub2n.github.io/2019/04/22/LeetCode-5-Longest-Palindromic-Substring.md): 2019-04-22 · Algorithm
+- [Local Variable and Global Variable](https://sub2n.github.io/2019/04/22/Local-Variable-and-Global-Variable.md): 2019-04-22 · Python, global variable, local variavble
+- [190421-TIL](https://sub2n.github.io/2019/04/21/190421-TIL.md): 2019-04-21 · TIL
+- [190420-TIL](https://sub2n.github.io/2019/04/20/190420-TIL.md): 2019-04-20 · TIL
+- [CodeWars 5kyu. Directions Reduction](https://sub2n.github.io/2019/04/20/CodeWars-5kyu-Directions-Reduction.md): 2019-04-20 · TIL
+- [190419-TIL](https://sub2n.github.io/2019/04/19/190419-TIL.md): 2019-04-19 · TIL
+- [CodeWars 6kyu. Persistent Bugger](https://sub2n.github.io/2019/04/19/CodeWars-6kyu-Persistent-Bugger.md): 2019-04-19 · Algorithm
+- [190418-TIL](https://sub2n.github.io/2019/04/18/190418-TIL.md): 2019-04-18 · TIL
+- [CodeWars 6kyu. Dubstep](https://sub2n.github.io/2019/04/18/CodeWars-6kyu-Dubstep.md): 2019-04-18 · Algorithm
+- [LeetCode 35. Search Insert Position](https://sub2n.github.io/2019/04/18/LeetCode-35-Search-Insert-Position.md): 2019-04-18 · Algorithm
+- [Python 3.7.3 | Jupyter 설치](https://sub2n.github.io/2019/04/18/Python-3-7-3-Jupyter-설치.md): 2019-04-18 · Python
+- [Python Data Type and Data Structure | Jupyter 사용방법](https://sub2n.github.io/2019/04/18/Python-Data-Type-and-Data-Structure-Jupyter-사용방법.md): 2019-04-18 · Python
+- [190417-TIL](https://sub2n.github.io/2019/04/17/190417-TIL.md): 2019-04-17 · TIL
+- [CodeWars 6kyu. Multiples of 3 or 5](https://sub2n.github.io/2019/04/17/CodeWars-6kyu-Multiples-of-3-or-5.md): 2019-04-17 · Algorithm
+- [LeetCode 28. Implement strStr()](https://sub2n.github.io/2019/04/17/LeetCode-28-Implement-strStr.md): 2019-04-17 · Algorithm
+- [190416-TIL](https://sub2n.github.io/2019/04/16/190416-TIL.md): 2019-04-16 · TIL
+- [LeetCode 27. Remove Element](https://sub2n.github.io/2019/04/16/LeetCode-27-Remove-Element.md): 2019-04-16 · Algorithm, javaScript
+- [Responsive Web (1)](https://sub2n.github.io/2019/04/16/Responsive Web (1).md): 2019-04-16 · HTML, CSS
+- [Responsive Web (2)](https://sub2n.github.io/2019/04/16/Responsive Web (2).md): 2019-04-16 · HTML, CSS
+- [190415-TIL](https://sub2n.github.io/2019/04/15/190415-TIL.md): 2019-04-15 · TIL
+- [LeetCode 26. Remove Duplicates from Sorted Array](https://sub2n.github.io/2019/04/15/LeetCode-26-Remove-Duplicates-from-Sorted-Array.md): 2019-04-15 · Algorithm, javaScript
+- [190413~14-TIL](https://sub2n.github.io/2019/04/14/190413-14-TIL.md): 2019-04-14 · TIL
+- [190412-TIL](https://sub2n.github.io/2019/04/12/190412-TIL.md): 2019-04-12 · TIL
+- [190411-TIL](https://sub2n.github.io/2019/04/11/190411-TIL.md): 2019-04-11 · HTML, CSS, TIL
+- [190410-TIL](https://sub2n.github.io/2019/04/10/190410-TIL.md): 2019-04-10 · HTML, CSS, TIL
+- [190409-TIL](https://sub2n.github.io/2019/04/09/190409-TIL.md): 2019-04-09 · TIL
+- [190406~07-TIL](https://sub2n.github.io/2019/04/08/190406-07-TIL.md): 2019-04-08 · TIL
+- [190408-TIL](https://sub2n.github.io/2019/04/08/190408-TIL.md): 2019-04-08 · TIL
+- [190405-TIL](https://sub2n.github.io/2019/04/05/190405-TIL.md): 2019-04-05 · TIL
+- [190404-TIL](https://sub2n.github.io/2019/04/04/190404-TIL.md): 2019-04-04 · TIL
+- [190403-TIL](https://sub2n.github.io/2019/04/03/190403-TIL.md): 2019-04-03 · TIL
+- [190402-TIL](https://sub2n.github.io/2019/04/02/190402-TIL.md): 2019-04-02 · HTML, CSS, TIL
+- [190330~31 TIL](https://sub2n.github.io/2019/04/01/190330-31-TIL.md): 2019-04-01 · TIL
+- [190401 TIL](https://sub2n.github.io/2019/04/01/190401-TIL.md): 2019-04-01 · TIL
+- [190329-TIL](https://sub2n.github.io/2019/03/29/190329-TIL.md): 2019-03-29 · TIL
+- [190328-TIL](https://sub2n.github.io/2019/03/28/190328-TIL.md): 2019-03-28 · TIL
+- [190327-TIL](https://sub2n.github.io/2019/03/27/190327-TIL.md): 2019-03-27 · TIL
+- [190326-TIL](https://sub2n.github.io/2019/03/26/190326-TIL.md): 2019-03-26 · TIL
+- [190325-TIL](https://sub2n.github.io/2019/03/25/190325-TIL.md): 2019-03-25 · TIL
+- [190322~24 TIL](https://sub2n.github.io/2019/03/24/190322-24-TIL.md): 2019-03-24 · TIL
+- [190321-TIL](https://sub2n.github.io/2019/03/21/190321-TIL.md): 2019-03-21 · TIL
+- [190320-TIL](https://sub2n.github.io/2019/03/20/190320-TIL.md): 2019-03-20 · TIL
+- [190319-TIL](https://sub2n.github.io/2019/03/19/190319-TIL.md): 2019-03-19 · TIL
+- [190318-TIL](https://sub2n.github.io/2019/03/18/190318-TIL.md): 2019-03-18 · TIL
+- [190317-TIL](https://sub2n.github.io/2019/03/17/190317-TIL.md): 2019-03-17 · TIL
+- [190315-TIL](https://sub2n.github.io/2019/03/15/190315-TIL.md): 2019-03-15 · TIL
+- [190314-TIL](https://sub2n.github.io/2019/03/14/190314-TIL.md): 2019-03-14 · TIL
+- [190313-TIL](https://sub2n.github.io/2019/03/13/190313-TIL.md): 2019-03-13 · TIL
